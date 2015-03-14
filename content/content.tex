@@ -8,11 +8,31 @@
 % ---------------------------------------
 \include{private/content/introduction/introduction}
 
-\chapter{Theory}
-\section{B oscillations}
-\section{CPV}
-\section{CPV in Bd2JpsiKS}
-\section{Decay-time dependent CPV measurement in Bd2JpsiKS}
+\chapter{CP violation in the $\Bz$ meson system}
+Roundup of B physics: observation of b quarks, B oscillations, CKM, CPV
+\section{Flavour physics}
+\section{Oscillations of neutral B mesons}
+\begin{itemize}
+  \item Difference between mass and weak eigenstates, Wiger-Weisskopf approximation, mass difference, decay-time width difference, behaviour under C/P transformations, quark mixing phase definitions.
+  \item Definition of states for the B0 system (and maybe the K system), 
+  \item Experimental status of B0-B0bar oscillations, the LHCb measurement of deltam in Bd2JpsiKstar and Bd2Dpi.
+\end{itemize}
+
+\section{Charge-Parity violation in the SM}
+\begin{itemize}
+  \item Discrete symmetries, CPT, weak and strong phases, CPV observables, classification of CPV, CP eigenstates
+  \item CPV in SM: gauge symmetries, fermions in the SM, CKM matrix, the unitarity triangle, CKM parametrization
+\end{itemize}
+\subsection{CP violation in the decay Bd2JpsiKS}
+\begin{itemize}
+  \item CPV in this unique decay, master formulas, etc.
+\end{itemize}
+
+\section{Decay-time dependent measurement of sin2beta}
+\begin{itemize}
+  \item Description of the measurement technique: decay-time dependence, flavour tagging
+  \item Experimental status: measurements at the B factories, results, world average
+\end{itemize}
 
 \chapter{The LHCb experiment}
 \section{Components}
@@ -29,18 +49,56 @@
 \section{Software stack}
 \section{Computing grid}
 
-\chapter{Measurement}
+\chapter{The measurement of sin2beta}
 \section{Data preparation}
+\begin{itemize}
+  \item Year of data taking, collected integrated luminosity
+  \item Data processing: Reco version, DaVinci, etc.
+  \item general remarks on the data preparation
+  \item DTF explanation including constraints used in the fit
+  \item Observables
+\end{itemize}
+
 \subsection{Trigger}
+L0, HLT1, HLT2 requirements, TCKs?, efficiencies
+
 \subsection{Stripping}
+Stripping details, cuts, ...
+
 \subsection{Offline selection}
+Selection cuts, FoM, efficiencies
+
 \subsection{Multiple candidates}
+Why do we see multiple candidates, difference between multiple PVs and multiple B candidates, how to remove them
+
 \subsection{Simulated data}
+Data sets used, software stack and versions, simulation conditions, DEC file, generation parameters
+
 \section{Flavour tagging}
+\begin{itemize}
+  \item General introduction to FT at LHCb
+  \item influence on measuring sin2beta, Dilution
+  \item tagging efficiency, mistag fraction, tagging power
+\end{itemize}
+
 \subsection{OS FT}
+OS algorithms: kaon, muon, electron, vertex charge, charm (+ MVA versions)
+
 \subsection{SS FT}
+SS algorithms: kaon/pion/proton
+
 \subsection{Calibration}
+\begin{itemize}
+  \item calibration method
+  \item tagging correlations
+  \item OS calibration using Bu2JpsiK: procedure, transferability/validity to Bd2JpsiKS
+  \item SS calibration using Bd2JpsiKst: procedure, transferability/validity to Bd2JpsiKS
+  \item determination of systematic uncertainties
+\end{itemize}
+
 \subsection{Performance}
+Performance of the FT algorithms
+
 \section{Backgrounds}
 \section{Decay time resolution and acceptance}
 \subsection{Resolution}

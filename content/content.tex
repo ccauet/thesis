@@ -35,7 +35,14 @@ Roundup of B physics: observation of b quarks, B oscillations, CKM, CPV
 \end{itemize}
 
 \chapter{The LHCb experiment}
+lumi leveling, angular acceptance, bbbar cross section, incoherent production, boost along zaxis, number of B decays in acceptance, production of bbar pairs
 \section{Components}
+\begin{itemize}
+  \item Purpose
+  \item Technology
+  \item Design
+  \item Performance(?)
+\end{itemize}
 \subsection{VeLo}
 \begin{itemize}
   \item purpose: displaced secondary vertices, decay length, decay time, IP
@@ -70,11 +77,27 @@ Roundup of B physics: observation of b quarks, B oscillations, CKM, CPV
   \item three stations, each of four layers in x-u-v-x alignment, gas admixture, acceptance
 \end{itemize}
 \subsection{Calo}
+\begin{itemize}
+  \item trigger tasks: transverse energy hadron/electron/photon candidates for L0
+  \item PID for electrons, photons, hadrons
+  \item energy and position measurement
+  \item design: ECAL (+SPD and PS), HCAL
+  \item technical details: create scintillation light, then transmit to a photo-multiplier using fibres
+\end{itemize}
 \subsection{Muon}
+\begin{itemize}
+  \item five stations of multi-wire proportional chambers
+  \item muon ID important for charmonium final states and rare decays
+  \item high pT trigger for L0, and muon ID for HLT
+\end{itemize}
 \section{Data processing / DAQ}
 \subsection{Front-end electronics}
-\subsection{L0 trigger}
-\subsection{High level trigger}
+\subsection{Trigger}
+two level trigger system: L0 and HLT, L0 from custom made electronics, real-time with bunch crossing-frequency, HLT on software in processor farm
+\subsubsection{L0 trigger}
+from 40MHz to 1MHz, trigger on large transverse momentum pT and energy ET; the hightest ET hadron, electron, photon clusters in the calo; the two highest pT muons in the muon chambers; pile-up system in velo calculates the number of PVs; the caos calculate the total observed energy and estimate the number of tracks based on the number of hits in the SPD; using these global event cuts to reject events which would otherwise be triggered due to large combinatorics
+\subsubsection{High level trigger}
+reduced the !MHz L0 output rate to 5kHz; software based and flexible, again composed of two parts: HLT1 and HLT2; 
 \section{Software stack}
 \section{Computing grid}
 

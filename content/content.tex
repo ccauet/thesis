@@ -90,14 +90,21 @@ lumi leveling, angular acceptance, bbbar cross section, incoherent production, b
   \item muon ID important for charmonium final states and rare decays
   \item high pT trigger for L0, and muon ID for HLT
 \end{itemize}
-\section{Data processing / DAQ}
-\subsection{Front-end electronics}
-\subsection{Trigger}
+\section{Trigger}
 two level trigger system: L0 and HLT, L0 from custom made electronics, real-time with bunch crossing-frequency, HLT on software in processor farm
-\subsubsection{L0 trigger}
+\subsection{L0 trigger}
 from 40MHz to 1MHz, trigger on large transverse momentum pT and energy ET; the hightest ET hadron, electron, photon clusters in the calo; the two highest pT muons in the muon chambers; pile-up system in velo calculates the number of PVs; the caos calculate the total observed energy and estimate the number of tracks based on the number of hits in the SPD; using these global event cuts to reject events which would otherwise be triggered due to large combinatorics
-\subsubsection{High level trigger}
+\subsection{High level trigger}
 reduced the !MHz L0 output rate to 5kHz; software based and flexible, again composed of two parts: HLT1 and HLT2; 
+\section{Online system}
+\DAQ, \TFC, and \ECS
+\begin{itemize}
+  \item \DAQ: transport of bunch-crossing data from the detector fond-end electornics to permanent storage
+  \item Front-end detector electronics -> TELL1 board : receiver cards -> \acp{FPGA} (processing, zero-suppresion, data compression) -> SyncLink (another \FPGA) collect and send raw IP-packet by GbEthernet mezzanine cards -> DAQ
+  \item TELL1 has a credit-card size PC connected that interfaces to the \ECS
+  \item Clock and synchronisation signals (\eg triggers) are transmitted trough the on-board \TTC interface
+\end{itemize}
+\subsection{Front-end electronics}
 \section{Software stack}
 \section{Computing grid}
 

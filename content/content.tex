@@ -36,13 +36,8 @@ Roundup of B physics: observation of b quarks, B oscillations, CKM, CPV
 
 \chapter{The LHCb experiment}
 lumi leveling, angular acceptance, bbbar cross section, incoherent production, boost along zaxis, number of B decays in acceptance, production of bbar pairs
-\section{Components}
-\begin{itemize}
-  \item Purpose
-  \item Technology
-  \item Design
-  \item Performance(?)
-\end{itemize}
+\section{...}
+\section{Track reconstruction}
 \subsection{VeLo}
 \begin{itemize}
   \item purpose: displaced secondary vertices, decay length, decay time, IP
@@ -54,7 +49,6 @@ lumi leveling, angular acceptance, bbbar cross section, incoherent production, b
   \item hardware interlock system
   \item performance(?)
 \end{itemize}
-\subsection{BCM ;)}
 \subsection{TT \& IT}
 \begin{itemize}
   \item silicon microstrip sensors
@@ -62,19 +56,36 @@ lumi leveling, angular acceptance, bbbar cross section, incoherent production, b
   \item TT pros: spatial resolution, hit occupancy, signal shaping time, single-hit efficiency, radiation damage, material budget, number of readout channels
   \item IT parts: ...
 \end{itemize}
-\subsection{RICH}
-\begin{itemize}
-  \item general: cherenkov light detectors, spherical and flat mirrors, hybrid photon detectors
-  \item RICH1: low momentum charged particles, 1-60GeV/c, aerogel and C4F10 radiators
-  \item RICH2: CF4 gas radiator, 15-100GeV/c, reduced polar angle acceptance
-  \item HPDs: 
-\end{itemize}
 \subsection{OT}
 \begin{itemize}
   \item drift-time detector, tracking of charged particles
   \item array of gas-tight straw-tube modules, each module two layers of drift-tubes
   \item drift-time < 50ns, drift-coordinate resolution 200mum
   \item three stations, each of four layers in x-u-v-x alignment, gas admixture, acceptance
+\end{itemize}
+\subsection{Muon}
+\begin{itemize}
+  \item five stations of multi-wire proportional chambers
+  \item muon ID important for charmonium final states and rare decays
+  \item high pT trigger for L0, and muon ID for HLT
+\end{itemize}
+\subsection{Track reconstruction technique and performance}
+Results are form Bd2JpsiKS!
+\begin{itemize}
+  \item hits from VELO, TT, IT and OT are combined to form trajectories form the VELO to the calorimeters. 
+  \item list different track types: long, upstream, downstream, VELO, T
+  \item track seeds, Kalman filter, pattern recognition, ghosts
+  \item definition of: reconstructible, successfully reconstructed
+  \item performance numbers for long tracks and downstream tracks
+\end{itemize}
+
+\section{Particle identification}
+\subsection{RICH}
+\begin{itemize}
+  \item general: cherenkov light detectors, spherical and flat mirrors, hybrid photon detectors
+  \item RICH1: low momentum charged particles, 1-60GeV/c, aerogel and C4F10 radiators
+  \item RICH2: CF4 gas radiator, 15-100GeV/c, reduced polar angle acceptance
+  \item HPDs: 
 \end{itemize}
 \subsection{Calo}
 \begin{itemize}
@@ -84,12 +95,19 @@ lumi leveling, angular acceptance, bbbar cross section, incoherent production, b
   \item design: ECAL (+SPD and PS), HCAL
   \item technical details: create scintillation light, then transmit to a photo-multiplier using fibres
 \end{itemize}
-\subsection{Muon}
+\subsection{Particle identification technique and performance}
 \begin{itemize}
-  \item five stations of multi-wire proportional chambers
-  \item muon ID important for charmonium final states and rare decays
-  \item high pT trigger for L0, and muon ID for HLT
+  \item combine info from RICHs, calo, and muon system to identify: e,mu,pi,K,p also gamma, pi0
+  \item hadron PID: likelihood approach, RICH pattern mached to all possible tracks under assumption of partice hypotheses. -> global pattern-recongnition
+  \item RICH efficiency
+  \item muon PID: extrapolating reconstructed tracks into the muon stations; considered a muon cand if a minimum number of stations have hits in their field of interest FOI
+  \item muon PID efficiency
+  \item lectron PID: balance of track momentum and energy of the charged cluster in the ECAL matched with extrapolated tracks; matching bremsstrahlung photons to electron tracks before the magnet
+  \item gamma PID: ECAL cluster w/o associated track
+  \item pi0 PID: 
+  \item global performance: PV resolution of 10mum transverse to the beam and 60mum along the beam axis; invariant mass resolution between 12 and 25 MeV; lifetime resolution of around 40fs
 \end{itemize}
+
 \section{Trigger}
 two level trigger system: L0 and HLT, L0 from custom made electronics, real-time with bunch crossing-frequency, HLT on software in processor farm
 \subsection{L0 trigger}
@@ -104,29 +122,7 @@ reduced the 1MHz L0 output rate to 5kHz; software based and flexible, again comp
   \item TELL1 has a credit-card size PC connected that interfaces to the \ECS
   \item Clock and synchronisation signals (\eg triggers) are transmitted trough the on-board \TTC interface
 \end{itemize}
-\section{Computing grid}
-\section{Performance}
-\subsection{Track reconstruction}
-Results are form Bd2JpsiKS!
-\begin{itemize}
-  \item hits from VELO, TT, IT and OT are combined to form trajectories form the VELO to the calorimeters. 
-  \item list different track types: long, upstream, downstream, VELO, T
-  \item track seeds, Kalman filter, pattern recognition, ghosts
-  \item definition of: reconstructible, successfully reconstructed
-  \item performance numbers for long tracks and downstream tracks
-\end{itemize}
-\subsection{Particle identification}
-\begin{itemize}
-  \item combine info from RICHs, calo, and muon system to identify: e,mu,pi,K,p also gamma, pi0
-  \item hadron PID: likelihood approach, RICH pattern mached to all possible tracks under assumption of partice hypotheses. -> global pattern-recongnition
-  \item RICH efficiency
-  \item muon PID: extrapolating reconstructed tracks into the muon stations; considered a muon cand if a minimum number of stations have hits in their field of interest FOI
-  \item muon PID efficiency
-  \item lectron PID: balance of track momentum and energy of the charged cluster in the ECAL matched with extrapolated tracks; matching bremsstrahlung photons to electron tracks before the magnet
-  \item gamma PID: ECAL cluster w/o associated track
-  \item pi0 PID: 
-  \item global performance: PV resolution of 10mum transverse to the beam and 60mum along the beam axis; invariant mass resolution between 12 and 25 MeV; lifetime resolution of around 40fs
-\end{itemize}
+
 \section{Software stack}
 \begin{itemize}
   \item \Gaudi: LHCb software framework (used by ATLAS as well)
@@ -135,6 +131,8 @@ Results are form Bd2JpsiKS!
   \item \DaVinci: end-user analysis software
   \item Simulation: \Gauss, \Boole, \Pythia, \EvtGen, \Photos, \Herwigpp, \Sherpa, \GeantFour
 \end{itemize}
+\section{Computing grid}
+...
 
 \chapter{The measurement of sin2beta}
 \section{Data preparation}

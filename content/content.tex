@@ -95,7 +95,7 @@ two level trigger system: L0 and HLT, L0 from custom made electronics, real-time
 \subsection{L0 trigger}
 from 40MHz to 1MHz, trigger on large transverse momentum pT and energy ET; the hightest ET hadron, electron, photon clusters in the calo; the two highest pT muons in the muon chambers; pile-up system in velo calculates the number of PVs; the caos calculate the total observed energy and estimate the number of tracks based on the number of hits in the SPD; using these global event cuts to reject events which would otherwise be triggered due to large combinatorics
 \subsection{High level trigger}
-reduced the !MHz L0 output rate to 5kHz; software based and flexible, again composed of two parts: HLT1 and HLT2; 
+reduced the 1MHz L0 output rate to 5kHz; software based and flexible, again composed of two parts: HLT1 and HLT2; 
 \section{Online system}
 \DAQ, \TFC, and \ECS
 \begin{itemize}
@@ -104,9 +104,37 @@ reduced the !MHz L0 output rate to 5kHz; software based and flexible, again comp
   \item TELL1 has a credit-card size PC connected that interfaces to the \ECS
   \item Clock and synchronisation signals (\eg triggers) are transmitted trough the on-board \TTC interface
 \end{itemize}
-\subsection{Front-end electronics}
-\section{Software stack}
 \section{Computing grid}
+\section{Performance}
+\subsection{Track reconstruction}
+Results are form Bd2JpsiKS!
+\begin{itemize}
+  \item hits from VELO, TT, IT and OT are combined to form trajectories form the VELO to the calorimeters. 
+  \item list different track types: long, upstream, downstream, VELO, T
+  \item track seeds, Kalman filter, pattern recognition, ghosts
+  \item definition of: reconstructible, successfully reconstructed
+  \item performance numbers for long tracks and downstream tracks
+\end{itemize}
+\subsection{Particle identification}
+\begin{itemize}
+  \item combine info from RICHs, calo, and muon system to identify: e,mu,pi,K,p also gamma, pi0
+  \item hadron PID: likelihood approach, RICH pattern mached to all possible tracks under assumption of partice hypotheses. -> global pattern-recongnition
+  \item RICH efficiency
+  \item muon PID: extrapolating reconstructed tracks into the muon stations; considered a muon cand if a minimum number of stations have hits in their field of interest FOI
+  \item muon PID efficiency
+  \item lectron PID: balance of track momentum and energy of the charged cluster in the ECAL matched with extrapolated tracks; matching bremsstrahlung photons to electron tracks before the magnet
+  \item gamma PID: ECAL cluster w/o associated track
+  \item pi0 PID: 
+  \item global performance: PV resolution of 10mum transverse to the beam and 60mum along the beam axis; invariant mass resolution between 12 and 25 MeV; lifetime resolution of around 40fs
+\end{itemize}
+\section{Software stack}
+\begin{itemize}
+  \item \Gaudi: LHCb software framework (used by ATLAS as well)
+  \item \Brunel: reconstruction
+  \item \Brunel: trigger
+  \item \DaVinci: end-user analysis software
+  \item Simulation: \Gauss, \Boole, \Pythia, \EvtGen, \Photos, \Herwigpp, \Sherpa, \GeantFour
+\end{itemize}
 
 \chapter{The measurement of sin2beta}
 \section{Data preparation}

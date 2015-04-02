@@ -1,9 +1,9 @@
 %!TEX root = ../../common/main.tex
 
-\chapter{The LHCb experiment}
+\chapter{The \acs*{LHCb} experiment}
 \label{ch:lhcb_experiment}
 
-\section{The LHC, proton-proton interactions, and $\bquark$ hadron production}
+\section{The \acs*{LHC}, \acl*{pp} interactions, and $\bquark$ hadron production}
 \label{ch:lhcb_experiment:lhc}
 
 With a circumference of \SI{26.7}{\kilo\metre} the \LHC is the largest man-made
@@ -28,17 +28,31 @@ proton beams.
 At design luminosity $\num{2808}$ bunches with a bunch spacing of
 $\SI{25}{\nano\metre}$ are stored in each proton beam. The \LHC relies on a
 supply chain of smaller accelerators providing the initial proton bunches.
+\Cref{fig:lhcb_experiment:lhc:cern_accelerator_complex} depicts the \acs{CERN}
+accelerator complex. A bottle of hydrogen gas is the source of the protons, that
+are then subsequently accelerated to higher energies by the \LINAC, the
+\BOOSTER, the \PSyn, and the \SPS, before being injected into the \LHC at an
+energy of $\SI{450}{\GeV}$. The transfer lines Tl2 and Tl8 are used to inject
+the protons bunches in both beam directions. As soon as the nominal number of
+proton bunches is reached, the beam energies are increased up to $\SI{7}{\TeV}$
+for each beam. The average \LHC turnaround time, \ie the time it takes to run
+through the whole accelerator chain until a stable beam is achieved, adds up to
+seven hours. Mainly due to beam loss from \pp collisions the beam intensities
+and the instantaneous luminosity decays. Starting from a peak luminosity of
+$L=\SI{10e34}{\lumi}$ a luminosity lifetime of 15 hours is estimated. 
+
+To prevent uncontrolled beam losses and to protect the \LHC infrastructure and
+the \LHC experiments a beam dump system is installed. The fully automated system
+monitors the beam condition and is able to extract the beam from the \LHC using
+kicker magnets in case of a failure. The beam dump system is also used regularly
+to extract the beam after a successful run.
 
 \begin{figure}[t]
   %% trim={<left> <lower> <right> <upper>}
   \includegraphics[width=\textwidth, trim={4.8cm 5.3cm 4.2cm 1.8cm}, clip=true]{private/content/the-lhcb-experiment/figs/cern_acceleator_complex.pdf}
-  \caption{The CERN accelerator complex. \cite{Christiane:1260465}}
+  \caption{The \acs{CERN} accelerator complex. \cite{Christiane:1260465}}
   \label{fig:lhcb_experiment:lhc:cern_accelerator_complex}
 \end{figure}
-
-
-characteristics
-bunch numbers, bunch spacing, avg LHC turnaround time: total min injection time 16min, ramping from 450GeV to 7TeV approx 20min ==> minimum 70min/avg 7h, luminosity lifetime approx 15h, maximum integrated luminosity per year between 80 and 120 fb-1
 
 experiments:
 ALICE (special lumi, lead ions), ATLAS, CMS, LHCb (special lumi), TOTEM, MoDAL, LHCf
@@ -145,3 +159,7 @@ reduced the 1MHz L0 output rate to 5kHz; software based and flexible, again comp
 \end{itemize}
 \section{Computing grid}
 ...
+
+
+% to enforce definition of abbreviations
+\acuse{LINAC,BOOSTER,PSyn,SPS}

@@ -1,6 +1,7 @@
 ## local files
 .DS_Store
 common
+wordcount.pdf
 
 ## Core latex/pdflatex auxiliary files:
 *.aux

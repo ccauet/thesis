@@ -30,7 +30,7 @@ $\SI{25}{\nano\metre}$ are stored in each proton beam. The \LHC relies on a
 supply chain of smaller accelerators providing the initial proton bunches.
 \Cref{fig:lhcb_experiment:lhc:cern_accelerator_complex} depicts the \acs{CERN}
 accelerator complex. A bottle of hydrogen gas is the source of the protons, that
-are then subsequently accelerated to higher energies by the \LINAC, the
+are then subsequently accelerated to higher energies by the \LINACTwo, the
 \BOOSTER, the \PSyn, and the \SPS, before being injected into the \LHC at an
 energy of $\SI{450}{\GeV}$. The transfer lines Tl2 and Tl8 are used to inject
 the protons bunches in both beam directions. As soon as the nominal number of
@@ -49,7 +49,14 @@ extract the beam after a successful run.
 \begin{figure}[t]
   %% trim={<left> <lower> <right> <upper>}
   \includegraphics[width=\textwidth, trim={4.8cm 5.3cm 4.2cm 1.8cm}, clip=true]{private/content/the-lhcb-experiment/figs/cern_acceleator_complex.pdf}
-  \caption{The \acs{CERN} accelerator complex. \cite{Christiane:1260465}}
+  \caption{
+  The \acs{CERN} accelerator complex \cite{Christiane:1260465}.\todo{Highlight that Fig. is modified} 
+  Starting from the \acs{LINACTwo}, protons are accelerated through the
+  \acs{BOOSTER}, the \acs{PSyn} and finally the \acs{SPS} before being injected
+  into the \LHC. If one or both beams consist of heavy ions, the
+  \acs{LINACThree} and the \acs{LEIR} are used to accelerate the ions and inject
+  them into the \acs{PSyn}.
+  }
   \label{fig:lhcb_experiment:lhc:cern_accelerator_complex}
 \end{figure}
 
@@ -57,12 +64,35 @@ Shortly after the first successful circulation of two proton beams in September
 2008, a fault occurred in the electrical bus connection between two magnets,
 leading to a large helium leak and serious damage to several of \LHC's magnets
 and infrastructure. After the incident, the management decided to reduce the
-beam energy and intensity. Thus, in the years 2010 and 2011 the \LHC centre-of-mass
-energy was $\sqrt{s}=\SI{7}{\TeV}$ with a bunch spacing of
+beam energy and intensity. Thus, in the years 2010 and 2011 the \LHC centre-of-
+mass energy was $\sqrt{s}=\SI{7}{\TeV}$ with a bunch spacing of
 $\SI{50}{\nano\metre}$ delivering a peak instantaneous luminosity of
 $\SI{2.4e33}{\lumi}$. An increase of the beam energy to $\sqrt{s}=\SI{8}{\TeV}$
-lead to a peak instantaneous luminosity of $\SI{7.7e33}{\lumi}$ in 2012.
+lead to a peak instantaneous luminosity of $\SI{7.7e33}{\lumi}$ in 2012
+\cite{Lamont:2013cma}.
 
+The \LHC is not only capable of colliding protons but also lead ions in Pb$-$Pb
+as well as in $p-$Pb and Pb$-p$ collisions. For this purpose the \ALICE detector
+\cite{Aamodt:2008zz} is specifically designed to study QCD interactions and the
+quark-gluon plasma produced in the \LHC ion runs, where it has to cope with very
+large particle multiplicities. In the case of an heavy ion run, the \LINACThree
+and the \LEIR mark the starting point of the accelerator chain, before injecting
+the lead ions into the \PSyn. 
+
+In total seven experiments are located at the four interaction regions of the
+\LHC. The two multi-purpose detectors \ATLAS \cite{Aad:2008zzm} and \CMS
+\cite{Chatrchyan:2008aa} are installed at opposite sides of the storage ring.
+Both experiments cover a great variety of physics activities: the search for
+scalar particles, particles predicted by super-symmetric models, dark matter
+candidates, and evidence of extra spacial dimensions. Around the interaction
+regions of the \CMS experiment, the \TOTEM detectors \cite{Anelli:2008zza} are
+located. Together with the \LHCf experiment \cite{Adriani:2008zz}, located on
+both sides of the \ATLAS interaction region, the detectors are designated to
+study in the \enquote{forward} region of the collisions at very small angles to
+the beam direction.
+
+% to enforce definition of abbreviations
+\acuse{LINACThree,LEIR,ALICE,ATLAS,CMS,TOTEM,MoEDAL,LHCf}
 
 experiments:
 ALICE (special lumi, lead ions), ATLAS, CMS, LHCb (special lumi), TOTEM, MoDAL, LHCf
@@ -169,7 +199,3 @@ reduced the 1MHz L0 output rate to 5kHz; software based and flexible, again comp
 \end{itemize}
 \section{Computing grid}
 ...
-
-
-% to enforce definition of abbreviations
-\acuse{LINAC,BOOSTER,PSyn,SPS}

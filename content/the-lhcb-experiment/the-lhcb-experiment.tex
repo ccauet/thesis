@@ -5,7 +5,7 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{The \acs*{LHC} and its experiments}
-\label{ch:lhcb_experiment:lhc}
+\label{sec:lhcb_experiment:lhc}
 
 With a circumference of \SI{26.7}{\kilo\metre} the \LHC is the largest man-made
 particle accelerator. Using a \enquote{two-in-one} super-conducting magnet
@@ -100,7 +100,7 @@ the next section.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{The LHCb detector}
-\label{ch:lhcb_experiment:detector}
+\label{sec:lhcb_experiment:detector}
 
 The \LHCb detector is a unique precision instrument solely designed to study \CP
 violation and rare decays of beauty and charm hadrons. He is constructed as a
@@ -125,19 +125,19 @@ lumi leveling, angular acceptance, number of B decays in acceptance
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Track reconstruction}
-\label{ch:lhcb_experiment:tracking}
+\label{sec:lhcb_experiment:tracking}
 
 The \LHCb track reconstruction is based on information from a set of tracking
 detectors: the \VELO, the \TT, the \IT and the \OT. Silicon microstrips are used
 in the first three, while the latter is constructed as a drift-time detector.
-The \VELO is described in \cref{ch:lhcb_experiment:tracking:velo}, the \TT and
-the \IT in \cref{ch:lhcb_experiment:tracking:ttit}, and the \OT in
-\cref{ch:lhcb_experiment:tracking:ot}.
+The \VELO is described in \cref{sec:lhcb_experiment:tracking:velo}, the \TT and
+the \IT in \cref{sec:lhcb_experiment:tracking:ttit}, and the \OT in
+\cref{sec:lhcb_experiment:tracking:ot}.
 \important{The magnet is missing!}
 
 %%------------------------------------------------------------------------------
 \subsection{The \acl*{VELO}}
-\label{ch:lhcb_experiment:tracking:velo}
+\label{sec:lhcb_experiment:tracking:velo}
 
 Surrounding the \protonproton interaction region the \VELO's main purpose is the
 precise position measurement of traversing particles to reconstruct the \ac{PV}
@@ -185,7 +185,7 @@ modules visible. \info{VELO pile-up system?}
 % \end{itemize}
 %%------------------------------------------------------------------------------
 \subsection{TT \& IT}
-\label{ch:lhcb_experiment:tracking:ttit}
+\label{sec:lhcb_experiment:tracking:ttit}
 
 The \TT as well as the \IT make use of silicon microstrip sensors to track
 particle trajectories. The planar \TT station is located upstream of the magnet
@@ -198,7 +198,7 @@ allow for two dimensional positioning.
 
 %%------------------------------------------------------------------------------
 \subsection{OT}
-\label{ch:lhcb_experiment:tracking:ot}
+\label{sec:lhcb_experiment:tracking:ot}
 
 The outer region of the three downstream tracking stations, called \OT, consists
 of a drift-time detector constructed from an array of gas-filled straw-tube
@@ -207,15 +207,6 @@ power]{6 x 5}{\metre}$. With drift times smaller than $\SI{50}{\nano\second}$
 and a drift-coordinate resolution of $\SI{20}{\micro\metre}$ the \OT allows for
 tracking in the low occupancy region around the \IT.
 
-%%------------------------------------------------------------------------------
-\subsection{Muon}
-\label{ch:lhcb_experiment:tracking:muon}
-\todo{Decide if the muon system belongs to tracking or PID}
-\begin{itemize}
-  \item five stations of multi-wire proportional chambers
-  \item muon ID important for charmonium final states and rare decays
-  \item high pT trigger for L0, and muon ID for HLT
-\end{itemize}
 %%------------------------------------------------------------------------------
 \subsection{Track reconstruction technique and performance}
 Results are form Bd2JpsiKS!
@@ -229,17 +220,50 @@ Results are form Bd2JpsiKS!
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Particle identification}
-\label{ch:lhcb_experiment:pid}
+\label{sec:lhcb_experiment:pid}
+
+The \LHCb \PID system consists of two \acp{RICH}, up- and downstream of the
+magnet, the calorimeter system, and the muon system. Based on the information
+from the \PID systems a likelihood for a given particle hypothesis is
+determined. The \acp{RICH} are further described in
+\cref{sec:lhcb_experiment:pid:rich}, the calorimeter system in
+\cref{sec:lhcb_experiment:pid:calo}, and the muon system in
+\cref{sec:lhcb_experiment:pid:muon}.
+
 %%------------------------------------------------------------------------------
-\subsection{RICH}
-\begin{itemize}
-  \item general: cherenkov light detectors, spherical and flat mirrors, hybrid photon detectors
-  \item RICH1: low momentum charged particles, 1-60GeV/c, aerogel and C4F10 radiators
-  \item RICH2: CF4 gas radiator, 15-100GeV/c, reduced polar angle acceptance
-  \item HPDs: 
-\end{itemize}
+\subsection{The \aclp*{RICH}}
+\label{sec:lhcb_experiment:pid:rich}
+
+Exploiting the radiation emitted by a charged particle moving through a medium
+at a speed greater than the speed of light, the two \acp{RICH} are used to
+distinguish between pions, kaons, and protons. As illustrated in
+\cref{fig:lhcb_experiment:tracking:pid:radiator} the cherenkov angle
+$\Theta_\mathrm{C}$ shows a strong momentum dependence and therefore different
+radiators are used to get a particle hypothesis for low- and high-momentum
+particles. The detectors make use of a system of flat and spherical mirrors to
+reflect the emitted light to \acp{HPD}.
+
+\RICH1 is located upstream of the magnet in between the \VELO and the \TT,
+contains aerogel and \fluorocarbonfour gas radiators, and provides \PID for
+particles with low momenta from $\SIrange[range-phrase = \text{ to },range-units
+= single]{1}{60}{\GeVc}$. \RICH2 is located after the last tracking station,
+uses \fluorocarbon gas as a radiator and allows \PID for particles in the range
+from $\SIrange[range-phrase = \text{ to },range-units =
+single]{15}{\geq100}{\GeVc}$.
+%
+\begin{figure}[t]
+  \includegraphics[width=0.48\textwidth]{private/content/the-lhcb-experiment/figs/lhcb_detector_rich_momentum.pdf}
+  \includegraphics[width=0.52\textwidth]{private/content/the-lhcb-experiment/figs/lhcb_detector_rich_radiator.png}
+  \caption{Momentum dependence of the cherenkov angle $\Theta_\mathrm{C}$ for
+  (left) all \RICH radiators \cite{Alves:2008zz} and (right) for the
+  \fluorocarbonfour radiator only \cite{Adinolfi:2012qfa}.}
+  \label{fig:lhcb_experiment:tracking:pid:radiator}
+\end{figure}
+
 %%------------------------------------------------------------------------------
-\subsection{Calo}
+\subsection{The calorimeter system}
+\label{sec:lhcb_experiment:pid:calo}
+
 \begin{itemize}
   \item trigger tasks: transverse energy hadron/electron/photon candidates for L0
   \item PID for electrons, photons, hadrons
@@ -247,6 +271,17 @@ Results are form Bd2JpsiKS!
   \item design: ECAL (+SPD and PS), HCAL
   \item technical details: create scintillation light, then transmit to a photo-multiplier using fibres
 \end{itemize}
+
+%%------------------------------------------------------------------------------
+\subsection{Muon}
+\label{sec:lhcb_experiment:pid:muon}
+\todo{Decide if the muon system belongs to tracking or PID}
+\begin{itemize}
+  \item five stations of multi-wire proportional chambers
+  \item muon ID important for charmonium final states and rare decays
+  \item high pT trigger for L0, and muon ID for HLT
+\end{itemize}
+
 %%------------------------------------------------------------------------------
 \subsection{Particle identification technique and performance}
 \begin{itemize}

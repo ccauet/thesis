@@ -13,7 +13,7 @@ design, two counter-rotating beams of protons (or ions) are intersected and
 brought to collision at four interaction points, home of the large \LHC
 experiments \acs*{ALICE}, \acs*{ATLAS}, \acs*{CMS}, and \acs*{LHCb}. The
 colliders centre-of-mass energy of $\sqrt{s}=\SI{14}{\TeV}$ and a peak
-luminosity of $L=\SI{10e34}{\lumi}$ provide \LHC's experiments with high event
+luminosity of $L=\SI{e34}{\lumi}$ provide \LHC's experiments with high event
 rates that are necessary in their searches for physics beyond the \SM.
 
 Following approval in 1994, the \LHC re-used the existing \LEP tunnel and most
@@ -40,7 +40,7 @@ for each beam. The average \LHC turnaround time, \ie the time it takes to run
 through the whole accelerator chain until a stable beam is achieved, adds up to
 seven hours. Mainly due to beam loss from \pp collisions the beam intensities
 and the instantaneous luminosity decays. Starting from a peak luminosity of
-$L=\SI{10e34}{\lumi}$ a luminosity lifetime of 15 hours is estimated. To prevent
+$L=\SI{e34}{\lumi}$ a luminosity lifetime of 15 hours is estimated. To prevent
 uncontrolled beam losses and to protect the \LHC infrastructure and the \LHC
 experiments a beam dump system is installed. The fully automated system monitors
 the beam condition and is able to extract the beam from the \LHC using kicker
@@ -129,10 +129,11 @@ lumi leveling, angular acceptance, number of B decays in acceptance
 
 The \LHCb track reconstruction is based on information from a set of tracking
 detectors: the \VELO, the \TT, the \IT and the \OT. Silicon microstrips are used
-in the first three, while the latter is constructed as a straw-tube detector.
+in the first three, while the latter is constructed as a drift-time detector.
 The \VELO is described in \cref{ch:lhcb_experiment:tracking:velo}, the \TT and
 the \IT in \cref{ch:lhcb_experiment:tracking:ttit}, and the \OT in
 \cref{ch:lhcb_experiment:tracking:ot}.
+\important{The magnet is missing!}
 
 %%------------------------------------------------------------------------------
 \subsection{The \acl*{VELO}}
@@ -185,21 +186,27 @@ modules visible. \info{VELO pile-up system?}
 %%------------------------------------------------------------------------------
 \subsection{TT \& IT}
 \label{ch:lhcb_experiment:tracking:ttit}
-\begin{itemize}
-  \item silicon microstrip sensors
-  \item position, geometrical dimensions, active area, x-u-v-x alignment
-  \item TT pros: spatial resolution, hit occupancy, signal shaping time, single-hit efficiency, radiation damage, material budget, number of readout channels
-  \item IT parts: ...
-\end{itemize}
+
+The \TT as well as the \IT make use of silicon microstrip sensors to track
+particle trajectories. The planar \TT station is located upstream of the magnet
+and is $\SI{150}{\centi\metre}$ wide and $\SI{130}{\centi\metre}$ high. The
+three \IT stations are on the downstream side of the magnet and cover a central
+region around the beam pipe that is $\SI{120}{\centi\metre}$ wide and
+$\SI{40}{\centi\metre}$ high. Each of the stations has four detector layers,
+where the strips in the two inner layer are rotated $\pm\SI{5}{\degree}$ to
+allow for two dimensional positioning.
+
 %%------------------------------------------------------------------------------
 \subsection{OT}
 \label{ch:lhcb_experiment:tracking:ot}
-\begin{itemize}
-  \item drift-time detector, tracking of charged particles
-  \item array of gas-tight straw-tube modules, each module two layers of drift-tubes
-  \item drift-time < 50ns, drift-coordinate resolution 200mum
-  \item three stations, each of four layers in x-u-v-x alignment, gas admixture, acceptance
-\end{itemize}
+
+The outer region of the three downstream tracking stations, called \OT, consists
+of a drift-time detector constructed from an array of gas-filled straw-tube
+modules. The large planar detector spans an active area of $\SI[product-units =
+power]{6 x 5}{\metre}$. With drift times smaller than $\SI{50}{\nano\second}$
+and a drift-coordinate resolution of $\SI{20}{\micro\metre}$ the \OT allows for
+tracking in the low occupancy region around the \IT.
+
 %%------------------------------------------------------------------------------
 \subsection{Muon}
 \label{ch:lhcb_experiment:tracking:muon}

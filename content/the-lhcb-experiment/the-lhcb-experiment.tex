@@ -3,6 +3,7 @@
 \chapter{The \acs*{LHCb} experiment}
 \label{ch:lhcb_experiment}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{The \acs*{LHC} and its experiments}
 \label{ch:lhcb_experiment:lhc}
 
@@ -97,6 +98,7 @@ the next section.
 % to enforce definition of abbreviations
 \acuse{LINACThree,LEIR,ALICE,ATLAS,CMS,TOTEM,MoEDAL,LHCf}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{The LHCb detector}
 \label{ch:lhcb_experiment:detector}
 
@@ -107,53 +109,107 @@ $\SI{10}{\mrad}$ to $\SI{300}{\mrad}$ ($\SI{250}{\mrad}$) in the
 horizontal (vertical) plane.
 
 The detector layout exploits the characteristics of the heavy flavour production
-in \protonproton collisions at the \LHC. The production of heavy quarks in an hadronic environment is dominated by gluon-gluon fusion and quark-antiquark annihilation. 
+in \protonproton collisions at the \LHC. The production of heavy quarks in an
+hadronic environment is dominated by gluon-gluon fusion and quark-antiquark
+annihilation.
 
-
-
-
-\newpage
-
+\info{Better understand how b quark production works at the LHC}
 bbbar production process:
 hadrons, PDF, gluon-gluon fusion
 
-b hadron production:
-large number of b/c hadrons, bbbar crosssection, asymmetric momentum distribution (plots!), hadronization into Bd, Bs, Bu, baryons; production asymmetry
-
+b hadron production: large number of b/c hadrons, bbbar crosssection, asymmetric
+momentum distribution (plots!), hadronization into Bd, Bs, Bu, baryons;
+production asymmetry
 
 lumi leveling, angular acceptance, number of B decays in acceptance
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Track reconstruction}
-\subsection{VeLo}
-\begin{itemize}
-  \item purpose: displaced secondary vertices, decay length, decay time, IP
-  \item silicon modules in r and phi, geometrical dimensions, mechanical accuracy, closest approach to beam
-  \item acceptance: 1.6 < eta < 4.9; |z| < 10.6cm
-  \item requirement of at least three hits in the VELO stations
-  \item pile-up veto system
-  \item retractable, RF foil, in vacuum (primary and secondary)
-  \item hardware interlock system
-  \item performance(?)
-\end{itemize}
+\label{ch:lhcb_experiment:tracking}
+
+The \LHCb track reconstruction is based on information from a set of tracking
+detectors: the \VELO, the \TT, the \IT and the \OT. Silicon microstrips are used
+in the first three, while the latter is constructed as a straw-tube detector.
+The \VELO is described in \cref{ch:lhcb_experiment:tracking:velo}, the \TT and
+the \IT in \cref{ch:lhcb_experiment:tracking:ttit}, and the \OT in
+\cref{ch:lhcb_experiment:tracking:ot}.
+
+%%------------------------------------------------------------------------------
+\subsection{The \acl*{VELO}}
+\label{ch:lhcb_experiment:tracking:velo}
+
+Surrounding the \protonproton interaction region the \VELO's main purpose is the
+precise position measurement of traversing particles to reconstruct the \ac{PV}
+and displaced \acp{SV}. To achieve the best possible spatial resolution the
+sensors must be positioned close to the beam trajectory. To allow the sensors to
+be as close as $\SI{8}{\milli\metre}$ to the interaction region and still
+prevent damage during beam injection, the \VELO modules are split in two halves
+an can be retracted until stable beams are present. Each single modules consists
+of two half-disk shaped silicon microstrip sensor modules covering either the
+radial dimensions ($R$ sensor) or the angular dimension ($\Phi$ sensor) as can
+be seen in the schematic visualisation in
+\cref{fig:lhcb_experiment:tracking:velo:sensor}.
+%
+\begin{figure}[t]
+  \includegraphics[width=0.42\textwidth]{private/content/the-lhcb-experiment/figs/lhcb_detector_velo_sensors.pdf}
+  \includegraphics[width=0.55\textwidth]{private/content/the-lhcb-experiment/figs/lhcb_detector_velo_assembly.jpg}
+  \caption{(Left) Schematic representation of the $R$ and $\Phi$ sensor for one
+  of the \VELO modules \cite{Alves:2008zz}. (Right) Picture of the \VELO during
+  assembly \cite{Aaij:1707015}. }
+  \label{fig:lhcb_experiment:tracking:velo:sensor}
+\end{figure}
+%
+The \VELO covers the total \LHCb acceptance region, such that all tracks cross
+at least three \VELO stations. \Cref{fig:lhcb_experiment:tracking:velo:overview}
+shows the cross section of the \VELO in the $(x,z)$ plane at $y=0$ with all
+modules visible. \info{VELO pile-up system?}
+%
+\begin{figure}[t]
+  \includegraphics[width=\textwidth]{private/content/the-lhcb-experiment/figs/lhcb_detector_velo_overview.png}
+  \caption{
+    Cross section of the closed \VELO in the $(x,z)$ plane at $y=0$ \cite{Alves:2008zz}.
+  }
+  \label{fig:lhcb_experiment:tracking:velo:overview}
+\end{figure}
+
+% \begin{itemize}
+%   \item purpose: displaced secondary vertices, decay length, decay time, IP
+%   \item silicon modules in r and phi, geometrical dimensions, mechanical accuracy, closest approach to beam
+%   \item acceptance: 1.6 < eta < 4.9; |z| < 10.6cm
+%   \item requirement of at least three hits in the VELO stations
+%   \item pile-up veto system
+%   \item retractable, RF foil, in vacuum (primary and secondary)
+%   \item hardware interlock system
+%   \item performance(?)
+% \end{itemize}
+%%------------------------------------------------------------------------------
 \subsection{TT \& IT}
+\label{ch:lhcb_experiment:tracking:ttit}
 \begin{itemize}
   \item silicon microstrip sensors
   \item position, geometrical dimensions, active area, x-u-v-x alignment
   \item TT pros: spatial resolution, hit occupancy, signal shaping time, single-hit efficiency, radiation damage, material budget, number of readout channels
   \item IT parts: ...
 \end{itemize}
+%%------------------------------------------------------------------------------
 \subsection{OT}
+\label{ch:lhcb_experiment:tracking:ot}
 \begin{itemize}
   \item drift-time detector, tracking of charged particles
   \item array of gas-tight straw-tube modules, each module two layers of drift-tubes
   \item drift-time < 50ns, drift-coordinate resolution 200mum
   \item three stations, each of four layers in x-u-v-x alignment, gas admixture, acceptance
 \end{itemize}
+%%------------------------------------------------------------------------------
 \subsection{Muon}
+\label{ch:lhcb_experiment:tracking:muon}
+\todo{Decide if the muon system belongs to tracking or PID}
 \begin{itemize}
   \item five stations of multi-wire proportional chambers
   \item muon ID important for charmonium final states and rare decays
   \item high pT trigger for L0, and muon ID for HLT
 \end{itemize}
+%%------------------------------------------------------------------------------
 \subsection{Track reconstruction technique and performance}
 Results are form Bd2JpsiKS!
 \begin{itemize}
@@ -164,7 +220,10 @@ Results are form Bd2JpsiKS!
   \item performance numbers for long tracks and downstream tracks
 \end{itemize}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Particle identification}
+\label{ch:lhcb_experiment:pid}
+%%------------------------------------------------------------------------------
 \subsection{RICH}
 \begin{itemize}
   \item general: cherenkov light detectors, spherical and flat mirrors, hybrid photon detectors
@@ -172,6 +231,7 @@ Results are form Bd2JpsiKS!
   \item RICH2: CF4 gas radiator, 15-100GeV/c, reduced polar angle acceptance
   \item HPDs: 
 \end{itemize}
+%%------------------------------------------------------------------------------
 \subsection{Calo}
 \begin{itemize}
   \item trigger tasks: transverse energy hadron/electron/photon candidates for L0
@@ -180,6 +240,7 @@ Results are form Bd2JpsiKS!
   \item design: ECAL (+SPD and PS), HCAL
   \item technical details: create scintillation light, then transmit to a photo-multiplier using fibres
 \end{itemize}
+%%------------------------------------------------------------------------------
 \subsection{Particle identification technique and performance}
 \begin{itemize}
   \item combine info from RICHs, calo, and muon system to identify: e,mu,pi,K,p also gamma, pi0
@@ -193,12 +254,16 @@ Results are form Bd2JpsiKS!
   \item global performance: PV resolution of 10mum transverse to the beam and 60mum along the beam axis; invariant mass resolution between 12 and 25 MeV; lifetime resolution of around 40fs
 \end{itemize}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Trigger}
 two level trigger system: L0 and HLT, L0 from custom made electronics, real-time with bunch crossing-frequency, HLT on software in processor farm
+%%------------------------------------------------------------------------------
 \subsection{L0 trigger}
 from 40MHz to 1MHz, trigger on large transverse momentum pT and energy ET; the hightest ET hadron, electron, photon clusters in the calo; the two highest pT muons in the muon chambers; pile-up system in velo calculates the number of PVs; the caos calculate the total observed energy and estimate the number of tracks based on the number of hits in the SPD; using these global event cuts to reject events which would otherwise be triggered due to large combinatorics
+%%------------------------------------------------------------------------------
 \subsection{High level trigger}
 reduced the 1MHz L0 output rate to 5kHz; software based and flexible, again composed of two parts: HLT1 and HLT2; 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Online system}
 \DAQ, \TFC, and \ECS
 \begin{itemize}
@@ -208,6 +273,7 @@ reduced the 1MHz L0 output rate to 5kHz; software based and flexible, again comp
   \item Clock and synchronisation signals (\eg triggers) are transmitted trough the on-board \TTC interface
 \end{itemize}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Software stack}
 \begin{itemize}
   \item \Gaudi: LHCb software framework (used by ATLAS as well)
@@ -216,5 +282,6 @@ reduced the 1MHz L0 output rate to 5kHz; software based and flexible, again comp
   \item \DaVinci: end-user analysis software
   \item Simulation: \Gauss, \Boole, \Pythia, \EvtGen, \Photos, \Herwigpp, \Sherpa, \GeantFour
 \end{itemize}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Computing grid}
 ...

@@ -51,13 +51,12 @@ extract the beam after a successful run.
   %% trim={<left> <lower> <right> <upper>}
   \includegraphics[width=\textwidth, trim={4.8cm 5.3cm 4.2cm 1.8cm}, clip=true]{private/content/the-lhcb-experiment/figs/cern_acceleator_complex.pdf}
   \caption{
-  The \acs{CERN} accelerator complex \cite{Christiane:1260465}.\todo{Highlight that Fig. is modified} 
-  Starting from the \acs{LINACTwo}, protons are accelerated through the
-  \acs{BOOSTER}, the \acs{PSyn} and finally the \acs{SPS} before being injected
-  into the \LHC. If one or both beams consist of heavy ions, the
-  \acs*{LINACThree} and the \acs*{LEIR} are used to accelerate the ions and inject
-  them into the \acs{PSyn}.
-  }
+  The \acs{CERN} accelerator complex \cite{Christiane:1260465}. Starting from
+  the \acs{LINACTwo}, protons are accelerated through the \acs{BOOSTER}, the
+  \acs{PSyn} and finally the \acs{SPS} before being injected into the \LHC. If
+  one or both beams consist of heavy ions, the \acs*{LINACThree} and the
+  \acs*{LEIR} are used to accelerate the ions and inject them into the
+  \acs{PSyn}. }
   \label{fig:lhcb_experiment:lhc:cern_accelerator_complex}
 \end{figure}
 
@@ -287,11 +286,10 @@ traversing charged particles that is collected and transmitted by fibres to
 
 First, the \SPD selects charged particles, secondly the \PS provides separation
 of charged pions and electrons. Finally the \ECAL measures the energy deposition
-and position of electromagnetic showers.
-
-The \HCAL is a massive $\SI[product-units = power]{8.4 x 6.8}{\metre}$ planar,
-$\SI{500}{\tonne}$ detector, build-up from alternating iron plates and
-scintillating tiles, providing energy measurements of hadronic showers.
+and position of electromagnetic showers. The \HCAL is a massive
+$\SI[product-units = power]{8.4 x 6.8}{\metre}$ planar, $\SI{500}{\tonne}$
+detector, build-up from alternating iron plates and scintillating tiles,
+providing energy measurements of hadronic showers.
 
 %%------------------------------------------------------------------------------
 \subsection{The muon system}
@@ -318,13 +316,52 @@ states, as $\BdToJpsiKS$ considered in the analysis described in this thesis.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Trigger}
-two level trigger system: L0 and HLT, L0 from custom made electronics, real-time with bunch crossing-frequency, HLT on software in processor farm
+\label{sec:lhcb_experiment:trigger}
+
+To cope with up to $\SI{40}{\mega\hertz}$ event rate and high particle
+multiplicities an efficient online event selection (trigger) system is
+necessary. The \LHCb trigger system consists of the hardware based \LZero
+trigger and the \HLT software trigger. The \LZero uses custom made electronics
+located in direct proximity of the readout electronics to provide a fast trigger
+decision in real-time with the bunch crossing-frequency. The \HLT operates
+asynchronously on a processor farm.
+
+\Cref{fig:lhcb_experiment:trigger:overview}\addref{LHCb trigger scheme from speakers bureau} shows an overview of the \LHCb
+trigger schematics. The \LZero is described in
+\cref{sec:lhcb_experiment:trigger:lzero} while more information on the \HLT can
+be found in \cref{sec:lhcb_experiment:trigger:hlt}.
+%
+\begin{figure}[t]
+  \centering
+  %% trim={<left> <lower> <right> <upper>}
+  \includegraphics[width=0.45\textwidth, trim={14.5cm 1.4cm 14.5cm 1.4cm}, clip=true]{private/content/the-lhcb-experiment/figs/lhcb_trigger_overview.pdf}
+  \caption{
+    The \acs{LHCb} trigger scheme.
+  }
+  \label{fig:lhcb_experiment:trigger:overview}
+\end{figure}
+
 %%------------------------------------------------------------------------------
-\subsection{L0 trigger}
-from 40MHz to 1MHz, trigger on large transverse momentum pT and energy ET; the hightest ET hadron, electron, photon clusters in the calo; the two highest pT muons in the muon chambers; pile-up system in velo calculates the number of PVs; the caos calculate the total observed energy and estimate the number of tracks based on the number of hits in the SPD; using these global event cuts to reject events which would otherwise be triggered due to large combinatorics
+\subsection{The \acl*{LZero} hardware trigger}
+\label{sec:lhcb_experiment:trigger:lzero}
+
+The \LZero trigger incorporates information from the \VELO pile-up system, the
+calorimeters, and the muon system to provide a decision $\SI{4}{\micro\second}$
+after the bunch crossing. This reduces the read-out rate from the \LHC bunch
+crossing rate of $\SI{40}{\mega\hertz}$ to $\SI{1}{\mega\hertz}$ at which the
+full detector can be read out. The \LZero triggers on the highest \ET
+calorimeter clusters and the two highest \pT muons in the muon system.
+Additionally global event properties as the number of primary
+\protonproton interactions estimated by the \VELO pile-up system and the number
+of \SPD hits are used to reject events with large combinatorics.
+
+\newpage
 %%------------------------------------------------------------------------------
-\subsection{High level trigger}
+\subsection{The \acl*{HLT}}
+\label{sec:lhcb_experiment:trigger:hlt}
+
 reduced the 1MHz L0 output rate to 5kHz; software based and flexible, again composed of two parts: HLT1 and HLT2; 
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Online system}
 \DAQ, \TFC, and \ECS
@@ -340,7 +377,7 @@ reduced the 1MHz L0 output rate to 5kHz; software based and flexible, again comp
 \begin{itemize}
   \item \Gaudi: LHCb software framework (used by ATLAS as well)
   \item \Brunel: reconstruction
-  \item \Brunel: trigger
+  \item \Moore: trigger
   \item \DaVinci: end-user analysis software
   \item Simulation: \Gauss, \Boole, \Pythia, \EvtGen, \Photos, \Herwigpp, \Sherpa, \GeantFour
 \end{itemize}

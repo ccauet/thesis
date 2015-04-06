@@ -264,13 +264,19 @@ single]{15}{\geq100}{\GeVc}$.
 \subsection{The calorimeter system}
 \label{sec:lhcb_experiment:pid:calo}
 
-\begin{itemize}
-  \item trigger tasks: transverse energy hadron/electron/photon candidates for L0
-  \item PID for electrons, photons, hadrons
-  \item energy and position measurement
-  \item design: ECAL (+SPD and PS), HCAL
-  \item technical details: create scintillation light, then transmit to a photo-multiplier using fibres
-\end{itemize}
+The \LHCb calorimeter system is used for both trigger and \PID. It consists of
+an \ECAL---including the \SPD and the \PS---followed by a \HCAL. All the
+calorimeter sub-systems make use of the scintillation light originating from
+traversing charged particles that is collected and transmitted by fibres to
+\acp{PMT}.
+
+First, the \SPD selects charged particles, secondly the \PS provides separation
+of charged pions and electrons. Finally the \ECAL measures the energy deposition
+and position of electromagnetic showers.
+
+The \HCAL is a massive $\SI[product-units = power]{8.4 x 6.8}{\metre}$ planar,
+$\SI{500}{\tonne}$ detector, build-up from alternating iron plates and
+scintillating tiles, providing energy measurements of hadronic showers.
 
 %%------------------------------------------------------------------------------
 \subsection{Muon}

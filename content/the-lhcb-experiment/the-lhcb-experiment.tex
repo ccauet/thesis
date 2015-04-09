@@ -329,7 +329,9 @@ asynchronously on a processor farm.
 \Cref{fig:lhcb_experiment:trigger:overview}\addref{LHCb trigger scheme from speakers bureau} shows an overview of the \LHCb
 trigger schematics. The \LZero is described in
 \cref{sec:lhcb_experiment:trigger:lzero} while more information on the \HLT can
-be found in \cref{sec:lhcb_experiment:trigger:hlt}.
+be found in \cref{sec:lhcb_experiment:trigger:hlt}. Details on the \LHCb trigger
+system and its performance during \RunOne can be found in
+\Refs~\cite{Aaij:2012me,Albrecht:2013fba}.
 %
 \begin{figure}[t]
   \centering
@@ -348,7 +350,7 @@ be found in \cref{sec:lhcb_experiment:trigger:hlt}.
 The \LZero trigger incorporates information from the \VELO pile-up system, the
 calorimeters, and the muon system to provide a decision in under
 $\SI{4}{\micro\second}$ after the bunch crossing. This reduces the read-out rate
-from the \LHC bunch crossing rate of $\SI{40}{\mega\hertz}$ to
+from the \LHC bunch crossing rate of up to $\SI{40}{\mega\hertz}$ to
 $\SI{1}{\mega\hertz}$ at which the full detector can be read out. The \LZero
 triggers on the highest \ET calorimeter clusters and the two highest \pT muons
 in the muon system. Additionally global event properties as the number of
@@ -360,9 +362,22 @@ number of \SPD hits are used to reject events with large combinatorics.
 \subsection{The \acl*{HLT}}
 \label{sec:lhcb_experiment:trigger:hlt}
 
-To further reduce the data rate a second software trigger stage, the \HLT is used. 
+To further reduce the data rate the \HLT software trigger handles all events
+that pass the \LZero. The \HLT itself is further split into two stages, the
+\acs{HLT}1 and the \acs{HLT}2. The first stage performs a partial event
+reconstruction using track information from the \VELO, the muon system, and the
+main tracker to accept events with high \pT tracks. The second \HLT stage then
+performs a full event reconstruction on the events passed by the \acs{HLT}1.
+Both \HLT stages further reduce the event rate to $\SIrange[range-units =
+single, range-phrase = -]{3}{5}{\kilo\hertz}$ before the data is written to
+permanent storage.
 
-reduced the 1MHz L0 output rate to 5kHz; software based and flexible, again composed of two parts: HLT1 and HLT2; 
+The \HLT excels in is flexibility and performance, especially regarding the
+selection of (di-)muon events. As the \LHC delivers stable physics beams in
+about $\SI{30}{\percent}$ of the time, local storage on the computing nodes is
+used to \enquote{defer} around $\SI{20}{\percent}$ of the \LZero-passed events
+to process them during periods without stable beams \cite{Frank:2014ixa}.
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Online system}

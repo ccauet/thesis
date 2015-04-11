@@ -1,14 +1,94 @@
 %!TEX root = ../../common/main.tex
 
 \chapter{Flavour Tagging}
-General concepts, OS and SS taggers, combination and calibration, performance measures, recent developments...
+\label{ch:flavour_tagging}
+
+The time-dependent measurement of the $\CP$ asymmetry $\CPAsymmetry$ in the
+decay of $\Bd$ and $\Bdbar$ mesons into the $\CP$ eigenstate $\Jpsi\KS$ requires
+the knowledge of the $\B$ meson flavour at production, \ie weather it contained
+a $\bquark$ or a $\bquarkbar$. The method and algorithms used to infer this
+information from all available event properties are named \enquote{flavour
+tagging}.
+
+Each tagging algorithm provides a tag $\tagdecision$ and a probability estimate
+$\mistagestimate$ that the assigned tag is wrong, also called \enquote{mistag}
+estimate. The tag is $\tagdecision=+1$ for an initial $\Bd$, $\tagdecision=-1$
+for an initial $\Bdbar$, and $\tagdecision=0$ if the tagging algorithms were not
+able to determine a decision. The mistag estimate interval is given by
+$[0,0.5[$, where mistags $\mistagestimate^{\prime}>0.5$ are evaluated as
+$\mistagestimate = 1 - \mistagestimate^{\prime}$ and the corresponding tag's
+sign is reversed. If the algorithm is not able to determine a decision, the
+mistag is set $\mistagestimate=0.5$.
+
+The performance of the flavour tagging algorithms can be assigned using control
+samples of $\B$ mesons whose final state determines the $\B$ flavour at decay
+time, \eg $\BuToJpsiK$ where the charge of the kaon allows to infer the charge
+of the $\B$.
+
+Given the numbers of all right tagged $\B$ candidates $\NRtagged$, all wrong
+tagged candidates $\NWtagged$, and all \enquote{untagged} candidates
+$\NUtagged$, the \enquote{tagging efficiency} $\tageff$ can be assigned
+%
+\begin{equation}\label{eq:flavour_tagging:tageff}
+  \tageff = \frac{\NRtagged + \NWtagged}{\NRtagged + \NWtagged + \NUtagged}\eqpd
+\end{equation}
+%
+In addition to the mistag estimate, the true underlying fraction of wrong tagged
+candidates $\mistag$ is given by
+%
+\begin{equation}\label{eq:flavour_tagging:mistag}
+  \mistag = \frac{\NWtagged}{\NRtagged + \NWtagged}\eqpd
+\end{equation}
+%
+The statistically relevant \acl{FoM} for time-dependent measurements of $\CP$
+violation\addref{for $\efftageff$ for CPV measurements}, the \enquote{effective
+tagging efficiency}
+%
+\begin{equation}\label{eq:flavour_tagging:efftageff}
+  \efftageff = \tageff(1 - 2 \mistag)^2 = \tageff \tagdilution^2 \eqcm
+\end{equation}
+%
+represents the fraction of candidates necessary to reach the same statistical
+power if the tagging would be perfect, and hence should be maximized to achieve
+the best performance. The quantity $\tagdilution$ is called \enquote{dilution},
+taking a value of $1$ in case of perfect tagging, and $0$ in case of random
+tagging. As described in \cref{missing} the dilution can be directly translated
+to the amplitude of the measured $\CP$ asymmetry. \todo{Describe effect of dilution on CPV asymmetry}
+
+In the following sections more details of the flavour tagging are provided. A
+short introduction of the utilized algorithms and a comparison to the flavour
+tagging used at lepton colliders is given in \cref{sec:flavour_tagging:lhcb}.
+\Cref{sec:flavour_tagging:os,sec:flavour_tagging:ss} describe the two different
+classes of flavour tagging algorithms used at \LHCb, while the calibration of
+the tagging algorithms outputs is described in
+\cref{sec:flavour_tagging:calibration}. The combination of different algorithm
+responses into a single decision is outlined in
+\cref{sec:flavour_tagging:combination}. Performance numbers are provided in
+\cref{sec:flavour_tagging:performance}, recent developments are discussed in
+\cref{sec:flavour_tagging:developments}, and finally the experimental impact of
+the flavour tagging on the measurement of $\CP$ violation in $\BdToJpsiKS$
+decays is provided in \cref{sec:flavour_tagging:sin2beta}.
+
+More details on the flavour tagging used by \LHCb can be found in
+\cite{Aaij:2012mu}.
+
 \section{Tagging at LHCb}
+\label{sec:flavour_tagging:lhcb}
+
+
+
 Tagging at a hadron collider, comparison to e+e- machines, Belle II
+
 \section{OS FT}
+\label{sec:flavour_tagging:os}
 OS algorithms: kaon, muon, electron, vertex charge, charm (+ MVA versions)
+
 \section{SS FT}
+\label{sec:flavour_tagging:ss}
 SS algorithms: kaon/pion/proton
+
 \section{Calibration}
+\label{sec:flavour_tagging:calibration}
 \begin{itemize}
   \item calibration method
   \item tagging correlations
@@ -17,11 +97,21 @@ SS algorithms: kaon/pion/proton
   \item determination of systematic uncertainties
 \end{itemize}
 \subsection{OS calibration using Bu2JpsiK}
+\label{sec:flavour_tagging:calibration:os}
 \subsection{SS calibration using Bd2JpsiKst}
+\label{sec:flavour_tagging:calibration:ss}
+
 \section{Combination}
+\label{sec:flavour_tagging:combination}
 Combination of OS and SS tagging, FT correlations
+
 \section{Performance}
+\label{sec:flavour_tagging:performance}
 Performance of the FT algorithms, effect on dilution of asymmetry
 influence on measuring sin2beta, Dilution
+
 \section{Recent developments}
+\label{sec:flavour_tagging:developments}
+
 \section{Influence on the measurement of sin2beta}
+\label{sec:flavour_tagging:sin2beta}

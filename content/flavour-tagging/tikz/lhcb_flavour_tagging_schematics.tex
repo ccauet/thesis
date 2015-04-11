@@ -1,0 +1,286 @@
+%!TEX root = ../../../common/main.tex
+
+% Colours 
+\definecolor{fcdOrnA}{HTML}{331605}
+\definecolor{fcdOrnB}{HTML}{662C0A}
+\definecolor{fcdOrnC}{HTML}{99420F}
+\definecolor{fcdOrnD}{HTML}{CC5814}
+\definecolor{fcdOrnE}{HTML}{FF6E19}
+\definecolor{fcdOrnF}{HTML}{FF975B}
+\definecolor{fcdOrnG}{HTML}{FFAC7C}
+\definecolor{fcdOrnH}{HTML}{FFC19C}
+\definecolor{fcdOrnI}{HTML}{FFD6BD}
+\definecolor{fcdOrnJ}{HTML}{FFEADE}
+\definecolor{fcdBluA}{HTML}{052A33}
+\definecolor{fcdBluB}{HTML}{0A5466}
+\definecolor{fcdBluC}{HTML}{0F7E99}
+\definecolor{fcdBluD}{HTML}{14A8CC}
+\definecolor{fcdBluE}{HTML}{19D2FF}
+\definecolor{fcdBluF}{HTML}{5BDFFF}
+\definecolor{fcdBluG}{HTML}{7CE5FF}
+\definecolor{fcdBluH}{HTML}{9CECFF}
+\definecolor{fcdBluI}{HTML}{9CECFF}
+\definecolor{fcdBluJ}{HTML}{DEF9FF}
+\definecolor{fcdGrnA}{HTML}{243304}
+\definecolor{fcdGrnB}{HTML}{476608}
+\definecolor{fcdGrnC}{HTML}{6B990D}
+\definecolor{fcdGrnD}{HTML}{A0E02D}
+\definecolor{fcdGrnE}{HTML}{B2FF15}
+\definecolor{fcdGrnF}{HTML}{C8FF58}
+\definecolor{fcdGrnG}{HTML}{D3FF79}
+\definecolor{fcdGrnH}{HTML}{DEFF9B}
+\definecolor{fcdGrnI}{HTML}{E9FFBC}
+\definecolor{fcdGrnJ}{HTML}{F4FFDE}
+\definecolor{fcdVltA}{HTML}{310433}
+\definecolor{fcdVltB}{HTML}{620866}
+\definecolor{fcdVltC}{HTML}{930D99}
+\definecolor{fcdVltD}{HTML}{C411CC}
+\definecolor{fcdVltE}{HTML}{F514FF}
+\definecolor{fcdVltF}{HTML}{F858FF}
+\definecolor{fcdVltG}{HTML}{F979FF}
+\definecolor{fcdVltH}{HTML}{FB9BFF}
+\definecolor{fcdVltI}{HTML}{FCBCFF}
+\definecolor{fcdVltJ}{HTML}{FEDDFF}
+
+\definecolor{fcdGrayA}{HTML}{111111}
+\definecolor{fcdGrayB}{HTML}{222222}
+\definecolor{fcdGrayC}{HTML}{333333}
+\definecolor{fcdGrayD}{HTML}{444444}
+\definecolor{fcdGrayE}{HTML}{555555}
+\definecolor{fcdGrayF}{HTML}{666666}
+\definecolor{fcdGrayG}{HTML}{777777}
+\definecolor{fcdGrayH}{HTML}{888888}
+\definecolor{fcdGrayI}{HTML}{999999}
+\definecolor{fcdGrayJ}{HTML}{AAAAAA}
+\definecolor{fcdGrayK}{HTML}{BBBBBB}
+\definecolor{fcdGrayL}{HTML}{CCCCCC}
+\definecolor{fcdGrayM}{HTML}{DDDDDD}
+\definecolor{fcdGrayN}{HTML}{EEEEEE}
+
+\definecolor{fcdTropiteal}    {HTML}{00A8C6}
+\definecolor{fcdTealDrop}     {HTML}{40C0CB}
+\definecolor{fcdWhiteTrash}   {HTML}{F9F2E7}
+\definecolor{fcdAtomicBikini} {HTML}{AEE239}
+\definecolor{fcdFeebleWeek}   {HTML}{8FBE00}
+
+
+
+
+
+\colorlet{ClrTxt}{black}
+\colorlet{ClrTxtVeryDarkGray}{fcdGrayE}
+\colorlet{ClrTxtDarkGray}{fcdGrayJ}
+\colorlet{ClrVtxGray}{fcdGrayM}
+
+\colorlet{ClrSigQuark}{fcdTealDrop}
+\colorlet{ClrSigMeson}{fcdTropiteal}
+\colorlet{ClrSigArrow}{fcdTropiteal}
+
+\colorlet{ClrTagQuark}{fcdAtomicBikini}
+\colorlet{ClrTagMeson}{fcdFeebleWeek}
+\colorlet{ClrTagArrow}{fcdFeebleWeek}
+
+\begin{tikzpicture}[
+  scale=1, 
+  >=stealth',
+  font=\small,
+  quark_sig/.style={
+    align=center, 
+    minimum size=3ex,
+    circle,
+    color=ClrSigQuark,
+    fill=ClrSigQuark,
+    text=ClrTxt,
+    draw, 
+    thick,
+    inner sep=0pt,
+    outer sep=0pt,
+    node distance=0ex
+  },
+  quark_tag/.style={
+    align=center, 
+    minimum size=3ex,
+    circle,
+    color=ClrTagQuark,
+    fill=ClrTagQuark,
+    text=ClrTxt,
+    draw, 
+    thick,
+    inner sep=0pt,
+    outer sep=0pt,
+    node distance=0ex
+  },
+  meson_sig/.style={
+    draw, 
+    align=center, 
+    minimum size=4.5ex,
+    circle,
+    color=ClrSigMeson,
+    fill=ClrSigMeson,
+    text=ClrTxt,
+    thick,
+    inner sep=0pt,
+    outer sep=1pt,
+    node distance=0ex
+  },
+  meson_tag/.style={
+    draw, 
+    align=center, 
+    minimum size=4.5ex,
+    circle,
+    color=ClrTagMeson,
+    fill=ClrTagMeson,
+    text=ClrTxt,
+    thick,
+    inner sep=0pt,
+    outer sep=1pt,
+    node distance=0ex
+  },
+  meson_comb/.style={
+    shape=ellipse, 
+    draw,
+    fill,
+    very thick,
+    inner sep=0pt,
+    outer sep=0pt,
+    minimum width=8ex,
+    minimum height=5ex},
+  vertex/.style={
+    shape=ellipse,
+    draw,
+    inner sep=1ex,
+    outer sep=0pt,
+    minimum width=10ex,
+    minimum height=10ex,
+    color=ClrVtxGray,
+    fill=ClrVtxGray,
+    text=ClrTxt,
+    node distance=1ex
+  },
+  vertex_label/.style={
+    inner sep=0pt,
+    outer sep=0pt,
+    text=ClrTxtDarkGray,
+    node distance=1ex,
+    font=\sffamily\small
+  },
+  tagger_label/.style={
+    inner sep=0pt,
+    outer sep=0pt,
+    text=ClrTxtVeryDarkGray,
+    node distance=1ex,
+    font=\sffamily\small    
+  },
+  arrow_sig/.style={
+    ->,
+    very thick,
+    color=ClrSigArrow
+  },
+  arrow_tag/.style={
+    ->,
+    very thick,
+    color=ClrTagArrow
+  }
+]
+
+%\draw[help lines] (-1,-5) grid (11,5);
+
+\draw[dashed,color=fcdGrayE] (0,0) -- (12,0);
+\node[text width=2.5cm,text=ClrTxtDarkGray,font=\sffamily\small] (SST) at (10.5,+0.3) {\hfill same side};
+\node[text width=2.5cm,text=ClrTxtDarkGray,font=\sffamily\small] (OST) at (10.5,-0.3) {\hfill opposite side};
+
+
+\node[draw,circle,fill,color=ClrSigQuark,inner sep=0pt,minimum size=8pt] 
+  (coll) at (0,0) {};
+
+\draw[<-,very thick] (coll) -- (+1,0);
+\draw[->,very thick] (-1,0) -- (coll);
+
+\begin{pgfonlayer}{foreground}
+  
+  % bbbar
+  \node[quark_sig] (qrk_bbar) at (0.2,+0.8) {$\bquarkbar$};
+  \node[quark_sig] (qrk_b) at (0.2,-0.8) {$\bquark$};
+  
+  \path (qrk_bbar) 
+        to[circle connection bar switch color=from (ClrSigQuark) to (ClrSigQuark)] 
+        (coll);
+  \path (qrk_b) 
+        to[circle connection bar switch color=from (ClrSigQuark) to (ClrSigQuark)] 
+        (coll);
+  
+  % Signal decay
+  \node[meson_sig,color=ClrSigMeson,fill=ClrSigMeson,text=ClrTxt] (SigJpsi) at (7.5,+2.25) {$\Jpsi$}  ;
+  \node[meson_sig,color=ClrSigMeson,fill=ClrSigMeson,text=ClrTxt] (SigKS) [below=of SigJpsi] {$\KS$}  ;
+  
+  % SS tagging
+  \path (qrk_bbar) ++(15:3ex) node (qrk_d) [quark_tag] {$\dquark$};
+  
+  \node[quark_tag] (qrk_dbar) at (0.8,+2.2) {$\dquarkbar$};
+  
+  \node[draw,circle,fill,color=ClrTagQuark,inner sep=0pt,minimum size=4pt] 
+    (vacuumexc) at ([xshift=-2ex] $(qrk_dbar)!0.5!(qrk_d)$) {};
+  
+  \path (qrk_d) 
+        to[circle connection bar switch color=from (ClrTagQuark) to (ClrTagQuark)] 
+        (vacuumexc);
+  \path (qrk_dbar) 
+        to[circle connection bar switch color=from (ClrTagQuark) to (ClrTagQuark)] 
+        (vacuumexc);  
+  \path (qrk_dbar) ++(165:3ex) node (qrk_u)    [quark_tag] {$\uquark$};
+
+  \node[meson_tag] (SSpip) at (3.3,+2.7) {$\pip$}; 
+  
+
+  % OS tagging
+  \path (qrk_b)    ++(-15:3ex) node (qrk_xbar) [quark_tag] {$\quarkbar$};  
+
+  % Tagging particles 
+  \node[meson_tag] (OSlepton) at (9.5,-2.25) {$\lepm$};
+  \node[meson_tag] (OSkaon)   at (9.5,-1)    {$\Kp$};
+  
+\end{pgfonlayer} 
+  
+  
+\node[meson_comb,rotate=+15,color=ClrSigMeson,text=ClrTxt] (SigBz) at ($(qrk_bbar)!0.5!(qrk_d)$) {  }; 
+\node[meson_comb,rotate=-15,color=ClrTagMeson,text=ClrTxt] (Hb) at ($(qrk_b)!0.5!(qrk_xbar)$) {}; 
+\node[meson_comb,rotate=-15,color=ClrTagMeson,text=ClrTxt] (pip_SS) at ($(qrk_dbar)!0.5!(qrk_u)$)   {}; 
+
+  
+\begin{pgfonlayer}{background}
+  \node[vertex,fit=(SigBz)(Hb)(pip_SS),minimum width=16ex] (PV) {};
+  \node[vertex_label,align=center] (PV_label) [above=of PV] {PV};
+  
+  \node[vertex,fit=(SigJpsi)(SigKS)   ,minimum width=10ex] (SigSV) {};
+  \node[vertex_label,align=center] (SigSV_label) [above=of SigSV] {SV};
+  
+  \node[vertex,minimum width=11ex,minimum height=9ex,align=left] (OS_SV) at (4.5,-1.75) {$\bquark \to \cquark$\\  $\bquark \to X \lepm$};
+  \node[vertex_label,align=center] (OS_SV_label) [above=of OS_SV] {SV};
+  
+  
+  \node[vertex,minimum width=9ex,minimum height=7ex,align=center] (OS_TV) at (7.5,-1.25) {$\cquark \to \squark$};
+\end{pgfonlayer}
+
+
+\begin{pgfonlayer}{foreground}
+  \draw[arrow_sig] (SigBz)  -- node (Bz_label) [above] {$\Bd$} ([xshift=+4pt] SigSV.west);
+  \draw[arrow_sig] let \p1 =(SigJpsi.east) in (\x1-1,\y1+2)  -- (\x1+50,\y1+5);
+  \draw[arrow_sig] let \p1 =(SigJpsi.east) in (\x1-1,\y1-2)  -- (\x1+50,\y1-5);
+  \draw[arrow_sig] let \p1 =(SigKS.east)   in (\x1-1,\y1+2)  -- (\x1+50,\y1+5);
+  \draw[arrow_sig] let \p1 =(SigKS.east)   in (\x1-1,\y1-2)  -- (\x1+50,\y1-5);
+    
+  \draw[arrow_tag] (Hb)     -- node (Hb_label) [above] {$\hb$}  ([xshift=+4pt] OS_SV.west);
+  \draw[arrow_tag] (OS_SV)  -- ([xshift=+4pt] OS_TV.west);
+  \draw[arrow_tag] (OS_SV)  -- ([xshift=+0pt] OSlepton.west);
+  \draw[arrow_tag] (OS_TV)  -- ([xshift=+0pt] OSkaon.west);
+  \draw[arrow_tag] (pip_SS) -- ([xshift=+0pt] SSpip.west);
+
+
+  \node[tagger_label,align=left] (SSpip_label) [right=of SSpip] {SS pion};
+  \node[tagger_label,align=left] (OSlepton_label) [right=of OSlepton] {OS muon\\ OS electron};
+  \node[tagger_label,align=left] (OSkaon_label)   [right=of OSkaon] {OS kaon};
+  \node[tagger_label,align=center] (OSVtcCh_label) [below=of OS_SV] {OS vertex charge};
+
+\end{pgfonlayer}
+
+\end{tikzpicture}

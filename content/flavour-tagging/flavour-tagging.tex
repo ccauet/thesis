@@ -22,8 +22,8 @@ mistag is set $\mistagestimate=0.5$.
 
 The performance of the flavour tagging algorithms can be assigned using control
 samples of $\B$ mesons whose final state determines the $\B$ flavour at decay
-time, \eg $\BuToJpsiK$ where the charge of the kaon allows to infer the charge
-of the $\B$.
+time (\ie are \enquote{flavour specific}), \eg $\BuToJpsiK$ where the charge of
+the kaon allows to infer the charge of the $\B$.
 
 Given the numbers of all right tagged $\B$ candidates $\NRtagged$, all wrong
 tagged candidates $\NWtagged$, and all \enquote{untagged} candidates
@@ -97,11 +97,37 @@ algorithms. \cite{wishahi:2013jt}}
 \label{fig:flavour_tagging:lhcb:schematics}
 \end{figure}
 
+\subsection*{Comparison to \BFactories}
+\label{sec:flavour_tagging:lhcb:b_factories}
+Caused by the different nature of the experimental setup the tagging method used
+at \LHCb differs from methods used at the \BFactories. As described in
+\cref{sec:lhcb_experiment:detector} the $\bquark$ hadron production is dominated
+by gluon-gluon fusion over a large range of $q^2$ in contrast to the production
+at the $\YFourS$ $\bbbar$ resonance as it is the case at the \BFactories.
+%
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{private/content/flavour-tagging/figs/b_factory_basic_principles}
+\caption{Illustration of the measurement of \sintwobeta as conducted by the
+\BFactories. \cite{Bevan:2014iga}}
+\label{fig:flavour_tagging:lhcb:b_factory_basic_principles}
+\end{figure}
 
-
+\Cref{fig:flavour_tagging:lhcb:b_factory_basic_principles} illustrates the basic
+principles of a \CP violation measurement at the \BFactories. The produced
+$\Bd\Bdbar$ pair's wave function is in a $P$-wave entangled state, until one of
+the mesons decays. From this point in space time ($t_1$) the second $\B$ mesons
+propagates further through the detector, mixes to its antimatter state, and
+finally decays at $t_2$. The \CP asymmetry $\CPAsymmetry$ will therefore be a
+function of the decay time difference $\Delta t$. This has two implications:
+First, the decay time difference will always be computed relative to the
+\enquote{tagging} $\B$ meson decay and thus might be negative if the signal $\B$
+meson decays first. Secondly, if the tagging $\B$ meson decays into a
+flavour-specific final state, this specifies the signal $\B$ mesons flavour at
+$\Delta t=0$.
 
 \newpage
-Tagging at a hadron collider, comparison to e+e- machines, Belle II
+Tagging at a hadron collider, comparison to e+e- machines, \Babar, \Belle, Belle II
 
 \section{OS FT}
 \label{sec:flavour_tagging:os}

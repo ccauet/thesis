@@ -53,7 +53,7 @@ power if the tagging would be perfect, and hence should be maximized to achieve
 the best performance. The quantity $\tagdilution$ is called \enquote{dilution},
 taking a value of $1$ in case of perfect tagging, and $0$ in case of random
 tagging. As described in \cref{missing} the dilution can be directly translated
-to the amplitude of the measured $\CP$ asymmetry. \todo{Describe effect of dilution on CPV asymmetry}
+to the amplitude of the measured $\CP$ asymmetry. \missing{Effect of dilution on CPV asymmetry}
 
 In the following sections more details of the flavour tagging are provided. A
 short introduction of the utilized algorithms and a comparison to the flavour
@@ -97,13 +97,15 @@ algorithms. \cite{wishahi:2013jt}}
 \label{fig:flavour_tagging:lhcb:schematics}
 \end{figure}
 
-\subsection*{Comparison to \BFactories}
+\subsection*{Flavour tagging at \Babar and \Belle}
 \label{sec:flavour_tagging:lhcb:b_factories}
 Caused by the different nature of the experimental setup the tagging method used
 at \LHCb differs from methods used at the \BFactories. As described in
 \cref{sec:lhcb_experiment:detector} the $\bquark$ hadron production is dominated
 by gluon-gluon fusion over a large range of $q^2$ in contrast to the production
-at the $\YFourS$ $\bbbar$ resonance as it is the case at the \BFactories.
+at the $\YFourS$ $\bbbar$ resonance as it is the case at the \BFactories. The
+following section gives a résumé of the flavour tagging methods employed by the
+\Babar and \Belle collaborations outlined in \Ref~\cite[][Ch. 8]{Bevan:2014iga}.
 %
 \begin{figure}
 \centering
@@ -126,8 +128,38 @@ meson decays first. Secondly, if the tagging $\B$ meson decays into a
 flavour-specific final state, this specifies the signal $\B$ mesons flavour at
 $\Delta t=0$.
 
-\newpage
-Tagging at a hadron collider, comparison to e+e- machines, \Babar, \Belle, Belle II
+As a result of the production mechanism, the fully reconstructed signal decay
+leaves all remaining tracks to originate from the tagging $\B$. This allows to
+classify the decay of the tagging meson according to the signature of the final
+state particles. Specialised taggers then identify decays based on their
+specific signature. In a second stage, all results provided by the single
+taggers are combined into a final tagging decision. 
+
+The lepton taggers deduce a tag from the charge of electrons and muons from
+$\bquark \to \cquark \lepm \neutrinobar$ transitions in semileptonic $\B$
+decays. Likewise, second order transitions from $\bquark \to \Wm \cquark ( \to
+\squark \lepp \neutrino )$ can be used, but has to be handled differently as
+their charge is opposite compared to primary leptons. Charged kaon candidates
+from the $\bquark \to \cquark \to \squark$ decay chain reflect the charge of the
+tagging meson. Here as well, kaons from second order transitions carry the
+opposite charge. Charged pions from charm decays work as tagging particles
+either directly or in events with both a pion and a charged kaon the correlation
+of the particles can be utilised to improve the tag decision. Selecting high
+momentum particles, \eg fast pions from $\Bdbar \to \Dstarp \pim$, is on its own
+another source of tagging information and might additionally be correlated with
+slow particles to enhance the tagging result. Finally the flavour of $\Lambda$
+baryons from decays if the tagging $\B$ meson can be exploited.
+
+The \Babar experiment uses \acp{ANN} for each single tagger to provide several
+intermediate tagging decisions that are subsequently combined using another \ANN
+to a joined tagging decision. The effective tagging efficiency of the final
+\Babar tagging algorithm is estimated on data to be $\efftageff = \SI{33.1 +-
+0.3}{\percent}$. In \Belle analyses the flavour tagging approach is similar.
+Instead of \acp{ANN} multi-dimensional look-up tables are used. At first,
+information from charged tracks are looked-up to sort them into the signature
+categories. Next, the received results are used on an event-level to provide the
+final tagging decision. Using this approach an effective tagging efficiency of
+$\efftageff = \SI{30.1 +- 0.4}{\percent}$ is achieved.
 
 \section{OS FT}
 \label{sec:flavour_tagging:os}

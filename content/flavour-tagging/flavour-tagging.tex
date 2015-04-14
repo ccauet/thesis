@@ -72,7 +72,7 @@ decays is provided in \cref{sec:flavour_tagging:sin2beta}.
 More details on the flavour tagging used by \LHCb can be found in
 \cite{Aaij:2012mu}.
 
-\section{Tagging at LHCb}
+\section{Flavour tagging algorithms}
 \label{sec:flavour_tagging:lhcb}
 
 Several tagging algorithms, each specialized on different characteristics of the
@@ -87,7 +87,10 @@ $\bquark$ hadron produced together with each reconstructed signal $\B$ meson and
 thereby infer its initial flavour. \Cref{fig:flavour_tagging:lhcb:schematics}
 gives an overview of the tagging algorithms and
 \cref{sec:flavour_tagging:os,sec:flavour_tagging:ss} contain a more detailed
-discussion of the \OS and \SS tagging algorithms.
+discussion of the \OS and \SS tagging algorithms. Recent developments are
+discussed in \cref{sec:flavour_tagging:developments}. Before coming to the
+detailed description of the \LHCb flavour tagging algorithms, a summary of the
+flavour tagging methods developed at \Babar and \Belle is given.
 
 \begin{figure}
 \centering
@@ -118,7 +121,7 @@ following section gives a résumé of the flavour tagging methods employed by th
 \Cref{fig:flavour_tagging:lhcb:b_factory_basic_principles} illustrates the basic
 principles of a \CP violation measurement at the \BFactories. The produced
 $\Bd\Bdbar$ pair's wave function is in a $P$-wave entangled state, until one of
-the mesons decays. From this point in space time ($t_1$) the second $\B$ mesons
+the mesons decays. From this point in space time ($t_1$) the second $\B$ meson
 propagates further through the detector, mixes to its antimatter state, and
 finally decays at $t_2$. The \CP asymmetry $\CPAsymmetry$ will therefore be a
 function of the decay time difference $\Delta t$. This has two implications:
@@ -143,16 +146,17 @@ their charge is opposite compared to primary leptons. Charged kaon candidates
 from the $\bquark \to \cquark \to \squark$ decay chain reflect the charge of the
 tagging meson. Here as well, kaons from second order transitions carry the
 opposite charge. Charged pions from charm decays work as tagging particles
-either directly or in events with both a pion and a charged kaon the correlation
-of the particles can be utilised to improve the tag decision. Selecting high
-momentum particles, \eg fast pions from $\Bdbar \to \Dstarp \pim$, is on its own
-another source of tagging information and might additionally be correlated with
-slow particles to enhance the tagging result. Finally the flavour of $\Lambda$
-baryons from decays if the tagging $\B$ meson can be exploited.
+either directly or in events with both a pion and a charged kaon, the
+correlation of the particles can be utilised to improve the tag decision.
+Selecting high momentum particles, \eg fast pions from $\Bdbar \to \Dstarp
+\pim$, is on its own another source of tagging information and might
+additionally be correlated with slow particles to enhance the tagging result.
+Finally the flavour of $\Lambda$ baryons from decays of the tagging $\B$ meson
+can be exploited.
 
 The \Babar experiment uses \acp{ANN} for each single tagger to provide several
 intermediate tagging decisions that are subsequently combined using another \ANN
-to a joined tagging decision. The effective tagging efficiency of the final
+to gain a joined tagging decision. The effective tagging efficiency of the final
 \Babar tagging algorithm is estimated on data to be $\efftageff = \SI{33.1 +-
 0.3}{\percent}$. In \Belle analyses the flavour tagging approach is similar.
 Instead of \acp{ANN} multi-dimensional look-up tables are used. At first,
@@ -161,11 +165,36 @@ categories. Next, the received results are used on an event-level to provide the
 final tagging decision. Using this approach an effective tagging efficiency of
 $\efftageff = \SI{30.1 +- 0.4}{\percent}$ is achieved.
 
-\section{OS FT}
+\subsection{\Acl{OS} algorithms}
 \label{sec:flavour_tagging:os}
-OS algorithms: kaon, muon, electron, vertex charge, charm (+ MVA versions)
+The \OS algorithms all infer the tagging decision from the quark flavour of the
+$\bquark$ hadron produced in association with the signal $\B$ meson. If for
+example a $\Bu$ decays into the $\Jpsi\Kp$ final state trough a $\bquarkbar \to
+\Wm (\to \cquark \squarkbar) \cquarkbar$ transition, it can unambiguously stated
+by looking at the kaon charge that the $\bquark$ hadron produced along with the
+$\Bu$ contained a $\bquark$ quark. The tag identification for events with this
+signature fall into the scope of the \OSK tagger.
 
-\section{SS FT}
+In total four distinct \OS taggers, each developed for a special \OS decay
+signature, provide tagging information. Besides the \OSK tagger, the \OSe and
+the \OSm select leptons coming from the primary $\bquark \to X \lepm$ decay to
+use their charge as an information carrier of the $\B$ flavour. Finally, the
+\OSvtx tagger performs an inclusive reconstruction of the \OS \SV to then
+compute a weighted sum of all particle track charges that originate from the
+\SV. 
+ 
+\subsubsection{The \acl{OSK} tagger}
+\label{sec:flavour_tagging:os:kaon}
+
+\subsubsection{The \acl{OSe} and the \acl{OSm} taggers}
+\label{sec:flavour_tagging:os:lepton}
+
+\subsubsection{The \acl{OSvtx} tagger}
+\label{sec:flavour_tagging:os:vertex}
+
+\newpage
+
+\subsection{\Acl{SS} algorithms}
 \label{sec:flavour_tagging:ss}
 SS algorithms: kaon/pion/proton
 

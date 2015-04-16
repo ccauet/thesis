@@ -5,7 +5,7 @@
 
 The time-dependent measurement of the $\CP$ asymmetry $\CPAsymmetry$ in the
 decay of $\Bd$ and $\Bdbar$ mesons into the $\CP$ eigenstate $\Jpsi\KS$ requires
-the knowledge of the $\B$ meson flavour at production, \ie weather it contained
+the knowledge of the \Bmeson flavour at production, \ie weather it contained
 a $\bquark$ or a $\bquarkbar$. The method and algorithms used to infer this
 information from all available event properties are named \enquote{flavour
 tagging}.
@@ -21,7 +21,7 @@ sign is reversed. If the algorithm is not able to determine a decision, the
 mistag is set $\mistagestimate=0.5$.
 
 The performance of the flavour tagging algorithms can be assigned using control
-samples of $\B$ mesons whose final state determines the $\B$ flavour at decay
+samples of \Bmesons whose final state determines the $\B$ flavour at decay
 time (\ie are \enquote{flavour specific}), \eg $\BuToJpsiK$ where the charge of
 the kaon allows to infer the charge of the $\B$.
 
@@ -76,14 +76,14 @@ More details on the flavour tagging used by \LHCb can be found in
 \label{sec:flavour_tagging:lhcb}
 
 Several tagging algorithms, each specialized on different characteristics of the
-underlying event, are used in order to determine the $\B$ meson flavour at
+underlying event, are used in order to determine the \Bmeson flavour at
 production. The algorithms can be classified into two types: the \SS tagging and
 \OS tagging algorithms, also called \SS/\OS taggers. The \SS taggers infer the
-production flavour of the signal $\B$ meson by identifying charged candidates
+production flavour of the signal \Bmeson by identifying charged candidates
 that have a high chance of being remnants of its hadronisation process. On the
-other hand, the \OS taggers exploit the dominant production of $\B$ mesons
+other hand, the \OS taggers exploit the dominant production of \Bmesons
 through $\bbbar$ quark pair production, allowing to partially reconstruct the
-$\bquark$ hadron produced together with each reconstructed signal $\B$ meson and
+\bhadron produced together with each reconstructed signal \Bmeson and
 thereby infer its initial flavour. \Cref{fig:flavour_tagging:lhcb:schematics}
 gives an overview of the tagging algorithms used on the \acl{OS} and \acl{SS}.
 
@@ -117,7 +117,7 @@ algorithms. \cite{wishahi:2013jt}}
 \label{sec:flavour_tagging:lhcb:b_factories}
 Caused by the different nature of the experimental setup the tagging method used
 at \LHCb differs from methods used at the \BFactories. As described in
-\cref{sec:lhcb_experiment:detector} the $\bquark$ hadron production is dominated
+\cref{sec:lhcb_experiment:detector} the \bhadron production is dominated
 by gluon-gluon fusion over a large range of $q^2$ in contrast to the production
 at the $\YFourS$ $\bbbar$ resonance as it is the case at the \BFactories. The
 following section gives a résumé of the flavour tagging methods employed by the
@@ -139,9 +139,9 @@ propagates further through the detector, mixes to its antimatter state, and
 finally decays at $t_2$. The \CP asymmetry $\CPAsymmetry$ will therefore be a
 function of the decay time difference $\Delta t$. This has two implications:
 First, the decay time difference will always be computed relative to the
-\enquote{tagging} $\B$ meson decay and thus might be negative if the signal $\B$
-meson decays first. Secondly, if the tagging $\B$ meson decays into a
-flavour-specific final state, this specifies the signal $\B$ mesons flavour at
+\enquote{tagging} \Bmeson decay and thus might be negative if the signal $\B$
+meson decays first. Secondly, if the tagging \Bmeson decays into a
+flavour-specific final state, this specifies the signal \Bmeson's flavour at
 $\Delta t=0$.
 
 As a result of the production mechanism, the fully reconstructed signal decay
@@ -181,12 +181,13 @@ $\efftageff = \SI{30.1 +- 0.4}{\percent}$ is achieved.
 \subsection{\Acl{OS} algorithms}
 \label{sec:flavour_tagging:os}
 The \OS algorithms all infer the tagging decision from the quark flavour of the
-$\bquark$ hadron produced in association with the signal $\B$ meson. If for
+\bhadron produced in association with the signal \Bmeson. If for
 example a $\Bu$ decays into the $\Jpsi\Kp$ final state trough a $\bquarkbar \to
 \Wm (\to \cquark \squarkbar) \cquarkbar$ transition, it can unambiguously stated
-by looking at the kaon charge that the $\bquark$ hadron produced along with the
-$\Bu$ contained a $\bquark$ quark. The tag identification for events with this
+by looking at the kaon charge that the \bhadron produced along with the $\Bu$
+contained a $\bquark$ quark. The tag identification for events with this
 signature fall into the scope of the \OSK tagger.
+\important{Kaon tagging transition is wrong!}
 
 In total four distinct \OS taggers, each developed for a special \OS decay
 signature, provide tagging information. Besides the \OSK tagger, the \OSe and
@@ -194,16 +195,133 @@ the \OSm select leptons coming from the primary $\bquark \to X \lepm$ decay to
 use their charge as an information carrier of the $\B$ flavour. Finally, the
 \OSvtx tagger performs an inclusive reconstruction of the \OS \SV to then
 compute a weighted sum of all particle track charges that originate from the
-\SV. 
+\SV. In the following the selection criteria and algorithms of the \OS taggers
+are briefly described.
+
+\missing{Intrinsic mistag due to neutral B meson oscillation}
  
 \subsubsection{The \acl{OSK} tagger}
 \label{sec:flavour_tagging:os:kaon}
+The kaon tagger exploits the charge of kaons stemming from $\bquark \to
+\cquark \to \squark$ decays of opposite side \bhadrons. As the charge of the
+kaon is the opposite of the ancestor's charge, the kaon always carries the same
+charge as the signal \Bmeson.
+
+To reduce background contributions of prompt kaons and kaons from primary
+$\bquarkbar \to \Wm (\to \cquark \squarkbar) \cquarkbar$ transitions, in which
+case the kaon carries the \enquote{wrong} charge, several selection criteria are
+applied. Cuts on the \pT, the \IP, the \IP/$\sigma_\text{\IP}$, and the track
+fit $\chi^2/\ndf$ are performed. \PID requirements on the \DLLKpi, the \DLLppi,
+and \DLLmupi suppress mis-identified particles. Clone tracks are removed and
+kaon candidates with originate from other \acp{PV} are rejected using a cut on
+the \IP/$\sigma_\text{\IP}$ with respect to any \PV. \cref{tab:} lists all
+applied cuts.
+\missing{Table with cut values}
+
+K charge is the same as signal B (opposite if K not from b->c->s but from bcW->s)
+K pT>0.5, IP<1.25mm, IP/error>3.35, track chi2/ndf<2.75
+suppress prompt kaons
+PID DLLkπ > 6
+(DLLkπ - DLLpπ) > -4
+remove clone tracks (Kullback-Liebler criterion)
+additional pile-up PV cut of IP/sigma > 4.5
+if more than one candidate, highest pT
+only Probkaon>0.54
+How to suppress bcW->s kaons?
 
 \subsubsection{The \acl{OSe} and the \acl{OSm} taggers}
 \label{sec:flavour_tagging:os:lepton}
+leptons from bcW->leptons
+lepton charge, same as signal b
+muons:
+DDLmuπ>1
+track chi2/ndf<3.2
+pT>1.2GeV to reduce b->c->mu secondary muons
+reduce fake muons "non shared hits"
+clone tracks
+
+electrons:
+DLLeπ>4
+HCAL acceptance
+pT>1.2GeV
+max ionisation charge in VELO (reduce background due to photon conversion close to interaction point)
+partial energy E in emCalo
+p from tracking system
+==> E/p>0.8
+
+highest pT lepton
 
 \subsubsection{The \acl{OSvtx} tagger}
 \label{sec:flavour_tagging:os:vertex}
+inclusive reco of OS SV:
+
+Summary:
+2-track seed from all possible track candidate pairs
+geometric and kinematical cuts, then add more tracks
+weighted charge of SV
+cuts on SV to optimize epseff
+
+Detailed:
+2-track seed track selection:
+one of the tracks must be a long track w/ track fit chi2/ndf<2.5
+error on IP on PV < 1 (no badly reconstructed tracks)
+no tracks from PV: IP on PV/error in range 2.5-100
+IP on PV < 3mm   ???
+pT > 0.15GeV
+at least one track pT > 0.3GeV
+the two tracks must be separated in phi by more than 1mrad
+
+vertex fit for track pairs:
+fit succeeds and chi2/ndf<10 consider pair V as seed
+
+seed requirements:
+forward direction from PV (z>0)
+detector acceptance
+r-distance       ???
+seed invariant mass > 0.2 GeV
+reject if invariant mass = KS mass
+
+likelihood for all possible seeds based on:
+vertex fit chi2/ndf
+minimum pT
+maximum PV IP 
+minimum PV IP/error of both tracks
+delta phi 
+r-distance
+angle between seed direction wrt the PV
+
+seed with maximum likelihood
+if likelihood is > 0.6
+
+algorithm is nearly 50percent efficient
+60percent of seed track pairs from b hadron decay
+
+adding more tracks from the tagging tracks to the seed if:
+no clone track
+track chi2/ndf < 3
+PV IP > 0.1mm
+PV IP/error > 3.5
+seed IP < 0.9mm
+DOCA to any track in seed < 0.2mm
+
+60 percent of added tracks come from b hadron decay
+
+weighted charge of tracks
+
+$Q = \frac{\sum_i \pT^k(i)Q_i}{\sum_i\pT^k(i)}$
+
+k parameter optimized to 0.4
+Q<0.25 set to untagged
+
+additional cuts on the SV properties to optimize epseff:
+sum of SV track momenta > 10GeV
+and invariant SV mass > 0.5GeV
+pT sum of all SV tracks > 10 GeV
+IP sum SV /error > 10
+DOCA sum SV < 0.5mm
+only events that satisfy these requirements are considered.
+
+Only use vtx Q if the minimal probability of the tagger to be correct is larger 0.54
 
 \newpage
 

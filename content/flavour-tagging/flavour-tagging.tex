@@ -181,13 +181,12 @@ $\efftageff = \SI{30.1 +- 0.4}{\percent}$ is achieved.
 \subsection{\Acl{OS} algorithms}
 \label{sec:flavour_tagging:os}
 The \OS algorithms all infer the tagging decision from the quark flavour of the
-\bhadron produced in association with the signal \Bmeson. If for
-example a $\Bu$ decays into the $\Jpsi\Kp$ final state trough a $\bquarkbar \to
-\Wm (\to \cquark \squarkbar) \cquarkbar$ transition, it can unambiguously stated
-by looking at the kaon charge that the \bhadron produced along with the $\Bu$
-contained a $\bquark$ quark. The tag identification for events with this
-signature fall into the scope of the \OSK tagger.
-\important{Kaon tagging transition is wrong!}
+\bhadron produced in association with the signal \Bmeson. If for example a $\Bu$
+decays into a $\Kp X$ final state trough $\bquarkbar \to \cquarkbar \to
+\squarkbar$ transition, it can unambiguously stated by looking at the kaon
+charge that the \bhadron produced along with the $\Bu$ contained a $\bquarkbar$
+quark. The tag identification for events with this signature fall into the scope
+of the \OSK tagger.
 
 In total four distinct \OS taggers, each developed for a special \OS decay
 signature, provide tagging information. Besides the \OSK tagger, the \OSe and
@@ -203,7 +202,7 @@ are briefly described.
 \subsubsection{The \acl{OSK} tagger}
 \label{sec:flavour_tagging:os:kaon}
 The kaon tagger exploits the charge of kaons stemming from $\bquark \to
-\cquark \to \squark$ decays of opposite side \bhadrons. As the charge of the
+\cquark \to \squark$ decays of the opposite side \bhadron. As the charge of the
 kaon is the opposite of the ancestor's charge, the kaon always carries the same
 charge as the signal \Bmeson.
 
@@ -211,65 +210,116 @@ To reduce background contributions of prompt kaons and kaons from primary
 $\bquarkbar \to \Wm (\to \cquark \squarkbar) \cquarkbar$ transitions, in which
 case the kaon carries the \enquote{wrong} charge, several selection criteria are
 applied. Cuts on the \pT, the \IP, the \IP/$\sigma_\text{\IP}$, and the track
-fit $\chi^2/\ndf$ are performed. \PID requirements on the \DLLKpi, the \DLLppi,
-and \DLLmupi suppress mis-identified particles. Clone tracks are removed and
-kaon candidates with originate from other \acp{PV} are rejected using a cut on
-the \IP/$\sigma_\text{\IP}$ with respect to any \PV. \cref{tab:} lists all
-applied cuts.
-\missing{Table with cut values}
+fit \chisqndf are performed. \PID requirements on the \DLLKpi, the \DLLppi, and
+\DLLmupi suppress mis-identified particles. Clone tracks are removed and kaon
+candidates with originate from other \acp{PV} are rejected using a cut on the
+\IP/$\sigma_\text{\IP}$ with respect to any \PV.
+\cref{tab:flavour_tagging:os:kaon:cuts} lists all applied cuts. If more than one
+tagging candidate is found, the decision obtained from the candidate with the
+highest \pT is chosen. To further increase the effective tagging efficiency only
+tag decisions are considered if the estimated mistag probability is smaller than
+$\mathcal{P}=0.46$.
 
-K charge is the same as signal B (opposite if K not from b->c->s but from bcW->s)
-K pT>0.5, IP<1.25mm, IP/error>3.35, track chi2/ndf<2.75
-suppress prompt kaons
-PID DLLkπ > 6
-(DLLkπ - DLLpπ) > -4
-remove clone tracks (Kullback-Liebler criterion)
-additional pile-up PV cut of IP/sigma > 4.5
-if more than one candidate, highest pT
-only Probkaon>0.54
-How to suppress bcW->s kaons?
+\begin{table}
+  \centering
+  \caption{Selection cuts for the \OSK tagger \cite{Grabalosa:2012qra}.}
+  \label{tab:flavour_tagging:os:kaon:cuts}
+  \begin{tabular}{ll}
+    \toprule
+    Property & Value \\
+    \midrule
+    \pT                                       & $>\SI{0.5}{\GeVc}$                  \\
+    \IP                                       & $<\SI{1.25}{\milli\metre}$          \\
+    \IP$/\sigma_\text{\IP}$                   & $>\num{3.35}$                       \\
+    track fit \chisqndf                       & $<\num{2.75}$                       \\
+    \DLLKpi                                   & $>\num{6}$                          \\
+    $(\DLLKpi - \DLLppi)$                     & $>\num{-4}$                         \\
+    \IP$/\sigma_\text{\IP}$ \wrt any \PV      & $>\num{4.5}$                        \\
+    reject clone tracks & \\
+    \bottomrule
+  \end{tabular}
+\end{table}
 
 \subsubsection{The \acl{OSe} and the \acl{OSm} taggers}
 \label{sec:flavour_tagging:os:lepton}
-leptons from bcW->leptons
-lepton charge, same as signal b
-muons:
-DDLmuπ>1
-track chi2/ndf<3.2
-pT>1.2GeV to reduce b->c->mu secondary muons
-reduce fake muons "non shared hits"
-clone tracks
 
-electrons:
-DLLeπ>4
-HCAL acceptance
-pT>1.2GeV
-max ionisation charge in VELO (reduce background due to photon conversion close to interaction point)
-partial energy E in emCalo
-p from tracking system
-==> E/p>0.8
+Leptons from $\bquark \to \cquark\Wboson$ transitions are selected in order to
+deduce the opposite \bhadron charge. Thus positive lepton charge indicates a
+$\bquark$ quark content of the signal \Bmeson and vice versa.
 
-highest pT lepton
+Cuts on the \PID and the lepton \pT are applied to reduce the mis-identification
+rate and to suppress leptons from secondary decays of charm mesons. The muon
+candidate purity is further enhanced by reducing fake muons, clone tracks, and
+requiring a sufficient track fit quality. Electron candidate tracks must lie
+inside the \HCAL acceptance and leave a substantial energy deposition in the
+\ECAL compared to their momentum. To reduce backgrounds from photon conversions
+close to the \proton\proton interaction region, a upper limit on the maximal
+ionisation charge $Q_\text{\VELO}$ deposited in the \VELO is set. If more than
+one lepton candidate passes the requirements, the one with the highest \pT is
+chosen.
+
+\begin{table}
+  \centering
+  \caption{Selection cuts for the \OSe and \OSm taggers
+  \cite{Grabalosa:2012qra}, where $E$ is the particle energy measured in the
+  \ac{ECAL} and $p$ the measured particle momentum. $Q_\text{\VELO}$ describes
+  the ionisation charge deposit in the \VELO.}
+  \label{tab:flavour_tagging:os:lepton:cuts}
+  \begin{tabular}{ll}
+    \toprule
+    % general
+    Property                                  & Value                               \\
+    \midrule
+    lepton \pT                                & $>\SI{1.2}{\GeVc}$                  \\
+    muon \DLLmupi                             & $>\num{1}$                          \\
+    muon track fit \chisqndf                  & $<\num{3.2}$                        \\
+    \multicolumn{2}{l}{reject muon clone tracks and fake muons}                     \\
+    electron \DLLepi                          & $>\num{4}$                          \\
+    electron $E/p$                            & $>\num{0.8}$                        \\
+    max. electron $Q_\text{\VELO}$            & $<\num{1.6}$                        \\
+    \multicolumn{2}{l}{electron candidate track in \HCAL acceptance}                \\
+    \bottomrule
+  \end{tabular}
+\end{table}
 
 \subsubsection{The \acl{OSvtx} tagger}
 \label{sec:flavour_tagging:os:vertex}
-inclusive reco of OS SV:
 
-Summary:
-2-track seed from all possible track candidate pairs
-geometric and kinematical cuts, then add more tracks
-weighted charge of SV
-cuts on SV to optimize epseff
+Besides the single particle taggers for kaons, muons, and electrons, the
+\acl{OSvtx} tagger follows an alternative approach by trying to inclusively
+reconstruct the decay vertex of the opposite \bhadron. Starting with a two-track
+seed, matching tracks are appended and a weighted sum of the vertex charge is
+calculated. The procedure is optimized using cuts on the considered tracks, the
+seed properties, and the features of the reconstructed vertex.
 
-Detailed:
-2-track seed track selection:
-one of the tracks must be a long track w/ track fit chi2/ndf<2.5
-error on IP on PV < 1 (no badly reconstructed tracks)
-no tracks from PV: IP on PV/error in range 2.5-100
-IP on PV < 3mm   ???
-pT > 0.15GeV
-at least one track pT > 0.3GeV
-the two tracks must be separated in phi by more than 1mrad
+The initial vertex seed is found by sampling track pairs from all particle
+candidates surviving the following criteria: At least one of the tracks must be
+a long track with a track fit quality of $\chisqndf<\num{2.5}$. To exclude poor
+track reconstruction only tracks with an \IP uncertainty of
+$\sigma_\text{\IP}<\num{1}$ are taken into account. Tracks from prompt particles
+are rejected by a cut on the $2.5<\text{\IP}/\sigma_\text{\PV}<100$ \wrt the
+\PV. Additionally the track has to have a $\pT>\SI{0.15}{\GeVc}$ and an
+\IP$<\SI{3}{\milli\metre}$ \wrt to the \PV.\todo{Understand why the two IP
+criteria are conflicting} The two seed tracks must be separated by a angle of
+$\phi>\SI{1}{\mrad}$ and one of the tracks has to have a $\pT>\SI{0.3}{\GeVc}$.
+
+% inclusive reco of OS SV:
+
+% Summary:
+% 2-track seed from all possible track candidate pairs
+% geometric and kinematical cuts, then add more tracks
+% weighted charge of SV
+% cuts on SV to optimize epseff
+
+% Detailed:
+% 2-track seed track selection:
+% one of the tracks must be a long track w/ track fit chi2/ndf<2.5
+% error on IP on PV < 1 (no badly reconstructed tracks)
+% no tracks from PV: IP on PV/error in range 2.5-100
+% IP on PV < 3mm   ???
+% pT > 0.15GeV
+% at least one track pT > 0.3GeV
+% the two tracks must be separated in phi by more than 1mrad
 
 vertex fit for track pairs:
 fit succeeds and chi2/ndf<10 consider pair V as seed

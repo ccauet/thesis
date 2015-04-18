@@ -300,78 +300,52 @@ $\sigma_\text{\IP}<\num{1}$ are taken into account. Tracks from prompt particles
 are rejected by a cut on the $2.5<\text{\IP}/\sigma_\text{\PV}<100$ \wrt the
 \PV. Additionally the track has to have a $\pT>\SI{0.15}{\GeVc}$ and an
 \IP$<\SI{3}{\milli\metre}$ \wrt to the \PV.\todo{Understand why the two IP
-criteria are conflicting} The two seed tracks must be separated by a angle of
+criteria are conflicting} The two seed tracks must be separated by an angle of
 $\phi>\SI{1}{\mrad}$ and one of the tracks has to have a $\pT>\SI{0.3}{\GeVc}$.
 
-% inclusive reco of OS SV:
+For tracks pairs passing all selection criteria a vertex fit is performed. If
+the fit succeeds and a fit quality of at least $\chisqndf<10$ is met, the fitted
+vertex is considered as a seed. The seed is required to lie inside the detector
+acceptance and in the forward direction of the \PV ($z>0$). \missing{Define
+$r$-distance} The invariant mass of the seed is calculated and has to be greater
+than $\SI{0.2}{\GeVcc}$ and not be compatible with the known $\KS$ or $\Lambdaz$
+masses. % 0.490 < m_KS < 0.505 and 1.11 < m_Lambda < 1.12
+A likelihood is computed for all seeds considering the vertex fit $\chisqndf$,
+the minimum \pT, the maximum \PV \IP, the minimum \PV \IP$/\sigma_\text{\IP}$,
+the angle between the seed tracks, the $r$-distance and the angle between the
+seed direction \wrt to the \PV. Only seeds with a likelihood greater $\num{0.6}$
+are further considered and the seed with the maximum likelihood is selected. The
+seed algorithm successfully finds a seed in nearly $\SI{50}{\percent}$ of all
+events and has a rate of $\SI{60}{\percent}$ to find a seed that is formed by
+\bhadron decay products.
 
-% Summary:
-% 2-track seed from all possible track candidate pairs
-% geometric and kinematical cuts, then add more tracks
-% weighted charge of SV
-% cuts on SV to optimize epseff
+Subsequently more tracks are added to the seed. Additional tracks are required
+to be compatible with the reconstructed seed vertex
+(\IP$<\SI{0.9}{\milli\metre}$), have a \DOCA to any track in the seed smaller
+than $\SI{0.2}{\milli\metre}$, the track fit quality is at least
+$\chisqndf<\num{3}$, and are ruled out to be a clone track. Additionally the \IP
+with respect to the \PV has to be larger than $\SI{0.1}{\milli\metre}$ and
+$\text{\IP}/\sigma_\text{\IP}>\num{3.5}$.
 
-% Detailed:
-% 2-track seed track selection:
-% one of the tracks must be a long track w/ track fit chi2/ndf<2.5
-% error on IP on PV < 1 (no badly reconstructed tracks)
-% no tracks from PV: IP on PV/error in range 2.5-100
-% IP on PV < 3mm   ???
-% pT > 0.15GeV
-% at least one track pT > 0.3GeV
-% the two tracks must be separated in phi by more than 1mrad
+After all tracks are added to the vertex another set of selection requirements
+has to be fulfilled to optimize the effective tagging efficiency. The sum of all
+track momenta has to be $\sum_i p_i > \SI{10}{\GeVc}$ and $\sum_i \pT(i) >
+\SI{10}{\GeVc}$, the invariant vertex mass must be greater than $m_\text{vtx} >
+\SI{0.5}{\GeVcc}$, the sum of the track
+$\sum_i\text{\IP}_i/\sigma_{\text{\IP}_i}$ has to be larger $\num{10}$ and the
+sum of the track \DOCA has to be $\sum_i\text{\acs{DOCA}}_i <
+\SI{0.5}{\milli\metre}$.
 
-vertex fit for track pairs:
-fit succeeds and chi2/ndf<10 consider pair V as seed
-
-seed requirements:
-forward direction from PV (z>0)
-detector acceptance
-r-distance       ???
-seed invariant mass > 0.2 GeV
-reject if invariant mass = KS mass
-
-likelihood for all possible seeds based on:
-vertex fit chi2/ndf
-minimum pT
-maximum PV IP 
-minimum PV IP/error of both tracks
-delta phi 
-r-distance
-angle between seed direction wrt the PV
-
-seed with maximum likelihood
-if likelihood is > 0.6
-
-algorithm is nearly 50percent efficient
-60percent of seed track pairs from b hadron decay
-
-adding more tracks from the tagging tracks to the seed if:
-no clone track
-track chi2/ndf < 3
-PV IP > 0.1mm
-PV IP/error > 3.5
-seed IP < 0.9mm
-DOCA to any track in seed < 0.2mm
-
-60 percent of added tracks come from b hadron decay
-
-weighted charge of tracks
-
-$Q = \frac{\sum_i \pT^k(i)Q_i}{\sum_i\pT^k(i)}$
-
-k parameter optimized to 0.4
-Q<0.25 set to untagged
-
-additional cuts on the SV properties to optimize epseff:
-sum of SV track momenta > 10GeV
-and invariant SV mass > 0.5GeV
-pT sum of all SV tracks > 10 GeV
-IP sum SV /error > 10
-DOCA sum SV < 0.5mm
-only events that satisfy these requirements are considered.
-
-Only use vtx Q if the minimal probability of the tagger to be correct is larger 0.54
+The tag decision is then deduced from the inclusively reconstructed vertex by
+calculating the weighted charge for all tracks $i$ forming the vertex
+%
+\begin{equation}\label{eq:flavour_tagging:os:vertex:charge}
+  Q_\text{vtx} = \frac{\sum_i \pT^k(i)Q_i}{\sum_i\pT^k(i)}\eqcm
+\end{equation}
+where the track \acp{pT} are used as weights and the $k$ parameter is optimised
+using simulated data to be $k=\num{0.4}$. In a final step, only charges of
+$\vert Q_\text{vtx} \vert > 0.25$ are considered and the mistag probability has
+to be smaller than $\mathcal{P}=0.46$.
 
 \newpage
 

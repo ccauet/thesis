@@ -347,11 +347,84 @@ using simulated data to be $k=\num{0.4}$. In a final step, only charges of
 $\vert Q_\text{vtx} \vert > 0.25$ are considered and the mistag probability has
 to be smaller than $\mathcal{P}=0.46$.
 
-\newpage
-
 \subsection{\Acl{SS} algorithms}
 \label{sec:flavour_tagging:ss}
-SS algorithms: kaon/pion/proton
+
+The \acl{SS} taggers exploit charge information from pions or kaons produced in
+the hadronisation process of the signal \Bmeson. As illustrated in
+\cref{fig:flavour_tagging:lhcb:schematics} the $\qqbar$ quark pair produced
+alongside the signal meson, splits up to form the $\B$ meson and in the case of
+a $\Bd$ ($\Bs$) an accompanying pion (kaon). Pions might also be produced in the
+decay of excited $\B$ meson states.
+
+\subsubsection{The \acl{SSpi} tagger}
+\label{sec:flavour_tagging:ss:pion}
+
+The pions from either the \Bmeson hadronisation or the decay of excited states
+carry the same charge as the signal \Bmeson and are therefore suitable to
+extract tagging information. The selection criteria pion candidates are required
+to fulfil are listed in \cref{tab:flavour_tagging:ss:pion:cuts}. If more than
+one pion candidate passes the requirements, the one with the highest \pT is
+chosen. The tag decision has to have a mistag probability of $\mathcal{P}<0.46$,
+otherwise the tag decision will be refused.
+%
+\begin{table}
+  \centering
+  \caption{Selection cuts for the \SSpi tagger \cite{Grabalosa:2012qra}, where
+  $\Delta Q$ describes the mass difference of the $\Bd\pion$ mass and the $\Bd$
+  mass.}
+  \label{tab:flavour_tagging:ss:pion:cuts}
+  \begin{tabular}{ll}
+    \toprule
+    Property                                  & Value                               \\
+    \midrule
+    \multicolumn{2}{l}{only long track pion candidates}                             \\
+    \DLLKpi                                   & $<\num{4.5}$                        \\
+    \DLLppi                                   & $<\num{15}$                         \\
+    \pT                                       & $>\SI{0.5}{\GeVc}$                  \\
+    $p$                                       & $>\SI{2.5}{\GeVc}$                  \\
+    \PV $\text{\IP}/\sigma_\text{\IP}$        & $<\num{4}$                          \\
+    $\Delta Q$                                & $<\SI{1.5}{\GeVcc}$                 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\subsubsection{The \acl{SSK} tagger}
+\label{sec:flavour_tagging:ss:kaon}
+
+The charge of kaons produced together with a signal $\Bs$ meson can be exploited
+in order to get a tag decision. \Cref{tab:flavour_tagging:ss:kaon:cuts} shows
+all selection requirements for kaon candidates. If more than one candidate
+passes the criteria, the one with the highest \pT is used.
+%
+\begin{table}
+  \centering
+  \caption{Selection cuts for the \SSK tagger \cite{Grabalosa:2012qra}, where
+  $\Delta Q$ describes the mass difference of the $\Bs\kaon$ mass and the $\Bs$
+  mass, $\vert \Delta\phi \vert$ the difference in the $\phi$ angle between the
+  signal \Bmeson and the kaon, $\vert \Delta\eta \vert$ the pseudo-rapidity
+  between the signal \Bmeson and the kaon, and $\vert \Delta R \vert =
+  \sqrt{\Delta\eta^2 + \Delta\phi^2}$.}
+  \label{tab:flavour_tagging:ss:kaon:cuts}
+  \begin{tabular}{ll}
+    \toprule
+    Property                                  & Value                               \\
+    \midrule
+    \DLLKpi                                   & $>\num{4.5}$                        \\
+    (\DLLKpi - \DLLppi)                       & $>\num{-8.5}$                       \\
+    \pT                                       & $>\SI{0.75}{\GeVc}$                 \\
+    $p$                                       & $>\SI{5.25}{\GeVc}$                 \\
+    \PV $\text{\IP}/\sigma_\text{\IP}$        & $<\num{4.125}$                      \\
+    track $\chisqndf$                         & $<\num{3.75}$                       \\
+    $\Delta Q$                                & $<\SI{1.5}{\GeVcc}$                 \\
+    $\vert \Delta\phi \vert$                  & $<\num{0.7}$                        \\
+    $\vert \Delta\eta \vert$                  & $<\num{0.525}$                      \\
+    $\vert \Delta R \vert$                    & $<\num{1.2}$                        \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\newpage
 
 \section{Calibration}
 \label{sec:flavour_tagging:calibration}

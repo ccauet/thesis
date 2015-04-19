@@ -22,7 +22,7 @@ mistag is set $\mistagestimate=0.5$.
 
 The performance of the flavour tagging algorithms can be assigned using control
 samples of \Bmesons whose final state determines the $\B$ flavour at decay
-time (\ie are \enquote{flavour specific}), \eg $\BuToJpsiK$ where the charge of
+time (\ie are \enquote{flavour-specific}), \eg $\BuToJpsiK$ where the charge of
 the kaon allows to infer the charge of the $\B$.
 
 Given the numbers of all right tagged $\B$ candidates $\NRtagged$, all wrong
@@ -424,10 +424,27 @@ passes the criteria, the one with the highest \pT is used.
   \end{tabular}
 \end{table}
 
-\newpage
-
 \section{Calibration}
 \label{sec:flavour_tagging:calibration}
+
+The tagging decisions each tagger estimates are based on selection criteria
+developed using simulations and flavour-specific decays. While the tag decision
+$d$ most often depends on a measured particle charge, the mistag estimate
+$\mistagestimate$ is computed using \acp{ANN} trained on simulated data
+incorporating kinematic and geometric event properties.
+
+In order to adjust for differences between the training and physics data, the
+\ANN output is calibrated using flavour-specific decays. For the \OS taggers and
+the \SSpi tagger, $\BduoJpsiK$ decays are used to develop a calibration function
+$\omofeta$. Decays of charged \Bmesons are not subject to quark mixing, thus,
+the true mistag probability $\omega$ can be determined directly by counting and
+comparing the final state charges. In case of neutral $\B$ decays into flavour-
+specific final states a full time-dependent mixing analysis is necessary.
+
+
+
+
+\newpage
 \begin{itemize}
   \item calibration method
   \item tagging correlations

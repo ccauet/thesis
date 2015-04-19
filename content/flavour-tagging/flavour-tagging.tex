@@ -395,7 +395,10 @@ otherwise the tag decision will be refused.
 The charge of kaons produced together with a signal $\Bs$ meson can be exploited
 in order to get a tag decision. \Cref{tab:flavour_tagging:ss:kaon:cuts} shows
 all selection requirements for kaon candidates. If more than one candidate
-passes the criteria, the one with the highest \pT is used.
+passes the criteria, the one with the highest \pT is used. As this thesis
+presents a measurement in the decay of $\Bd$ and $\Bdbar$ mesons, where the kaon
+tagger is not used, no further details will be given and the emphasis is placed
+on the \SSpi tagger.
 %
 \begin{table}
   \centering
@@ -424,7 +427,7 @@ passes the criteria, the one with the highest \pT is used.
   \end{tabular}
 \end{table}
 
-\section{Calibration}
+\section{Calibration of the flavour tagging output}
 \label{sec:flavour_tagging:calibration}
 
 The tagging decisions each tagger estimates are based on selection criteria
@@ -435,26 +438,33 @@ incorporating kinematic and geometric event properties.
 
 In order to adjust for differences between the training and physics data, the
 \ANN output is calibrated using flavour-specific decays. For the \OS taggers and
-the \SSpi tagger, $\BduoJpsiK$ decays are used to develop a calibration function
+the \SSpi tagger, $\BuToJpsiK$ decays are used to develop a calibration function
 $\omofeta$. Decays of charged \Bmesons are not subject to quark mixing, thus,
 the true mistag probability $\omega$ can be determined directly by counting and
-comparing the final state charges. In case of neutral $\B$ decays into flavour-
-specific final states a full time-dependent mixing analysis is necessary.
+comparing the final state charges. In case of neutral $\B$ decays into
+flavour-specific final states a full time-dependent mixing analysis is
+necessary.
 
+In \cref{sec:flavour_tagging:calibration:method} the choice of the calibration
+function and an overview of the calibration methods is presented. Then the
+calibration of the \OS and the \SSpi taggers using $\BuToJpsiK$ and
+$\BdToJpsiKstar$ decays is shown in
+\cref{sec:flavour_tagging:calibration:os,sec:flavour_tagging:calibration:ss}.
 
-
-
-\newpage
+\subsection{Methodology}
+\label{sec:flavour_tagging:calibration:method}
 \begin{itemize}
-  \item calibration method
-  \item tagging correlations
-  \item OS calibration using Bu2JpsiK: procedure, transferability/validity to Bd2JpsiKS
-  \item SS calibration using Bd2JpsiKst: procedure, transferability/validity to Bd2JpsiKS
-  \item determination of systematic uncertainties
+  \item general idea of single tagger calibration
+  \item calibration on charged B channel, counting (and sweights for per-event)
+  \item calibration on neutral B channel, mixing analysis, delta md, BBbar mixing, asymmetry
+  \item binned vs. per-event approach
+  \item already mention combination of single taggers into a single tag decision
 \end{itemize}
-\subsection{OS calibration using Bu2JpsiK}
+
+\subsection{\ac{OS} tagger calibration using BuToJpsiK decays}
 \label{sec:flavour_tagging:calibration:os}
-\subsection{SS calibration using Bd2JpsiKst}
+
+\subsection{\ac{SS} tagger calibration using BdToJpsiKstar decays}
 \label{sec:flavour_tagging:calibration:ss}
 
 \section{Combination}
@@ -463,11 +473,12 @@ Combination of OS and SS tagging, FT correlations
 
 \section{Performance}
 \label{sec:flavour_tagging:performance}
-Performance of the FT algorithms, effect on dilution of asymmetry
-influence on measuring sin2beta, Dilution
+Performance of the FT algorithms
 
 \section{Recent developments}
 \label{sec:flavour_tagging:developments}
 
 \section{Influence on the measurement of sin2beta}
 \label{sec:flavour_tagging:sin2beta}
+effect on dilution of asymmetry
+influence on measuring sin2beta, Dilution

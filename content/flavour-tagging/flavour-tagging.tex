@@ -393,75 +393,118 @@ otherwise the tag decision will be refused.
 \label{sec:flavour_tagging:ss:kaon}
 
 The charge of kaons produced together with a signal $\Bs$ meson can be exploited
-in order to get a tag decision. \Cref{tab:flavour_tagging:ss:kaon:cuts} shows
-all selection requirements for kaon candidates. If more than one candidate
-passes the criteria, the one with the highest \pT is used. As this thesis
-presents a measurement in the decay of $\Bd$ and $\Bdbar$ mesons, where the kaon
-tagger is not used, no further details will be given and the emphasis is placed
-on the \SSpi tagger.
-%
-\begin{table}
-  \centering
-  \caption{Selection cuts for the \SSK tagger \cite{Grabalosa:2012qra}, where
-  $\Delta Q$ describes the mass difference of the $\Bs\kaon$ mass and the $\Bs$
-  mass, $\vert \Delta\phi \vert$ the difference in the $\phi$ angle between the
-  signal \Bmeson and the kaon, $\vert \Delta\eta \vert$ the pseudo-rapidity
-  between the signal \Bmeson and the kaon, and $\vert \Delta R \vert =
-  \sqrt{\Delta\eta^2 + \Delta\phi^2}$.}
-  \label{tab:flavour_tagging:ss:kaon:cuts}
-  \begin{tabular}{ll}
-    \toprule
-    Property                                  & Value                               \\
-    \midrule
-    \DLLKpi                                   & $>\num{4.5}$                        \\
-    (\DLLKpi - \DLLppi)                       & $>\num{-8.5}$                       \\
-    \pT                                       & $>\SI{0.75}{\GeVc}$                 \\
-    $p$                                       & $>\SI{5.25}{\GeVc}$                 \\
-    \PV $\text{\IP}/\sigma_\text{\IP}$        & $<\num{4.125}$                      \\
-    track $\chisqndf$                         & $<\num{3.75}$                       \\
-    $\Delta Q$                                & $<\SI{1.5}{\GeVcc}$                 \\
-    $\vert \Delta\phi \vert$                  & $<\num{0.7}$                        \\
-    $\vert \Delta\eta \vert$                  & $<\num{0.525}$                      \\
-    $\vert \Delta R \vert$                    & $<\num{1.2}$                        \\
-    \bottomrule
-  \end{tabular}
-\end{table}
+in order to get a tag decision. The selection requirements for kaon candidates
+are similar to those for the \SSpi tagger. Besides \PID variables, momenta, the
+quality of the \IP fit and the track fit, differences between the $\Bs\kaon$
+mass and the $\Bs$ mass, the difference in the $\phi$ angle between the signal
+\Bmeson and the kaon, and the pseudo-rapidity between the signal \Bmeson and the
+kaon are taken into account. If more than one candidate passes the criteria, the
+one with the highest \pT is used. As this thesis presents a measurement in the
+decay of $\Bd$ and $\Bdbar$ mesons, where the kaon tagger is not used, no
+further details will be given and an emphasis is placed on the \SSpi tagger.
+% %
+% \begin{table}
+%   \centering
+%   \caption{Selection cuts for the \SSK tagger \cite{Grabalosa:2012qra}, where
+%   $\Delta Q$ describes the mass difference of the $\Bs\kaon$ mass and the $\Bs$
+%   mass, $\vert \Delta\phi \vert$ the difference in the $\phi$ angle between the
+%   signal \Bmeson and the kaon, $\vert \Delta\eta \vert$ the pseudo-rapidity
+%   between the signal \Bmeson and the kaon, and $\vert \Delta R \vert =
+%   \sqrt{\Delta\eta^2 + \Delta\phi^2}$.}
+%   \label{tab:flavour_tagging:ss:kaon:cuts}
+%   \begin{tabular}{ll}
+%     \toprule
+%     Property                                  & Value                               \\
+%     \midrule
+%     \DLLKpi                                   & $>\num{4.5}$                        \\
+%     (\DLLKpi - \DLLppi)                       & $>\num{-8.5}$                       \\
+%     \pT                                       & $>\SI{0.75}{\GeVc}$                 \\
+%     $p$                                       & $>\SI{5.25}{\GeVc}$                 \\
+%     \PV $\text{\IP}/\sigma_\text{\IP}$        & $<\num{4.125}$                      \\
+%     track $\chisqndf$                         & $<\num{3.75}$                       \\
+%     $\Delta Q$                                & $<\SI{1.5}{\GeVcc}$                 \\
+%     $\vert \Delta\phi \vert$                  & $<\num{0.7}$                        \\
+%     $\vert \Delta\eta \vert$                  & $<\num{0.525}$                      \\
+%     $\vert \Delta R \vert$                    & $<\num{1.2}$                        \\
+%     \bottomrule
+%   \end{tabular}
+% \end{table}
 
 \section{Calibration of the flavour tagging output}
 \label{sec:flavour_tagging:calibration}
 
 The tagging decisions each tagger estimates are based on selection criteria
 developed using simulations and flavour-specific decays. While the tag decision
-$d$ most often depends on a measured particle charge, the mistag estimate
-$\mistagestimate$ is computed using \acp{ANN} trained on simulated data
-incorporating kinematic and geometric event properties.
+$d$ depends on a measured particle or vertex charge, the mistag estimate
+$\mistagestimate$ is computed using \acp{ANN} trained on \sweighted $\BuToJpsiK$
+data incorporating kinematic and geometric event properties.
 
 In order to adjust for differences between the training and physics data, the
 \ANN output is calibrated using flavour-specific decays. For the \OS taggers and
 the \SSpi tagger, $\BuToJpsiK$ decays are used to develop a calibration function
-$\omofeta$. Decays of charged \Bmesons are not subject to quark mixing, thus,
-the true mistag probability $\omega$ can be determined directly by counting and
+$\omofeta$ (while the data sample that was used to train the \ANN before is
+omitted). Decays of charged \Bmesons are not subject to quark mixing, thus, the
+true mistag probability $\omega$ can be determined directly by counting and
 comparing the final state charges. In case of neutral $\B$ decays into
 flavour-specific final states a full time-dependent mixing analysis is
 necessary.
 
-In \cref{sec:flavour_tagging:calibration:method} the choice of the calibration
-function and an overview of the calibration methods is presented. Then the
-calibration of the \OS and the \SSpi taggers using $\BuToJpsiK$ and
-$\BdToJpsiKstar$ decays is shown in
+In \cref{sec:flavour_tagging:calibration:method} general concepts and the choice
+of the calibration function are presented, then the methodologies of a
+calibration using decays of either charged or neutral \Bmesons is explained. Two
+different approaches how to incorporate the per-event tagging information are
+described and an outlook into the technique of combining different tagger's
+output into a single tag decision is given. Then the calibration of the \OS and
+the \SSpi taggers using $\BuToJpsiK$ and $\BdToJpsiKstar$ decays is shown in
 \cref{sec:flavour_tagging:calibration:os,sec:flavour_tagging:calibration:ss}.
 
 \subsection{Methodology}
 \label{sec:flavour_tagging:calibration:method}
 
-The calibration of the \ANN output is performed in order to adapt the mistag
-estimate to the true mistag probability as good as possible. In the following,
-the general idea and the choice of the calibration function is presented, then
-the methodologies of a calibration using decays of either charged or neutral
-\Bmesons is explained. Two different approaches how to incorporate the per-event
-tagging information are described and an outlook into the technique of combining
-different tagger's output into a single tag decision is given.
+The calibration of the flavour tagging output usually follows an iterative
+procedure. After calibration of all single taggers using a high yield decay
+channel as $\BuToJpsiK$, the calibration is checked on several control channels,
+\ie $\BuToJpsiK$, $\BuToDpi$, $\BdToJpsiKstar$, $\BdToDpi$, $\BdToDstarmunu$ and
+$\BsToDspi$ and possible small corrections can be applied for individual
+analyses. In particular for the \OS taggers a combined tagging response of all
+single taggers is computed (see \cref{sec:flavour_tagging:combination}).
+Assuming no correlations amongst the single taggers, it can be assumed, that the
+calibration is still valid for the combined tagging estimates. This assumption
+is checked as well.
 
+The calibration function $\omofeta$ is chosen linear with two parameters
+$\pzero$ and $\pone$,
+%
+\begin{equation}\label{eq:flavour_tagging:calibration:method:calibration}
+  \omofeta = \pzero + \pone (\mistagestimate - \avgmistagestimate)\eqcm
+\end{equation}
+%
+with $\avgmistagestimate$ being the average mistag estimate used to decorrelate
+$\pzero$ and $\pone$. Hence, a perfect calibrated tagging output would result in
+$\pzero = \avgmistagestimate$ and $\pone = 1$. The performance of the tagging
+algorithms may depend on the flavour of the initial \Bmeson. Different
+interaction of particles, \eg kaons used by the \OSK tagger, induce deviating
+reconstruction efficiencies, resulting in different tagging efficiencies
+$\tageff$ and mistag probabilities $\mistag$ for initial $\Bd$ and $\Bdbar$
+states. To correct for asymmetries of the tagging calibration, two independent
+calibration functions are defined
+%
+\begin{equation}\label{eq:flavour_tagging:calibration:method:asymmetric_calibration:omega}
+  \begin{split}
+    \omofetaBd    &= \pzeroBd    + \poneBd    (\mistagestimate - \avgmistagestimate)\eqcm \\
+    \omofetaBdbar &= \pzeroBdbar + \poneBdbar (\mistagestimate - \avgmistagestimate)\eqcm
+  \end{split}
+\end{equation}
+%
+where the calibration parameters $\p{i}{}$ (with $i=0,1$) can be parametrised as
+%
+\begin{equation}\label{eq:flavour_tagging:calibration:method:asymmetric_calibration:ps}
+  \p{i}{\Bd} = \p{i}{} + \frac{\deltap{i}}{2} \eqspace\text{and}\eqspace \p{i}{\Bdbar} = \p{i}{} - \frac{\deltap{i}}{2}\eqpd
+\end{equation}
+
+
+
+\newpage
 \begin{itemize}
   \item general idea of single tagger calibration
   \item calibration on charged B channel, counting (and sweights for per-event)

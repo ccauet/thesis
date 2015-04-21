@@ -518,32 +518,59 @@ be split into $n$ bins to compare the average estimated mistag of each bin
 $\mistagestimate_i$ to the counted mistag ratio $\mistag_i$.
 \Cref{fig:flavour_tagging:calibration:method:charged:calibration_plot} shows an
 exemplary calibration plot using a dataset of $\BuToJpsiK$ decays corresponding
-to an integrated luminosity of $\SI{0.37}{\per\femtobarn}$. The data is
-categorised into $\num{21}$ bins of $\mistagestimate$ and a linear function is
-fit to the data to estimate the calibration parameters $\pzero$ and $\pone$.
+to an integrated luminosity of $\SI{0.37}{\per\femtobarn}$ \cite{Aaij:2012mu}.
+The data is categorised into $\num{21}$ bins of $\mistagestimate$ and a linear
+function is fit to the data to estimate the calibration parameters $\pzero$ and
+$\pone$.
 %
 \begin{figure}
 \centering
 \includegraphics[width=0.5\textwidth]{private/content/flavour-tagging/figs/lhcb_ft_calibration_bu2jpsik_037fb}
 \caption{Measured mistag fraction $\mistag$ plotted against the mistag estimate
-$\mistagestimate$ provided by the tagging algorithms. The black points with
-errors are data of $\BuToJpsiK$ decays corresponding to an integrated luminosity
-of $\SI{0.37}{\per\femtobarn}$. The red line illustrates the linear calibration
+$\mistagestimate$ provided by the tagging algorithms. Described in black are
+data of $\BuToJpsiK$ decays corresponding to an integrated luminosity of
+$\SI{0.37}{\per\femtobarn}$. The red line illustrates the linear calibration
 function fitted to the data. \cite{Aaij:2012mu}}
 \label{fig:flavour_tagging:calibration:method:charged:calibration_plot}
 \end{figure}
 
+As an alternative, the calibration function can be implemented into the unbinned
+maximum likelihood fit to the dimensions: mass, tagging decision, and mistag
+probability estimate. Using a conditional \PDF
+$\Prob{}{\Sig}(\tagdecision,\tagdecision^\prime,\mistagestimate)$, where
+$\tagdecision^\prime$ describes the true $\Bu$ tag derived from the final-state
+particle charge.
+%
+\begin{equation}
+  \Prob{}{\Sig}(\tagdecision,\tagdecision^\prime,\mistagestimate) = 
+  \begin{cases}
+        \tageff (1-\omofeta) \Prob{}{\Sig}(\mistagestimate)    & \text{if $\tagdecision =    \tagdecision^\prime$} \\
+        \tageff    \omofeta  \Prob{}{\Sig}(\mistagestimate)    & \text{if $\tagdecision \neq \tagdecision^\prime$} \\
+    1 - \tageff                                                & \text{if $\tagdecision = 0$} \\
+  \end{cases}
+\end{equation}
+%
+\info{Try to understand better, how the calibration using per-event information works on charged channels.}
 
-
-\newpage
 \subsubsection{Flavour tagging calibration using decays of neutral \Bmesons}
 \label{sec:flavour_tagging:calibration:method:neutral}
 
-\begin{itemize}
-  \item binned vs. per-event approach
-  \item already mention combination of single taggers into a single tag decision
-\end{itemize}
+In the decay of neutral \Bmesons the oscillation of the propagating $\B$ state
+prevents the determination of the initial flavour just by measuring the final
+state charge. Instead a full decay time dependent mixing analysis has to be
+performed. As described in \cref{sec:missing}\addref{Mixing asymmetry} the signal mixing asymmetry is
+given by
+%
+\begin{equation}
+  \MixingAsymmetry = (1 - 2\mistag)\cos(\dmd t)\eqpd
+\end{equation}
+%
+This can be either utilised in a simultaneous fit in different bins of
+$\mistagestimate$ to extract per bin $\mistag_i$, then following the same
+procedure as described for charged initial states or by implementing the
+calibration function $\omofeta$ directly into the \PDF.
 
+\newpage
 \subsection{\ac{OS} tagger calibration using BuToJpsiK decays}
 \label{sec:flavour_tagging:calibration:os}
 

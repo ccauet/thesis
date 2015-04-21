@@ -462,15 +462,16 @@ the \SSpi taggers using $\BuToJpsiK$ and $\BdToJpsiKstar$ decays is shown in
 \label{sec:flavour_tagging:calibration:method}
 
 The calibration of the flavour tagging output usually follows an iterative
-procedure. After calibration of all single taggers using a high yield decay
-channel as $\BuToJpsiK$, the calibration is checked on several control channels,
-\ie $\BuToJpsiK$, $\BuToDpi$, $\BdToJpsiKstar$, $\BdToDpi$, $\BdToDstarmunu$ and
-$\BsToDspi$ and possible small corrections can be applied for individual
-analyses. In particular for the \OS taggers a combined tagging response of all
-single taggers is computed (see \cref{sec:flavour_tagging:combination}).
-Assuming no correlations amongst the single taggers, it can be assumed, that the
-calibration is still valid for the combined tagging estimates. This assumption
-is checked as well.
+procedure. All single taggers and the combination of all \OS tagging decisions
+(see \cref{sec:flavour_tagging:combination}) is calibrated using the high yield
+decay channel $\BuToJpsiK$. The correction determined in this step is then
+applied to the tagging algorithms during the common data processing stage
+(\enquote{Stripping}). Afterwards, the calibration is checked on several control
+channels, \ie $\BuToJpsiK$, $\BuToDpi$, $\BdToJpsiKstar$, $\BdToDpi$,
+$\BdToDstarmunu$ and $\BsToDspi$ and possible small corrections can be applied
+for individual analyses. Assuming no correlations amongst the single taggers, it
+can be assumed, that the calibration is still valid for the combined tagging
+estimates. This assumption is checked as well.
 
 The calibration function $\omofeta$ is chosen linear with two parameters
 $\pzero$ and $\pone$,
@@ -502,13 +503,25 @@ where the calibration parameters $\p{i}{}$ (with $i=0,1$) can be parametrised as
   \p{i}{\Bd} = \p{i}{} + \frac{\deltap{i}}{2} \eqspace\text{and}\eqspace \p{i}{\Bdbar} = \p{i}{} - \frac{\deltap{i}}{2}\eqpd
 \end{equation}
 
+\subsubsection{Flavour tagging calibration using decays of charged \Bmesons}
+\label{sec:flavour_tagging:calibration:method:charged}
+
+Using decays of charged \Bmesons into flavour-specific final states like
+$\BuToJpsiK$ and $\BuToDpi$ is the straightforward way to calibrate the flavour
+tagging. The decisions given by the tagging algorithms can be easily compared to
+the final state charges without ambiguities due to oscillations in the \Bmeson
+system.
+
+
+
+
 
 
 \newpage
+\subsubsection{Flavour tagging calibration using decays of neutral \Bmesons}
+\label{sec:flavour_tagging:calibration:method:neutral}
+
 \begin{itemize}
-  \item general idea of single tagger calibration
-  \item calibration on charged B channel, counting (and sweights for per-event)
-  \item calibration on neutral B channel, mixing analysis, delta md, BBbar mixing, asymmetry
   \item binned vs. per-event approach
   \item already mention combination of single taggers into a single tag decision
 \end{itemize}

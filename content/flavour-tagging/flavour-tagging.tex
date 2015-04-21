@@ -104,7 +104,7 @@ exceed the scope of the analysis presented in this thesis but will be relevant
 in the future are discussed in \cref{sec:flavour_tagging:developments}. Before
 coming to the detailed description of the \LHCb flavour tagging algorithms, a
 summary of the flavour tagging methods developed at \Babar and \Belle is given.
-
+%
 \begin{figure}
 \centering
 \input{private/content/flavour-tagging/tikz/lhcb_flavour_tagging_schematics}
@@ -512,8 +512,26 @@ tagging. The decisions given by the tagging algorithms can be easily compared to
 the final state charges without ambiguities due to oscillations in the \Bmeson
 system.
 
-
-
+Using a fit to the $\Bu$ mass distribution the background contributions can be
+subtracted using the \sPlot technique. The mistag estimate distribution can then
+be split into $n$ bins to compare the average estimated mistag of each bin
+$\mistagestimate_i$ to the counted mistag ratio $\mistag_i$.
+\Cref{fig:flavour_tagging:calibration:method:charged:calibration_plot} shows an
+exemplary calibration plot using a dataset of $\BuToJpsiK$ decays corresponding
+to an integrated luminosity of $\SI{0.37}{\per\femtobarn}$. The data is
+categorised into $\num{21}$ bins of $\mistagestimate$ and a linear function is
+fit to the data to estimate the calibration parameters $\pzero$ and $\pone$.
+%
+\begin{figure}
+\centering
+\includegraphics[width=0.5\textwidth]{private/content/flavour-tagging/figs/lhcb_ft_calibration_bu2jpsik_037fb}
+\caption{Measured mistag fraction $\mistag$ plotted against the mistag estimate
+$\mistagestimate$ provided by the tagging algorithms. The black points with
+errors are data of $\BuToJpsiK$ decays corresponding to an integrated luminosity
+of $\SI{0.37}{\per\femtobarn}$. The red line illustrates the linear calibration
+function fitted to the data. \cite{Aaij:2012mu}}
+\label{fig:flavour_tagging:calibration:method:charged:calibration_plot}
+\end{figure}
 
 
 

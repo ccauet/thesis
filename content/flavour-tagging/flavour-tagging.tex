@@ -500,7 +500,7 @@ calibration functions are defined
 where the calibration parameters $\p{i}{}$ (with $i=0,1$) can be parametrised as
 %
 \begin{equation}\label{eq:flavour_tagging:calibration:method:asymmetric_calibration:ps}
-  \p{i}{\Bd} = \p{i}{} + \frac{\deltap{i}}{2} \eqspace\text{and}\eqspace \p{i}{\Bdbar} = \p{i}{} - \frac{\deltap{i}}{2}\eqpd
+  \p{i}{\Bd} = \p{i}{} + \frac{\deltap{i}{}}{2} \eqspace\text{and}\eqspace \p{i}{\Bdbar} = \p{i}{} - \frac{\deltap{i}{}}{2}\eqpd
 \end{equation}
 
 \subsubsection{Flavour tagging calibration using decays of charged \Bmesons}
@@ -584,6 +584,60 @@ nearly similar final state, can reduce the uncertainties. An additional
 cross-check of the calibration is performed on $\BdToJpsiKstar$ decays to
 confirm the portability of the calibration on a $\Bu$ to a $\Bd$ initial state.
 
+The calibration then follows the already outlined approach: extracting \sweights
+by a fit to the \Bu mass distribution, then comparing the true fraction of wrong
+tagged candidates to the average mistag estimate in $\num{60}$ $\mistagestimate$
+bins. The mass model used in the fit is a sum of three Gaussian \acp{PDF} with a
+shared mean to describe the signal shape and an exponential \PDF for the
+background contributions. The fit to the $(\mistagestimate_i,\mistag_i)$ pairs
+using \cref{eq:flavour_tagging:calibration:method:calibration} yields
+%
+\begin{equation}\label{eq:flavour_tagging:calibration:os:parameters}
+  \begin{split}
+    \p{0}{\text{OS}} &= 0.3815 \pm 0.0011 \text{\,(\stat)} 
+                               \pm 0.0015 \text{\,(\syst type I)}  
+                               \pm 0.0005 \text{\,(\syst type II)} \eqcm\\ % total syst 0.0016 
+    \p{0}{\text{OS}} &= 0.978\phantom{0} \pm 0.012\phantom{0} \text{\,(\stat)} 
+                                         \pm 0.006\phantom{0}  \text{\,(\syst type I)} 
+                                         \pm 0.007\phantom{0}  \text{\,(\syst type II)} \eqcm\\ % total syst 0.009
+    \langle\mistagestimate^{\text{OS}}\rangle &= 0.3786 \eqcm \\
+    \rho_{p_0,p_1} &= 0.14 \eqcm
+  \end{split}
+\end{equation}
+%
+where $\rho_{p_0,p_1}$ is the correlation between $\p{0}{\text{OS}}$ and
+$\p{0}{\text{OS}}$. \Cref{fig:flavour_tagging:calibration:os:mass_and_calibration}\addref{BuToJpsiK calibration, how?} 
+shows the mass distribution and the \PDF projection as well as the calibration
+plot.
+%
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{private/content/flavour-tagging/figs/lhcb_ft_calibration_bu2jpsik_3fb}
+\caption{(a) Distribution of $\BuToJpsiK$ mass and projection of the fit \PDF.
+The black solid line shows the total mass \PDF, the red solid line the signal
+and the blue dashed line the background component. (b) Distribution of
+$(\mistagestimate_i,\mistag_i)$ pairs in the decay $\BuToJpsiK$ together with
+the linear calibration function in red. \cite{FT:RunI}}
+\label{fig:flavour_tagging:calibration:os:mass_and_calibration}
+\end{figure}
+%
+The asymmetries in the mistag probabilities are determined by repeating the
+measurement when splitting the data sample into the initial $\Bd$ flavours and
+comparing the values for $\pzero$ and $\pone$. The results are
+%
+\begin{equation}\label{eq:flavour_tagging:calibration:os:asymmetries}
+  \begin{split}
+    \deltap{0}{\text{OS}} &= p_0^{\text{OS,\Bd}}-p_0^{\text{OS,\Bdbar}} \\
+                          &= 0.0148 \pm 0.0016 \text{\,(\stat)} \pm  0.0007 \text{\,(\syst type I)} \pm  0.0004 \text{\,(\syst type II)} \eqcm \\ % total syst. 0.0008
+    \deltap{1}{\text{OS}} &= p_1^{\text{OS,\Bd}}-p_1^{\text{OS,\Bdbar}} \\
+                          &= 0.070\phantom{0} \pm 0.018\phantom{0} \text{\,(\stat)} \pm 0.003\phantom{0} \text{\,(\syst type I)} \pm 0.002\phantom{0} \text{\,(\syst type II)} \eqcm \\ % total syst. 0.004
+    \Delta \tageff^{\text{OS}} &= \tageff^{\text{OS,\Bd}} - \tageff^{\text{OS,\Bdbar}} = (-0.09  \pm 0.09 \text{\,(\stat)} \pm   0.09 \text{\,(\syst)})\% \eqpd
+  \end{split}
+\end{equation}
+%
+As the difference in the tagging efficiencies $\Delta \tageff^{\text{OS}}$ is
+compatible with zero, it is neglected in the following.
+\missing{Description of determination of systematics}
 
 \newpage
 \subsection{\ac{SS} tagger calibration using BdToJpsiKstar decays}

@@ -583,6 +583,7 @@ with different kinematic properties and only use $\BuToJpsiK$ decays with a
 nearly similar final state, can reduce the uncertainties. An additional
 cross-check of the calibration is performed on $\BdToJpsiKstar$ decays to
 confirm the portability of the calibration on a $\Bu$ to a $\Bd$ initial state.
+\missing{\OS calibration: $\BuToJpsiK$ signal selection?}
 
 The calibration then follows the already outlined approach: extracting \sweights
 by a fit to the \Bu mass distribution, then comparing the true fraction of wrong
@@ -597,7 +598,7 @@ using \cref{eq:flavour_tagging:calibration:method:calibration} yields
     \p{0}{\text{OS}} &= 0.3815 \pm 0.0011 \text{\,(\stat)} 
                                \pm 0.0015 \text{\,(\syst type I)}  
                                \pm 0.0005 \text{\,(\syst type II)} \eqcm\\ % total syst 0.0016 
-    \p{0}{\text{OS}} &= 0.978\phantom{0} \pm 0.012\phantom{0} \text{\,(\stat)} 
+    \p{1}{\text{OS}} &= 0.978\phantom{0} \pm 0.012\phantom{0} \text{\,(\stat)} 
                                          \pm 0.006\phantom{0}  \text{\,(\syst type I)} 
                                          \pm 0.007\phantom{0}  \text{\,(\syst type II)} \eqcm\\ % total syst 0.009
     \langle\mistagestimate^{\text{OS}}\rangle &= 0.3786 \eqcm \\
@@ -638,11 +639,20 @@ comparing the values for $\pzero$ and $\pone$. The results are
 As the difference in the tagging efficiencies $\Delta \tageff^{\text{OS}}$ is
 compatible with zero, it is neglected in the following.
 \missing{Description of determination of systematics}
+\missing{Comparison of $\BuToJpsiK$ and $\BdToJpsiKstar$}
 
-\newpage
 \subsection{\ac{SS} tagger calibration using BdToJpsiKstar decays}
 \label{sec:flavour_tagging:calibration:ss}
 
+\info{How to handle the \SSpi precalibration for \Davinci versions prior to v35r1}
+%
+The \SSpi tagger is calibrated using a dataset of $\BdToJpsiKstar$ decays corresponding to an integrated luminosity of $\SI{3.0}{\per\fb}$. As the \SSpi tagging algorithm depends on the fragmentation process of the initial \Bmeson, a $\Bd$ decay mode is preferred over a decay of $\Bu$ mesons. 
+
+
+
+\missing{\OS calibration: $\BdToJpsiKstar$ signal selection?}
+
+\newpage
 \section{Combination}
 \label{sec:flavour_tagging:combination}
 Combination of OS and SS tagging, FT correlations

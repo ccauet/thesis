@@ -646,11 +646,39 @@ compatible with zero, it is neglected in the following.
 
 \info{How to handle the \SSpi precalibration for \Davinci versions prior to v35r1}
 %
-The \SSpi tagger is calibrated using a dataset of $\BdToJpsiKstar$ decays corresponding to an integrated luminosity of $\SI{3.0}{\per\fb}$. As the \SSpi tagging algorithm depends on the fragmentation process of the initial \Bmeson, a $\Bd$ decay mode is preferred over a decay of $\Bu$ mesons. 
-
-
-
+The \SSpi tagger is calibrated using a dataset of $\BdToJpsiKstar$ decays
+corresponding to an integrated luminosity of $\SI{3.0}{\per\fb}$ collected by
+the \LHCb experiment in \RunOne. As the \SSpi tagging algorithm depends on the
+fragmentation process of the initial \Bmeson, a $\Bd$ decay mode is preferred
+over a decay of $\Bu$ mesons.
 \missing{\OS calibration: $\BdToJpsiKstar$ signal selection?}
+
+To describe the mixing asymmetry $\MixingAsymmetry$ a two-dimensional fit to the
+reconstructed decay time and mass distribution is performed. The signal mass
+component is described by an Ipatia \PDF \cite{} with all tail parameters fixed
+to values determined on simulations. The description of the combinatorial
+background component consists of an exponential \PDF. The decay time signal \PDF
+contains an acceptance function $\eps(t)$ describing reconstruction and
+selection inefficiencies and a convolution of a $\B$ mixing \PDF and a
+resolution model
+%
+\begin{equation}
+  \Prob{\Sig}{} = \eps(t) \cdot \left[ \Prob{\text{mix}}{}(t, \tagdecision, \tagdecision^\prime, \mistagestimate) \otimes \mathcal{R}(t - t_\text{true}) \right] \eqcm
+\end{equation}
+%
+with
+%
+\begin{equation}
+  \Prob{\text{mix}}{}(t, \tagdecision, \tagdecision^\prime, \mistagestimate) 
+  \propto 
+  \exponential{-\sfrac{t}{\tau}} \left( 1 - \tagdecision \Delta\omofeta + \tagdecision \tagdecision^\prime (1 - 2 \langle\omofeta\rangle) \cos(\dmd t) \right)\eqcm
+\end{equation}
+%
+where the acceptance function is parametrised as
+%
+\begin{equation}
+  \eps(t) = \arctan(t \exponential{\alpha t+ \beta})\eqpd
+\end{equation}
 
 \newpage
 \section{Combination}

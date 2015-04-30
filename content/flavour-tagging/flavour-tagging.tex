@@ -639,7 +639,7 @@ comparing the values for $\pzero$ and $\pone$. The results are
 As the difference in the tagging efficiencies $\Delta \tageff^{\text{OS}}$ is
 compatible with zero, it is neglected in the following.
 \missing{Description of determination of systematics}
-\missing{Comparison of $\BuToJpsiK$ and $\BdToJpsiKstar$}
+\missing{Comparison of $\BuToJpsiK$ and $\BdToJpsiKstar$ on MC}
 
 \subsection{\ac{SS} tagger calibration using BdToJpsiKstar decays}
 \label{sec:flavour_tagging:calibration:ss}
@@ -650,26 +650,31 @@ The \SSpi tagger is calibrated using a dataset of $\BdToJpsiKstar$ decays
 corresponding to an integrated luminosity of $\SI{3.0}{\per\fb}$ collected by
 the \LHCb experiment in \RunOne. As the \SSpi tagging algorithm depends on the
 fragmentation process of the initial \Bmeson, a $\Bd$ decay mode is preferred
-over a decay of $\Bu$ mesons.
+over a decay of $\Bu$ mesons. Only candidates carrying a tagging response from
+the \SSpi tagger are considered in the following.
 \missing{\OS calibration: $\BdToJpsiKstar$ signal selection?}
 
 To describe the mixing asymmetry $\MixingAsymmetry$ a two-dimensional fit to the
 reconstructed decay time and mass distribution is performed. The signal mass
-component is described by an Ipatia \PDF \cite{} with all tail parameters fixed
-to values determined on simulations. The description of the combinatorial
-background component consists of an exponential \PDF. The decay time signal \PDF
-contains an acceptance function $\eps(t)$ describing reconstruction and
-selection inefficiencies and a convolution of a $\B$ mixing \PDF and a
+component is described by an Ipatia \PDF \cite{Santos:2013gra} with all tail
+parameters fixed to values determined on simulations. The description of the
+combinatorial background component consists of a sum of two exponential
+\acp{PDF} with shared parameters in the mass dimension to reflect two
+background components with different lifetimes seen in the decay time dimension.
+Hence, the background decay time distribution is modelled by two exponential
+functions as well. The decay time signal \PDF contains an acceptance function
+$\eps(t)$ describing reconstruction and selection inefficiencies for signal
+candidates with low decay times and a convolution of a $\B$ mixing \PDF and a
 resolution model
 %
 \begin{equation}
-  \Prob{\Sig}{} = \eps(t) \cdot \left[ \Prob{\text{mix}}{}(t, \tagdecision, \tagdecision^\prime, \mistagestimate) \otimes \mathcal{R}(t - t_\text{true}) \right] \eqcm
+  \Prob{\Sig}{} = \eps(t) \cdot \left[ \Prob{\text{Mix}}{}(t, \tagdecision, \tagdecision^\prime, \mistagestimate) \otimes \mathcal{R}(t - t_\text{true}) \right] \eqcm
 \end{equation}
 %
 with
 %
 \begin{equation}
-  \Prob{\text{mix}}{}(t, \tagdecision, \tagdecision^\prime, \mistagestimate) 
+  \Prob{\text{Mix}}{}(t, \tagdecision, \tagdecision^\prime, \mistagestimate) 
   \propto 
   \exponential{-\sfrac{t}{\tau}} \left( 1 - \tagdecision \Delta\omofeta + \tagdecision \tagdecision^\prime (1 - 2 \langle\omofeta\rangle) \cos(\dmd t) \right)\eqcm
 \end{equation}
@@ -679,8 +684,31 @@ where the acceptance function is parametrised as
 \begin{equation}
   \eps(t) = \arctan(t \exponential{\alpha t+ \beta})\eqpd
 \end{equation}
+%
+The resolution model consists of a single Gaussian resolution function
+$\mathcal{R}(t - t_\text{true})$ with the width fixed to
+$\SI{50}{\femto\second}$ and no offset from zero. The parameters $\alpha$ and
+$\beta$ of the acceptance function are fixed in the fit to values determined on
+simulated candidates. The mixing \PDF depends on the decay time $t$, the tag
+decision $\tagdecision$ of the \SSpi tagging algorithm and its mistag estimate
+$\mistagestimate$, and the tag $\tagdecision^\prime$ extracted from the final
+state flavour. \Cref{fig:flavour_tagging:calibration:ss:fit} presents the mass
+and decay time distributions of the used $\BdToJpsiKstar$ candidates, as well as
+projections of the fitted \PDF components.
+%
+\begin{figure}[t]
+  \includegraphics[width=0.48\textwidth]{private/content/flavour-tagging/figs/lhcb_ft_calibration_bd2jpsikstar_mass.pdf}
+  \includegraphics[width=0.48\textwidth]{private/content/flavour-tagging/figs/lhcb_ft_calibration_bd2jpsikstar_time.pdf}
+  \caption{(Left) Mass and (Right) decay time distributions of $\BdToJpsiKstar$
+  candidates. In blue the projections of the fitted signal components and in
+  red/orange the projections of the combinatorial background component are
+  shown.}
+  \label{fig:flavour_tagging:calibration:ss:fit}
+\end{figure}
+%
 
-\newpage
+
+\clearpage
 \section{Combination}
 \label{sec:flavour_tagging:combination}
 Combination of OS and SS tagging, FT correlations

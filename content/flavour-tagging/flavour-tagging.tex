@@ -70,7 +70,7 @@ the flavour tagging on the measurement of $\CP$ violation in $\BdToJpsiKS$
 decays is provided in \cref{sec:flavour_tagging:sin2beta}.
 
 More details on the flavour tagging used by \LHCb can be found in
-\cite{Aaij:2012mu}.
+\cite{Aaij:2012mu,FT:ANARunI,FT:RunI}. \addref{Sort out citation of FT}
 
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Flavour tagging algorithms}
@@ -914,12 +914,46 @@ results of the reweighting procedure are presented in
   \label{fig:flavour_tagging:calibration:ss:parameter_distributions}
 \end{figure}
 
-\clearpage
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Combination}
+\section{Combination of single tagger outputs}
 \label{sec:flavour_tagging:combination}
-Combination of OS and SS tagging, FT correlations
 
+In order to fully exploit the information of all tagging algorithms it is
+desirable to combine their tag decisions $\tagdecision_i$ and mistag estimates
+$\mistagestimate_i$ into one mutual decision. Given the probabilities
+$p(\bquark)$ and $p(\bquarkbar)$ that a meson contains either a $\bquark$ or a
+$\bquarkbar$ quark
+%
+\begin{equation}\label{eq:flavour_tagging:combination:product}
+  \begin{split}
+    p(\bquark)    &= \prod_i\left( \frac{1 + \tagdecision_i}{2} - \tagdecision_i (1 - \mistagestimate_i) \right)\eqcm\\
+    p(\bquarkbar) &= \prod_i\left( \frac{1 - \tagdecision_i}{2} + \tagdecision_i (1 - \mistagestimate_i) \right)\eqcm
+  \end{split}
+\end{equation}
+%
+the combined probabilities $P(\bquark)$ and $P(\bquarkbar)$ can be calculated
+%
+\begin{equation}\label{eq:flavour_tagging:combination:total}
+  P(\bquark)    = \frac{p(\bquark)}{p(\bquark) + p(\bquarkbar)}\eqcm\eqspace
+  P(\bquarkbar) = 1 - P(\bquark)\eqpd
+\end{equation}
+%
+Then, the combined tag decision and mistag estimate are $\tagdecision = +1$ and
+$\mistagestimate = 1 - P(\bquarkbar)$ if $P(\bquarkbar) > P(\bquark)$, otherwise
+$\tagdecision = -1$ and $\mistagestimate = 1 - P(\bquark)$. As in
+\cref{eq:flavour_tagging:combination:product} possible correlation among the
+involved taggers is ignored, the joint mistag estimate might distort the
+outcome. To correct for this possible bias the combination is calibrated using a
+flavour-specific control channel.
+
+The analysis presented in this thesis utilises the combination of the calibrated
+\OS tagging algorithms (see \cref{sec:flavour_tagging:calibration:os}) as well
+as of the \SSpi tagger. As the \OS and \SS taggers find their decisions using
+independent particle information their output is assumed to be uncorrelated and
+not further calibration is necessary after combination of the \OS and \SSpi
+tagging decisions.
+
+\clearpage
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Performance}
 \label{sec:flavour_tagging:performance}

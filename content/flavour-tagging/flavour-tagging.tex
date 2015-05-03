@@ -2,7 +2,7 @@
 
 \chapter{Flavour Tagging}
 \label{ch:flavour_tagging}
-
+\important{Wording for \mistag, \mistagestimate and $\mistagestimate_\text{c}$} 
 The time-dependent measurement of the $\CP$ asymmetry $\CPAsymmetry$ in the
 decay of $\Bd$ and $\Bdbar$ mesons into the $\CP$ eigenstate $\Jpsi\KS$ requires
 the knowledge of the \Bmeson flavour at production, \ie weather it contained
@@ -15,7 +15,7 @@ $\mistagestimate$ that the assigned tag is wrong, also called \enquote{mistag}
 estimate. The tag is $\tagdecision=+1$ for an initial $\Bd$, $\tagdecision=-1$
 for an initial $\Bdbar$, and $\tagdecision=0$ if the tagging algorithms were not
 able to determine a decision. The mistag estimate interval is given by
-$[0,0.5[$, where mistags $\mistagestimate^{\prime}>0.5$ are evaluated as
+${[0,0.5[}$, where mistags $\mistagestimate^{\prime}>0.5$ are evaluated as
 $\mistagestimate = 1 - \mistagestimate^{\prime}$ and the corresponding tag's
 sign is reversed. If the algorithm is not able to determine a decision, the
 mistag is set $\mistagestimate=0.5$.
@@ -940,24 +940,84 @@ the combined probabilities $P(\bquark)$ and $P(\bquarkbar)$ can be calculated
 %
 Then, the combined tag decision and mistag estimate are $\tagdecision = +1$ and
 $\mistagestimate = 1 - P(\bquarkbar)$ if $P(\bquarkbar) > P(\bquark)$, otherwise
-$\tagdecision = -1$ and $\mistagestimate = 1 - P(\bquark)$. As in
-\cref{eq:flavour_tagging:combination:product} possible correlation among the
-involved taggers is ignored, the joint mistag estimate might distort the
-outcome. To correct for this possible bias the combination is calibrated using a
-flavour-specific control channel.
+$\tagdecision = -1$ and $\mistagestimate = 1 - P(\bquark)$. As
+\cref{eq:flavour_tagging:combination:product} ignores possible correlation among
+the involved taggers, the joint mistag estimate might distort the outcome. To
+correct for this bias the combination is calibrated using a flavour-specific
+control channel.
 
 The analysis presented in this thesis utilises the combination of the calibrated
 \OS tagging algorithms (see \cref{sec:flavour_tagging:calibration:os}) as well
-as of the \SSpi tagger. As the \OS and \SS taggers find their decisions using
-independent particle information their output is assumed to be uncorrelated and
-not further calibration is necessary after combination of the \OS and \SSpi
-tagging decisions.
+as of the \SSpi tagger (see \cref{sec:flavour_tagging:calibration:ss}). As the
+\OS and \SS taggers find their decisions using independent particle information
+their output is assumed to be uncorrelated and not further calibration is
+necessary after combining the \OS and \SSpi tagging decisions.
 
 \clearpage
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Performance}
 \label{sec:flavour_tagging:performance}
-Performance of the FT algorithms
+
+The effective tagging efficiency (see \cref{eq:flavour_tagging:efftageff})
+inherent in the used data sample given the choice of utilised taggers is
+calculated as the sum of the effective tagging efficiencies carried by each
+(including untagged) signal candidate
+%
+\begin{equation}
+  \efftageff = \frac{\sum_{i=0}^{N} \mistag_i \tagdilution_i^2\big(\tagOS, \tagSS, \mistagOS, \mistagSS \big)}{\sum_{i=0}^{N} \mistag_i}\eqcm
+\end{equation}
+%
+where $\mistagOS$ and $\mistagSS$ refer to the calibrated mistag estimates. This
+adds up to an effective tagging efficiency of $\efftageff = \SI{3.02 +-
+0.05}{\percent}$, which splits into a tagging efficiency of $\tageff = \SI{36.54
++- 0.14}{\percent}$ and an effective dilution of $\tagdilution = \SI{28.75 +-
+0.24}{\percent}$ corresponding to an average mistag probability of $\mistag =
+\SI{35.62 +- 0.12}{\percent}$.
+
+\Cref{tab:flavour_tagging:performance:numbers} lists the tagging efficiency
+separate for the tagging categories \catOS, \catSS, and \catBS, as well as for
+the case where all \SSpi decisions are ignored and only the \OS tagging
+information are exploited (\enquote{all \OS}) and vice versa (\enquote{all
+\SSpi}). This allows the performance obtained on the given dataset to be
+compared with the results from a previous \LHCb measurement \cite{Aaij:1497268},
+where only the tagging information provided by the \OS algorithm were used.
+Here, relative improvements of $\SI{10}{\percent}$ from $\SI{2.38}{\percent}$ to
+$\SI{2.63}{\percent}$ can be observed. Finally, supplementing the measurement
+with information from the \SSpi tagger allows for an overall improvement in
+effective tagging efficiency of almost $\SI{27}{\percent}$.
+%
+\begin{table}
+  \centering
+  \caption{Effective tagging efficiency given for all three tagging categories.
+  Additionally listed are the results just exploiting the information of the \OS
+  or \SSpi tagging algorithms, as well as the total effective tagging efficiency
+  of the dataset.}
+  \label{tab:flavour_tagging:performance:numbers}
+  \begin{tabular}{
+      S[table-text-alignment = left]
+      S
+      [
+        table-number-alignment = center,
+        table-align-uncertainty = true,
+        table-figures-decimal = 3,
+        table-figures-uncertainty = 1,
+      ]
+    }
+    \toprule
+    {Tagger}        & {\efftageff [$\%$]}\\
+    \midrule
+    {\catOS}        & 2.259 +- 0.034 \\
+    {\catSS}        & 0.262 +- 0.017 \\
+    {\catBS}        & 0.503 +- 0.010 \\
+    \midrule
+    {all \OS}       & 2.63  +- 0.04  \\
+    {all \SSpi}     & 0.376 +- 0.024 \\
+    \midrule
+    {Total}         & 3.02  +- 0.05  \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+%
 
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Recent developments}

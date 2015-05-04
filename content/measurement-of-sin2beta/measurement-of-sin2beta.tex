@@ -1,24 +1,69 @@
 %!TEX root = ../../common/main.tex
 
 \chapter{The measurement of sin2beta}
+\label{ch:measurement_of_sin2beta}
+
 \section{Overview of the measurement ingredients}
-General idea of the measurement and the key concepts
+\label{sec:measurement_of_sin2beta:overview}
+\missing{General idea of the measurement and the key concepts}
+
 \section{Data preparation}
-\begin{itemize}
-  \item Year of data taking, collected integrated luminosity
-  \item Data processing: Reco version, DaVinci, etc.
-  \item general remarks on the data preparation
-  \item DTF explanation including constraints used in the fit
-  \item Observables
-\end{itemize}
+\label{sec:measurement_of_sin2beta:data_preparation}
+
+The presented analysis is performed on a dataset collected by the \LHCb
+experiment during two run periods in 2011 and 2012, dubbed
+\enquote{\RunOne}\footnote{In contrast to the second \enquote{\RunTwo} period
+scheduled to start in 2015 and last until mid 2018.}.
+
+The 2011 subsample has an integrated luminosity of
+$\SI[separate-uncertainty=true]{1.00\pm0.04}{\per\femto\barn}$ at a
+centre-of-mass energy of $\sqrt{s}=\SI{7}{\TeV}$, while the 2012 subsample has
+an integrated luminosity of
+$\SI[separate-uncertainty=true]{1.990\pm0.024}{\per\femto\barn}$ at
+$\sqrt{s}=\SI{8}{\TeV}$.
+
+The $\BdToJpsiKS$ decay candidates are reconstructed (\RecoFourteen) in the
+$\JpsiToMuMu$ and $\KSToPiPi$ final state. The tuples are produced using
+\DaVinci v33r9. In this step the track momentum scale calibration
+\cite{Needham:2008zzc} is applied. In order to enhance the purity of the signal
+candidates, several selection steps are performed. At first a two-layer
+\emph{trigger} system selects events from the \protonproton collisions (\cf
+\cref{sec:measurement_of_sin2beta:trigger}). Then a loose and very general
+selection, the so called \emph{stripping} is applied to the triggered data
+written to tape (\cf \cref{sec:measurement_of_sin2beta:stripping}). The final
+step is an offline selection of the remaining candidates that is further
+adjusted to the specific decay and the reconstructed final state (\cf
+\cref{sec:measurement_of_sin2beta:offline_selection}).
+
+Besides reducing the background level and enhancing the fraction of signal in
+the data set, the selection tries to minimise a possible bias of the measured
+\Bd lifetime caused by selection steps that preferably remove candidates with
+small decay times. If it is inevitable, then at least the biasing effects should
+be understood and accounted for.
+
+\subsubsection*{Decay chain fitting}
+In order to correctly comprise correlations and uncertainties on vertex
+positions, particle momenta, flight distances, decay times, and invariant
+masses, the \DTF \cite{Hulsbergen:2005pu} was used in the tuple processing.
+Entities decorated with the expression \dtfpv stem from a \DTF fit where the
+knowledge about the primary vertex has been used to constrain the production
+vertex of the \Bd meson, while the expression \dtf means that additionally to
+the PV constraint the \jpsi and \KS invariant masses are constrained to their
+masses listed by the \PDG ($m_{\KS}^{\text{\acs{PDG}}}=\SI{497.614}{\MeVcc}$,
+$m_{\jpsi}^{\text{\acs{PDG}}} = \SI[per-mode=symbol]{3096.916}{\MeVcc}$, see
+\cite{Agashe:2014kda}) inside the \DTF fit. In the Stripping and if not stated
+otherwise the \verb=OfflineVertexFitter= \addref{OfflineVertexFitter} was used.
 
 \subsection{Trigger}
+\label{sec:measurement_of_sin2beta:trigger}
 L0, HLT1, HLT2 requirements, TCKs?, efficiencies
 
 \subsection{Stripping}
+\label{sec:measurement_of_sin2beta:stripping}
 Stripping details, cuts, ...
 
 \subsection{Offline selection}
+\label{sec:measurement_of_sin2beta:offline_selection}
 Selection cuts, FoM, efficiencies
 
 \subsection{Multiple candidates}

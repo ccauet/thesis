@@ -22,29 +22,30 @@ an integrated luminosity of
 $\SI[separate-uncertainty=true]{1.990\pm0.024}{\per\femto\barn}$ at
 $\sqrt{s}=\SI{8}{\TeV}$.
 
-The $\BdToJpsiKS$ decay candidates are reconstructed (\RecoFourteen) in the
-$\JpsiToMuMu$ and $\KSToPiPi$ final state. The tuples are produced using
-\DaVinci v33r9. In this step the track momentum scale calibration
-\cite{Needham:2008zzc} is applied. In order to enhance the purity of the signal
+The $\BdToJpsiKS$ decay candidates are reconstructed in the $\JpsiToMuMu$ and
+$\KSToPiPi$ final state. In order to enhance the purity of the signal
 candidates, several selection steps are performed. At first a two-layer
 \emph{trigger} system selects events from the \protonproton collisions (\cf
-\cref{sec:measurement_of_sin2beta:trigger}). Then a loose and very general
+\cref{sec:measurement_of_sin2beta:data_preparation:trigger}). Then a loose and very general
 selection, the so called \emph{stripping} is applied to the triggered data
-written to tape (\cf \cref{sec:measurement_of_sin2beta:stripping}). The final
-step is an offline selection of the remaining candidates that is further
-adjusted to the specific decay and the reconstructed final state (\cf
-\cref{sec:measurement_of_sin2beta:offline_selection}).
+written to tape (\cf
+\cref{sec:measurement_of_sin2beta:data_preparation:stripping}). The final step
+is an offline selection of the remaining candidates that is further adjusted to
+the specific decay and the reconstructed final state (\cf
+\cref{sec:measurement_of_sin2beta:data_preparation:offline_selection}).
 
 Besides reducing the background level and enhancing the fraction of signal in
 the data set, the selection tries to minimise a possible bias of the measured
 \Bd lifetime caused by selection steps that preferably remove candidates with
 small decay times. If it is inevitable, then at least the biasing effects should
-be understood and accounted for.
+be understood and accounted for (\cf
+\cref{sec:measurement_of_sin2beta:resolution_and_acceptance:acceptance}).
 
-\subsubsection*{Decay chain fitting}
+\subsubsection*{Global decay chain fit}
 In order to correctly comprise correlations and uncertainties on vertex
 positions, particle momenta, flight distances, decay times, and invariant
 masses, the \DTF \cite{Hulsbergen:2005pu} was used in the tuple processing.
+
 Entities decorated with the expression \dtfpv stem from a \DTF fit where the
 knowledge about the primary vertex has been used to constrain the production
 vertex of the \Bd meson, while the expression \dtf means that additionally to
@@ -55,15 +56,15 @@ $m_{\jpsi}^{\text{\acs{PDG}}} = \SI[per-mode=symbol]{3096.916}{\MeVcc}$, see
 otherwise the \verb=OfflineVertexFitter= \addref{OfflineVertexFitter} was used.
 
 \subsection{Trigger}
-\label{sec:measurement_of_sin2beta:trigger}
+\label{sec:measurement_of_sin2beta:data_preparation:trigger}
 L0, HLT1, HLT2 requirements, TCKs?, efficiencies
 
 \subsection{Stripping}
-\label{sec:measurement_of_sin2beta:stripping}
+\label{sec:measurement_of_sin2beta:data_preparation:stripping}
 Stripping details, cuts, ...
 
 \subsection{Offline selection}
-\label{sec:measurement_of_sin2beta:offline_selection}
+\label{sec:measurement_of_sin2beta:data_preparation:offline_selection}
 Selection cuts, FoM, efficiencies
 
 \subsection{Multiple candidates}
@@ -73,10 +74,15 @@ Why do we see multiple candidates, difference between multiple PVs and multiple 
 Data sets used, software stack and versions, simulation conditions, DEC file, generation parameters
 
 \section{Flavour tagging}
+\label{sec:measurement_of_sin2beta:flavour_tagging}
 \section{Backgrounds}
+\label{sec:measurement_of_sin2beta:physic_backgrounds}
 \section{Decay time resolution and acceptance}
+\label{sec:measurement_of_sin2beta:resolution_and_acceptance}
 \subsection{Resolution}
+\label{sec:measurement_of_sin2beta:resolution_and_acceptance:resolution}
 \subsection{Acceptance}
+\label{sec:measurement_of_sin2beta:resolution_and_acceptance:acceptance}
 \section{Likelihood fit}
 \subsection{Fitter validation}
 \section{CPV measurement}

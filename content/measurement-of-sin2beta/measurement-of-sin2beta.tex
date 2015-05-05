@@ -44,17 +44,53 @@ be understood and accounted for (\cf
 \subsubsection*{Global decay chain fit}
 In order to correctly comprise correlations and uncertainties on vertex
 positions, particle momenta, flight distances, decay times, and invariant
-masses, the \DTF \cite{Hulsbergen:2005pu} was used in the tuple processing.
+masses, a global decay chain fit (\acs{DTF}) \cite{Hulsbergen:2005pu} is
+performed. Instead of fitting \enquote{leaf-by-leaf} starting from the final
+state particles to determine the parameters of their composite mother particle,
+then repeating this step until the initial \bhadron is reached, the \DTF fit
+extracts all parameters in the decay chain simultaneously.
 
 Entities decorated with the expression \dtfpv stem from a \DTF fit where the
-knowledge about the primary vertex has been used to constrain the production
+knowledge about the \PV has been used to constrain the production
 vertex of the \Bd meson, while the expression \dtf means that additionally to
-the PV constraint the \jpsi and \KS invariant masses are constrained to their
+the \PV constraint the \jpsi and \KS invariant masses are constrained to their
 masses listed by the \PDG ($m_{\KS}^{\text{\acs{PDG}}}=\SI{497.614}{\MeVcc}$,
 $m_{\jpsi}^{\text{\acs{PDG}}} = \SI[per-mode=symbol]{3096.916}{\MeVcc}$, see
-\cite{Agashe:2014kda}) inside the \DTF fit. In the Stripping and if not stated
-otherwise the \verb=OfflineVertexFitter= \addref{OfflineVertexFitter} was used.
+\cite{Agashe:2014kda}) inside the \DTF fit. In the stripping and if not stated
+otherwise the much simpler leaf-by-leaf fitting was used.
 
+\subsubsection*{Observables}
+
+Throughout the analysis, several observables are used: the \Bd invariant mass
+$\obsMass$, the decay time of the \Bd in its rest frame $\obsTime$, the \Bd
+decay time error estimate $\obsTimeError$, and the tag decisions
+\obsTagOSSS and mistag estimates \obsEtaOSSS of the opposite site and same side
+tagging algorithms (\cf \cref{ch:flavour_tagging}).
+\Cref{tab:measurement_of_sin2beta:data_preparation:observables} summarises all
+used observables, provides the considered observable ranges, and defines the
+used fit constraints.
+
+\begin{table}[!htb]
+\centering
+\caption{Used observables, observable ranges and \DTF fit properties.\info{checkmark does not work with font}}
+\label{tab:measurement_of_sin2beta:data_preparation:observables}
+\begin{tabular}{llccc}
+\toprule
+Name              & Range           & \multicolumn{3}{c}{Fit constraints} \\ 
+                  &                 & $m_{\KS}^{\text{PDG}}$ & $m_{\jpsi}^{\text{PDG}}$ & \acs{PV} position \\
+\midrule    
+$\obsMass$        & $\SIrange[range-phrase = -, range-units = single]{5230}{5330}{\MeVcc}$ & \checkmark & \checkmark & \checkmark \\
+$\obsTime$        & $\SIrange[range-phrase = -, range-units = single]{0.3}{18.3}{\pico\second}$ & - & - & \checkmark \\
+$\obsTimeError$   & $\SIrange[range-phrase = -, range-units = single]{0.0}{0.2}{\pico\second}$ & - & - & \checkmark \\
+$\obsTagOS$       & \num[retain-explicit-plus]{+1}, \num{-1} & - & - & - \\
+$\obsEtaOS$       & $\SIrange[range-phrase = -]{0.0}{0.5}{}$ & - & - & - \\
+$\obsTagSS$       & \num[retain-explicit-plus]{+1}, \num{-1} & - & - & - \\
+$\obsEtaSS$       & $\SIrange[range-phrase = -]{0.0}{0.5}{}$ & - & - & - \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\clearpage
 \subsection{Trigger}
 \label{sec:measurement_of_sin2beta:data_preparation:trigger}
 L0, HLT1, HLT2 requirements, TCKs?, efficiencies

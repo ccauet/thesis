@@ -90,6 +90,45 @@ $\obsEtaSS$       & $\SIrange[range-phrase = -]{0.0}{0.5}{}$ & - & - & - \\
 \end{tabular}
 \end{table}
 
+\subsubsection*{Data set subsamples}
+
+\begin{description}
+  \item[Year] The data consists of subsamples from data-taking in both the 2011
+and 2012 run periods. To differentiate between these samples, they are indicated
+by the terms \textbf{\catOO} and \textbf{\catOT}.
+
+  \item[Track type] Due to the long lifetime of the \KS, its daughter pions may
+or may not leave hits in the \VELO (\cf
+\cref{sec:lhcb_experiment:tracking:techniques_and_performance}). \KS candidates
+(and accordingly the associated \Bmeson candidate) of which both reconstructed
+pions have hits in the \VELO are classified as \emph{long track}
+(\textbf{\catLL}) candidates. If both pions do not leave hits in the \VELO, the
+candidate is called \emph{downstream track} (\textbf{\catDD}) candidate.
+Candidates where only one of the reconstructed pions has a long track are not
+considered in this analysis.
+  
+  \item[Tagger] Depending on the tag decisions, events are categorised: as
+  exclusively \emph{opposite side tagged} (\textbf{\catOS}) if \textbf{only} the
+opposite side tagger combination returns a tag decision, as exclusively
+\emph{same side pion tagged} (\textbf{\catSS}) if \textbf{only} the same side
+pion tagger returns a decision, as tagged by both tagging algorithms (or
+\emph{tagged by both sides} (\textbf{\catBS})), and as \emph{untagged}
+(\textbf{\catUT}) if none of the used taggers returns a tag decision. See
+\cref{ch:flavour_tagging} for an elaborated description.
+  
+  \item[Trigger] As described in \cref{sec:data_preparation:trigger:acceptance}, the
+different trigger lines induce decay time acceptance effects. To describe these
+effects independently the data is split into a sample where almost no decay time
+acceptance effects are visible, called \emph{almost unbiased} subsample
+(\textbf{\catAU}), and a sample that includes the major fraction of events
+affected by a decay time acceptance, called \emph{exclusively biased} subsample
+(\textbf{\catEB}).
+\end{description}
+
+Unless explicitly stated otherwise, no untagged (\textbf{\catUT}) events are
+used. Therefore, splitting the data set in all possible categories results in a
+total of $\num{24}$ disjoint subsamples.
+
 \clearpage
 \subsection{Trigger}
 \label{sec:measurement_of_sin2beta:data_preparation:trigger}

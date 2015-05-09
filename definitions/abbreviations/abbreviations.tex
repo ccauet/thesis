@@ -15,13 +15,6 @@
 \newmathsymbol{\catAU}{\text{AU}\xspace}
 \newmathsymbol{\catEB}{\text{EB}\xspace}
 
-% Tagging
-\newmathsymbol{\tagOS}{\tagdecision_{\text{OS}}\xspace}
-\newmathsymbol{\tagSS}{\tagdecision_{\text{\acs{SSpi}}}\xspace}
-
-\newmathsymbol{\mistagOS}{\mistag(\mistagestimate_{\text{OS}})\xspace}
-\newmathsymbol{\mistagSS}{\mistag(\mistagestimate_{\text{\acs{SSpi}}})\xspace}
-
 % Observables
 \newmathsymbol{\obsMass}{m_{\jpsi\KS}\xspace}
 \newmathsymbol{\obsTime}{t\xspace}
@@ -33,3 +26,32 @@
 
 \newmathsymbol{\obsTagOSSS}{\tagdecision_{\{\text{\acs{OS},\acs{SSpi}\}}}\xspace}
 \newmathsymbol{\obsEtaOSSS}{\mistagestimate_{\{\text{\acs{OS},\acs{SSpi}\}}}\xspace}
+
+% Trigger
+\SaveVerb{tmp_TriggerRequirement}=(Hlt1DiMuonHighMass || Hlt1TrackMuon) && Hlt2DiMuonDetachedJPsi=
+\newcommand{\TriggerReq}{\UseVerb{tmp_TriggerRequirement}\xspace}
+\SaveVerb{tmp_AlmostUnbiased}=Hlt1DiMuonHighMass && Hlt2DiMuonDetachedJPsi=
+\newcommand{\TriggerReqAU}{\UseVerb{tmp_AlmostUnbiased}\xspace}
+\SaveVerb{tmp_AlmostUnbiasedEnumerator}=Hlt1DiMuonHighMass && Hlt2DiMuonDetachedJPsi && Hlt2DiMuonJPsi=
+\newcommand{\TriggerReqAUEnumerator}{\UseVerb{tmp_AlmostUnbiasedEnumerator}\xspace}
+\SaveVerb{tmp_ExclusivelyBiased}=(Hlt1TrackMuon && !Hlt1DiMuonHighMass) && Hlt2DiMuonDetachedJPsi=
+\newcommand{\TriggerReqEB}{\UseVerb{tmp_ExclusivelyBiased}\xspace}
+\SaveVerb{tmp_ExclusivelyUnbiased}=Hlt1DiMuonHighMass && Hlt2DiMuonJPsi=
+\newcommand{\TriggerReqUB}{\UseVerb{tmp_ExclusivelyUnbiased}\xspace}
+\SaveVerb{tmp_2011TriggerRequirement}=Hlt1DiMuonHighMass && Hlt2DiMuonDetachedJPsi=
+\newcommand{\TriggerReqOldAna}{\UseVerb{tmp_2011TriggerRequirement}\xspace}
+\SaveVerb{tmp_TriggerAllOrRequirement}=Hlt1DiMuonHighMass || Hlt1TrackMuon || Hlt2DiMuonDetachedJPsi || Hlt2DiMuonJPsi=
+\newcommand{\TriggerReqAllOr}{\UseVerb{tmp_TriggerAllOrRequirement}\xspace}
+
+% Stripping
+\SaveVerb{tmp_StripDetached}=StrippingBetaSBd2JpsiKsDetached=
+\newcommand{\StrippingDetached}{\UseVerb{tmp_StripDetached}\xspace}
+\SaveVerb{tmp_StripPrescaled}=StrippingBetaSBd2JpsiKsPrescaled=
+\newcommand{\StrippingPrescaled}{\UseVerb{tmp_StripPrescaled}\xspace}
+
+% Tagging
+\newmathsymbol{\tagOS}{\tagdecision_{\text{OS}}\xspace}
+\newmathsymbol{\tagSS}{\tagdecision_{\text{\acs{SSpi}}}\xspace}
+
+\newmathsymbol{\mistagOS}{\mistag(\mistagestimate_{\text{OS}})\xspace}
+\newmathsymbol{\mistagSS}{\mistag(\mistagestimate_{\text{\acs{SSpi}}})\xspace}

@@ -116,9 +116,10 @@ pion tagger returns a decision, as tagged by both tagging algorithms (or
 (\textbf{\catUT}) if none of the used taggers returns a tag decision. See
 \cref{ch:flavour_tagging} for an elaborated description.
   
-  \item[Trigger] As described in \cref{sec:data_preparation:trigger:acceptance}, the
-different trigger lines induce decay time acceptance effects. To describe these
-effects independently the data is split into a sample where almost no decay time
+  \item[Trigger] As described in
+\cref{sec:measurement_of_sin2beta:data_preparation:trigger}, the different
+trigger lines induce decay time acceptance effects. To describe these effects
+independently the data is split into a sample where almost no decay time
 acceptance effects are visible, called \emph{almost unbiased} subsample
 (\textbf{\catAU}), and a sample that includes the major fraction of events
 affected by a decay time acceptance, called \emph{exclusively biased} subsample
@@ -129,11 +130,145 @@ Unless explicitly stated otherwise, no untagged (\textbf{\catUT}) events are
 used. Therefore, splitting the data set in all possible categories results in a
 total of $\num{24}$ disjoint subsamples.
 
-\clearpage
 \subsection{Trigger}
 \label{sec:measurement_of_sin2beta:data_preparation:trigger}
-L0, HLT1, HLT2 requirements, TCKs?, efficiencies
 
+The \LHCb trigger system reduces the amount of data to be stored using loose
+criteria to filter events with interesting physical signatures. As described in
+\cref{sec:lhcb_experiment:trigger} a two-stage system is utilised build up from
+the fast hardware-based \acf{LZero} trigger and the software based \acf{HLT}.
+
+The trigger requirements are collected in so called \enquote{trigger lines}
+consisting of a set of selections criteria to map certain event types. In the
+following the trigger requirements applied in this measurement are described.
+
+If not stated otherwise all candidates passing the requirements specified by the
+trigger line configuration \TriggerReq are used in this analysis.
+
+Both the \HLTOneTrackMuon as well as the \HLTTwoDiMuonDetachedJpsi line require
+cuts on parameters depending on the candidates' measured decay time, preferably
+removing candidates with small decay times. This leads to a bias on the measured
+lifetime. Candidates are split into two disjoint subsamples: candidates passing
+the requirements given by the trigger line configuration \TriggerReqAU are
+classified as \emph{almost unbiased} (\textbf{\catAU}) where else candidates
+passing the requirements given by the combination \TriggerReqEB correspond to
+the \emph{exclusively biased} subsample (\textbf{\catEB}). The strategy to cope
+with this acceptance effects is described in detail in
+\cref{sec:measurement_of_sin2beta:resolution_and_acceptance:acceptance}.
+
+\subsubsection{\LZero trigger requirements}
+\label{sec:measurement_of_sin2beta:data_preparation:trigger:lzero}
+
+The \HLT lines in use require all candidates pass either the \LZeroMuon or the
+\LZeroDiMuon trigger lines. No further \LZero criteria are required.
+\missing{L0 trigger cuts}
+
+\subsubsection{\HLTOne trigger requirements}
+\label{sec:measurement_of_sin2beta:data_preparation:trigger:hlt1}
+
+All candidates accepted by the two \HLTOne trigger lines are required to carry a
+\Jpsi \TOS decision, where \TOS refers to events where the signal particle
+tracks alone fulfil the trigger line requirements. Both lines are designed to
+trigger on muons, in this case originating from the secondary decay of the \Jpsi
+into \mumu. The \HLTOneTrackMuon introduces a bias on the lifetime through a cut
+on the minimal muon track \IP with respect to any \PV and is therefore called a
+\enquote{biased} line. The \HLTOneDiMuonHighMass does not affect the decay time
+distribution, hence is called an \enquote{unbiased} line. All trigger
+requirements are summarised in
+\cref{tab:measurement_of_sin2beta:data_preparation:trigger:hlt1:cuts}.
+%
+\begin{table}
+\centering
+\caption{\HLTOne $\jpsi$ muon lines and their requirements. \cite{Aaij:2012me} }
+\label{tab:measurement_of_sin2beta:data_preparation:trigger:hlt1:cuts}
+\begin{tabular}{lll}
+\toprule
+& \HLTOneDiMuonHighMass & \HLTOneTrackMuon \\
+\midrule
+Track \IP                   & -                                     & $>\SI{0.1}{mm}$ \\
+Track $\chi_{\text{\IP}}^2$ & -                                     & $>\num{16}$ \\
+Track \pT                   & $>\SI[per-mode=symbol]{0.5}{\GeVc}$   & $>\SI[per-mode=symbol]{1}{\GeVc}$ \\
+Track $p$                   & $>\SI[per-mode=symbol]{6}{\GeVc}$     & $>\SI[per-mode=symbol]{8}{\GeVc}$ \\
+Track \chisqndf             & $<\num{4}$                            & $<\num{2}$ \\
+\DOCA                       & $<\SI{0.2}{mm}$                       & - \\
+$\chi^2_\text{vtx}$         & $<\num{25}$                           & - \\
+Mass                        & $>\SI[per-mode=symbol]{2.7}{\GeVcc}$  & - \\ 
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsubsection{\HLTTwo trigger requirements}
+\label{sec:measurement_of_sin2beta:data_preparation:trigger:hlt2}
+
+The \HLTTwo trigger line requirements are summarised in
+\cref{tab:measurement_of_sin2beta:data_preparation:trigger:hlt2:cuts}. Again a
+\TOS decision is required for events passing the trigger selection. Induced by a
+cut on the flight distance significance of the \Jpsi candidate the
+\HLTTwoDiMuonDetachedJpsi line causes a lifetime bias. Hence, the
+\HLTTwoDiMuonJpsi line is used as an unbiased reference line. With a pre-scale
+of $\num{0.2}$, only $\SI{20}{\percent}$ of all events passing \LZero and
+\HLTTwo are chosen randomly as input to this line.
+%
+\begin{table}
+\centering
+\caption{\HLTTwo $\jpsi$ dimuon lines and their requirements ($M_{\jpsi} =
+\SI[per-mode=symbol]{3096.916}{\MeVcc}$). \cite{Aaij:2012me} }
+\label{tab:measurement_of_sin2beta:data_preparation:trigger:hlt2:cuts}
+\begin{tabular}{lll}
+\toprule
+& \HLTTwoDiMuonJpsi & \HLTTwoDiMuonDetachedJpsi \\
+\midrule
+Track \chisqndf           & $<\num{5}$                                       & $<\num{5}$ \\
+Mass                      & $M_{\jpsi}\pm\SI[per-mode=symbol]{0.12}{\GeVcc}$ & $M_{\jpsi}\pm\SI[per-mode=symbol]{0.12}{\GeVcc}$ \\ 
+flight distance $\chi^2$  & -                                                & $>\num{9}$ \\ 
+$\chi^2_\text{vtx}$       & $<\num{25}$                                      & $<\num{25}$ \\
+\midrule
+Pre-scale                 & $\num{0.2}$                                      & - \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsubsection{Trigger efficiencies}
+\label{sec:measurement_of_sin2beta:data_preparation:trigger:efficiencies}
+
+The ratio of events passing a trigger requirement compared to all present events
+is called trigger efficiency. Compared to the efficiency of the
+$\SI{1}{\per\fb}$ \LHCb analysis \cite{Aaij:1497268}, where events had to fulfil
+the trigger requirements of the \HLTOneDiMuonHighMass and the
+\HLTTwoDiMuonDetachedJpsi lines, a gain of $\SI{19.7}{\percent}$ in signal
+efficiency is measured by requiring the
+(\HLTOneDiMuonHighMass\VerbOr\HLTOneTrackMuon) decision.
+\cref{tab:measurement_of_sin2beta:data_preparation:trigger:efficiencies}
+compares the calculated trigger efficiencies in detail.
+%
+\begin{table}[!htb]
+\centering
+\caption{Trigger selection efficiencies as determined on (simulated) data. The
+first column gives the numbers obtained on $\BdToJpsiKS$ signal MC, where the 
+normalisation is performed \wrt events with positive \protect\Verb+L0Physics+,
+\protect\Verb+Hl1Phys+, and \protect\Verb+Hlt2Phys+ decisions. The second column shows
+\enquote{signal in data} numbers obtained using an \sweighted data sample. The
+last column contains numbers extracted from data without distinction between
+signal and background.}
+\label{tab:measurement_of_sin2beta:data_preparation:trigger:efficiencies}
+\begin{scriptsize}
+\begin{tabular}{llll}
+\toprule
+trigger requirements & signal MC & signal in data & overall data \\
+\midrule
+\HLTOneDiMuonHighMass\VerbAnd\HLTTwoDiMuonDetachedJpsi 
+    & \SI{70.3}{\percent} & \SI{72.3}{\percent} & \SI{60.9}{\percent}\\
+\TriggerReq 
+    & \SI{84.7}{\percent} & \SI{86.6}{\percent} & \SI{74.6}{\percent}\\
+\midrule
+\text{Difference between trigger requirements}        & \SI{14.4}{pp} & \SI{14.3}{pp} & \SI{13.7}{pp}\\
+\text{Relative gain from adding \HLTOneTrackMuon} & +\SI{20.4}{\percent} & +\SI{19.7}{\percent} & +\SI{22.5}{\percent}\\
+\bottomrule
+\end{tabular}
+\end{scriptsize}
+\end{table}
+
+\clearpage
 \subsection{Stripping}
 \label{sec:measurement_of_sin2beta:data_preparation:stripping}
 Stripping details, cuts, ...

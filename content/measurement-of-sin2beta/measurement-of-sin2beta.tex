@@ -70,7 +70,7 @@ tagging algorithms (\cf \cref{ch:flavour_tagging}).
 used observables, provides the considered observable ranges, and defines the
 used fit constraints.
 
-\begin{table}[!htb]
+\begin{table}
 \centering
 \caption{Used observables, observable ranges and \DTF fit properties.\info{checkmark does not work with font}}
 \label{tab:measurement_of_sin2beta:data_preparation:observables}
@@ -241,7 +241,7 @@ efficiency is measured by requiring the
 \cref{tab:measurement_of_sin2beta:data_preparation:trigger:efficiencies}
 compares the calculated trigger efficiencies in detail.
 %
-\begin{table}[!htb]
+\begin{table}
 \centering
 \caption{Trigger selection efficiencies as determined on (simulated) data. The
 first column gives the numbers obtained on $\BdToJpsiKS$ signal MC, where the 
@@ -286,7 +286,7 @@ range, the \StrippingPrescaled line with a pre-scale of $\num{0.3}$ is used.
 Besides the decay time cut in the detached line and the pre-scale in the
 correspondent line, all other selection criteria are shared among both lines.
 %
-\begin{table}[!htb]
+\begin{table}
 \centering
 \caption{Stripping cuts applied in the reconstruction and selection of
 $\JpsiToMuMu$ candidates
@@ -308,7 +308,7 @@ $m_{\mu\mu}$                             & $M_\jpsi^{\text{\acs*{PDG}}}\pm\SI[pe
 \end{tabular}
 \end{table}
 %
-\begin{table}[!htb]
+\begin{table}
 \centering
 \caption{Stripping cuts applied in the reconstruction and selection of $\KS$ 
 candidates ($M_{\KS}^{\text{\acs*{PDG}}}=\SI{497.614}{\MeVcc}$). The
@@ -336,7 +336,7 @@ $m_{\KS}$                                           & $M_{\KS}^{\text{\acs*{PDG}
 \end{tabular}
 \end{table}
 %
-\begin{table}[!htb]
+\begin{table}
 \centering
 \caption{Stripping cuts on $\Bd$ combination}
 \label{tab:measurement_of_sin2beta:data_preparation:stripping:b}
@@ -348,11 +348,157 @@ $m_{\Bd}$                       & $\SI[per-mode=symbol]{5150}{\MeVcc}<m_{\mu\mu\
 \end{tabular}
 \end{table}
 
-\clearpage
 \subsection{Offline selection}
 \label{sec:measurement_of_sin2beta:data_preparation:offline_selection}
-Selection cuts, FoM, efficiencies
 
+The final step in the selection of signal candidates follows the trigger and
+stripping selection. The \emph{offline} selection attempts to enhance the signal
+purity of the data sample without introducing additional biases on the \Bd
+candidates' decay time distribution. The major objective of the selection is to
+preserve a large number of signal candidates while the reduction of background
+candidates only serves an inferior standing. This approach is promoted by the
+fact, that the physics backgrounds are well under control (\cf
+\cref{sec:measurement_of_sin2beta:physic_backgrounds}) and the combinatorial
+background is easy to model in the fit (\cf
+\cref{sec:measurement_of_sin2beta:likelihood_fit}).
+
+To measure the signal efficiency $\SigEff$ and the background rejection
+$\BkgRej$ of the respective selection requirements an \sPlot fit
+\cite{Pivk:2004ty} has been performed to retrieve signal and background weights
+for each event. The fit describes the signal using an Ipatia \PDF
+\cite{Santos:2013gra} with double sided tails and the background using a single
+exponential \PDF. In case of the \catLL sample an additional Gaussian with fixed
+mean and width estimated from \MC simulations is used to describe the
+$\BdToJpsiKstar$ component. For a more detailed description of the used model,
+see \cref{missing}.\addref{Description of mass PDF}
+
+\Cref{fig:measurement_of_sin2beta:data_preparation:offline_selection:before} shows the mass
+distribution of the 2011 and 2012 data set and the fit projection. The data set
+includes  all candidates that pass the nominal trigger and stripping. Only the
+\PV with the smallest \IP \chisqndf \wrt the $\Bd$ track is included and---in
+case of multiple $\Bd$ candidates---a random $\Bd$ candidate is chosen. Please
+note that all efficiencies are calculated individually for each cut or cut
+ensemble. The total efficiency is then provided in
+\cref{sec:measurement_of_sin2beta:data_preparation:offline_selection:total}.
+%
+\begin{figure}
+\includegraphics[width=0.49\textwidth]{private/content/measurement-of-sin2beta/figs/offline_splot_downstream.pdf}
+\includegraphics[width=0.49\textwidth]{private/content/measurement-of-sin2beta/figs/offline_splot_longtrack.pdf}
+\label{fig:measurement_of_sin2beta:data_preparation:offline_selection:before}
+\caption{Mass distribution of the combined 2011 and 2012 data set after
+stripping (in logarithmic scale). Only the \PV with the smallest \IP \chisqndf
+\wrt the $\Bd$ track is included and--- in case of multiple $\Bd$ candidates---a
+random $\Bd$ candidate is chosen. The left plot shows the \catDD, the right one
+the \catLL candidates. The solid black line is the projection of the fit \PDF,
+the blue dashed line shows the signal, and the green dashed line shows the
+background component. For the description of the \catLL candidates, the
+additional $\BdToJpsiKstar$ component is depicted as dash-dotted turquoise line.
+Below the mass distribution the pull distribution shows the difference of the
+bin content and the \PDF value at the bin centre normalized by the error
+estimate on the bin content.}
+\end{figure}
+
+\subsubsection{Sanity cuts}
+\label{sec:measurement_of_sin2beta:data_preparation:offline_selection:sanity}
+
+A set of sanity cuts (see
+\cref{tab:measurement_of_sin2beta:data_preparation:offline_selection:sanity}) is
+applied to remove outliers and ensure that all \DTF fits are converged. The
+overall performance shows a signal efficiency of $\SI{99.29}{\percent}$
+($\SI{99.75}{\percent}$) and a background rejection of $\SI{6.18}{\percent}$
+($\SI{0.75}{\percent}$) in the \catDD (\catLL) sample.
+%
+\begin{table}
+\centering
+\caption{Offline selection sanity cuts.}
+\label{tab:measurement_of_sin2beta:data_preparation:offline_selection:sanity}
+\begin{tabular}{ll}
+\toprule
+\dtf $\sigma_m$                              & $<\SI[per-mode=symbol]{30}{\MeVcc}$\\
+\dtfpv $\obsTimeError$                       & $<\SI[per-mode=symbol]{0.2}{\pico\second}$\\
+$\vert z_{\acs*{PV}}\vert$                   & $<\SI{250}{\milli\meter}$\\
+\Bd   $\chi_{\text{vtx}}^2/\ndf$             & $<10$\\
+\jpsi $\chi_{\text{vtx}}^2/\ndf$             & $<16$\\
+\KS   $\chi_{\text{vtx}}^2/\ndf$             & $<20$\\
+\dtfpv $\mu$ $p_T$                           & $>\SI[per-mode=symbol]{500}{\MeVc}$\\
+$\mu$ $\chi_{\text{track}}^2/\ndf$           & $<3$\\
+$\mu$ \acs*{PID}                             & $>0$\\
+\dtfpv $\pi\ p$                              & $>\SI[per-mode=symbol]{2000}{\MeVc}$\\
+maximal $\pi$ $\chi_{\text{track}}^2/\ndf$   & $<3$\\
+minimal $\pi$ \acs*{IP} $\chi^2/\ndf$        & $>4$\\
+\multicolumn{2}{c}{\dtf fit and \dtfpv fit converged} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsubsection{Ghost track probability cuts}
+\label{sec:measurement_of_sin2beta:data_preparation:offline_selection:ghosts}
+
+To reduce the amount of ghost tracks, a cut on the ghost track probability is
+applied, as shown in
+\cref{tab:measurement_of_sin2beta:data_preparation:offline_selection:ghosts}.
+The overall signal efficiency yields $\SI{95.72}{\percent}$
+($\SI{98.09}{\percent}$) with a background rejection of $\SI{26.38}{\percent}$
+($\SI{23.36}{\percent}$) for the \catDD (\catLL) sample.
+%
+\begin{table}
+\centering
+\caption{Offline selection cuts on ghost track probabilities.}
+\label{tab:measurement_of_sin2beta:data_preparation:offline_selection:ghosts}
+\begin{tabular}{lll}
+\toprule
+& \catDD & \catLL\\
+\midrule
+$\mu$ ghost track probability & \multicolumn{2}{c}{$<0.2$}\\
+$\pi$ ghost track probability & \multicolumn{2}{c}{$<0.3$}\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsubsection{Cuts on daughter masses and \Lambda mass veto}
+\label{sec:measurement_of_sin2beta:data_preparation:offline_selection:daughters}
+
+In order to reduce background contributions due to particle mis-ID (see
+\cref{sec:measurement_of_sin2beta:physic_backgrounds}), cuts on the invariant
+daughter masses are used as given in
+\cref{tab:measurement_of_sin2beta:data_preparation:offline_selection:daughters}.
+As long track candidates show a better mass resolution, different cuts are
+applied depending on the candidates' track type. These cuts yield a signal
+efficiency of $\SI{98.70}{\percent}$ ($\SI{98.92}{\percent}$) and a background
+rejection of $\SI{27.53}{\percent}$ ($\SI{39.78}{\percent}$) in the \catDD
+(\catLL) sample. The cuts correspond to roughly $8\sigma$ ($4\sigma$) for \catDD
+(\catLL) $\KS$ candidates and around $5\sigma$ for the $\jpsi$ candidates.
+
+To reduce pion-proton mis-ID all pion candidate pairs are combined, assigning
+the proton mass hypothesis to either one of the pions and recalculating their
+invariant mass. An additional requirement on the \proton-\pion \PID of
+$\DLLppi<7$ ($<10$) is then applied to all candidates lying inside a
+$\pm\SI{7}{\MeVcc}$ ($\pm\SI{5}{\MeVcc}$) region around the \Lambda mass
+$M_\Lambda^{\acs*{PDG}} = \SI[per-mode=symbol]{1115.683}{\MeVcc}$ in the \catDD
+(\catLL) sample. This \Lambda veto has a signal efficiency of
+$\SI{99.32}{\percent}$ ($\SI{99.9}{\percent}$) and a background rejection of
+$\SI{10.50}{\percent}$ ($\SI{2.53}{\percent}$) in the \catDD (\catLL) sample.
+The cut efficiency on
+\LbToJpsiLambda signal \MC is given in
+\cref{sec:measurement_of_sin2beta:physic_backgrounds}.
+%
+\begin{table}
+\centering
+\caption{Offline selection cuts on the \jpsi and \KS candidates' invariant mass.
+($M_{\jpsi}^{\text{\acs*{PDG}}}=\SI{3096.916}{\MeVcc}$,
+$M_{\KS}^{\text{\acs*{PDG}}}=\SI{497.614}{\MeVcc}$)}
+\label{tab:measurement_of_sin2beta:data_preparation:offline_selection:daughters}
+\begin{tabular}{lll}
+\toprule
+& \multicolumn{1}{c}{\catDD} & \multicolumn{1}{c}{\catLL}\\
+\midrule
+$m_{\pi\pi}$ & $M_{\KS}^{\text{\acs*{PDG}}}\pm\SI[per-mode=symbol]{55}{\MeVcc}$ & $M_{\KS}^{\text{\acs*{PDG}}}\pm\SI[per-mode=symbol]{15}{\MeVcc}$\\
+$m_{\mu\mu}$ & \multicolumn{2}{c}{$M_{\jpsi}^{\text{\acs*{PDG}}}\pm\SI[per-mode=symbol]{60}{\MeVcc}$}\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\clearpage
 \subsection{Multiple candidates}
 Why do we see multiple candidates, difference between multiple PVs and multiple B candidates, how to remove them
 
@@ -370,11 +516,19 @@ Data sets used, software stack and versions, simulation conditions, DEC file, ge
 \subsection{Acceptance}
 \label{sec:measurement_of_sin2beta:resolution_and_acceptance:acceptance}
 \section{Likelihood fit}
+\label{sec:measurement_of_sin2beta:likelihood_fit}
 \subsection{Fitter validation}
+\label{sec:measurement_of_sin2beta:likelihood_fit:validation}
 \section{CPV measurement}
+\label{sec:measurement_of_sin2beta:cpv_measurement}
 \subsection{Fit results}
+\label{sec:measurement_of_sin2beta:cpv_measurement:results}
 \subsection{Kaon regeneration}
 \section{Study of systematic effects}
+\label{sec:measurement_of_sin2beta:systematics}
 \subsection{Cross-checks}
+\label{sec:measurement_of_sin2beta:systematics:cross_checks}
 \subsection{Systematics}
+\label{sec:measurement_of_sin2beta:systematics:systematics}
 \subsection{Summary of systematic effects}
+\label{sec:measurement_of_sin2beta:systematics:summary}

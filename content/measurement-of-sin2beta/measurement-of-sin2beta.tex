@@ -77,7 +77,7 @@ used fit constraints.
 \begin{tabular}{llccc}
 \toprule
 Name              & Range           & \multicolumn{3}{c}{Fit constraints} \\ 
-                  &                 & $m_{\KS}^{\text{PDG}}$ & $m_{\jpsi}^{\text{PDG}}$ & \acs{PV} position \\
+                  &                 & $m_{\KS}^{\text{\acs*{PDG}}}$ & $m_{\jpsi}^{\text{\acs*{PDG}}}$ & \acs{PV} position \\
 \midrule    
 $\obsMass$        & $\SIrange[range-phrase = -, range-units = single]{5230}{5330}{\MeVcc}$ & \checkmark & \checkmark & \checkmark \\
 $\obsTime$        & $\SIrange[range-phrase = -, range-units = single]{0.3}{18.3}{\pico\second}$ & - & - & \checkmark \\
@@ -268,11 +268,87 @@ trigger requirements & signal MC & signal in data & overall data \\
 \end{scriptsize}
 \end{table}
 
-\clearpage
 \subsection{Stripping}
 \label{sec:measurement_of_sin2beta:data_preparation:stripping}
-Stripping details, cuts, ...
 
+To further reduce the amount of data a loose selection is applied in a common
+effort, called the \enquote{stripping} of data. Criteria on the properties of
+the reconstructed final state particles as well as on the reconstructed $\Jpsi$,
+$\KS$, and $\Bd$ candidates are required as described in detail in 
+\cref{tab:measurement_of_sin2beta:data_preparation:stripping:jpsi,tab:measurement_of_sin2beta:data_preparation:stripping:kaon,tab:measurement_of_sin2beta:data_preparation:stripping:b}. 
+Two different stripping configurations, the \StrippingDetached and
+\StrippingPrescaled lines are employed. The measurement of \CP violation in the
+decay of \Bd and \Bdbar mesons into the \Jpsi\KS final state uses the
+\StrippingDetached line, where a cut requires \Bd candidate decay times to be
+larger than $\SI{0.2}{\pico\second}$. For studies requiring the full decay time
+range, the \StrippingPrescaled line with a pre-scale of $\num{0.3}$ is used.
+
+Besides the decay time cut in the detached line and the pre-scale in the
+correspondent line, all other selection criteria are shared among both lines.
+%
+\begin{table}[!htb]
+\centering
+\caption{Stripping cuts applied in the reconstruction and selection of
+$\JpsiToMuMu$ candidates
+($M_{\jpsi}^{\text{\acs*{PDG}}}=\SI{3096.916}{\MeVcc}$). The requirements on the
+muon daughters are based on their momenta, their \PID information, the $\chi^2$
+of their distance of closest approach, $\chi_{\text{\acs*{DOCA}}}^2$, and their
+invariant mass prior to the vertex fit, $m_{\mu\mu}$. After the vertex fit,
+requirements on the resulting $\jpsi$ candidate are based on its invariant mass,
+$m_{\jpsi}$, and the $\chisqndf$ of the vertex fit, $\chi_{\text{vtx}}^2/\ndf$.}
+\label{tab:measurement_of_sin2beta:data_preparation:stripping:jpsi}
+\begin{tabular}{ll}
+\toprule
+$\mu$ $\DLLmupi$                         & $>0$ \\
+$\mu\ p$                                 & $>\SI[per-mode=symbol]{0.5}{\GeVc}$\\
+$\mu\mu$ $\chi_{\text{\acs*{DOCA}}}^2$   & $<20$ \\
+$m_{\mu\mu}$                             & $M_\jpsi^{\text{\acs*{PDG}}}\pm\SI[per-mode=symbol]{80}{\MeVcc}$ \\
+\jpsi $\chi_{\text{vtx}}^2/\ndf$ & $<16$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+%
+\begin{table}[!htb]
+\centering
+\caption{Stripping cuts applied in the reconstruction and selection of $\KS$ 
+candidates ($M_{\KS}^{\text{\acs*{PDG}}}=\SI{497.614}{\MeVcc}$). The
+requirements on the pion daughters are based on their momenta, their minimal \IP
+$\chi^2$ \wrt to all \acp{PV} in the event, $\chi^2_{\acs*{IP}}$, the $\chi^2$
+of their distance of closest approach, $\chi_{\text{\acs*{DOCA}}}^2$, and their
+invariant mass prior to the vertex fit, $m_{\pi\pi}$. After the vertex fit,
+requirements on the resulting $\KS$ candidate are based on its invariant mass,
+$m_{\KS}$, its decay length significance with respect to its best PV, \ie the PV
+with the smallest \IP $\chi^2$ \wrt to its trajectory, and the $\chisqndf$ of
+the vertex fit, $\chi_{\text{vtx}}^2/\ndf$.}
+\label{tab:measurement_of_sin2beta:data_preparation:stripping:kaon}
+\begin{tabular}{lll}
+\toprule
+& \multicolumn{1}{c}{\catDD} & \multicolumn{1}{c}{\catLL}\\
+\midrule
+$\pi\ p$                                            & \multicolumn{2}{c}{$>\SI[per-mode=symbol]{2}{\GeVc}$} \\
+$\pi$ min $\chi^2_{\text{\acs*{IP}}}$ \wrt any PV   & $>4$                                                              & $>9$ \\
+$\pip \pim$ $\chi_{\text{\acs*{DOCA}}}^2$           & \multicolumn{2}{c}{$<25$} \\
+$m_{\pi\pi}$                                        & $M_{\KS}^{\text{\acs*{PDG}}}\pm\SI[per-mode=symbol]{80}{\MeVcc}$  & $M_{\KS}^{\text{\acs*{PDG}}}\pm\SI[per-mode=symbol]{50}{\MeVcc}$ \\
+$m_{\KS}$                                           & $M_{\KS}^{\text{\acs*{PDG}}}\pm\SI[per-mode=symbol]{64}{\MeVcc}$  & $M_{\KS}^{\text{\acs*{PDG}}}\pm\SI[per-mode=symbol]{35}{\MeVcc}$ \\
+\KS $\chi_{\text{vtx}}^2/\ndf$                      & \multicolumn{2}{c}{$<20$} \\
+\KS best \PV decay length significance              & \multicolumn{2}{c}{$>5$} \\
+\bottomrule
+\end{tabular}
+\end{table}
+%
+\begin{table}[!htb]
+\centering
+\caption{Stripping cuts on $\Bd$ combination}
+\label{tab:measurement_of_sin2beta:data_preparation:stripping:b}
+\begin{tabular}{ll}
+\toprule
+\Bd $\chi_{\text{vtx}}^2/\ndf$  & $<10$ \\
+$m_{\Bd}$                       & $\SI[per-mode=symbol]{5150}{\MeVcc}<m_{\mu\mu\pi\pi}<\SI[per-mode=symbol]{5550}{\MeVcc}$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\clearpage
 \subsection{Offline selection}
 \label{sec:measurement_of_sin2beta:data_preparation:offline_selection}
 Selection cuts, FoM, efficiencies

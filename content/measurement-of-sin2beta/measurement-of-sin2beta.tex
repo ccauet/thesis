@@ -536,7 +536,7 @@ for the \catDD (\catLL) sample.
 \Cref{tab:measurement_of_sin2beta:data_preparation:offline_selection:total}
 quotes the overall offline selection performance.
 %
-\begin{table}[!htb]
+\begin{table}
 \centering
 \caption{Overall offline selection performance.}
 \label{tab:measurement_of_sin2beta:data_preparation:offline_selection:total}
@@ -550,13 +550,132 @@ quotes the overall offline selection performance.
 \end{tabular}
 \end{table}
 
-\clearpage
 % ------------------------------------------------------------------------------
 \subsection{Multiple candidates}
-Why do we see multiple candidates, difference between multiple PVs and multiple B candidates, how to remove them
+\label{sec:measurement_of_sin2beta:data_preparation:multiple_candidates}
 
+As in a typical \LHCb bunch crossing around $\num{2.5}$ visible
+\acl{protonproton} collisions occur, the chances are high to find more than one
+\PV per recorded event. Choosing the \PV with the smallest \DTF track \IP
+\chisqndf \wrt the \Bd candidate is called \emph{best PV selection} in contrast
+to a \emph{random PV selection}. Given the small \BdToJpsiKS branching ratio not
+more than one signal event can be expected per event. Still, it is possible
+that more than one candidate gets reconstructed. From those candidates either
+one can be chosen by his \DTF track \IP \chisqndf (\emph{best \Bd candidate
+selection}) or as well randomly (\emph{random \Bd candidate selection}). Instead
+of consecutively selecting a \PV and \Bmeson candidate a joint decision can be
+made. Each $(\text{\acs{PV}}, \Bd)$ pair can again be chosen either based on
+the best fit quality or by random.
+
+After stripping selection around $\SI{2}{\percent}$ of the events contain more
+than one \Bd candidate and $\SIrange[range-phrase = -, range-units = single]
+{4}{5}{\percent}$ of all \Bmeson candidates are not unique in their event 
+(\cf \cref{tab:measurement_of_sin2beta:data_preparation:multiple_candidates:after_stripping}).
+%
+\begin{table}
+\centering
+\caption{
+Number of multiple \BdToJpsiKS candidates after stripping. The numbers in the
+first row represent the fraction of \Bd candidates that are not \emph{unique} in
+an event, \ie the event contains more than one candidate. The numbers in the
+second row show the fraction of events with multiple \Bd candidates.
+Additionally, a listing of the occurrence of events with different numbers of
+multiple \Bd candidates is given. The last row shows the fraction of \Bd
+candidates that need to be discarded in order to only get events with a single
+\Bd candidate.}
+\label{tab:measurement_of_sin2beta:data_preparation:multiple_candidates:after_stripping}
+\begin{tabular}{lcccc}
+\toprule
+ & \multicolumn{2}{c}{2011} & \multicolumn{2}{c}{2012}\\
+\midrule
+fraction of multiple & \multicolumn{2}{c}{\multirow{2}[2]{*}{\SI{4.2}{\percent}}} & \multicolumn{2}{c}{\multirow{2}[2]{*}{\SI{4.9}{\percent}}}\\
+\Bd candidates & & & & \\
+\midrule
+fraction of events with & \multicolumn{2}{c}{\multirow{2}[2]{*}{\SI{2.1}{\percent}}} & \multicolumn{2}{c}{\multirow{2}[2]{*}{\SI{2.4}{\percent}}}\\
+ multiple \Bd candidates & & & & \\  
+\cmidrule(r){2-5}
+ & \#\Bd cands & \#events & \#\Bd cands & \#events\\
+\cmidrule(r){2-5}
+ & 1 & 575780 & 1 & 1482895\\
+ & 2 & 11997  & 2 & 35921\\
+ & 3 & 382    & 3 & 1223\\
+ & 4 & 50     & 4 & 194\\
+ & 5 & 4      & 5 & 9\\
+ & 6 & 1      & 6 & 9\\
+ & 7 & 0      & 7 & 1\\
+\midrule
+fraction of \Bd candidates & \multicolumn{2}{c}{\multirow{2}[2]{*}{\SI{2.2}{\percent}}} & \multicolumn{2}{c}{\multirow{2}[2]{*}{\SI{2.5}{\percent}}}\\
+to discard & & & & \\
+\bottomrule
+\end{tabular}
+\end{table}
+%
+After stripping and subsequent offline selection roughly $\SI{0.3}{\percent}$ of
+events contain multiple \Bd candidates while in $\SI{6}{\percent}$ of the events
+more than one \PV is found. 
+\Cref{tab:measurement_of_sin2beta:data_preparation:multiple_candidates:after_selection} 
+presents the detailed numbers for multiple \PV and \Bd candidates after
+stripping and offline selection. Of the remaining (\acs{PV},\Bd) pairs one is
+chosen randomly
+%
+\begin{table}
+\centering
+\caption{ 
+Number of multiple candidates after stripping and selection. The numbers in the
+first row represent the fraction of (\PV,\Bd) candidate pairs that are not
+unique in an event. The numbers in the second row show the fraction of events
+with multiple (\PV,\Bd) candidate pairs.  The third row includes the numbers of
+event with multiple \Bd candidates. Additionally, a listing of the occurrence of
+events with different numbers of multiple \Bd candidates is given. After that,
+the number of \Bd candidates to discard is given. In the fourth row the number
+of events containing multiple \acp{PV} is listed together with the detailed
+description of the frequency of multiple \acp{PV} per event. The last row shows
+the fraction of (\PV,\Bd) candidate pairs that need to be discarded in order to
+only keep one (\PV,\Bd) candidate per event. }
+\label{tab:measurement_of_sin2beta:data_preparation:multiple_candidates:after_selection}
+\begin{tabular}{lcccc}
+\toprule
+ & \multicolumn{2}{c}{2011} & \multicolumn{2}{c}{2012}\\
+\midrule
+fraction of multiple & \multicolumn{2}{c}{\multirow{2}[2]{*}{\SI{12.5}{\percent}}} & \multicolumn{2}{c}{\multirow{2}[2]{*}{\SI{12.8}{\percent}}}\\
+candidates & & & & \\
+\midrule
+fraction of events with& \multicolumn{2}{c}{\multirow{2}[2]{*}{\SI{6.0}{\percent}}} & \multicolumn{2}{c}{\multirow{2}[2]{*}{\SI{6.1}{\percent}}}\\
+multiple (\acs{PV},\Bd) candidates & & & & \\  
+\midrule
+fraction of events with & \multicolumn{2}{c}{\multirow{2}[2]{*}{\SI{0.3}{\percent}}} & \multicolumn{2}{c}{\multirow{2}[2]{*}{\SI{0.4}{\percent}}}\\
+multiple \Bd candidates & & & & \\  
+\cmidrule(r){2-5}
+ & \#\Bd cands & \#events & \#\Bd cands & \#events\\
+\cmidrule(r){2-5}
+ & 1 & 74065 & 1 & 165915\\
+ & 2 & 253   & 2 & 635\\
+ & 3 & 0     & 3 & 3\\
+ \midrule
+fraction of \Bd candidates & \multicolumn{2}{c}{\multirow{2}[2]{*}{\SI{0.3}{\percent}}} & \multicolumn{2}{c}{\multirow{2}[2]{*}{\SI{0.4}{\percent}}}\\
+to discard & & & & \\
+ \midrule
+fraction of events & \multicolumn{2}{c}{\multirow{2}[2]{*}{\SI{5.7}{\percent}}} & \multicolumn{2}{c}{\multirow{2}[2]{*}{\SI{5.8}{\percent}}}\\
+with multiple \acp{PV} & & & & \\  
+\cmidrule(r){2-5}
+ & \#\acsp{PV} & \#events & \#\acsp{PV} & \#events\\
+\cmidrule(r){2-5}
+ & 1 & 69755 & 1 & 156211\\
+ & 2 & 4279  & 2 & 9583\\
+ & 3 & 265   & 3 & 692\\
+ & 4 & 19    & 4 & 58\\
+ & 5 & 0     & 5 & 9\\
+\midrule
+fraction of (\acs{PV},\Bd) candidate & \multicolumn{2}{c}{\multirow{2}[2]{*}{\SI{6.5}{\percent}}} & \multicolumn{2}{c}{\multirow{2}[2]{*}{\SI{6.6}{\percent}}}\\
+pairs to discard & & & & \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+
+\clearpage
 % ------------------------------------------------------------------------------
-\subsection{Simulated data}
+\subsection{\acs{MC} and data samples}
 Data sets used, software stack and versions, simulation conditions, DEC file, generation parameters
 
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

@@ -3,10 +3,12 @@
 \chapter{The measurement of sin2beta}
 \label{ch:measurement_of_sin2beta}
 
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Overview of the measurement ingredients}
 \label{sec:measurement_of_sin2beta:overview}
 \missing{General idea of the measurement and the key concepts}
 
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Data preparation}
 \label{sec:measurement_of_sin2beta:data_preparation}
 
@@ -130,6 +132,7 @@ Unless explicitly stated otherwise, no untagged (\textbf{\catUT}) events are
 used. Therefore, splitting the data set in all possible categories results in a
 total of $\num{24}$ disjoint subsamples.
 
+% ------------------------------------------------------------------------------
 \subsection{Trigger}
 \label{sec:measurement_of_sin2beta:data_preparation:trigger}
 
@@ -156,6 +159,7 @@ the \emph{exclusively biased} subsample (\textbf{\catEB}). The strategy to cope
 with this acceptance effects is described in detail in
 \cref{sec:measurement_of_sin2beta:resolution_and_acceptance:acceptance}.
 
+%...............................................................................
 \subsubsection{\LZero trigger requirements}
 \label{sec:measurement_of_sin2beta:data_preparation:trigger:lzero}
 
@@ -163,6 +167,7 @@ The \HLT lines in use require all candidates pass either the \LZeroMuon or the
 \LZeroDiMuon trigger lines. No further \LZero criteria are required.
 \missing{L0 trigger cuts}
 
+%...............................................................................
 \subsubsection{\HLTOne trigger requirements}
 \label{sec:measurement_of_sin2beta:data_preparation:trigger:hlt1}
 
@@ -197,6 +202,7 @@ Mass                        & $>\SI[per-mode=symbol]{2.7}{\GeVcc}$  & - \\
 \end{tabular}
 \end{table}
 
+%...............................................................................
 \subsubsection{\HLTTwo trigger requirements}
 \label{sec:measurement_of_sin2beta:data_preparation:trigger:hlt2}
 
@@ -228,6 +234,7 @@ Pre-scale                 & $\num{0.2}$                                      & -
 \end{tabular}
 \end{table}
 
+%...............................................................................
 \subsubsection{Trigger efficiencies}
 \label{sec:measurement_of_sin2beta:data_preparation:trigger:efficiencies}
 
@@ -268,6 +275,7 @@ trigger requirements & signal MC & signal in data & overall data \\
 \end{scriptsize}
 \end{table}
 
+% ------------------------------------------------------------------------------
 \subsection{Stripping}
 \label{sec:measurement_of_sin2beta:data_preparation:stripping}
 
@@ -348,6 +356,7 @@ $m_{\Bd}$                       & $\SI[per-mode=symbol]{5150}{\MeVcc}<m_{\mu\mu\
 \end{tabular}
 \end{table}
 
+% ------------------------------------------------------------------------------
 \subsection{Offline selection}
 \label{sec:measurement_of_sin2beta:data_preparation:offline_selection}
 
@@ -398,6 +407,7 @@ bin content and the \PDF value at the bin centre normalized by the error
 estimate on the bin content.}
 \end{figure}
 
+%...............................................................................
 \subsubsection{Sanity cuts}
 \label{sec:measurement_of_sin2beta:data_preparation:offline_selection:sanity}
 
@@ -431,6 +441,7 @@ minimal $\pi$ \acs*{IP} $\chi^2/\ndf$        & $>4$\\
 \end{tabular}
 \end{table}
 
+%...............................................................................
 \subsubsection{Ghost track probability cuts}
 \label{sec:measurement_of_sin2beta:data_preparation:offline_selection:ghosts}
 
@@ -455,6 +466,7 @@ $\pi$ ghost track probability & \multicolumn{2}{c}{$<0.3$}\\
 \end{tabular}
 \end{table}
 
+%...............................................................................
 \subsubsection{Cuts on daughter masses and \Lambda mass veto}
 \label{sec:measurement_of_sin2beta:data_preparation:offline_selection:daughters}
 
@@ -498,37 +510,93 @@ $m_{\mu\mu}$ & \multicolumn{2}{c}{$M_{\jpsi}^{\text{\acs*{PDG}}}\pm\SI[per-mode=
 \end{tabular}
 \end{table}
 
+%...............................................................................
+\subsubsection{DTF fit performance and \KS decay time significance cuts} 
+\label{sec:measurement_of_sin2beta:data_preparation:offline_selection:dtf_and_dts}
+
+Finally, cuts on the \dtf fit $\chisqndf<30$ and on the \KS decay time
+significance (\wrt to the $\Bd$ decay vertex) of $t_{\KS}/\sigma_{t_{\KS}}>4$
+from a \dtfpv fit are applied. These two cuts yield a signal efficiency of
+$\SI{99.25}{\percent}$ ($\SI{97.61}{\percent}$) and a background rejection of
+$\SI{33.68}{\percent}$ ($\SI{24.89}{\percent}$) for the \catDD (\catLL)
+sample.
+
+The fit range is limited to events within $\SI[per-mode=symbol]{0.3}{\pico\second}
+<t<\SI[per-mode=symbol]{18.3}{\pico\second}$. Low decay time candidates are
+neglected to suppress decay time acceptance effects and prompt background. The
+number of candidates with decay times above the limit is negligible. This cut
+yields a signal efficiency of $\SI{95.30}{\percent}$ ($\SI{94.86}{\percent}$)
+and a background rejection of $\SI{12.77}{\percent}$ ($\SI{25.71}{\percent}$)
+for the \catDD (\catLL) sample.
+
+%...............................................................................
+\subsubsection{Overall offline selection performance}
+\label{sec:measurement_of_sin2beta:data_preparation:offline_selection:total}
+
+\Cref{tab:measurement_of_sin2beta:data_preparation:offline_selection:total}
+quotes the overall offline selection performance.
+%
+\begin{table}[!htb]
+\centering
+\caption{Overall offline selection performance.}
+\label{tab:measurement_of_sin2beta:data_preparation:offline_selection:total}
+\begin{tabular}{lllll}
+\toprule
+& $\SigEff$ & $\BkgRej$ \\
+\midrule
+\catDD & $\SI{89.55}{\percent}$ & $\SI{67.61}{\percent}$\\
+\catLL & $\SI{89.79}{\percent}$ & $\SI{70.60}{\percent}$\\
+\bottomrule
+\end{tabular}
+\end{table}
+
 \clearpage
+% ------------------------------------------------------------------------------
 \subsection{Multiple candidates}
 Why do we see multiple candidates, difference between multiple PVs and multiple B candidates, how to remove them
 
+% ------------------------------------------------------------------------------
 \subsection{Simulated data}
 Data sets used, software stack and versions, simulation conditions, DEC file, generation parameters
 
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Flavour tagging}
 \label{sec:measurement_of_sin2beta:flavour_tagging}
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Backgrounds}
 \label{sec:measurement_of_sin2beta:physic_backgrounds}
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Decay time resolution and acceptance}
 \label{sec:measurement_of_sin2beta:resolution_and_acceptance}
+% ------------------------------------------------------------------------------
 \subsection{Resolution}
 \label{sec:measurement_of_sin2beta:resolution_and_acceptance:resolution}
+% ------------------------------------------------------------------------------
 \subsection{Acceptance}
 \label{sec:measurement_of_sin2beta:resolution_and_acceptance:acceptance}
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Likelihood fit}
 \label{sec:measurement_of_sin2beta:likelihood_fit}
+% ------------------------------------------------------------------------------
 \subsection{Fitter validation}
 \label{sec:measurement_of_sin2beta:likelihood_fit:validation}
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{CPV measurement}
 \label{sec:measurement_of_sin2beta:cpv_measurement}
+% ------------------------------------------------------------------------------
 \subsection{Fit results}
 \label{sec:measurement_of_sin2beta:cpv_measurement:results}
+% ------------------------------------------------------------------------------
 \subsection{Kaon regeneration}
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Study of systematic effects}
 \label{sec:measurement_of_sin2beta:systematics}
+% ------------------------------------------------------------------------------
 \subsection{Cross-checks}
 \label{sec:measurement_of_sin2beta:systematics:cross_checks}
+% ------------------------------------------------------------------------------
 \subsection{Systematics}
 \label{sec:measurement_of_sin2beta:systematics:systematics}
+% ------------------------------------------------------------------------------
 \subsection{Summary of systematic effects}
 \label{sec:measurement_of_sin2beta:systematics:summary}

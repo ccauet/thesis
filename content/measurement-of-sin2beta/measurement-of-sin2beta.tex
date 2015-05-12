@@ -672,12 +672,151 @@ pairs to discard & & & & \\
 \end{tabular}
 \end{table}
 
-
-\clearpage
 % ------------------------------------------------------------------------------
 \subsection{\acs{MC} and data samples}
-Data sets used, software stack and versions, simulation conditions, DEC file, generation parameters
+\label{sec:measurement_of_sin2beta:data_preparation:datasamples}
 
+Over the course of the described measurement several datasets are utilised such
+as recorded data from the \LHCb experiment as well as simulated data.
+
+All candidates in the nominal dataset finally used for the fit to estimate the
+\CP observables \SJpsiKS and \CJpsiKS pass the given trigger configuration, the
+detached stripping selection, and the described offline selection leaving
+$\num{114000}$ signal candidates. The analysis only makes use of $\num{42000}$
+tagged signal candidates.
+\Cref{tab:measurement_of_sin2beta:data_preparation:datasamples:numbers} lists
+the numbers of tagged signal candidates split into subsamples of tagger,
+trigger, track type, and year of data-taking.
+%
+\begin{table}
+\centering
+\caption{Number of tagged signal candidates split into categories of tagger, 
+trigger, track type, and year of data-taking. All numbers rounded.}
+\label{tab:measurement_of_sin2beta:data_preparation:datasamples:numbers}
+\begin{tabular}{c|c|c|c|c|c|c|c|c|c|c}
+\toprule
+\multicolumn{1}{c}{} & \multicolumn{5}{c}{DD} & \multicolumn{5}{c}{LL}\\
+\midrule
+\multirow{6}[6]{*}{\catOO} & \multirow{2}[2]{*}{\catOS} & \catAU & \num{5134} & \multirow{2}[2]{*}{\num{5991}} & \multirow{6}[6]{*}{\num{9423}} & \multirow{2}[2]{*}{\catOS} & \catAU & \num{2263} & \multirow{2}[2]{*}{\num{2597}} & \multirow{6}[6]{*}{\num{3799}}\\
+\cmidrule(r){3-4}\cmidrule(r){8-9}
+& & \catEB & \num{857} & & & & \catEB & \num{334} & & \\
+\cmidrule(r){2-5}\cmidrule(r){7-10}
+ & \multirow{2}[2]{*}{\catSS} & \catAU & \num{2028} & \multirow{2}[2]{*}{\num{2352}} & & \multirow{2}[2]{*}{\catSS} & \catAU & \num{744} & \multirow{2}[2]{*}{\num{834}} & \\
+ \cmidrule(r){3-4}\cmidrule(r){8-9}
+ & & \catEB & \num{324} & & & & \catEB & \num{90} & & \\
+\cmidrule(r){2-5}\cmidrule(r){7-10}
+ & \multirow{2}[2]{*}{BS} & \catAU & \num{941} & \multirow{2}[2]{*}{\num{1080}} & & \multirow{2}[2]{*}{BS} & \catAU & \num{321} & \multirow{2}[2]{*}{\num{368}} & \\
+ \cmidrule(r){3-4}\cmidrule(r){8-9}
+ & & \catEB & \num{139} & & & & \catEB & \num{47} & & \\
+ \midrule
+\multirow{6}[6]{*}{\catOT} & \multirow{2}[2]{*}{\catOS} & \catAU & \num{10378} & \multirow{2}[2]{*}{\num{12567}} & \multirow{6}[6]{*}{\num{20160}} & \multirow{2}[2]{*}{\catOS} & \catAU & \num{4599} & \multirow{2}[2]{*}{\num{5571}} & \multirow{6}[6]{*}{\num{8178}}\\
+\cmidrule(r){3-4}\cmidrule(r){8-9}
+& & \catEB & \num{2189} & & & & \catEB & \num{972} & & \\
+\cmidrule(r){2-5}\cmidrule(r){7-10}
+ & \multirow{2}[2]{*}{\catSS} & \catAU & \num{4247} & \multirow{2}[2]{*}{\num{5226}} & & \multirow{2}[2]{*}{\catSS} & \catAU & \num{1550} & \multirow{2}[2]{*}{\num{1831}} & \\
+ \cmidrule(r){3-4}\cmidrule(r){8-9}
+ & & \catEB & \num{979} & & & & \catEB & \num{281} & & \\
+\cmidrule(r){2-5}\cmidrule(r){7-10}
+ & \multirow{2}[2]{*}{BS} & \catAU & \num{1963} & \multirow{2}[2]{*}{\num{2367}} & & \multirow{2}[2]{*}{BS} & \catAU & \num{658} & \multirow{2}[2]{*}{\num{776}} & \\
+ \cmidrule(r){3-4}\cmidrule(r){8-9}
+ & & \catEB & \num{404} & & & & \catEB & \num{118} & & \\
+\bottomrule
+\end{tabular}
+\label{tab:data_preparation:nominal}
+\end{table}
+%
+\begin{figure}[!htb]
+\includegraphics[width=0.49\textwidth]{private/content/measurement-of-sin2beta/figs/mass_11.pdf}
+\includegraphics[width=0.49\textwidth]{private/content/measurement-of-sin2beta/figs/mass_12.pdf}
+\includegraphics[width=0.49\textwidth]{private/content/measurement-of-sin2beta/figs/mass_DD.pdf}
+\includegraphics[width=0.49\textwidth]{private/content/measurement-of-sin2beta/figs/mass_LL.pdf}
+\label{fig:measurement_of_sin2beta:data_preparation:datasamples:split}
+\caption{Mass distribution of the nominal data set, split into year of
+data-taking and into $\KS$ track type. Top row: on the left \catOO, on the right
+\catOT. Bottom row: on the left \catDD, on the right \catLL. The solid black
+line shows the fit projection of the nominal mass \PDF (see
+\cref{missing}). The blue dashed line shows the signal, the green dashed line
+the background component.}
+\end{figure}
+%
+\begin{figure}
+\centering
+\includegraphics[width=0.8\textwidth]{private/content/measurement-of-sin2beta/figs/mass.pdf}
+\label{fig:measurement_of_sin2beta:data_preparation:datasamples:combined}
+\caption{Combined mass distribution of the nominal data set for all different
+categories. The solid black line shows the fit projection of the nominal mass
+\PDF (see section \cref{missing}). The blue dashed line shows the
+signal, the green dashed line the background component.}
+\end{figure}
+\addref{Description of mass PDF}
+
+%...............................................................................
+\subsubsection{\MC datasets}
+\label{sec:measurement_of_sin2beta:data_preparation:datasamples:mc}
+
+The \acf{MC} samples are produced using \PythiaSix and \PythiaEight in the
+generation step. An equal amount of events is generated using each generator
+version and also for both possible magnet polarities called \emph{up} and
+\emph{down}. Also different samples are produced for \catOO and \catOT running
+conditions. Heavy particles from generated \protonproton collisions are decayed
+using \EvtGen and the particle interactions with the \LHCb detector material is
+handled by \GeantFour. The \EvtGen physics model is set to \Verb=SSD_CP= with
+parameters as summarised in
+\cref{tab:measurement_of_sin2beta:data_preparation:datasamples:mc:decfile}. The
+detector response is simulated using \Boole. The \LHCb trigger software \Moore,
+the reconstruction based on \Brunel and the stripping selection using \DaVinci
+treat simulated and recorded data in the same manner.
+\info{Quote software versions? FT package?}
+%
+\begin{table}[!htb]
+\centering
+\caption{Physics parameters used in the simulation.}
+\label{tab:measurement_of_sin2beta:data_preparation:datasamples:mc:decfile}
+\begin{tabular}{ll}
+\toprule
+Parameter                            & Generation value \\
+\midrule
+$\dmd$                               & \SI{0.502e12}{(\planckbar\per\second)} \\
+$\frac{\DG}{\Gamma}$                 & \num{0} \\
+$\left\vert\frac{q}{p}\right\vert$   & \num{1} \\
+$\arg(\frac{q}{p})$                  & \num{-0.775} \\
+$\vert A_f \vert$                    & \num{1} \\
+$\arg(A_f)$                          & \num{0} \\
+$\left\vert A_{\bar{f}} \right\vert$ & \num{-1}  \\
+$\arg(A_{\bar{f}})$                  & \num{0} \\
+$\tau$                               & \SI{1.519068}{\pico\second}\\
+\bottomrule
+\end{tabular}
+\end{table}
+%
+Studies to check for possible background contributions from partly reconstructed
+decays or decays with mis-identified particles (outlined in
+\cref{sec:measurement_of_sin2beta:physic_backgrounds}) require several inclusive
+and signal \MC samples using the same conditions as for the nominal \MC data
+set. \Cref{tab:measurement_of_sin2beta:data_preparation:datasamples:mc:samples}
+shows the used \MC data sets and gives the number of generated events.
+%
+\begin{table}[!htb]
+\centering
+\caption{Inclusive and signal MC data sets used in this analysis, with the
+generated number of events and if possible an estimate on the corresponding
+integrated luminosity.}
+\label{tab:measurement_of_sin2beta:data_preparation:datasamples:mc:samples}
+\begin{tabular}{lll}
+\toprule
+\acs{MC} name & \# events & int.\ lumi.\ $[\si{\per\fb}]$ \\ 
+\midrule
+inclJpsi    & \SI{60}{M} & -             \\
+Bd2JpsiX    & \SI{20}{M} & -             \\
+Bu2JpsiX    & \SI{20}{M} & -             \\
+Bs2JpsiX    & \SI{20}{M} & -             \\
+Bd2JpsiKst  & \SI{4}{M}  & $\approx 1.6$ \\
+Lb2JpsiL    & \SI{3}{M}  & $\approx 15$  \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\clearpage
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Flavour tagging}
 \label{sec:measurement_of_sin2beta:flavour_tagging}

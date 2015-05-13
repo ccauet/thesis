@@ -28,6 +28,13 @@
 \newmathsymbol{\obsEtaOSSS}{\mistagestimate_{\{\text{\acs{OS},\acs{SSpi}\}}}\xspace}
 
 % Trigger
+\SaveVerb{tmp_AU}= AU =
+\newcommand{\VerbAU}{\UseVerb{tmp_AU}\xspace}
+\SaveVerb{tmp_EB}= EB =
+\newcommand{\VerbEB}{\UseVerb{tmp_EB}\xspace}
+\SaveVerb{tmp_UB}= Unbiased =
+\newcommand{\VerbUB}{\UseVerb{tmp_UB}\xspace}
+
 \SaveVerb{tmp_TriggerRequirement}=(Hlt1DiMuonHighMass || Hlt1TrackMuon) && Hlt2DiMuonDetachedJPsi=
 \newcommand{\TriggerReq}{\UseVerb{tmp_TriggerRequirement}\xspace}
 \SaveVerb{tmp_AlmostUnbiased}=Hlt1DiMuonHighMass && Hlt2DiMuonDetachedJPsi=

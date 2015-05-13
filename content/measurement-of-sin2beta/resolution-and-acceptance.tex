@@ -92,14 +92,14 @@ requirement.
 
 The data set for studying the trigger acceptance effects consists of all events
 that are selected by the \StrippingDetached stripping line and pass the
-offline selection. As we do expect the tagged and untagged candidates to behave
-equally concerning the studied effect we proceed using all candidates available.
+offline selection. As the tagged and untagged candidates are expected to behave
+equally concerning the studied effect all available candidates are used.
 On the remaining multiple candidates, a random candidate selection is applied.
 All candidates are selected by one of the following trigger lines:
 \HLTOneDiMuonHighMass, \HLTOneTrackMuon, \HLTTwoDiMuonJpsi, or
 \HLTTwoDiMuonDetachedJpsi.
 
-The efficiencies are time-dependent and, since we are mainly interested in the
+The efficiencies are time-dependent and, since the focus lies on the the
 acceptance of the signal decay time distribution, have to be determined through
 a fit. To do so, a simultaneous fit for the signal yield is performed in ten
 bins of decay time. The bin boundaries are chosen in a way that each bin
@@ -134,7 +134,7 @@ instead of the histograms themselves. Each bin centre is used as a knot for the
 splines. The bin contents determine the shape of the splines. However, the bin
 contents aren't fixed but constrained with a Gaussian function where the width
 is given by the uncertainty on the bin content. As there is no information about
-the acceptance at the decay time limits, we assume the efficiency to be flat
+the acceptance at the decay time limits, the efficiency is assumed to be flat
 between the lower decay time limit at \SI{0.3}{\ps} and the first bin
 centre/knot and the last bin centre/knot and the upper decay time limit at
 \SI{18.3}{\ps}, respectively.
@@ -179,12 +179,12 @@ fixing the lifetime $\tau$ to its generation value. Based on the
 \HLTOneDiMuonHighMass and \HLTTwoDiMuonJpsi are chosen to avoid any
 additional lifetime bias for events with short decay times. Only candidates
 being matched on \MC as true signal events are considered. The nominal offline
-selection is applied and from the remaining multiple (\acs{PV},\Bz) candidate pairs,
+selection is applied and from the remaining multiple (\acs{PV},\Bd) candidate pairs,
 one is chosen randomly. To avoid wrong-\acs{PV} associations of the reconstructed
 \BdToJpsiKS candidate the true \MC decay time is used in the fit. To reduce the
-statistical uncertainties and as we do not expect any deviations of the decay
-time distributions we include all untagged events in this study. The number of
-remaining MC candidates available for this study is roughly \num{60000}. Due to
+statistical uncertainties and no deviations of the decay time distributions are
+expected all untagged events are included in this study. The number of remaining
+\MC candidates available for this study is roughly \num{60000}. Due to
 differences in the reconstruction efficiency the $\beta_\tau$ factor is
 determined separately for \catOO/\catOT and \catDD/\catLL events
 (\cref{tab:measurement_of_sin2beta:resolution_and_acceptance:acceptance:upper}).
@@ -204,6 +204,7 @@ determined separately for \catOO/\catOT and \catDD/\catLL events
 \end{table}
 
 \subsubsection*{Influence of higher order effects}
+\todo{Leave out this possibility?}
 To check the influence of higher order terms, a quadratic correction function is
 tested where the second order term has an own degree of freedom given by
 $\gamma_\tau$,
@@ -216,7 +217,7 @@ Again the parameters $\beta_\tau$ and $\gamma_\tau$ are fitted while fixing the
 lifetime $\tau$. In \cref{tab:measurement_of_sin2beta:resolution_and_acceptance:acceptance:upper:secondorder} 
 the results are listed for \catOO/\catOT and \catDD/\catLL events. To visualise
 the effect, the per-bin ratio of the decay time distributions of signal \MC
-events to ToyMC events is calculated and shown in
+events to \replace{ToyMC}{Macro for ToyMC?} events is calculated and shown in
 \cref{fig:measurement_of_sin2beta:resolution_and_acceptance:acceptance:upper}.
 The ToyMC decay time distribution follows an exponential function with the same
 lifetime as used in the generation of the signal \MC. As the uncertainties on
@@ -246,7 +247,7 @@ bias due to this choice is investigated in \cref{missing}.
   \includegraphics[width=0.49\textwidth]{private/content/measurement-of-sin2beta/figs/velo_acceptance_12_DD.pdf}\hfill
   \includegraphics[width=0.49\textwidth]{private/content/measurement-of-sin2beta/figs/velo_acceptance_12_LL.pdf}
 \caption{
-Decay time ratio in bins of decay time for (left/right)\catDD/\catLL and
+Decay time ratio in bins of decay time for (left/right) \catDD/\catLL and
 (top/bottom) \catOO/\catOT. The blue (red) curve shows a linear (quadratic) fit
 to the data points.}
 \label{fig:measurement_of_sin2beta:resolution_and_acceptance:acceptance:upper}

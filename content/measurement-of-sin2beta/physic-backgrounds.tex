@@ -1,0 +1,73 @@
+%!TEX root = ../../common/main.tex
+
+\section{Backgrounds}
+\label{sec:measurement_of_sin2beta:physic_backgrounds}
+
+This section describes the evaluation of background contributions in the data.
+Besides combinatorial background from particles combined by chance with
+properties that allow to pass all selection steps two other sources are
+investigated: physics backgrounds from decays with mis-identified final state
+particles are studied in
+\cref{sec:measurement_of_sin2beta:physic_backgrounds:physic_backgrounds} and the
+influence of non-uniform tagging responses for the background candidates is
+examined in
+\cref{sec:measurement_of_sin2beta:physic_backgrounds:tagging_asymmetries}.
+
+\section{Physics backgrounds}
+\label{sec:measurement_of_sin2beta:physic_backgrounds:physic_backgrounds}
+
+To ensure that the background consists of combinatorial backgrounds, and that
+exclusive backgrounds are negligible, possible physics backgrounds are studied
+with simulated data (see \cref{sec:measurement_of_sin2beta:data_preparation:datasamples:mc}). 
+
+Using the true particle identities from \MC reveals the existence of remnants
+from physic backgrounds in the $\inclJPsi$ and the $\BdToJpsiX$ \MC samples. In
+the $\BdToJpsiX$, around $\SI{0.04}{\percent}$ $\BdToJpsiKstar$ candidates
+survive the applied selection criteria compared to $\SI{0.5}{\percent}$ signal
+events. In the $\inclJPsi$ sample $\SI{0.0005}{\percent}$ $\BdToJpsiKstar$,
+$\SI{0.0002}{\percent}$ $\BsToJpsiKS$, and $\SI{0.0002}{\percent}$
+$\LbToJpsiLambda$ background events contribute, compared to
+$\SI{0.01}{\percent}$ $\BdToJpsiKS$ candidates.
+
+Since the production of $\Bs$ is a factor $\num{100}$ less frequent than the
+$\Bd$ and reconstructed $\BsToJpsiKS$ candidates lie outside the nominal mass
+range, we neglect possible contributions. While $\BdToJpsiKstar$ background
+results from kaon-pion mis-identification, $\LbToJpsiLambda$ candidates are
+found in the sample due to a proton-pion mis-identification. Their expected
+contribution in the data sample is further studied by using signal \MC samples
+of $\BdToJpsiKstar$ and $\LbToJpsiLambda$.
+
+\subsubsection{Physics backgrounds from $\kaon$-$\pion$ mis-ID}
+\label{sec:measurement_of_sin2beta:physic_backgrounds:physic_backgrounds:kstar}
+
+In the $\BdToJpsiKstar$ signal \MC $\SI{0.3}{\percent}$ of $\num{4e6}$ generated
+background candidates get reconstructed and survive the applied stripping cuts.
+This number already reduces to $\SI{0.004}{\percent}$ after applying cuts on the
+nominal mass and time ranges. After the full offline selection, considering a
+$\SI{38}{\percent}$ tagging efficiency, and scaling the numbers to match a data
+sample corresponding to $\SI[separate-uncertainty=true]{3}{\per\femto\barn}$
+integrated luminosity, $\num{20}$ $\BdToJpsiKstar$ candidates with a positive
+\MC information match remain. This corresponds to a fraction of roughly
+$\SI{0.04}{\percent}$ of the background in the nominal data sample. The source
+of the remaining contributions are \eg decays like
+$\decay{\Bdstar}{\Bd(\to\jpsi\Kstarz)\,\Xparticle}$.
+
+\subsubsection{Physics backgrounds from $\proton$-$\pion$ mis-ID}
+\label{sec:measurement_of_sin2beta:physic_backgrounds:physic_backgrounds:lambda}
+
+Out of $\num{3e6}$ generated $\LbToJpsiLambda$ signal candidates only
+$\SI{2.0}{\percent}$ get reconstructed and pass the stripping. The cuts on the
+nominal mass and time ranges reduce this number down to $\SI{0.32}{\percent}$.
+The veto cut applied in the offline selection (see
+\cref{sec:measurement_of_sin2beta:data_preparation:offline_selection:daughters})
+decreases the number of candidates inside this mass and decay time window by
+more than $\SI{50}{\percent}$ to $\SI{0.15}{\percent}$. After applying the full
+offline selection, including the tagging efficiency, and scaling the sample to
+correspond to the collected integrated luminosity in data, $\num{120}$ MC
+truth-matched $\LbToJpsiLambda$ candidates remain. Therefore, we expect a
+$\SI{0.2}{\percent}$ contribution of $\LbToJpsiLambda$ background candidates in
+our nominal data sample.
+
+\section{Background tagging asymmetries}
+\label{sec:measurement_of_sin2beta:physic_backgrounds:tagging_asymmetries}
+\missing{Background tagging asymmetries}

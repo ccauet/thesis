@@ -3,6 +3,32 @@
 \section{Likelihood fit}
 \label{sec:measurement_of_sin2beta:likelihood_fit}
 
+This section presents the model developed to describe the data and estimate the
+values and uncertainties of the physics observables using an \uEML fit. Starting
+with a short review of the \uEML method, the \acp{PDF} in use to describe the
+different dimensions and components is shown, and the fit model is outlined.
+
+The \CP observables of interest \SJpsiKS and \CJpsiKS are estimated in a
+multi-dimensional simultaneous \uEML fit. As summarised in
+\cref{tab:measurement_of_sin2beta:data_preparation:observables} the seven
+observables $\vec{x}$ are given by the reconstructed mass and decay time of the
+\Bd candidate, its decay time estimate, and its \OS and \SSpi tag decision as
+well as the corresponding mistag estimates
+%
+\begin{equation}\label{eq:measurement_of_sin2beta:likelihood_fit:observables}
+  \vec{x} = (\obsMass, \obsTime, \obsTimeError, \obsTagOS, \obsTagSS, \obsEtaOS, \obsEtaSS)\eqpd  
+\end{equation}
+%
+The extended likelihood for $N$ observed events is then defined as
+%
+\begin{equation}\label{sec:measurement_of_sin2beta:likelihood_fit:uEML}
+  \Likelihood{}{}\left(\vec{\theta},\vec{n};\vec{x}\right) = \frac{\exponential{-N} N^n}{n!} \prod_j \prod_{i=1}^{n_j} \Prob{j}{}\left(\vec{x}_i;\vec{\theta}\right)\eqcm
+\end{equation}
+%
+where $\vec{n}$ is the numbers of events, and $\vec{\theta}$ the parameters with
+unknown values to be estimated by the \uEML fit.
+
+\newpage
 true parameter values == point estimation / best guess
 + estimation of uncertainties (usually expressed as confidence intervals)
 
@@ -10,9 +36,8 @@ dataset of N observations with observables $\vec{x} = {x_1, x_2, x_3}$
 
 (unknown) PDF f(x, vec(theta)) with parameters vec(theta)
 
-\begin{equation}\label{sec:measurement_of_sin2beta:likelihood_fit:unbinned_extended_ML}
-  \Likelihood{}{}\left(\vec{x};\right) = 
-\end{equation}
+
+
 
 % ------------------------------------------------------------------------------
 \subsection{Fitter validation}

@@ -19,22 +19,55 @@ well as the corresponding mistag estimates
   \vec{x} = (\obsMass, \obsTime, \obsTimeError, \obsTagOS, \obsTagSS, \obsEtaOS, \obsEtaSS)\eqpd  
 \end{equation}
 %
-The extended likelihood for $N$ observed events is then defined as
+The extended likelihood for a total of $N$ observed events in $j$ subsamples of
+data, where $n=\sum_j n_j$, is then defined as
 %
 \begin{equation}\label{sec:measurement_of_sin2beta:likelihood_fit:uEML}
-  \Likelihood{}{}\left(\vec{\theta},\vec{n};\vec{x}\right) = \frac{\exponential{-N} N^n}{n!} \prod_j \prod_{i=1}^{n_j} \Prob{j}{}\left(\vec{x}_i;\vec{\theta}\right)\eqcm
+  \Likelihood{}{}\left(\vec{\theta},\vec{n};\vec{x}\right) = \frac{\exponential{-N} N^n}{n!} \prod_j \prod_{i=1}^{n_j} n_j \Prob{j}{}\left(\vec{x}_i;\vec{\theta}\right)\eqcm
 \end{equation}
 %
 where $\vec{n}$ is the numbers of events, and $\vec{\theta}$ the parameters with
-unknown values to be estimated by the \uEML fit.
+unknown values to be estimated by the \uEML fit. \important{Check definition of uEML}
+
+\subsection{\acp{PDF} used in this analysis}
+\label{sec:measurement_of_sin2beta:likelihood_fit:pdfs}
+
+\subsubsection{Exponential}
+\begin{equation}
+  \Prob{\text{Exponential}}{}(x, \alpha) = \exponential{\alpha x}
+\end{equation}
+
+\subsubsection{Decay}
+\begin{equation}
+  \Prob{\text{Decay}}{}(x, \alpha) = \exponential{- \frac{x}{\alpha}}
+\end{equation}
+
+\subsubsection{Gaussian}
+\begin{equation}
+  \Prob{\text{Gaussian}}{}(x, \mu, \sigma) = \frac{1}{\sigma\sqrt{2\pi}}\exponential{-\frac{1}{2} \left(\frac{x-\mu}{\sigma}\right)^2}
+\end{equation}
+
+\subsubsection{Lognormal}
+\begin{equation}
+  \Prob{\text{Lognormal}}{}(x, \mu, k) = \frac{1}{x \sqrt{2\pi} \log (k)} \exponential{-\frac{\log^2 \left(\sfrac{x}{\mu}\right)}{2 \log^2(k)}}
+\end{equation}
+
+\subsubsection{BDecay}
+\begin{multline}
+  \Prob{\text{BDecay}}{}(x;...) = \\ \exponential{- \frac{x}{\alpha}}\left( A \cosh (\DG x) + B \sinh (\DG x) + C \cos (\dm x) + D \sin (\dm x) \right)
+\end{multline}
+
+\subsubsection{Ipatia}
+\begin{multline}
+  \Prob{\text{Ipatia}}{}(x, \mu, \sigma, \lambda, \zeta, \beta, a_1, a_2, n_1, n_2) = \\
+    \begin{cases}
+    ...     & \text{if $-a_1 < \frac{x-\mu}{\sigma} < a_2$} \\
+    ...     & \text{if $-a_1 > \frac{x-\mu}{\sigma}      $} \\
+    ...     & \text{if $ a_2 < \frac{x-\mu}{\sigma}$} \\
+  \end{cases}
+\end{multline}
 
 \newpage
-true parameter values == point estimation / best guess
-+ estimation of uncertainties (usually expressed as confidence intervals)
-
-dataset of N observations with observables $\vec{x} = {x_1, x_2, x_3}$
-
-(unknown) PDF f(x, vec(theta)) with parameters vec(theta)
 
 
 

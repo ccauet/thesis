@@ -33,39 +33,59 @@ unknown values to be estimated by the \uEML fit. \important{Check definition of 
 \label{sec:measurement_of_sin2beta:likelihood_fit:pdfs}
 
 \subsubsection{Exponential}
-\begin{equation}
+\begin{equation}\label{sec:measurement_of_sin2beta:likelihood_fit:pdfs:exponential}
   \Prob{\text{Exponential}}{}(x, \alpha) = \exponential{\alpha x}
 \end{equation}
 
 \subsubsection{Decay}
-\begin{equation}
+\begin{equation}\label{sec:measurement_of_sin2beta:likelihood_fit:pdfs:decay}
   \Prob{\text{Decay}}{}(x, \alpha) = \exponential{- \frac{x}{\alpha}}
 \end{equation}
 
 \subsubsection{Gaussian}
-\begin{equation}
+\begin{equation}\label{sec:measurement_of_sin2beta:likelihood_fit:pdfs:gaussian}
   \Prob{\text{Gaussian}}{}(x, \mu, \sigma) = \frac{1}{\sigma\sqrt{2\pi}}\exponential{-\frac{1}{2} \left(\frac{x-\mu}{\sigma}\right)^2}
 \end{equation}
 
 \subsubsection{Lognormal}
-\begin{equation}
+\begin{equation}\label{sec:measurement_of_sin2beta:likelihood_fit:pdfs:lognormal}
   \Prob{\text{Lognormal}}{}(x, \mu, k) = \frac{1}{x \sqrt{2\pi} \log (k)} \exponential{-\frac{\log^2 \left(\sfrac{x}{\mu}\right)}{2 \log^2(k)}}
 \end{equation}
 
 \subsubsection{BDecay}
-\begin{multline}
+\begin{multline}\label{sec:measurement_of_sin2beta:likelihood_fit:pdfs:bdecay}
   \Prob{\text{BDecay}}{}(x;...) = \\ \exponential{- \frac{x}{\alpha}}\left( A \cosh (\DG x) + B \sinh (\DG x) + C \cos (\dm x) + D \sin (\dm x) \right)
 \end{multline}
 
 \subsubsection{Ipatia}
-\begin{multline}
+\begin{multline}\label{sec:measurement_of_sin2beta:likelihood_fit:pdfs:ipatia}
   \Prob{\text{Ipatia}}{}(x, \mu, \sigma, \lambda, \zeta, \beta, a_1, a_2, n_1, n_2) = \\
     \begin{cases}
-    ...     & \text{if $-a_1 < \frac{x-\mu}{\sigma} < a_2$} \\
-    ...     & \text{if $-a_1 > \frac{x-\mu}{\sigma}      $} \\
-    ...     & \text{if $ a_2 < \frac{x-\mu}{\sigma}$} \\
+      G(x, \mu, \sigma, \lambda, \zeta, \beta)    & \text{if $-a_1 < \frac{x-\mu}{\sigma} < a_2$} \\
+      \frac{G(\mu - a_1 \sigma, \mu, \sigma, \lambda, \zeta, \beta)}{
+        \left( 1 - \sfrac{x}{\left( n_1 \frac{G(\mu - a_1 \sigma, \mu, \sigma, \lambda, \zeta, \beta)}{G^\prime(\mu - a_1 \sigma, \mu, \sigma, \lambda, \zeta, \beta)} - a_1 \sigma \right)} \right)^{n_1}
+      }     & \text{if $-a_1 > \frac{x-\mu}{\sigma}$} \\
+      \frac{G(\mu - a_2 \sigma, \mu, \sigma, \lambda, \zeta, \beta)}{
+        \left( 1 - \sfrac{x}{\left( n_2 \frac{G(\mu - a_2 \sigma, \mu, \sigma, \lambda, \zeta, \beta)}{G^\prime(\mu - a_2 \sigma, \mu, \sigma, \lambda, \zeta, \beta)} - a_2 \sigma \right)} \right)^{n_2}
+      }     & \text{if $\phantom{-}a_2 < \frac{x-\mu}{\sigma}$} \\
   \end{cases}
 \end{multline}
+%
+where $G(x, \mu, \sigma, \lambda, \zeta, \beta)$ defines the generalised hyperbolic function
+\begin{multline}\label{sec:measurement_of_sin2beta:likelihood_fit:pdfs:generalised_hyperbolic}
+  G(x, \mu, \sigma, \lambda, \zeta, \beta) = \\
+  \left(\left(x - \mu\right)^2 + A_\lambda^2(\zeta) \sigma^2 \right)^{\frac{1}{2} \lambda - \frac{1}{4}}
+  \exponential{\beta (x - \mu)} K_{\lambda-\frac{1}{2}}
+  \left(\zeta \sqrt{1 + \left(\sfrac{x - \mu}{A_\lambda(\zeta) \sigma}\right)^2} \right)\eqcm
+\end{multline}
+%
+with the cylindrical harmonics $K_\lambda$ and
+%
+\begin{equation}
+  A_\lambda^2(\zeta) = \frac{\zeta K_\lambda(\zeta)}{K_{\lambda+1}(\zeta)}\eqpd
+\end{equation}
+%
+
 
 \newpage
 

@@ -22,47 +22,83 @@ well as the corresponding mistag estimates
 The extended likelihood for a total of $N$ observed events in $j$ subsamples of
 data, where $n=\sum_j n_j$, is then defined as
 %
-\begin{equation}\label{sec:measurement_of_sin2beta:likelihood_fit:uEML}
+\begin{equation}\label{eq:measurement_of_sin2beta:likelihood_fit:uEML}
   \Likelihood{}{}\left(\vec{\theta},\vec{n};\vec{x}\right) = \frac{\exponential{-N} N^n}{n!} \prod_j \prod_{i=1}^{n_j} n_j \Prob{j}{}\left(\vec{x}_i;\vec{\theta}\right)\eqcm
 \end{equation}
 %
 where $\vec{n}$ is the numbers of events, and $\vec{\theta}$ the parameters with
 unknown values to be estimated by the \uEML fit. \important{Check definition of uEML}
 
-\subsection{\acp{PDF} used in this analysis}
+\subsection{List of used \aclp{PDF}}
 \label{sec:measurement_of_sin2beta:likelihood_fit:pdfs}
 
+The following \acp{PDF} are employed in the fit to model the data.
+
 \subsubsection{Exponential}
-\begin{equation}\label{sec:measurement_of_sin2beta:likelihood_fit:pdfs:exponential}
-  \Prob{\text{Exponential}}{}(x, \alpha) = \exponential{\alpha x}
+\label{sec:measurement_of_sin2beta:likelihood_fit:pdfs:exponential}
+
+The exponential function with the parameter $\alpha$ to describe \eg the
+distribution of combinatorial background candidates with masses $m$.
+%
+\begin{equation}\label{eq:measurement_of_sin2beta:likelihood_fit:pdfs:exponential}
+  \Prob{\text{Exponential}}{}(m, \alpha) = \exponential{\alpha m}
 \end{equation}
 
 \subsubsection{Decay}
-\begin{equation}\label{sec:measurement_of_sin2beta:likelihood_fit:pdfs:decay}
-  \Prob{\text{Decay}}{}(x, \alpha) = \exponential{- \frac{x}{\alpha}}
+\label{sec:measurement_of_sin2beta:likelihood_fit:pdfs:decay}
+
+The decay function is derived from the exponential function with $\alpha =
+-\sfrac{1}{\tau}$, where $\tau$ describes the lifetime of candidates with decay
+times $t$.
+%
+\begin{equation}\label{eq:measurement_of_sin2beta:likelihood_fit:pdfs:decay}
+  \Prob{\text{Decay}}{}(t, \tau) = \exponential{- \frac{t}{\tau}}
 \end{equation}
 
 \subsubsection{Gaussian}
-\begin{equation}\label{sec:measurement_of_sin2beta:likelihood_fit:pdfs:gaussian}
+\label{sec:measurement_of_sin2beta:likelihood_fit:pdfs:gaussian}
+
+A simple Gaussian function described by the central value or mean $\mu$ and the
+width $\sigma$ of the distribution.
+%
+\begin{equation}\label{eq:measurement_of_sin2beta:likelihood_fit:pdfs:gaussian}
   \Prob{\text{Gaussian}}{}(x, \mu, \sigma) = \frac{1}{\sigma\sqrt{2\pi}}\exponential{-\frac{1}{2} \left(\frac{x-\mu}{\sigma}\right)^2}
 \end{equation}
 
 \subsubsection{Lognormal}
-\begin{equation}\label{sec:measurement_of_sin2beta:likelihood_fit:pdfs:lognormal}
-  \Prob{\text{Lognormal}}{}(x, \mu, k) = \frac{1}{x \sqrt{2\pi} \log (k)} \exponential{-\frac{\log^2 \left(\sfrac{x}{\mu}\right)}{2 \log^2(k)}}
+\label{sec:measurement_of_sin2beta:likelihood_fit:pdfs:lognormal}
+
+The lognormal function is \eg used to describe the distribution of the decay
+time error estimate $\obsTimeError$ and is parametrised by its median $\mu$ and
+the parameter $k = \exponential{\sigma}$, where $\sigma$ is named the shape
+parameter.
+%
+\begin{equation}\label{eq:measurement_of_sin2beta:likelihood_fit:pdfs:lognormal}
+  \Prob{\text{Lognormal}}{}(\obsTimeError, \mu, k) = \frac{1}{\obsTimeError \sqrt{2\pi} \log (k)} \exponential{-\frac{\log^2 \left(\sfrac{\obsTimeError}{\mu}\right)}{2 \log^2(k)}}
 \end{equation}
 
 \subsubsection{BDecay}
-\begin{multline}\label{sec:measurement_of_sin2beta:likelihood_fit:pdfs:bdecay}
-  \Prob{\text{BDecay}}{}(x;...) = \\ \exponential{- \frac{x}{\alpha}}\left( A \cosh (\DG x) + B \sinh (\DG x) + C \cos (\dm x) + D \sin (\dm x) \right)
+\label{sec:measurement_of_sin2beta:likelihood_fit:pdfs:bdecay}
+
+Generalised exponential function to describe the time evolution of \Bmeson
+states with decay times $t$. The coefficients $A$, $B$, $C$, and $D$ can be
+adapted to describe \Bmeson mixing, \CP violation, and different asymmetries \eg
+in the production of the \Bmesons. The \PDF is further parametrised by the
+lifetime parameter $\tau$, the decay width difference $\DG$ and the mass
+difference $\dm$ of the \Bmeson mass eigenstates.
+%
+\begin{multline}\label{eq:measurement_of_sin2beta:likelihood_fit:pdfs:bdecay}
+  \Prob{\text{BDecay}}{}(t;...) = \\ \exponential{- \frac{t}{\tau}}\left( A \cosh (\DG t) + B \sinh (\DG t) + C \cos (\dm t) + D \sin (\dm t) \right)
 \end{multline}
 
 \subsubsection{Ipatia}
+\label{sec:measurement_of_sin2beta:likelihood_fit:pdfs:ipatia}
+
 The Ipatia \PDF \cite{Santos:2013gra} is a generalisation of the Crystal ball
-function which is marginalised over unknown the per-event mass resolution and is
-parametrised as
+\PDF \cite{Oreglia:1980cs,Gaiser:1982yw,Skwarnicki:1986xj}, marginalised over
+the a priori unknown per-event mass resolution and is parametrised as
 %
-\begin{multline}\label{sec:measurement_of_sin2beta:likelihood_fit:pdfs:ipatia}
+\begin{multline}\label{eq:measurement_of_sin2beta:likelihood_fit:pdfs:ipatia}
   \Prob{\text{Ipatia}}{}(x, \mu, \sigma, \lambda, \zeta, \beta, a_1, a_2, n_1, n_2) = \\
     \begin{cases}
       G(x, \mu, \sigma, \lambda, \zeta, \beta)    & \text{if $-a_1 < \frac{x-\mu}{\sigma} < a_2$} \\
@@ -76,7 +112,7 @@ parametrised as
 \end{multline}
 %
 where $G(x, \mu, \sigma, \lambda, \zeta, \beta)$ defines the generalised hyperbolic function
-\begin{multline}\label{sec:measurement_of_sin2beta:likelihood_fit:pdfs:generalised_hyperbolic}
+\begin{multline}\label{eq:measurement_of_sin2beta:likelihood_fit:pdfs:generalised_hyperbolic}
   G(x, \mu, \sigma, \lambda, \zeta, \beta) = \\
   \left(\left(x - \mu\right)^2 + A_\lambda^2(\zeta) \sigma^2 \right)^{\frac{1}{2} \lambda - \frac{1}{4}}
   \exponential{\beta (x - \mu)} K_{\lambda-\frac{1}{2}}
@@ -88,7 +124,6 @@ with the cylindrical harmonics $K_\lambda$ and
 \begin{equation}
   A_\lambda^2(\zeta) = \frac{\zeta K_\lambda(\zeta)}{K_{\lambda+1}(\zeta)}\eqpd
 \end{equation}
-%
 
 
 \newpage

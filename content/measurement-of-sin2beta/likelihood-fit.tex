@@ -16,7 +16,7 @@ observables $\vec{x}$ are given by the reconstructed mass and decay time of the
 well as the corresponding mistag estimates
 %
 \begin{equation}\label{eq:measurement_of_sin2beta:likelihood_fit:observables}
-  \vec{x} = (\obsMass, \obsTime, \obsTimeError, \obsTagOS, \obsTagSS, \obsEtaOS, \obsEtaSS)\eqpd  
+  \vec{x} = (\obsAllList)\eqpd  
 \end{equation}
 %
 The extended likelihood for a total of $N$ observed events in $j$ subsamples of
@@ -29,11 +29,24 @@ data, where $n=\sum_j n_j$, is then defined as
 where $\vec{n}$ is the numbers of events, and $\vec{\theta}$ the parameters with
 unknown values to be estimated by the \uEML fit. \important{Check definition of uEML}
 
+The software library \RooFit---part of the \ROOT software framework---and its
+implementation of the \Minuit algorithm is used to minimize the negative
+log-likelihood expression $-\ln\Likelihood{}{}$.
+
+In \cref{sec:measurement_of_sin2beta:likelihood_fit:pdfs} the \acp{PDF} used to
+build the likelihood function are introduced shortly, before
+\cref{sec:measurement_of_sin2beta:likelihood_fit:model} presents the complete
+fit model employed by the \uEML fit. The results of fitter validation study are
+summarised in \cref{sec:measurement_of_sin2beta:likelihood_fit:validation}.
+
+% ------------------------------------------------------------------------------
 \subsection{List of used \aclp{PDF}}
 \label{sec:measurement_of_sin2beta:likelihood_fit:pdfs}
 
-The following \acp{PDF} are employed in the fit to model the data.
+The following \acp{PDF} are employed to model the distributions of the fit
+observables.
 
+%...............................................................................
 \subsubsection{Exponential}
 \label{sec:measurement_of_sin2beta:likelihood_fit:pdfs:exponential}
 
@@ -41,9 +54,10 @@ The exponential function with the parameter $\alpha$ to describe \eg the
 distribution of combinatorial background candidates with masses $m$.
 %
 \begin{equation}\label{eq:measurement_of_sin2beta:likelihood_fit:pdfs:exponential}
-  \Prob{\text{Exponential}}{}(m, \alpha) = \exponential{\alpha m}
+  \ProbArg{\text{Exponential}}{}(m, \alpha) = \exponential{\alpha m}
 \end{equation}
 
+%...............................................................................
 \subsubsection{Decay}
 \label{sec:measurement_of_sin2beta:likelihood_fit:pdfs:decay}
 
@@ -52,9 +66,10 @@ The decay function is derived from the exponential function with $\alpha =
 times $t$.
 %
 \begin{equation}\label{eq:measurement_of_sin2beta:likelihood_fit:pdfs:decay}
-  \Prob{\text{Decay}}{}(t, \tau) = \exponential{- \frac{t}{\tau}}
+  \ProbArg{\text{Decay}}{}{t, \tau} = \exponential{- \frac{t}{\tau}}
 \end{equation}
 
+%...............................................................................
 \subsubsection{Gaussian}
 \label{sec:measurement_of_sin2beta:likelihood_fit:pdfs:gaussian}
 
@@ -62,9 +77,10 @@ A simple Gaussian function described by the central value or mean $\mu$ and the
 width $\sigma$ of the distribution.
 %
 \begin{equation}\label{eq:measurement_of_sin2beta:likelihood_fit:pdfs:gaussian}
-  \Prob{\text{Gaussian}}{}(x, \mu, \sigma) = \frac{1}{\sigma\sqrt{2\pi}}\exponential{-\frac{1}{2} \left(\frac{x-\mu}{\sigma}\right)^2}
+  \ProbArg{\text{Gaussian}}{}{x, \mu, \sigma} = \frac{1}{\sigma\sqrt{2\pi}}\exponential{-\frac{1}{2} \left(\frac{x-\mu}{\sigma}\right)^2}
 \end{equation}
 
+%...............................................................................
 \subsubsection{Lognormal}
 \label{sec:measurement_of_sin2beta:likelihood_fit:pdfs:lognormal}
 
@@ -74,9 +90,10 @@ the parameter $k = \exponential{\sigma}$, where $\sigma$ is named the shape
 parameter.
 %
 \begin{equation}\label{eq:measurement_of_sin2beta:likelihood_fit:pdfs:lognormal}
-  \Prob{\text{Lognormal}}{}(\obsTimeError, \mu, k) = \frac{1}{\obsTimeError \sqrt{2\pi} \log (k)} \exponential{-\frac{\log^2 \left(\sfrac{\obsTimeError}{\mu}\right)}{2 \log^2(k)}}
+  \ProbArg{\text{Lognormal}}{}{\obsTimeError, \mu, k} = \frac{1}{\obsTimeError \sqrt{2\pi} \log (k)} \exponential{-\frac{\log^2 \left(\sfrac{\obsTimeError}{\mu}\right)}{2 \log^2(k)}}
 \end{equation}
 
+%...............................................................................
 \subsubsection{BDecay}
 \label{sec:measurement_of_sin2beta:likelihood_fit:pdfs:bdecay}
 
@@ -88,27 +105,30 @@ lifetime parameter $\tau$, the decay width difference $\DG$ and the mass
 difference $\dm$ of the \Bmeson mass eigenstates.
 %
 \begin{multline}\label{eq:measurement_of_sin2beta:likelihood_fit:pdfs:bdecay}
-  \Prob{\text{BDecay}}{}(t;...) = \\ \exponential{- \frac{t}{\tau}}\left( A \cosh (\DG t) + B \sinh (\DG t) + C \cos (\dm t) + D \sin (\dm t) \right)
+  \ProbArg{\text{BDecay}}{}{t;...} = \\ \exponential{- \frac{t}{\tau}}\left( A \cosh (\DG t) + B \sinh (\DG t) + C \cos (\dm t) + D \sin (\dm t) \right)
 \end{multline}
 
+%...............................................................................
 \subsubsection{Ipatia}
 \label{sec:measurement_of_sin2beta:likelihood_fit:pdfs:ipatia}
 
 The Ipatia \PDF \cite{Santos:2013gra} is a generalisation of the Crystal ball
 \PDF \cite{Oreglia:1980cs,Gaiser:1982yw,Skwarnicki:1986xj}, marginalised over
-the a priori unknown per-event mass resolution and is parametrised as
+the a priori unknown per-event mass resolution. The \PDF is used to describe the
+distribution of the reconstructed $\B$ candidates mass $\obsMass$ and is
+parametrised as
 %
 \begin{multline}\label{eq:measurement_of_sin2beta:likelihood_fit:pdfs:ipatia}
-  \Prob{\text{Ipatia}}{}(x, \mu, \sigma, \lambda, \zeta, \beta, a_1, a_2, n_1, n_2) = \\
+  \ProbArg{\text{Ipatia}}{}{m, \mu, \sigma, \lambda, \zeta, \beta, a_1, a_2, n_1, n_2} = \\
     \begin{cases}
-      G(x, \mu, \sigma, \lambda, \zeta, \beta)    & \text{if $-a_1 < \frac{x-\mu}{\sigma} < a_2$} \\
+      G(m, \mu, \sigma, \lambda, \zeta, \beta)    & \text{if $-a_1 < \frac{m-\mu}{\sigma} < a_2$} \\
       \frac{G(\mu - a_1 \sigma, \mu, \sigma, \lambda, \zeta, \beta)}{
-        \left( 1 - \sfrac{x}{\left( n_1 \frac{G(\mu - a_1 \sigma, \mu, \sigma, \lambda, \zeta, \beta)}{G^\prime(\mu - a_1 \sigma, \mu, \sigma, \lambda, \zeta, \beta)} - a_1 \sigma \right)} \right)^{n_1}
-      }     & \text{if $-a_1 > \frac{x-\mu}{\sigma}$} \\
+        \left( 1 - \sfrac{m}{\left( n_1 \frac{G(\mu - a_1 \sigma, \mu, \sigma, \lambda, \zeta, \beta)}{G^\prime(\mu - a_1 \sigma, \mu, \sigma, \lambda, \zeta, \beta)} - a_1 \sigma \right)} \right)^{n_1}
+      }     & \text{if $-a_1 > \frac{m-\mu}{\sigma}$} \\
       \frac{G(\mu - a_2 \sigma, \mu, \sigma, \lambda, \zeta, \beta)}{
-        \left( 1 - \sfrac{x}{\left( n_2 \frac{G(\mu - a_2 \sigma, \mu, \sigma, \lambda, \zeta, \beta)}{G^\prime(\mu - a_2 \sigma, \mu, \sigma, \lambda, \zeta, \beta)} - a_2 \sigma \right)} \right)^{n_2}
-      }     & \text{if $\phantom{-}a_2 < \frac{x-\mu}{\sigma}$} \\
-  \end{cases}
+        \left( 1 - \sfrac{m}{\left( n_2 \frac{G(\mu - a_2 \sigma, \mu, \sigma, \lambda, \zeta, \beta)}{G^\prime(\mu - a_2 \sigma, \mu, \sigma, \lambda, \zeta, \beta)} - a_2 \sigma \right)} \right)^{n_2}
+      }     & \text{if $\phantom{-}a_2 < \frac{m-\mu}{\sigma}$} \\
+  \end{cases}\eqcm
 \end{multline}
 %
 where $G(x, \mu, \sigma, \lambda, \zeta, \beta)$ defines the generalised hyperbolic function
@@ -124,7 +144,43 @@ with the cylindrical harmonics $K_\lambda$ and
 \begin{equation}
   A_\lambda^2(\zeta) = \frac{\zeta K_\lambda(\zeta)}{K_{\lambda+1}(\zeta)}\eqpd
 \end{equation}
+%
+Here, $\mu$ and $\sigma$ are comparable to the mean and width known from a
+Gaussian distribution. The parameters $\lambda$ and $\zeta$ describe the shape
+of the central peak, $\beta$ characterises the asymmetry of the distribution.
+The left and right side tails of the distribution are parametrised by $a_i$ and
+$n_i$.
 
+% ------------------------------------------------------------------------------
+\subsection{Parametrisation of the fit model}
+\label{sec:measurement_of_sin2beta:likelihood_fit:model}
+
+The total \PDF is composed of two components for signal and background components. 
+
+\begin{equation}
+  \Norm{\text{Total}}{}\Prob{\text{Total}}{} = \Norm{\Sig}{}\Prob{\Sig}{} + \Norm{\Bkg}{}\Prob{\Bkg}{}
+\end{equation}
+
+\begin{multline}
+  \ProbArg{}{}{\obsAllList} = \\ 
+  \ProbArg{}{}{\obsMass} \cdot \ProbArg{}{}{\obsTime, \obsTimeError, \obsTagOS, \obsTagSS, \obsEtaOS, \obsEtaSS}
+\end{multline}
+
+\begin{multline}
+  \ProbArg{\Sig}{}{\obsTime, \obsTimeError, \obsTagOS, \obsTagSS, \obsEtaOS, \obsEtaSS} = \\ 
+  \ProbArg{\Sig}{}{\obsTime, \obsTagOS, \obsTagSS \vert \obsTimeError, \obsEtaOS, \obsEtaSS} \cdot
+  \ProbArg{\Sig}{}{\obsTimeError} \cdot
+  \ProbArg{\Sig}{}{\obsEtaOS} \cdot
+  \ProbArg{\Sig}{}{\obsEtaSS}
+\end{multline}
+
+\begin{multline}
+  \ProbArg{\Bkg}{}{\obsTime, \obsTimeError, \obsTagOS, \obsTagSS, \obsEtaOS, \obsEtaSS} = \\ 
+  \ProbArg{\Bkg}{}{\obsTime, \obsTagOS, \obsTagSS \vert \obsTimeError} \cdot
+  \ProbArg{\Bkg}{}{\obsTimeError} \cdot
+  \ProbArg{\Bkg}{}{\obsEtaOS} \cdot
+  \ProbArg{\Bkg}{}{\obsEtaSS}
+\end{multline}
 
 \newpage
 

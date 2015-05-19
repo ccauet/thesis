@@ -155,17 +155,34 @@ $n_i$.
 \subsection{Parametrisation of the fit model}
 \label{sec:measurement_of_sin2beta:likelihood_fit:model}
 
-The total \PDF is composed of two components for signal and background components. 
-
+The total \PDF is composed of two components for signal and background labelled
+\enquote{\Sig} and \enquote{\Bkg}
+%
 \begin{equation}
-  \Norm{\text{Total}}{}\Prob{\text{Total}}{} = \Norm{\Sig}{}\Prob{\Sig}{} + \Norm{\Bkg}{}\Prob{\Bkg}{}
+  \Norm{\text{Total}}{}\Prob{\text{Total}}{} = \Norm{\Sig}{}\Prob{\Sig}{} + \Norm{\Bkg}{}\Prob{\Bkg}{}\eqcm
 \end{equation}
-
+%
+where $\Norm{}{}$ are normalisation factors. As the mass and decay time are
+uncorrelated the summed \PDF can decomposed into a product of a mass and a decay
+time \PDF. The decay time \PDF describes the conditional distributions of the
+decay time and its dependent observable dimensions, the decay time resolution
+estimate \obsTimeError, the flavour tags \obsTagOSSS, and their associated
+mistag probability estimates \obsEtaOSSS.
+%
 \begin{multline}
-  \ProbArg{}{}{\obsAllList} = \\ 
-  \ProbArg{}{}{\obsMass} \cdot \ProbArg{}{}{\obsTime, \obsTimeError, \obsTagOS, \obsTagSS, \obsEtaOS, \obsEtaSS}
+  \ProbArg{\Sig/\Bkg}{}{\obsAllList} = \\ 
+  \ProbArg{\Sig/\Bkg}{}{\obsMass} \cdot \ProbArg{\Sig/\Bkg}{}{\obsTime, \obsTimeError, \obsTagOS, \obsTagSS, \obsEtaOS, \obsEtaSS}
 \end{multline}
-
+%
+As shown in \cref{missing}\addref{time mistag correlations} the per-event mistag
+estimates are uncorrelated to the reconstructed decay time. Hence, the signal
+decay time \PDF can be further decomposed into a product of the conditional
+decay time \PDF $\ProbArg{\Sig}{}{\obsTime, \obsTagOS, \obsTagSS \vert
+\obsTimeError, \obsEtaOS, \obsEtaSS}$ describing the \Bmeson time evolution as
+well as the \CP violating effects, the \PDF \ProbArg{\Sig}{}{\obsTimeError}
+describing the resolution estimate, and the \acp{PDF}
+\ProbArg{\Sig}{}{\obsEtaOSSS} describing the mistag probability estimates.
+%
 \begin{multline}
   \ProbArg{\Sig}{}{\obsTime, \obsTimeError, \obsTagOS, \obsTagSS, \obsEtaOS, \obsEtaSS} = \\ 
   \ProbArg{\Sig}{}{\obsTime, \obsTagOS, \obsTagSS \vert \obsTimeError, \obsEtaOS, \obsEtaSS} \cdot
@@ -173,7 +190,11 @@ The total \PDF is composed of two components for signal and background component
   \ProbArg{\Sig}{}{\obsEtaOS} \cdot
   \ProbArg{\Sig}{}{\obsEtaSS}
 \end{multline}
-
+%
+As the background decay time \PDF does not depend on the mistag probability
+distributions, only the decay time error estimate enters the conditional decay
+time \PDF.
+%
 \begin{multline}
   \ProbArg{\Bkg}{}{\obsTime, \obsTimeError, \obsTagOS, \obsTagSS, \obsEtaOS, \obsEtaSS} = \\ 
   \ProbArg{\Bkg}{}{\obsTime, \obsTagOS, \obsTagSS \vert \obsTimeError} \cdot

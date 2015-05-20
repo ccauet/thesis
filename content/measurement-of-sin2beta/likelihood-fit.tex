@@ -202,6 +202,94 @@ time \PDF.
   \ProbArg{\Bkg}{}{\obsEtaOS} \cdot
   \ProbArg{\Bkg}{}{\obsEtaSS}
 \end{multline}
+%
+With this general structure being outlined, each single dimension and the
+parametrisation of the signal and background components are explained. The
+utilised \acp{PDF} are listed and it is explained which parameters are shared in
+the categories of the simultaneous fit to the different data subsamples (\cf
+\cref{sec:measurement_of_sin2beta:data_preparation:subsamples}).
+
+%...............................................................................
+\subsubsection{Mass}
+\label{sec:measurement_of_sin2beta:likelihood_fit:model:mass}
+
+The \textbf{signal} mass distribution is modelled using an Ipatia \PDF.
+Individual parameters are chosen for the track types \catDD and \catLL. The
+parameter $\zeta$ is always fixed to zero. The values of the tail parameters
+$a_1, a_2, n_1, n_2$ and of the parameter $\lambda$ are determined on simulated
+data and fixed to these values in the fit.
+
+The \textbf{background} component is described by a single exponential \PDF. The
+parameter $\alpha$ is shared among all subsamples except for \catDD and \catLL.
+
+%...............................................................................
+\subsubsection{Decay time}
+\label{sec:measurement_of_sin2beta:likelihood_fit:model:decay_time}
+
+%...............................................................................
+\subsubsection{Decay time error estimate}
+\label{sec:measurement_of_sin2beta:likelihood_fit:model:decay_time_error}
+
+For most subsamples the \textbf{signal} component's distribution is parametrised
+using two lognormal \acp{PDF}. The lognormal \acp{PDF} in the (\catLL and
+\catOS) subsample share a common median parameter. For candidates lying in the
+(\catLL and (\catSS or \catBS)) subsamples a single lognormal \PDF is sufficient
+to describe the decay time error estimate distribution. Individual parameters
+are chosen depending on the track type and tagging categories, and in case of
+the (\catDD and \catOS) category, also on the trigger category.
+
+The \textbf{background} \PDF is composed of two lognormal distributions. In the
+\catLL subsample individual parameters are chosen depending on the track type
+and tagging categories. Candidates lying in the (\catDD and \catOS and \catAU)
+subsample only share parameters in the \catOO and \catOT categories. In all
+other subsamples the parameters are shared except for the track type category.
+
+The parameter values are determined in a multi-dimensional fit to the mass,
+decay time, and decay time error estimate distributions and subsequently fixed
+in the nominal fit to reduce fit times.
+
+%...............................................................................
+\subsubsection{Mistag estimate}
+\label{sec:measurement_of_sin2beta:likelihood_fit:model:mistag}
+
+The complicated shapes of the mistag estimate distributions have to be modelled
+empirically. Popular approaches to model non-parametric distributions are \eg
+Gaussian kernel estimations and splines. The later one is used here. Splines are
+piece-wise defined polynomials parametrised by interval boundaries
+(\emph{knots}), values at these knots, and boundary conditions to ensure a
+continues and smooth function. To model the mistag estimate distributions cubic
+splines are used as base splines.
+
+For $n$ knots, there are $n+2$ base splines, and accordingly $n+2$ fit
+parameters modelling the shape of the resulting \PDF. The knot positions are
+chosen arbitrarily at points of noticeable changes in the shape of the described
+distributions.
+
+The used knots for the \obsEtaOS and \obsEtaSS distributions are
+%
+\begin{equation*}
+\begin{split}
+  \text{\acs{OS} knots} &= \{0.06, 0.10, 0.14, 0.165, 0.23, 0.3, 0.34, 0.36, 0.42, 0.44, 0.48\} , \\
+  \text{\acs{SSpi} knots} &= \{0.16, 0.26, 0.36, 0.41, 0.46, 0.482279\} .
+\end{split}
+\end{equation*}
+%
+The explanation for the exceptional value of the last \SSpi knot can be found in
+the pre-calibration applied. Originally, the \SSpi mistag estimates are cut at
+values above $\num{0.44}$. The pre-calibration then shifts this boundary towards
+the given value (\cref{sec:flavour_tagging:calibration:ss}). Likewise,
+\OS candidates with a mistag estimate larger then $\num{0.48}$ are considered as
+\OS untagged. This choice was made to speed up the fit time and to ensure fit
+stability. As the candidates removed by this cut hold large mistags, the
+reduction of the effective tagging efficiency is found to be insignificant.
+
+The spline parameters are determined in a multi-dimensional fit including mass,
+decay time, and mistag estimate. Both, the \OS and the \SSpi mistag
+distributions are fitted using cubic splines with different spline parameters
+for \catDD and \catLL and otherwise sharing them through all categories. Only in
+the signal \OS distributions the differences depending on the track type are
+negligible so the parameters are shared in the \catDD and \catLL categories.
+
 
 \newpage
 

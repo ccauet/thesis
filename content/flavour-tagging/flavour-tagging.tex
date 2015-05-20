@@ -735,14 +735,22 @@ uncertainty of type II. The results are summarised in
 \subsection{\ac{SS} tagger calibration using BdToJpsiKstar decays}
 \label{sec:flavour_tagging:calibration:ss}
 
+The \SSpi mistag estimate is pre-calibrated using the calibration parameters
+%
+\begin{equation}
+\label{eq:tagging:sspion_precalibration}
+    \p{0}{} = \num{0.425}\eqcm\eqspace
+    \p{1}{} = \num{0.939}\eqcm\eqspace
+    \langle\eta\rangle = \num{0.379}.
+\end{equation}
 \info{How to handle the \SSpi precalibration for \Davinci versions prior to v35r1}
 %
-The \SSpi tagger is calibrated using a dataset of $\BdToJpsiKstar$ decays
-corresponding to an integrated luminosity of $\SI{3.0}{\per\fb}$ collected by
-the \LHCb experiment in \RunOne. As the \SSpi tagging algorithm depends on the
-fragmentation process of the initial \Bmeson, a $\Bd$ decay mode is preferred
-over a decay of $\Bu$ mesons. Only candidates carrying a tagging response from
-the \SSpi tagger are considered in the following.
+Following, the \SSpi tagger is calibrated using a dataset of $\BdToJpsiKstar$
+decays corresponding to an integrated luminosity of $\SI{3.0}{\per\fb}$
+collected by the \LHCb experiment in \RunOne. As the \SSpi tagging algorithm
+depends on the fragmentation process of the initial \Bmeson, a $\Bd$ decay mode
+is preferred over a decay of $\Bu$ mesons. Only candidates carrying a tagging
+response from the \SSpi tagger are considered in the following.
 \missing{\SS calibration: $\BdToJpsiKstar$ signal selection?}
 
 To describe the mixing asymmetry $\MixingAsymmetry$ a two-dimensional fit to the

@@ -36,8 +36,11 @@ log-likelihood expression $-\ln\Likelihood{}{}$.
 In \cref{sec:measurement_of_sin2beta:likelihood_fit:pdfs} the \acp{PDF} used to
 build the likelihood function are introduced shortly, before
 \cref{sec:measurement_of_sin2beta:likelihood_fit:model} presents the complete
-fit model employed by the \uEML fit. The results of fitter validation study are
-summarised in \cref{sec:measurement_of_sin2beta:likelihood_fit:validation}.
+fit model employed by the \uEML fit. The approach to prevent any experimenter's
+bias during the development of the fit model is described in
+\cref{sec:measurement_of_sin2beta:likelihood_fit:blinding} The results of fitter
+validation study are summarised in
+\cref{sec:measurement_of_sin2beta:likelihood_fit:validation}.
 
 % ------------------------------------------------------------------------------
 \subsection{List of used \aclp{PDF}}
@@ -51,10 +54,10 @@ observables.
 \label{sec:measurement_of_sin2beta:likelihood_fit:pdfs:exponential}
 
 The exponential function with the parameter $\alpha$ to describe \eg the
-distribution of combinatorial background candidates with masses $m$.
+distribution of combinatorial background candidates with masses $m$
 %
 \begin{equation}\label{eq:measurement_of_sin2beta:likelihood_fit:pdfs:exponential}
-  \ProbArg{\text{Exponential}}{}(m, \alpha) = \exponential{\alpha m}
+  \ProbArg{\text{Exponential}}{}{m, \alpha} = \exponential{\alpha m}\eqpd
 \end{equation}
 
 %...............................................................................
@@ -63,10 +66,10 @@ distribution of combinatorial background candidates with masses $m$.
 
 The decay function is derived from the exponential function with $\alpha =
 -\sfrac{1}{\tau}$, where $\tau$ describes the lifetime of candidates with decay
-times $t$.
+times $t$
 %
 \begin{equation}\label{eq:measurement_of_sin2beta:likelihood_fit:pdfs:decay}
-  \ProbArg{\text{Decay}}{}{t, \tau} = \exponential{- \frac{t}{\tau}}
+  \ProbArg{\text{Decay}}{}{t, \tau} = \exponential{- \frac{t}{\tau}}\eqpd
 \end{equation}
 
 %...............................................................................
@@ -74,10 +77,10 @@ times $t$.
 \label{sec:measurement_of_sin2beta:likelihood_fit:pdfs:gaussian}
 
 A simple Gaussian function described by the central value or mean $\mu$ and the
-width $\sigma$ of the distribution.
+width $\sigma$ of the distribution
 %
 \begin{equation}\label{eq:measurement_of_sin2beta:likelihood_fit:pdfs:gaussian}
-  \ProbArg{\text{Gaussian}}{}{x, \mu, \sigma} = \frac{1}{\sigma\sqrt{2\pi}}\exponential{-\frac{1}{2} \left(\frac{x-\mu}{\sigma}\right)^2}
+  \ProbArg{\text{Gaussian}}{}{x, \mu, \sigma} = \frac{1}{\sigma\sqrt{2\pi}}\exponential{-\frac{1}{2} \left(\frac{x-\mu}{\sigma}\right)^2}\eqpd
 \end{equation}
 
 %...............................................................................
@@ -87,10 +90,10 @@ width $\sigma$ of the distribution.
 The lognormal function is \eg used to describe the distribution of the decay
 time error estimate $\obsTimeError$ and is parametrised by its median $\mu$ and
 the parameter $k = \exponential{\sigma}$, where $\sigma$ is named the shape
-parameter.
+parameter
 %
 \begin{equation}\label{eq:measurement_of_sin2beta:likelihood_fit:pdfs:lognormal}
-  \ProbArg{\text{Lognormal}}{}{\obsTimeError, \mu, k} = \frac{1}{\obsTimeError \sqrt{2\pi} \log (k)} \exponential{-\frac{\log^2 \left(\sfrac{\obsTimeError}{\mu}\right)}{2 \log^2(k)}}
+  \ProbArg{\text{Lognormal}}{}{\obsTimeError, \mu, k} = \frac{1}{\obsTimeError \sqrt{2\pi} \log (k)} \exponential{-\frac{\log^2 \left(\sfrac{\obsTimeError}{\mu}\right)}{2 \log^2(k)}}\eqpd
 \end{equation}
 
 %...............................................................................
@@ -163,11 +166,11 @@ The total \PDF is composed of two components for signal and background labelled
 \end{equation}
 %
 where $\Norm{}{}$ are normalisation factors. As the mass and decay time are
-uncorrelated the summed \PDF can decomposed into a product of a mass and a decay
-time \PDF. The decay time \PDF describes the conditional distributions of the
-decay time and its dependent observable dimensions, the decay time resolution
-estimate \obsTimeError, the flavour tags \obsTagOSSS, and their associated
-mistag probability estimates \obsEtaOSSS.
+uncorrelated the summed \PDF can be decomposed into a product of a mass and a
+decay time \PDF. The decay time \PDF describes the conditional distributions of
+the decay time and its dependent observable dimensions, the decay time
+resolution estimate \obsTimeError, the flavour tags \obsTagOSSS, and their
+associated mistag probability estimates \obsEtaOSSS.
 %
 \begin{multline}
   \ProbArg{\Sig/\Bkg}{}{\obsAllList} = \\ 
@@ -227,6 +230,106 @@ parameter $\alpha$ is shared among all subsamples except for \catDD and \catLL.
 \subsubsection{Decay time}
 \label{sec:measurement_of_sin2beta:likelihood_fit:model:decay_time}
 
+The conditional \textbf{signal} decay time \PDF is given by
+%
+\begin{multline}
+    \ProbArg{\Sig}{}{\obsTime, \obsTagOS, \obsTagSS \vert \obsTimeError, \obsEtaOS, \obsEtaSS} \\ 
+  = \varepsilon_{\Sig}^{\text{\catAU,\catEB}} \cdot \left(\ProbArg{\Sig}{}{\obsTime^\prime, \obsTagOS, \obsTagSS \vert \obsEtaOS, \obsEtaSS} \otimes \Resolution{\Sig}{}(\obsTime-\obsTime^\prime)\right)\eqcm
+\end{multline}
+%
+where the acceptance function $\varepsilon_{\Sig}^{\text{\catAU,\catEB}}$ (\cf
+\cref{sec:measurement_of_sin2beta:resolution_and_acceptance:acceptance:lower})
+is implemented using cubic splines and the resolution model
+$\Resolution{\Sig}{}(\obsTime-\obsTime^\prime)$ (\cf
+\cref{sec:measurement_of_sin2beta:resolution_and_acceptance:resolution}) is
+convolved with the \B physics \PDF.
+
+In the following the \B physics \PDF is explained in detail.
+
+\begin{equation}
+  \begin{split}
+    \Prob{\text{true}}{\Bd}{\obsTime}    &= \frac{1}{\Norm{\obsTime}{\Bd}}    \exponential{-\sfrac{\obsTime}{\tau}} \left( 1 - S \sin(\dmd t) + C \cos (\dmd t) \right)\eqcm \\
+    \Prob{\text{true}}{\Bdbar}{\obsTime} &= \frac{1}{\Norm{\obsTime}{\Bdbar}} \exponential{-\sfrac{\obsTime}{\tau}} \left( 1 + S \sin(\dmd t) - C \cos (\dmd t) \right)\eqcm
+  \end{split}
+\end{equation}
+
+\begin{equation}
+  \begin{split}
+    \Norm{\obsTime}{\Bd}    &= \int_{t_\text{min}}^{t_\text{max}} \drm t \exponential{-\sfrac{\obsTime}{\tau}} \left( 1 - S \sin (\dmd t) + C \cos (\dmd t) \right)\eqcm \\
+    \Norm{\obsTime}{\Bdbar} &= \int_{t_\text{min}}^{t_\text{max}} \drm t \exponential{-\sfrac{\obsTime}{\tau}} \left( 1 + S \sin (\dmd t) - C \cos (\dmd t) \right)\eqcm
+  \end{split}
+\end{equation}
+
+\begin{equation}
+  \begin{split}
+    \ProbArg{\text{true}}{}{\obsTime\vert\Bd}    &= \frac{\Norm{\obsTime}{\Bd}}{\Norm{\obsTime}{}}    \ProbArg{\text{true}}{\Bd}{\obsTime}\eqcm \\
+    \ProbArg{\text{true}}{}{\obsTime\vert\Bdbar} &= \frac{\Norm{\obsTime}{\Bdbar}}{\Norm{\obsTime}{}} \ProbArg{\text{true}}{\Bdbar}{\obsTime}\eqcm
+  \end{split}
+\end{equation}
+
+\begin{equation}
+  \Norm{\obsTime}{} = \Norm{\obsTime}{\Bd} + \Norm{\obsTime}{\Bdbar}
+\end{equation}
+
+\begin{equation}\label{eq:measurement_of_sin2beta:likelihood_fit:model:decay_time:production_asymmetry}
+  A_P = \frac{R_{\Bdbar} - R_{\Bd}}{R_{\Bdbar} - R_{\Bd}}
+\end{equation}
+
+\begin{equation}
+  \begin{split}
+    \ProbArg{\text{true}}{}{\obsTime\vert\Bd}    &= \frac{\Norm{\obsTime}{\Bd}}{\Norm{\obsTime}{}}    (1 - A_P) \ProbArg{\text{true}}{\Bd}{\obsTime}\eqcm \\
+    \ProbArg{\text{true}}{}{\obsTime\vert\Bdbar} &= \frac{\Norm{\obsTime}{\Bdbar}}{\Norm{\obsTime}{}} (1 + A_P) \ProbArg{\text{true}}{\Bdbar}{\obsTime}\eqcm
+  \end{split}
+\end{equation}
+
+\begin{multline}
+  \ProbArg{\Sig}{}{\obsTime^\prime, \obsTagOS, \obsTagSS \vert \mistagOS, \mistagSS} = \\
+  \begin{split}
+        &\delta_{\obsTagOS,+1}\delta_{\obsTagSS,+1} \ProbArg{}{}{\obsTime \vert +1, +1, \mistagOS, \mistagSS} \\
+      + &\delta_{\obsTagOS,+1}\delta_{\obsTagSS,-1} \ProbArg{}{}{\obsTime \vert +1, -1, \mistagOS, \mistagSS} \\
+      + &\delta_{\obsTagOS,-1}\delta_{\obsTagSS,+1} \ProbArg{}{}{\obsTime \vert -1, +1, \mistagOS, \mistagSS} \\
+      + &\delta_{\obsTagOS,-1}\delta_{\obsTagSS,-1} \ProbArg{}{}{\obsTime \vert -1, -1, \mistagOS, \mistagSS}
+  \end{split}
+\end{multline}
+
+\begin{gather}
+  \begin{split}
+    \ProbArg{}{}{\obsTime \vert +1, +1, \mistagOS, \mistagSS} = \\ 
+      (1 - \mistagOS^{\Bd}) (1 - \mistagSS^{\Bdbar}) \ProbArg{\text{true}}{}{\obsTime\vert\Bd} \mistagOS^{\Bd} \mistagSS^{\Bdbar} \ProbArg{\text{true}}{}{\obsTime\vert\Bdbar}
+  \end{split} \\
+  \begin{split}
+    \ProbArg{}{}{\obsTime \vert +1, -1, \mistagOS, \mistagSS} = \\ 
+      (1 - \mistagOS^{\Bd}) \mistagSS^{\Bdbar} \ProbArg{\text{true}}{}{\obsTime\vert\Bd} \mistagOS^{\Bd} (1 - \mistagSS^{\Bdbar}) \ProbArg{\text{true}}{}{\obsTime\vert\Bdbar}
+  \end{split} \\
+  \begin{split}
+    \ProbArg{}{}{\obsTime \vert -1, +1, \mistagOS, \mistagSS} = \\ 
+      \mistagOS^{\Bd} (1 - \mistagSS^{\Bdbar}) \ProbArg{\text{true}}{}{\obsTime\vert\Bd} (1 - \mistagOS^{\Bd}) \mistagSS^{\Bdbar} \ProbArg{\text{true}}{}{\obsTime\vert\Bdbar}
+  \end{split} \\
+  \begin{split}
+    \ProbArg{}{}{\obsTime \vert -1, -1, \mistagOS, \mistagSS} = \\ 
+      \mistagOS^{\Bd} \mistagSS^{\Bdbar} \ProbArg{\text{true}}{}{\obsTime\vert\Bd} (1 - \mistagOS^{\Bd}) (1 - \mistagSS^{\Bdbar}) \ProbArg{\text{true}}{}{\obsTime\vert\Bdbar} 
+  \end{split}
+\end{gather}
+
+\begin{multline}
+  \ProbArg{}{}{\obsTime \vert \obsTagOS, \obsTagSS, \mistagOS, \mistagSS} = \\
+  \left( \frac{1 + \obsTagOS}{2} - \obsTagOS \mistagOS^{\Bd} \right) \left( \frac{1 + \obsTagSS}{2} - \obsTagSS \mistagSS^{\Bd} \right) \ProbArg{\text{true}}{}{\obsTime\vert\Bd} \\
+  + \left( \frac{1 - \obsTagOS}{2} + \obsTagOS \mistagOS^{\Bdbar} \right) \left( \frac{1 - \obsTagSS}{2} - \obsTagSS \mistagSS^{\Bdbar} \right) \ProbArg{\text{true}}{}{\obsTime\vert\Bdbar}
+\end{multline}
+
+
+
+The \textbf{background} decay time distribution is modelled using sums of
+exponential decay functions. Three decay \acp{PDF} are used to describe the
+distributions in the \catLL and the (\catDD and \catOS) subsamples. The sum of
+two decay \acp{PDF} is used to parametrise the \PDF describing the (\catDD and
+(\catSS or \catBS)) subsamples. The \PDF parameters including the
+pseudo-lifetimes are shared among all categories except for \catDD and \catLL.
+In the \catDD subsample also individual parameters are chosen depending on the
+tagging category. 
+
+The applied resolution model is the same as for the signal component.
+
 %...............................................................................
 \subsubsection{Decay time error estimate}
 \label{sec:measurement_of_sin2beta:likelihood_fit:model:decay_time_error}
@@ -285,12 +388,13 @@ stability. As the candidates removed by this cut hold large mistags, the
 reduction of the effective tagging efficiency is found to be insignificant.
 
 The spline parameters for \textbf{signal} and \textbf{background} are determined
-in a multi-dimensional fit including mass, decay time, and mistag estimate.
-Both, the \OS and the \SSpi mistag distributions are fitted using cubic splines
-with different spline parameters for \catDD and \catLL and otherwise sharing
-them through all categories. Only in the signal \OS distributions the
-differences depending on the track type are negligible so the parameters are
-shared in the \catDD and \catLL categories.
+in a multi-dimensional fit including mass, decay time, and mistag estimate and
+are fixed later on, to achieve a better fit performance. Both, the \OS and the
+\SSpi mistag distributions are fitted using cubic splines with different spline
+parameters for \catDD and \catLL and otherwise sharing them through all
+categories. Only in the signal \OS distributions the differences depending on
+the track type are negligible so the parameters are shared in the \catDD and
+\catLL categories.
 
 \paragraph{Correlation between \OS and \SSpi mistag estimates}
 
@@ -350,7 +454,9 @@ estimates $\eta_\text{\acs{OS}/\acs{SSpi}}$ and the reconstructed \Bd decay time
 \newpage
 
 
-
+% ------------------------------------------------------------------------------
+\subsection{Experimenter's bias}
+\label{sec:measurement_of_sin2beta:likelihood_fit:blinding}
 
 % ------------------------------------------------------------------------------
 \subsection{Fitter validation}

@@ -105,10 +105,10 @@ states with decay times $t$. The coefficients $A$, $B$, $C$, and $D$ can be
 adapted to describe \Bmeson mixing, \CP violation, and different asymmetries \eg
 in the production of the \Bmesons. The \PDF is further parametrised by the
 lifetime parameter $\tau$, the decay width difference $\DG$ and the mass
-difference $\dm$ of the \Bmeson mass eigenstates.
+difference $\DM$ of the \Bmeson mass eigenstates.
 %
 \begin{multline}\label{eq:measurement_of_sin2beta:likelihood_fit:pdfs:bdecay}
-  \ProbArg{\text{BDecay}}{}{t;...} = \\ \exponential{- \frac{t}{\tau}}\left( A \cosh (\DG t) + B \sinh (\DG t) + C \cos (\dm t) + D \sin (\dm t) \right)
+  \ProbArg{\text{BDecay}}{}{t;...} = \\ \exponential{- \frac{t}{\tau}}\left( A \cosh (\DG t) + B \sinh (\DG t) + C \cos (\DM t) + D \sin (\DM t) \right)
 \end{multline}
 
 %...............................................................................
@@ -159,7 +159,7 @@ $n_i$.
 \label{sec:measurement_of_sin2beta:likelihood_fit:model}
 
 The total \PDF is composed of two components for signal and background labelled
-\enquote{\Sig} and \enquote{\Bkg}
+\enquote{$\Sig$} and \enquote{$\Bkg$}
 %
 \begin{equation}
   \Norm{\text{Total}}{}\Prob{\text{Total}}{} = \Norm{\Sig}{}\Prob{\Sig}{} + \Norm{\Bkg}{}\Prob{\Bkg}{}\eqcm
@@ -181,7 +181,7 @@ As shown in \cref{sec:measurement_of_sin2beta:likelihood_fit:model:mistag} the
 per-event mistag estimates are uncorrelated to the reconstructed decay time.
 Hence, the signal decay time \PDF can be further decomposed into a product of
 the conditional decay time \PDF $\ProbArg{\Sig}{}{\obsTime, \obsTagOS, \obsTagSS
-\vert \obsTimeError, \obsEtaOS, \obsEtaSS}$ describing the \Bmeson time
+\mid \obsTimeError, \obsEtaOS, \obsEtaSS}$ describing the \Bmeson time
 evolution as well as the \CP violating effects, the \PDF
 \ProbArg{\Sig}{}{\obsTimeError} describing the resolution estimate, and the
 \acp{PDF} \ProbArg{\Sig}{}{\obsEtaOSSS} describing the mistag probability
@@ -189,7 +189,7 @@ estimates.
 %
 \begin{multline}
   \ProbArg{\Sig}{}{\obsTime, \obsTimeError, \obsTagOS, \obsTagSS, \obsEtaOS, \obsEtaSS} = \\ 
-  \ProbArg{\Sig}{}{\obsTime, \obsTagOS, \obsTagSS \vert \obsTimeError, \obsEtaOS, \obsEtaSS} \cdot
+  \ProbArg{\Sig}{}{\obsTime, \obsTagOS, \obsTagSS \mid \obsTimeError, \obsEtaOS, \obsEtaSS} \cdot
   \ProbArg{\Sig}{}{\obsTimeError} \cdot
   \ProbArg{\Sig}{}{\obsEtaOS} \cdot
   \ProbArg{\Sig}{}{\obsEtaSS}
@@ -201,7 +201,7 @@ time \PDF.
 %
 \begin{multline}
   \ProbArg{\Bkg}{}{\obsTime, \obsTimeError, \obsTagOS, \obsTagSS, \obsEtaOS, \obsEtaSS} = \\ 
-  \ProbArg{\Bkg}{}{\obsTime, \obsTagOS, \obsTagSS \vert \obsTimeError} \cdot
+  \ProbArg{\Bkg}{}{\obsTime, \obsTagOS, \obsTagSS \mid \obsTimeError} \cdot
   \ProbArg{\Bkg}{}{\obsTimeError} \cdot
   \ProbArg{\Bkg}{}{\obsEtaOS} \cdot
   \ProbArg{\Bkg}{}{\obsEtaSS}
@@ -233,14 +233,14 @@ parameter $\alpha$ is shared among all subsamples except for \catDD and \catLL.
 The conditional \textbf{signal} decay time \PDF is given by
 %
 \begin{multline}
-    \ProbArg{\Sig}{}{\obsTime, \obsTagOS, \obsTagSS \vert \obsTimeError, \obsEtaOS, \obsEtaSS} \\ 
-  = \varepsilon_{\Sig}^{\text{\catAU,\catEB}} \cdot \left(\ProbArg{\Sig}{}{\obsTime^\prime, \obsTagOS, \obsTagSS \vert \obsEtaOS, \obsEtaSS} \otimes \Resolution{\Sig}{}(\obsTime-\obsTime^\prime)\right)\eqcm
+    \ProbArg{\Sig}{}{\obsTime, \obsTagOS, \obsTagSS \mid \obsTimeError, \obsEtaOS, \obsEtaSS} \\ 
+  = \varepsilon_{\Sig}^{\text{\catAU,\catEB}} \cdot \left(\ProbArg{\Sig}{}{\obsTime^\prime, \obsTagOS, \obsTagSS \mid \obsEtaOS, \obsEtaSS} \otimes \Resolution{\Sig}{}\left(\obsTime-\obsTime^\prime\right)\right)\eqcm
 \end{multline}
 %
 where the acceptance function $\varepsilon_{\Sig}^{\text{\catAU,\catEB}}$ (\cf
 \cref{sec:measurement_of_sin2beta:resolution_and_acceptance:acceptance:lower})
 is implemented using cubic splines and the resolution model
-$\Resolution{\Sig}{}(\obsTime-\obsTime^\prime)$ (\cf
+$\Resolution{\Sig}{}\left(\obsTime-\obsTime^\prime\right)$ (\cf
 \cref{sec:measurement_of_sin2beta:resolution_and_acceptance:resolution}) is
 convolved with the \B physics \PDF.
 
@@ -248,22 +248,22 @@ In the following the \B physics \PDF is explained in detail.
 
 \begin{equation}
   \begin{split}
-    \Prob{\text{true}}{\Bd}{\obsTime}    &= \frac{1}{\Norm{\obsTime}{\Bd}}    \exponential{-\sfrac{\obsTime}{\tau}} \left( 1 - S \sin(\dmd t) + C \cos (\dmd t) \right)\eqcm \\
-    \Prob{\text{true}}{\Bdbar}{\obsTime} &= \frac{1}{\Norm{\obsTime}{\Bdbar}} \exponential{-\sfrac{\obsTime}{\tau}} \left( 1 + S \sin(\dmd t) - C \cos (\dmd t) \right)\eqcm
+    \Prob{\text{true}}{\Bd}{\obsTime}    &= \frac{1}{\Norm{\obsTime}{\Bd}}    \exponential{-\sfrac{\obsTime}{\tau}} \left( 1 - S \sin(\DMd t) + C \cos (\DMd t) \right)\eqcm \\
+    \Prob{\text{true}}{\Bdbar}{\obsTime} &= \frac{1}{\Norm{\obsTime}{\Bdbar}} \exponential{-\sfrac{\obsTime}{\tau}} \left( 1 + S \sin(\DMd t) - C \cos (\DMd t) \right)\eqcm
   \end{split}
 \end{equation}
 
 \begin{equation}
   \begin{split}
-    \Norm{\obsTime}{\Bd}    &= \int_{t_\text{min}}^{t_\text{max}} \drm t \exponential{-\sfrac{\obsTime}{\tau}} \left( 1 - S \sin (\dmd t) + C \cos (\dmd t) \right)\eqcm \\
-    \Norm{\obsTime}{\Bdbar} &= \int_{t_\text{min}}^{t_\text{max}} \drm t \exponential{-\sfrac{\obsTime}{\tau}} \left( 1 + S \sin (\dmd t) - C \cos (\dmd t) \right)\eqcm
+    \Norm{\obsTime}{\Bd}    &= \int_{t_\text{min}}^{t_\text{max}} \dif t \, \exponential{-\sfrac{\obsTime}{\tau}} \left( 1 - S \sin (\DMd t) + C \cos (\DMd t) \right)\eqcm \\
+    \Norm{\obsTime}{\Bdbar} &= \int_{t_\text{min}}^{t_\text{max}} \dif t \, \exponential{-\sfrac{\obsTime}{\tau}} \left( 1 + S \sin (\DMd t) - C \cos (\DMd t) \right)\eqcm
   \end{split}
 \end{equation}
 
 \begin{equation}
   \begin{split}
-    \ProbArg{\text{true}}{}{\obsTime\vert\Bd}    &= \frac{\Norm{\obsTime}{\Bd}}{\Norm{\obsTime}{}}    \ProbArg{\text{true}}{\Bd}{\obsTime}\eqcm \\
-    \ProbArg{\text{true}}{}{\obsTime\vert\Bdbar} &= \frac{\Norm{\obsTime}{\Bdbar}}{\Norm{\obsTime}{}} \ProbArg{\text{true}}{\Bdbar}{\obsTime}\eqcm
+    \ProbArg{\text{true}}{}{\obsTime\given\Bd}    &= \frac{\Norm{\obsTime}{\Bd}}{\Norm{\obsTime}{}}    \ProbArg{\text{true}}{\Bd}{\obsTime}\eqcm \\
+    \ProbArg{\text{true}}{}{\obsTime\given\Bdbar} &= \frac{\Norm{\obsTime}{\Bdbar}}{\Norm{\obsTime}{}} \ProbArg{\text{true}}{\Bdbar}{\obsTime}\eqcm
   \end{split}
 \end{equation}
 
@@ -277,45 +277,41 @@ In the following the \B physics \PDF is explained in detail.
 
 \begin{equation}
   \begin{split}
-    \ProbArg{\text{true}}{}{\obsTime\vert\Bd}    &= \frac{\Norm{\obsTime}{\Bd}}{\Norm{\obsTime}{}}    (1 - A_P) \ProbArg{\text{true}}{\Bd}{\obsTime}\eqcm \\
-    \ProbArg{\text{true}}{}{\obsTime\vert\Bdbar} &= \frac{\Norm{\obsTime}{\Bdbar}}{\Norm{\obsTime}{}} (1 + A_P) \ProbArg{\text{true}}{\Bdbar}{\obsTime}\eqcm
+    \ProbArg{\text{true}}{}{\obsTime\given\Bd}    &= \frac{\Norm{\obsTime}{\Bd}}{\Norm{\obsTime}{}}    (1 - A_P) \ProbArg{\text{true}}{\Bd}{\obsTime}\eqcm \\
+    \ProbArg{\text{true}}{}{\obsTime\given\Bdbar} &= \frac{\Norm{\obsTime}{\Bdbar}}{\Norm{\obsTime}{}} (1 + A_P) \ProbArg{\text{true}}{\Bdbar}{\obsTime}\eqcm
   \end{split}
 \end{equation}
 
-\begin{multline}
-  \ProbArg{\Sig}{}{\obsTime^\prime, \obsTagOS, \obsTagSS \vert \mistagOS, \mistagSS} = \\
-  \begin{split}
-        &\delta_{\obsTagOS,+1}\delta_{\obsTagSS,+1} \ProbArg{}{}{\obsTime \vert +1, +1, \mistagOS, \mistagSS} \\
-      + &\delta_{\obsTagOS,+1}\delta_{\obsTagSS,-1} \ProbArg{}{}{\obsTime \vert +1, -1, \mistagOS, \mistagSS} \\
-      + &\delta_{\obsTagOS,-1}\delta_{\obsTagSS,+1} \ProbArg{}{}{\obsTime \vert -1, +1, \mistagOS, \mistagSS} \\
-      + &\delta_{\obsTagOS,-1}\delta_{\obsTagSS,-1} \ProbArg{}{}{\obsTime \vert -1, -1, \mistagOS, \mistagSS}
+\begin{equation}
+\begin{split}
+  \Prob{\Sig}{}(\obsTime, \obsTagOS, \obsTagSS &\mid \mistagOS, \mistagSS) = \\
+        &\delta_{\obsTagOS,+1}\delta_{\obsTagSS,+1} \ProbArg{}{}{\obsTime \given +1, +1, \mistagOS, \mistagSS} \\
+      + &\delta_{\obsTagOS,+1}\delta_{\obsTagSS,-1} \ProbArg{}{}{\obsTime \given +1, -1, \mistagOS, \mistagSS} \\
+      + &\delta_{\obsTagOS,-1}\delta_{\obsTagSS,+1} \ProbArg{}{}{\obsTime \given -1, +1, \mistagOS, \mistagSS} \\
+      + &\delta_{\obsTagOS,-1}\delta_{\obsTagSS,-1} \ProbArg{}{}{\obsTime \given -1, -1, \mistagOS, \mistagSS}
   \end{split}
-\end{multline}
+\end{equation}
 
-\begin{gather}
+\begin{equation}
   \begin{split}
-    \ProbArg{}{}{\obsTime \vert +1, +1, \mistagOS, \mistagSS} = \\ 
-      (1 - \mistagOS^{\Bd}) (1 - \mistagSS^{\Bdbar}) \ProbArg{\text{true}}{}{\obsTime\vert\Bd} \mistagOS^{\Bd} \mistagSS^{\Bdbar} \ProbArg{\text{true}}{}{\obsTime\vert\Bdbar}
-  \end{split} \\
-  \begin{split}
-    \ProbArg{}{}{\obsTime \vert +1, -1, \mistagOS, \mistagSS} = \\ 
-      (1 - \mistagOS^{\Bd}) \mistagSS^{\Bdbar} \ProbArg{\text{true}}{}{\obsTime\vert\Bd} \mistagOS^{\Bd} (1 - \mistagSS^{\Bdbar}) \ProbArg{\text{true}}{}{\obsTime\vert\Bdbar}
-  \end{split} \\
-  \begin{split}
-    \ProbArg{}{}{\obsTime \vert -1, +1, \mistagOS, \mistagSS} = \\ 
-      \mistagOS^{\Bd} (1 - \mistagSS^{\Bdbar}) \ProbArg{\text{true}}{}{\obsTime\vert\Bd} (1 - \mistagOS^{\Bd}) \mistagSS^{\Bdbar} \ProbArg{\text{true}}{}{\obsTime\vert\Bdbar}
-  \end{split} \\
-  \begin{split}
-    \ProbArg{}{}{\obsTime \vert -1, -1, \mistagOS, \mistagSS} = \\ 
-      \mistagOS^{\Bd} \mistagSS^{\Bdbar} \ProbArg{\text{true}}{}{\obsTime\vert\Bd} (1 - \mistagOS^{\Bd}) (1 - \mistagSS^{\Bdbar}) \ProbArg{\text{true}}{}{\obsTime\vert\Bdbar} 
+    \Prob{}{}(\obsTime \mid +1, +1,\,& \mistagOS, \mistagSS ) = \\ 
+      & \left(1 - \mistagOS^{\Bd}\right) \left(1 - \mistagSS^{\Bdbar}\right) \ProbArg{\text{true}}{}{\obsTime \given \Bd} \mistagOS^{\Bd} \mistagSS^{\Bdbar} \ProbArg{\text{true}}{}{\obsTime \given \Bdbar} \\
+    \Prob{}{}(\obsTime \mid +1, -1,\,& \mistagOS, \mistagSS ) = \\ 
+      & \left(1 - \mistagOS^{\Bd}\right) \mistagSS^{\Bdbar} \ProbArg{\text{true}}{}{\obsTime \given \Bd} \mistagOS^{\Bd} \left(1 - \mistagSS^{\Bdbar}\right) \ProbArg{\text{true}}{}{\obsTime \given \Bdbar} \\
+    \Prob{}{}(\obsTime \mid -1, +1,\,& \mistagOS, \mistagSS ) = \\ 
+      & \mistagOS^{\Bd} \left(1 - \mistagSS^{\Bdbar}\right) \ProbArg{\text{true}}{}{\obsTime \given \Bd} \left(1 - \mistagOS^{\Bd}\right) \mistagSS^{\Bdbar} \ProbArg{\text{true}}{}{\obsTime \given \Bdbar} \\
+    \Prob{}{}(\obsTime \mid -1, -1,\,& \mistagOS, \mistagSS ) = \\ 
+      & \mistagOS^{\Bd} \mistagSS^{\Bdbar} \ProbArg{\text{true}}{}{\obsTime \given \Bd} \left(1 - \mistagOS^{\Bd}\right) \left(1 - \mistagSS^{\Bdbar}\right) \ProbArg{\text{true}}{}{\obsTime \given \Bdbar} \\ 
   \end{split}
-\end{gather}
+\end{equation}
 
-\begin{multline}
-  \ProbArg{}{}{\obsTime \vert \obsTagOS, \obsTagSS, \mistagOS, \mistagSS} = \\
-  \left( \frac{1 + \obsTagOS}{2} - \obsTagOS \mistagOS^{\Bd} \right) \left( \frac{1 + \obsTagSS}{2} - \obsTagSS \mistagSS^{\Bd} \right) \ProbArg{\text{true}}{}{\obsTime\vert\Bd} \\
-  + \left( \frac{1 - \obsTagOS}{2} + \obsTagOS \mistagOS^{\Bdbar} \right) \left( \frac{1 - \obsTagSS}{2} - \obsTagSS \mistagSS^{\Bdbar} \right) \ProbArg{\text{true}}{}{\obsTime\vert\Bdbar}
-\end{multline}
+\begin{equation}
+  \begin{split}
+    \ProbArg{}{}(\obsTime &\mid \obsTagOS, \obsTagSS, \mistagOS, \mistagSS) = \\
+      &\left( \frac{1 + \obsTagOS}{2} - \obsTagOS \mistagOS^{\Bd} \right) \left( \frac{1 + \obsTagSS}{2} - \obsTagSS \mistagSS^{\Bd} \right) \ProbArg{\text{true}}{}{\obsTime \given \Bd} \\
+    + &\left( \frac{1 - \obsTagOS}{2} + \obsTagOS \mistagOS^{\Bdbar} \right) \left( \frac{1 - \obsTagSS}{2} - \obsTagSS \mistagSS^{\Bdbar} \right) \ProbArg{\text{true}}{}{\obsTime \given \Bdbar}
+  \end{split}
+\end{equation}
 
 
 

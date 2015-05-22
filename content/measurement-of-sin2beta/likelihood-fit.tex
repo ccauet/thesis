@@ -244,103 +244,148 @@ $\Resolution{\Sig}{}\left(\obsTime-\obsTime^\prime\right)$ (\cf
 \cref{sec:measurement_of_sin2beta:resolution_and_acceptance:resolution}) is
 convolved with the \B physics \PDF.
 
-In the following the \B physics \PDF is explained in detail.
-
+In the following the \B physics \PDF is explained in detail. The theoretical
+distributions---neglecting all experimental effects---for \Bd and \Bdbar mesons
+($\ProbArg{\text{true}}{\Bd}{\obsTime}$ and $\ProbArg{\text{true}}{\Bdbar}{\obsTime}$)
+are given by\addref{to equation in theory section}
+%
 \begin{equation}
   \begin{split}
-    \Prob{\text{true}}{\Bd}{\obsTime}    &= \frac{1}{\Norm{\obsTime}{\Bd}}    \exponential{-\sfrac{\obsTime}{\tau}} \left( 1 - S \sin(\DMd t) + C \cos (\DMd t) \right)\eqcm \\
-    \Prob{\text{true}}{\Bdbar}{\obsTime} &= \frac{1}{\Norm{\obsTime}{\Bdbar}} \exponential{-\sfrac{\obsTime}{\tau}} \left( 1 + S \sin(\DMd t) - C \cos (\DMd t) \right)\eqcm
+    \ProbArg{\text{true}}{\Bd}{\obsTime}    &= \frac{1}{\Norm{\obsTime}{\Bd}}    \exponential{-\sfrac{\obsTime}{\tau}} \left( 1 - S \sin(\DMd t) + C \cos (\DMd t) \right)\eqcm \\
+    \ProbArg{\text{true}}{\Bdbar}{\obsTime} &= \frac{1}{\Norm{\obsTime}{\Bdbar}} \exponential{-\sfrac{\obsTime}{\tau}} \left( 1 + S \sin(\DMd t) - C \cos (\DMd t) \right)\eqcm
   \end{split}
 \end{equation}
-
+%
+with normalisation factors
+%
 \begin{equation}
   \begin{split}
-    \Norm{\obsTime}{\Bd}    &= \int_{t_\text{min}}^{t_\text{max}} \dif t \, \exponential{-\sfrac{\obsTime}{\tau}} \left( 1 - S \sin (\DMd t) + C \cos (\DMd t) \right)\eqcm \\
-    \Norm{\obsTime}{\Bdbar} &= \int_{t_\text{min}}^{t_\text{max}} \dif t \, \exponential{-\sfrac{\obsTime}{\tau}} \left( 1 + S \sin (\DMd t) - C \cos (\DMd t) \right)\eqcm
+    \Norm{\obsTime}{\Bd}    &= \int_{t_\text{min}}^{t_\text{max}} \dif t \, \exponential{-\sfrac{\obsTime}{\tau}} \left( 1 - S \sin (\DMd t) + C \cos (\DMd t) \right)\eqspace\text{and} \\
+    \Norm{\obsTime}{\Bdbar} &= \int_{t_\text{min}}^{t_\text{max}} \dif t \, \exponential{-\sfrac{\obsTime}{\tau}} \left( 1 + S \sin (\DMd t) - C \cos (\DMd t) \right)\eqpd
   \end{split}
 \end{equation}
-
+%
+Here, $t_\text{min}$ and $t_\text{max}$ are the lower and upper limits of the
+analysed decay time range (\cf
+\cref{tab:measurement_of_sin2beta:data_preparation:observables}) and the parameter $\tau$ is the measured \Bd
+lifetime. The conditional \acp{PDF} for true \Bd and \Bdbar mesons can now be
+written as
+%
 \begin{equation}
   \begin{split}
     \ProbArg{\text{true}}{}{\obsTime\given\Bd}    &= \frac{\Norm{\obsTime}{\Bd}}{\Norm{\obsTime}{}}    \ProbArg{\text{true}}{\Bd}{\obsTime}\eqcm \\
     \ProbArg{\text{true}}{}{\obsTime\given\Bdbar} &= \frac{\Norm{\obsTime}{\Bdbar}}{\Norm{\obsTime}{}} \ProbArg{\text{true}}{\Bdbar}{\obsTime}\eqcm
   \end{split}
 \end{equation}
-
+%
+with the normalisation factor
+%
 \begin{equation}
-  \Norm{\obsTime}{} = \Norm{\obsTime}{\Bd} + \Norm{\obsTime}{\Bdbar}
+  \Norm{\obsTime}{} = \Norm{\obsTime}{\Bd} + \Norm{\obsTime}{\Bdbar}\eqpd
 \end{equation}
-
+%
+A possible difference in the \Bd and \Bdbar production rates $R_{\B}$ and
+$R_{\Bdbar}$ is treated by introducing the production asymmetry
+%
 \begin{equation}\label{eq:measurement_of_sin2beta:likelihood_fit:model:decay_time:production_asymmetry}
-  A_P = \frac{R_{\Bdbar} - R_{\Bd}}{R_{\Bdbar} - R_{\Bd}}
+  A_P = \frac{R_{\Bdbar} - R_{\Bd}}{R_{\Bdbar} + R_{\Bd}}\eqcm
 \end{equation}
-
-\begin{equation}
+%
+leading to modified conditional \acp{PDF}
+%
+\begin{equation}\label{eq:measurement_of_sin2beta:likelihood_fit:model:decay_time:true_pdf}
   \begin{split}
-    \ProbArg{\text{true}}{}{\obsTime\given\Bd}    &= \frac{\Norm{\obsTime}{\Bd}}{\Norm{\obsTime}{}}    (1 - A_P) \ProbArg{\text{true}}{\Bd}{\obsTime}\eqcm \\
-    \ProbArg{\text{true}}{}{\obsTime\given\Bdbar} &= \frac{\Norm{\obsTime}{\Bdbar}}{\Norm{\obsTime}{}} (1 + A_P) \ProbArg{\text{true}}{\Bdbar}{\obsTime}\eqcm
+    \ProbArg{\text{true}}{}{\obsTime\given\Bd}    &= \frac{\Norm{\obsTime}{\Bd}}{\Norm{\obsTime}{}}    (1 - A_P) \ProbArg{\text{true}}{\Bd}{\obsTime}     \eqspace \text{and} \\
+    \ProbArg{\text{true}}{}{\obsTime\given\Bdbar} &= \frac{\Norm{\obsTime}{\Bdbar}}{\Norm{\obsTime}{}} (1 + A_P) \ProbArg{\text{true}}{\Bdbar}{\obsTime}  \eqpd
   \end{split}
 \end{equation}
-
-\begin{equation}
+%
+As the production flavour is unknown under experimental conditions the
+measurement depends on the flavour tagging information of the \OS and \SSpi
+tagging algorithms to decide whether the \Bmeson was produced as \Bd or \Bdbar.
+The \PDF is then given as
+%
+\begin{equation}\label{eq:measurement_of_sin2beta:likelihood_fit:model:decay_time:measured_pdf_tagged_only}
 \begin{split}
   \Prob{\Sig}{}(\obsTime, \obsTagOS, \obsTagSS &\mid \mistagOS, \mistagSS) = \\
-        &\delta_{\obsTagOS,+1}\delta_{\obsTagSS,+1} \ProbArg{}{}{\obsTime \given +1, +1, \mistagOS, \mistagSS} \\
-      + &\delta_{\obsTagOS,+1}\delta_{\obsTagSS,-1} \ProbArg{}{}{\obsTime \given +1, -1, \mistagOS, \mistagSS} \\
-      + &\delta_{\obsTagOS,-1}\delta_{\obsTagSS,+1} \ProbArg{}{}{\obsTime \given -1, +1, \mistagOS, \mistagSS} \\
-      + &\delta_{\obsTagOS,-1}\delta_{\obsTagSS,-1} \ProbArg{}{}{\obsTime \given -1, -1, \mistagOS, \mistagSS}
+        &\delta_{\obsTagOS,+1}\delta_{\obsTagSS,+1} \ProbArg{}{}{\obsTime \given +1, +1, \mistagOS, \mistagSS} \eqcm \\
+      + &\delta_{\obsTagOS,+1}\delta_{\obsTagSS,-1} \ProbArg{}{}{\obsTime \given +1, -1, \mistagOS, \mistagSS} \eqcm \\
+      + &\delta_{\obsTagOS,-1}\delta_{\obsTagSS,+1} \ProbArg{}{}{\obsTime \given -1, +1, \mistagOS, \mistagSS} \eqcm \\
+      + &\delta_{\obsTagOS,-1}\delta_{\obsTagSS,-1} \ProbArg{}{}{\obsTime \given -1, -1, \mistagOS, \mistagSS} \eqcm 
   \end{split}
 \end{equation}
-
+%
+with
+%
 \begin{equation}
   \begin{split}
     \Prob{}{}(\obsTime \mid +1, +1,\,& \mistagOS, \mistagSS ) = \\ 
-      & \left(1 - \mistagOS^{\Bd}\right) \left(1 - \mistagSS^{\Bdbar}\right) \ProbArg{\text{true}}{}{\obsTime \given \Bd} \mistagOS^{\Bd} \mistagSS^{\Bdbar} \ProbArg{\text{true}}{}{\obsTime \given \Bdbar} \\
+      & \left(1 - \mistagOS^{\Bd}\right) \left(1 - \mistagSS^{\Bdbar}\right) \ProbArg{\text{true}}{}{\obsTime \given \Bd} \mistagOS^{\Bd} \mistagSS^{\Bdbar} \ProbArg{\text{true}}{}{\obsTime \given \Bdbar} \eqcm \\
     \Prob{}{}(\obsTime \mid +1, -1,\,& \mistagOS, \mistagSS ) = \\ 
-      & \left(1 - \mistagOS^{\Bd}\right) \mistagSS^{\Bdbar} \ProbArg{\text{true}}{}{\obsTime \given \Bd} \mistagOS^{\Bd} \left(1 - \mistagSS^{\Bdbar}\right) \ProbArg{\text{true}}{}{\obsTime \given \Bdbar} \\
+      & \left(1 - \mistagOS^{\Bd}\right) \mistagSS^{\Bdbar} \ProbArg{\text{true}}{}{\obsTime \given \Bd} \mistagOS^{\Bd} \left(1 - \mistagSS^{\Bdbar}\right) \ProbArg{\text{true}}{}{\obsTime \given \Bdbar} \eqcm \\
     \Prob{}{}(\obsTime \mid -1, +1,\,& \mistagOS, \mistagSS ) = \\ 
-      & \mistagOS^{\Bd} \left(1 - \mistagSS^{\Bdbar}\right) \ProbArg{\text{true}}{}{\obsTime \given \Bd} \left(1 - \mistagOS^{\Bd}\right) \mistagSS^{\Bdbar} \ProbArg{\text{true}}{}{\obsTime \given \Bdbar} \\
+      & \mistagOS^{\Bd} \left(1 - \mistagSS^{\Bdbar}\right) \ProbArg{\text{true}}{}{\obsTime \given \Bd} \left(1 - \mistagOS^{\Bd}\right) \mistagSS^{\Bdbar} \ProbArg{\text{true}}{}{\obsTime \given \Bdbar} \eqcm \eqthinspace \text{and} \\
     \Prob{}{}(\obsTime \mid -1, -1,\,& \mistagOS, \mistagSS ) = \\ 
-      & \mistagOS^{\Bd} \mistagSS^{\Bdbar} \ProbArg{\text{true}}{}{\obsTime \given \Bd} \left(1 - \mistagOS^{\Bd}\right) \left(1 - \mistagSS^{\Bdbar}\right) \ProbArg{\text{true}}{}{\obsTime \given \Bdbar} \\ 
+      & \mistagOS^{\Bd} \mistagSS^{\Bdbar} \ProbArg{\text{true}}{}{\obsTime \given \Bd} \left(1 - \mistagOS^{\Bd}\right) \left(1 - \mistagSS^{\Bdbar}\right) \ProbArg{\text{true}}{}{\obsTime \given \Bdbar} \eqpd \\ 
   \end{split}
 \end{equation}
-
-\begin{equation}
+%
+\Cref{eq:measurement_of_sin2beta:likelihood_fit:model:decay_time:measured_pdf_tagged_only} 
+only contains the \PDF to model decay time distributions of \B candidates where
+tagging information from both tagging algorithms are available. If one of the
+taggers does not provide an output, \ie the event falls into the
+\catOS or \catSS category, the formulas can easily be adapted by setting
+$\obsTagOSSS = \num{0}$ and/or $\mistagOSSS = \num{0.5}$. The expression
+simplifies when explicitly implementing the \OS and \SSpi tag decisions
+%
+\begin{equation}\label{eq:measurement_of_sin2beta:likelihood_fit:model:decay_time:measured_pdf_tagged_only:simplified}
   \begin{split}
     \Prob{}{}(\obsTime &\mid \obsTagOS, \obsTagSS, \mistagOS, \mistagSS) = \\
-      &\left( \frac{1 + \obsTagOS}{2} - \obsTagOS \mistagOS^{\Bd} \right) \left( \frac{1 + \obsTagSS}{2} - \obsTagSS \mistagSS^{\Bd} \right) \ProbArg{\text{true}}{}{\obsTime \given \Bd} \\
-    + &\left( \frac{1 - \obsTagOS}{2} + \obsTagOS \mistagOS^{\Bdbar} \right) \left( \frac{1 - \obsTagSS}{2} - \obsTagSS \mistagSS^{\Bdbar} \right) \ProbArg{\text{true}}{}{\obsTime \given \Bdbar}
+      &\left( \frac{1 + \obsTagOS}{2} - \obsTagOS \mistagOS^{\Bd} \right)    \left( \frac{1 + \obsTagSS}{2} - \obsTagSS \mistagSS^{\Bd} \right) \ProbArg{\text{true}}{}{\obsTime \given \Bd}       \eqcm \\
+    + &\left( \frac{1 - \obsTagOS}{2} + \obsTagOS \mistagOS^{\Bdbar} \right) \left( \frac{1 - \obsTagSS}{2} - \obsTagSS \mistagSS^{\Bdbar} \right) \ProbArg{\text{true}}{}{\obsTime \given \Bdbar} \eqpd
   \end{split}
 \end{equation}
-
+%
+% \begin{multline}
+%     \ProbArg{}{}{\obsTime, \obsTagOS, \obsTagSS \given \mistagOS, \mistagSS} = \\ 
+%     \shoveleft{\frac{1}{\Norm{\obsTime}{}} \exponential{-\sfrac{t}{\tau}}
+%     \Biggl\{
+%       1 - \obsTagOS \left( A_P \left( 1 - \mistagOS^{\Bd} - \mistagOS^{\Bdbar} \right) + \left( \mistagOS^{\Bd} - \mistagOS^{\Bdbar} \right) \right)} \\
+%         - \obsTagSS \left( A_P \left( 1 - \mistagSS^{\Bd} - \mistagSS^{\Bdbar} \right) + \left( \mistagSS^{\Bd} - \mistagSS^{\Bdbar} \right) \right) \\
+%         + \obsTagOS \obsTagSS \left( 1 + 2 \left( \mistagOS^{\Bd} \mistagSS^{\Bd} + \mistagOS^{\Bdbar} \mistagSS^{\Bdbar} \right) - \mistagOS^{\Bd} - \mistagOS^{\Bdbar} - \mistagSS^{\Bd} - \mistagSS^{\Bdbar}  \right) \\
+%         \shoveright{+ \obsTagOS \obsTagSS A_P \left( \mistagOS^{\Bd} - \mistagOS^{\Bdbar} + \mistagSS^{\Bd} - \mistagSS^{\Bdbar} - 2 \left( \mistagOS^{\Bd} \mistagSS^{\Bd} + \mistagOS^{\Bdbar} \mistagSS^{\Bdbar} \right) \right)} \\
+%         + \left( \SJpsiKS \sin (\DMd \obsTime) - \CJpsiKS \cos (\DMd \obsTime) \right) \times \\
+%         \shoveleft{\Biggl[
+%             A_P \left( \frac{1}{2} - \obsTagOS \left( \mistagOS^{\Bd} - \mistagOS^{\Bdbar} \right) \right) - \obsTagOS \left( 1 - \mistagOS^{\Bd} - \mistagOS^{\Bdbar} \right)} \\
+%           + A_P \left( \frac{1}{2} - \obsTagSS \left( \mistagSS^{\Bd} - \mistagSS^{\Bdbar} \right) \right) - \obsTagSS \left( 1 - \mistagSS^{\Bd} - \mistagSS^{\Bdbar} \right) \\
+%           + \obsTagOS \obsTagSS \left( 1 + 2 \left( \mistagOS^{\Bd} \mistagSS^{\Bd} + \mistagOS^{\Bdbar} \mistagSS^{\Bdbar} \right) - \mistagOS^{\Bd} - \mistagOS^{\Bdbar} - \mistagSS^{\Bd} - \mistagSS^{\Bdbar}  \right) \\
+%           \shoveright{+ \obsTagOS \obsTagSS A_P \left( \mistagOS^{\Bd} - \mistagOS^{\Bdbar} + \mistagSS^{\Bd} - \mistagSS^{\Bdbar} - 2 \left( \mistagOS^{\Bd} \mistagSS^{\Bd} + \mistagOS^{\Bdbar} \mistagSS^{\Bdbar} \right) \right)
+%         \Biggr]
+%     \Biggr\}}
+% \end{multline}
+%
+Substituting $\ProbArg{\text{true}}{}{\obsTime \given \Bd}$ and
+$\ProbArg{\text{true}}{}{\obsTime \given \Bdbar}$ making use of
+\cref{eq:measurement_of_sin2beta:likelihood_fit:model:decay_time:true_pdf} and
+making use of the definition of the tagging asymmetry $\deltamistag =
+\mistag^{\Bd} - \mistag^{\Bdbar}$, 
+\cref{eq:measurement_of_sin2beta:likelihood_fit:model:decay_time:measured_pdf_tagged_only:simplified} 
+can be summarised as
+%
 \begin{multline}
-  % \begin{split}
-    \ProbArg{}{}{\obsTime, \obsTagOS, \obsTagSS \given \mistagOS, \mistagSS} = \\ 
-    \shoveleft{\frac{1}{\Norm{\obsTime}{}} \exponential{-\sfrac{t}{\tau}}
-    \Biggl\{
-      1 - \obsTagOS \left( A_P \left( 1 - \mistagOS^{\Bd} - \mistagOS^{\Bdbar} \right) + \left( \mistagOS^{\Bd} - \mistagOS^{\Bdbar} \right) \right)} \\
-        - \obsTagSS \left( A_P \left( 1 - \mistagSS^{\Bd} - \mistagSS^{\Bdbar} \right) + \left( \mistagSS^{\Bd} - \mistagSS^{\Bdbar} \right) \right) \\
-        + \obsTagOS \obsTagSS \left( 1 + 2 \left( \mistagOS^{\Bd} \mistagSS^{\Bd} + \mistagOS^{\Bdbar} \mistagSS^{\Bdbar} \right) - \mistagOS^{\Bd} - \mistagOS^{\Bdbar} - \mistagSS^{\Bd} - \mistagSS^{\Bdbar}  \right) \\
-        \shoveright{+ \obsTagOS \obsTagSS A_P \left( \mistagOS^{\Bd} - \mistagOS^{\Bdbar} + \mistagSS^{\Bd} - \mistagSS^{\Bdbar} - 2 \left( \mistagOS^{\Bd} \mistagSS^{\Bd} + \mistagOS^{\Bdbar} \mistagSS^{\Bdbar} \right) \right)} \\
-        + \left( \SJpsiKS \sin (\DMd \obsTime) - \CJpsiKS \cos (\DMd \obsTime) \right) \times \\
-        \shoveleft{\Biggl[
-            A_P \left( \frac{1}{2} - \obsTagOS \left( \mistagOS^{\Bd} - \mistagOS^{\Bdbar} \right) \right) - \obsTagOS \left( 1 - \mistagOS^{\Bd} - \mistagOS^{\Bdbar} \right)} \\
-          + A_P \left( \frac{1}{2} - \obsTagSS \left( \mistagSS^{\Bd} - \mistagSS^{\Bdbar} \right) \right) - \obsTagSS \left( 1 - \mistagSS^{\Bd} - \mistagSS^{\Bdbar} \right) \\
-          + \obsTagOS \obsTagSS \left( 1 + 2 \left( \mistagOS^{\Bd} \mistagSS^{\Bd} + \mistagOS^{\Bdbar} \mistagSS^{\Bdbar} \right) - \mistagOS^{\Bd} - \mistagOS^{\Bdbar} - \mistagSS^{\Bd} - \mistagSS^{\Bdbar}  \right) \\
-          \shoveright{+ \obsTagOS \obsTagSS A_P \left( \mistagOS^{\Bd} - \mistagOS^{\Bdbar} + \mistagSS^{\Bd} - \mistagSS^{\Bdbar} - 2 \left( \mistagOS^{\Bd} \mistagSS^{\Bd} + \mistagOS^{\Bdbar} \mistagSS^{\Bdbar} \right) \right)
-          \Biggr]
-    \Biggr\}}
-  % \end{split}
+  \ProbArg{}{}{\obsTime, \obsTagOS, \obsTagSS \given \obsEtaOS, \obsEtaSS} = \\
+  \sum_{d^\prime} \Biggl[ \prod_{j} \zeta \left( d_j, \eta_j, d^\prime \right) \Biggr] \left( 1 - d^\prime A_P \right) \exponential{-\sfrac{\obsTime}{\tau}} \left\{ 1 - d^\prime \SJpsiKS \sin (\DMd \obsTime) + d^\prime \cos (\DMd \obsTime) \right\} \eqcm
 \end{multline}
-
-\begin{multline}
-  \ProbArg{}{}{\obsTime, \obsTagOS, \obsTagSS \given \mistagOS, \mistagSS} = \\
-  \sum_{d^\prime} \Biggl[ \prod_{j} \zeta \left( d_j, \eta_j, d^\prime \right) \Biggr] \left( 1 - d^\prime A_P \right) \exponential{-\sfrac{t}{\tau}} \left\{ 1 - d^\prime \SJpsiKS \sin (\DMd t) + d^\prime \cos (\DMd t) \right\}
-\end{multline}
-
+%
+with
+%
 \begin{equation}
-  \zeta \left( d_j, \eta_j, d^\prime \right) = 1 + d_j \left( 1 - 2 \left[ \mistag(\mistagestimate_j) + \frac{\Delta\mistag(\mistagestimate_j)}{2} \right] \right)
+  \zeta \left( d_j, \eta_j, d^\prime \right) = 1 + d_j \left( 1 - 2 \left[ \mistag(\mistagestimate_j) + \frac{\Delta\mistag(\mistagestimate_j)}{2} \right] \right) \eqcm
 \end{equation}
+%
+where the calibration of the mistag estimates is implied by
+$\mistag(\mistagestimate)$ and $\Delta\mistag(\mistagestimate)$ and $d^\prime$
+takes the value $+1$ ($-1)$ for the $\Bd$ ($\Bdbar$) signal component.
 
 The \textbf{background} decay time distribution is modelled using sums of
 exponential decay functions. Three decay \acp{PDF} are used to describe the

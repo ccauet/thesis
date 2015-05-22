@@ -57,7 +57,7 @@ The exponential function with the parameter $\alpha$ to describe \eg the
 distribution of combinatorial background candidates with masses $m$
 %
 \begin{equation}\label{eq:measurement_of_sin2beta:likelihood_fit:pdfs:exponential}
-  \ProbArg{\text{Exponential}}{}{m, \alpha} = \exponential{\alpha m}\eqpd
+  \ProbArg{\text{Exponential}}{}{m, \alpha} \propto \exponential{\alpha m}\eqpd
 \end{equation}
 
 %...............................................................................
@@ -69,7 +69,7 @@ The decay function is derived from the exponential function with $\alpha =
 times $t$
 %
 \begin{equation}\label{eq:measurement_of_sin2beta:likelihood_fit:pdfs:decay}
-  \ProbArg{\text{Decay}}{}{t, \tau} = \exponential{- \frac{t}{\tau}}\eqpd
+  \ProbArg{\text{Decay}}{}{t, \tau} \propto \exponential{- \frac{t}{\tau}}\eqpd
 \end{equation}
 
 %...............................................................................
@@ -80,7 +80,7 @@ A simple Gaussian function described by the central value or mean $\mu$ and the
 width $\sigma$ of the distribution
 %
 \begin{equation}\label{eq:measurement_of_sin2beta:likelihood_fit:pdfs:gaussian}
-  \ProbArg{\text{Gaussian}}{}{x, \mu, \sigma} = \frac{1}{\sigma\sqrt{2\pi}}\exponential{-\frac{1}{2} \left(\frac{x-\mu}{\sigma}\right)^2}\eqpd
+  \ProbArg{\text{Gaussian}}{}{x, \mu, \sigma} \propto \frac{1}{\sigma\sqrt{2\pi}}\exponential{-\frac{1}{2} \left(\frac{x-\mu}{\sigma}\right)^2}\eqpd
 \end{equation}
 
 %...............................................................................
@@ -93,7 +93,7 @@ the parameter $k = \exponential{\sigma}$, where $\sigma$ is named the shape
 parameter
 %
 \begin{equation}\label{eq:measurement_of_sin2beta:likelihood_fit:pdfs:lognormal}
-  \ProbArg{\text{Lognormal}}{}{\obsTimeError, \mu, k} = \frac{1}{\obsTimeError \sqrt{2\pi} \log (k)} \exponential{-\frac{\log^2 \left(\sfrac{\obsTimeError}{\mu}\right)}{2 \log^2(k)}}\eqpd
+  \ProbArg{\text{Lognormal}}{}{\obsTimeError, \mu, k} \propto \frac{1}{\obsTimeError \sqrt{2\pi} \log (k)} \exponential{-\frac{\log^2 \left(\sfrac{\obsTimeError}{\mu}\right)}{2 \log^2(k)}}\eqpd
 \end{equation}
 
 %...............................................................................
@@ -108,7 +108,7 @@ lifetime parameter $\tau$, the decay width difference $\DG$ and the mass
 difference $\DM$ of the \Bmeson mass eigenstates.
 %
 \begin{multline}\label{eq:measurement_of_sin2beta:likelihood_fit:pdfs:bdecay}
-  \ProbArg{\text{BDecay}}{}{t;...} = \\ \exponential{- \frac{t}{\tau}}\left( A \cosh (\DG t) + B \sinh (\DG t) + C \cos (\DM t) + D \sin (\DM t) \right)
+  \ProbArg{\text{BDecay}}{}{\obsTime, \dots} \propto \\ \exponential{- \frac{t}{\tau}}\left( A \cosh (\DG t) + B \sinh (\DG t) + C \cos (\DM t) + D \sin (\DM t) \right)
 \end{multline}
 
 %...............................................................................
@@ -122,7 +122,7 @@ distribution of the reconstructed $\B$ candidates mass $\obsMass$ and is
 parametrised as
 %
 \begin{multline}\label{eq:measurement_of_sin2beta:likelihood_fit:pdfs:ipatia}
-  \ProbArg{\text{Ipatia}}{}{m, \mu, \sigma, \lambda, \zeta, \beta, a_1, a_2, n_1, n_2} = \\
+  \ProbArg{\text{Ipatia}}{}{m, \mu, \sigma, \lambda, \zeta, \beta, a_1, a_2, n_1, n_2} \propto \\
     \begin{cases}
       G(m, \mu, \sigma, \lambda, \zeta, \beta)    & \text{if $-a_1 < \frac{m-\mu}{\sigma} < a_2$} \\
       \frac{G(\mu - a_1 \sigma, \mu, \sigma, \lambda, \zeta, \beta)}{
@@ -307,13 +307,40 @@ In the following the \B physics \PDF is explained in detail.
 
 \begin{equation}
   \begin{split}
-    \ProbArg{}{}(\obsTime &\mid \obsTagOS, \obsTagSS, \mistagOS, \mistagSS) = \\
+    \Prob{}{}(\obsTime &\mid \obsTagOS, \obsTagSS, \mistagOS, \mistagSS) = \\
       &\left( \frac{1 + \obsTagOS}{2} - \obsTagOS \mistagOS^{\Bd} \right) \left( \frac{1 + \obsTagSS}{2} - \obsTagSS \mistagSS^{\Bd} \right) \ProbArg{\text{true}}{}{\obsTime \given \Bd} \\
     + &\left( \frac{1 - \obsTagOS}{2} + \obsTagOS \mistagOS^{\Bdbar} \right) \left( \frac{1 - \obsTagSS}{2} - \obsTagSS \mistagSS^{\Bdbar} \right) \ProbArg{\text{true}}{}{\obsTime \given \Bdbar}
   \end{split}
 \end{equation}
 
+\begin{multline}
+  % \begin{split}
+    \ProbArg{}{}{\obsTime, \obsTagOS, \obsTagSS \given \mistagOS, \mistagSS} = \\ 
+    \shoveleft{\frac{1}{\Norm{\obsTime}{}} \exponential{-\sfrac{t}{\tau}}
+    \Biggl\{
+      1 - \obsTagOS \left( A_P \left( 1 - \mistagOS^{\Bd} - \mistagOS^{\Bdbar} \right) + \left( \mistagOS^{\Bd} - \mistagOS^{\Bdbar} \right) \right)} \\
+        - \obsTagSS \left( A_P \left( 1 - \mistagSS^{\Bd} - \mistagSS^{\Bdbar} \right) + \left( \mistagSS^{\Bd} - \mistagSS^{\Bdbar} \right) \right) \\
+        + \obsTagOS \obsTagSS \left( 1 + 2 \left( \mistagOS^{\Bd} \mistagSS^{\Bd} + \mistagOS^{\Bdbar} \mistagSS^{\Bdbar} \right) - \mistagOS^{\Bd} - \mistagOS^{\Bdbar} - \mistagSS^{\Bd} - \mistagSS^{\Bdbar}  \right) \\
+        \shoveright{+ \obsTagOS \obsTagSS A_P \left( \mistagOS^{\Bd} - \mistagOS^{\Bdbar} + \mistagSS^{\Bd} - \mistagSS^{\Bdbar} - 2 \left( \mistagOS^{\Bd} \mistagSS^{\Bd} + \mistagOS^{\Bdbar} \mistagSS^{\Bdbar} \right) \right)} \\
+        + \left( \SJpsiKS \sin (\DMd \obsTime) - \CJpsiKS \cos (\DMd \obsTime) \right) \times \\
+        \shoveleft{\Biggl[
+            A_P \left( \frac{1}{2} - \obsTagOS \left( \mistagOS^{\Bd} - \mistagOS^{\Bdbar} \right) \right) - \obsTagOS \left( 1 - \mistagOS^{\Bd} - \mistagOS^{\Bdbar} \right)} \\
+          + A_P \left( \frac{1}{2} - \obsTagSS \left( \mistagSS^{\Bd} - \mistagSS^{\Bdbar} \right) \right) - \obsTagSS \left( 1 - \mistagSS^{\Bd} - \mistagSS^{\Bdbar} \right) \\
+          + \obsTagOS \obsTagSS \left( 1 + 2 \left( \mistagOS^{\Bd} \mistagSS^{\Bd} + \mistagOS^{\Bdbar} \mistagSS^{\Bdbar} \right) - \mistagOS^{\Bd} - \mistagOS^{\Bdbar} - \mistagSS^{\Bd} - \mistagSS^{\Bdbar}  \right) \\
+          \shoveright{+ \obsTagOS \obsTagSS A_P \left( \mistagOS^{\Bd} - \mistagOS^{\Bdbar} + \mistagSS^{\Bd} - \mistagSS^{\Bdbar} - 2 \left( \mistagOS^{\Bd} \mistagSS^{\Bd} + \mistagOS^{\Bdbar} \mistagSS^{\Bdbar} \right) \right)
+          \Biggr]
+    \Biggr\}}
+  % \end{split}
+\end{multline}
 
+\begin{multline}
+  \ProbArg{}{}{\obsTime, \obsTagOS, \obsTagSS \given \mistagOS, \mistagSS} = \\
+  \sum_{d^\prime} \Biggl[ \prod_{j} \zeta \left( d_j, \eta_j, d^\prime \right) \Biggr] \left( 1 - d^\prime A_P \right) \exponential{-\sfrac{t}{\tau}} \left\{ 1 - d^\prime \SJpsiKS \sin (\DMd t) + d^\prime \cos (\DMd t) \right\}
+\end{multline}
+
+\begin{equation}
+  \zeta \left( d_j, \eta_j, d^\prime \right) = 1 + d_j \left( 1 - 2 \left[ \mistag(\mistagestimate_j) + \frac{\Delta\mistag(\mistagestimate_j)}{2} \right] \right)
+\end{equation}
 
 The \textbf{background} decay time distribution is modelled using sums of
 exponential decay functions. Three decay \acp{PDF} are used to describe the

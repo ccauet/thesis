@@ -477,7 +477,7 @@ lists the calculated linear correlation coefficients separately for \catDD and
 \catLL as well as combined while always distinguishing between signal and
 background. Overall the linear correlations are small, so the factorisation is
 valid.
-
+%
 \begin{table}
 \centering
 \caption{Correlations and \SI{95}{\percent} confidence levels between \OS and
@@ -502,7 +502,7 @@ time distributions and the mistag estimates.
 \Cref{tab:measurement_of_sin2beta:likelihood_fit:model:mistag:mistag_time_correlations} 
 shows no sign of correlations between the decay time and the \OS/\SSpi mistag
 estimates.
-
+%
 \begin{table}
 \centering
 \caption{Correlations and \SI{95}{\percent} confidence levels between the mistag
@@ -519,13 +519,98 @@ estimates $\eta_\text{\acs{OS}/\acs{SSpi}}$ and the reconstructed \Bd decay time
 \end{tabular}
 \end{table}
 
-\newpage
-
-
 % ------------------------------------------------------------------------------
 \subsection{Experimenter's bias}
 \label{sec:measurement_of_sin2beta:likelihood_fit:blinding}
 
+To minimise a potential experimenter's bias, a blinding transformation is
+applied to the \CP observables $\SJpsiKS$ and $\CJpsiKS$ by adding an obfuscated
+offset to the fit parameters. This does not affect the uncertainty estimates and
+still allows to compare and reproduce the fit outcome. The offset is drawn from
+a uniform distribution using a random number generator. The random seed is
+generated using a \emph{blinding string}. The ensure a sufficient ambiguity the
+range of the uniform distribution is chosen to be ${[-2,2]}$. The blinding
+string applied to conceal the estimated value of $\SJpsiKS$ is
+\enquote{\emph{SJpsiKS2011und2012}} and for $\CJpsiKS$ it is chosen to be
+\enquote{\emph{CJpsiKS2011und2012}}.
+
 % ------------------------------------------------------------------------------
 \subsection{Fitter validation}
 \label{sec:measurement_of_sin2beta:likelihood_fit:validation}
+
+The likelihood model described before and its code implementation is validated
+using \ToyMC data and regular \MC simulated data.
+
+%...............................................................................
+\subsubsection{\Acl{ToyMC}}
+\label{sec:measurement_of_sin2beta:likelihood_fit:validation:toy_mc}
+
+An external \ToyMC generator is employed to scrutinise the \PDF used in the fit.
+It generates distributions for the dimensions mass, decay time, decay time error
+estimate, and mistag estimate, correctly describes the per-event tag and mistag
+for two tagging algorithms, comprises tagging and production asymmetries, as
+well as tagged background events. Making use of the signal to background ratios
+found on data a simulated data set is generated and fitted afterwards. No
+significant deviations from the generated values are found.
+
+In addition the nominal \PDF is used to sample distributions. The subsequent fit
+to the simulated data allows to check if the fit's parameter values and
+uncertainties estimates are unbiased. In the generation the \CP parameters are
+unblinded and set to $\SJpsiKS = \num{0.7}$ and $\CJpsiKS = \num{0.03}$. All
+other parameters are set to the values estimated on data using the nominal fit
+model. The results from $\num{1000}$ iterations of generating an fitting are
+shown in \cref{fig:measurement_of_sin2beta:likelihood_fit:validation:toy_mc}. No
+bias is observable.
+%
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=0.48\textwidth]{private/content/measurement-of-sin2beta/figs/toy_fitter_validation_s_pull.pdf}
+\includegraphics[width=0.48\textwidth]{private/content/measurement-of-sin2beta/figs/toy_fitter_validation_c_pull.pdf}     \\
+\includegraphics[width=0.48\textwidth]{private/content/measurement-of-sin2beta/figs/toy_fitter_validation_s_res.pdf}
+\includegraphics[width=0.48\textwidth]{private/content/measurement-of-sin2beta/figs/toy_fitter_validation_c_res.pdf}
+\caption{Pull (top) and residual (bottom) distributions of \SJpsiKS (left) and
+\CJpsiKS (right) in the fitter validation using \ac{ToyMC}.}
+\label{fig:measurement_of_sin2beta:likelihood_fit:validation:toy_mc}
+\end{figure}
+
+%...............................................................................
+\subsubsection{Signal \acs*{MC}}
+\label{sec:measurement_of_sin2beta:likelihood_fit:validation:signal_mc}
+
+To further validate the nominal fit model, a fit on signal \MC
+(\cref{sec:measurement_of_sin2beta:data_preparation:datasamples:mc}) is
+performed and the fit results are compared to the generation values of
+$\SJpsiKS^{\text{Gen}} = \num{0.699716075}$, $\CJpsiKS^{\text{Gen}} = \num{0}$,
+and $\tau_{\Bd}^{\text{Gen}} = \SI{1.519068}{\pico\second}$ (see
+\cref{tab:measurement_of_sin2beta:data_preparation:datasamples:mc:decfile}).
+\Cref{eq:measurement_of_sin2beta:likelihood_fit:validation:signal_mc} presents
+the results. Both \CP parameters, as well as the \Bd lifetime are perfectly
+compatible with the generation values.
+%
+\begin{equation}\label{eq:measurement_of_sin2beta:likelihood_fit:validation:signal_mc}
+\begin{split}
+  \SJpsiKS^{\text{SigMC}}   &= \num[separate-uncertainty=true]{0.714 \pm 0.032} \ , \\
+  \CJpsiKS^{\text{SigMC}}   &= \num[separate-uncertainty=true]{0.012 \pm 0.028} \ , \\
+  \tau_{\Bz}^{\text{SigMC}} &= \SI[separate-uncertainty=true]{1.521  \pm 0.009}{\pico\second} \ . \\
+\end{split}
+\end{equation}
+
+%...............................................................................
+\subsubsection{Cocktail \acs*{MC}}
+\label{sec:measurement_of_sin2beta:likelihood_fit:validation:cocktail_mc}
+
+Further, the fit model is tested on a simulated data set containing both signal
+and background. For this study, the signal \MC sample is enriched with background
+events generated from the background \PDF of the nominal fit model according to
+the signal to background ratio observed in data. The fit results are shown in
+\cref{eq:measurement_of_sin2beta:likelihood_fit:validation:cocktail_mc}. Again
+all measured parameters are perfectly compatible with the generation values.
+%
+\begin{equation}\label{eq:measurement_of_sin2beta:likelihood_fit:validation:cocktail_mc}
+\begin{split}
+  \SJpsiKS^{\text{CocktailMC}}   &= \num[separate-uncertainty=true]{0.722 \pm 0.029}  \ , \\
+  \CJpsiKS^{\text{CocktailMC}}   &= \num[separate-uncertainty=true]{0.008 \pm 0.027}  \ , \\
+  \tau_{\Bz}^{\text{CocktailMC}} &= \SI[separate-uncertainty=true]{1.506  \pm 0.010}{\pico\second} \ . \\
+\end{split}
+\end{equation}
+

@@ -360,18 +360,32 @@ the shape of the lower decay time acceptance (\cref{sec:measurement_of_sin2beta:
 \subsection{Fit results}
 \label{sec:measurement_of_sin2beta:cpv_measurement:results}
 
-The fit results of the nominal fit are:
+The results of the nominal \uEML fit to the selected \BdToJpsiKS candidates are
 %
 \begin{equation}\label{eq:measurement_of_sin2beta:cpv_measurement:results}
   \begin{split}
-    \SJpsiKS                &= \phantom{+}0.729\,\pm\,0.035 \ , \\
-    \CJpsiKS                &= -0.033\,\pm\,0.032  \ , \\
-    \rho(\SJpsiKS,\CJpsiKS) &= \phantom{+}0.483 \ , \\
-    \DMd                    &= \phantom{+}0.5100\,\pm\,0.0030 \ (\text{\textit{constrained}}), \\
-    \tau                    &= \phantom{+}\SI[separate-uncertainty=true]{1.479 \pm 0.009}{\pico\second} \ . \\
+    \SJpsiKS                &= \phantom{+}0.729 \pm 0.035 \eqcm \\
+    \CJpsiKS                &= -0.033 \pm 0.032 \eqcm \\
+    \rho(\SJpsiKS,\CJpsiKS) &= \phantom{+}0.483 \eqcm \\
+    \DMd                    &= \phantom{+}\SI[separate-uncertainty=true]{0.5100 \pm 0.0030}{\planckbar\per\pico\second} \eqthinspace (\text{\textit{constrained}})\eqcm \\
+    \tau                    &= \phantom{+}\SI[separate-uncertainty=true]{1.479 \pm 0.009}{\pico\second} \eqpd \\
   \end{split}
 \end{equation}
+%
+\Cref{tab:measurement_of_sin2beta:cpv_measurement:results:yields} gives the
+fitted signal and background candidate numbers,
+\cref{tab:measurement_of_sin2beta:cpv_measurement:results:mass} provides the
+mass parameter estimates, the results for the decay time background category
+parameters are listed in
+\cref{tab:measurement_of_sin2beta:cpv_measurement:results:time:bkg}, and
+\cref{tab:measurement_of_sin2beta:cpv_measurement:results:tagging} shows the
+results for the tagging parameters, the \BdBdbar oscillation frequency $\DMd$,
+and the production asymmetry.
 
+\Cref{fig:measurement_of_sin2beta:cpv_measurement:results:plots:dimensions}
+depicts the distributions of mass, decay time, decay time estimate, and \OS and
+\SSpi mistag estimates as well as the \PDF projections.
+%
 \begin{table}
   \caption{Results for the yields in the nominal fit.}
   \label{tab:measurement_of_sin2beta:cpv_measurement:results:yields}
@@ -445,12 +459,12 @@ The fit results of the nominal fit are:
       \midrule
       $m^{DD}_{}$              & ($\si{\MeVcc}$)        & $5281.80$    & $0.28$        \\
       $\sigma^{DD}_{m}$        & ($\si{\MeVcc}$)        & $9.9$        & $0.1$        \\
-      $\beta^{DD}_{m}$         &                           & $-0.004$     & $0.004$     \\
+      $\beta^{DD}_{m}$         &                        & $-0.004$     & $0.004$     \\
       $\alpha^{DD}_{m}$        & ($\si{(\MeVcc)^{-1}}$) & $-0.00091$   & $0.00019$     \\
       \midrule
       $m^{LL}_{}$              & ($\si{\MeVcc}$)        & $5281.20$    & $0.30$        \\
       $\sigma^{LL}_{m}$        & ($\si{\MeVcc}$)        & $8.33$       & $0.09$        \\
-      $\beta^{LL}_{m}$         &                           & $-0.009$     & $0.005$     \\
+      $\beta^{LL}_{m}$         &                        & $-0.009$     & $0.005$     \\
       $\alpha^{LL}_{m}$        & ($\si{(\MeVcc)^{-1}}$) & $-0.0004$    & $0.0004$      \\
       \bottomrule
     \end{tabular}
@@ -484,7 +498,8 @@ The fit results of the nominal fit are:
 \end{table}
 %
 \begin{table}
-  \caption{Results for the tagging parameters in the nominal fit}
+  \caption{Results for the tagging parameters, $\DMd$, and the production
+  asymmetries in the nominal fit}
   \label{tab:measurement_of_sin2beta:cpv_measurement:results:tagging}
   \centering
   \begin{tabular}{llr@{$\,\pm\,$}l}
@@ -505,7 +520,7 @@ The fit results of the nominal fit are:
       \bottomrule
     \end{tabular}
 \end{table}
-
+%
 \begin{figure}
 \centering
 \includegraphics[width=0.4\textwidth]{private/content/measurement-of-sin2beta/figs/obsMass_summed_pull.pdf} 
@@ -514,8 +529,9 @@ The fit results of the nominal fit are:
 \includegraphics[width=0.4\textwidth]{private/content/measurement-of-sin2beta/figs/obsEtaSSPion_TupleCalib_summed_pull.pdf} \\
 \includegraphics[width=0.4\textwidth]{private/content/measurement-of-sin2beta/figs/obsTimeError_summed_pull_log.pdf}
 \caption{Plots of the \BdToJpsiKS data sample with the projected \PDF and pull
-distributions. Shown is the reconstructed mass (top left) and decay time (top
-right, logarithmic), per-event mistag (center), and decay time error (bottom,
+distributions. Shown is the reconstructed mass \obsMass (top left) and decay
+time \obsTime (top right, logarithmic), per-event mistag (center; \obsEtaOS on
+the left, \obsEtaSS on the right), and decay time error \obsTimeError (bottom,
 logarithmic). Besides the data points and the full \PDF (solid black) the
 projections of the signal (dashed blue) and the background (dotted green) are
 shown.}
@@ -525,3 +541,6 @@ shown.}
 % ------------------------------------------------------------------------------
 \subsection{Kaon regeneration}
 \label{sec:measurement_of_sin2beta:cpv_measurement:kaon_regeneration}
+
+\missing{Kaon regeneration}
+

@@ -1,0 +1,172 @@
+%!TEX root = ../../common/main.tex
+
+\section{Study of systematic effects}
+\label{sec:measurement_of_sin2beta:systematics}
+
+The following section will describe the evaluation of potential systematic
+effects of the fit model and influences of the flavour tagging, the decay time
+resolution, the decay time acceptance, and several other inputs to the
+measurement of \CP violation.
+
+In \cref{sec:measurement_of_sin2beta:systematics:cross_checks} cross-checks are
+outlined to test the reproducibility and stability of the fit model. Studies to
+estimate the effect of various fit model properties are listed in
+\cref{sec:measurement_of_sin2beta:systematics:systematics} and
+\cref{sec:measurement_of_sin2beta:systematics:summary} gives a summary of all
+found systematic effects.
+
+% ------------------------------------------------------------------------------
+\subsection{Cross-checks}
+\label{sec:measurement_of_sin2beta:systematics:cross_checks}
+
+When performing cross-checks, either results obtained on different subsamples or
+results obtained from different methods on the same sample are applied. In both
+cases, the deviation of the difference in fit results in terms of its
+uncertainty is used as a measure of agreement.
+
+When comparing results on different, distinct samples, the uncertainty on the
+difference is estimated by summing the uncertainties of the single results in
+quadrature. In contrast, when applying different methods to the same sample, the
+compatibility of the results is compared by taking into account a full
+correlation of the data sets. Following Ref.~\cite{Barlow:2002yb}, the
+uncertainty on the difference of the two results $A$ and $B$ on the same data
+set is defined as
+%
+\begin{equation}
+  \sigma^2_\Delta = \left\vert\sigma^2_{\text{A}} - \sigma^2_{\text{B}}\right\vert .
+\end{equation}
+%
+Again, both measurements can be interpreted as compatible if the uncertainty
+lies in the same order of magnitude as the difference of the central values.
+
+%------------------------------------------------------------------------------%
+\subsubsection{Second fitter implementation}
+\label{sec:measurement_of_sin2beta:systematics:cross_checks:second_fitter}
+%
+To provide a cross-check of the fitter implementation, two different,
+independent fitter implementations were developed by the author and another
+member of the working group. Besides built up on the \RooFit library they do not
+share any common code base. For simplification they will be denoted as
+\emph{Fitter A} and \emph{Fitter B}. Both fitters are tested against each other
+in the nominal fitter setup (\cref{sec:measurement_of_sin2beta:likelihood_fit}).
+Applying the measure described before, the results from both fitters are in
+excellent agreement, as is shown in
+\Cref{fig:measurement_of_sin2beta:systematics:cross_checks:second_fitter}.
+%
+\begin{figure}
+\centering
+\input{private/content/measurement-of-sin2beta/tikz/crosscheck_secondfitter_s}
+\input{private/content/measurement-of-sin2beta/tikz/crosscheck_secondfitter_c}
+\caption{
+Fit results for \SJpsiKS and \CJpsiKS for both fitter implementations.
+In blue (red) the result and the statistical error for Fitter A (B). The
+gray solid line shows the average of both fit results, while the filled gray
+area describes the uncertainty on the difference $\sigma_\Delta$ of the two
+results (darker gray $1\sigma_\Delta$, light gray $2\sigma_\Delta$).
+\textit{Please note: The shown numbers are rounded following the PDG rules. The
+plot itself is produced using the full precision values.} }
+\label{fig:measurement_of_sin2beta:systematics:cross_checks:second_fitter}
+\end{figure}
+
+% \FloatBarrier
+%------------------------------------------------------------------------------%
+\subsubsection{\sPlot fit}
+\label{sec:measurement_of_sin2beta:systematics:cross_checks:splot_fit}
+%
+As the background model might influence the measurement, an \sPlot fit is
+performed using the nominal signal \PDF. As the standard \Minuit/\Hesse error
+estimations in \sPlot fits can lead to uncertainties with an incorrect coverage,
+an additional bootstrapping study is performed to arrive at more correct
+estimates of uncertainties (see \eg \cite{Behnke:2013pga}). The procedure
+followed is:
+%
+\begin{enumerate}
+  \item taking the \sweighted data sample consisting of $N$ events,
+  \item sampling $N$ randomly selected events with replacement into a new data sample,
+  \item performing a fit on the resulting sample to measure \SJpsiKS and \CJpsiKS,
+  \item and repeating the steps to obtain a distribution of the measured \CP parameters.
+\end{enumerate}
+%
+\Cref{fig:measurement_of_sin2beta:systematics:cross_checks:splot_fit:s_and_c}
+shows the fit result of the \sPlot fit with the corresponding \Hesse uncertainty
+estimates, as well as the nominal fit result. Additionally, the uncertainty
+estimates from the bootstrapping study are included. For the latter result, the
+medians of the measured \SJpsiKS and \CJpsiKS distributions are chosen as
+central values, while the quoted uncertainties are the quantile-based estimates
+for two-sided $\SI{68.27}{\percent}$ \acp{CL} of the same distribution. The
+resulting distributions based on $\num{1000}$ bootstrapping iterations are
+presented in
+\cref{fig:measurement_of_sin2beta:systematics:cross_checks:splot_fit:bootstrapping}.
+
+The central values resulting from the bootstrapped \sPlot fits are very well
+compatible with the naive \sPlot fit. Compared to the nominal fit this holds
+true for \CJpsiKS while \SJpsiKS is slightly lower. The uncertainty estimates of
+the bootstrapping study are slightly larger than the corresponding uncertainties
+from the nominal fit, but still in the same order of magnitude. In contrast, the
+uncertainty estimate of the naive \sPlot fit for \SJpsiKS is too small. Overall,
+the results of the \sPlot fits and the nominal fit are well compatible.
+%
+\begin{figure}
+\centering
+\input{private/content/measurement-of-sin2beta/tikz/crosscheck_splotfit_s}
+\input{private/content/measurement-of-sin2beta/tikz/crosscheck_splotfit_c}
+\caption{
+Fit results for \SJpsiKS and \CJpsiKS from the \sPlot fit as well as from the
+nominal fit as a reference. In blue (red) the result and the statistical error
+for the \sPlot fit (nominal fit) using a per-event resolution. The gray solid
+line shows the average of both lower fit results, while the filled gray area
+describes the uncertainty on the difference $\sigma_\Delta$ of the two lower
+results (darker gray $1\sigma_\Delta$, light gray $2\sigma_\Delta$).
+\textit{Please note: The shown numbers are rounded following the PDG rules. The
+plot itself is produced using the full precision values.}}
+\label{fig:measurement_of_sin2beta:systematics:cross_checks:splot_fit:s_and_c}
+\end{figure}
+%
+\begin{figure}
+\centering
+\includegraphics[width=0.48\textwidth]{private/content/measurement-of-sin2beta/figs/bootstrapping_parSigTimeSin2b_blind.pdf}
+\hfill
+\includegraphics[width=0.48\textwidth]{private/content/measurement-of-sin2beta/figs/bootstrapping_parSigTimeCjpsiKS_blind.pdf}
+\caption{
+Parameter distributions for \SJpsiKS and \CJpsiKS from $\num{960}$
+bootstrapping iterations of the \sPlot fit.}
+\label{fig:measurement_of_sin2beta:systematics:cross_checks:splot_fit:bootstrapping}
+\end{figure}
+
+%------------------------------------------------------------------------------%
+\subsubsection{Subsamples}
+\label{sec:measurement_of_sin2beta:systematics:cross_checks:subsamples}
+%
+To check for possible systematic effects, fits in different subsamples of the
+nominal data set are conducted. The cross-checks are performed in categories of
+track type (\catDD \vs \catLL), trigger requirement (\catAU \vs \catEB), tagging
+algorithm (\catOS \vs \catSS \vs \catBS), magnet polarity (Up \vs Down), and
+admixtures of those together with the year of data-taking (\catOO \vs \catOT).
+As a control sample the full data set is also split randomly into five disjoint
+subsets (Rndm1-5). \Cref{fig:measurement_of_sin2beta:systematics:cross_checks:subsamples:s_and_c}
+illustrates the outcome. No significant deviation is present.
+%
+\begin{figure}
+\centering
+\input{private/content/measurement-of-sin2beta/tikz/crosscheck_subsamples_s}
+\input{private/content/measurement-of-sin2beta/tikz/crosscheck_subsamples_c}
+\caption{
+Comparison of fit results of \SJpsiKS and \CJpsiKS for fits on various
+subsamples.}
+\label{fig:measurement_of_sin2beta:systematics:cross_checks:subsamples:s_and_c}
+\end{figure}
+
+%------------------------------------------------------------------------------%
+\subsubsection{Pure time-dependent and time-integrated fit}
+\label{sec:measurement_of_sin2beta:systematics:cross_checks:time_integrated}
+
+\missing{Pure time-dependent and time-integrated fit}
+
+\clearpage
+% ------------------------------------------------------------------------------
+\subsection{Systematics}
+\label{sec:measurement_of_sin2beta:systematics:systematics}
+
+% ------------------------------------------------------------------------------
+\subsection{Summary of systematic effects}
+\label{sec:measurement_of_sin2beta:systematics:summary}

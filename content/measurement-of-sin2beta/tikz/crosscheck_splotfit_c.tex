@@ -1,0 +1,173 @@
+%!TEX root = ../main.tex
+
+\definecolor{fcdGrayA}{HTML}{111111}
+\definecolor{fcdGrayB}{HTML}{222222}
+\definecolor{fcdGrayC}{HTML}{333333}
+\definecolor{fcdGrayD}{HTML}{444444}
+\definecolor{fcdGrayE}{HTML}{555555}
+\definecolor{fcdGrayF}{HTML}{666666}
+\definecolor{fcdGrayG}{HTML}{777777}
+\definecolor{fcdGrayH}{HTML}{888888}
+\definecolor{fcdGrayI}{HTML}{999999}
+\definecolor{fcdGrayJ}{HTML}{AAAAAA}
+\definecolor{fcdGrayK}{HTML}{BBBBBB}
+\definecolor{fcdGrayL}{HTML}{CCCCCC}
+\definecolor{fcdGrayM}{HTML}{DDDDDD}
+\definecolor{fcdGrayN}{HTML}{EEEEEE}
+
+\colorlet{ClrSFit}{blue}
+\colorlet{ClrSFitBT}{blue}
+\colorlet{ClrNominalFit}{red}
+
+\begin{tikzpicture}[
+  exp_label/.style={
+    anchor=west,
+    %minimum width=10em,
+    align=left,
+    font=\small\sffamily,
+    inner sep=0.5em,
+    outer sep=0,
+  },
+  exp_result/.style={
+    anchor=east,
+    align=right,
+    font=\footnotesize\sffamily,
+    inner sep=0.5em,
+    outer sep=0,
+    yshift=0.22em
+  }
+]
+\begin{axis}[
+  width=\textwidth,
+  height=30ex,
+  font=\small,
+  xmin=-0.117,xmax=0.063,ymin=0.3,ymax=3.7,
+  xlabel={${\CJpsiKS}$},
+  xlabel style={
+        at={(ticklabel cs:1)},
+        anchor=north east,
+    },%
+  xtick={-0.07, -0.05, -0.03, -0.01, 0.01, 0.03},
+  xticklabel style={%
+    major tick length=3pt,
+    /pgf/number format/fixed
+  },
+  hide y axis
+]
+
+\begin{pgfonlayer}{background}
+  \draw[ultra thin,color=fcdGrayM,dashed]({rel axis cs:0,0}-|{axis cs:-0.07,0}) -- ({rel axis cs:-0.07,1}-|{axis cs:-0.07,0});
+  \draw[ultra thin,color=fcdGrayM,dashed]({rel axis cs:0,0}-|{axis cs:-0.06,0}) -- ({rel axis cs:-0.06,1}-|{axis cs:-0.06,0});
+  \draw[ultra thin,color=fcdGrayM,dashed]({rel axis cs:0,0}-|{axis cs:-0.05,0}) -- ({rel axis cs:-0.05,1}-|{axis cs:-0.05,0});
+  \draw[ultra thin,color=fcdGrayM,dashed]({rel axis cs:0,0}-|{axis cs:-0.04,0}) -- ({rel axis cs:-0.04,1}-|{axis cs:-0.04,0});
+  \draw[ultra thin,color=fcdGrayM,dashed]({rel axis cs:0,0}-|{axis cs:-0.03,0}) -- ({rel axis cs:-0.03,1}-|{axis cs:-0.03,0});
+  \draw[ultra thin,color=fcdGrayM,dashed]({rel axis cs:0,0}-|{axis cs:-0.02,0}) -- ({rel axis cs:-0.02,1}-|{axis cs:-0.02,0});
+  \draw[ultra thin,color=fcdGrayM,dashed]({rel axis cs:0,0}-|{axis cs:-0.01,0}) -- ({rel axis cs:-0.01,1}-|{axis cs:-0.01,0});
+  \draw[ultra thin,color=fcdGrayM,dashed]({rel axis cs:0,0}-|{axis cs:-0.00,0}) -- ({rel axis cs:-0.00,1}-|{axis cs:-0.00,0});
+  \draw[ultra thin,color=fcdGrayM,dashed]({rel axis cs:0,0}-|{axis cs: 0.01,0}) -- ({rel axis cs: 0.01,1}-|{axis cs: 0.01,0});
+  \draw[ultra thin,color=fcdGrayM,dashed]({rel axis cs:0,0}-|{axis cs: 0.02,0}) -- ({rel axis cs: 0.02,1}-|{axis cs: 0.02,0});
+  \draw[ultra thin,color=fcdGrayM,dashed]({rel axis cs:0,0}-|{axis cs: 0.03,0}) -- ({rel axis cs: 0.03,1}-|{axis cs: 0.03,0});
+
+  % 2 sigma error band
+  \fill[color=fcdGrayM] ({rel axis cs:0,0}-|{axis cs:-0.00103402373304,0}) rectangle ({rel axis cs:-0.042529957587,1}-|{axis cs:-0.042529957587,0});
+  % 1 sigma error band
+  \fill[color=fcdGrayK] ({rel axis cs:0,0}-|{axis cs:-0.0114080071965,0}) rectangle ({rel axis cs:-0.0321559741235,1}-|{axis cs:-0.0321559741235,0});
+  % average
+  \draw[ultra thin,color=fcdGrayI]({rel axis cs:0,0}-|{axis cs:-0.02178199066,0}) -- ({rel axis cs:-0.02178199066,1}-|{axis cs:-0.02178199066,0});
+\end{pgfonlayer}
+
+\node[exp_label, color=ClrSFit] (SFit_lbl) at (axis cs: \pgfkeysvalueof{/pgfplots/xmin},3)  
+{\sPlot fit\\[-0.3ex]\footnotesize \Hesse};
+\node[exp_result,color=ClrSFit] (SFit_rsl) at (axis cs: \pgfkeysvalueof{/pgfplots/xmax},3) 
+{${-0.011 \pm 0.037}$};
+
+\addplot+[only marks,
+    thin,
+    solid,
+    color = ClrSFit,
+    mark=none,
+    mark options={%
+      scale=0.7,
+      draw=ClrSFit
+    },
+    error bars/.cd,
+    x dir=both, x explicit,
+    y dir=both, y explicit,
+    error mark options={%
+      rotate=90,
+      mark size=5pt,
+      color=ClrSFit
+    }
+]
+table[
+        x error plus=ex+,
+        x error minus=ex-,
+]{
+  x              y  ex+             ex-  
+  -0.01110790192 3  0.03708065836   0.03708065836
+};
+
+\node[exp_label, color=ClrSFitBT] (SFit_lbl) at (axis cs: \pgfkeysvalueof{/pgfplots/xmin},2)  
+{\sPlot\\[-0.3ex]\footnotesize bootstrapped fits};
+\node[exp_result,color=ClrSFitBT] (SFit_rsl) at (axis cs: \pgfkeysvalueof{/pgfplots/xmax},2) 
+{${-0.010 \pm\,^{0.038}_{0.034}}$};
+
+\addplot+[only marks,
+    thin,
+    solid,
+    color = ClrSFitBT,
+    mark=none,
+    mark options={%
+      scale=0.7,
+      draw=ClrSFitBT
+    },
+    error bars/.cd,
+    x dir=both, x explicit,
+    y dir=both, y explicit,
+    error mark options={%
+      rotate=90,
+      mark size=5pt,
+      color=ClrSFitBT
+    }
+]
+table[
+        x error plus=ex+,
+        x error minus=ex-,
+]{
+  x              y  ex+             ex-  
+  -0.01042952622 2  0.03750748602   0.03375459289
+};
+
+\node[exp_label, color=ClrNominalFit] (NominalFit_lbl) at (axis cs: \pgfkeysvalueof{/pgfplots/xmin},1)  
+{Nominal fit};
+\node[exp_result,color=ClrNominalFit] (NominalFit_rsl) at (axis cs: \pgfkeysvalueof{/pgfplots/xmax},1) 
+{${-0.033 \pm 0.032}$};
+
+\addplot+[only marks,
+    thin,
+    solid,
+    color = ClrNominalFit,
+    mark=none,
+    mark options={%
+      scale=0.7,
+      draw=ClrNominalFit
+    },
+    error bars/.cd,
+    x dir=both, x explicit,
+    y dir=both, y explicit,
+    error mark options={%
+      rotate=90,
+      mark size=5pt,
+      color=ClrNominalFit
+    }
+]
+table[
+        x error plus=ex+,
+        x error minus=ex-,
+]{
+  x             y  ex+             ex-  
+  -0.0331344551 1  0.03212091232   0.03213103531
+};
+
+\end{axis}
+\end{tikzpicture}

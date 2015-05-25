@@ -470,7 +470,7 @@ To check if the two dimensions of $\obsEtaOS$ and $\obsEtaSS$ factorise, the
 linear Pearson correlation coefficient $\rho$ is calculated on the \sweighted
 nominal data set. To clarify the significance of the values the bootstrap method
 (\ie \enquote{random sampling with replacement}, \cf \eg \cite{Behnke:2013pga})
-is used to get \SI{95}{\percent} confidence level intervals for the correlation
+is used to get \SI{95}{\percent} \CL intervals for the correlation
 coefficients. 
 \Cref{tab:measurement_of_sin2beta:likelihood_fit:model:mistag:os_ss_correlations} 
 lists the calculated linear correlation coefficients separately for \catDD and
@@ -480,13 +480,13 @@ valid.
 %
 \begin{table}
 \centering
-\caption{Correlations and \SI{95}{\percent} confidence levels between \OS and
+\caption{Correlations and \SI{95}{\percent} \acp{CL} between \OS and
 \SSpi mistag estimates.}
 \label{tab:measurement_of_sin2beta:likelihood_fit:model:mistag:os_ss_correlations}
 \begin{tabular}{rcrcr}
 \toprule
            & \multicolumn{2}{c}{Signal}                                              & \multicolumn{2}{c}{Background} \\
-           & $\rho_\text{\obsEtaOS,\obsEtaSS}$ & \multicolumn{1}{c}{\SI{95}{\percent} CL} & $\rho_\text{\obsEtaOS,\obsEtaSS}$ & \multicolumn{1}{c}{\SI{95}{\percent} CL} \\
+           & $\rho_\text{\obsEtaOS,\obsEtaSS}$ & \multicolumn{1}{c}{\SI{95}{\percent} \acs*{CL}} & $\rho_\text{\obsEtaOS,\obsEtaSS}$ & \multicolumn{1}{c}{\SI{95}{\percent} \acs*{CL}} \\
 \midrule
 \catDD      & $0.0731$            & $(0.0306, 0.1155)$   & $0.0555$            & $(0.0139, 0.0972)$\\
 \catLL      & $0.0854$            & $(0.0270, 0.1454)$   & $-0.0465$           & $(-0.219, 0.136)$\\
@@ -505,13 +505,13 @@ estimates.
 %
 \begin{table}
 \centering
-\caption{Correlations and \SI{95}{\percent} confidence levels between the mistag
+\caption{Correlations and \SI{95}{\percent} \acp{CL} between the mistag
 estimates $\eta_\text{\acs{OS}/\acs{SSpi}}$ and the reconstructed \Bd decay time.}
 \label{tab:measurement_of_sin2beta:likelihood_fit:model:mistag:mistag_time_correlations}
 \begin{tabular}{rcrcr}
 \toprule
            & \multicolumn{2}{c}{Signal}                              & \multicolumn{2}{c}{Background} \\
-           & $\rho_{\eta,t}$ & \multicolumn{1}{c}{\SI{95}{\percent} CL} & $\rho_{\eta,t}$ & \multicolumn{1}{c}{\SI{95}{\percent} CL} \\
+           & $\rho_{\eta,t}$ & \multicolumn{1}{c}{\SI{95}{\percent} \acs*{CL}} & $\rho_{\eta,t}$ & \multicolumn{1}{c}{\SI{95}{\percent} \acs*{CL}} \\
 \midrule
 \OS      & $-0.0046$ & $(-0.0375, 0.0272)$ & $-0.0601$ & $(-0.1086, -0.0135)$\\
 \SSpi    & $0.0223$  & $(-0.0104, 0.0535)$ & $-0.002$ & $(-0.048, 0.044)$\\

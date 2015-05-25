@@ -1,0 +1,357 @@
+%!TEX root = ../main.tex
+
+\definecolor{Black}{HTML}{000000}
+\definecolor{Red}{HTML}{FC5716}
+
+\colorlet{ClrRndm}{Black}
+\colorlet{ClrTrigger}{Black}
+\colorlet{ClrTagger}{Black}
+\colorlet{ClrTaggerYear}{Black}
+\colorlet{ClrMagnetYear}{Black}
+\colorlet{ClrTrackYear}{Black}
+\colorlet{ClrFullFit}{Red}
+\colorlet{ClrUncert}{Red!40}
+
+\begin{tikzpicture}[
+  exp_label/.style={
+    anchor=west,
+    %minimum width=10em,
+    align=left,
+    font=\small\sffamily,
+    inner sep=0.5em,
+    outer sep=0,
+  },
+  exp_result/.style={
+    anchor=east,
+    align=right,
+    font=\footnotesize\sffamily,
+    inner sep=0.5em,
+    outer sep=0,
+    yshift=0.22em
+  }
+]
+\begin{axis}[
+  width=\textwidth,
+  height=65ex,
+  font=\small,
+  xmin=-0.661638482,xmax=0.338361518,ymin=0.3,ymax=23.7,
+  xlabel={$\CJpsiKS$},
+  xlabel style={
+        at={(ticklabel cs:1)},
+        anchor=north east,
+    },%
+  xtick={-0.4, -0.3, -0.2, -0.1, 0, 0.1, 0.2, 0.3},
+  % xticklabels={,,},
+  xticklabel style={%
+    major tick length=3pt
+  },
+  hide y axis
+]
+
+\begin{pgfonlayer}{background}
+% line at 0
+% \draw[ultra thin,color=Black!80]({rel axis cs:0,0}-|{axis cs:0,0}) -- ({rel axis cs:0,1}-|{axis cs:0,0});
+% line at -1
+% \draw[ultra thin,color=Black!80,dashed]({rel axis cs:0,0}-|{axis cs:-1,0}) -- ({rel axis cs:-1,1}-|{axis cs:-1,0});
+% line at +1
+% \draw[ultra thin,color=Black!80,dashed]({rel axis cs:0,0}-|{axis cs:+1,0}) -- ({rel axis cs:+1,1}-|{axis cs:+1,0});
+% filled area at average value
+\fill[color=ClrUncert] ({rel axis cs:0,0}-|{axis cs:-0.06526549,0}) rectangle ({rel axis cs:-0.001013543,1}-|{axis cs:-0.001013543,0});
+% line at average value
+\draw[ultra thin,color=ClrFullFit]({rel axis cs:0,0}-|{axis cs:-0.0331344551,0}) -- ({rel axis cs:-0.0331344551,1}-|{axis cs:-0.0331344551,0});
+
+% lines to separate the different subsamples categories
+\draw[ultra thin, dashed, color=Black!80] (axis cs: \pgfkeysvalueof{/pgfplots/xmin},18.5) -- (axis cs: \pgfkeysvalueof{/pgfplots/xmax},18.5);
+\draw[ultra thin, dashed, color=Black!80] (axis cs: \pgfkeysvalueof{/pgfplots/xmin},16.5) -- (axis cs: \pgfkeysvalueof{/pgfplots/xmax},16.5);
+\draw[ultra thin, dashed, color=Black!80] (axis cs: \pgfkeysvalueof{/pgfplots/xmin},13.5) -- (axis cs: \pgfkeysvalueof{/pgfplots/xmax},13.5);
+\draw[ultra thin, dashed, color=Black!80] (axis cs: \pgfkeysvalueof{/pgfplots/xmin},11.5) -- (axis cs: \pgfkeysvalueof{/pgfplots/xmax},11.5);
+\draw[ultra thin, dashed, color=Black!80] (axis cs: \pgfkeysvalueof{/pgfplots/xmin}, 9.5) -- (axis cs: \pgfkeysvalueof{/pgfplots/xmax}, 9.5);
+\draw[ultra thin, dashed, color=Black!80] (axis cs: \pgfkeysvalueof{/pgfplots/xmin}, 7.5) -- (axis cs: \pgfkeysvalueof{/pgfplots/xmax}, 7.5);
+\draw[ultra thin, dashed, color=Black!80] (axis cs: \pgfkeysvalueof{/pgfplots/xmin}, 1.5) -- (axis cs: \pgfkeysvalueof{/pgfplots/xmax}, 1.5);
+\end{pgfonlayer}
+
+%-------------------------------------------------------------------------------
+% Random
+\node[exp_label, color=ClrRndm] (Rndm1_lbl) at (axis cs: \pgfkeysvalueof{/pgfplots/xmin},23){Rndm1};
+\node[exp_label, color=ClrRndm] (Rndm2_lbl) at (axis cs: \pgfkeysvalueof{/pgfplots/xmin},22){Rndm2};
+\node[exp_label, color=ClrRndm] (Rndm3_lbl) at (axis cs: \pgfkeysvalueof{/pgfplots/xmin},21){Rndm3};
+\node[exp_label, color=ClrRndm] (Rndm4_lbl) at (axis cs: \pgfkeysvalueof{/pgfplots/xmin},20){Rndm4};
+\node[exp_label, color=ClrRndm] (Rndm5_lbl) at (axis cs: \pgfkeysvalueof{/pgfplots/xmin},19){Rndm5};
+
+
+% Full uncertainty
+\addplot+[only marks,
+    thin,
+    solid,
+    color = ClrRndm,
+    mark=*,
+    mark options={%
+      scale=0.7,
+      draw=ClrRndm
+    },
+    error bars/.cd,
+    x dir=both, x explicit,
+    y dir=both, y explicit,
+    error mark options={%
+      rotate=90,
+      mark size=3pt,
+      color=ClrRndm
+    }
+]
+table[
+        x error plus=ex+,
+        x error minus=ex-,
+]{
+  x             y  ex+            ex-  
+  0.02558441126 23 0.07021323593  0.07052451479
+ -0.02565350348 22 0.07032629746  0.07023613489
+ -0.06004908338 21 0.07253280748  0.07258763226
+  0.04845072951 20 0.07425395458  0.07438156378
+ -0.1428659543  19 0.07206119305  0.07164963211
+};
+
+%-------------------------------------------------------------------------------
+% Trigger
+\node[exp_label, color=ClrTrigger] (AU_lbl) at (axis cs: \pgfkeysvalueof{/pgfplots/xmin},18){Almost unbiased};
+\node[exp_label, color=ClrTrigger] (EB_lbl) at (axis cs: \pgfkeysvalueof{/pgfplots/xmin},17){Exclusively biased};
+
+
+% Full uncertainty
+\addplot+[only marks,
+    thin,
+    solid,
+    color = ClrTrigger,
+    mark=*,
+    mark options={%
+      scale=0.7,
+      draw=ClrTrigger
+    },
+    error bars/.cd,
+    x dir=both, x explicit,
+    y dir=both, y explicit,
+    error mark options={%
+      rotate=90,
+      mark size=3pt,
+      color=ClrTrigger
+    }
+]
+table[
+        x error plus=ex+,
+        x error minus=ex-,
+]{
+  x             y  ex+            ex-  
+ -0.05724869114 18 0.0348958308   0.03505910715
+  0.1135758275  17 0.08424427739  0.08455088326
+};
+
+%-------------------------------------------------------------------------------
+% Tagger
+\node[exp_label, color=ClrTagger] (OS_lbl) at (axis cs: \pgfkeysvalueof{/pgfplots/xmin},16){Excl. OS};
+\node[exp_label, color=ClrTagger] (SS_lbl) at (axis cs: \pgfkeysvalueof{/pgfplots/xmin},15){Excl. SS};
+\node[exp_label, color=ClrTagger] (OL_lbl) at (axis cs: \pgfkeysvalueof{/pgfplots/xmin},14){Excl. BS};
+
+
+% Full uncertainty
+\addplot+[only marks,
+    thin,
+    solid,
+    color = ClrTagger,
+    mark=*,
+    mark options={%
+      scale=0.7,
+      draw=ClrTagger
+    },
+    error bars/.cd,
+    x dir=both, x explicit,
+    y dir=both, y explicit,
+    error mark options={%
+      rotate=90,
+      mark size=3pt,
+      color=ClrTagger
+    }
+]
+table[
+        x error plus=ex+,
+        x error minus=ex-,
+]{
+  x              y  ex+            ex-  
+ -0.02182150859  16 0.03814187442  0.03797590581
+ -0.1537951611   15 0.09971756852  0.100219264
+ -0.003393348382 14 0.07641748829  0.07583334821
+};
+
+%-------------------------------------------------------------------------------
+% Year
+\node[exp_label, color=ClrTaggerYear] (11OS_lbl) at (axis cs: \pgfkeysvalueof{/pgfplots/xmin},13){2011};
+\node[exp_label, color=ClrTaggerYear] (11SS_lbl) at (axis cs: \pgfkeysvalueof{/pgfplots/xmin},12){2012};
+
+% Full uncertainty
+\addplot+[only marks,
+    thin,
+    solid,
+    color = ClrTaggerYear,
+    mark=*,
+    mark options={%
+      scale=0.7,
+      draw=ClrTaggerYear
+    },
+    error bars/.cd,
+    x dir=both, x explicit,
+    y dir=both, y explicit,
+    error mark options={%
+      rotate=90,
+      mark size=3pt,
+      color=ClrTaggerYear
+    }
+]
+table[
+        x error plus=ex+,
+        x error minus=ex-,
+]{
+  x             y  ex+            ex-  
+ -0.1377370909  13 0.0566527629   0.05670454656
+  0.01779585578 12 0.03918441137  0.03919889162
+};
+
+%-------------------------------------------------------------------------------
+% Track type
+\node[exp_label, color=ClrTrackYear] (11DD_lbl) at (axis cs: \pgfkeysvalueof{/pgfplots/xmin},11){downstream};
+\node[exp_label, color=ClrTrackYear] (11LL_lbl) at (axis cs: \pgfkeysvalueof{/pgfplots/xmin},10){long};
+
+
+% Full uncertainty
+\addplot+[only marks,
+    thin,
+    solid,
+    color = ClrTrackYear,
+    mark=*,
+    mark options={%
+      scale=0.7,
+      draw=ClrTrackYear
+    },
+    error bars/.cd,
+    x dir=both, x explicit,
+    y dir=both, y explicit,
+    error mark options={%
+      rotate=90,
+      mark size=3pt,
+      color=ClrTrackYear
+    }
+]
+table[
+        x error plus=ex+,
+        x error minus=ex-,
+]{
+  x              y ex+            ex-  
+  0.02305527233 11 0.03990761127  0.03995817734
+ -0.1348991135  10 0.05465942884  0.05464262893
+};
+
+%-------------------------------------------------------------------------------
+% Magnet polarity and Year
+\node[exp_label, color=ClrMagnetYear] (11UP_lbl) at (axis cs: \pgfkeysvalueof{/pgfplots/xmin},9){Up};
+\node[exp_label, color=ClrMagnetYear] (11DW_lbl) at (axis cs: \pgfkeysvalueof{/pgfplots/xmin},8){Down};
+
+
+% Full uncertainty
+\addplot+[only marks,
+    thin,
+    solid,
+    color = ClrMagnetYear,
+    mark=*,
+    mark options={%
+      scale=0.7,
+      draw=ClrMagnetYear
+    },
+    error bars/.cd,
+    x dir=both, x explicit,
+    y dir=both, y explicit,
+    error mark options={%
+      rotate=90,
+      mark size=3pt,
+      color=ClrMagnetYear
+    }
+]
+table[
+        x error plus=ex+,
+        x error minus=ex-,
+]{
+  x             y  ex+            ex-  
+ -0.02376582561 9  0.04758795926  0.04766667594
+ -0.03958096368 8  0.04345994293  0.04349885924
+};
+
+%-------------------------------------------------------------------------------
+% Year and Tagger
+\node[exp_label, color=ClrYearTagger] (11OS_lbl) at (axis cs: \pgfkeysvalueof{/pgfplots/xmin},7){11 Excl. OS};
+\node[exp_label, color=ClrYearTagger] (11SS_lbl) at (axis cs: \pgfkeysvalueof{/pgfplots/xmin},6){11 Excl. SS};
+\node[exp_label, color=ClrYearTagger] (11BS_lbl) at (axis cs: \pgfkeysvalueof{/pgfplots/xmin},5){11 Excl. BS};
+\node[exp_label, color=ClrYearTagger] (12OS_lbl) at (axis cs: \pgfkeysvalueof{/pgfplots/xmin},4){12 Excl. OS};
+\node[exp_label, color=ClrYearTagger] (12SS_lbl) at (axis cs: \pgfkeysvalueof{/pgfplots/xmin},3){12 Excl. SS};
+\node[exp_label, color=ClrYearTagger] (12BS_lbl) at (axis cs: \pgfkeysvalueof{/pgfplots/xmin},2){12 Excl. BS};
+
+% Full uncertainty
+\addplot+[only marks,
+    thin,
+    solid,
+    color = ClrMagnetYear,
+    mark=*,
+    mark options={%
+      scale=0.7,
+      draw=ClrMagnetYear
+    },
+    error bars/.cd,
+    x dir=both, x explicit,
+    y dir=both, y explicit,
+    error mark options={%
+      rotate=90,
+      mark size=3pt,
+      color=ClrMagnetYear
+    }
+]
+table[
+        x error plus=ex+,
+        x error minus=ex-,
+]{
+  x             y  ex+            ex-  
+ -0.1416388853  7  0.06636570598  0.06650951901
+ -0.2190836868  6  0.1798749598   0.1802323117
+ -0.06927973414 5  0.1361005602   0.1364507049
+  0.03692319471 4  0.04628104909  0.04632236703
+ -0.1231213771  3  0.1193367706   0.1196054976
+  0.02946883833 2 0.09129763057   0.09168226591
+};
+
+%-------------------------------------------------------------------------------
+% Full Fit
+\node[exp_label, color=ClrFullFit] (Average_lbl) at (axis cs: \pgfkeysvalueof{/pgfplots/xmin},1)  
+{Nominal fit};
+
+% Full uncertainty
+\addplot+[only marks,
+    thin,
+    solid, 
+    color = ClrFullFit,
+    mark=none,
+    mark options={%
+      scale=0.7,
+      draw=ClrFullFit
+    },
+    error bars/.cd,
+    x dir=both, x explicit,
+    y dir=both, y explicit,
+    error mark options={%
+      rotate=90,
+      mark size=3pt,
+      color=ClrFullFit
+    }
+]
+table[
+        x error plus=ex+,
+        x error minus=ex-,
+]{
+  x            y  ex+            ex-
+ -0.0331344551 1  0.03212091232  0.03213103531
+};
+\end{axis}
+\end{tikzpicture}

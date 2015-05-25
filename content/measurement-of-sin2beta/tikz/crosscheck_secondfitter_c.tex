@@ -1,0 +1,142 @@
+%!TEX root = ../main.tex
+
+\definecolor{fcdGrayA}{HTML}{111111}
+\definecolor{fcdGrayB}{HTML}{222222}
+\definecolor{fcdGrayC}{HTML}{333333}
+\definecolor{fcdGrayD}{HTML}{444444}
+\definecolor{fcdGrayE}{HTML}{555555}
+\definecolor{fcdGrayF}{HTML}{666666}
+\definecolor{fcdGrayG}{HTML}{777777}
+\definecolor{fcdGrayH}{HTML}{888888}
+\definecolor{fcdGrayI}{HTML}{999999}
+\definecolor{fcdGrayJ}{HTML}{AAAAAA}
+\definecolor{fcdGrayK}{HTML}{BBBBBB}
+\definecolor{fcdGrayL}{HTML}{CCCCCC}
+\definecolor{fcdGrayM}{HTML}{DDDDDD}
+\definecolor{fcdGrayN}{HTML}{EEEEEE}
+
+\colorlet{ClrFitterA}{blue}
+\colorlet{ClrFitterB}{red}
+
+\begin{tikzpicture}[
+  exp_label/.style={
+    anchor=west,
+    %minimum width=10em,
+    align=left,
+    font=\small\sffamily,
+    inner sep=0.5em,
+    outer sep=0,
+  },
+  exp_result/.style={
+    anchor=east,
+    align=right,
+    font=\footnotesize\sffamily,
+    inner sep=0.5em,
+    outer sep=0,
+    yshift=0.22em
+  }
+]
+\begin{axis}[
+  width=\textwidth,
+  height=22ex,
+  font=\small,
+  xmin=-0.137,xmax=0.043,ymin=0.3,ymax=2.7,
+  xlabel={${\CJpsiKS}$},
+  xlabel style={
+        at={(ticklabel cs:1)},
+        anchor=north east,
+    },%
+  xtick={-0.09, -0.07, -0.05, -0.03, -0.01, 0.01},
+  xticklabel style={%
+    major tick length=3pt,
+    /pgf/number format/fixed
+  },
+  hide y axis
+]
+
+\begin{pgfonlayer}{background}
+  \draw[ultra thin,color=fcdGrayM,dashed]({rel axis cs:0,0}-|{axis cs:-0.09,0}) -- ({rel axis cs:-0.09,1}-|{axis cs:-0.09,0});
+  \draw[ultra thin,color=fcdGrayM,dashed]({rel axis cs:0,0}-|{axis cs:-0.08,0}) -- ({rel axis cs:-0.08,1}-|{axis cs:-0.08,0});
+  \draw[ultra thin,color=fcdGrayM,dashed]({rel axis cs:0,0}-|{axis cs:-0.07,0}) -- ({rel axis cs:-0.07,1}-|{axis cs:-0.07,0});
+  \draw[ultra thin,color=fcdGrayM,dashed]({rel axis cs:0,0}-|{axis cs:-0.06,0}) -- ({rel axis cs:-0.06,1}-|{axis cs:-0.06,0});
+  \draw[ultra thin,color=fcdGrayM,dashed]({rel axis cs:0,0}-|{axis cs:-0.05,0}) -- ({rel axis cs:-0.05,1}-|{axis cs:-0.05,0});
+  \draw[ultra thin,color=fcdGrayM,dashed]({rel axis cs:0,0}-|{axis cs:-0.04,0}) -- ({rel axis cs:-0.04,1}-|{axis cs:-0.04,0});
+  \draw[ultra thin,color=fcdGrayM,dashed]({rel axis cs:0,0}-|{axis cs:-0.03,0}) -- ({rel axis cs:-0.03,1}-|{axis cs:-0.03,0});
+  \draw[ultra thin,color=fcdGrayM,dashed]({rel axis cs:0,0}-|{axis cs:-0.02,0}) -- ({rel axis cs:-0.02,1}-|{axis cs:-0.02,0});
+  \draw[ultra thin,color=fcdGrayM,dashed]({rel axis cs:0,0}-|{axis cs:-0.01,0}) -- ({rel axis cs:-0.01,1}-|{axis cs:-0.01,0});
+  \draw[ultra thin,color=fcdGrayM,dashed]({rel axis cs:0,0}-|{axis cs:-0.00,0}) -- ({rel axis cs:-0.00,1}-|{axis cs:-0.00,0});
+  \draw[ultra thin,color=fcdGrayM,dashed]({rel axis cs:0,0}-|{axis cs:0.01,0}) -- ({rel axis cs:0.01,1}-|{axis cs:0.01,0});
+  
+  % per-event reso
+  \fill[color=fcdGrayM] ({rel axis cs:0,0}-|{axis cs:-0.0255884399411,0}) rectangle ({rel axis cs:-0.0396240151589,1}-|{axis cs:-0.0396240151589,0});
+  \fill[color=fcdGrayK] ({rel axis cs:0,0}-|{axis cs:-0.0290973337456,0}) rectangle ({rel axis cs:-0.0361151213544,1}-|{axis cs:-0.0361151213544,0});
+  \draw[ultra thin,color=fcdGrayI]({rel axis cs:0,0}-|{axis cs:-0.03260622755,0}) -- ({rel axis cs:-0.03260622755,1}-|{axis cs:-0.03260622755,0});
+\end{pgfonlayer}
+
+
+%-------------------------------------------------------------------------------
+% PER_EVENT RESOLUTION
+\node[exp_label, color=ClrFitterA] (FitterA_lbl) at (axis cs: \pgfkeysvalueof{/pgfplots/xmin},2)  
+{Fitter A};
+\node[exp_result,color=ClrFitterA] (FitterA_rsl) at (axis cs: \pgfkeysvalueof{/pgfplots/xmax},2) 
+{${-0.032 \pm 0.032}$};
+
+\addplot+[only marks,
+    thin,
+    solid,
+    color = ClrFitterA,
+    mark=none,
+    mark options={%
+      scale=0.7,
+      draw=ClrFitterA
+    },
+    error bars/.cd,
+    x dir=both, x explicit,
+    y dir=both, y explicit,
+    error mark options={%
+      rotate=90,
+      mark size=5pt,
+      color=ClrFitterA
+    }
+]
+table[
+        x error plus=ex+,
+        x error minus=ex-,
+]{
+  x          y  ex+         ex-  
+  -0.032078  2  0.032122   0.032312
+};
+
+\node[exp_label, color=ClrFitterB] (FitterB_lbl) at (axis cs: \pgfkeysvalueof{/pgfplots/xmin},1)  
+{Fitter B};
+\node[exp_result,color=ClrFitterB] (FitterB_rsl) at (axis cs: \pgfkeysvalueof{/pgfplots/xmax},1) 
+{${-0.033 \pm 0.032}$};
+
+\addplot+[only marks,
+    thin,
+    solid,
+    color = ClrFitterB,
+    mark=none,
+    mark options={%
+      scale=0.7,
+      draw=ClrFitterB
+    },
+    error bars/.cd,
+    x dir=both, x explicit,
+    y dir=both, y explicit,
+    error mark options={%
+      rotate=90,
+      mark size=5pt,
+      color=ClrFitterB
+    }
+]
+table[
+        x error plus=ex+,
+        x error minus=ex-,
+]{
+  x             y  ex+             ex-  
+  -0.0331344551 1  0.03212091232   0.03213103531
+};
+
+\end{axis}
+\end{tikzpicture}

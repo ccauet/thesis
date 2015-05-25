@@ -356,6 +356,7 @@ the shape of the lower decay time acceptance (\cref{sec:measurement_of_sin2beta:
 \end{tabular}
 \end{table}
 
+\clearpage
 % ------------------------------------------------------------------------------
 \subsection{Fit results}
 \label{sec:measurement_of_sin2beta:cpv_measurement:results}
@@ -537,6 +538,52 @@ projections of the signal (dashed blue) and the background (dotted green) are
 shown.}
 \label{fig:measurement_of_sin2beta:cpv_measurement:results:plots:dimensions}
 \end{figure}
+%
+\begin{figure}
+\centering
+\begin{tikzpicture}[scale=0.38]
+\input{private/content/measurement-of-sin2beta/tikz/asymmetry}
+\end{tikzpicture}
+\caption{
+Time-dependent signal-yield asymmetry $(N_{\Bdbar} - N_{\Bd})/(N_{\Bdbar} +
+N_{\Bd})$. Here, $N_{\Bd} (N_{\Bdbar})$ is the number of $\BdToJpsiKS$ decays with
+a $\Bd$ ($\Bdbar$) flavor tag. The data points are obtained with the sPlot
+technique~\cite{Pivk:2004ty}, assigning signal weights to the events based on a
+fit to the reconstructed mass distribution. The solid curve is the projection of
+the signal PDF. }
+\label{fig:measurement_of_sin2beta:cpv_measurement:results:plots:asymmetry}
+\end{figure}
+%
+\begin{figure}
+\centering
+\includegraphics[width=0.48\textwidth]{private/content/measurement-of-sin2beta/figs/LLScan_1D_S.pdf}
+\includegraphics[width=0.48\textwidth]{private/content/measurement-of-sin2beta/figs/LLScan_1D_C.pdf}
+\caption{One dimensional likelihood profile scans for $\SJpsiKS$ and $\CJpsiKS$.}
+\label{fig:measurement_of_sin2beta:cpv_measurement:results:plots:1d_ll_scan}
+\end{figure}
+%
+\begin{figure}
+\centering
+\includegraphics[width=0.95\textwidth]{private/content/measurement-of-sin2beta/figs/LLScan_2D.pdf}
+\caption{Two dimensional likelihood profile scan for $\SJpsiKS$ and $\CJpsiKS$.
+The contour lines show the $1\sigma$-$4\sigma$ confidence levels.}
+\label{fig:measurement_of_sin2beta:cpv_measurement:results:plots:2d_ll_scan}
+\end{figure}
+%
+\begin{figure}
+\centering
+\resizebox {1\textwidth} {!}{
+  \input{private/content/measurement-of-sin2beta/tikz/correlation_matrix} 
+}
+\caption{Visualised correlation matrix of the fit parameters in
+the nominal fit. Positive correlations are represented by the red palette on the
+$z$ axis, while negative correlations are represented by the blue palette of the
+$z$ axis. The \CP observables $\SJpsiKS$ and $\CJpsiKS$ as well as the
+lifetime $\tau$ are shown together with the most relevant parameters from the
+flavour tagging calibration and production asymmetries.}
+\label{fig:measurement_of_sin2beta:cpv_measurement:results:plots:correlation_matrix}
+\end{figure}
+
 
 % ------------------------------------------------------------------------------
 \subsection{Kaon regeneration}

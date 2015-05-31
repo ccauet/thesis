@@ -60,9 +60,9 @@ excellent agreement, as is shown in
 \caption{
 Fit results for \SJpsiKS and \CJpsiKS for both fitter implementations.
 In blue (red) the result and the statistical error for Fitter A (B). The
-gray solid line shows the average of both fit results, while the filled gray
+grey solid line shows the average of both fit results, while the filled grey
 area describes the uncertainty on the difference $\sigma_\Delta$ of the two
-results (darker gray $1\sigma_\Delta$, light gray $2\sigma_\Delta$).
+results (darker grey $1\sigma_\Delta$, light grey $2\sigma_\Delta$).
 \textit{Please note: The shown numbers are rounded following the PDG rules. The
 plot itself is produced using the full precision values.} }
 \label{fig:measurement_of_sin2beta:systematics:cross_checks:second_fitter}
@@ -112,10 +112,10 @@ the results of the \sPlot fits and the nominal fit are well compatible.
 \caption{
 Fit results for \SJpsiKS and \CJpsiKS from the \sPlot fit as well as from the
 nominal fit as a reference. In blue (red) the result and the statistical error
-for the \sPlot fit (nominal fit) using a per-event resolution. The gray solid
-line shows the average of both lower fit results, while the filled gray area
+for the \sPlot fit (nominal fit) using a per-event resolution. The grey solid
+line shows the average of both lower fit results, while the filled grey area
 describes the uncertainty on the difference $\sigma_\Delta$ of the two lower
-results (darker gray $1\sigma_\Delta$, light gray $2\sigma_\Delta$).
+results (darker grey $1\sigma_\Delta$, light grey $2\sigma_\Delta$).
 \textit{Please note: The shown numbers are rounded following the PDG rules. The
 plot itself is produced using the full precision values.}}
 \label{fig:measurement_of_sin2beta:systematics:cross_checks:splot_fit:s_and_c}
@@ -168,46 +168,98 @@ subsamples.}
 \missing{Introduction into systematics section}
 
 All plot and pull distributions are collected in
-\cref{sec:app:measurement_of_sin2beta:systematics}
+\cref{sec:app:measurement_of_sin2beta:systematics}. If not stated otherwise the
+\CP parameter values are set to $\SJpsiKS = \num{0.7}$ and $\CJpsiKS =
+\num{0.03}$ in the \ToyMC sample generation.
 
 %...............................................................................
 \subsubsection{Fit model}
 \label{sec:measurement_of_sin2beta:systematics:systematics:fit_model}
 
-(Frank)
-Background tagging asymmetry:
-\cf \cref{sec:measurement_of_sin2beta:physic_backgrounds:tagging_asymmetries}
-non-vanishing tagging asymmetries in the background candidates sample
-\ToyMC to study effect of neglecting in fit
-1000 samples generated with time-dependent asymmetries given in Fig. XX
-new values for each toy sampled from histogram with bin errors as gaussian width
-S = 0.7, C = 0.03
-avg decay time reso model
-significant shift
+\paragraph{A background tagging asymmetry} \ie a non-vanishing tagging
+asymmetries in the background candidates sample is found and described in
+\cref{sec:measurement_of_sin2beta:physic_backgrounds:tagging_asymmetries}. A
+\ToyMC study with $\num{1000}$ iterations is performed to estimate the potential
+influence on the measurement of $\SJpsiKS$ and $\CJpsiKS$. For each repetition a
+sample is generated using the time-dependent asymmetries given in
+\cref{missing}\addref{to background tagging asymmetry histograms} and sampling a
+central value from the bin contents and errors. As the decay time resolution
+model is assumed to not affect the outcome, an average decay time resolution
+model is incorporated. A significant bias is observed in both \CP parameters
+(see \cref{fig:app:measurement_of_sin2beta:systematics:systematics:fit_model:bkg_tagging_asymmetry}), 
+thus the central value of the residual distributions is used as an estimate of
+the systematic uncertainties
+%
+\begin{equation}
+  \delta_{\SJpsiKS} = \num{0.0179}\eqthinspace\text{and}\eqthinspace\delta_{\CJpsiKS} = \num{0.0015}\eqpd
+\end{equation}
 
-(Frank)
-Mass and decay time correlation:
-correlation between t-t\_true and m-m\_true in LL, no in DD
-generation with correlation, fit w/o
-250 toys
-no systematic shift
+\paragraph{The influence of a correlation between the mass and the decay time}
+is investigated using a \ToyMC study. The nominal \PDF model assumes no
+correlation, therefore the mass and decay time dimensions are directly
+multiplied. Using the signal \MC sample the correlation between the mass and the
+decay time resolutions, defined as $m-m_\text{true}$ and
+$\obsTime-\obsTime_\text{true}$, is studied and depicted in
+\cref{fit:measurement_of_sin2beta:systematics:systematics:fit_model:mass_time_correlations} 
+as binned 2-dimensional histograms as well as profile plots. While the
+correlation is insignificant for \catDD candidates, a small positive correlation
+is found for \catLL candidates.
+%
+\begin{figure}[h]
+  \includegraphics[width=0.49\textwidth]{private/content/measurement-of-sin2beta/figs/systematics_fitmodel_mtcorr_dd.pdf}\hfill
+  \includegraphics[width=0.49\textwidth]{private/content/measurement-of-sin2beta/figs/systematics_fitmodel_mtcorr_ll.pdf}
+  \includegraphics[width=0.49\textwidth]{private/content/measurement-of-sin2beta/figs/systematics_fitmodel_mtcorr_profile_dd.pdf}\hfill
+  \includegraphics[width=0.49\textwidth]{private/content/measurement-of-sin2beta/figs/systematics_fitmodel_mtcorr_profile_ll.pdf}
+\caption{Visualisation of the correlation between the mass and the decay time
+resolution defined $m-m_\text{true}$ and $\obsTime-\obsTime_\text{true}$. On top
+the binned 2-dimensional distribution is shown, while on the bottom profile
+plots show the average of the decay time resolution as a function of the mass
+resolution. Shown are the (left) \catDD and the (right) \catLL subsamples.}
+\label{fit:measurement_of_sin2beta:systematics:systematics:fit_model:mass_time_correlations}
+\end{figure}
+%
+In a study with $\num{250}$ iterations data are generated assuming the given
+correlation for \catLL candidates while fitted with the nominal model. The pull
+and residual plots shown in 
+\cref{fig:app:measurement_of_sin2beta:systematics:systematics:fit_model:mass_time_correlations} 
+show no significant bias on the \CP parameters.
 
 %...............................................................................
 \subsubsection{Flavour Tagging}
 \label{sec:measurement_of_sin2beta:systematics:systematics:tagging}
 
-(Frank)
-effect of systematic uncertainties on ft calibration parameters
-change in the effective dilution: all 8 parameters shifted 1sigma, all combinations,
-largest shift then in toy study
-generate with shift, fit w/o
-750 toys
-S = 0.7, C = 0 in gen
-FT parameters drawn from gaussian distr including correlations
-largest eff dilution when all p0 up and all p1 down, smallest if vice versa
-dilution * CP coeff ==> estimate 1.5\% change
-now 1000 toys with this setting: S = 0.7, C = 0.03
-significant shifts
+The statistical uncertainties on the flavour tagging calibration parameters
+($\p{0,1}{\text{\acs*{OS},\acs*{SSpi}}}$ and
+$\deltap{0,1}{\text{\acs*{OS},\acs*{SSpi}}}$) are taken into account using
+Gaussian constraints (\cf
+\cref{sec:measurement_of_sin2beta:cpv_measurement:constrained_parameters}). The
+influence of the systematic uncertainties are investigated by a \ToyMC study.
+
+First the eight parameters are varied up and down by one systematic uncertainty
+and the effect on the effective dilution is studied. This reduces to $16$
+combinations if only varying $p{i}{j}$ and $deltap{i}{j}$ in the same direction.
+For each combination $\num{750}$ generation/fit iterations are performed. The
+largest deviation is found when all $\p{0}{j}$ parameters are varied up and all
+$\p{1}{j}$ parameters are varied down. The smallest deviations are observed if
+the parameters are moved vice versa. As the dilution and the \CP parameters are
+part of a product in the \PDF the relative change in dilution of
+$\SI{1.5}{\percent}$ is already an estimate of the systematic uncertainty.
+
+A \ToyMC study with $\num{1000}$ iterations is performed using values for the
+\CP parameters drawn from a Gaussian distribution where the central value is
+shifted according to the result of the preparatory study and the statistical
+uncertainty is used as width while including all correlations of the calibration
+parameters 
+(\cf \cref{eq:flavour_tagging:calibration:os:parameters,tab:flavour_tagging:calibration:ss:correlations}).
+The nominal model is used in the subsequent fit. As depicted in 
+\cref{fig:app:measurement_of_sin2beta:systematics:systematics:tagging} a
+significant bias is observed. The offsets of the residual distributions
+%
+\begin{equation}
+  \delta_{\SJpsiKS} = \num{0.0062}\eqthinspace\text{and}\eqthinspace\delta_{\CJpsiKS} = \num{0.0024}
+\end{equation}
+%
+are used as an estimate of the systematic uncertainties.
 
 %...............................................................................
 \subsubsection{Decay time resolution}
@@ -324,3 +376,37 @@ shows the pull and residual distributions for $\SJpsiKS$ and $\CJpsiKS$.
 % ------------------------------------------------------------------------------
 \subsection{Summary of systematic effects}
 \label{sec:measurement_of_sin2beta:systematics:summary}
+
+The systematic uncertainties are summarised in
+\cref{tab:measurement_of_sin2beta:systematics:summary}. The overall systematic
+uncertainty is calculated by summing the single uncertainties in quadrature. The
+relative systematic uncertainties compared to the central values of $\SJpsiKS$
+and $\CJpsiKS$ are given in brackets. Here, $\SJpsiKS = \num{0.729}$ and
+$\CJpsiKS = \num{-0.033}$ are set as reference values.
+%
+\begin{table}[h]
+  \caption{Systematic uncertainties $\delta_{\SJpsiKS}$ and $\delta_{\CJpsiKS}$
+  on $\SJpsiKS$ and $\CJpsiKS$. Entries marked with a dash represent studies
+  where no significant effect is observed.}
+  \label{tab:measurement_of_sin2beta:systematics:summary}
+  \begin{tabular}{lrlrl}
+    \toprule
+    Origin & \multicolumn{2}{c}{$\delta_{\SJpsiKS}$} & \multicolumn{2}{c}{$\delta_{\CJpsiKS}$}    \\
+    \midrule
+    {Background tagging asymmetry}           &  $\tablenum[table-format = 1.4]{0.0179}$ & ($\tablenum[table-format = 1.1]{2.5}\si{\percent}$) &  $\tablenum[table-format = 1.4]{0.0015}$ & ($\tablenum[table-format = 2.1]{4.5}\si{\percent}$) \\
+    {Tagging calibration}                    &  $\tablenum[table-format = 1.4]{0.0062}$ & ($\tablenum[table-format = 1.1]{0.9}\si{\percent}$) &  $\tablenum[table-format = 1.4]{0.0024}$ & ($\tablenum[table-format = 2.1]{7.2}\si{\percent}$) \\
+    {$\Delta \Gamma$}                                  &  $\tablenum[table-format = 1.4]{0.0047}$ & ($\tablenum[table-format = 1.1]{0.6}\si{\percent}$) &  \multicolumn{2}{c}{---}               \\
+    {Fraction of wrong PV component}         &  $\tablenum[table-format = 1.4]{0.0021}$ & ($\tablenum[table-format = 1.1]{0.3}\si{\percent}$) &  $\tablenum[table-format = 1.4]{0.0011}$ & ($\tablenum[table-format = 2.1]{3.3}\si{\percent}$) \\
+    {$z$-scale}                              &  $\tablenum[table-format = 1.4]{0.0012}$ & ($\tablenum[table-format = 1.1]{0.2}\si{\percent}$) &  $\tablenum[table-format = 1.4]{0.0023}$ & ($\tablenum[table-format = 2.1]{7.0}\si{\percent}$) \\
+    {$\mathrm{\Delta} m$}                    &  \multicolumn{2}{c}{---}               &  $\tablenum[table-format = 1.4]{0.0034}$ & ($\tablenum[table-format = 2.1]{10.3}\si{\percent}$)\\
+    {Upper decay time acceptance}            &  \multicolumn{2}{c}{---}               &  $\tablenum[table-format = 1.4]{0.0012}$ & ($\tablenum[table-format = 2.1]{3.6}\si{\percent}$) \\
+    {Correlation between mass and decay time}&  \multicolumn{2}{c}{---}               &  \multicolumn{2}{c}{---}               \\
+    {Decay time resolution calibration}      &  \multicolumn{2}{c}{---}               &  \multicolumn{2}{c}{---}               \\
+    {Decay time resolution offset}           &  \multicolumn{2}{c}{---}               &  \multicolumn{2}{c}{---}               \\
+    {Low decay time acceptance}              &  \multicolumn{2}{c}{---}               &  \multicolumn{2}{c}{---}               \\
+    {Production asymmetry}                   &  \multicolumn{2}{c}{---}               &  \multicolumn{2}{c}{---}               \\
+    \midrule
+    Sum                                            &  $0.020$        & ($\tablenum[table-format = 1.1]{2.7}\si{\percent}$) & $0.005$          & ($\tablenum[table-format = 2.1]{15.2}\si{\percent}$)\\
+    \bottomrule
+  \end{tabular}
+\end{table}

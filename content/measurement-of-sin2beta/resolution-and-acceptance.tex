@@ -9,7 +9,49 @@ acceptance effects are studied.
 % ------------------------------------------------------------------------------
 \subsection{Resolution}
 \label{sec:measurement_of_sin2beta:resolution_and_acceptance:resolution}
-\missing{Decay time resolution}
+
+In this section the applicability of the \dtfpv output variable $\obsTimeError$ as
+the per-event decay time error resolution estimate is checked and a model to
+calibrate the estimate is developed. The model is determined in a two step
+procedure. At first different calibration models are tested using a binned fit
+on the decay time resolution determined on data as a function of the resolution
+estimate $\obsTimeError$. Then the resolution model is used in an unbinned
+likelihood fit to determine the calibration parameter values.
+
+The study is performed on $\BdToJpsiKS$ candidates passing the pre-scaled
+stripping line. The nominal selection is applied, except the decay time cut at
+$\obsTime < \SI{0.3}{\pico\second}$, all remaining candidates are considered
+irrespective of their tagging information. Without cuts restricting the
+reconstructed decay time of the \Bd candidates, the sample consist mainly of
+combinatorial background candidates promptly produced at the \PV. Studies on
+simulated data have shown\addref{Reso study on MC}, that the decay time
+resolution of prompt candidates is compatible to the resolution of signal
+candidates. Thus, the resolution found for the prompt candidates can be used. A
+fit to the $\Jpsi$ candidate's reconstructed mass is applied to get signal
+\sweights that are subsequently used in a weighted likelihood fit to the
+reconstructed \Bd candidates decay time distribution.
+
+The $\Jpsi$ mass distribution is described by an Ipatia \PDF (\cf
+\cref{sec:measurement_of_sin2beta:likelihood_fit:pdfs:ipatia}) for the signal
+component and an exponential \PDF for the background candidates. The fit is
+performed on the reconstructed invariant dimuon mass $m_{\mumu}$ in a range from
+$\SI{3040}{\MeVcc}$ to $\SI{3155}{\MeVcc}$. The fitted distribution and the \PDF
+projections split into the \catDD and \catLL categories are shown in 
+\cref{fig:measurement_of_sin2beta:resolution_and_acceptance:resolution:jpsi_mass}.
+%
+\begin{figure}[h]
+\includegraphics[width=0.49\textwidth]{private/content/measurement-of-sin2beta/figs/resolution_mass_jpsi_dd.pdf}
+\includegraphics[width=0.49\textwidth]{private/content/measurement-of-sin2beta/figs/resolution_mass_jpsi_ll.pdf}
+\label{fig:measurement_of_sin2beta:resolution_and_acceptance:resolution:jpsi_mass}
+\caption{Invariant $\Jpsi$ candidate mass distribution in the (left) \catDD and
+(right) \catLL subsample. Data are shown in black, the projection of the total
+\acs{PDF} as solid black line, the signal component described by an Ipatia
+\acs{PDF} as dashed blue line, and the exponential background component as
+dotted green line.}
+\end{figure}
+%
+
+
 
 % ------------------------------------------------------------------------------
 \subsection{Decay time acceptance}
@@ -32,8 +74,7 @@ inefficiencies mainly caused by the \VELO track reconstruction algorithms (\cf
 The biased trigger lines (\cf
 \cref{sec:measurement_of_sin2beta:data_preparation:trigger}) and the stripping
 cut on the reconstructed decay time of the $\Bd$ candidates result in a non-flat
-acceptance. A data driven method is used to determine and to describe this
-effect.
+acceptance.
 
 In order to correctly describe these effects, the data sample is split into two
 disjoint categories of candidates that show a substantially different behaviour

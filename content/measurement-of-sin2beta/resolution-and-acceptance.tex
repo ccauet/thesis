@@ -92,7 +92,7 @@ is developed. An unbinned maximum likelihood fit to the \Bd decay time is
 performed on the same $\Jpsi$ \sweighted dataset as described before using the
 resolution model
 %
-\begin{equation}
+\begin{equation}\label{eq:measurement_of_sin2beta:resolution_and_acceptance:resolution}
 \begin{split}
   \Resolution{}{}\left(\obsTime;\obsTimeError\right)
   &= \sum_{i=1}^{2}{g_i\,\cdot\,\frac{1}{\sqrt{2\pi}(c_i + b_i \cdot \obsTimeError)}\exp\left(-\frac{(\obsTime - \mu_t)^2}{2(c_i + b_i \cdot \obsTimeError)^2}\right)}\\
@@ -105,9 +105,9 @@ component models the distribution of candidates associated to the wrong \PV.
 Different calibration parameters $c_i$ and $b_i$ are chosen for the width of the
 narrow ($i=1$) and the wide ($i=2$) Gaussian \PDF. The fractions $g_i$ add up to
 unity together with the fraction $f_\text{\acs*{PV}}$ of wrongly associated
-candidates. The shift $\mu_{\obsTime}$ of all three Gaussian \acs{PDF} is shared
-between them. Finally, $\sigma_{\text{\acs*{PV}}}$ describes the width of the
-wrong \PV component. 
+candidates. The offset $\mu_{\obsTime}$ of the Gaussian central value is shared
+between all three Gaussian \acp{PDF}. Finally, $\sigma_{\text{\acs*{PV}}}$
+describes the width of the wrong \PV component.
 \Cref{tab:measurement_of_sin2beta:resolution_and_acceptance:resolution:calibration:results} 
 lists the results that are used from now on in the decay time resolution model.
 How the choice of the calibration model influences the measurement is tested

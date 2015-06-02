@@ -265,26 +265,65 @@ are used as an estimate of the systematic uncertainties.
 \subsubsection{Decay time resolution}
 \label{sec:measurement_of_sin2beta:systematics:systematics:resolution}
 
-\missing{Systematics: Decay time resolution}
-(Frank)
-Decay time resolution calibration:
-generate with quadratic function, fit with linear as in nominal fit.
-no systematic shift
+\paragraph{In the calibration of the decay time estimate} a linear function is
+used. In a \ToyMC study the influence of a different parametrisation of the
+calibration model is investigated. Based on the results given in
+\cref{sec:measurement_of_sin2beta:resolution_and_acceptance:resolution} a
+parabolic function with non-zero (fixed to zero) offset is used in the \catDD
+(\catLL) sub sample to generate data, that is then fitted using the nominal
+calibration model. The parameter values used in the generation are given in
+\cref{tab:measurement_of_sin2beta:systematics:systematics:resolution:parabolic_parameters}.
+In a study with $\num{250}$ iterations no significant bias is found as can been
+seen in the pull and residual distributions provided in
+\cref{fig:app:measurement_of_sin2beta:systematics:systematics:resolution:calibration}.
+%
+\begin{table}[h]
+\centering
+\caption{Fit parameters of the parabolic decay time resolution calibration
+function for \catDD and \catLL candidates.}
+\label{tab:measurement_of_sin2beta:systematics:systematics:resolution:parabolic_parameters}
+  \begin{tabular}{llr@{$\,\pm\,$}lr@{$\,\pm\,$}l}
+    \toprule
+    \multicolumn{2}{c}{Parameter}               &   \multicolumn{2}{c}{\catDD}      &   \multicolumn{2}{c}{\catLL}\\
+    \midrule
+    $a_{1}$         &   (\si{\per\pico\second}) &   $-1.7$        &   $1.3$         &   $-4.3$        &   $0.7$         \\
+    $b_{1}$         &                           &   $1.04$        &   $0.014$       &   $1.33$        &   $0.07$        \\
+    $c_{1}$         &   (\si{\pico\second})     &   $0.0044$      &   $0.0027$      &   \multicolumn{2}{c}{---} \\
+    $a_{2}$         &   (\si{\per\pico\second}) &   $-1.5$        &   $3.4$         &   $-2.5$        &   $1.0$         \\
+    $b_{2}$         &                           &   $1.5$         &   $0.4$         &   $2.15$        &   $0.27$        \\
+    $c_{2}$         &   (\si{\pico\second})     &   $0.016$       &   $0.008$       &   \multicolumn{2}{c}{---} \\
+    \bottomrule
+  \end{tabular}
+\end{table}
 
-(Frank)
-Decay time resolution model offset:
-technical limitations, offset has to be set to zero cause of cubic splines although it differs from zero, see table
-250 toys generating with, fitting w/o non-zero offset
-no systematic shift
+\paragraph{An offset of the central values} of the three Gaussian \acp{PDF} is
+used in the parametrisation of the decay time resolution model (\cf
+\cref{eq:measurement_of_sin2beta:resolution_and_acceptance:resolution}). Due to
+technical limitations in the implementation of the cubic spline \acp{PDF} the
+value of this offset $\mu_{\obsTime}$ has to be set to zero in the nominal fit
+although non-zero values are found in the determination of the resolution model.
+The influence of ignoring the non-zero values is tested in a \ToyMC study with
+$\num{250}$ iterations, where the data are generated using the offset's value
+originally determined, while fitting with the nominal fit model. No significant
+bias is observed. Plots of the pull and residual distributions are shown in
+\cref{fig:app:measurement_of_sin2beta:systematics:systematics:resolution:offset}.
 
-(Frank)
-PV component fraction:
-component in resolution model to model wrong PV associated candidates
-assumed to be independent from decay time reso estimate
-fraction of wrong PV associations larger with larger resolution
-effect parametrised by quadratic function with offset fixed to zero
-1000 toys using quadratic model, fit w/o correction
-significant shift
+\paragraph{The fraction of wrongly associated \acp{PV}} is assumed to be
+independent of the decay time resolution estimate $\obsTimeError$. This ignores
+an increase in the fraction $f_\text{\acs*{PV}}$ as a function of the decay time
+error. The influence of this simplification is tested in a \ToyMC study with
+$\num{1000}$ iterations, where the fraction varies following a parabolic
+function with offset fixed to zero in the generation, while $f_\text{\acs*{PV}}$
+is set as in the nominal model in the subsequent fit. As depicted in
+\cref{fig:app:measurement_of_sin2beta:systematics:systematics:resolution:wrong_pv} 
+a significant bias is present for the parameter $\SJpsiKS$ as well as for
+$\CJpsiKS$. Thus, systematic uncertainties of
+%
+\begin{equation}
+  \delta_{\SJpsiKS} = \num{0.0021}\eqthinspace\text{and}\eqthinspace\delta_{\CJpsiKS} = \num{0.0011}
+\end{equation}
+%
+are assigned.
 
 %...............................................................................
 \subsubsection{Decay time acceptance}

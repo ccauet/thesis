@@ -52,16 +52,93 @@ dotted green line.}
 %
 Using a simultaneous fit in $\num{20}$ equally filled bins of the decay time
 error prediction $\obsTimeError$ the width of the prompt peak in the decay time
-distribution is fitted. The fit model consist of two Gaussian \acs{PDF} to model
-the prompt peak which share a common mean parameter and an additional decay \PDF
-as parametrisation of the non-prompt component of true \BdToJpsiKS candidates.
-The decay \PDF is convoluted with the same double-Gaussian \PDF used to model
-the prompt peak. The two widths---one narrow and one wider---are then both
-employed in the calibration.
+distribution is fitted. The fit model consist of two Gaussian \acs{PDF} sharing
+a common mean parameter to model the prompt peak and an additional decay \PDF as
+parametrisation of the non-prompt component of true \BdToJpsiKS candidates. The
+decay \PDF is convoluted with the same double-Gaussian \PDF used to model the
+prompt peak. The two widths---one narrow and one wider---are then both employed
+in the calibration.
 
 For both widths a binned $\chisq$-fit of the $\num{20}$ per-bin parameter values
-against the per-bin $\obsTimeError$ averages is performed.
+against the per-bin $\obsTimeError$ averages is performed. One linear and two
+parabolic calibration models (with and without offset) are tested. For both
+widths as well as for both the \catDD and \catLL candidates the linear model
+$\sigma^\prime(\obsTimeError) = c_i + b_i \obsTimeError$ describes the data at
+least equally well, such that the simpler model is chosen in case of comparable
+results. 
+\Cref{fig:measurement_of_sin2beta:resolution_and_acceptance:resolution:calibration} 
+shows the calibration function for both track types and both Gaussian width
+parameters.
+%
+\begin{figure}[h]
+\includegraphics[width=0.49\textwidth]{private/content/measurement-of-sin2beta/figs/resolution_calibration_dd_narrow.pdf}
+\includegraphics[width=0.49\textwidth]{private/content/measurement-of-sin2beta/figs/resolution_calibration_dd_wide.pdf}
+\includegraphics[width=0.49\textwidth]{private/content/measurement-of-sin2beta/figs/resolution_calibration_ll_narrow.pdf}
+\includegraphics[width=0.49\textwidth]{private/content/measurement-of-sin2beta/figs/resolution_calibration_ll_wide.pdf}
+\label{fig:measurement_of_sin2beta:resolution_and_acceptance:resolution:calibration}
+\caption{Decay time error estimate calibration for (top) \catDD and (bottom)
+\catLL candidates. Different calibration functions are fitted to the (left)
+narrow and the (right) wide Gaussian width parameters. In green the linear
+function $\sigma^\prime(\obsTimeError) = c_i + b_i \obsTimeError$ is shown, blue
+and yellow describe the parabolic function with and without offset.}
+\end{figure}
+%
+Results of the depicted fits are given in 
+\cref{tab:app:measurement_of_sin2beta:resolution_and_acceptance:resolution:calibration:dd,tab:app:measurement_of_sin2beta:resolution_and_acceptance:resolution:calibration:ll}
+in \cref{sec:app:measurement_of_sin2beta:resolution_and_acceptance:resolution}.
 
+Using the determined calibration model, the nominal decay time resolution model
+is developed. An unbinned maximum likelihood fit to the \Bd decay time is
+performed on the same $\Jpsi$ \sweighted dataset as described before using the
+resolution model
+%
+\begin{equation}
+\begin{split}
+  \Resolution{}{}\left(\obsTime;\obsTimeError\right)
+  &= \sum_{i=1}^{2}{g_i\,\cdot\,\frac{1}{\sqrt{2\pi}(c_i + b_i \cdot \obsTimeError)}\exp\left(-\frac{(\obsTime - \mu_t)^2}{2(c_i + b_i \cdot \obsTimeError)^2}\right)}\\
+  &+ f_{\text{PV}} \frac{1}{\sqrt{2\pi} \sigma_{\text{PV}}} \exp\left(-\frac{(\obsTime - \mu_t)^2}{2 \sigma_{\text{PV}}^2}\right) \eqpd
+\end{split}
+\end{equation}
+%
+The first two Gaussian components describe the prompt peak resolution, the third
+component models the distribution of candidates associated to the wrong \PV.
+Different calibration parameters $c_i$ and $b_i$ are chosen for the width of the
+narrow ($i=1$) and the wide ($i=2$) Gaussian \PDF. The fractions $g_i$ add up to
+unity together with the fraction $f_\text{\acs*{PV}}$ of wrongly associated
+candidates. The shift $\mu_{\obsTime}$ of all three Gaussian \acs{PDF} is shared
+between them. Finally, $\sigma_{\text{\acs*{PV}}}$ describes the width of the
+wrong \PV component. 
+\Cref{tab:measurement_of_sin2beta:resolution_and_acceptance:resolution:calibration:results} 
+lists the results that are used from now on in the decay time resolution model.
+How the choice of the calibration model influences the measurement is tested
+using a \ToyMC study described in
+\cref{sec:measurement_of_sin2beta:systematics:systematics:resolution}
+%
+\begin{table}[!htb]
+\centering
+\caption{Results of the fit of the parameters described in the decay time
+resolution model.}
+\label{tab:measurement_of_sin2beta:resolution_and_acceptance:resolution:calibration:results}
+  \begin{tabular}{llr@{$\,\pm\,$}lr@{$\,\pm\,$}l}
+    \toprule
+    \multicolumn{2}{c}{Parameter}       &   \multicolumn{2}{c}{\catDD sample}   &   \multicolumn{2}{c}{\catLL sample}\\
+    \midrule
+    $\mu_t$             &   (\si{\ps})  &   -0.00291    &   0.00026                 &   -0.00169    &   0.00026     \\
+    $b_{1}$             &               &   0.88        &   0.09                    &   1.04        &   0.14      \\
+    $c_{1}$             &   (\si{\ps})  &   0.0077      &   0.0028                  &   0.0045      &   0.0028      \\
+    $b_{2}$             &               &   1.33        &   0.33                    &   1.8         &   0.4      \\
+    $c_{2}$             &   (\si{\ps})  &   0.019       &   0.008                   &   0.007       &   0.005         \\
+    $g_{2}$             &               &   0.251       &   0.020                   &   0.24        &   0.023      \\
+    $\sigma_\text{PV}$  &   (\si{\ps})  &   1.6         &   0.7                     &   1.40        &   0.14    \\
+    $f_\text{PV}$       &               &   0.048       &   0.004                   &   0.0488      &   0.0024  \\
+    \midrule
+    $\tau_1$            &   (\si{\ps})  &   0.7         &   0.5                     &   0.29        &   0.06     \\
+    $\tau_2$            &   (\si{\ps})  &   2.1         &   1.3                     &   1.82        &   0.12     \\
+    $f_1$               &               &   0.08        &   0.10                    &   0.046       &   0.006     \\
+    $f_2$               &               &   0.08        &   0.11                    &   0.079       &   0.009     \\
+    \bottomrule
+  \end{tabular}
+\end{table}
 
 % ------------------------------------------------------------------------------
 \subsection{Decay time acceptance}

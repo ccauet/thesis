@@ -72,4 +72,171 @@ our nominal data sample.
 % ------------------------------------------------------------------------------
 \subsection{Background tagging asymmetries}
 \label{sec:measurement_of_sin2beta:physic_backgrounds:tagging_asymmetries}
-\missing{Background tagging asymmetries}
+
+As shown in the previous section any physics induced background in the data
+sample can be neglected and the remaining background candidates are assumed to
+be purely of combinatorial origin. Following this, one can conclude that all
+flavour tagging decisions provided for background candidates are randomly
+distributed. This assumption can be tested in two ways: counting the
+time-integrated numbers of \Bd and \Bdbar tagged background candidates or
+checking for an non-vanishing time-dependent tag asymmetry in the background. 
+
+The tests are performed independently for the \catDD and \catLL sub sample as
+well as for both employed tagging algorithms (\OS and \SSpi). In order to study
+the background sample an unbinned maximum likelihood fit is performed on the \Bd
+mass distribution and background \sWeights are computed. The signal component is
+modelled using an Ipatia \PDF while the background component is described by an
+exponential \PDF (\cf \cref{sec:measurement_of_sin2beta:likelihood_fit:model:mass}).
+
+% ..............................................................................
+\subsubsection{Time integrated background asymmetry}
+\label{sec:measurement_of_sin2beta:physic_backgrounds:tagging_asymmetries:time_integrated}
+
+The time-integrated asymmetry
+%
+\begin{equation}\label{eq:measurement_of_sin2beta:physic_backgrounds:tagging_asymmetries:time_integrated}
+  \Asym{\Bkg}{\text{int}} = \frac{N_{\Bkg}^{\Bdbar} - N_{\Bkg}^{\Bd}}{N_{\Bkg}^{\Bdbar} + N_{\Bkg}^{\Bd}}
+\end{equation}
+%
+is computed for all four sub samples using the \sweighted dataset and the
+results are collected in 
+\cref{tab:measurement_of_sin2beta:physic_backgrounds:tagging_asymmetries:time_integrated}. 
+It can be concluded that except for the \catDD \OS subsample no significant
+asymmetry is present, while the result for this single category might be
+explained by a statistical fluctuation. A vanishing time-integrated asymmetry
+does not eliminate the possibility of a time-dependent asymmetry, thus further
+studies are necessary.
+%
+\begin{table}[h]
+  \centering
+  \caption{Time-integrated asymmetry of \sweighted background distributions for
+  \catDD and \catLL \OS and \SSpi tagged events.}
+  \label{tab:measurement_of_sin2beta:physic_backgrounds:tagging_asymmetries:time_integrated}
+  \begin{tabular}{llr@{$\,\pm\,$}l}
+    \toprule
+    \multicolumn{2}{c}{category} & \multicolumn{2}{c}{$\Asym{\Bkg}{\text{int}}$}\\
+    \midrule
+    \catDD & \acs*{OS}    & $0.017$     & $0.005$ \\
+    \catDD & \acs*{SSpi}  & $-0.016$    & $0.011$ \\
+    \catLL & \acs*{OS}    & $-0.005$    & $0.012$ \\
+    \catLL & \acs*{SSpi}  & $0.044$     & $0.034$ \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+% ..............................................................................
+\subsubsection{Decay time dependent background asymmetry}
+\label{sec:measurement_of_sin2beta:physic_backgrounds:tagging_asymmetries:time_dependent}
+
+The decay time dependent background tagging asymmetry is defined similar to 
+\cref{eq:measurement_of_sin2beta:physic_backgrounds:tagging_asymmetries:time_integrated} as
+%
+\begin{equation}\label{eq:measurement_of_sin2beta:physic_backgrounds:tagging_asymmetries:time_dependent}
+  \Asym{\Bkg}{}(\obsTime) = \frac{N_{\Bkg}^{\Bdbar}(\obsTime) - N_{\Bkg}^{\Bd}(\obsTime)}{N_{\Bkg}^{\Bdbar}(\obsTime) + N_{\Bkg}^{\Bd}(\obsTime)}\eqpd
+\end{equation}
+%
+At first histograms are plotted to check for the null-hypothesis using a
+$\chisq$-test. The test is performed on the background \sweighted dataset as
+well as on a cocktail \MC sample built from signal \MC and background candidates
+from a \ToyMC sample generated with randomly distributed tag decisions. Finally,
+a likelihood fit to the weighted background sample is performed using a \ac{PDF}
+$\ProbArg{\text{TagAsym}}{}{\obsTime, \tagdecision}$ modelling a potential tag asymmetry.
+%
+\begin{equation}\label{eq:measurement_of_sin2beta:physic_backgrounds:tagging_asymmetries:time_dependent:pdf}
+  \ProbArg{\text{TagAsym}}{}{\obsTime, \tagdecision} \propto \exponential{- \frac{t}{\tau}} \left( 1 + \tagdecision \Asym{}{} \right)
+\end{equation}
+
+\paragraph{Histograms of the background candidates} binned in the reconstructed
+decay time are created for \catDD/\catLL candidates with \OS and \SSpi tag
+decisions. This is done for the \sweighted data sample and for a cocktail \MC
+sample, where the \sWeights are extracted using the same model as used before.
+\Cref{fig:measurement_of_sin2beta:physic_backgrounds:tagging_asymmetries:data,fig:measurement_of_sin2beta:physic_backgrounds:tagging_asymmetries:toymc} 
+show the histograms. The corresponding $p$-values from a $\chisq$-test are
+summarised in \cref{tab:measurement_of_sin2beta:physic_backgrounds:tagging_asymmetries:time_dependent:chisq}.
+%
+\begin{table}[h]
+  \centering
+  \caption{Time-integrated asymmetry of \sweighted background distributions for
+  \catDD and \catLL \OS and \SSpi tagged events.}
+  \label{tab:measurement_of_sin2beta:physic_backgrounds:tagging_asymmetries:time_dependent:chisq}
+  \begin{tabular}{llll}
+    \toprule
+           &              & \multicolumn{2}{c}{$p$-value} \\
+    \multicolumn{2}{c}{category} & data & \acs*{ToyMC} \\
+    \midrule
+    \catDD & \acs*{OS}    & $0.100$   & $0.525$ \\
+    \catDD & \acs*{SSpi}  & $0.437$   & $0.386$ \\
+    \catLL & \acs*{OS}    & $0.617$   & $0.110$ \\
+    \catLL & \acs*{SSpi}  & $0.969$   & $0.989$ \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+%
+All $p$-values support the tested null-hypothesis. Furthermore, the procedure
+seems valid as the results found on the \ToyMC sample are comparable to the
+values found on data, \eg the increased $p$-values for \catDD \OS are found both
+on data and \ToyMC and might be explained by the low statistics in this
+particular subsample.
+%
+\begin{figure}[h]
+\includegraphics[width=0.49\textwidth]{private/content/measurement-of-sin2beta/figs/tagged_bkg_data_dd_os.pdf}
+\includegraphics[width=0.49\textwidth]{private/content/measurement-of-sin2beta/figs/tagged_bkg_data_dd_ss.pdf}
+\includegraphics[width=0.49\textwidth]{private/content/measurement-of-sin2beta/figs/tagged_bkg_data_ll_os.pdf}
+\includegraphics[width=0.49\textwidth]{private/content/measurement-of-sin2beta/figs/tagged_bkg_data_ll_ss.pdf}
+\caption{Tagging asymmetry $\Asym{}{}(\obsTime)$ in background \sweighted data.
+The binning of the $x$-axis is chosen logarithmic. The top (bottom) plots show
+\catDD (\catLL) candidates, while \OS (\SSpi) tagged candidates are depicted in
+the left (right) side.}
+\label{fig:measurement_of_sin2beta:physic_backgrounds:tagging_asymmetries:data}
+\end{figure}
+%
+\begin{figure}[h]
+\includegraphics[width=0.49\textwidth]{private/content/measurement-of-sin2beta/figs/tagged_bkg_toymc_dd_os.pdf}
+\includegraphics[width=0.49\textwidth]{private/content/measurement-of-sin2beta/figs/tagged_bkg_toymc_dd_ss.pdf}
+\includegraphics[width=0.49\textwidth]{private/content/measurement-of-sin2beta/figs/tagged_bkg_toymc_ll_os.pdf}
+\includegraphics[width=0.49\textwidth]{private/content/measurement-of-sin2beta/figs/tagged_bkg_toymc_ll_ss.pdf}
+\caption{Tagging asymmetry $\Asym{}{}(\obsTime)$ in cocktail \MC with a signal
+candidates taken from \BdToJpsiKS signal \MC and background candidates from a
+\ToyMC sample. The binning of the $x$-axis is chosen logarithmic. The top
+(bottom) plots show \catDD (\catLL) candidates, while \OS (\SSpi) tagged
+candidates are depicted in the left (right) side.}
+\label{fig:measurement_of_sin2beta:physic_backgrounds:tagging_asymmetries:toymc}
+\end{figure}
+
+\paragraph{A likelihood fit} to the \sweighted background candidates in order to
+exploit the per-event tag information. To do so the distributions are fitted
+using a \ac{PDF} as presented in 
+\cref{eq:measurement_of_sin2beta:physic_backgrounds:tagging_asymmetries:time_dependent:pdf} 
+where a potential asymmetry in data can be modelled. The parametrisation uses
+the sum of three (two in case of the \catDD \SSpi subsample) exponential
+\acp{PDF} with independent pseudo-lifetimes $\tau_i$ and individual asymmetry
+parameters $\Asym{i}{}$.
+
+
+\begin{table}[h]
+\centering
+\caption{Fit results of the asymmetries $\Asym{i}{}$ of a fit to the \sweighted
+background distributions of \catDD and \catLL \OS and \SSpi tagged events.}
+\label{sec:measurement_of_sin2beta:physic_backgrounds:tagging_asymmetries:time_dependent:likelihood:results}
+\begin{tabular}{llr@{$\,\pm\,$}lr@{$\,\pm\,$}lr@{$\,\pm\,$}l}
+\toprule
+\multicolumn{2}{c}{category}  &   \multicolumn{2}{c}{$\Asym{1}{}$}  & \multicolumn{2}{c}{$\Asym{2}{}$}  & \multicolumn{2}{c}{$\Asym{3}{}$} \\
+\midrule
+\catDD & \acs*{OS}    &   $0.001$     &   $0.028$                 &   $-0.039$    &   $0.030$                 &   $-0.01$    &   $0.07$  \\
+\catDD & \acs*{SSpi}  &   $-0.01$     &   $0.04$                  &   $0.14$      &   $0.14$                  &   \multicolumn{2}{c}{-}       \\
+\catLL & \acs*{OS}    &   $0.05$      &   $0.05$                  &   $-0.03$     &   $0.13$                  &   $-0.11$     &   $0.12$  \\
+\catLL & \acs*{SSpi}  &   $-0.01$     &   $0.20$                  &   $-0.18$     &   $0.18$                  &   $0.4$       &   $0.4$    \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paragraph{A final conclusion} on how to proceed is difficult as the results are
+inconclusive due to a lack of statistical power. Although all results are
+compatible with the hypothesis of a vanishing background tagging asymmetry,
+there is evidence of non-vanishing asymmetries supported by fluctuations found
+in the results.
+
+Thus, the nominal fit model does not incorporates a description of a potential
+tagging asymmetry in the background component. The impact of this decision is
+further investigated in a \ToyMC study presented in
+\cref{sec:measurement_of_sin2beta:systematics:systematics:fit_model}

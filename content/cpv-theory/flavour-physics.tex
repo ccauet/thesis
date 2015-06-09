@@ -1,0 +1,89 @@
+%!TEX root = ../../common/main.tex
+
+\section{Flavour physics}
+\label{sec:cpv_theory:flavour_physics}
+
+The field of flavour physics includes the description of the weak interaction of
+quarks and leptons, mixing of neutral meson systems, and in general the time
+evolution of those states. Inferred by the nature of the Yukawa interactions \CP
+violation is possible and present in nature. In this thesis the focus is laid on
+the quark sector.
+
+\subsection{The \acs*{CKM} quark mixing matrix}
+\label{sec:cpv_theory:flavour_physics:ckm_matrix}
+
+Originaly SM with massless fermions/gauge bosons
+introducing higgs mechanism and spontaneous symmetry breaking
+
+Yukawa Lagrangian invariant under SU(2) times U(1)
+%
+\begin{equation}
+  \Lagrangian{Y}{} = -Y_{ij}^{\dquark} \overline{Q_{Li}^{I}} \phi \dquark_{Rj}^{I} - Y_{ij}^{\uquark} \overline{Q_{Li}^{I}} \epsilon \phi^{*} \uquark_{Rj}^{I} + \hc
+\end{equation}
+%
+Higgs field VEV
+%
+\begin{equation}
+  \langle\phi\rangle = \frac{1}{\sqrt{2}} \begin{pmatrix}
+    0 \\
+    v \\
+  \end{pmatrix}
+\end{equation}
+%
+mass terms in weak interaction base non-diagonal --> diagonalising by four unitary matrices
+Mdiag then diagonal --> fermion fields transform into mass eigenstates
+consequence: charged current interactions couple trough Vckm
+%
+\begin{equation}
+  \frac{-g}{\sqrt{2}} \left( \uquarkbar_L, \cquarkbar_L, \tquarkbar_L \right) \gamma^\mu \Wp_\mu \VCKM 
+  \begin{pmatrix}
+    \dquark_L \\
+    \squark_L \\
+    \bquark_L \\
+  \end{pmatrix}
+\end{equation}
+%
+
+CKM matrix
+\begin{equation}
+  \VCKM = \begin{pmatrix}
+    c_{12} c_{13}                                                   & s_{12} c_{13}                                                 & s_{13} \exponential{-i\delta} \\
+    -s_{12} c_{23} - c_{12} s_{23} s_{13} \exponential{i\delta}     & c_{12} c_{23} - s_{12} s_{23} s_{13} \exponential{i\delta}    & s_{23} c_{13}                 \\
+    s_{12} s_{23} - c_{12} c_{23} s_{13} \exponential{i\delta}      & -c_{12} s_{23} - s_{12} c_{23} s_{13} \exponential{i\delta}   & c_{23} c_{13}                 \\
+  \end{pmatrix}
+\end{equation}
+
+Wolfenstein
+\begin{equation}  
+  \VCKM = \begin{pmatrix}
+    1 - \sfrac{\lambda^2}{2}        & \lambda                     & A \lambda^3 (\rho - i\eta)  \\
+    -\lambda                        & 1 - \sfrac{\lambda^2}{2}    & A \lambda  2                \\
+    A \lambda^3 (1 - \rho - i\eta)  & - A \lambda^2               & 1                           \\
+  \end{pmatrix}
+  + \order{\lambda^4}
+\end{equation}
+
+
+Unitarity
+\begin{equation}
+  \Vud^{\phantom{*}}\Vub^{*} + \Vcd^{\phantom{*}}\Vcb^{*} + \Vtd^{\phantom{*}}\Vtb^{*} = 0 
+\end{equation}
+
+
+
+\clearpage
+\subsection{Oscillations of neutral B mesons}
+\begin{itemize}
+  \item Difference between mass and weak eigenstates, Wiger-Weisskopf approximation, mass difference, decay-time width difference, behaviour under C/P transformations, quark mixing phase definitions.
+  \item Definition of states for the B0 system (and maybe the K system), 
+  \item Experimental status of B0-B0bar oscillations, the LHCb measurement of deltam in Bd2JpsiKstar and Bd2Dpi.
+\end{itemize}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Charge-Parity violation in the SM}
+\begin{itemize}
+  \item Discrete symmetries, CPT, weak and strong phases, CPV observables, classification of CPV, CP eigenstates
+  \item CPV in SM: gauge symmetries, fermions in the SM, CKM matrix, the unitarity triangle, CKM parametrization
+\end{itemize}
+
+

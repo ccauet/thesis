@@ -9,7 +9,7 @@ evolution of those states. Inferred by the nature of the Yukawa interactions \CP
 violation is possible and present in nature. In this thesis the focus is laid on
 the quark sector.
 
-\subsection{The \acs*{CKM} quark mixing matrix}
+\subsection{The \acs{CKM} quark mixing matrix}
 \label{sec:cpv_theory:flavour_physics:ckm_matrix}
 
 Originaly SM with massless fermions/gauge bosons
@@ -18,7 +18,7 @@ introducing higgs mechanism and spontaneous symmetry breaking
 Yukawa Lagrangian invariant under SU(2) times U(1)
 %
 \begin{equation}
-  \Lagrangian{Y}{} = -Y_{ij}^{\dquark} \overline{Q_{Li}^{I}} \phi \dquark_{Rj}^{I} - Y_{ij}^{\uquark} \overline{Q_{Li}^{I}} \epsilon \phi^{*} \uquark_{Rj}^{I} + \hc
+  \Lagrangian{Y}{} = -Y_{ij}^{\dquark} \ovE{Q_{Li}^{I}} \phi \dquark_{Rj}^{I} - Y_{ij}^{\uquark} \ovE{Q_{Li}^{I}} \epsilon \phi^{\ast} \uquark_{Rj}^{I} + \hc
 \end{equation}
 %
 Higgs field VEV
@@ -43,8 +43,37 @@ consequence: charged current interactions couple trough Vckm
   \end{pmatrix}
 \end{equation}
 %
-
-CKM matrix
+CKM matrix then 
+%
+\begin{equation}
+  \begin{pmatrix}
+    \dquark^\prime \\
+    \squark^\prime \\
+    \bquark^\prime \\
+  \end{pmatrix}_L
+  = 
+  \begin{pmatrix}
+    \Vud & \Vus & \Vub \\
+    \Vcd & \Vcs & \Vcb \\
+    \Vtd & \Vts & \Vtb \\
+  \end{pmatrix}
+  \begin{pmatrix}
+    \dquark \\
+    \squark \\
+    \bquark \\
+  \end{pmatrix}_L
+  = \VCKM
+  \begin{pmatrix}
+    \dquark \\
+    \squark \\
+    \bquark \\
+  \end{pmatrix}_L
+\end{equation}
+%
+3x3 matrix -> 
+3x3 complex unitary rotation matrix
+can be expressed with three angles and one complex phase after transforming the relative phases of the quark fields
+%
 \begin{equation}
   \VCKM = \begin{pmatrix}
     c_{12} c_{13}                                                   & s_{12} c_{13}                                                 & s_{13} \exponential{-i\delta} \\
@@ -52,8 +81,11 @@ CKM matrix
     s_{12} s_{23} - c_{12} c_{23} s_{13} \exponential{i\delta}      & -c_{12} s_{23} - s_{12} c_{23} s_{13} \exponential{i\delta}   & c_{23} c_{13}                 \\
   \end{pmatrix}
 \end{equation}
-
-Wolfenstein
+%
+phase delta source of CPV in the SM
+exact parametrisation (Chau-Keung, 3 angles, 1 phase)
+approximation by Wolfenstein
+%
 \begin{equation}  
   \VCKM = \begin{pmatrix}
     1 - \sfrac{\lambda^2}{2}        & \lambda                     & A \lambda^3 (\rho - i\eta)  \\
@@ -62,17 +94,111 @@ Wolfenstein
   \end{pmatrix}
   + \order{\lambda^4}
 \end{equation}
-
-
-Unitarity
+%
+Unitarity of the CKM matrix leads two nine relations of the form ...
+%
 \begin{equation}
-  \Vud^{\phantom{*}}\Vub^{*} + \Vcd^{\phantom{*}}\Vcb^{*} + \Vtd^{\phantom{*}}\Vtb^{*} = 0 
+  \sum_i V_{ij}^{\phantom{\ast}} V_{ik}^{\ast} = \delta_{jk} \eqand
+  \sum_j V_{ij}^{\phantom{\ast}} V_{kj}^{\ast} = \delta_{ik}
+\end{equation}
+%
+THE unitarity relation
+%
+\begin{equation}
+  \Vud^{\phantom{\ast}}\Vub^{\ast} + \Vcd^{\phantom{\ast}}\Vcb^{\ast} + \Vtd^{\phantom{\ast}}\Vtb^{\ast} = 0 
+\end{equation}
+%
+representation as triangle in the complex plane
+area Jarlskog invariant
+definition of angles alpha, beta and gamma
+%
+\begin{equation}
+  \alpha = \arg\left(-\frac{\Vtd^{\phantom{\ast}}\Vtb^{\ast}}{\Vud^{\phantom{\ast}}\Vub^{\ast}}\right),\eqspace 
+  \beta =  \arg\left(-\frac{\Vcd^{\phantom{\ast}}\Vcb^{\ast}}{\Vtd^{\phantom{\ast}}\Vtb^{\ast}}\right),\eqspace 
+  \gamma = \arg\left(-\frac{\Vud^{\phantom{\ast}}\Vub^{\ast}}{\Vcd^{\phantom{\ast}}\Vcb^{\ast}}\right)
+\end{equation}
+%
+and the sides
+%
+\begin{equation}
+  R_t = \left| \frac{\Vtd^{\phantom{\ast}}\Vtb^{\ast}}{\Vcd^{\phantom{\ast}}\Vcb^{\ast}} \right|,\eqspace
+  R_u = \left| \frac{\Vud^{\phantom{\ast}}\Vub^{\ast}}{\Vcd^{\phantom{\ast}}\Vcb^{\ast}} \right|,\eqspace
+  R_c = \left| \frac{\Vcd^{\phantom{\ast}}\Vcb^{\ast}}{\Vcd^{\phantom{\ast}}\Vcb^{\ast}} \right|
+\end{equation}
+%
+simplifies to
+%
+\begin{equation}
+  R_t \exponential{-i\beta} + R_u \exponential{-i\gamma} = 1
+\end{equation}
+%
+measuring of single parameters, then comparing in global fit
+UTfit, CKMfitter
+
+\subsection{B meson decay}
+\label{sec:cpv_theory:flavour_physics:bdecays}
+
+decay amplitudes to final state f or CP conjugate final state fbar
+%
+\begin{equation}
+  \begin{alignedat}{2}
+    & A_f         = \matrixelement{f}{\Hamiltonian{}{}}{\Meson},        \eqspace && \ovE{A}_f         = \matrixelement{f}{\Hamiltonian{}{}}{\Mesonbar}, \\
+    & A_{\ovE{f}} = \matrixelement{\ovE{f}}{\Hamiltonian{}{}}{\Meson},  \eqspace && \ovE{A}_{\ovE{f}} = \matrixelement{\ovE{f}}{\Hamiltonian{}{}}{\Mesonbar}
+  \end{alignedat}
+\end{equation}
+%
+transformation under CP for initial and final state with two new phases zetaM and zetaf
+%
+\begin{equation}
+  \begin{alignedat}{2}
+    & \CP\ket{\Meson}    = \exponential{+i\zeta_{M}} \ket{\Mesonbar},\eqspace && \CP \ket{f}        = \exponential{+i\zeta_{f}} \ket{\ovE{f}}, \\
+    & \CP\ket{\Mesonbar} = \exponential{-i\zeta_{M}} \ket{\Meson}   ,\eqspace && \CP \ket{\ovE{f}}  = \exponential{-i\zeta_{f}} \ket{f}
+  \end{alignedat}
+\end{equation}
+%
+such that CP squared gives unity. if CP conserved $\ovE{A}_{\ovE{f}} = \exponential{i(\zeta_f - \zeta_A)} A_f$
+
+\subsection{Oscillations of neutral B mesons}
+\label{sec:cpv_theory:flavour_physics:bmixing}
+
+Time evolution of meson state, initial state at t=0
+%
+\begin{equation}
+  \ket{\Psi(t)} = \psi_1(t) \ket{\Meson} + \psi_2(t) \ket{\Mesonbar}
+\end{equation}
+%
+Weisskopf-Wigner approx time evolution, Hamiltonian
+%
+\begin{equation}
+  \mathbf{H} = \mathbf{M} - \frac{i}{2} \mathbf{\Gamma}
+\end{equation}
+%
+given Schrödinger DGL
+%
+\begin{equation}
+  i \frac{\dif}{\dif t} 
+  \begin{pmatrix}
+    \psi_1 \\
+    \psi_2
+  \end{pmatrix}
+  =
+  \mathbf{H}
+  \begin{pmatrix}
+    \psi_1 \\
+    \psi_2
+  \end{pmatrix}
+  =
+  \begin{pmatrix}
+    m_{11} - \frac{i}{2} \Gamma_{11}    & m_{12} - \frac{i}{2} \Gamma_{12} \\
+    m_{21} - \frac{i}{2} \Gamma_{21}    & m_{22} - \frac{i}{2} \Gamma_{22} \\
+  \end{pmatrix}
+  \begin{pmatrix}
+    \psi_1 \\
+    \psi_2
+  \end{pmatrix}
 \end{equation}
 
-
-
 \clearpage
-\subsection{Oscillations of neutral B mesons}
 \begin{itemize}
   \item Difference between mass and weak eigenstates, Wiger-Weisskopf approximation, mass difference, decay-time width difference, behaviour under C/P transformations, quark mixing phase definitions.
   \item Definition of states for the B0 system (and maybe the K system), 

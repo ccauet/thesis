@@ -197,6 +197,153 @@ given Schrödinger DGL
     \psi_2
   \end{pmatrix}
 \end{equation}
+%
+CPT symmetry $m_{11} = m_{22} = m$, $m_{21} = m_{12}^{\ast}$, $\Gamma_{11} = \Gamma_{22} = \Gamma$, $\Gamma_{21} = \Gamma_{12}^{\ast}$
+%
+then diagonalising the hamiltonian yields mass eigenstates heavy and light
+%
+\begin{equation}
+  \begin{split}
+    \ket{\Meson_L} &= p \ket{\Meson} + q \ket{\Mesonbar} \\
+    \ket{\Meson_H} &= p \ket{\Meson} - q \ket{\Mesonbar}
+  \end{split}
+\end{equation}
+%
+with $\abs{q}^2 + \abs{p}^2 = 1$ and eigenvalues
+%
+\begin{equation}
+  \begin{split}
+    \mu_H &= m_H - \frac{i}{2} \Gamma_H \\
+    \mu_L &= m_L - \frac{i}{2} \Gamma_L
+  \end{split}
+\end{equation}
+%
+with the definitions 
+%
+\begin{equation}
+  m = \frac{m_H + m_L}{2}, \eqspace \Gamma = \frac{\Gamma_H + \Gamma_L}{2}
+\end{equation}
+%
+and
+%
+\begin{equation}
+  \DM = m_H - m_L, \eqspace \DG = \Gamma_H - \Gamma_L
+\end{equation}
+%
+and
+%
+\begin{equation}
+  \left(\frac{q}{p}\right)^2 = \frac{m_{12}^{\ast} - \frac{i}{2} \Gamma_{12}^{\ast}}{m_{12} - \frac{i}{2} \Gamma_{12}}
+\end{equation}
+%
+DM is by definition positive, the sign of DG has to be measured
+
+\subsection{Time evolution of meson states}
+\label{sec:cpv_theory:flavour_physics:time_evolution}
+
+time evolution of meson states
+%
+\begin{equation}
+  \begin{split}
+    \ket{\Meson (t)}    &= g_{+}(t) \ket{\Meson}    - \frac{q}{p} g_{-}(t) \ket{\Mesonbar} \\
+    \ket{\Mesonbar (t)} &= g_{+}(t) \ket{\Mesonbar} - \frac{p}{q} g_{-}(t) \ket{\Meson}
+  \end{split}
+\end{equation}
+%
+with 
+%
+\begin{equation}
+  g_{\pm}(t) \equiv 
+  \frac{1}{2} \left[
+    \exponential{-i \mu_H t} \pm \exponential{-i \mu_L t}
+  \right]
+  =
+  \frac{1}{2} \left[
+    \exponential{-i m_H t} \exponential{-\frac{i}{2} \Gamma_H t} \pm \exponential{-i m_L t} \exponential{-\frac{i}{2} \Gamma_L t}
+  \right]
+\end{equation}
+%
+and the definitions of lambda
+%
+\begin{equation}
+  \lambda_f               \equiv \frac{1}{\ovE{\lambda}_f}   = \frac{q}{p} \frac{\ovE{A}_f}{A_f} \eqand 
+  \ovE{\lambda}_{\ovE{f}} \equiv \frac{1}{\lambda_{\ovE{f}}} = \frac{p}{q} \frac{A_{\ovE{f}}}{\ovE{A}_{\ovE{f}}}
+\end{equation}
+%
+the decay rate of a meson M produced at t=0 to final state f at time t is given by
+%
+\begin{equation}
+  \Gamma \left(\Meson(t)\to f\right)= \bigl\vert \matrixelement{f}{T}{\Meson} \bigr\vert^2
+\end{equation}
+%
+then
+%
+\begin{equation}
+  \begin{split}
+    \frac{\Gamma \bigl(\Meson   (t) \to       f \bigr)}{\exponential{-\Gamma t}} &= 
+      \frac{1}{2} \abs{A_f}^2 \left( 1 + \abs{\lambda_f}^2 \right) \\
+        \Biggl[ \cosh&\left(\frac{\DG t}{2}\right) + D_f \sinh\left(\frac{\DG t}{2}\right) + C_f \cos(\DM t) - S_f \sin(\DM t) \Biggr] \\
+    \frac{\Gamma \bigl(\Meson   (t) \to \ovE{f} \bigr)}{\exponential{-\Gamma t}} &= 
+      \frac{1}{2} \abs{\ovE{A}_{\ovE{f}}}^2 \left( 1 + \abs{\ovE{\lambda}_{\ovE{f}}}^2 \right) \abs{\frac{q}{p}}^2 \\
+        \Biggl[ \cosh&\left(\frac{\DG t}{2}\right) + D_f \sinh\left(\frac{\DG t}{2}\right) + C_f \cos(\DM t) - S_f \sin(\DM t) \Biggr] \\
+    \frac{\Gamma \bigl(\Mesonbar(t) \to       f \bigr)}{\exponential{-\Gamma t}} &= 
+      \frac{1}{2} \abs{A_f}^2 \left( 1 + \abs{\lambda_f}^2 \right) \abs{\frac{p}{q}}^2 \\
+        \Biggl[ \cosh&\left(\frac{\DG t}{2}\right) + D_f \sinh\left(\frac{\DG t}{2}\right) + C_f \cos(\DM t) - S_f \sin(\DM t) \Biggr] \\
+    \frac{\Gamma \bigl(\Mesonbar(t) \to \ovE{f} \bigr)}{\exponential{-\Gamma t}} &= 
+      \frac{1}{2} \abs{\ovE{A}_{\ovE{f}}}^2 \left( 1 + \abs{\ovE{\lambda}_{\ovE{f}}}^2 \right) \\
+        \Biggl[ \cosh&\left(\frac{\DG t}{2}\right) + D_f \sinh\left(\frac{\DG t}{2}\right) + C_f \cos(\DM t) - S_f \sin(\DM t) \Biggr] \\
+  \end{split}
+\end{equation}
+%
+where D, C, and S are the CP coefficients defined as
+%
+\begin{equation}
+  \begin{alignedat}{2}
+    &D_f = \frac{2 \Re \lambda_f}{1+\abs{\lambda_f}^2}, \eqspace 
+    &C_f = \frac{1 - \abs{\lambda_f}^2}{1 + \abs{\lambda_f}^2}, \eqspace 
+    &S_f = \frac{2 \Im \lambda_f}{1+\abs{\lambda_f}^2} \\
+    &D_{\ovE{f}} = \frac{2 \Re \ovE{\lambda}_{\ovE{f}}}{1+\abs{\ovE{\lambda}_{\ovE{f}}}^2}, \eqspace 
+    &C_{\ovE{f}} = \frac{1 - \abs{\ovE{\lambda}_{\ovE{f}}}^2}{1 + \abs{\ovE{\lambda}_{\ovE{f}}}^2}, \eqspace 
+    &S_{\ovE{f}} = \frac{2 \Im \ovE{\lambda}_{\ovE{f}}}{1+\abs{\ovE{\lambda}_{\ovE{f}}}^2} \\
+  \end{alignedat}
+\end{equation}
+%
+which satisfy $D^2+C^2+S^2 = 1$
+
+\subsection[Classification of \CP violating effects]{Classification of \CPbfsf violating effects}
+\label{sec:cpv_theory:flavour_physics:cpv_classification}
+
+\subsubsection[Direct \CP violation]{Direct \CPbfsf violation}
+\label{sec:cpv_theory:flavour_physics:cpv_classification:direct}
+
+definition of CPV in decay aka direct CPV
+%
+\begin{equation}
+  \frac{\ovE{A}_{\ovE{f}}}{A_f} \neq 1
+\end{equation}
+%
+only possible source of CPV in charged mesons and all baryons, where mixing is absent
+
+\subsubsection[\CP violation in mixing]{\CPbfsf violation in mixing}
+\label{sec:cpv_theory:flavour_physics:cpv_classification:mixing}
+
+CPV in mixing is defined by
+%
+\begin{equation}
+  \abs{\frac{q}{p}} \neq 1
+\end{equation}
+
+\subsubsection[\CP violation in the interference of decay and mixing]{\CPbfsf violation in the interference of decay and mixing}
+\label{sec:cpv_theory:flavour_physics:cpv_classification:interference}
+
+CPV in the interference of the amplitudes of the decay and the decay after mixing
+%
+\begin{equation}
+  \Im \lambda_f \neq 0   
+\end{equation}
+%
+definition of the CP asymmetry
+
 
 \clearpage
 \begin{itemize}

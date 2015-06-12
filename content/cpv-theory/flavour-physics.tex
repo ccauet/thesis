@@ -12,38 +12,66 @@ the quark sector.
 \subsection{The \acs{CKM} quark mixing matrix}
 \label{sec:cpv_theory:flavour_physics:ckm_matrix}
 
-Originaly SM with massless fermions/gauge bosons
-introducing higgs mechanism and spontaneous symmetry breaking
+To ensure local $\group{SU}{2}\otimes\group{U}{1}$ gauge invariance of the
+electroweak Lagrangian while at the same time preserve renormalisability of the
+theory, the mechanism of spontaneous symmetry breaking is exploited. While the
+mechanism also implies new massive vector boson fields as well as the appearance
+of a massive scalar particle---the Higgs boson---the focus will be on the quark
+sector.
 
-Yukawa Lagrangian invariant under SU(2) times U(1)
+By introducing a complex scalar Higgs field $\phi \equiv
+\left(\begin{smallmatrix} \phi ^{+} \\ \phi^{0}\end{smallmatrix}\right)$ a
+$\group{SU}{2}\otimes\group{U}{1}$ invariant Yukawa Lagrangian
+$\Lagrangian{Y}{}$ for the quark sector can be written down,
 %
-\begin{equation}
-  \Lagrangian{Y}{} = -Y_{ij}^{\dquark} \ovE{Q_{Li}^{I}} \phi \dquark_{Rj}^{I} - Y_{ij}^{\uquark} \ovE{Q_{Li}^{I}} \epsilon \phi^{\ast} \uquark_{Rj}^{I} + \hc
+\begin{equation}\label{sec:cpv_theory:flavour_physics:ckm_matrix:yukawa_lagrangian}
+  \Lagrangian{Y}{\quark} = -Y_{ij}^{\dquark} \ovE{Q_{Li}} \phi \dquark_{Rj}^{\prime} - Y_{ij}^{\uquark} \ovE{Q_{Li}} \phi^{\ast} \uquark_{Rj}^{\prime} + \hc \eqcm
 \end{equation}
 %
-Higgs field VEV
+with $Y_{ij}^{\quark}$ denoting the Yukawa couplings, $Q_{Li}$ being the
+left-handed quark doublets, and $\quark_{Rj}$ the right-handed singlets. 
+
+Being massless prior to this, the charged leptons, quarks, and the $\Wpm$ and
+$\Zboson$ bosons obtain masses after spontaneously breaking the symmetry and
+substituting the Higgs field by its \VEV
 %
-\begin{equation}
+\begin{equation}\label{sec:cpv_theory:flavour_physics:ckm_matrix:higgs_vev}
   \langle\phi\rangle = \frac{1}{\sqrt{2}} \begin{pmatrix}
     0 \\
     v \\
-  \end{pmatrix}
+  \end{pmatrix}\eqpd
 \end{equation}
 %
-mass terms in weak interaction base non-diagonal --> diagonalising by four unitary matrices
-Mdiag then diagonal --> fermion fields transform into mass eigenstates
-consequence: charged current interactions couple trough Vckm
+The Yukawa couplings $Y_{ij}$ are not constraint by the theory thus are
+completely arbitrary, leading to most of the free \SM parameters. The coupling
+matrices---also known as mass matrices---are a priori non-diagonal in the weak
+interaction basis, but in general can be diagonalised by bi-unitary
+transformations. As a consequence of the diagonalisation the quark fields are
+transformed as well into the mass eigenstates basis allowing for
+flavour-changing currents through $\Wpm$ boson exchange 
 %
 \begin{equation}
-  \frac{-g}{\sqrt{2}} \left( \uquarkbar_L, \cquarkbar_L, \tquarkbar_L \right) \gamma^\mu \Wp_\mu \VCKM 
+  \frac{-g}{\sqrt{2}} \left( \uquarkbar, \cquarkbar, \tquarkbar \right)_L \gamma^\mu \Wp_\mu \VCKM 
   \begin{pmatrix}
-    \dquark_L \\
-    \squark_L \\
-    \bquark_L \\
-  \end{pmatrix}
+    \dquark \\
+    \squark \\
+    \bquark \\
+  \end{pmatrix}_L \eqpd
 \end{equation}
 %
-CKM matrix then 
+with the weak charge $g$ and the transformation matrix denoted $\VCKM$. The \CKM
+matrix elements $\VCKM^{ij}$ connect an up-type quark $i$ to a down-type quark
+$j$ with a probability proportional to $\vert\VCKM^{ij}\vert^2$. By definition, the
+$3 \times 3$ \CKM matrix is unitary, $\VCKM\VCKM^\dagger=1$, and complex, with
+$\num{18}$ free parameters. Following the unitarity conditions
+%
+\begin{equation}\label{sec:cpv_theory:flavour_physics:ckm_matrix:unitarity_relations}
+  \sum_i V_{ij}^{\phantom{\ast}} V_{ik}^{\ast} = \delta_{jk} \eqand
+  \sum_j V_{ij}^{\phantom{\ast}} V_{kj}^{\ast} = \delta_{ik} \eqcm
+\end{equation}
+%
+and a redefinition of arbitrary quark phases, reduces the number of parameters
+to three angles and one complex phase. The matrix elements are denoted
 %
 \begin{equation}
   \begin{pmatrix}
@@ -70,21 +98,28 @@ CKM matrix then
   \end{pmatrix}_L
 \end{equation}
 %
-3x3 matrix -> 
-3x3 complex unitary rotation matrix
-can be expressed with three angles and one complex phase after transforming the relative phases of the quark fields
+and can be expressed as a complex rotation matrix with the three angles
+$\theta_{12}, \theta_{12}, \theta_{12} \in {[0, \pi/2]}$ and a phase $\delta \in
+{(-\pi, \pi]}$. With the definition of $s_{ij} \equiv \sin \theta_{ij}$ and
+$c_{ij} \equiv \cos \theta_{ij}$, an exact representation of the \CKM matrix can
+be written as
 %
-\begin{equation}
-  \VCKM = \begin{pmatrix}
+\begin{multline}
+  \VCKM = \\
+  \begin{pmatrix}
     c_{12} c_{13}                                                   & s_{12} c_{13}                                                 & s_{13} \exponential{-i\delta} \\
     -s_{12} c_{23} - c_{12} s_{23} s_{13} \exponential{i\delta}     & c_{12} c_{23} - s_{12} s_{23} s_{13} \exponential{i\delta}    & s_{23} c_{13}                 \\
     s_{12} s_{23} - c_{12} c_{23} s_{13} \exponential{i\delta}      & -c_{12} s_{23} - s_{12} c_{23} s_{13} \exponential{i\delta}   & c_{23} c_{13}                 \\
-  \end{pmatrix}
-\end{equation}
+  \end{pmatrix}\eqpd
+\end{multline}
 %
-phase delta source of CPV in the SM
-exact parametrisation (Chau-Keung, 3 angles, 1 phase)
-approximation by Wolfenstein
+where the phase $\delta$ is the only source of \CP violation in the \SM. A
+popular approximation by Wolfenstein takes advantage of the measured hierarchy
+of the matrix elements, where the diagonal elements are of $\order{1}$, while
+the off-diagonal elements follow $\vert\Vub\vert^2 \ll \vert\Vcb\vert^2 \ll
+\vert\Vus\vert^2 \ll 1$ or in terms of the rotation angles $s_{12} \ll s_{23}
+\ll s_{12} \ll 1$. Exploiting this hierarchy in terms of an expansion with leads
+to the Wolfenstein parametrisation
 %
 \begin{equation}  
   \VCKM = \begin{pmatrix}
@@ -95,19 +130,25 @@ approximation by Wolfenstein
   + \order{\lambda^4}
 \end{equation}
 %
-Unitarity of the CKM matrix leads two nine relations of the form ...
+written in terms of
 %
 \begin{equation}
-  \sum_i V_{ij}^{\phantom{\ast}} V_{ik}^{\ast} = \delta_{jk} \eqand
-  \sum_j V_{ij}^{\phantom{\ast}} V_{kj}^{\ast} = \delta_{ik}
+  s_{12} = \lambda, \eqspace s_{23} = A \lambda^2, \eqand s_{13}\exponential{i\delta} = A \lambda^3 (\rho + i \eta) \eqpd
 \end{equation}
 %
-THE unitarity relation
+Given the unitarity relations in
+\cref{sec:cpv_theory:flavour_physics:ckm_matrix:unitarity_relations} the six
+vanishing combinations can be represented in a triangle in the complex plane.
+The most prominent unitarity triangle arises from
 %
 \begin{equation}
   \Vud^{\phantom{\ast}}\Vub^{\ast} + \Vcd^{\phantom{\ast}}\Vcb^{\ast} + \Vtd^{\phantom{\ast}}\Vtb^{\ast} = 0 
 \end{equation}
 %
+where normalising each side of the triangle by
+$\Vcd^{\phantom{\ast}}\Vcb^{\ast}$ yields vertices at ${(0,0)}$ and ${(1,0)}$
+and an apex at ${(\ovE{\rho},\ovE{\eta})}$ 
+
 representation as triangle in the complex plane
 area Jarlskog invariant
 definition of angles alpha, beta and gamma

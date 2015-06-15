@@ -368,7 +368,7 @@ which yields the four differential decay rates
 %
 where the definitions of
 %
-\begin{equation}
+\begin{equation}\label{eq:cpv_theory:flavour_physics:time_evolution:lambdaf}
   \lambda_f               \equiv \frac{1}{\ovE{\lambda}_f}   = \frac{q}{p} \frac{\ovE{A}_f}{A_f} \eqand 
   \ovE{\lambda}_{\ovE{f}} \equiv \frac{1}{\lambda_{\ovE{f}}} = \frac{p}{q} \frac{A_{\ovE{f}}}{\ovE{A}_{\ovE{f}}}
 \end{equation}
@@ -393,40 +393,48 @@ S_i^2 = 1$ and are defined as
 \subsection[Classification of \CP violating effects]{Classification of \CPbfsf violating effects}
 \label{sec:cpv_theory:flavour_physics:cpv_classification}
 
+While a single phase in the \CKM quark mixing matrix is the only source of \CP
+violation in the \SM, \CP violation appears in different manifestations.
+
 \subsubsection[Direct \CP violation]{Direct \CPbfsf violation}
 \label{sec:cpv_theory:flavour_physics:cpv_classification:direct}
 
-definition of CPV in decay aka direct CPV
+\CP violation in the decay---also called direct \CP violation---occurs if the
+decay amplitudes of a meson into a final state differ from the \CP conjugate
+decay
 %
 \begin{equation}
-  \frac{\ovE{A}_{\ovE{f}}}{A_f} \neq 1
+  \frac{\ovE{A}_{\ovE{f}}}{A_f} \neq 1 \eqpd
 \end{equation}
 %
-only possible source of CPV in charged mesons and all baryons, where mixing is absent
+This is the only possible source of \CP violation in charged mesons and all
+baryons.
 
 \subsubsection[\CP violation in mixing]{\CPbfsf violation in mixing}
 \label{sec:cpv_theory:flavour_physics:cpv_classification:mixing}
 
-CPV in mixing is defined by
+The second class of \CP violation is denoted \CP violation in the mixing and
+occurs if
 %
 \begin{equation}
-  \abs{\frac{q}{p}} \neq 1
+  \abs{\frac{q}{p}} \neq 1 \eqpd
 \end{equation}
+%
 
 \subsubsection[\CP violation in the interference between decays with and without mixing]{\CPbfsf violation in the interference between decays with and without mixing}
 \label{sec:cpv_theory:flavour_physics:cpv_classification:interference}
 
-CPV in the interference of the amplitudes of the decay and the decay after mixing
+The third kind of \CP violation only occurs in decays where both \CP conjugate
+initial states \Mesonz and \Mesonzbar decay into a common final state $f$. Then
+an interference between a decay without mixing, $\decay{\Mesonz}{f}$, and a
+decay with mixing, $\decay{\Mesonz}{\decay{\Mesonzbar}{f}}$, leads to \CP
+violation in the interference between both amplitudes.
 %
 \begin{equation}
   \Im \lambda_f \neq 0   
 \end{equation}
 %
-definition of the CP asymmetry of a \Meson into a common \CP final state
-%
-\begin{equation}
-  \CPAsymmetry(t) = \frac{\Gamma \bigl(\Mesonbar (t) \to f_{\text{\CP}}\bigr) - \Gamma \bigl(\Meson (t) \to f_{\text{\CP}}\bigr)}
-                         {\Gamma \bigl(\Mesonbar (t) \to f_{\text{\CP}}\bigr) + \Gamma \bigl(\Meson (t) \to f_{\text{\CP}}\bigr)}
-\end{equation}
-
-
+As can be seen in the definition given in
+\cref{eq:cpv_theory:flavour_physics:time_evolution:lambdaf} this type of \CP
+violation even occurs if no direct \CP violation or \CP violation in mixing is
+present.

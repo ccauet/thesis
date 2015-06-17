@@ -37,25 +37,94 @@ dependent \CP asymmetry \CPAsymmetry can be defined using
     \CPAsymmetry &\equiv 
       \frac{\Gamma\bigl(\decay{\Bdbar(\obsTime)}{\Jpsi\KS}\bigr) - \Gamma\bigl(\decay{\Bd(\obsTime)}{\Jpsi\KS}\bigr)}
            {\Gamma\bigl(\decay{\Bdbar(\obsTime)}{\Jpsi\KS}\bigr) + \Gamma\bigl(\decay{\Bd(\obsTime)}{\Jpsi\KS}\bigr)} \\
-                 &= \frac{\SJpsiKS\sin(\DMd t) - \CJpsiKS\cos(\DMd t)}{\cosh\bigl(\frac{\DG t}{2}\bigr) + \DJpsiKS\sinh\bigl(\frac{\DG t}{2}\bigr)}
+                 &= \frac{\SJpsiKS\sin(\DMd t) - \CJpsiKS\cos(\DMd t)}{\cosh\bigl(\frac{\DG t}{2}\bigr) + \DJpsiKS\sinh\bigl(\frac{\DG t}{2}\bigr)} \eqcm
   \end{split}
 \end{equation}
 %
+where $\Bd$ and $\Bdbar$ denote the meson production flavour at $t=0$.
+
+Considering a vanishing decay width difference of the two mass eigenstates
+$\DGd/\Gd = \num{0.001 +- 0.010}$ \cite{Amhis:2014hma} the \CP asymmetry further
+simplifies to
+%
+\begin{equation}
+  \CPAsymmetry = \SJpsiKS\sin(\DMd t) - \CJpsiKS\cos(\DMd t) \eqpd
+\end{equation}
+%
+The \CP coefficients introduced in
+\cref{eq:cpv_theory:flavour_physics:time_evolution:cp_coefficients} can be
+approximated to a high precision to be
+%
+\begin{equation}
+  \CJpsiKS = 0 \eqand 
+  \SJpsiKS = \sintwobeta \eqcm
+\end{equation}
+%
+as direct \CP violation is expected to be small
+$\vert\ovE{A}_{\Jpsi\KS}/A_{\Jpsi\KS}\vert\approx 1$ and \CP violation in mixing
+is experimentally excluded ($\vert q/p \vert = 1$). Thus, eventually the \CP
+asymmetry reduces to
+%
+\begin{equation}
+  \CPAsymmetry = \sintwobeta\sin(\DMd t) \eqcm
+\end{equation}
+%
+with $\beta$ being the one of the angles of the ${(\bquark,\dquark)}$ unitarity
+triangle. 
+
+The current world average of
+%
+\begin{equation}
+  \sintwobeta = \num{0.679 +- 0.020}
+\end{equation}
+%
+is mostly dominated by measurements by \Babar and \Belle in the \BdToJpsiKS
+channel where both the $\elel$ and $\mumu$ final states of the $\Jpsi$ as well
+as the $\pipi$ and $\piz\piz$ final states of the $\KS$ are studied. \Belle
+\cite{Adachi:2012et} reports
+%
+\begin{equation*}
+  \begin{split}
+    \SJpsiKS^{\Belle} &= 0.670 \pm 0.029 \statp \pm 0.013 \systp \eqcm \\
+    \CJpsiKS^{\Belle} &= 0.015 \pm 0.021 \statp \pm {}_{0.045}^{0.023} \systp \eqcm
+  \end{split}
+\end{equation*}
+%
+while the \Babar measurement \cite{Aubert:2009aw} yields
+%
+\begin{equation*}
+  \begin{split}
+    \SJpsiKS^{\Babar} &= 0.657 \pm 0.036 \statp \pm 0.012 \systp \eqcm \\
+    \CJpsiKS^{\Babar} &= 0.026 \pm 0.025 \statp \pm 0.016 \systp \eqpd
+  \end{split}
+\end{equation*}
+%
+A first measurement of $\sintwobeta$ was performed by the \LHCb collaboration
+using a data sample corresponding to an integrated luminosity of
+$\SI{1}{\per\femtobarn}$ collected during \RunOne in 2011. The analysis
+comprised $\num{8000}$ flavour-tagged \BdToJpsiKS candidates, reconstructed in
+the $\mumu\pipi$ final state. The reported results are
+%
+\begin{equation*}
+  \begin{split}
+    \SJpsiKS &= 0.73 \pm 0.07 \statp \pm 0.04 \systp \eqcm \\
+    \CJpsiKS &= 0.03 \pm 0.09 \statp \pm 0.01 \systp \eqpd
+  \end{split}
+\end{equation*}
+%
 
 
-\begin{itemize}
-  \item b->ccs gold plated channels for measuring CPV, just a single weak phase
-  \item negligible higher order contributions: double Cabibbo suppressed (DCS)
-  \item testing CKM sector
-  \item Bd->J/psiKS: easy final state, nice trigger
-  \item reconstruction in the two pion final state!
-  \item if CPV in K neglected, KL does not decays into two-pion final state, KL flight distance to large
-  \item CPV in mixing negligible, DGD small
-  \item CPV asymmetry
-  \item tagging
-  \item C=0 
-  \item global picture babar and belle measurements
-  \item previous lhcb measurement
-  \item discrepancy of global fit, CKMfitter
-  \item Bs2JpsiKS U-spin symmetry
-\end{itemize}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

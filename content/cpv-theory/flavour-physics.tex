@@ -7,7 +7,7 @@ The field of flavour physics includes the description of the weak interaction of
 quarks and leptons, mixing of neutral meson systems, and in general the time
 evolution of those states. Inferred by the nature of the Yukawa interactions \CP
 violation is possible and present in nature. In this thesis the focus is laid on
-the quark sector.
+the quark sector.\addref{General reference to flavour physics section}
 
 % ------------------------------------------------------------------------------
 \subsection{The \acs{CKM} quark mixing matrix}
@@ -24,6 +24,7 @@ By introducing a complex scalar Higgs field $\phi \equiv
 \left(\begin{smallmatrix} \phi ^{+} \\ \phi^{0}\end{smallmatrix}\right)$ a
 $\group{SU}{2}\otimes\group{U}{1}$ invariant Yukawa Lagrangian
 $\Lagrangian{Y}{}$ for the quark sector can be written down,
+\important{Check if prime in equation is correct}
 %
 \begin{equation}\label{sec:cpv_theory:flavour_physics:ckm_matrix:yukawa_lagrangian}
   \Lagrangian{Y}{\quark} = -Y_{ij}^{\dquark} \ovE{Q_{Li}} \phi \dquark_{Rj}^{\prime} - Y_{ij}^{\uquark} \ovE{Q_{Li}} \phi^{\ast} \uquark_{Rj}^{\prime} + \hc \eqcm
@@ -45,7 +46,7 @@ substituting the Higgs field by its \VEV
 %
 The Yukawa couplings $Y_{ij}$ are not constraint by the theory thus are
 completely arbitrary, leading to most of the free \SM parameters. The coupling
-matrices---also known as mass matrices---are a priori non-diagonal in the weak
+matrices---\texthl{also known as mass matrices}---are a priori non-diagonal in the weak
 interaction basis, but in general can be diagonalised by bi-unitary
 transformations. As a consequence of the diagonalisation the quark fields are
 transformed as well into the mass eigenstates basis allowing for
@@ -57,14 +58,15 @@ flavour-changing currents through $\Wpm$ boson exchange
     \dquark \\
     \squark \\
     \bquark \\
-  \end{pmatrix}_L \eqpd
+  \end{pmatrix}_L \eqcm
 \end{equation}
 %
-with the weak charge $g$ and the transformation matrix denoted $\VCKM$. The \CKM
-matrix elements $\VCKM^{ij}$ connect an up-type quark $i$ to a down-type quark
-$j$ with a probability proportional to $\vert\VCKM^{ij}\vert^2$. By definition, the
-$3 \times 3$ \CKM matrix is unitary, $\VCKM\VCKM^\dagger=1$, and complex, with
-$\num{18}$ free parameters. Following the unitarity conditions
+with the weak charge $g$ and the transformation matrix denoted $\VCKM$
+\cite{Cabibbo:1963yz,Kobayashi:1973fv}. The \CKM matrix elements $\VCKM^{ij}$
+connect an up-type quark $i$ to a down-type quark $j$ with a probability
+proportional to $\vert\VCKM^{ij}\vert^2$. By definition, the $3 \times 3$ \CKM
+matrix is unitary, $\VCKM\VCKM^\dagger=1$, and complex, with $\num{18}$ free
+parameters. Following the unitarity conditions
 %
 \begin{equation}\label{sec:cpv_theory:flavour_physics:ckm_matrix:unitarity_relations}
   \sum_i V_{ij}^{\phantom{\ast}} V_{ik}^{\ast} = \delta_{jk} \eqand
@@ -100,10 +102,10 @@ to three angles and one complex phase. The matrix elements are denoted
 \end{equation}
 %
 and can be expressed as a complex rotation matrix with the three angles
-$\theta_{12}, \theta_{12}, \theta_{12} \in {[0, \pi/2]}$ and a phase $\delta \in
+$\theta_{12}, \theta_{13}, \theta_{23} \in {[0, \pi/2]}$ and a phase $\delta \in
 {]-\pi, \pi]}$. With the definition of $s_{ij} \equiv \sin \theta_{ij}$ and
-$c_{ij} \equiv \cos \theta_{ij}$, an exact representation of the \CKM matrix can
-be written as
+$c_{ij} \equiv \cos \theta_{ij}$, an exact representation \cite{Chau:1984fp} of
+the \CKM matrix can be written as
 %
 \begin{multline}
   \VCKM = \\
@@ -115,9 +117,10 @@ be written as
 \end{multline}
 %
 where the phase $\delta$ is the only source of \CP violation in the \SM. A
-popular approximation by Wolfenstein takes advantage of the measured hierarchy
-of the matrix elements, where the diagonal elements are of $\order{1}$, while
-the off-diagonal elements follow $\vert\Vub\vert^2 \ll \vert\Vcb\vert^2 \ll
+popular approximation by Wolfenstein \cite{Wolfenstein:1983yz} takes advantage
+of the measured hierarchy of the matrix elements, where the diagonal elements
+are of $\order{1}$, while the off-diagonal elements follow $\vert\Vub\vert^2 \ll
+\vert\Vcb\vert^2 \ll
 \vert\Vus\vert^2 \ll 1$ or in terms of the rotation angles $s_{12} \ll s_{23}
 \ll s_{12} \ll 1$. Exploiting this hierarchy in terms of an expansion with leads
 to the Wolfenstein parametrisation
@@ -137,10 +140,11 @@ written in terms of
   s_{12} = \lambda, \eqspace s_{23} = A \lambda^2, \eqand s_{13}\exponential{i\delta} = A \lambda^3 (\rho + i \eta) \eqpd
 \end{equation}
 %
+\info{Add numbers for $\lambda, A, \rho, \eta$}
 Given the unitarity relations in
 \cref{sec:cpv_theory:flavour_physics:ckm_matrix:unitarity_relations} the six
 vanishing combinations can be represented in a triangle in the complex plane.
-The most prominent unitarity triangle arises from
+The most prominent ${(\dquark,\bquark)}$ unitarity triangle arises from
 %
 \begin{equation}
   \Vud^{\phantom{\ast}}\Vub^{\ast} + \Vcd^{\phantom{\ast}}\Vcb^{\ast} + \Vtd^{\phantom{\ast}}\Vtb^{\ast} = 0 
@@ -153,8 +157,10 @@ is of equal size and can be expressed as half of the Jarlskog invariant $J = \pm
 \Im V_{ik}^{\phantom{\ast}} V_{jl}^{\phantom{\ast}} V_{il}^{\ast} V_{jk}^{\ast}$
 with $i \neq j$ and $l \neq k$. It is a measure of \CP violation in the \SM and
 can be determined to be $\vert J \vert = \lambda^6 A^2 \eta \approx \num{3e-5}$.
+\redo{Jarlskog invariant}
 
-The angles and the sides of the triangle can be expressed as
+The angles and the sides of the triangle can be expressed in terms of the matrix
+elements as
 %
 \begin{equation}
   \alpha = \arg\left(-\frac{\Vtd^{\phantom{\ast}}\Vtb^{\ast}}{\Vud^{\phantom{\ast}}\Vub^{\ast}}\right),\eqthinspace 
@@ -180,15 +186,17 @@ Considering various measurements of parameters of the ${(\uquark,\dquark)}$
 unitarity triangle allows to constraint the apex in the
 ${(\ovE{\rho},\ovE{\eta})}$-plane \cite{Charles:2004jd,Bona:2006ah} as shown in
 \cref{fig:cpv_theory:flavour_physics:ckm_matrix:ckm_fitter_14}.
+\info{define $\ovE{\rho}$ and $\ovE{\eta}$}
+\missing{Continuative Literature CKM}
 
 \begin{figure}[ht]
 \centering
 \includegraphics[width=1\textwidth]{private/content/cpv-theory/figs/ckmfitter_summer14.pdf}
-\caption{Constraints on the ${(\uquark,\dquark)}$ unitarity triangle in the
-${(\ovE{\rho},\ovE{\eta})}$-plane from a global fit to the known \CKM parameters
+\caption{Constraints on the ${(\dquark,\bquark)}$ unitarity triangle in the
+${(\ovE{\rho},\ovE{\eta})}$-plane from a global fit to the \texthl{known} \CKM parameters
 \cite{Charles:2004jd}. Regions outside the coloured areas have $1-p >
 \SI{95.45}{\percent}$. The red hashed region of the global combination
-corresponds to $\SI{68}{\percent}$ \CL.}
+corresponds to $\SI{68}{\percent}$ \acp{CL}.}
 \label{fig:cpv_theory:flavour_physics:ckm_matrix:ckm_fitter_14}
 \end{figure}
 
@@ -207,7 +215,7 @@ expressed by the decay amplitudes
   \end{alignedat}
 \end{equation}
 %
-where \Hamiltonian{}{} is the Hamiltonian governing the weak interaction. 
+where \Hamiltonian{}{} is the Hamiltonian governing the weak interaction.
 
 Under the premise of $(\CP)^2 = 1$ the initial and final states transform under
 the \CP operation as
@@ -269,7 +277,7 @@ following the Weisskopf-Wigner approximation
 \end{equation}
 %
 is not Hermitian, as otherwise the meson states would just oscillate without
-decay.
+decay.\info{$\mathbf{M}, \mathbf{\Gamma}$ are hermitian}
 
 Assuming \CPT invariance, $m_{11} = m_{22} = m$, $m_{21} = m_{12}^{\ast}$,
 $\Gamma_{11} = \Gamma_{22} = \Gamma$, and $\Gamma_{21} = \Gamma_{12}^{\ast}$.
@@ -317,6 +325,8 @@ while the sign of $\DG$ has to be determined experimentally.
 \subsection{Time evolution of meson states}
 \label{sec:cpv_theory:flavour_physics:time_evolution}
 
+\info{Missing transition}
+
 The time evolution of a physical state produced as $t=0$ either as a pure
 $\ket{\Mesonz}$ or $\ket{\Mesonzbar}$ state is now described by
 %
@@ -336,7 +346,7 @@ where the coefficients $g_{\pm}$ are defined as
   \right]
   =
   \frac{1}{2} \left[
-    \exponential{-i m_H t} \exponential{-\frac{i}{2} \Gamma_H t} \pm \exponential{-i m_L t} \exponential{-\frac{i}{2} \Gamma_L t}
+    \exponential{-i m_H t} \exponential{-\frac{1}{2} \Gamma_H t} \pm \exponential{-i m_L t} \exponential{-\frac{1}{2} \Gamma_L t}
   \right]\eqpd
 \end{equation}
 %
@@ -366,7 +376,7 @@ which yields the four differential decay rates
   \end{split}
 \end{equation}
 %
-where the definitions of
+where the definitions
 %
 \begin{equation}\label{eq:cpv_theory:flavour_physics:time_evolution:lambdaf}
   \lambda_f               \equiv \frac{1}{\ovE{\lambda}_f}   = \frac{q}{p} \frac{\ovE{A}_f}{A_f} \eqand 
@@ -409,6 +419,7 @@ decay
 %
 This is the only possible source of \CP violation in charged mesons and all
 baryons.
+\info{Add LHCb measurement as example for direct CPV}
 
 \subsubsection[\CP violation in mixing]{\CPbfsf violation in mixing}
 \label{sec:cpv_theory:flavour_physics:cpv_classification:mixing}
@@ -420,6 +431,7 @@ occurs if
   \abs{\frac{q}{p}} \neq 1 \eqpd
 \end{equation}
 %
+\info{Add LHCb measurement as example for indirect CPV}
 
 \subsubsection[\CP violation in the interference]{\CPbfsf violation in the interference}
 \label{sec:cpv_theory:flavour_physics:cpv_classification:interference}

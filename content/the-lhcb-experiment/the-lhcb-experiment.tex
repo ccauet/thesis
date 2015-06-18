@@ -2,6 +2,9 @@
 
 \chapter{The \acs*{LHCb} experiment}
 \label{ch:lhcb_experiment}
+
+\missing{General intro: LHC, LHCb etc}
+
 General overview of the detector: physics case, (collaboration,) design, advantages over ATLAS, CMS, ALICE; 
 
 physics motivation:
@@ -76,28 +79,30 @@ $\SI{2.4e33}{\lumi}$. An increase of the beam energy to $\sqrt{s}=\SI{8}{\TeV}$
 lead to a peak instantaneous luminosity of $\SI{7.7e33}{\lumi}$ in 2012
 \cite{Lamont:2013cma}.
 
-The \LHC is not only capable of colliding protons but also lead ions in Pb-Pb
-as well as in \proton-Pb and Pb-\proton collisions. For this purpose the \ALICE
-detector \cite{Aamodt:2008zz} is specifically designed to study QCD interactions
-and the quark-gluon plasma produced in the \LHC ion runs, where it has to cope
-with very large particle multiplicities. In the case of an heavy ion run, the
+The \LHC is not only capable of colliding protons but also lead ions in Pb-Pb as
+well as in \proton-Pb and Pb-\proton collisions. For this purpose the
+\acs{ALICE} (\acl{ALICE}) detector \cite{Aamodt:2008zz} is specifically designed
+to study QCD interactions and the quark-gluon plasma produced in the \LHC ion
+runs, where it has to cope with very large particle multiplicities. In the case
+of an heavy ion run, the
 \LINACThree and the \LEIR mark the starting point of the accelerator chain,
 before injecting the lead ions into the \PSyn.
 
 In total, seven experiments are located at the four interaction regions of the
-\LHC. The two multi-purpose detectors \ATLAS \cite{Aad:2008zzm} and \CMS
-\cite{Chatrchyan:2008aa} are installed at opposite sides of the storage ring.
-Both experiments cover a great variety of physics activities: the search for
-scalar particles, particles predicted by super-symmetric models, dark matter
-candidates, and evidence for extra spacial dimensions. Around the interaction
-regions of the \CMS experiment, the \TOTEM detectors \cite{Anelli:2008zza} are
-located. Together with the \LHCf experiment \cite{Adriani:2008zz}, located on
-both sides of the \ATLAS interaction region, the detectors are designated to
-address the study of the \enquote{forward} region of the collisions at very
-small angles to the beam direction. The seventh experiment \MoEDAL extends the
-\LHC physics program to the direct search for magnetic monopoles. Still missing
-in this list, is the \LHCb experiment, that will be explained in more detail in
-the next section.
+\LHC. The two multi-purpose detectors \acs{ATLAS} (\acl{ATLAS})
+\cite{Aad:2008zzm} and \acs{CMS} (\acl{CMS}) \cite{Chatrchyan:2008aa} are
+installed at opposite sides of the storage ring. Both experiments cover a great
+variety of physics activities: the search for scalar particles, particles
+predicted by super-symmetric models, dark matter candidates, and evidence for
+extra spacial dimensions. Around the interaction regions of the \CMS experiment,
+the \acs{TOTEM} (\acl{TOTEM}) detectors \cite{Anelli:2008zza} are located.
+Together with the \LHCf experiment \cite{Adriani:2008zz}, located on both sides
+of the \ATLAS interaction region, the detectors are designated to address the
+study of the \enquote{forward} region of the collisions at very small angles to
+the beam direction. The seventh experiment \acs{MoEDAL} (\acl{MoEDAL}) extends
+the \LHC physics program to the direct search for magnetic monopoles. Still
+missing in this list, is the \LHCb experiment, that will be explained in more
+detail in the next section.
 
 % to enforce definition of abbreviations
 \acuse{LINACThree,LEIR,ALICE,ATLAS,CMS,TOTEM,MoEDAL,LHCf}
@@ -107,7 +112,7 @@ the next section.
 \label{sec:lhcb_experiment:detector}
 
 The \LHCb detector is a unique precision instrument solely designed to study \CP
-violation and rare decays of beauty and charm hadrons. He is constructed as a
+violation and rare decays of beauty and charm hadrons. It is constructed as a
 single-arm spectrometer covering an angular range from approximately
 $\SI{10}{\mrad}$ to $\SI{300}{\mrad}$ ($\SI{250}{\mrad}$) in the
 horizontal (vertical) plane.
@@ -117,6 +122,7 @@ in \protonproton collisions at the \LHC. The production of heavy quarks in an
 hadronic environment is dominated by gluon-gluon fusion and quark-antiquark
 annihilation.
 
+\missing{Complete LHCb intro}
 \info{Better understand how b quark production works at the LHC}
 bbbar production process:
 hadrons, PDF, gluon-gluon fusion
@@ -164,7 +170,7 @@ and displaced \acp{SV}. To achieve the best possible spatial resolution the
 sensors must be positioned close to the beam trajectory. To allow the sensors to
 be as close as $\SI{8}{\milli\metre}$ to the interaction region and still
 prevent damage during beam injection, the \VELO modules are split in two halves
-an can be retracted until stable beams are present. Each single modules consists
+an can be retracted until stable beams are present. Each single module consists
 of two half-disk shaped silicon microstrip sensor modules covering either the
 radial dimensions ($R$ sensor) or the angular dimension ($\Phi$ sensor) as can
 be seen in the schematic visualisation in
@@ -203,8 +209,9 @@ modules visible. \info{VELO pile-up system?}
 %   \item performance(?)
 % \end{itemize}
 %%------------------------------------------------------------------------------
-\subsection{TT \& IT}
+\subsection{The \acs*{LHCb} tracking system}
 \label{sec:lhcb_experiment:tracking:ttit}
+\label{sec:lhcb_experiment:tracking:ot}
 
 The \TT as well as the \IT make use of silicon microstrip sensors to track
 particle trajectories. The planar \TT station is located upstream of the magnet
@@ -214,10 +221,6 @@ region around the beam pipe that is $\SI{120}{\centi\metre}$ wide and
 $\SI{40}{\centi\metre}$ high. Each of the stations has four detector layers,
 where the strips in the two inner layer are rotated $\pm\SI{5}{\degree}$ to
 allow for two dimensional positioning.
-
-%%------------------------------------------------------------------------------
-\subsection{OT}
-\label{sec:lhcb_experiment:tracking:ot}
 
 The outer region of the three downstream tracking stations, called \OT, consists
 of a drift-time detector constructed from an array of gas-filled straw-tube
@@ -229,7 +232,9 @@ tracking in the low occupancy region around the \IT.
 %%------------------------------------------------------------------------------
 \subsection{Track reconstruction technique and performance}
 \label{sec:lhcb_experiment:tracking:techniques_and_performance}
-Results are form Bd2JpsiKS!
+
+\missing{Track reconstruction technique}
+\info{Results are from Bd2JpsiKS!}
 \begin{itemize}
   \item hits from VELO, TT, IT and OT are combined to form trajectories form the VELO to the calorimeters. 
   \item list different track types: long, upstream, downstream, VELO, T
@@ -308,6 +313,8 @@ states, as $\BdToJpsiKS$ considered in the analysis described in this thesis.
 
 %%------------------------------------------------------------------------------
 \subsection{Particle identification technique and performance}
+
+\missing{Particle identification technique}
 \begin{itemize}
   \item combine info from RICHs, calo, and muon system to identify: e,mu,pi,K,p also gamma, pi0
   \item hadron PID: likelihood approach, RICH pattern mached to all possible tracks under assumption of partice hypotheses. -> global pattern-recongnition
@@ -326,11 +333,11 @@ states, as $\BdToJpsiKS$ considered in the analysis described in this thesis.
 
 To cope with up to $\SI{40}{\mega\hertz}$ event rate and high particle
 multiplicities an efficient online event selection (trigger) system is
-necessary. The \LHCb trigger system consists of the hardware based \LZero
-trigger and the \HLT software trigger. The \LZero uses custom made electronics
-located in direct proximity of the readout electronics to provide a fast trigger
-decision in real-time with the bunch crossing-frequency. The \HLT operates
-asynchronously on a processor farm.
+necessary. The \LHCb trigger system consists of a \LZero and the \acs{HLT}
+(\acl{HLT}) software trigger. The \LZero uses custom made electronics located in
+direct proximity of the readout electronics to provide a fast trigger decision
+in real-time with the bunch crossing-frequency. The \HLT operates asynchronously
+on a processor farm.
 
 \Cref{fig:lhcb_experiment:trigger:overview}\addref{LHCb trigger scheme from speakers bureau} shows an overview of the \LHCb
 trigger schematics. The \LZero is described in
@@ -344,7 +351,7 @@ system and its performance during \RunOne can be found in
   %% trim={<left> <lower> <right> <upper>}
   \includegraphics[width=0.45\textwidth, trim={14.5cm 1.4cm 14.5cm 1.4cm}, clip=true]{private/content/the-lhcb-experiment/figs/lhcb_trigger_overview.pdf}
   \caption{
-    The \acs{LHCb} trigger scheme.
+    The \acs{LHCb} \RunOne trigger scheme.
   }
   \label{fig:lhcb_experiment:trigger:overview}
 \end{figure}
@@ -372,21 +379,24 @@ To further reduce the data rate the \HLT software trigger handles all events
 that pass the \LZero. The \HLT itself is further split into two stages, the
 \acs{HLT}1 and the \acs{HLT}2. The first stage performs a partial event
 reconstruction using track information from the \VELO, the muon system, and the
-main tracker to accept events with high \pT tracks. The second \HLT stage then
-performs a full event reconstruction on the events passed by the \acs{HLT}1.
-Both \HLT stages further reduce the event rate to $\SIrange[range-units =
-single, range-phrase = -]{3}{5}{\kilo\hertz}$ before the data is written to
-permanent storage.
+main tracking stations to accept events with high \pT tracks. The second \HLT
+stage then performs a full event reconstruction on the events passed by the
+\acs{HLT}1. Both \HLT stages further reduce the event rate to
+$\SIrange[range-units = single, range-phrase = -]{3}{5}{\kilo\hertz}$ before the
+data is written to permanent storage.
 
 The \HLT excels in is flexibility and performance, especially regarding the
 selection of (di-)muon events. As the \LHC delivers stable physics beams in
 about $\SI{30}{\percent}$ of the time, local storage on the computing nodes is
 used to \enquote{defer} around $\SI{20}{\percent}$ of the \LZero-passed events
 to process them during periods without stable beams \cite{Frank:2014ixa}.
-
+\info{Add HLT performance? Overall trigger performance?}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Online system}
+
+\missing{Online system}
+
 \DAQ, \TFC, and \ECS
 \begin{itemize}
   \item \DAQ: transport of bunch-crossing data from the detector fond-end electornics to permanent storage
@@ -397,6 +407,8 @@ to process them during periods without stable beams \cite{Frank:2014ixa}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Software stack}
+
+\missing{Software stack}
 \begin{itemize}
   \item \Gaudi: LHCb software framework (used by ATLAS as well)
   \item \Brunel: reconstruction
@@ -407,8 +419,12 @@ to process them during periods without stable beams \cite{Frank:2014ixa}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Computing grid}
+
+\missing{Computing grid}
 ...
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{\RunTwo and the \acs*{LHCb} upgrade}
+
+\missing{\RunTwo and the \acs*{LHCb} upgrade}
 Short description of Run II and Upgrade physics goals, the changes wrt now and what will be possible; a more detailed analysis of the Run II prospects for sin2beta will be given in the conclusions.

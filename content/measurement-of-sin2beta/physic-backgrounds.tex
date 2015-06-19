@@ -57,7 +57,7 @@ $\decay{\Bdstar}{\Bd(\to\jpsi\Kstarz)\,\Xparticle}$.
 \label{sec:measurement_of_sin2beta:physic_backgrounds:physic_backgrounds:lambda}
 
 Out of $\num{3e6}$ generated $\LbToJpsiLambda$ signal candidates only
-$\SI{2.0}{\percent}$ get reconstructed and pass the stripping. The cuts on the
+$\SI{2}{\percent}$ get reconstructed and pass the stripping. The cuts on the
 nominal mass and time ranges reduce this number down to $\SI{0.32}{\percent}$.
 The veto cut applied in the offline selection (see
 \cref{sec:measurement_of_sin2beta:data_preparation:offline_selection:daughters})
@@ -116,10 +116,10 @@ studies are necessary.
     \toprule
     \multicolumn{2}{c}{category} & \multicolumn{2}{c}{$\Asym{\Bkg}{\text{int}}$}\\
     \midrule
-    \catDD & \acs*{OS}    & $0.017$     & $0.005$ \\
-    \catDD & \acs*{SSpi}  & $-0.016$    & $0.011$ \\
-    \catLL & \acs*{OS}    & $-0.005$    & $0.012$ \\
-    \catLL & \acs*{SSpi}  & $0.044$     & $0.034$ \\
+    \multirow{2}{*}{\catDD} & \acs*{OS}    & $0.017$     & $0.005$ \\
+                            & \acs*{SSpi}  & $-0.016$    & $0.011$ \\
+    \multirow{2}{*}{\catLL} & \acs*{OS}    & $-0.005$    & $0.012$ \\
+                            & \acs*{SSpi}  & $0.044$     & $0.034$ \\
     \bottomrule
   \end{tabular}
 \end{table}
@@ -135,7 +135,7 @@ The decay time dependent background tagging asymmetry is defined similar to
   \Asym{\Bkg}{}(\obsTime) = \frac{N_{\Bkg}^{\Bdbar}(\obsTime) - N_{\Bkg}^{\Bd}(\obsTime)}{N_{\Bkg}^{\Bdbar}(\obsTime) + N_{\Bkg}^{\Bd}(\obsTime)}\eqpd
 \end{equation}
 %
-At first histograms are plotted to check for the null-hypothesis using a
+At first histograms are consulted to check for the null-hypothesis using a
 $\chisq$-test. The test is performed on the background \sweighted dataset as
 well as on a cocktail \MC sample built from signal \MC and background candidates
 from a \ToyMC sample generated with randomly distributed tag decisions. Finally,
@@ -157,7 +157,7 @@ summarised in \cref{tab:measurement_of_sin2beta:physic_backgrounds:tagging_asymm
 \begin{table}[h]
   \centering
   \caption{Time-integrated asymmetry of \sweighted background distributions for
-  \catDD and \catLL \OS and \SSpi tagged events.}
+  \catDD and \catLL \OS and \SSpi tagged events.\todo{Clarify}}
   \label{tab:measurement_of_sin2beta:physic_backgrounds:tagging_asymmetries:time_dependent:chisq}
   \begin{tabular}{llll}
     \toprule
@@ -172,11 +172,11 @@ summarised in \cref{tab:measurement_of_sin2beta:physic_backgrounds:tagging_asymm
   \end{tabular}
 \end{table}
 %
-All $p$-values support the tested null-hypothesis. Furthermore, the procedure
-seems valid as the results found on the \ToyMC sample are comparable to the
-values found on data, \eg the increased $p$-values for \catDD \OS are found both
-on data and \ToyMC and might be explained by the low statistics in this
-particular subsample.
+All $p$-values do not contradict the tested null-hypothesis. Furthermore, the
+procedure seems valid as the results found on the \ToyMC sample are comparable
+to the values found on data, \eg the increased $p$-values for \catDD \OS are
+found both on data and \ToyMC and might be explained by the low statistics in
+this particular subsample.
 %
 \begin{figure}[h]
 \includegraphics[width=0.49\textwidth]{private/content/measurement-of-sin2beta/figs/tagged_bkg_data_dd_os.pdf}
@@ -203,9 +203,9 @@ candidates are depicted in the left (right) side.}
 \label{fig:measurement_of_sin2beta:physic_backgrounds:tagging_asymmetries:toymc}
 \end{figure}
 
-\paragraph{A likelihood fit} to the \sweighted background candidates in order to
-exploit the per-event tag information. To do so the distributions are fitted
-using a \ac{PDF} as presented in 
+\paragraph{A likelihood fit} to the \sweighted background candidates is
+conducted in order to exploit the per-event tag information. To do so the
+distributions are fitted using a \ac{PDF} as presented in
 \cref{eq:measurement_of_sin2beta:physic_backgrounds:tagging_asymmetries:time_dependent:pdf} 
 where a potential asymmetry in data can be modelled. The parametrisation uses
 the sum of three (two in case of the \catDD \SSpi subsample) exponential

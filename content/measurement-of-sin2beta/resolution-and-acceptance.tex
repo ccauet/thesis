@@ -15,7 +15,7 @@ the per-event decay time error resolution estimate is checked and a model to
 calibrate the estimate is developed. The model is determined in a two step
 procedure. At first different calibration models are tested using a binned fit
 on the decay time resolution determined on data as a function of the resolution
-estimate $\obsTimeError$. Then the resolution model is used in an unbinned
+estimate $\obsTimeError$. Then the found resolution model is used in an unbinned
 likelihood fit to determine the calibration parameter values.
 
 The study is performed on $\BdToJpsiKS$ candidates passing the pre-scaled
@@ -35,19 +35,19 @@ The $\Jpsi$ mass distribution is described by an Ipatia \PDF (\cf
 \cref{sec:measurement_of_sin2beta:likelihood_fit:pdfs:ipatia}) for the signal
 component and an exponential \PDF for the background candidates. The fit is
 performed on the reconstructed invariant dimuon mass $m_{\mumu}$ in a range from
-$\SI{3040}{\MeVcc}$ to $\SI{3155}{\MeVcc}$. The fitted distribution and the \PDF
+$\num{3040}$ to $\SI{3155}{\MeVcc}$. The fitted distribution and the \PDF
 projections split into the \catDD and \catLL categories are shown in 
 \cref{fig:measurement_of_sin2beta:resolution_and_acceptance:resolution:jpsi_mass}.
 %
 \begin{figure}[h]
 \includegraphics[width=0.49\textwidth]{private/content/measurement-of-sin2beta/figs/resolution_mass_jpsi_dd.pdf}
 \includegraphics[width=0.49\textwidth]{private/content/measurement-of-sin2beta/figs/resolution_mass_jpsi_ll.pdf}
-\label{fig:measurement_of_sin2beta:resolution_and_acceptance:resolution:jpsi_mass}
 \caption{Invariant $\Jpsi$ candidate mass distribution in the (left) \catDD and
 (right) \catLL subsample. Data are shown in black, the projection of the total
 \acs{PDF} as solid black line, the signal component described by an Ipatia
 \acs{PDF} as dashed blue line, and the exponential background component as
 dotted green line.}
+\label{fig:measurement_of_sin2beta:resolution_and_acceptance:resolution:jpsi_mass}
 \end{figure}
 %
 Using a simultaneous fit in $\num{20}$ equally filled bins of the decay time
@@ -64,8 +64,8 @@ against the per-bin $\obsTimeError$ averages is performed. One linear and two
 parabolic calibration models (with and without offset) are tested. For both
 widths as well as for both the \catDD and \catLL candidates the linear model
 $\sigma^\prime(\obsTimeError) = c_i + b_i \obsTimeError$ describes the data at
-least equally well, such that the simpler model is chosen in case of comparable
-results. 
+least equally well \wrt the other parametrisations, such that the simpler model
+is chosen in case of comparable results.
 \Cref{fig:measurement_of_sin2beta:resolution_and_acceptance:resolution:calibration} 
 shows the calibration function for both track types and both Gaussian width
 parameters.
@@ -75,12 +75,12 @@ parameters.
 \includegraphics[width=0.49\textwidth]{private/content/measurement-of-sin2beta/figs/resolution_calibration_dd_wide.pdf}
 \includegraphics[width=0.49\textwidth]{private/content/measurement-of-sin2beta/figs/resolution_calibration_ll_narrow.pdf}
 \includegraphics[width=0.49\textwidth]{private/content/measurement-of-sin2beta/figs/resolution_calibration_ll_wide.pdf}
-\label{fig:measurement_of_sin2beta:resolution_and_acceptance:resolution:calibration}
 \caption{Decay time error estimate calibration for (top) \catDD and (bottom)
 \catLL candidates. Different calibration functions are fitted to the (left)
 narrow and the (right) wide Gaussian width parameters. In green the linear
 function $\sigma^\prime(\obsTimeError) = c_i + b_i \obsTimeError$ is shown, blue
 and yellow describe the parabolic function with and without offset.}
+\label{fig:measurement_of_sin2beta:resolution_and_acceptance:resolution:calibration}
 \end{figure}
 %
 Results of the depicted fits are given in 
@@ -89,8 +89,8 @@ in \cref{sec:app:measurement_of_sin2beta:resolution_and_acceptance:resolution}.
 
 Using the determined calibration model, the nominal decay time resolution model
 is developed. An unbinned maximum likelihood fit to the \Bd decay time is
-performed on the same $\Jpsi$ \sweighted dataset as described before using the
-resolution model
+performed on the same $\Jpsi$ signal \sweighted dataset as described before
+using the resolution model
 %
 \begin{equation}\label{eq:measurement_of_sin2beta:resolution_and_acceptance:resolution}
 \begin{split}
@@ -104,10 +104,10 @@ The first two Gaussian components describe the prompt peak resolution, the third
 component models the distribution of candidates associated to the wrong \PV.
 Different calibration parameters $c_i$ and $b_i$ are chosen for the width of the
 narrow ($i=1$) and the wide ($i=2$) Gaussian \PDF. The fractions $g_i$ add up to
-unity together with the fraction $f_\text{\acs*{PV}}$ of wrongly associated
-candidates. The offset $\mu_{\obsTime}$ of the Gaussian central value is shared
-between all three Gaussian \acp{PDF}. Finally, $\sigma_{\text{\acs*{PV}}}$
-describes the width of the wrong \PV component.
+unity together with the fraction $f_\text{\acs*{PV}}$ of candidates associated
+to the wrong \PV. The offset $\mu_{\obsTime}$ of the Gaussian central value is
+shared between all three Gaussian \acp{PDF}. Finally,
+$\sigma_{\text{\acs*{PV}}}$ describes the width of the wrong \PV component.
 \Cref{tab:measurement_of_sin2beta:resolution_and_acceptance:resolution:calibration:results} 
 lists the results that are used from now on in the decay time resolution model.
 How the choice of the calibration model influences the measurement is tested
@@ -161,7 +161,7 @@ inefficiencies mainly caused by the \VELO track reconstruction algorithms (\cf
 The biased trigger lines (\cf
 \cref{sec:measurement_of_sin2beta:data_preparation:trigger}) and the stripping
 cut on the reconstructed decay time of the $\Bd$ candidates result in a non-flat
-acceptance.
+decay time acceptance.
 
 In order to correctly describe these effects, the data sample is split into two
 disjoint categories of candidates that show a substantially different behaviour
@@ -198,9 +198,9 @@ efficiency $\varepsilon_\text{\catAU}$, with
   \end{split}
 \end{equation} 
 %
-For the \catEB subsample, there is no corresponding reference sample available, so
-strictly speaking we cannot construct a true efficiency. Nonetheless, the ratio
-of the \catEB subsample and the unbiased subsample can be computed as
+For the \catEB subsample, there is no corresponding reference sample available,
+so strictly speaking only a relative efficiency can be computed. Nonetheless,
+the ratio of the \catEB subsample and the unbiased subsample can be computed as
 $\varepsilon_\text{\catEB}$.
 %
 \begin{equation}
@@ -227,8 +227,8 @@ All candidates are selected by one of the following trigger lines:
 \HLTOneDiMuonHighMass, \HLTOneTrackMuon, \HLTTwoDiMuonJpsi, or
 \HLTTwoDiMuonDetachedJpsi.
 
-The efficiencies are time-dependent and, since the focus lies on the the
-acceptance of the signal decay time distribution, have to be determined through
+The efficiencies are time-dependent and, since the focus lies on the acceptance
+of the signal component's decay time distribution, have to be determined through
 a fit. To do so, a simultaneous fit for the signal yield is performed in ten
 bins of decay time. The bin boundaries are chosen in a way that each bin
 contains the same number of events (before splitting the data into the different
@@ -242,10 +242,10 @@ propagation is used for $\varepsilon_{\catEB}$.
 
 In the mass fit, the signal peak is described by a double Gaussian with a shared
 mean, while a single exponential is used to describe the combinatorial
-background. \Cref{fig:measurement_of_sin2beta:resolution_and_acceptance:acceptan
-ce:lower:mass_fits} shows both mass distributions and fit projections for the
-biased and unbiased sample, respectively. In both plots the sum over all
-categories is displayed.
+background. 
+\Cref{fig:measurement_of_sin2beta:resolution_and_acceptance:acceptance:lower:mass_fits} 
+shows both mass distributions and fit projections for the biased and unbiased
+sample, respectively. In both plots the sum over all categories is displayed.
 %
 \begin{figure}
 \includegraphics[width=0.49\textwidth]{private/content/measurement-of-sin2beta/figs/mass_trigger_efficiency_biased.pdf}
@@ -256,15 +256,15 @@ the (left) biased (\catAU and \catEB) and the (right) unbiased sample.}
 \end{figure}
 %
 \Cref{fig:measurement_of_sin2beta:resolution_and_acceptance:acceptance:lower:splines} 
-shows the acceptance histograms for the almost unbiased and the exclusively
-biased sample. In the nominal fit we use cubic splines\addref{Cubic splines}
-instead of the histograms themselves. Each bin centre is used as a knot for the
-splines. The bin contents determine the shape of the splines. However, the bin
-contents aren't fixed but constrained with a Gaussian function where the width
-is given by the uncertainty on the bin content. As there is no information about
-the acceptance at the decay time limits, the efficiency is assumed to be flat
-between the lower decay time limit at \SI{0.3}{\ps} and the first bin
-centre/knot and the last bin centre/knot and the upper decay time limit at
+shows the acceptance histograms for the \catAU and the \catEB sample. In the
+nominal fit we use cubic splines\addref{Cubic splines} instead of the histograms
+themselves. Each bin centre is used as a knot for the splines. The bin contents
+determine the shape of the splines. However, the bin contents aren't fixed but
+constrained with a Gaussian function where the width is given by the uncertainty
+on the bin content. As there is no information about the acceptance at the decay
+time limits, the efficiency is assumed to be flat between the lower decay time
+limit at \SI{0.3}{\ps} and the first bin centre/knot and the last bin
+centre/knot and the upper decay time limit at
 \SI{18.3}{\ps}, respectively.
 %
 \begin{figure}
@@ -281,16 +281,16 @@ acceptance using cubic splines.}
 \label{sec:measurement_of_sin2beta:resolution_and_acceptance:acceptance:upper}
 
 Due to the \VELO reconstruction inefficiency\todo{Be more precise, FastVelo
-algorithm} and other reconstruction and selection effects, a decay time
+algorithm} and other reconstruction and selection effects, a second decay time
 acceptance is observed for events with larger decay times. To account for
-this effect a correction factor $\beta_\tau$ is included into the fit model
-using the modified lifetime
+this a correction factor $\beta_\tau$ is included into the fit model
+by implementing the modified lifetime
 %
 \begin{equation}
   \widetilde{\tau} = \frac{\tau}{1 + \beta_\tau \tau} ,
 \end{equation}
 %
-which expands to
+which expands to\info{Stop expansion after linear term?}
 %
 \begin{equation}\label{eq:measurement_of_sin2beta:resolution_and_acceptance:acceptance:upper:linear}
 \begin{split}
@@ -310,12 +310,12 @@ being matched on \MC as true signal events are considered. The nominal offline
 selection is applied and from the remaining multiple (\acs{PV},\Bd) candidate pairs,
 one is chosen randomly. To avoid wrong-\acs{PV} associations of the reconstructed
 \BdToJpsiKS candidate the true \MC decay time is used in the fit. To reduce the
-statistical uncertainties and no deviations of the decay time distributions are
-expected all untagged events are included in this study. The number of remaining
-\MC candidates available for this study is roughly \num{60000}. Due to
-differences in the reconstruction efficiency the $\beta_\tau$ factor is
-determined separately for \catOO/\catOT and \catDD/\catLL events
-(\cref{tab:measurement_of_sin2beta:resolution_and_acceptance:acceptance:upper}).
+statistical uncertainties and as no deviations of the decay time distributions
+are expected all untagged events are included. The number of remaining \MC
+candidates available for this study is roughly \num{60000}. Due to differences
+in the reconstruction efficiency the $\beta_\tau$ factor is determined
+separately for \catOO/\catOT and \catDD/\catLL events
+(\cref{tab:measurement_of_sin2beta:resolution_and_acceptance:acceptance:upper}\info{write a proper sentence}).
 %
 \begin{table}
   \centering
@@ -324,8 +324,8 @@ determined separately for \catOO/\catOT and \catDD/\catLL events
     \toprule
      & 2011 & 2012 \\
     \midrule
-    downstream & $0.0036\pm0.0029$ & $0.0084\pm0.0032$ \\
-    long track & $0.018\pm0.004$   & $0.035\pm0.005$ \\
+    \catDD & $0.0036\pm0.0029$ & $0.0084\pm0.0032$ \\
+    \catLL & $0.018\pm0.004$   & $0.035\pm0.005$ \\
     \bottomrule
   \end{tabular}
   \label{tab:measurement_of_sin2beta:resolution_and_acceptance:acceptance:upper}
@@ -342,7 +342,7 @@ $\gamma_\tau$,
 \end{equation}
 %
 Again the parameters $\beta_\tau$ and $\gamma_\tau$ are fitted while fixing the
-lifetime $\tau$. In \cref{tab:measurement_of_sin2beta:resolution_and_acceptance:acceptance:upper:secondorder} 
+lifetime $\tau$. In \cref{tab:measurement_of_sin2beta:resolution_and_acceptance:acceptance:upper:quadratic} 
 the results are listed for \catOO/\catOT and \catDD/\catLL events. To visualise
 the effect, the per-bin ratio of the decay time distributions of signal \MC
 events to events generated from \ToyMC is calculated and shown in
@@ -350,7 +350,7 @@ events to events generated from \ToyMC is calculated and shown in
 The \ToyMC decay time distribution follows an exponential function with the same
 lifetime as used in the generation of the signal \MC. As the uncertainties on
 $\beta_\tau$ and $\gamma_\tau$ are large and the parameters are strongly
-correlated ($\rho>\SI{90}{\percent}$) we stick to the linear model. A possible
+correlated ($\rho>\SI{90}{\percent}$), the linear model is selected. A possible
 bias due to this choice is investigated in
 \cref{sec:measurement_of_sin2beta:systematics:systematics:acceptance}.
 %

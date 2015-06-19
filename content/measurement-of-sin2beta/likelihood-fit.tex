@@ -11,23 +11,23 @@ different dimensions and components is shown, and the fit model is outlined.
 The \CP observables of interest \SJpsiKS and \CJpsiKS are estimated in a
 multi-dimensional simultaneous \uEML fit. As summarised in
 \cref{tab:measurement_of_sin2beta:data_preparation:observables} the seven
-observables $\vec{x}$ are given by the reconstructed mass and decay time of the
+observables $\vect{x}$ are given by the reconstructed mass and decay time of the
 \Bd candidate, its decay time estimate, and its \OS and \SSpi tag decision as
 well as the corresponding mistag estimates
 %
 \begin{equation}\label{eq:measurement_of_sin2beta:likelihood_fit:observables}
-  \vec{x} = (\obsAllList)\eqpd  
+  \vect{x} = (\obsAllList)\eqpd  
 \end{equation}
 %
 The extended likelihood for a total of $N$ observed events in $j$ subsamples of
 data, where $n=\sum_j n_j$, is then defined as
 %
 \begin{equation}\label{eq:measurement_of_sin2beta:likelihood_fit:uEML}
-  \Likelihood{}{}\left(\vec{\theta},\vec{n};\vec{x}\right) = \frac{\exponential{-N} N^n}{n!} \prod_j \prod_{i=1}^{n_j} n_j \Prob{j}{}\left(\vec{x}_i;\vec{\theta}\right)\eqcm
+  \Likelihood{}{}\left(\vect{\theta},\vect{n};\vect{x}\right) = \frac{\exponential{-N} N^n}{n!} \prod_j \prod_{i=1}^{n_j} n_j \Prob{j}{}\left(\vect{x}_i;\vect{\theta}\right)\eqcm
 \end{equation}
 %
-where $\vec{n}$ is the numbers of events, and $\vec{\theta}$ the parameters with
-unknown values to be estimated by the \uEML fit. \important{Check definition of uEML}
+where $\vect{n}$ is the numbers of events, and $\vect{\theta}$ the parameters with
+unknown values to be estimated by the \uEML fit. \redo{Rewrite likelihood intro}
 
 The software library \RooFit---part of the \ROOT software framework---and its
 implementation of the \Minuit algorithm is used to minimize the negative
@@ -38,8 +38,8 @@ build the likelihood function are introduced shortly, before
 \cref{sec:measurement_of_sin2beta:likelihood_fit:model} presents the complete
 fit model employed by the \uEML fit. The approach to prevent any experimenter's
 bias during the development of the fit model is described in
-\cref{sec:measurement_of_sin2beta:likelihood_fit:blinding} The results of fitter
-validation study are summarised in
+\cref{sec:measurement_of_sin2beta:likelihood_fit:blinding}. The results of the
+fitter validation study are summarised in
 \cref{sec:measurement_of_sin2beta:likelihood_fit:validation}.
 
 % ------------------------------------------------------------------------------
@@ -100,6 +100,8 @@ parameter
 \subsubsection{BDecay}
 \label{sec:measurement_of_sin2beta:likelihood_fit:pdfs:bdecay}
 
+\info{Same naming as in theory section for coefficients?}
+
 Generalised exponential function to describe the time evolution of \Bmeson
 states with decay times $t$. The coefficients $A$, $B$, $C$, and $D$ can be
 adapted to describe \Bmeson mixing, \CP violation, and different asymmetries \eg
@@ -114,6 +116,8 @@ difference $\DM$ of the \Bmeson mass eigenstates.
 %...............................................................................
 \subsubsection{Ipatia}
 \label{sec:measurement_of_sin2beta:likelihood_fit:pdfs:ipatia}
+
+\info{CB ref as single ref?}
 
 The Ipatia \PDF \cite{Santos:2013gra} is a generalisation of the Crystal ball
 \PDF \cite{Oreglia:1980cs,Gaiser:1982yw,Skwarnicki:1986xj}, marginalised over
@@ -150,7 +154,7 @@ with the cylindrical harmonics $K_\lambda$ and
 %
 Here, $\mu$ and $\sigma$ are comparable to the mean and width known from a
 Gaussian distribution. The parameters $\lambda$ and $\zeta$ describe the shape
-of the central peak, $\beta$ characterises the asymmetry of the distribution.
+of the central peak, $\beta$ characterises the skewness of the distribution.
 The left and right side tails of the distribution are parametrised by $a_i$ and
 $n_i$.
 
@@ -239,7 +243,7 @@ The conditional \textbf{signal} decay time \PDF is given by
 %
 where the acceptance function $\varepsilon_{\Sig}^{\text{\catAU,\catEB}}$ (\cf
 \cref{sec:measurement_of_sin2beta:resolution_and_acceptance:acceptance:lower})
-is implemented using cubic splines and the resolution model
+is implemented using cubic splines\addref{Cubic splines} and the resolution model
 $\Resolution{\Sig}{}\left(\obsTime-\obsTime^\prime\right)$ (\cf
 \cref{sec:measurement_of_sin2beta:resolution_and_acceptance:resolution}) is
 convolved with the \B physics \PDF.
@@ -307,7 +311,7 @@ The \PDF is then given as
 %
 \begin{equation}\label{eq:measurement_of_sin2beta:likelihood_fit:model:decay_time:measured_pdf_tagged_only}
 \begin{split}
-  \Prob{\Sig}{}(\obsTime, \obsTagOS, \obsTagSS &\mid \mistagOS, \mistagSS) = \\
+  \Prob{}{}(\obsTime, \obsTagOS, \obsTagSS &\mid \mistagOS, \mistagSS) = \\
         &\delta_{\obsTagOS,+1}\delta_{\obsTagSS,+1} \ProbArg{}{}{\obsTime \given +1, +1, \mistagOS, \mistagSS} \eqcm \\
       + &\delta_{\obsTagOS,+1}\delta_{\obsTagSS,-1} \ProbArg{}{}{\obsTime \given +1, -1, \mistagOS, \mistagSS} \eqcm \\
       + &\delta_{\obsTagOS,-1}\delta_{\obsTagSS,+1} \ProbArg{}{}{\obsTime \given -1, +1, \mistagOS, \mistagSS} \eqcm \\
@@ -315,7 +319,7 @@ The \PDF is then given as
   \end{split}
 \end{equation}
 %
-with
+with\info{Check conditional vert in function arguments}\missing{Definition of omega and omegabar as function of eta}
 %
 \begin{equation}
   \begin{split}
@@ -370,17 +374,17 @@ $\ProbArg{\text{true}}{}{\obsTime \given \Bdbar}$ making use of
 making use of the definition of the tagging asymmetry $\deltamistag =
 \mistag^{\Bd} - \mistag^{\Bdbar}$, 
 \cref{eq:measurement_of_sin2beta:likelihood_fit:model:decay_time:measured_pdf_tagged_only:simplified} 
-can be summarised as
+can be summarised as\info{Check again!}
 %
 \begin{multline}
   \ProbArg{}{}{\obsTime, \obsTagOS, \obsTagSS \given \obsEtaOS, \obsEtaSS} = \\
-  \sum_{d^\prime} \Biggl[ \prod_{j} \zeta \left( d_j, \eta_j, d^\prime \right) \Biggr] \left( 1 - d^\prime A_P \right) \exponential{-\sfrac{\obsTime}{\tau}} \left\{ 1 - d^\prime \SJpsiKS \sin (\DMd \obsTime) + d^\prime \cos (\DMd \obsTime) \right\} \eqcm
+  \sum_{d^\prime} \Biggl[ \prod_{j} \zeta \left( d_j, \eta_j \right) \Biggr] \left( 1 - d^\prime A_P \right) \exponential{-\sfrac{\obsTime}{\tau}} \left\{ 1 - d^\prime \SJpsiKS \sin (\DMd \obsTime) + d^\prime \cos (\DMd \obsTime) \right\} \eqcm
 \end{multline}
 %
 with
 %
 \begin{equation}
-  \zeta \left( d_j, \eta_j, d^\prime \right) = 1 + d_j \left( 1 - 2 \left[ \mistag(\mistagestimate_j) + \frac{\Delta\mistag(\mistagestimate_j)}{2} \right] \right) \eqcm
+  \zeta \left( d_j, \eta_j \right) = 1 + d_j \left( 1 - 2 \left[ \mistag(\mistagestimate_j) + \frac{\Delta\mistag(\mistagestimate_j)}{2} \right] \right) \eqcm
 \end{equation}
 %
 where the calibration of the mistag estimates is implied by
@@ -426,7 +430,7 @@ in the nominal fit to reduce fit times.
 
 The complicated shapes of the mistag estimate distributions have to be modelled
 empirically. Popular approaches to model non-parametric distributions are \eg
-Gaussian kernel estimations and splines. The later one is used here. Splines are
+Gaussian kernel estimations and splines\addref{Cubic splines}. The later one is used here. Splines are
 piece-wise defined polynomials parametrised by interval boundaries
 (\emph{knots}), values at these knots, and boundary conditions to ensure a
 continues and smooth function. To model the mistag estimate distributions cubic
@@ -481,7 +485,7 @@ valid.
 \begin{table}
 \centering
 \caption{Correlations and \SI{95}{\percent} \acp{CL} between \OS and
-\SSpi mistag estimates.}
+\SSpi mistag estimates.\todo{Decimal separator alignment}}
 \label{tab:measurement_of_sin2beta:likelihood_fit:model:mistag:os_ss_correlations}
 \begin{tabular}{rcrcr}
 \toprule
@@ -506,7 +510,7 @@ estimates.
 \begin{table}
 \centering
 \caption{Correlations and \SI{95}{\percent} \acp{CL} between the mistag
-estimates $\eta_\text{\acs{OS}/\acs{SSpi}}$ and the reconstructed \Bd decay time.}
+estimates $\eta_\text{\acs{OS}/\acs{SSpi}}$ and the reconstructed \Bd decay time.\todo{Decimal separator alignment}}
 \label{tab:measurement_of_sin2beta:likelihood_fit:model:mistag:mistag_time_correlations}
 \begin{tabular}{rcrcr}
 \toprule
@@ -528,24 +532,24 @@ applied to the \CP observables $\SJpsiKS$ and $\CJpsiKS$ by adding an obfuscated
 offset to the fit parameters. This does not affect the uncertainty estimates and
 still allows to compare and reproduce the fit outcome. The offset is drawn from
 a uniform distribution using a random number generator. The random seed is
-generated using a \emph{blinding string}. The ensure a sufficient ambiguity the
-range of the uniform distribution is chosen to be ${[-2,2]}$. The blinding
+generated using a \enquote{blinding string}. To ensure a sufficient ambiguity
+the range of the uniform distribution is chosen to be ${[-2,2]}$. The blinding
 string applied to conceal the estimated value of $\SJpsiKS$ is
-\enquote{\emph{SJpsiKS2011und2012}} and for $\CJpsiKS$ it is chosen to be
-\enquote{\emph{CJpsiKS2011und2012}}.
+\enquote{SJpsiKS2011und2012} and for $\CJpsiKS$ it is chosen to be
+\enquote{CJpsiKS2011und2012}.
 
 % ------------------------------------------------------------------------------
 \subsection{Fitter validation}
 \label{sec:measurement_of_sin2beta:likelihood_fit:validation}
 
 The likelihood model described before and its code implementation is validated
-using \ToyMC data and regular \MC simulated data.
+using \ToyMC simulated and regular \MC simulated data.
 
 %...............................................................................
 \subsubsection{\Acl{ToyMC}}
 \label{sec:measurement_of_sin2beta:likelihood_fit:validation:toy_mc}
 
-An external \ToyMC generator is employed to scrutinise the \PDF used in the fit.
+An external \ToyMC generator\addref{How to cite ToyMC gen?} is employed to scrutinise the \PDF used in the fit.
 It generates distributions for the dimensions mass, decay time, decay time error
 estimate, and mistag estimate, correctly describes the per-event tag and mistag
 for two tagging algorithms, comprises tagging and production asymmetries, as
@@ -589,9 +593,9 @@ compatible with the generation values.
 %
 \begin{equation}\label{eq:measurement_of_sin2beta:likelihood_fit:validation:signal_mc}
 \begin{split}
-  \SJpsiKS^{\text{SigMC}}   &= \num[separate-uncertainty=true]{0.714 \pm 0.032} \ , \\
-  \CJpsiKS^{\text{SigMC}}   &= \num[separate-uncertainty=true]{0.012 \pm 0.028} \ , \\
-  \tau_{\Bz}^{\text{SigMC}} &= \SI[separate-uncertainty=true]{1.521  \pm 0.009}{\pico\second} \ . \\
+  \SJpsiKS^{\text{SigMC}}   &= \num[separate-uncertainty=true]{0.714 \pm 0.032} \eqcm \\
+  \CJpsiKS^{\text{SigMC}}   &= \num[separate-uncertainty=true]{0.012 \pm 0.028} \eqcm \\
+  \tau_{\Bz}^{\text{SigMC}} &= \SI[separate-uncertainty=true]{1.521  \pm 0.009}{\pico\second} \eqpd \\
 \end{split}
 \end{equation}
 
@@ -608,9 +612,8 @@ all measured parameters are perfectly compatible with the generation values.
 %
 \begin{equation}\label{eq:measurement_of_sin2beta:likelihood_fit:validation:cocktail_mc}
 \begin{split}
-  \SJpsiKS^{\text{CocktailMC}}   &= \num[separate-uncertainty=true]{0.722 \pm 0.029}  \ , \\
-  \CJpsiKS^{\text{CocktailMC}}   &= \num[separate-uncertainty=true]{0.008 \pm 0.027}  \ , \\
-  \tau_{\Bz}^{\text{CocktailMC}} &= \SI[separate-uncertainty=true]{1.506  \pm 0.010}{\pico\second} \ . \\
+  \SJpsiKS^{\text{CocktailMC}}   &= \num[separate-uncertainty=true]{0.722 \pm 0.029}  \eqcm \\
+  \CJpsiKS^{\text{CocktailMC}}   &= \num[separate-uncertainty=true]{0.008 \pm 0.027}  \eqcm \\
+  \tau_{\Bz}^{\text{CocktailMC}} &= \SI[separate-uncertainty=true]{1.506  \pm 0.010}{\pico\second} \eqpd \\
 \end{split}
 \end{equation}
-

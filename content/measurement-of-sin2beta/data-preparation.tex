@@ -11,9 +11,8 @@ Finally the different data samples used in the analysis are stated.
 The presented analysis is performed on a dataset collected by the \LHCb
 experiment during two run periods in 2011 and 2012, dubbed
 \enquote{\RunOne}\footnote{In contrast to the second \enquote{\RunTwo} period
-scheduled to start in 2015 and last until mid 2018.}.
-
-The 2011 subsample has an integrated luminosity of
+scheduled to start in 2015 and last until mid 2018.}. The 2011 subsample has an
+integrated luminosity of
 $\SI[separate-uncertainty=true]{1.00\pm0.04}{\per\femto\barn}$ at a
 centre-of-mass energy of $\sqrt{s}=\SI{7}{\TeV}$, while the 2012 subsample has
 an integrated luminosity of
@@ -23,9 +22,9 @@ $\sqrt{s}=\SI{8}{\TeV}$.
 The $\BdToJpsiKS$ decay candidates are reconstructed in the $\JpsiToMuMu$ and
 $\KSToPiPi$ final state. In order to enhance the purity of the signal
 candidates, several selection steps are performed. At first a two-layer
-\emph{trigger} system selects events from the \protonproton collisions (\cf
+trigger system selects events from the \protonproton collisions (\cf
 \cref{sec:measurement_of_sin2beta:data_preparation:trigger}). Then a loose and very general
-selection, the so called \emph{stripping} is applied to the triggered data
+selection, the so called \enquote{stripping} is applied to the triggered data
 written to tape (\cf
 \cref{sec:measurement_of_sin2beta:data_preparation:stripping}). The final step
 is an offline selection of the remaining candidates that is further adjusted to
@@ -40,16 +39,16 @@ be understood and accounted for (\cf
 \cref{sec:measurement_of_sin2beta:resolution_and_acceptance:acceptance}).
 
 %...............................................................................
-\subsubsection{Global decay chain fit}
+\subsubsection{\Acl*{DTF}}
 \label{sec:measurement_of_sin2beta:data_preparation:dtf}
 
 In order to correctly comprise correlations and uncertainties on vertex
 positions, particle momenta, flight distances, decay times, and invariant
-masses, a global decay chain fit (\acs{DTF}) \cite{Hulsbergen:2005pu} is
-performed. Instead of fitting \enquote{leaf-by-leaf} starting from the final
-state particles to determine the parameters of their composite mother particle,
-then repeating this step until the initial \bhadron is reached, the \DTF fit
-extracts all parameters in the decay chain simultaneously.
+masses, a \acf{DTF} \cite{Hulsbergen:2005pu} is performed. Instead of fitting
+\enquote{leaf-by-leaf} starting from the final state particles to determine the
+parameters of their composite mother particle, then repeating this step until
+the initial \bhadron is reached, the \DTF fit extracts all parameters in the
+decay chain simultaneously.
 
 Entities decorated with the expression \dtfpv stem from a \DTF fit where the
 knowledge about the \PV has been used to constrain the production
@@ -75,7 +74,7 @@ used fit constraints.
 
 \begin{table}
 \centering
-\caption{Used observables, observable ranges, and \DTF fit properties.\info{checkmark does not work with font}}
+\caption{Used observables, observable ranges, and \DTF fit properties.\info{Checkmark does not work with font}}
 \label{tab:measurement_of_sin2beta:data_preparation:observables}
 \begin{tabular}{llccc}
 \toprule
@@ -109,8 +108,8 @@ or may not leave hits in the \VELO (\cf
 pions have hits in the \VELO are classified as \emph{long track}
 (\textbf{\catLL}) candidates. If both pions do not leave hits in the \VELO, the
 candidate is called \emph{downstream track} (\textbf{\catDD}) candidate.
-Candidates where only one of the reconstructed pions has a long track are not
-considered in this analysis.
+Candidates where only one or less of the reconstructed pions has a long track
+are not considered in this analysis.
   
   \item[Tagger] Depending on the tag decisions, events are categorised: as
   exclusively \emph{opposite side tagged} (\textbf{\catOS}) if \textbf{only} the
@@ -119,7 +118,8 @@ opposite side tagger combination returns a tag decision, as exclusively
 pion tagger returns a decision, as tagged by both tagging algorithms (or
 \emph{tagged by both sides} (\textbf{\catBS})), and as \emph{untagged}
 (\textbf{\catUT}) if none of the used taggers returns a tag decision. See
-\cref{ch:flavour_tagging} for an elaborated description.
+\cref{ch:flavour_tagging} for an elaborated description of the flavour tagging
+methods.
   
   \item[Trigger] As described in
 \cref{sec:measurement_of_sin2beta:data_preparation:trigger}, the different
@@ -142,7 +142,7 @@ total of $\num{24}$ disjoint subsamples.
 The \LHCb trigger system reduces the amount of data to be stored using loose
 criteria to filter events with interesting physical signatures. As described in
 \cref{sec:lhcb_experiment:trigger} a two-stage system is utilised build up from
-the fast hardware-based \acf{LZero} trigger and the software based \acf{HLT}.
+a fast \acf{LZero} and the software based \acf{HLT}.
 
 The trigger requirements are collected in so called \enquote{trigger lines}
 consisting of a set of selections criteria to map certain event types. In the
@@ -193,14 +193,14 @@ requirements are summarised in
 \toprule
 & \HLTOneDiMuonHighMass & \HLTOneTrackMuon \\
 \midrule
-Track \IP                   & -                                     & $>\SI{0.1}{mm}$ \\
-Track $\chi_{\text{\IP}}^2$ & -                                     & $>\num{16}$ \\
-Track \pT                   & $>\SI[per-mode=symbol]{0.5}{\GeVc}$   & $>\SI[per-mode=symbol]{1}{\GeVc}$ \\
-Track $p$                   & $>\SI[per-mode=symbol]{6}{\GeVc}$     & $>\SI[per-mode=symbol]{8}{\GeVc}$ \\
-Track \chisqndf             & $<\num{4}$                            & $<\num{2}$ \\
-\DOCA                       & $<\SI{0.2}{mm}$                       & - \\
-$\chi^2_\text{vtx}$         & $<\num{25}$                           & - \\
-Mass                        & $>\SI[per-mode=symbol]{2.7}{\GeVcc}$  & - \\ 
+Track \acs*{IP}                   & -                                     & $>\SI{0.1}{mm}$ \\
+Track $\chi_{\text{\acs*{IP}}}^2$ & -                                     & $>\num{16}$ \\
+Track \acs*{pT}                   & $>\SI[per-mode=symbol]{0.5}{\GeVc}$   & $>\SI[per-mode=symbol]{1}{\GeVc}$ \\
+Track $p$                         & $>\SI[per-mode=symbol]{6}{\GeVc}$     & $>\SI[per-mode=symbol]{8}{\GeVc}$ \\
+Track \chisqndf                   & $<\num{4}$                            & $<\num{2}$ \\
+\acs*{DOCA}                       & $<\SI{0.2}{mm}$                       & - \\
+$\chi^2_\text{vtx}$               & $<\num{25}$                           & - \\
+Mass                              & $>\SI[per-mode=symbol]{2.7}{\GeVcc}$  & - \\ 
 \bottomrule
 \end{tabular}
 \end{table}
@@ -216,7 +216,7 @@ cut on the flight distance significance of the \Jpsi candidate the
 \HLTTwoDiMuonDetachedJpsi line causes a lifetime bias. Hence, the
 \HLTTwoDiMuonJpsi line is used as an unbiased reference line. With a pre-scale
 of $\num{0.2}$, only $\SI{20}{\percent}$ of all events passing \LZero and
-\HLTTwo are chosen randomly as input to this line.
+\HLTOne are chosen randomly as input to this line.
 %
 \begin{table}
 \centering
@@ -288,14 +288,14 @@ the reconstructed final state particles as well as on the reconstructed $\Jpsi$,
 $\KS$, and $\Bd$ candidates are required as described in detail in 
 \cref{tab:measurement_of_sin2beta:data_preparation:stripping:jpsi,tab:measurement_of_sin2beta:data_preparation:stripping:kaon,tab:measurement_of_sin2beta:data_preparation:stripping:b}. 
 Two different stripping configurations, the \StrippingDetached and
-\StrippingPrescaled lines are employed. The measurement of \CP violation in the
-decay of \Bd and \Bdbar mesons into the \Jpsi\KS final state uses the
-\StrippingDetached line, where a cut requires \Bd candidate decay times to be
-larger than $\SI{0.2}{\pico\second}$. For studies requiring the full decay time
-range, the \StrippingPrescaled line with a pre-scale of $\num{0.3}$ is used.
+\StrippingPrescaled lines are employed. In the \CP violation measurement the
+\StrippingDetached line is used, where a cut requires the \Bd candidate's decay
+time to be larger than $\SI{0.2}{\pico\second}$. For studies requiring the full
+decay time range, the \StrippingPrescaled line with a pre-scale of $\num{0.3}$
+is used.
 
 Besides the decay time cut in the detached line and the pre-scale in the
-correspondent line, all other selection criteria are shared among both lines.
+correspondent line, all other selection criteria are shared among both lines.\redo{All stripping cut tables together}
 %
 \begin{table}
 \centering
@@ -328,9 +328,10 @@ $\chi^2$ \wrt to all \acp{PV} in the event, $\chi^2_{\acs*{IP}}$, the $\chi^2$
 of their distance of closest approach, $\chi_{\text{\acs*{DOCA}}}^2$, and their
 invariant mass prior to the vertex fit, $m_{\pi\pi}$. After the vertex fit,
 requirements on the resulting $\KS$ candidate are based on its invariant mass,
-$m_{\KS}$, its decay length significance with respect to its best PV, \ie the PV
-with the smallest \IP $\chi^2$ \wrt to its trajectory, and the $\chisqndf$ of
-the vertex fit, $\chi_{\text{vtx}}^2/\ndf$.}
+$m_{\KS}$, its decay length significance with respect to its best \PV, \ie the
+\PV with the smallest \IP $\chi^2$ \wrt to its trajectory, and the $\chisqndf$
+of the vertex fit, $\chi_{\text{vtx}}^2/\ndf$.\todo{Linebreak for last entry in
+table}}
 \label{tab:measurement_of_sin2beta:data_preparation:stripping:kaon}
 \begin{tabular}{lll}
 \toprule
@@ -364,12 +365,12 @@ $m_{\Bd}$                       & $\SI[per-mode=symbol]{5150}{\MeVcc}<m_{\mu\mu\
 \label{sec:measurement_of_sin2beta:data_preparation:offline_selection}
 
 The final step in the selection of signal candidates follows the trigger and
-stripping selection. The \emph{offline} selection attempts to enhance the signal
-purity of the data sample without introducing additional biases on the \Bd
-candidates' decay time distribution. The major objective of the selection is to
-preserve a large number of signal candidates while the reduction of background
-candidates only serves an inferior standing. This approach is promoted by the
-fact, that the physics backgrounds are well under control (\cf
+stripping selection. The \enquote{offline} selection attempts to enhance the
+signal purity of the data sample without introducing additional biases on the
+\Bd candidates' decay time distribution. The major objective of the selection is
+to preserve a large number of signal candidates while the reduction of
+background candidates only serves an inferior standing. This approach is
+promoted by the fact, that the physics backgrounds are well under control (\cf
 \cref{sec:measurement_of_sin2beta:physic_backgrounds}) and the combinatorial
 background is easy to model in the fit (\cf
 \cref{sec:measurement_of_sin2beta:likelihood_fit}).
@@ -377,12 +378,13 @@ background is easy to model in the fit (\cf
 To measure the signal efficiency $\SigEff$ and the background rejection
 $\BkgRej$ of the respective selection requirements an \sPlot fit
 \cite{Pivk:2004ty} has been performed to retrieve signal and background weights
-for each event. The fit describes the signal using an Ipatia \PDF
-\cite{Santos:2013gra} with double sided tails and the background using a single
-exponential \PDF. In case of the \catLL sample an additional Gaussian with fixed
-mean and width estimated from \MC simulations is used to describe the
-$\BdToJpsiKstar$ component. For a more detailed description of the used model,
-see \cref{sec:measurement_of_sin2beta:likelihood_fit:pdfs:ipatia}.
+for each event. The fit describes the signal using an Ipatia \PDF (\cf
+\cref{sec:measurement_of_sin2beta:likelihood_fit:pdfs:ipatia}) with double sided
+tails and the background using a single exponential \PDF. In case of the \catLL
+sample an additional Gaussian \PDF with fixed mean and width estimated from \MC
+simulations is used to describe the $\BdToJpsiKstar$ component. For a more
+detailed description of the used mass model, see
+\cref{sec:measurement_of_sin2beta:likelihood_fit:pdfs:ipatia}.
 
 \Cref{fig:measurement_of_sin2beta:data_preparation:offline_selection:before} shows the mass
 distribution of the 2011 and 2012 data set and the fit projection. The data set
@@ -448,7 +450,7 @@ minimal $\pi$ \acs*{IP} $\chi^2/\ndf$        & $>4$\\
 \subsubsection{Ghost track probability cuts}
 \label{sec:measurement_of_sin2beta:data_preparation:offline_selection:ghosts}
 
-To reduce the amount of ghost tracks, a cut on the ghost track probability is
+To reduce the amount of ghost tracks, a cut on each tracks ghost probability is
 applied, as shown in
 \cref{tab:measurement_of_sin2beta:data_preparation:offline_selection:ghosts}.
 The overall signal efficiency yields $\SI{95.72}{\percent}$
@@ -473,9 +475,9 @@ $\pi$ ghost track probability & \multicolumn{2}{c}{$<0.3$}\\
 \subsubsection{Cuts on daughter masses and \Lambda mass veto}
 \label{sec:measurement_of_sin2beta:data_preparation:offline_selection:daughters}
 
-In order to reduce background contributions due to particle mis-ID (see
-\cref{sec:measurement_of_sin2beta:physic_backgrounds}), cuts on the invariant
-daughter masses are used as given in
+Background contributions due to particle mis-ID (\cf
+\cref{sec:measurement_of_sin2beta:physic_backgrounds}) are reduced by employing
+cuts on the invariant daughter masses are used as given in
 \cref{tab:measurement_of_sin2beta:data_preparation:offline_selection:daughters}.
 As long track candidates show a better mass resolution, different cuts are
 applied depending on the candidates' track type. These cuts yield a signal
@@ -489,8 +491,8 @@ the proton mass hypothesis to either one of the pions and recalculating their
 invariant mass. An additional requirement on the \proton-\pion \PID of
 $\DLLppi<7$ ($<10$) is then applied to all candidates lying inside a
 $\pm\SI{7}{\MeVcc}$ ($\pm\SI{5}{\MeVcc}$) region around the \Lambda mass
-$M_\Lambda^{\acs*{PDG}} = \SI[per-mode=symbol]{1115.683}{\MeVcc}$ in the \catDD
-(\catLL) sample. This \Lambda veto has a signal efficiency of
+$M_\Lambda^{\text{\acs*{PDG}}} = \SI[per-mode=symbol]{1115.683}{\MeVcc}$ in the
+\catDD (\catLL) sample. This \Lambda veto has a signal efficiency of
 $\SI{99.32}{\percent}$ ($\SI{99.9}{\percent}$) and a background rejection of
 $\SI{10.50}{\percent}$ ($\SI{2.53}{\percent}$) in the \catDD (\catLL) sample.
 The cut efficiency on
@@ -564,7 +566,7 @@ As in a typical \LHCb bunch crossing around $\num{2.5}$ visible
 to a \emph{random PV selection}. Given the small \BdToJpsiKS branching ratio not
 more than one signal event can be expected per event. Still, it is possible
 that more than one candidate gets reconstructed. From those candidates either
-one can be chosen by his \DTF track \IP \chisqndf (\emph{best \Bd candidate
+one can be chosen by his \DTF track \IP \chisqndf\info{\wrt to a given PV?} (\emph{best \Bd candidate
 selection}) or as well randomly (\emph{random \Bd candidate selection}). Instead
 of consecutively selecting a \PV and \Bmeson candidate a joint decision can be
 made. Each $(\text{\acs{PV}}, \Bd)$ pair can again be chosen either based on
@@ -619,7 +621,7 @@ more than one \PV is found.
 \Cref{tab:measurement_of_sin2beta:data_preparation:multiple_candidates:after_selection} 
 presents the detailed numbers for multiple \PV and \Bd candidates after
 stripping and offline selection. Of the remaining (\acs{PV},\Bd) pairs one is
-chosen randomly
+chosen randomly.\addref{wrong PV note by Patrick}
 %
 \begin{table}
 \centering
@@ -678,6 +680,8 @@ pairs to discard & & & & \\
 % ------------------------------------------------------------------------------
 \subsection{\acs{MC} and data samples}
 \label{sec:measurement_of_sin2beta:data_preparation:datasamples}
+
+\redo{Rewrite MC and data samples}
 
 Over the course of the described measurement several datasets are utilised such
 as recorded data from the \LHCb experiment as well as simulated data.
@@ -771,7 +775,7 @@ the reconstruction based on \Brunel and the stripping selection using \DaVinci
 treat simulated and recorded data in the same manner.
 \info{Quote software versions? FT package?}
 %
-\begin{table}[!htb]
+\begin{table}[ht]
 \centering
 \caption{Physics parameters used in the simulation.}
 \label{tab:measurement_of_sin2beta:data_preparation:datasamples:mc:decfile}
@@ -795,11 +799,11 @@ $\tau$                               & \SI{1.519068}{\pico\second}\\
 Studies to check for possible background contributions from partly reconstructed
 decays or decays with mis-identified particles (outlined in
 \cref{sec:measurement_of_sin2beta:physic_backgrounds}) require several inclusive
-and signal \MC samples using the same conditions as for the nominal \MC data
+and signal \MC samples using the same \replace{conditions}{by better wording} as for the nominal \MC data
 set. \Cref{tab:measurement_of_sin2beta:data_preparation:datasamples:mc:samples}
 shows the used \MC data sets and gives the number of generated events.
 %
-\begin{table}[!htb]
+\begin{table}[ht]
 \centering
 \caption{Inclusive and signal MC data sets used in this analysis, with the
 generated number of events and if possible an estimate on the corresponding

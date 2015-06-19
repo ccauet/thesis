@@ -9,15 +9,15 @@ to the nominal data set (\cf
 \cref{sec:measurement_of_sin2beta:data_preparation:datasamples}).  The
 \MinuitTwo algorithm implemented in the \RooFit (v3.60) framework from \ROOT
 v5.34/18 is used to minimise the negative log-likelihood function with the
-\emph{minimize} routine and \emph{strategy 2}. \Minos is used for the estimation
-of the (asymmetric) parameter errors.
+\enquote{minimize} routine and \enquote{strategy 2}. \Minos is used for the
+estimation of the (asymmetric) parameter errors.
 
 % ------------------------------------------------------------------------------
 \subsection{Constrained parameters}
 \label{sec:measurement_of_sin2beta:cpv_measurement:constrained_parameters}
 
 Several parameters are incorporated as external inputs. These parameters are
-constrained using a Gaussian \PDF with the mean value fixed to the parameter's
+constrained using Gaussian \acp{PDF} with the mean value fixed to the parameter's
 value and the Gaussian's width to the uncertainty.
 \Cref{tab:measurement_of_sin2beta:cpv_measurement:constrained_parameters} lists
 the constrained parameters as well as the source of the value and its
@@ -96,6 +96,8 @@ All tables are collected in \cref{sec:app:measurement_of_sin2beta:cpv_measuremen
 \subsection{Fit results}
 \label{sec:measurement_of_sin2beta:cpv_measurement:results}
 
+\redo{Fit results: because it is very ugly}
+
 The results of the nominal \uEML fit to the selected \BdToJpsiKS candidates are
 %
 \begin{equation}\label{eq:measurement_of_sin2beta:cpv_measurement:results}
@@ -110,7 +112,7 @@ The results of the nominal \uEML fit to the selected \BdToJpsiKS candidates are
 %
 \Cref{tab:app:measurement_of_sin2beta:cpv_measurement:results:yields,tab:app:measurement_of_sin2beta:cpv_measurement:results:mass,tab:app:measurement_of_sin2beta:cpv_measurement:results:time:bkg} in \cref{sec:app:measurement_of_sin2beta:cpv_measurement:results} 
 give the fitted signal and background candidate numbers, the mass parameter
-estimates, and the results for the decay time background category parameters
+estimates, and the results for the decay time background category parameters.
 
 \Cref{tab:measurement_of_sin2beta:cpv_measurement:results:tagging} shows the
 results for the tagging parameters, the \BdBdbar oscillation frequency $\DMd$,
@@ -139,7 +141,7 @@ calibration and production asymmetries.
 %
 \begin{table}[h]
   \caption{Results for the tagging parameters, $\DMd$, and the production
-  asymmetries in the nominal fit}
+  asymmetries in the nominal fit\info{all constraint}}
   \label{tab:measurement_of_sin2beta:cpv_measurement:results:tagging}
   \centering
   \begin{tabular}{llr@{$\,\pm\,$}l}
@@ -174,7 +176,7 @@ decay time \obsTime (top right, logarithmic), per-event mistag (center;
 \obsEtaOS on the left, \obsEtaSS on the right), and decay time error
 \obsTimeError (bottom, logarithmic). Besides the data points and the full
 \ac{PDF} (solid black) the projections of the signal (dashed blue) and the
-background (dotted green) are shown.}
+background (dotted green) are shown.\todo{Mass and time large, other three smaller below}}
 \label{fig:measurement_of_sin2beta:cpv_measurement:results:plots:dimensions}
 \end{figure}
 %
@@ -189,7 +191,7 @@ N_{\Bd})$. Here, $N_{\Bd} (N_{\Bdbar})$ is the number of $\BdToJpsiKS$ decays wi
 a $\Bd$ ($\Bdbar$) flavor tag. The data points are obtained with the sPlot
 technique~\cite{Pivk:2004ty}, assigning signal weights to the events based on a
 fit to the reconstructed mass distribution. The solid curve is the projection of
-the signal PDF. }
+the signal PDF.\todo{Larger}}
 \label{fig:measurement_of_sin2beta:cpv_measurement:results:plots:asymmetry}
 \end{figure}
 %
@@ -197,7 +199,7 @@ the signal PDF. }
 \centering
 \includegraphics[width=0.48\textwidth]{private/content/measurement-of-sin2beta/figs/LLScan_1D_S.pdf}
 \includegraphics[width=0.48\textwidth]{private/content/measurement-of-sin2beta/figs/LLScan_1D_C.pdf}
-\caption{One dimensional likelihood profile scans for $\SJpsiKS$ and $\CJpsiKS$.}
+\caption{One dimensional likelihood profile scans for $\SJpsiKS$ and $\CJpsiKS$.\todo{Put together with 2D plot.}}
 \label{fig:measurement_of_sin2beta:cpv_measurement:results:plots:1d_ll_scan}
 \end{figure}
 %
@@ -205,7 +207,7 @@ the signal PDF. }
 \centering
 \includegraphics[width=0.95\textwidth]{private/content/measurement-of-sin2beta/figs/LLScan_2D.pdf}
 \caption{Two dimensional likelihood profile scan for $\SJpsiKS$ and $\CJpsiKS$.
-The contour lines show the $1\sigma$-$4\sigma$ confidence levels.}
+The contour lines show the $1\sigma$-$4\sigma$ confidence levels.\todo{2D larger above, two 1D below}}
 \label{fig:measurement_of_sin2beta:cpv_measurement:results:plots:2d_ll_scan}
 \end{figure}
 %

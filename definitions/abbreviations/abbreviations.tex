@@ -29,33 +29,21 @@
 \newmathsymbol{\obsEtaOSSS}{\mistagestimate_{\{\text{\acs{OS},\acs{SSpi}\}}}}
 
 % Trigger
-\SaveVerb{tmp_AU}= AU =
-\newcommand{\VerbAU}{\UseVerb{tmp_AU}\xspace}
-\SaveVerb{tmp_EB}= EB =
-\newcommand{\VerbEB}{\UseVerb{tmp_EB}\xspace}
-\SaveVerb{tmp_UB}= Unbiased =
-\newcommand{\VerbUB}{\UseVerb{tmp_UB}\xspace}
+\newcommand{\VerbAU}{\texttt{AU}\xspace}
+\newcommand{\VerbEB}{\texttt{EB}\xspace}
+\newcommand{\VerbUB}{\texttt{Unbiased}\xspace}
 
-\SaveVerb{tmp_TriggerRequirement}=(Hlt1DiMuonHighMass || Hlt1TrackMuon) && Hlt2DiMuonDetachedJPsi=
-\newcommand{\TriggerReq}{\UseVerb{tmp_TriggerRequirement}\xspace}
-\SaveVerb{tmp_AlmostUnbiased}=Hlt1DiMuonHighMass && Hlt2DiMuonDetachedJPsi=
-\newcommand{\TriggerReqAU}{\UseVerb{tmp_AlmostUnbiased}\xspace}
-\SaveVerb{tmp_AlmostUnbiasedEnumerator}=Hlt1DiMuonHighMass && Hlt2DiMuonDetachedJPsi && Hlt2DiMuonJPsi=
-\newcommand{\TriggerReqAUEnumerator}{\UseVerb{tmp_AlmostUnbiasedEnumerator}\xspace}
-\SaveVerb{tmp_ExclusivelyBiased}=(Hlt1TrackMuon && !Hlt1DiMuonHighMass) && Hlt2DiMuonDetachedJPsi=
-\newcommand{\TriggerReqEB}{\UseVerb{tmp_ExclusivelyBiased}\xspace}
-\SaveVerb{tmp_ExclusivelyUnbiased}=Hlt1DiMuonHighMass && Hlt2DiMuonJPsi=
-\newcommand{\TriggerReqUB}{\UseVerb{tmp_ExclusivelyUnbiased}\xspace}
-\SaveVerb{tmp_2011TriggerRequirement}=Hlt1DiMuonHighMass && Hlt2DiMuonDetachedJPsi=
-\newcommand{\TriggerReqOldAna}{\UseVerb{tmp_2011TriggerRequirement}\xspace}
-\SaveVerb{tmp_TriggerAllOrRequirement}=Hlt1DiMuonHighMass || Hlt1TrackMuon || Hlt2DiMuonDetachedJPsi || Hlt2DiMuonJPsi=
-\newcommand{\TriggerReqAllOr}{\UseVerb{tmp_TriggerAllOrRequirement}\xspace}
+\newcommand{\TriggerReq}{\texttt{(Hlt1DiMuonHighMass || Hlt1TrackMuon) \&\& Hlt2DiMuonDetachedJPsi}\xspace}
+\newcommand{\TriggerReqAU}{\texttt{Hlt1DiMuonHighMass \&\& Hlt2DiMuonDetachedJPsi}\xspace}
+\newcommand{\TriggerReqAUEnumerator}{\texttt{Hlt1DiMuonHighMass \&\& Hlt2DiMuonDetachedJPsi \&\& Hlt2DiMuonJPsi}\xspace}
+\newcommand{\TriggerReqEB}{\texttt{(Hlt1TrackMuon \&\& !Hlt1DiMuonHighMass) \&\& Hlt2DiMuonDetachedJPsi}\xspace}
+\newcommand{\TriggerReqUB}{\texttt{Hlt1DiMuonHighMass \&\& Hlt2DiMuonJPsi}\xspace}
+\newcommand{\TriggerReqOldAna}{\texttt{Hlt1DiMuonHighMass \&\& Hlt2DiMuonDetachedJPsi}\xspace}
+\newcommand{\TriggerReqAllOr}{\texttt{Hlt1DiMuonHighMass || Hlt1TrackMuon || Hlt2DiMuonDetachedJPsi || Hlt2DiMuonJPsi}\xspace}
 
 % Stripping
-\SaveVerb{tmp_StripDetached}=BetaSBd2JpsiKsDetached=
-\newcommand{\StrippingDetached}{\UseVerb{tmp_StripDetached}\xspace}
-\SaveVerb{tmp_StripPrescaled}=BetaSBd2JpsiKsPrescaled=
-\newcommand{\StrippingPrescaled}{\UseVerb{tmp_StripPrescaled}\xspace}
+\newcommand{\StrippingDetached}{\texttt{BetaSBd2JpsiKsDetached}\xspace}
+\newcommand{\StrippingPrescaled}{\texttt{BetaSBd2JpsiKsPrescaled}\xspace}
 
 % Tagging
 \newmathsymbol{\tagOS}{\tagdecision_{\text{\acs*{OS}}}}

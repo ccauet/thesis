@@ -170,7 +170,7 @@ and displaced \acp{SV}. To achieve the best possible spatial resolution the
 sensors must be positioned close to the beam trajectory. To allow the sensors to
 be as close as $\SI{8}{\milli\metre}$ to the interaction region and still
 prevent damage during beam injection, the \VELO modules are split in two halves
-an can be retracted until stable beams are present. Each single module consists
+and can be retracted until stable beams are present. Each single module consists
 of two half-disk shaped silicon microstrip sensor modules covering either the
 radial dimensions ($R$ sensor) or the angular dimension ($\Phi$ sensor) as can
 be seen in the schematic visualisation in
@@ -241,7 +241,43 @@ tracking in the low occupancy region around the \IT.
   \item track seeds, Kalman filter, pattern recognition, ghosts
   \item definition of: reconstructible, successfully reconstructed
   \item performance numbers for long tracks and downstream tracks
+  \item high lifetime acceptance
 \end{itemize}
+
+
+Velo reconstruction:
+first step: R-z projection
+less efficient if DOCA(z) not zero
+adding phi also less efficient -> phi not constant if not from beam line
+weighting tracks based on DOCA(z)
+
+TT: 50mum hit reso
+important for KS reco
+
+IT: 1\% of area, 30\% of B tracks
+50mum reso
+
+OT: 200mum reso
+spill-over, hit occupancy
+
+track types:
+velo tracks: find PVs
+long tracks: best best best, B physics
+T tracks: improve RICH2 performance
+upstream tracks: improve RICH1 performance, moderate p estimate
+downstream tracks: enhance KS finding
+
+Track fitting:
+kalman filter
+propagation model: track states at different z pos
+magnetic field: field map, accuracy better than momentum reso
+adaptive runge-kutta extrapolation
+propagation matrix
+material effects: 
+energy loss: ionisation of the medium, (simplified) bethe bloch
+multiple scattering:
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Particle identification}

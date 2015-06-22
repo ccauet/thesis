@@ -100,30 +100,25 @@ parameter
 \subsubsection{BDecay}
 \label{sec:measurement_of_sin2beta:likelihood_fit:pdfs:bdecay}
 
-\info{Same naming as in theory section for coefficients?}
-
 Generalised exponential function to describe the time evolution of \Bmeson
-states with decay times $t$. The coefficients $A$, $B$, $C$, and $D$ can be
+states with decay times $t$. The coefficients $C$, $S$, and $D$ can be
 adapted to describe \Bmeson mixing, \CP violation, and different asymmetries \eg
 in the production of the \Bmesons. The \PDF is further parametrised by the
 lifetime parameter $\tau$, the decay width difference $\DG$ and the mass
 difference $\DM$ of the \Bmeson mass eigenstates.
 %
 \begin{multline}\label{eq:measurement_of_sin2beta:likelihood_fit:pdfs:bdecay}
-  \ProbArg{\text{BDecay}}{}{\obsTime, \dots} \propto \\ \exponential{- \frac{t}{\tau}}\left( A \cosh (\DG t) + B \sinh (\DG t) + C \cos (\DM t) + D \sin (\DM t) \right)
+  \ProbArg{\text{BDecay}}{}{\obsTime, \dots} \propto \\ \exponential{- \frac{t}{\tau}}\left( \cosh (\DG t) + D \sinh (\DG t) + C \cos (\DM t) + S \sin (\DM t) \right)
 \end{multline}
 
 %...............................................................................
 \subsubsection{Ipatia}
 \label{sec:measurement_of_sin2beta:likelihood_fit:pdfs:ipatia}
 
-\info{CB ref as single ref?}
-
 The Ipatia \PDF \cite{Santos:2013gra} is a generalisation of the Crystal ball
-\PDF \cite{Oreglia:1980cs,Gaiser:1982yw,Skwarnicki:1986xj}, marginalised over
-the a priori unknown per-event mass resolution. The \PDF is used to describe the
-distribution of the reconstructed $\B$ candidates mass $\obsMass$ and is
-parametrised as
+\PDF \cite{cbset}, marginalised over the a priori unknown per-event mass
+resolution. The \PDF is used to describe the distribution of the reconstructed
+$\B$ candidates mass $\obsMass$ and is parametrised as
 %
 \begin{multline}\label{eq:measurement_of_sin2beta:likelihood_fit:pdfs:ipatia}
   \ProbArg{\text{Ipatia}}{}{m, \mu, \sigma, \lambda, \zeta, \beta, a_1, a_2, n_1, n_2} \propto \\
@@ -250,8 +245,9 @@ convolved with the \B physics \PDF.
 
 In the following the \B physics \PDF is explained in detail. The theoretical
 distributions---neglecting all experimental effects---for \Bd and \Bdbar mesons
-($\ProbArg{\text{true}}{\Bd}{\obsTime}$ and $\ProbArg{\text{true}}{\Bdbar}{\obsTime}$)
-are given by\addref{to equation in theory section}
+($\ProbArg{\text{true}}{\Bd}{\obsTime}$ and
+$\ProbArg{\text{true}}{\Bdbar}{\obsTime}$) are given by (\cf
+\cref{eq:cpv_theory:flavour_physics:time_evolution:differential_decay_rates})
 %
 \begin{equation}
   \begin{split}
@@ -487,14 +483,14 @@ valid.
 \caption{Correlations and \SI{95}{\percent} \acp{CL} between \OS and
 \SSpi mistag estimates.\todo{Decimal separator alignment}}
 \label{tab:measurement_of_sin2beta:likelihood_fit:model:mistag:os_ss_correlations}
-\begin{tabular}{rcrcr}
+\begin{tabular}{rSrSr}
 \toprule
            & \multicolumn{2}{c}{Signal}                                              & \multicolumn{2}{c}{Background} \\
            & $\rho_\text{\obsEtaOS,\obsEtaSS}$ & \multicolumn{1}{c}{\SI{95}{\percent} \acs*{CL}} & $\rho_\text{\obsEtaOS,\obsEtaSS}$ & \multicolumn{1}{c}{\SI{95}{\percent} \acs*{CL}} \\
 \midrule
-\catDD      & $0.0731$            & $(0.0306, 0.1155)$   & $0.0555$            & $(0.0139, 0.0972)$\\
-\catLL      & $0.0854$            & $(0.0270, 0.1454)$   & $-0.0465$           & $(-0.219, 0.136)$\\
-combined    & $0.077$             & $(0.041, 0.112)$     & $0.0507$            & $(0.0101, 0.0919)$\\
+\catDD      & 0.0731            & $(0.0306, 0.1155)$   &  0.0555           & $(0.0139, 0.0972)$\\
+\catLL      & 0.0854            & $(0.0270, 0.1454)$   & -0.0465           & $(-0.219, 0.136)$\\
+combined    & 0.077             & $(0.041, 0.112)$     &  0.0507           & $(0.0101, 0.0919)$\\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -512,13 +508,13 @@ estimates.
 \caption{Correlations and \SI{95}{\percent} \acp{CL} between the mistag
 estimates $\eta_\text{\acs{OS}/\acs{SSpi}}$ and the reconstructed \Bd decay time.\todo{Decimal separator alignment}}
 \label{tab:measurement_of_sin2beta:likelihood_fit:model:mistag:mistag_time_correlations}
-\begin{tabular}{rcrcr}
+\begin{tabular}{rSrSr}
 \toprule
            & \multicolumn{2}{c}{Signal}                              & \multicolumn{2}{c}{Background} \\
            & $\rho_{\eta,t}$ & \multicolumn{1}{c}{\SI{95}{\percent} \acs*{CL}} & $\rho_{\eta,t}$ & \multicolumn{1}{c}{\SI{95}{\percent} \acs*{CL}} \\
 \midrule
-\OS      & $-0.0046$ & $(-0.0375, 0.0272)$ & $-0.0601$ & $(-0.1086, -0.0135)$\\
-\SSpi    & $0.0223$  & $(-0.0104, 0.0535)$ & $-0.002$ & $(-0.048, 0.044)$\\
+\OS      & -0.0046 & $(-0.0375, 0.0272)$ & -0.0601 & $(-0.1086, -0.0135)$\\
+\SSpi    &  0.0223 & $(-0.0104, 0.0535)$ & -0.002  & $(-0.048, 0.044)$\\
 \bottomrule
 \end{tabular}
 \end{table}

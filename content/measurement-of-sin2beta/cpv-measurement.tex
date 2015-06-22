@@ -132,7 +132,7 @@ the decay time dependent signal-yield asymmetry
 where $N_{\Bd}$ ($N_{\Bdbar}$) are the number of \BdToJpsiKS signal candidates
 tagged as $\Bd$ ($\Bdbar$). Visualisations of the likelihood shape are presented
 in 1- and 2-dimensional likelihood profile scans in 
-\cref{fig:measurement_of_sin2beta:cpv_measurement:results:plots:1d_ll_scan,fig:measurement_of_sin2beta:cpv_measurement:results:plots:2d_ll_scan}. 
+\cref{fig:measurement_of_sin2beta:cpv_measurement:results:plots:ll_scan}. 
 The correlation matrix is provided in 
 \cref{fig:measurement_of_sin2beta:cpv_measurement:results:plots:correlation_matrix} 
 including the \CP observables \SJpsiKS and \CJpsiKS, the \Bd meson lifetime
@@ -141,7 +141,9 @@ calibration and production asymmetries.
 %
 \begin{table}[h]
   \caption{Results for the tagging parameters, $\DMd$, and the production
-  asymmetries in the nominal fit\info{all constraint}}
+  asymmetries in the nominal fit. All parameters are constraint in the fit as
+  described in
+  \cref{sec:measurement_of_sin2beta:cpv_measurement:constrained_parameters}.}
   \label{tab:measurement_of_sin2beta:cpv_measurement:results:tagging}
   \centering
   \begin{tabular}{llr@{$\,\pm\,$}l}
@@ -165,19 +167,19 @@ calibration and production asymmetries.
 %
 \begin{figure}
 \centering
-\includegraphics[width=0.4\textwidth]{private/content/measurement-of-sin2beta/figs/obsMass_summed_pull.pdf} 
-\includegraphics[width=0.4\textwidth]{private/content/measurement-of-sin2beta/figs/obsTime_summed_pull_log.pdf} \\
-\includegraphics[width=0.4\textwidth]{private/content/measurement-of-sin2beta/figs/obsEtaOS_StdComb_CutOff_summed_pull.pdf}
-\includegraphics[width=0.4\textwidth]{private/content/measurement-of-sin2beta/figs/obsEtaSSPion_TupleCalib_summed_pull.pdf} \\
-\includegraphics[width=0.4\textwidth]{private/content/measurement-of-sin2beta/figs/obsTimeError_summed_pull_log.pdf}
-\caption{Plots of the \BdToJpsiKS data sample with the projected \ac{PDF} and
-pull distributions. Shown is the reconstructed mass \obsMass (top left) and
-decay time \obsTime (top right, logarithmic), per-event mistag (center;
-\obsEtaOS on the left, \obsEtaSS on the right), and decay time error
-\obsTimeError (bottom, logarithmic). Besides the data points and the full
-\ac{PDF} (solid black) the projections of the signal (dashed blue) and the
-background (dotted green) are shown.\todo{Mass and time large, other three smaller below}}
-\label{fig:measurement_of_sin2beta:cpv_measurement:results:plots:dimensions}
+  \includegraphics[width=0.49\textwidth]{private/content/measurement-of-sin2beta/figs/obsMass_summed_pull.pdf} 
+  \includegraphics[width=0.49\textwidth]{private/content/measurement-of-sin2beta/figs/obsTime_summed_pull_log.pdf} \\
+  \includegraphics[width=0.315\textwidth]{private/content/measurement-of-sin2beta/figs/obsEtaOS_StdComb_CutOff_summed_pull.pdf}
+  \includegraphics[width=0.315\textwidth]{private/content/measurement-of-sin2beta/figs/obsEtaSSPion_TupleCalib_summed_pull.pdf}
+  \includegraphics[width=0.315\textwidth]{private/content/measurement-of-sin2beta/figs/obsTimeError_summed_pull_log.pdf}
+  \caption{Plots of the \BdToJpsiKS data sample with the projected \ac{PDF} and
+  pull distributions. Shown is the reconstructed mass \obsMass (top left) and
+  decay time \obsTime (top right, logarithmic), per-event mistag (bottom left
+  \obsEtaOS, bottom center \obsEtaSS), and decay time error \obsTimeError (bottom
+  right, logarithmic). Besides the data points and the full
+  \ac{PDF} (solid black) the projections of the signal (dashed blue) and the
+  background (dotted green) are shown.}
+  \label{fig:measurement_of_sin2beta:cpv_measurement:results:plots:dimensions}
 \end{figure}
 %
 \begin{figure}
@@ -191,24 +193,17 @@ N_{\Bd})$. Here, $N_{\Bd} (N_{\Bdbar})$ is the number of $\BdToJpsiKS$ decays wi
 a $\Bd$ ($\Bdbar$) flavor tag. The data points are obtained with the sPlot
 technique~\cite{Pivk:2004ty}, assigning signal weights to the events based on a
 fit to the reconstructed mass distribution. The solid curve is the projection of
-the signal PDF.\todo{Larger}}
+the signal PDF.\todo{Make tikz plot of CP asymmetry larger}}
 \label{fig:measurement_of_sin2beta:cpv_measurement:results:plots:asymmetry}
 \end{figure}
 %
 \begin{figure}
-\centering
-\includegraphics[width=0.48\textwidth]{private/content/measurement-of-sin2beta/figs/LLScan_1D_S.pdf}
-\includegraphics[width=0.48\textwidth]{private/content/measurement-of-sin2beta/figs/LLScan_1D_C.pdf}
-\caption{One dimensional likelihood profile scans for $\SJpsiKS$ and $\CJpsiKS$.\todo{Put together with 2D plot.}}
-\label{fig:measurement_of_sin2beta:cpv_measurement:results:plots:1d_ll_scan}
-\end{figure}
-%
-\begin{figure}
-\centering
-\includegraphics[width=0.95\textwidth]{private/content/measurement-of-sin2beta/figs/LLScan_2D.pdf}
-\caption{Two dimensional likelihood profile scan for $\SJpsiKS$ and $\CJpsiKS$.
-The contour lines show the $1\sigma$-$4\sigma$ confidence levels.\todo{2D larger above, two 1D below}}
-\label{fig:measurement_of_sin2beta:cpv_measurement:results:plots:2d_ll_scan}
+  \centering
+  \includegraphics[width=1.00\textwidth]{private/content/measurement-of-sin2beta/figs/LLScan_2D.pdf} \\
+  \includegraphics[width=0.46\textwidth]{private/content/measurement-of-sin2beta/figs/LLScan_1D_S.pdf}
+  \includegraphics[width=0.46\textwidth]{private/content/measurement-of-sin2beta/figs/LLScan_1D_C.pdf}
+  \caption{One and two dimensional likelihood profile scans for $\SJpsiKS$ and $\CJpsiKS$.}
+  \label{fig:measurement_of_sin2beta:cpv_measurement:results:plots:ll_scan}
 \end{figure}
 %
 \begin{figure}
@@ -221,7 +216,7 @@ the nominal fit. Positive correlations are represented by the red palette on the
 $z$ axis, while negative correlations are represented by the blue palette of the
 $z$ axis. The \CP observables $\SJpsiKS$ and $\CJpsiKS$ as well as the
 lifetime $\tau$ are shown together with the most relevant parameters from the
-flavour tagging calibration and production asymmetries.}
+flavour tagging calibration and production asymmetries.\todo{Make tikz plot of corr matrix larger}}
 \label{fig:measurement_of_sin2beta:cpv_measurement:results:plots:correlation_matrix}
 \end{figure}
 

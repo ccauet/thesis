@@ -158,7 +158,86 @@ subsamples.}
 \subsubsection{Pure time-dependent and time-integrated fit}
 \label{sec:measurement_of_sin2beta:systematics:cross_checks:time_integrated}
 
-\missing{Pure time-dependent and time-integrated fit}
+The fit is tested furthermore by disentangling the time-integrated and the
+time-dependent parts of it. To ensure a purely time-dependent extraction of the
+\CP violating parameters a binned $\chisq$-fit to the signal \CP asymmetry (\cf
+\cref{fig:measurement_of_sin2beta:cpv_measurement:results:plots:asymmetry}) is
+performed. The theoretical distribution given in
+\cref{eq:cpv_theory:bd2jpsiks:cp_asymmetry}, modified to cover for tagging
+and production asymmetries results in
+%
+\begin{multline}
+  \Asym{\CP}{\text{exp}} = \\ 
+    \CPAsymmetry 
+    \frac{\mistag^{\Bd} - \mistag^{\Bdbar} + A_{\text{P}}^{\catOO} \Bigl(1 - \mistag^{\Bd} - \mistag^{\Bdbar}\Bigr) + \Bigl(1 + \mistag^{\Bd} - \mistag^{\Bdbar} + A_{\text{P}}^{\catOO} \bigl(\mistag^{\Bd} - \mistag^{\Bdbar}\bigr) \Bigr)}
+    {1 + A_{\text{P}}^{\catOO} \Bigl(\SJpsiKS \sin (\DMd t) - \CJpsiKS \cos (\DMd t)\Bigr) } \eqpd
+\end{multline}
+%
+At this point the \OS and \SSpi mistag probabilities are combined on a per-event
+basis assuming true \Bd and \Bdbar mesons. Then the \sweighted averages of
+$\mistag^{\Bd} = \num{0.3869}$ and $\mistag^{\Bdbar} = \num{0.3777}$ are
+incorporated while the values for $A_{\text{P}}^{\catOO}$ and \DMd are taken as
+found in the nominal fit. This results in central values fully compatible with
+the ones extracted from the nominal fit
+%
+\begin{equation}
+  \begin{split}
+    \SJpsiKS &= \num{0.713 +- 0.053} \eqcm \\
+    \CJpsiKS &= \num{0.003 +- 0.055} \eqpd
+  \end{split}
+\end{equation}
+%
+Leaving the mass difference \DMd floating in the fit, the fit yields
+%
+\begin{equation}
+  \begin{split}
+    \SJpsiKS &= \num{0.718 +- 0.053} \eqcm \\
+    \CJpsiKS &= \num{0.040 +- 0.077} \eqcm \\
+    \DMd     &= \SI{0.540 +- 0.043}{\planckbar\per\pico\second} \eqpd
+  \end{split}
+\end{equation}
+%
+In a second approach the number of tagged \Bd and \Bdbar signal candidates is
+counted on an \sweighted sample to compute the time-integrated \CP asymmetry
+%
+\begin{equation}
+  \begin{split}
+    \Asym{\CP}{\text{int}} &= \frac{N_{\Bdbar} - N_{\Bd}}{N_{\Bdbar} + N_{\Bd}} = \num{0.103 +- 0.00} \eqpd
+  \end{split}
+\end{equation}
+%
+Under the \SM assumption of $\CJpsiKS = \num{0}$ the relation
+%
+\begin{multline}\label{eq:measurement_of_sin2beta:systematics:cross_checks:time_integrated}
+  \SJpsiKS^{\text{int}} = \\
+  \frac{ \Asym{\CP}{\text{int}} - ( 1 - \mistag^{\Bd} - \mistag^{\Bdbar}) A_{\text{P}} \Asym{\CP}{\text{int}} ( \mistag^{\Bd} - \mistag^{\Bdbar} )}
+    {1 - \mistag^{\Bd} - \mistag^{\Bdbar} - A_{\text{P}} \Asym{\CP}{\text{int}} - \Asym{\CP}{\text{int}} ( \mistag^{\Bd} - \mistag^{\Bdbar} ) }
+  \frac{1 - (\DMd \tau)^2}{ \sin (\DMd t_{\text{min}}) + \DMd \tau \cos (\DMd t_{\text{min}})} \eqcm
+\end{multline}
+%
+leads to 
+%
+\begin{equation}
+  \SJpsiKS^{\text{int}} = \num{0.787 +- 0.009} \eqcm
+\end{equation}
+%
+where the lower integration limit $t_{\text{min}}$ is employed and the values
+for the other parameters are handled as in the time-dependent case described
+before. Taking into account the correlation between the \CP parameters \SJpsiKS
+and \CJpsiKS and using the value for \CJpsiKS found in the nominal fit, the
+previous equation extends by another summand,
+%
+\begin{equation}
+  \SJpsiKS^{\text{int}} = \text{\cref{eq:measurement_of_sin2beta:systematics:cross_checks:time_integrated}} 
+  + \CJpsiKS \frac{\DMd \tau \sin (\DMd t_{\text{min}}) + \cos (\DMd t_{\text{min}})}{\sin (\DMd t_{\text{min}}) + \DMd \tau \cos (\DMd t_{\text{min}})} \eqcm
+\end{equation}
+%
+resulting in
+%
+\begin{equation}
+  \SJpsiKS^{\text{int}} = \num{0.746 +- 0.040} \eqpd
+\end{equation}
+%
 
 % ------------------------------------------------------------------------------
 \subsection{Systematics}

@@ -3,10 +3,13 @@
 \section{Studies of systematic effects}
 \label{sec:measurement_of_sin2beta:systematics}
 
-The following section will describe the evaluation of potential systematic
-\replace{effects}{something better} of the fit model and influences of the flavour tagging, the decay time
-resolution, the decay time acceptance, and several other inputs to the
-measurement of \CP violation.
+The determination of potential systematic uncertainties on the \CP parameters
+complete the measurement.
+
+The following section will describe the evaluation of systematic effects of the
+fit model and influences of the flavour tagging, the decay time resolution, the
+decay time acceptance, and several other inputs to the measurement of \CP
+violation.
 
 In \cref{sec:measurement_of_sin2beta:systematics:cross_checks} cross-checks are
 outlined to test the reproducibility and stability of the fit model. Studies to
@@ -162,43 +165,44 @@ The fit is tested furthermore by disentangling the time-integrated and the
 time-dependent parts of it. To ensure a purely time-dependent extraction of the
 \CP violating parameters a binned $\chisq$-fit to the signal \CP asymmetry (\cf
 \cref{fig:measurement_of_sin2beta:cpv_measurement:results:plots:asymmetry}) is
-performed. The theoretical distribution given in
+performed. The theoretical distribution $\CPAsymmetry$ given in
 \cref{eq:cpv_theory:bd2jpsiks:cp_asymmetry}, modified to cover for tagging
 and production asymmetries results in
 %
 \begin{multline}
-  \Asym{\CP}{\text{exp}} = \\ 
-    \CPAsymmetry 
-    \frac{\mistag^{\Bd} - \mistag^{\Bdbar} + A_{\text{P}}^{\catOO} \Bigl(1 - \mistag^{\Bd} - \mistag^{\Bdbar}\Bigr) + \Bigl(1 + \mistag^{\Bd} - \mistag^{\Bdbar} + A_{\text{P}}^{\catOO} \bigl(\mistag^{\Bd} - \mistag^{\Bdbar}\bigr) \Bigr)}
+  \Asym{\CP}{\text{exp}} = \\
+    \frac{\mistag^{\Bd} - \mistag^{\Bdbar} + A_{\text{P}}^{\catOO} \Bigl(1 - \mistag^{\Bd} - \mistag^{\Bdbar}\Bigr) + \CPAsymmetry \Bigl(1 - \mistag^{\Bd} - \mistag^{\Bdbar} + A_{\text{P}}^{\catOO} \bigl(\mistag^{\Bd} - \mistag^{\Bdbar}\bigr) \Bigr)}
     {1 + A_{\text{P}}^{\catOO} \Bigl(\SJpsiKS \sin (\DMd t) - \CJpsiKS \cos (\DMd t)\Bigr) } \eqpd
 \end{multline}
 %
 At this point the \OS and \SSpi mistag probabilities are combined on a per-event
-basis assuming true \Bd and \Bdbar mesons. Then the \sweighted averages of
-$\mistag^{\Bd} = \num{0.3869}$ and $\mistag^{\Bdbar} = \num{0.3777}$ are
-incorporated while the values for $A_{\text{P}}^{\catOO}$ and \DMd are taken as
-found in the nominal fit. This results in central values fully compatible with
-the ones extracted from the nominal fit
+basis assuming true \Bd and \Bdbar mesons. Using signal weights extracted by an
+\sPlot fit on the mass distribution, the weighted averages of $\mistag^{\Bd} =
+\num{0.3869}$ and $\mistag^{\Bdbar} = \num{0.3777}$ are incorporated while the
+values for $A_{\text{P}}^{\catOO}$ and \DMd are taken as found in the nominal
+fit. This results in central values fully compatible to the ones extracted from
+the nominal fit
 %
-\begin{equation}
+\begin{equation*}
   \begin{split}
     \SJpsiKS &= \num{0.713 +- 0.053} \eqcm \\
     \CJpsiKS &= \num{0.003 +- 0.055} \eqpd
   \end{split}
-\end{equation}
+\end{equation*}
 %
 Leaving the mass difference \DMd floating in the fit, the fit yields
 %
-\begin{equation}
+\begin{equation*}
   \begin{split}
     \SJpsiKS &= \num{0.718 +- 0.053} \eqcm \\
     \CJpsiKS &= \num{0.040 +- 0.077} \eqcm \\
     \DMd     &= \SI{0.540 +- 0.043}{\planckbar\per\pico\second} \eqpd
   \end{split}
-\end{equation}
+\end{equation*}
 %
-In a second approach the number of tagged \Bd and \Bdbar signal candidates is
-counted on an \sweighted sample to compute the time-integrated \CP asymmetry
+In the purely time-integrated approach the number of tagged \Bd and \Bdbar
+signal candidates is counted on an \sweighted sample to compute the
+time-integrated \CP asymmetry
 %
 \begin{equation}
   \begin{split}
@@ -209,17 +213,17 @@ counted on an \sweighted sample to compute the time-integrated \CP asymmetry
 Under the \SM assumption of $\CJpsiKS = \num{0}$ the relation
 %
 \begin{multline}\label{eq:measurement_of_sin2beta:systematics:cross_checks:time_integrated}
-  \SJpsiKS^{\text{int}} = \\
-  \frac{ \Asym{\CP}{\text{int}} - ( 1 - \mistag^{\Bd} - \mistag^{\Bdbar}) A_{\text{P}} \Asym{\CP}{\text{int}} ( \mistag^{\Bd} - \mistag^{\Bdbar} )}
-    {1 - \mistag^{\Bd} - \mistag^{\Bdbar} - A_{\text{P}} \Asym{\CP}{\text{int}} - \Asym{\CP}{\text{int}} ( \mistag^{\Bd} - \mistag^{\Bdbar} ) }
-  \frac{1 - (\DMd \tau)^2}{ \sin (\DMd t_{\text{min}}) + \DMd \tau \cos (\DMd t_{\text{min}})} \eqcm
+  \SJpsiKS^{\text{int}} = 
+  \frac{ \Asym{\CP}{\text{int}} - \bigl( 1 - \mistag^{\Bd} - \mistag^{\Bdbar}\bigr) A_{\text{P}} \Asym{\CP}{\text{int}} \bigl( \mistag^{\Bd} - \mistag^{\Bdbar} \bigr)}
+    {1 - \mistag^{\Bd} - \mistag^{\Bdbar} - A_{\text{P}} \Asym{\CP}{\text{int}} - \Asym{\CP}{\text{int}} \bigl( \mistag^{\Bd} - \mistag^{\Bdbar} \bigr) } \\
+  \cdot\frac{1 - (\DMd \tau)^2}{ \sin (\DMd t_{\text{min}}) + \DMd \tau \cos (\DMd t_{\text{min}})} \eqcm
 \end{multline}
 %
 leads to 
 %
-\begin{equation}
+\begin{equation*}
   \SJpsiKS^{\text{int}} = \num{0.787 +- 0.009} \eqcm
-\end{equation}
+\end{equation*}
 %
 where the lower integration limit $t_{\text{min}}$ is employed and the values
 for the other parameters are handled as in the time-dependent case described
@@ -234,21 +238,22 @@ previous equation extends by another summand,
 %
 resulting in
 %
-\begin{equation}
+\begin{equation*}
   \SJpsiKS^{\text{int}} = \num{0.746 +- 0.040} \eqpd
-\end{equation}
+\end{equation*}
 %
 
 % ------------------------------------------------------------------------------
 \subsection{Systematics}
 \label{sec:measurement_of_sin2beta:systematics:systematics}
 
-\missing{Introduction into systematics section}
-
-All plot and pull distributions are collected in
-\cref{sec:app:measurement_of_sin2beta:systematics}. If not stated otherwise the
-\CP parameter values are set to $\SJpsiKS = \num{0.7}$ and $\CJpsiKS =
-\num{0.03}$ in the \acf{ToyMC} sample generation.
+Systematic uncertainties resulting from the choice or the handling of the fit
+model, the flavour tagging calibration, decay time resolution and acceptance,
+and other ingredients to the measurement are summarised in the following
+section. All pull and residual distributions originating from the studies are
+collected in \cref{sec:app:measurement_of_sin2beta:systematics}. If not stated
+otherwise the \CP parameter values are set to $\SJpsiKS = \num{0.7}$ and
+$\CJpsiKS = \num{0.03}$ in the \acf{ToyMC} sample generation.
 
 %...............................................................................
 \subsubsection{Fit model}

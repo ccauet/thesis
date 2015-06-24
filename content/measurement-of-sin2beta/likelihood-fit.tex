@@ -303,7 +303,8 @@ leading to modified conditional \acp{PDF}
 As the production flavour is unknown under experimental conditions the
 measurement depends on the flavour tagging information of the \OS and \SSpi
 tagging algorithms to decide whether the \Bmeson was produced as \Bd or \Bdbar.
-The \PDF is then given as
+With $\mistag_{i}$ is short for the calibrated mistag probability
+$\mistag\left(\mistagestimate_{i}\right)$ the \PDF is then given as
 %
 \begin{equation}\label{eq:measurement_of_sin2beta:likelihood_fit:model:decay_time:measured_pdf_tagged_only}
 \begin{split}
@@ -315,18 +316,18 @@ The \PDF is then given as
   \end{split}
 \end{equation}
 %
-with\info{Check conditional vert in function arguments}\missing{Definition of omega and omegabar as function of eta}
+with
 %
 \begin{equation}
   \begin{split}
     \Prob{}{}(\obsTime \mid +1, +1,\,& \mistagOS, \mistagSS ) = \\ 
-      & \left(1 - \mistagOS^{\Bd}\right) \left(1 - \mistagSS^{\Bdbar}\right) \ProbArg{\text{true}}{}{\obsTime \given \Bd} \mistagOS^{\Bd} \mistagSS^{\Bdbar} \ProbArg{\text{true}}{}{\obsTime \given \Bdbar} \eqcm \\
+      \Bigl(1 -& \mistagOS^{\Bd}\Bigr) \Bigl(1 - \mistagSS^{\Bdbar}\Bigr) \ProbArg{\text{true}}{}{\obsTime \given \Bd} \mistagOS^{\Bd} \mistagSS^{\Bdbar} \ProbArg{\text{true}}{}{\obsTime \given \Bdbar} \eqcm \\
     \Prob{}{}(\obsTime \mid +1, -1,\,& \mistagOS, \mistagSS ) = \\ 
-      & \left(1 - \mistagOS^{\Bd}\right) \mistagSS^{\Bdbar} \ProbArg{\text{true}}{}{\obsTime \given \Bd} \mistagOS^{\Bd} \left(1 - \mistagSS^{\Bdbar}\right) \ProbArg{\text{true}}{}{\obsTime \given \Bdbar} \eqcm \\
+      \Bigl(1 -& \mistagOS^{\Bd}\Bigr) \mistagSS^{\Bdbar} \ProbArg{\text{true}}{}{\obsTime \given \Bd} \mistagOS^{\Bd} \Bigl(1 - \mistagSS^{\Bdbar}\Bigr) \ProbArg{\text{true}}{}{\obsTime \given \Bdbar} \eqcm \\
     \Prob{}{}(\obsTime \mid -1, +1,\,& \mistagOS, \mistagSS ) = \\ 
-      & \mistagOS^{\Bd} \left(1 - \mistagSS^{\Bdbar}\right) \ProbArg{\text{true}}{}{\obsTime \given \Bd} \left(1 - \mistagOS^{\Bd}\right) \mistagSS^{\Bdbar} \ProbArg{\text{true}}{}{\obsTime \given \Bdbar} \eqcm \eqthinspace \text{and} \\
+      \mistagOS^{\Bd}& \Bigl(1 - \mistagSS^{\Bdbar}\Bigr) \ProbArg{\text{true}}{}{\obsTime \given \Bd} \Bigl(1 - \mistagOS^{\Bd}\Bigr) \mistagSS^{\Bdbar} \ProbArg{\text{true}}{}{\obsTime \given \Bdbar} \eqcm \eqthinspace \text{and} \\
     \Prob{}{}(\obsTime \mid -1, -1,\,& \mistagOS, \mistagSS ) = \\ 
-      & \mistagOS^{\Bd} \mistagSS^{\Bdbar} \ProbArg{\text{true}}{}{\obsTime \given \Bd} \left(1 - \mistagOS^{\Bd}\right) \left(1 - \mistagSS^{\Bdbar}\right) \ProbArg{\text{true}}{}{\obsTime \given \Bdbar} \eqpd \\ 
+      \mistagOS^{\Bd}& \mistagSS^{\Bdbar} \ProbArg{\text{true}}{}{\obsTime \given \Bd} \Bigl(1 - \mistagOS^{\Bd}\Bigr) \Bigl(1 - \mistagSS^{\Bdbar}\Bigr) \ProbArg{\text{true}}{}{\obsTime \given \Bdbar} \eqpd \\ 
   \end{split}
 \end{equation}
 %

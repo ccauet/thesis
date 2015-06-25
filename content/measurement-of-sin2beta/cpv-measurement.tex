@@ -10,7 +10,7 @@ to the nominal data set (\cf
 \MinuitTwo algorithm implemented in the \RooFit (v3.60) framework from \ROOT
 v5.34/18 is used to minimise the negative log-likelihood function with the
 \enquote{minimize} routine and \enquote{strategy 2}. \Minos is used for the
-estimation of the (asymmetric) parameter errors.
+estimation of the (asymmetric) parameter uncertainties.
 
 % ------------------------------------------------------------------------------
 \subsection{Constrained parameters}
@@ -20,8 +20,8 @@ Several parameters are incorporated as external inputs. These parameters are
 constrained using Gaussian \acp{PDF} with the mean value fixed to the parameter's
 value and the Gaussian's width to the uncertainty.
 \Cref{tab:measurement_of_sin2beta:cpv_measurement:constrained_parameters} lists
-the constrained parameters as well as the source of the value and its
-uncertainty employed in the fit.
+the constrained parameters as well as a reference to the source of the value and
+its uncertainty employed in the fit.
 
 Individual production asymmetry values are used for the \catOO and \catOT
 subsamples. Using the recent \LHCb measurement \cite{Aaij:2014bba} of the
@@ -34,7 +34,7 @@ weighted average of the production asymmetries
   A_P = \sum_i \varepsilon_i A_{P,i}\eqcm
 \end{equation}
 where $f_i$ is the number of signal candidates per bin and $A_{P,i}$ the
-measured production asymmetry in bin $i$ taken from Ref.~\cite{Aaij:2014bba}.
+measured production asymmetry in bin $i$ taken from \Ref~\cite{Aaij:2014bba}.
 This yields
 %
 \begin{equation}
@@ -53,7 +53,7 @@ observed for the two data-taking conditions in \LHCb{'s} recent measurement of
 the semi-leptonic $\CP$ asymmetry~\cite{Aaij:2014nxa}.
 %
 \begin{table}
-\caption{Parameters that are constrained in the fit.}
+\caption{Listing of parameters that are constrained in the fit.}
 \label{tab:measurement_of_sin2beta:cpv_measurement:constrained_parameters}
 \centering
 \begin{tabular}{lr@{$\,\pm\,$}ll}
@@ -96,9 +96,10 @@ All tables are collected in \cref{sec:app:measurement_of_sin2beta:cpv_measuremen
 \subsection{Fit results}
 \label{sec:measurement_of_sin2beta:cpv_measurement:results}
 
-\redo{Fit results: because it is very ugly}
-
-The results of the nominal \uEML fit to the selected \BdToJpsiKS candidates are
+Employing all constrained and fixed parameters the likelihood describing the
+seven fit dimensions is fitted to the selected \BdToJpsiKS candidates using the
+\uEML method. For the most interesting \CP parameters, \SJpsiKS and \CJpsiKS,
+the mass difference \DMd, and the lifetime of the \Bd candidates, the fit yields
 %
 \begin{equation}\label{eq:measurement_of_sin2beta:cpv_measurement:results}
   \begin{split}
@@ -113,25 +114,26 @@ The results of the nominal \uEML fit to the selected \BdToJpsiKS candidates are
 \Cref{tab:app:measurement_of_sin2beta:cpv_measurement:results:yields,tab:app:measurement_of_sin2beta:cpv_measurement:results:mass,tab:app:measurement_of_sin2beta:cpv_measurement:results:time:bkg} in \cref{sec:app:measurement_of_sin2beta:cpv_measurement:results} 
 give the fitted signal and background candidate numbers, the mass parameter
 estimates, and the results for the decay time background category parameters.
+Furthermore, \cref{tab:measurement_of_sin2beta:cpv_measurement:results:tagging}
+shows the results for the tagging parameters and the production asymmetry.
 
-\Cref{tab:measurement_of_sin2beta:cpv_measurement:results:tagging} shows the
-results for the tagging parameters, the \BdBdbar oscillation frequency $\DMd$,
-and the production asymmetry.
+The \Bmeson candidate's distributions in mass, decay time, decay time estimate, and \OS and
+\SSpi mistag estimates are shown in
+\cref{fig:measurement_of_sin2beta:cpv_measurement:results:plots:dimensions}
+including the \PDF projections. 
 
-\Cref{fig:measurement_of_sin2beta:cpv_measurement:results:plots:dimensions}
-depicts the distributions of mass, decay time, decay time estimate, and \OS and
-\SSpi mistag estimates as well as the \PDF projections.
-
-\Cref{fig:measurement_of_sin2beta:cpv_measurement:results:plots:asymmetry} shows
-the decay time dependent signal-yield asymmetry
+Eventually, the decay time dependent signal-yield asymmetry
 %
 \begin{equation}
   \mathcal{A} = \frac{(N_{\Bdbar} - N_{\Bd})}{(N_{\Bdbar} + N_{\Bd})}
 \end{equation}
 %
 where $N_{\Bd}$ ($N_{\Bdbar}$) are the number of \BdToJpsiKS signal candidates
-tagged as $\Bd$ ($\Bdbar$). Visualisations of the likelihood shape are presented
-in 1- and 2-dimensional likelihood profile scans in 
+tagged as $\Bd$ ($\Bdbar$) is presented in
+\cref{fig:measurement_of_sin2beta:cpv_measurement:results:plots:asymmetry}.
+
+Visualisations of the likelihood shape are presented in 1- and 2-dimensional
+likelihood profile scans in
 \cref{fig:measurement_of_sin2beta:cpv_measurement:results:plots:ll_scan}. 
 The correlation matrix is provided in 
 \cref{fig:measurement_of_sin2beta:cpv_measurement:results:plots:correlation_matrix} 
@@ -140,9 +142,8 @@ $\tau$, as well as the most relevant parameters from the flavour tagging
 calibration and production asymmetries.
 %
 \begin{table}[h]
-  \caption{Results for the tagging parameters, $\DMd$, and the production
-  asymmetries in the nominal fit. All parameters are constraint in the fit as
-  described in
+  \caption{Results for the tagging parameters and the production asymmetries in
+  the nominal fit. All parameters are constraint in the fit as described in
   \cref{sec:measurement_of_sin2beta:cpv_measurement:constrained_parameters}.}
   \label{tab:measurement_of_sin2beta:cpv_measurement:results:tagging}
   \centering
@@ -158,7 +159,7 @@ calibration and production asymmetries.
       $\p{1}{\text{\acs*{SSpi}}}$      &                          & $1.01$    & $0.06$    \\
       $\deltap{0}{\text{\acs*{SSpi}}}$ &                          & $-0.002$  & $0.004$   \\
       $\deltap{1}{\text{\acs*{SSpi}}}$ &                          & $-0.16$   & $0.09$    \\
-      $\DMd$                    & (\si{\planckbar\per\pico\second})    & $0.5100$  & $0.0030$  \\
+      % $\DMd$                    & (\si{\planckbar\per\pico\second})    & $0.5100$  & $0.0030$  \\
       $A_P^{11}$                &                          & $-0.014$  & $0.005$   \\
       $\Delta A_P$              &                          & $0.000$   & $0.002$   \\
       \bottomrule

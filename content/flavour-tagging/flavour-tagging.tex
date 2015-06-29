@@ -1060,21 +1060,28 @@ taggers are studied in order to replace the existing taggers in the future.
 \missing{OSK NNet and SSK NNet performance}
 
 % for now all information from
-% https://twiki.cern.ch/twiki/pub/LHCbPhysics/OSCharmTagger/LHCb-ANA-2014-103-DRAFT-17-3-2015.pdf
-The study of opposite side decays of charm hadrons has lead to the invention of
-the \OSc tagger \cite{FT:ANAOSCharm,FT:OSCharm}. The \OSc algorithm exploits the
-charge of charm hadrons or its daughter kaons produced in the decay of opposite
-side \bhadrons. Candidates are identified using a set of multivariate selections
-of fully or partially reconstructed Cabibbo-favoured decays, as \eg
+% https://twiki.cern.ch/twiki/pub/LHCbPhysics/OSCharmTagger/LHCb-PAPER-2015-027-v1r2.pdf
+The study of opposite side decays of charm hadrons has lead to the development
+of the \OSc tagger \cite{FT:OSCharm}. The \OSc algorithm exploits the charge of
+charm hadrons or its daughter kaons produced in the decay of opposite side
+\bhadrons. Candidates are identified using a set of multivariate selections of
+fully or partially reconstructed Cabibbo-favoured decays, as \eg
 $\Dz\to\Km\pip$, $\Dp\to\Km\pip\pip$, $\Dz/\Dp\to\Km\elp X$, or
-$\Lambdac\to\proton\Km\pip$. The performance of the \OSc tagger is studied on
-data using selected $\BuToJpsiK$ candidates where an effective tagging
-efficiency of $\efftageff = (0.303 \pm 0.013\,(\stat) \pm 0.001\,(\syst))\%$ is
-found. As the \OSc decisions are highly correlated with the \OSK output, only an
+$\Lambdac\to\proton\Km\pip$. 
+
+The performance of the \OSc tagger is studied on data using selected
+$\BuToJpsiK$ candidates where an effective tagging efficiency of $\efftageff =
+(0.30 \pm 0.01\,\statp \pm 0.01\,\systp)\%$ is found. A cross-check on selected
+$\BdToJpsiKstar$ candidates provides compatible results with an effective
+tagging efficiency of $\efftageff = (0.30 \pm 0.03\,\statp \pm 0.01\,\systp)\%$.
+Fully-hadronic final states show a better performance: effective tagging
+efficiencies of $\efftageff = (0.40 \pm 0.02\,\statp \pm 0.01\,\systp)\%$ and
+$\efftageff = (0.39 \pm 0.03\,\statp \pm 0.01\,\systp)\%$ are found for
+$\BdToDpi$ and $\BsToDspi$ candidates.
+As the \OSc decisions are highly correlated with the \OSK output, only an
 additional $\SI{0.113}{\percent}$ absolute gain in effective tagging efficiency
 can be observed once the full \OS combination is computed.
 
-Similar to the \SSpi or \SSK algorithms the newly developed \SSp tagger
-\addref{SSp} infers its tagging decision from protons produced in the
-fragmentation of the signal \Bmeson.
-\missing{SSp performance}
+Similar to the \SSpi or \SSK algorithms a newly developed \SSp tagger infers
+its tagging decision from protons produced in the fragmentation of the signal
+\Bmeson.

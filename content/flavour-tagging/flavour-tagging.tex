@@ -1046,20 +1046,35 @@ effective tagging efficiency of almost $\SI{27}{\percent}$.
 \section{Recent developments and \RunTwo}
 \label{sec:flavour_tagging:developments}
 
-\redo{Update numbers on new taggers}
-
 The algorithms utilised in the flavour tagging are always subject of active
 development with the aim to improve their performance and gain new insights.
 Several taggers are being revisited using particle selections based on
-\acfp{ANN} or \acfp{BDT}. The \enquote{\OSK NNet}
-\cite{FT:ANAKaonNNet,FT:KaonNNet}, the \enquote{\SSK NNet}
-\cite{FT:ANAKaonNNet,FT:KaonNNet}, and the \enquote{\SSpi BDT} \addref{SSpi BDT}
-taggers are studied in order to replace the existing taggers in the future.
+\acfp{ANN} or \acfp{BDT}.
+
+% SSpi BDT
+A \BDT based \SSpi tagging algorithm (\acs{BDTSSpi}) is in the stage of early
+development, intended to replace the existing cut-based \SSpi tagger in the
+future.
+
 % OS and SS K NNet
 % https://twiki.cern.ch/twiki/pub/LHCbPhysics/NNetKaonTaggers/LHCb-ANA-2014-003-v1.0.pdf
-\missing{OSK NNet and SSK NNet performance}
+For both the \OSK and the \SSK tagging algorithms \ANN based versions are
+implemented (\acs{NNOSK} and \acs{NNSSK}) \cite{FT:ANAKaonNNet,FT:KaonNNet}. 
 
-% for now all information from
+The performance of the \NNSSK tagger shows a significant enhancement compared to
+the cut-based \SSK implementation. In the $\BsToDspi$ channel a effective
+tagging efficiency of $\efftageff = \SI{1.80 +- 0.23}{\percent}$ is found, while
+in selected $\BsToJpsiphi$ candidates $\efftageff = \SI{1.26 +- 0.17}{\percent}$
+is measured. This corresponds to an improvement of more than $\SI{40}{\percent}$
+in both cases.
+
+The \NNOSK tagger also shows an enhancement in the effective tagging efficiency
+of around $\SI{10}{\percent}$ in decays of $\BdToDpi$ with respect to the
+cut-based \OSK tagger. Still, more development effort is needed here, as the
+overall efficiency gain is still small and the improvements can not be confirmed
+yet in $\Bs$ decays.
+
+% OS charm tagger
 % https://twiki.cern.ch/twiki/pub/LHCbPhysics/OSCharmTagger/LHCb-PAPER-2015-027-v1r2.pdf
 The study of opposite side decays of charm hadrons has lead to the development
 of the \OSc tagger \cite{FT:OSCharm}. The \OSc algorithm exploits the charge of
@@ -1082,6 +1097,9 @@ As the \OSc decisions are highly correlated with the \OSK output, only an
 additional $\SI{0.113}{\percent}$ absolute gain in effective tagging efficiency
 can be observed once the full \OS combination is computed.
 
+% SS proton
 Similar to the \SSpi or \SSK algorithms a newly developed \SSp tagger infers
 its tagging decision from protons produced in the fragmentation of the signal
-\Bmeson.
+\Bmeson. 
+
+\missing{Flavour tagging in Run II}

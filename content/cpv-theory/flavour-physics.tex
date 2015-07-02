@@ -127,7 +127,7 @@ expansion with leads to the Wolfenstein parametrisation
 \begin{equation}  
   \VCKM = \begin{pmatrix}
     1 - \sfrac{\lambda^2}{2}        & \lambda                     & A \lambda^3 (\rho - i\eta)  \\
-    -\lambda                        & 1 - \sfrac{\lambda^2}{2}    & A \lambda  2                \\
+    -\lambda                        & 1 - \sfrac{\lambda^2}{2}    & A \lambda^2                 \\
     A \lambda^3 (1 - \rho - i\eta)  & - A \lambda^2               & 1                           \\
   \end{pmatrix}
   + \order{\lambda^4}
@@ -323,10 +323,10 @@ while the sign of $\DG$ has to be determined experimentally.
 \subsection{Time evolution of meson states}
 \label{sec:cpv_theory:flavour_physics:time_evolution}
 
-\info{Missing transition}
-
-The time evolution of a physical state produced as $t=0$ either as a pure
-$\ket{\Mesonz}$ or $\ket{\Mesonzbar}$ state is now described by
+After an outline of the decay and the oscillation of \Bmesons and the \CKM
+mechanism in the \SM the time evolution and differential decay rates are defined
+in the following. The time evolution of a physical state produced as $t=0$
+either as a pure $\ket{\Mesonz}$ or $\ket{\Mesonzbar}$ state is now described by
 %
 \begin{equation}
   \begin{split}
@@ -364,13 +364,13 @@ which yields the four differential decay rates
         \Biggl[ \cosh\Bigl(\frac{\DG t}{2}&\Bigr) + D_f \sinh\left(\frac{\DG t}{2}\right) + C_f \cos(\DM t) - S_f \sin(\DM t) \Biggr]\eqcm \\
     \frac{\Gamma \bigl(\Meson   (t) \to \ovE{f} \bigr)}{\exponential{-\Gamma t}} &= 
       \frac{1}{2} \abs{\ovE{A}_{\ovE{f}}}^2 \left( 1 + \abs{\ovE{\lambda}_{\ovE{f}}}^2 \right) \abs{\frac{q}{p}}^2 \\
-        \Biggl[ \cosh\Bigl(\frac{\DG t}{2}&\Bigr) + D_f \sinh\left(\frac{\DG t}{2}\right) + C_f \cos(\DM t) - S_f \sin(\DM t) \Biggr]\eqcm \\
+        \Biggl[ \cosh\Bigl(\frac{\DG t}{2}&\Bigr) + D_{\ovE{f}} \sinh\left(\frac{\DG t}{2}\right) + C_{\ovE{f}} \cos(\DM t) - S_{\ovE{f}} \sin(\DM t) \Biggr]\eqcm \\
     \frac{\Gamma \bigl(\Mesonbar(t) \to       f \bigr)}{\exponential{-\Gamma t}} &= 
       \frac{1}{2} \abs{A_f}^2 \left( 1 + \abs{\lambda_f}^2 \right) \abs{\frac{p}{q}}^2 \\
         \Biggl[ \cosh\Bigl(\frac{\DG t}{2}&\Bigr) + D_f \sinh\left(\frac{\DG t}{2}\right) + C_f \cos(\DM t) - S_f \sin(\DM t) \Biggr]\eqcm\eqand \\
     \frac{\Gamma \bigl(\Mesonbar(t) \to \ovE{f} \bigr)}{\exponential{-\Gamma t}} &= 
       \frac{1}{2} \abs{\ovE{A}_{\ovE{f}}}^2 \left( 1 + \abs{\ovE{\lambda}_{\ovE{f}}}^2 \right) \\
-        \Biggl[ \cosh\Bigl(\frac{\DG t}{2}&\Bigr) + D_f \sinh\left(\frac{\DG t}{2}\right) + C_f \cos(\DM t) - S_f \sin(\DM t) \Biggr]\eqcm \\
+        \Biggl[ \cosh\Bigl(\frac{\DG t}{2}&\Bigr) + D_{\ovE{f}} \sinh\left(\frac{\DG t}{2}\right) + C_{\ovE{f}} \cos(\DM t) - S_{\ovE{f}} \sin(\DM t) \Biggr]\eqcm \\
   \end{split}
 \end{equation}
 %
@@ -416,8 +416,11 @@ decay
 \end{equation}
 %
 This is the only possible source of \CP violation in charged mesons and all
-baryons.
-\info{Add LHCb measurement as example for direct CPV}
+baryons. As the \CP violation in the decay is expressed by the decay amplitudes,
+the strength can be estimated by studying the involved \CKM matrix elements.
+\addref{feynman diagram} illustrates that, with $\Vcs \approx 1$ and $\Vcb
+\approx A\lambda^2$, no complex phase is present up to the order of $\lambda^2$
+in the decay of \BdToJpsiKS, thus no direct \CP violation is expected.
 
 \subsubsection[\CP violation in mixing]{\CPbfsf violation in mixing}
 \label{sec:cpv_theory:flavour_physics:cpv_classification:mixing}

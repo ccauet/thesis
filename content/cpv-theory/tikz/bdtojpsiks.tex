@@ -1,0 +1,36 @@
+%!TEX root = ../../../common/main.tex
+
+  \begin{tikzpicture}[line width=1 pt, scale=1]
+    \draw[fermion] (15:1.5)--(0,0);
+    \draw[fermionbar] (180:1)--(0,0);
+    \draw[vector] (-40:1)--(0,0);
+    \node[scale=0.8] at (15:1.7) {$\cquark$};
+    \node[scale=0.8] at (180:1.2) {$\bquark$};
+    \node[scale=0.8] at (0.75,-.2) {$\Wp$};
+    \coordinate (uin) at (-1,-.3);
+    \coordinate (umid) at (-80:.5);
+  % \begin{scope}[shift={(0,.3)}]
+  %   \draw[fermion] (180:1) to [out=0,in=220] (40:1); 
+  %   \node[scale=0.8] at (40:1.4) {$d$};
+  %   \node[scale=0.8] at (180:1.2) {$d$};
+  % \end{scope}
+  \begin{scope}[shift={(-40:1)}]
+    \draw[fermion] (-20:1)--(0,0);
+    \draw[fermionbar] (40:1)--(0,0);
+    \node[scale=0.8] at (40:1.2) {$\cquark$};
+    \node[scale=0.8] at (-20:1.2) {$\squark$};
+    \coordinate (uend) at (-40:1.2);
+    \node[scale=0.8] at (-40:1.4) {$\dquark$};
+  \end{scope}
+  \draw[fermion] (uin) to [out=0, in=140] (umid) to [out=-35, in=160] (uend);
+  \node[scale=0.8] at (-1.2,-.3) {$\dquark$};
+  \draw [gray,decorate,decoration={brace,amplitude=5pt},xshift=-4pt]
+     (-1.2,-.5)  -- (-1.2,.2) 
+     node [black,midway,left=4pt,xshift=-2pt] {$\Bd$};
+  \draw [gray,decorate,decoration={brace,amplitude=5pt},xshift=-4pt]
+     (2,.6)  -- (2,-.1) 
+     node [black,midway,right=4pt] {$\Jpsi$};
+  \draw [gray,decorate,decoration={brace,amplitude=5pt},xshift=-4pt]
+     (2.2,-.8)  -- (2.2,-1.7) 
+     node [black,midway,right=4pt] {$\KS$};
+  \end{tikzpicture}

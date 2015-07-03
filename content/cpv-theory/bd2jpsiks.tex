@@ -6,17 +6,23 @@
 ]{\CPbfsf violation in decays of \BdToJpsiKSbfsf}
 \label{sec:cpv_theory:bd2jpsiks}
 
-\info{Missing transition}
-
 The decay mode \BdToJpsiKS is well known \addref{gold-plated channel} as the gold-plated channel to measure
 \CP violation in \Bd decays. With negligible contributions from \DCS
-modes [\addref{DCS mode}], a $\ovE{\bquark}\to\ovE{\cquark}\cquark\ovE{\squark}$ transition
-dominated by a single weak phase [\addref{single weak phase}], and an easy to reconstruct final state the
-analysis of \BdToJpsiKS decays is a unique way to test the \SM quark flavour
-sector.
+modes \addref{DCS mode}, a $\ovE{\bquark}\to\ovE{\cquark}\cquark\ovE{\squark}$
+transition dominated by a single weak phase \addref{single weak phase}, and an
+easy to reconstruct final state the analysis of \BdToJpsiKS decays is a unique
+way to test the \SM quark flavour sector.
 
-\missing{Feynman diagram for \BdToJpsiKS}
-\missing{Feynman diagram for both decay paths}
+\begin{figure}[ht]
+\centering
+\resizebox {1\textwidth} {!}{
+  \input{private/content/cpv-theory/tikz/bdtojpsiks}
+  \input{private/content/cpv-theory/tikz/bdbartojpsiks} 
+}
+\caption{Feynman diagrams (left) for the decay of \Bd and (right) \Bdbar into
+the \Jpsi\KS final state.}
+\label{fig:cpv_theory:bd2jpsiks:feynman_bdtojpsiks}
+\end{figure}
 
 The decay is characterized by a $\Bd$ or $\Bdbar$ meson decaying into an
 intermediate $\Jpsi$ and $\Kz$ meson. To take advantage of the superior
@@ -27,7 +33,9 @@ of the neutral kaon. Besides second-order effects discussed in
 \cref{sec:measurement_of_sin2beta:cpv_measurement:kaon_regeneration}, the \CP
 violating decay of the long lived eigenstate $\KL$ into two pions is neglected.
 Thus, the two pion final state used in this analysis with an invariant mass that
-matches the $\Kz$ mass, is denoted as a $\KS$. 
+matches the $\Kz$ mass, is denoted as a $\KS$.
+\Cref{fig:cpv_theory:bd2jpsiks:feynman_bdtojpsiks} illustrates the Feynman
+diagrams of the decays of \Bd and \Bdbar into the \Jpsi\KS final state.
 
 The $\mumu\pipi$ final state is common to both initial \Bmesons, hence can be
 reached either directly or after mixing of the \Bmeson states and the decay time
@@ -44,7 +52,6 @@ dependent \CP asymmetry \CPAsymmetry can be defined using
 \end{equation}
 %
 where $\Bd$ and $\Bdbar$ denote the meson production flavour at $t=0$.
-\info{Introduce $A_{\DG}$?}
 
 Consider the vanishing decay width difference of the two mass eigenstates
 $\DGd/\Gd = \num{0.001 +- 0.010}$ \cite{Amhis:2014hma} the \CP asymmetry further
@@ -81,10 +88,10 @@ The current world average \cite{Amhis:2014hma}
   \sintwobeta = \num{0.679 +- 0.020}
 \end{equation*}
 %
-is \texthl{mostly} dominated by measurements by \Babar and \Belle in the
-\BdToJpsiKS channel where both the $\elel$ and $\mumu$ final states of the
-$\Jpsi$ as well as the $\pipi$ and $\piz\piz$ final states of the $\KS$ are
-studied. The \Belle collaboration \cite{Adachi:2012et} reports
+is dominated by measurements by \Babar and \Belle in the \BdToJpsiKS channel
+where both the $\elel$ and $\mumu$ final states of the $\Jpsi$ as well as the
+$\pipi$ and $\piz\piz$ final states of the $\KS$ are studied. The \Belle
+collaboration \cite{Adachi:2012et} reports
 %
 \begin{equation*}
   \begin{split}
@@ -116,8 +123,8 @@ the $\mumu\pipi$ final state. The reported results \cite{Aaij:1497268} are
 \end{equation*}
 %
 Beside the direct measurement, the value of $\sintwobeta$ can be estimated by a
-global fit to the \CKM parameter space. As this fit can be performed \replace{with and
-without the respective parameters included}{something better}, a $\chisq$ pull can be computed for
-each quantity. For $\sintwobeta$ a small tension of $\Delta\chisq = \num{1.74}$
-is observed, that can be interpreted as higher-order contributions not accounted
-for or the influence of potential \BSM effects.
+global fit to the \CKM parameter space. As this fit can be performed with and
+without considering the respective parameters, a $\chisq$ pull can be computed
+for each quantity. For $\sintwobeta$ a small tension of $\Delta\chisq =
+\num{1.74}$ is observed, that can be interpreted as higher-order contributions
+not accounted for or the influence of potential \BSM effects.

@@ -1,4 +1,5 @@
-%!TEX root = ../main.tex
+%!TEX root = ../../../common/main.tex
+
 %\begin{tikzpicture}
 \pgfdeclareplotmark{cross} {
 \pgfpathmoveto{\pgfpoint{-0.3\pgfplotmarksize}{\pgfplotmarksize}}
@@ -73,7 +74,7 @@
 \definecolor{c}{rgb}{0,0,0};
 \draw [c] (3.472,2.107) -- (3.472,12.5103) -- (18.64,12.5103) -- (18.64,2.107) -- (3.472,2.107);
 \draw [c] (3.472,2.107) -- (18.64,2.107);
-\draw [anchor= east] (18.64,0.2) node[scale=0.9, rotate=0]{$t$\,$\mathrm{(ps)}$};
+\draw [anchor= east] (18.64,1.2) node[scale=1, rotate=0]{$t$\,$\mathrm{(ps)}$};
 \draw [c] (7.43253,2.4191) -- (7.43253,2.107);
 \draw [c] (8.2752,2.26305) -- (8.2752,2.107);
 \draw [c] (9.11787,2.26305) -- (9.11787,2.107);
@@ -94,9 +95,9 @@
 \draw [c] (16.7019,2.26305) -- (16.7019,2.107);
 \draw [c] (17.5445,2.26305) -- (17.5445,2.107);
 \draw [c] (18.3872,2.26305) -- (18.3872,2.107);
-\draw [anchor=base] (7.43253,1.1) node[scale=0.9, rotate=0]{$5$};
-\draw [anchor=base] (11.6459,1.1) node[scale=0.9, rotate=0]{$10$};
-\draw [anchor=base] (15.8592,1.1) node[scale=0.9, rotate=0]{$15$};
+\draw [anchor=base] (7.43253,1.5) node[scale=1, rotate=0]{$5$};
+\draw [anchor=base] (11.6459,1.5) node[scale=1, rotate=0]{$10$};
+\draw [anchor=base] (15.8592,1.5) node[scale=1, rotate=0]{$15$};
 \draw [c] (3.472,12.5103) -- (18.64,12.5103);
 \draw [c] (7.43253,12.1982) -- (7.43253,12.5103);
 \draw [c] (8.2752,12.3543) -- (8.2752,12.5103);
@@ -119,7 +120,7 @@
 \draw [c] (17.5445,12.3543) -- (17.5445,12.5103);
 \draw [c] (18.3872,12.3543) -- (18.3872,12.5103);
 \draw [c] (3.472,2.107) -- (3.472,12.5103);
-\draw [anchor= east] (0.,12.5103) node[scale=0.9, rotate=90]{Signal-yield asymmetry};
+\draw [anchor= east] (1.3,12.5103) node[scale=1, rotate=90]{Signal-yield asymmetry};
 \draw [c] (3.92704,2.107) -- (3.472,2.107);
 \draw [c] (3.69952,2.36708) -- (3.472,2.36708);
 \draw [c] (3.69952,2.62717) -- (3.472,2.62717);
@@ -161,15 +162,15 @@
 \draw [c] (3.69952,11.9901) -- (3.472,11.9901);
 \draw [c] (3.69952,12.2502) -- (3.472,12.2502);
 \draw [c] (3.92704,12.5103) -- (3.472,12.5103);
-\draw [anchor= east] (3.5,2.107)   node[scale=0.9, rotate=0]{$-0.4$};
-\draw [anchor= east] (3.5,3.40741) node[scale=0.9, rotate=0]{$-0.3$};
-\draw [anchor= east] (3.5,4.70783) node[scale=0.9, rotate=0]{$-0.2$};
-\draw [anchor= east] (3.5,6.00824) node[scale=0.9, rotate=0]{$-0.1$};
-\draw [anchor= east] (3.5,7.30866) node[scale=0.9, rotate=0]{$0$};
-\draw [anchor= east] (3.5,8.60907) node[scale=0.9, rotate=0]{$0.1$};
-\draw [anchor= east] (3.5,9.90948) node[scale=0.9, rotate=0]{$0.2$};
-\draw [anchor= east] (3.5,11.2099) node[scale=0.9, rotate=0]{$0.3$};
-\draw [anchor= east] (3.5,12.5103) node[scale=0.9, rotate=0]{$0.4$};
+\draw [anchor= east] (3.5,2.107)   node[scale=1, rotate=0]{$-0.4$};
+\draw [anchor= east] (3.5,3.40741) node[scale=1, rotate=0]{$-0.3$};
+\draw [anchor= east] (3.5,4.70783) node[scale=1, rotate=0]{$-0.2$};
+\draw [anchor= east] (3.5,6.00824) node[scale=1, rotate=0]{$-0.1$};
+\draw [anchor= east] (3.5,7.30866) node[scale=1, rotate=0]{$0$};
+\draw [anchor= east] (3.5,8.60907) node[scale=1, rotate=0]{$0.1$};
+\draw [anchor= east] (3.5,9.90948) node[scale=1, rotate=0]{$0.2$};
+\draw [anchor= east] (3.5,11.2099) node[scale=1, rotate=0]{$0.3$};
+\draw [anchor= east] (3.5,12.5103) node[scale=1, rotate=0]{$0.4$};
 \draw [c] (18.64,2.107) -- (18.64,12.5103);
 \draw [c] (18.185,2.107) -- (18.64,2.107);
 \draw [c] (18.4125,2.36708) -- (18.64,2.36708);
@@ -590,5 +591,5 @@
 \draw [c] (18.4125,11.9901) -- (18.64,11.9901);
 \draw [c] (18.4125,12.2502) -- (18.64,12.2502);
 \draw [c] (18.185,12.5103) -- (18.64,12.5103);
-\draw [anchor=base west] (12.88,9.5) node[scale=0.9, rotate=0, align=left]{LHCb\\};
+\draw [anchor=base west] (4.8,10.5) node[scale=1., rotate=0, align=left]{LHCb\\};
 %\end{tikzpicture}

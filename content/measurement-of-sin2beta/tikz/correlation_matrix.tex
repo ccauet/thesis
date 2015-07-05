@@ -1,3 +1,5 @@
+%!TEX root = ../../../common/main.tex
+
 \pgfdeclareplotmark{cross} {
 \pgfpathmoveto{\pgfpoint{-0.3\pgfplotmarksize}{\pgfplotmarksize}}
 \pgfpathlineto{\pgfpoint{+0.3\pgfplotmarksize}{\pgfplotmarksize}}
@@ -58,7 +60,7 @@
 \pgfpathclose
 \pgfusepathqfillstroke
 }
-\begin{tikzpicture}
+\begin{tikzpicture}[scale=0.65]
 \definecolor{c}{rgb}{1,1,1};
 \draw [color=c, fill=c] (0,0) rectangle (20,14.3719);
 \draw [color=c, fill=c] (3.23618,2.98992) rectangle (18,13.6533);

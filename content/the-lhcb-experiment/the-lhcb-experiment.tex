@@ -119,22 +119,73 @@ horizontal (vertical) plane.
 
 The detector layout exploits the characteristics of the heavy flavour production
 in \protonproton collisions at the \LHC. The production of heavy quarks in an
-hadronic environment is dominated by gluon-gluon fusion and quark-antiquark
-annihilation.
+hadronic environment is dominated by quark pair production in gluon-gluon fusion
+$\gluon\gluon\to\bbbar/\ccbar$ and quark-antiquark annihilation
+$\qqbar\to\bbbar/\ccbar$.
 
-\missing{Complete LHCb intro}
-\info{Better understand how b quark production works at the LHC}
-bbbar production process:
-hadrons, PDF, gluon-gluon fusion
-
-b hadron production: large number of b/c hadrons, bbbar crosssection, asymmetric
-momentum distribution (plots!), hadronization into Bd, Bs, Bu, baryons;
-production asymmetry
-
-lumi leveling, angular acceptance, number of B decays in acceptance
-
+The heavy quark production cross-sections depend on the centre-of-mass energy
+$\sqrt{s}$ of the \protonproton collision. As illustrated in
+\cref{fig:lhcb_experiment:detector:cross_section} the $\bbbar$ pair
+cross-section behaves approximately linearly with $\sqrt{s}$ and lies roughly in
+the order of $\SI{300}{\microbarn}$ for $\sqrt{s}=\SI{7}{\TeV}$.
+%
 \begin{figure}[t]
-  \includegraphics[width=\textwidth]{private/content/the-lhcb-experiment/figs/lhcb_detector_overview.pdf}
+  \centering
+    \includegraphics[width=0.6\textwidth]{private/content/the-lhcb-experiment/figs/lhc_cross_sections.pdf}
+  \caption{
+    Production cross-sections as a function of the \acl{protonproton} collision centre-of-mass energy. \cite{Campbell:2006wx}
+  }
+  \label{fig:lhcb_experiment:detector:cross_section}
+\end{figure}
+%
+At \LHC energies the partons involved in the collisions are likely to carry very
+different momenta, leading to a strong boost of the produced quark pair in
+direction of the beam axis. Thus, the produced quarks have a high probability of
+being produced at a small azimuthal angle $\theta_{1,2}$ with respect to the
+beam axis. \Cref{fig:lhcb_experiment:detector:production} illustrates the the
+correlation of the two quark angles $\theta_{1}$ and $\theta_{2}$. The red
+shaded region marks the \LHCb detector acceptance where around
+$\SI{25}{\percent}$ of all produced $\bbbar$ quark pairs are found.
+
+The acceptance is depicted as well in
+\cref{fig:lhcb_experiment:detector:production} as a function of the quark
+\acl{pseudorapidity} $\text{\acs{pseudorapidity}} = -\ln(\tan(\theta/2))$. Here
+the \LHCb acceptance region ($\num{1.8} < \eta < \num{4.9}$) can be identified
+by the red rectangle while the acceptance of the \acfp{GPD} \ATLAS and \CMS is
+marked by the yellow rectangle.
+%
+\begin{figure}[t]
+  \centering
+    \includegraphics[width=0.48\textwidth]{private/content/the-lhcb-experiment/figs/lhcb_quark_correlation.pdf}
+    \includegraphics[width=0.48\textwidth]{private/content/the-lhcb-experiment/figs/lhcb_acceptance.pdf}
+  \caption{
+    Plots of the $\bbbar$ quark pair production numbers (in arbitrary units) at
+  a centre-of-mass energy of $\sqrt{s} = \SI{8}{\TeV}$ as a function of (left)
+  the azimuthal angles $\theta_{1,2}$ and (right) the \acf{pseudorapidity}.
+  (Left) The red shaded region or (right) the red rectangle mark the \LHCb
+  detector acceptance.}
+  \label{fig:lhcb_experiment:detector:production}
+\end{figure}
+%
+
+After production each $\bquark$ quark hadronises independently forming a
+\bhadron. Most likely by bounding to a light quark forming a $\Bu$ or a $\Bd$
+(\SI{40}{\percent} each), to heavier quarks as in $\Bs$ (\SI{11}{\percent}) or
+even $\bquark$ baryons as $\Lambdab$ (\SI{9}{\percent}). The numbers in
+parenthesis denote the fraction of the total production in percent
+\cite{Agashe:2014kda}.
+
+At his point, flavour conjugate states are implied as the production is in
+principle symmetric in quark flavour. However, as the \protonproton collision
+defines an initial state with positive charge and in absence of any
+anti-valence-quarks, different production rates are expected
+\cite{Chaichian:1993rh,Norrbin:2000zc,Norrbin:2000jy}. As this influences the
+flavour-sensitive \CP violation measurement, precautions are taken as described
+in \cref{sec:measurement_of_sin2beta:likelihood_fit:model:decay_time}.
+%
+\begin{figure}[t]
+  \centering
+    \includegraphics[width=\textwidth]{private/content/the-lhcb-experiment/figs/lhcb_detector_overview.pdf}
   \caption{
     Schematic cross section of the \acs{LHCb} detector in the $(y,z)$ plane at
   $x=0$. The \protonproton interaction region is located at the coordinates

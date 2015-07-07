@@ -9,11 +9,11 @@ flavour physics by exploiting direct and indirect experimental techniques to its
 full extent. It's physics program includes \CP violation measurements in $\B$ and
 $\D$ meson decays
 \cite{Aaij:2015tza,Aaij:2015yda,Aaij:2014uva,Aaij:2014fba,Aaij:2014dka,Aaij:2014zsa}, 
-the search for (very) rare decays as $\BToMuMu$ \cite{CMS:2014xfa}, tests of
+the search for (very) rare decays \cite{CMS:2014xfa}, tests of
 lepton-universality \cite{Aaij:2014ora,Aaij:2015yra}, as well as heavy flavour
 spectroscopy \cite{Aaij:2014yka,LHCB-PAPER-2015-029}.
 
-In the following sections the experimental conditions at the \LHC and the design
+In the next sections the experimental conditions at the \LHC and the design
 of the \LHCb detector are outlined.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -210,12 +210,13 @@ in \cref{sec:measurement_of_sin2beta:likelihood_fit:model:decay_time}.
 \label{sec:lhcb_experiment:tracking}
 
 The \LHCb track reconstruction is based on information from a set of tracking
-detectors: the \VELO, the \TT, the \IT and the \OT. Silicon microstrips are used
-in the first three, while the latter is constructed as a drift-time detector.
-The \VELO is described in \cref{sec:lhcb_experiment:tracking:velo}, the \TT and
-the \IT in \cref{sec:lhcb_experiment:tracking:ttit}, and the \OT in
+detectors located around a spectrometer magnet with an integrated field of
+$\SI{4}{\tesla\metre}$. The trackin systems consists of the \VELO, the \TT, the
+\IT and the \OT. Silicon microstrips are used in the first three, while the
+latter is constructed as a drift-time detector. The \VELO is described in
+\cref{sec:lhcb_experiment:tracking:velo}, the \TT and the \IT in
+\cref{sec:lhcb_experiment:tracking:ttit}, and the \OT in
 \cref{sec:lhcb_experiment:tracking:ot}.
-\important{The magnet is missing!}
 
 %%------------------------------------------------------------------------------
 \subsection{The \acl*{VELO}}
@@ -245,7 +246,7 @@ be seen in the schematic visualisation in
 The \VELO covers the total \LHCb acceptance region, such that all tracks cross
 at least three \VELO stations. \Cref{fig:lhcb_experiment:tracking:velo:overview}
 shows the cross section of the \VELO in the $(x,z)$ plane at $y=0$ with all
-modules visible. \info{VELO pile-up system?}
+modules visible.
 %
 \begin{figure}[t]
   \includegraphics[width=\textwidth]{private/content/the-lhcb-experiment/figs/lhcb_detector_velo_overview.png}
@@ -371,7 +372,7 @@ single]{15}{\geq100}{\GeVc}$.
 %
 \begin{figure}[t]
   \includegraphics[width=0.48\textwidth]{private/content/the-lhcb-experiment/figs/lhcb_detector_rich_momentum.pdf}
-  \includegraphics[width=0.52\textwidth]{private/content/the-lhcb-experiment/figs/lhcb_detector_rich_radiator.png}
+  \includegraphics[width=0.48\textwidth]{private/content/the-lhcb-experiment/figs/lhcb_detector_rich_radiator.png}
   \caption{Momentum dependence of the cherenkov angle $\Theta_\mathrm{C}$ for
   (left) all \RICH radiators \cite{Alves:2008zz} and (right) for the
   \fluorocarbonfour radiator only \cite{Adinolfi:2012qfa}.}
@@ -432,7 +433,7 @@ direct proximity of the readout electronics to provide a fast trigger decision
 in real-time with the bunch crossing-frequency. The \HLT operates asynchronously
 on a processor farm.
 
-\Cref{fig:lhcb_experiment:trigger:overview}\addref{LHCb trigger scheme from speakers bureau} shows an overview of the \LHCb
+\Cref{fig:lhcb_experiment:trigger:overview} shows an overview of the \LHCb
 trigger schematics. The \LZero is described in
 \cref{sec:lhcb_experiment:trigger:lzero} while more information on the \HLT can
 be found in \cref{sec:lhcb_experiment:trigger:hlt}. Details on the \LHCb trigger
@@ -463,7 +464,6 @@ in the muon system. Additionally global event properties as the number of
 primary \protonproton interactions estimated by the \VELO pile-up system and the
 number of \SPD hits are used to reject events with large combinatorics.
 
-\newpage
 %%------------------------------------------------------------------------------
 \subsection{The \acl*{HLT}}
 \label{sec:lhcb_experiment:trigger:hlt}
@@ -483,37 +483,30 @@ selection of (di-)muon events. As the \LHC delivers stable physics beams in
 about $\SI{30}{\percent}$ of the time, local storage on the computing nodes is
 used to \enquote{defer} around $\SI{20}{\percent}$ of the \LZero-passed events
 to process them during periods without stable beams \cite{Frank:2014ixa}.
-\info{Add HLT performance? Overall trigger performance?}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Online system}
-
-\missing{Online system}
-
-\DAQ, \TFC, and \ECS
-\begin{itemize}
-  \item \DAQ: transport of bunch-crossing data from the detector fond-end electornics to permanent storage
-  \item Front-end detector electronics -> TELL1 board : receiver cards -> \acp{FPGA} (processing, zero-suppresion, data compression) -> SyncLink (another \FPGA) collect and send raw IP-packet by GbEthernet mezzanine cards -> DAQ
-  \item TELL1 has a credit-card size PC connected that interfaces to the \ECS
-  \item Clock and synchronisation signals (\eg triggers) are transmitted trough the on-board \TTC interface
-\end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Software stack}
 
-\missing{Software stack}
-\begin{itemize}
-  \item \Gaudi: LHCb software framework (used by ATLAS as well)
-  \item \Brunel: reconstruction
-  \item \Moore: trigger
-  \item \DaVinci: end-user analysis software
-  \item Simulation: \Gauss, \Boole, \Pythia, \EvtGen, \Photos, \Herwigpp, \Sherpa, \GeantFour
-\end{itemize}
+The \LHCb core software framework \Gaudi \cite{set:soft:gaudi} is used for data
+processing and supports interfaces to all other software packages. The track
+reconstruction is performed by \Brunel \cite{soft:brunel} while \Moore
+\cite{soft:moore} runs the \HLTOne and \HLTTwo trigger algorithms. Both packages
+do differentiate between data and simulation. The generation of simulated events
+is managed by the \Gauss \cite{set:soft:gauss} in consecutive steps: at first
+\Pythia \cite{set:soft:pythia} is used as event generator, then the decay of
+particles is simulated with \EvtGen \cite{Lange:2001uf} where radiative
+corrections are handled by \Photos \cite{set:soft:photos}. The transit of
+particle trough the detector and interaction with matter is simulated with
+\GeantFour \cite{set:soft:geantfour}. The detector response is finally described
+by \Boole \cite{soft:boole} including simulations of electronics noise, detector
+cross-talk, and spill-over effects. The \DaVinci \cite{soft:davinci} package
+provides an analysis framework to apply selections and---if available---access
+\MC informations on reconstructed particle tracks.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Computing grid}
+\section{Data taking}
 
-\missing{Computing grid}
+\missing{Data taking}
 ...
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

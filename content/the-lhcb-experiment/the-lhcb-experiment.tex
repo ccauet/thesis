@@ -211,7 +211,7 @@ in \cref{sec:measurement_of_sin2beta:likelihood_fit:model:decay_time}.
 
 The \LHCb track reconstruction is based on information from a set of tracking
 detectors located around a spectrometer magnet with an integrated field of
-$\SI{4}{\tesla\metre}$. The trackin systems consists of the \VELO, the \TT, the
+$\SI{4}{\tesla\metre}$. The tracking systems consists of the \VELO, the \TT, the
 \IT and the \OT. Silicon microstrips are used in the first three, while the
 latter is constructed as a drift-time detector. The \VELO is described in
 \cref{sec:lhcb_experiment:tracking:velo}, the \TT and the \IT in
@@ -315,15 +315,15 @@ tracks are reconstructed using extrapolations of the straight track sections
 outside the magnet to the upstream tracking stations (\IT/\OT). If \TT hits are
 present they are considered as well. The reconstruction of downstream tracks
 starts from hits in in the upstream tracking stations that are then
-extrapolation trough the magnet and combined with hits in the \TT. Other track
-types are reconstructed in similar manners. 
+extrapolation through the magnet and combined with hits in the \TT. Other track
+types are reconstructed in similar ways. 
 
-Obviously long tracks are the most robust and useful tracks. Nevertheless, other
-types of reconstructed tracks are useful too. \VELO tracks are employed to
-improve the identification of the \PV positions, T and upstream tracks can be
-utilised to enhance the \RICH performance, and downstream tracks increase the
-number of reconstructed \KS and other long lived particles that may decay
-outside the \VELO acceptance.
+Obviously long tracks carry the most information and are preferred.
+Nevertheless, other types of reconstructed tracks are useful too. \VELO tracks
+are employed to improve the identification of the \PV positions, T and upstream
+tracks can be utilised to enhance the \RICH performance, and downstream tracks
+increase the number of reconstructed \KS and other long lived particles that may
+decay outside the \VELO acceptance.
 
 The average reconstruction efficiency of tracks inside the detector acceptance
 and in the momentum range between 
@@ -414,7 +414,7 @@ particle reconstructed in the detector.
 %
 \begin{description}
   \item[Calorimeter \PID] The calorimeter system's scope is to discriminate
-  between photons, electrons, and neutral pions. Trajectories of reconstruced
+  between photons, electrons, and neutral pions. Trajectories of reconstructed
   tracks are extrapolated to the calorimeter system to be associated with
   charged clusters. The cluster shape is then used to separate photon and \piz
   candidates. \ECAL clusters without associated track are treated as photon
@@ -534,7 +534,7 @@ is managed by the \Gauss \cite{set:soft:gauss} project in consecutive steps: at
 first \Pythia \cite{set:soft:pythia} is used as event generator, then the decay
 of particles is simulated with \EvtGen \cite{Lange:2001uf} where radiative
 corrections are handled by \Photos \cite{set:soft:photos}. The transit of
-particle trough the detector and the interaction with matter is simulated with
+particle through the detector and the interaction with matter is simulated with
 \GeantFour \cite{set:soft:geantfour}. The detector response is finally described
 by \Boole \cite{soft:boole} including simulations of electronics noise, detector
 cross-talk, and spill-over effects. The \DaVinci \cite{soft:davinci} package

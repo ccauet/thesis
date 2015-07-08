@@ -300,6 +300,7 @@ tracking in the low occupancy region around the \IT.
   \item definition of: reconstructible, successfully reconstructed
   \item performance numbers for long tracks and downstream tracks
   \item high lifetime acceptance
+  \item global performance: PV resolution of 10mum transverse to the beam and 60mum along the beam axis; invariant mass resolution between 12 and 25 MeV; lifetime resolution of around 40fs
 \end{itemize}
 
 
@@ -408,18 +409,49 @@ states, as $\BdToJpsiKS$ considered in the analysis described in this thesis.
 %%------------------------------------------------------------------------------
 \subsection{Particle identification technique and performance}
 
-\missing{Particle identification technique}
-\begin{itemize}
-  \item combine info from RICHs, calo, and muon system to identify: e,mu,pi,K,p also gamma, pi0
-  \item hadron PID: likelihood approach, RICH pattern mached to all possible tracks under assumption of partice hypotheses. -> global pattern-recongnition
-  \item RICH efficiency
-  \item muon PID: extrapolating reconstructed tracks into the muon stations; considered a muon cand if a minimum number of stations have hits in their field of interest FOI
-  \item muon PID efficiency
-  \item lectron PID: balance of track momentum and energy of the charged cluster in the ECAL matched with extrapolated tracks; matching bremsstrahlung photons to electron tracks before the magnet
-  \item gamma PID: ECAL cluster w/o associated track
-  \item pi0 PID: 
-  \item global performance: PV resolution of 10mum transverse to the beam and 60mum along the beam axis; invariant mass resolution between 12 and 25 MeV; lifetime resolution of around 40fs
-\end{itemize}
+Combining the information from both \RICH detectors, the calorimeter system, and
+the muon system a likelihood is calculated to assign \PID probabilities to each
+particle reconstructed in the detector.
+%
+\begin{description}
+  \item[Calorimeter \PID] The calorimeter system's scope is to discriminate
+  between photons, electrons, and neutral pions. Trajectories of reconstruced
+  tracks are extrapolated to the calorimeter system to be associated with
+  charged clusters. The cluster shape is then used to separate photon and \piz
+  candidates. \ECAL clusters without associated track are treated as photon
+  candidate. Potential Bremsstrahlung photons are recombined with electron
+  tracks downstream of the magnet. Also converted photons---\leplem pairs from
+  photon interactions with the detector material---are taken into account.
+  \item[\RICH \PID] The hadron identification is mainly accomplished by the
+  \RICH system. The general principles of the \RICH \PID of charged particles
+  incorporates the track momentum provided by the tracking system and the
+  opening angle of the cherenkov radiation observed in the \RICH as a measure
+  for the particle velocity. As shown in
+  \cref{fig:lhcb_experiment:tracking:pid:radiator} the different particle
+  species show a different behaviour in the momentum-cherenkov-angle plane that
+  can be exploited to identify the particle. Assigning different particle
+  hypotheses the probability of a particle to be of a certain kind are matched
+  using global pattern-recognition.
+  \item[Muon \PID] Muon candidates are identified by extrapolating tracks into
+  the muon stations and then looking for a sufficient number of hits in a field
+  of interest depending on the muon momentum. As a rule of thumb it can be
+  assumed that a $\SI{6}{\GeV}$ muon will transverse the full muon system, while
+  a $\SI{3}{\GeV}$ muon candidate will usually be stopped in the third muon
+  chamber.
+\end{description}
+%
+particle ID likelihood:
+RICH + CALO + Muon
+L = LRICH(hadron) * LCALO(no electron) * LMuon(no muon)
+always difference against the pion hypothesis
+
+electron ID efficiency: \cite{Aaij:2014jba}
+~ 90 \% for ~ 5 \% e→h mis-id probability
+kaon ID efficiency: \cite{Aaij:2014jba}
+~ 95 \% for ~ 5 \% π→K mis-id probability
+muon ID efficiency: \cite{Aaij:2014jba,Archilli:2013npa}
+~ 97 \% for 1-3 \% π→μ mis-id probability
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Trigger}
@@ -486,17 +518,18 @@ to process them during periods without stable beams \cite{Frank:2014ixa}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Software stack}
+\label{sec:lhcb_experiment:software}
 
 The \LHCb core software framework \Gaudi \cite{set:soft:gaudi} is used for data
 processing and supports interfaces to all other software packages. The track
 reconstruction is performed by \Brunel \cite{soft:brunel} while \Moore
 \cite{soft:moore} runs the \HLTOne and \HLTTwo trigger algorithms. Both packages
 do differentiate between data and simulation. The generation of simulated events
-is managed by the \Gauss \cite{set:soft:gauss} in consecutive steps: at first
-\Pythia \cite{set:soft:pythia} is used as event generator, then the decay of
-particles is simulated with \EvtGen \cite{Lange:2001uf} where radiative
+is managed by the \Gauss \cite{set:soft:gauss} project in consecutive steps: at
+first \Pythia \cite{set:soft:pythia} is used as event generator, then the decay
+of particles is simulated with \EvtGen \cite{Lange:2001uf} where radiative
 corrections are handled by \Photos \cite{set:soft:photos}. The transit of
-particle trough the detector and interaction with matter is simulated with
+particle trough the detector and the interaction with matter is simulated with
 \GeantFour \cite{set:soft:geantfour}. The detector response is finally described
 by \Boole \cite{soft:boole} including simulations of electronics noise, detector
 cross-talk, and spill-over effects. The \DaVinci \cite{soft:davinci} package
@@ -505,12 +538,31 @@ provides an analysis framework to apply selections and---if available---access
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Data taking}
+\label{sec:lhcb_experiment:data}
 
-\missing{Data taking}
-...
+Over the \RunOne period from 2010 to 2012 a total integrated luminosity of
+$\SI{3.47}{\per\femtobarn}$ was delivered to the \LHCb detector by the \LHC in
+\protonproton collisions. The overall data taking efficiency achieved by the
+experiment was around $\SI{93}{\percent}$ for the full run period leading to an
+recorded integrated luminosity of $\SI{3.22}{\per\femtobarn}$ in \RunOne. The
+main sources of efficiency loss can be found in detector dead time, the data
+acquisition system, \VELO safety measures, and control of the high voltage
+systems. A detailed overview of the data taking history including delivered and
+recorded integrated luminosity is depicted in
+\cref{fig:lhcb_experiment:data:integrated_lumi}.
+%
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=\textwidth]{private/content/the-lhcb-experiment/figs/lhcb_recorded_lumi_runI.png}
+  \caption{
+    History of delivered and recorded integrated luminosity over the time period of \RunOne.
+  }
+  \label{fig:lhcb_experiment:data:integrated_lumi}
+\end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{\RunTwo and the \acs*{LHCb} upgrade}
+\label{sec:lhcb_experiment:future}
 
 \missing{\RunTwo and the \acs*{LHCb} upgrade}
 Short description of Run II and Upgrade physics goals, the changes wrt now and what will be possible; a more detailed analysis of the Run II prospects for sin2beta will be given in the conclusions.

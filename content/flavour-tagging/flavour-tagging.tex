@@ -67,8 +67,8 @@ responses into a single decision is outlined in
 \cref{sec:flavour_tagging:performance} and recent developments are discussed in
 \cref{sec:flavour_tagging:developments}.
 
-More details on the flavour tagging used by \LHCb can be found in
-\cite{Aaij:2012mu,FT:ANARunI,FT:RunI}. \addref{Sort out citation of FT}
+More details on the flavour tagging employed by \LHCb can be found in
+\cite{Aaij:2012mu,FT:RunI}.
 
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Flavour tagging algorithms}
@@ -182,8 +182,6 @@ information from charged tracks are looked-up to sort them into the signature
 categories. Next, the received results are used on an event-level to provide the
 final tagging decision. Using this approach an effective tagging efficiency of
 $\efftageff = \SI{30.1 +- 0.4}{\percent}$ is achieved.
-
-\info{Different handling of section transition?}
 
 % ------------------------------------------------------------------------------
 \subsection{\Acl{OS} algorithms}
@@ -503,7 +501,7 @@ $\pzero$ and $\pone$. Hence, a perfect calibrated tagging output would result in
 $\pzero = \avgmistagestimate$ and $\pone = 1$. The performance of the tagging
 algorithms may depend on the flavour of the initial \Bmeson. Different
 interaction of particles, \eg kaons used by the \OSK tagger, induce deviating
-reconstruction efficiencies, resulting in different tagging efficiencies \todo{Include tagging efficiencies?}
+reconstruction efficiencies, resulting in different tagging efficiencies
 $\tageff$ and mistag probabilities $\mistag$ for initial $\Bd$ and $\Bdbar$
 states. To correct for asymmetries of the tagging calibration $\deltamistag =
 \mistag^{\Bd} - \mistag^{\Bdbar}$ and two independent calibration functions are
@@ -579,7 +577,7 @@ particle charge.
 In the decay of neutral \Bmesons the oscillation of the propagating $\B$ state
 prevents the determination of the initial flavour just by measuring the final
 state charge. Instead a full decay time dependent mixing analysis has to be
-performed. As described in \cref{sec:missing}\addref{Mixing asymmetry} the signal mixing asymmetry is
+performed. As described \eg in \cite{Aaij:2012nt} the signal mixing asymmetry is
 given by
 %
 \begin{equation}
@@ -756,7 +754,6 @@ The \SSpi mistag estimate is pre-calibrated using the calibration parameters
     \p{1}{} = \num{0.939}\eqcm\eqspace
     \langle\eta\rangle = \num{0.379}.
 \end{equation}
-\info{How to handle the \SSpi precalibration for \Davinci versions prior to v35r1}
 %
 Following, the \SSpi tagger is calibrated using a dataset of $\BdToJpsiKstar$
 decays corresponding to an integrated luminosity of $\SI{3.0}{\per\fb}$

@@ -291,54 +291,51 @@ tracking in the low occupancy region around the \IT.
 \subsection{Track reconstruction technique and performance}
 \label{sec:lhcb_experiment:tracking:techniques_and_performance}
 
-The reconstructed of trajectories employs all available tracking information from \VELO, \TT, \OT and \OT, and the muon system.
+The reconstructed of trajectories employs all available tracking information
+from \VELO, \TT, \IT and \OT, and the muon system \cite{Aaij:2014pwa}. Each
+track is classified by the position of associated hits in the different
+subsystems
+(\cref{fig:lhcb_experiment:tracking:techniques_and_performance:tracktypes}).
+\emph{T tracks} only have hits in the \IT and \OT, \emph{\VELO tracks} only have
+hits in the
+\VELO, \emph{upstream tracks} only have hits in the \VELO and \TT. Tracks
+leaving hits in all tracking systems are called \emph{long tracks}, while tracks
+with hits in each system except the \VELO are called \emph{downstream tracks}.
+%
+\begin{figure}[t]
+  \includegraphics[width=\textwidth]{private/content/the-lhcb-experiment/figs/lhcb_track_types.png}
+  \caption{
+    Illustration of the \LHCb tracking subsystems and track type definitions \cite{Aaij:2014pwa}.
+  }
+  \label{fig:lhcb_experiment:tracking:techniques_and_performance:tracktypes}
+\end{figure}
+%
+Starting from \VELO hits and with the knowledge of the magnetic field map,
+tracks are reconstructed using extrapolations of the straight track sections
+outside the magnet to the upstream tracking stations (\IT/\OT). If \TT hits are
+present they are considered as well. The reconstruction of downstream tracks
+starts from hits in in the upstream tracking stations that are then
+extrapolation trough the magnet and combined with hits in the \TT. Other track
+types are reconstructed in similar manners. 
 
-\missing{Track reconstruction technique}
-\info{Results are from Bd2JpsiKS!}
-\begin{itemize}
-  \item hits from VELO, TT, IT and OT are combined to form trajectories form the VELO to the calorimeters. 
-  \item list different track types: long, upstream, downstream, VELO, T
-  \item track seeds, Kalman filter, pattern recognition, ghosts
-  \item definition of: reconstructible, successfully reconstructed
-  \item performance numbers for long tracks and downstream tracks
-  \item high lifetime acceptance
-  \item global performance: PV resolution of 10mum transverse to the beam and 60mum along the beam axis; invariant mass resolution between 12 and 25 MeV; lifetime resolution of around 40fs
-\end{itemize}
+Obviously long tracks are the most robust and useful tracks. Nevertheless, other
+types of reconstructed tracks are useful too. \VELO tracks are employed to
+improve the identification of the \PV positions, T and upstream tracks can be
+utilised to enhance the \RICH performance, and downstream tracks increase the
+number of reconstructed \KS and other long lived particles that may decay
+outside the \VELO acceptance.
 
-
-Velo reconstruction:
-first step: R-z projection
-less efficient if DOCA(z) not zero
-adding phi also less efficient -> phi not constant if not from beam line
-weighting tracks based on DOCA(z)
-
-TT: 50mum hit reso
-important for KS reco
-
-IT: 1\% of area, 30\% of B tracks
-50mum reso
-
-OT: 200mum reso
-spill-over, hit occupancy
-
-track types:
-velo tracks: find PVs
-long tracks: best best best, B physics
-T tracks: improve RICH2 performance
-upstream tracks: improve RICH1 performance, moderate p estimate
-downstream tracks: enhance KS finding
-
-Track fitting:
-kalman filter
-propagation model: track states at different z pos
-magnetic field: field map, accuracy better than momentum reso
-adaptive runge-kutta extrapolation
-propagation matrix
-material effects: 
-energy loss: ionisation of the medium, (simplified) bethe bloch
-multiple scattering:
-
-
+The average reconstruction efficiency of tracks inside the detector acceptance
+and in the momentum range between 
+$\SIrange[range-phrase = -,range-units = single]{5}{200}{\GeV}$ is better than
+$\SI{95}{\percent}$. The track uncertainty is below $\SI{0.5}{\percent}$ for
+muons and below $\SI{1.5}{\percent}$ for pions and kaons. The high quality of
+the tracking algorithms has a direct effect on the momentum resolution ($\Delta
+p/p = \SIrange[range-phrase = -,range-units = single]{0.4}{0.6}{\percent}$), the
+invariant mass resolution ($\SIrange[range-phrase = -,range-units =single]{12}{25}{\MeVcc}$ 
+for $\BdToJpsiX$ decays), the impact parameter resolution (\sim$\SI{20}{\micro\metre}$), 
+and finally provides an excellent decay time resolution of around
+$\SI{45}{\ps}$.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Particle identification}
@@ -458,7 +455,7 @@ probability of $\sim\SI{5}{\percent}$, kaon \PID efficiency is
 $\sim\SI{95}{\percent}$ with a $\pion-\kaon$ mis-id probability of
 $\sim\SI{5}{\percent}$, and finally the muon \PID efficiency is
 $\sim\SI{97}{\percent}$ with a $\pion-\muon$ mis-id probability of
-$\sim\SIrange[range-phrase = -,list-units = single]{1}{3}{\percent}$
+$\sim\SIrange[range-phrase = -,range-units = single]{1}{3}{\percent}$
 \cite{Aaij:2014jba,Archilli:2013npa}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

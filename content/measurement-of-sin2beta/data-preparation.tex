@@ -74,7 +74,7 @@ used fit constraints.
 
 \begin{table}
 \centering
-\caption{Used observables, observable ranges, and \DTF fit properties.\info{Checkmark does not work with font}}
+\caption{Used observables, observable ranges, and \DTF fit properties.}
 \label{tab:measurement_of_sin2beta:data_preparation:observables}
 \begin{tabular}{llccc}
 \toprule
@@ -168,7 +168,6 @@ with this acceptance effects is described in detail in
 
 The \HLT lines in use require all candidates pass either the \LZeroMuon or the
 \LZeroDiMuon trigger lines. No further \LZero criteria are required.
-\missing{L0 trigger cuts}
 
 %...............................................................................
 \subsubsection{\HLTOne trigger requirements}
@@ -219,22 +218,26 @@ of $\num{0.2}$, only $\SI{20}{\percent}$ of all events passing \LZero and
 \HLTOne are chosen randomly as input to this line.
 %
 \begin{table}
-\centering
-\caption{\HLTTwo $\jpsi$ dimuon lines and their requirements ($M_{\jpsi} =
-\SI[per-mode=symbol]{3096.916}{\MeVcc}$). \cite{Aaij:2012me} }
-\label{tab:measurement_of_sin2beta:data_preparation:trigger:hlt2:cuts}
-\begin{tabular}{lll}
-\toprule
-& \HLTTwoDiMuonJpsi & \HLTTwoDiMuonDetachedJpsi \\
-\midrule
-Track \chisqndf           & $<\num{5}$                                       & $<\num{5}$ \\
-Mass                      & $M_{\jpsi}\pm\SI[per-mode=symbol]{0.12}{\GeVcc}$ & $M_{\jpsi}\pm\SI[per-mode=symbol]{0.12}{\GeVcc}$ \\ 
-flight distance $\chi^2$  & -                                                & $>\num{9}$ \\ 
-$\chi^2_\text{vtx}$       & $<\num{25}$                                      & $<\num{25}$ \\
-\midrule
-Pre-scale                 & $\num{0.2}$                                      & - \\
-\bottomrule
-\end{tabular}
+  \centering
+  \begin{threeparttable}
+    \caption{\HLTTwo $\jpsi$ dimuon lines and their requirements\tnote{\S}}
+    \label{tab:measurement_of_sin2beta:data_preparation:trigger:hlt2:cuts}
+    \begin{tabular}{lll}
+      \toprule
+                                & \HLTTwoDiMuonJpsi & \HLTTwoDiMuonDetachedJpsi \\
+      \midrule
+      Track \chisqndf           & $<\num{5}$                                       & $<\num{5}$ \\
+      Mass                      & $M_{\jpsi}\pm\SI[per-mode=symbol]{0.12}{\GeVcc}$ & $M_{\jpsi}\pm\SI[per-mode=symbol]{0.12}{\GeVcc}$ \\ 
+      flight distance $\chi^2$  & -                                                & $>\num{9}$ \\ 
+      $\chi^2_\text{vtx}$       & $<\num{25}$                                      & $<\num{25}$ \\
+      \midrule
+      Pre-scale                 & $\num{0.2}$                                      & - \\
+      \bottomrule
+    \end{tabular}
+    \begin{tablenotes}
+        \item[\S] With $M_{\jpsi} = \SI[per-mode=symbol]{3096.916}{\MeVcc}$ \cite{Agashe:2014kda}.
+    \end{tablenotes}
+  \end{threeparttable}
 \end{table}
 
 %...............................................................................
@@ -252,30 +255,30 @@ efficiency is measured by requiring the
 compares the calculated trigger efficiencies in detail.
 %
 \begin{table}
-\centering
-\caption{Trigger selection efficiencies as determined on (simulated) data. The
-first column gives the numbers obtained on $\BdToJpsiKS$ signal MC, where the 
-normalisation is performed \wrt events with positive \protect\Verb+L0Physics+,
-\protect\Verb+Hl1Phys+, and \protect\Verb+Hlt2Phys+ decisions. The second column shows
-\enquote{signal in data} numbers obtained using an \sweighted data sample. The
-last column contains numbers extracted from data without distinction between
-signal and background.}
-\label{tab:measurement_of_sin2beta:data_preparation:trigger:efficiencies}
-\begin{scriptsize}
-\begin{tabular}{llll}
-\toprule
-trigger requirements & signal MC & signal in data & overall data \\
-\midrule
-\HLTOneDiMuonHighMass\VerbAnd\HLTTwoDiMuonDetachedJpsi 
-    & \SI{70.3}{\percent} & \SI{72.3}{\percent} & \SI{60.9}{\percent}\\
-\TriggerReq 
-    & \SI{84.7}{\percent} & \SI{86.6}{\percent} & \SI{74.6}{\percent}\\
-\midrule
-\text{Difference between trigger requirements}        & \SI{14.4}{pp} & \SI{14.3}{pp} & \SI{13.7}{pp}\\
-\text{Relative gain from adding \HLTOneTrackMuon} & +\SI{20.4}{\percent} & +\SI{19.7}{\percent} & +\SI{22.5}{\percent}\\
-\bottomrule
-\end{tabular}
-\end{scriptsize}
+  \centering
+  \caption{Trigger selection efficiencies as determined on (simulated) data. The
+  first column gives the numbers obtained on $\BdToJpsiKS$ signal MC, where the 
+  normalisation is performed \wrt events with positive \texttt{L0Physics},
+  \texttt{Hlt1Phys}, and \texttt{Hlt2Phys} decisions. The second column shows
+  \enquote{signal in data} numbers obtained using an \sweighted data sample. The
+  last column contains numbers extracted from data without distinction between
+  signal and background.}
+  \label{tab:measurement_of_sin2beta:data_preparation:trigger:efficiencies}
+  \begin{scriptsize}
+    \begin{tabular}{llll}
+    \toprule
+    trigger requirements & signal MC & signal in data & overall data \\
+    \midrule
+    \HLTOneDiMuonHighMass\VerbAnd\HLTTwoDiMuonDetachedJpsi 
+        & \SI{70.3}{\percent} & \SI{72.3}{\percent} & \SI{60.9}{\percent}\\
+    \TriggerReq 
+        & \SI{84.7}{\percent} & \SI{86.6}{\percent} & \SI{74.6}{\percent}\\
+    \midrule
+    \text{Difference between trigger requirements}        & \SI{14.4}{pp} & \SI{14.3}{pp} & \SI{13.7}{pp}\\
+    \text{Relative gain from adding \HLTOneTrackMuon} & +\SI{20.4}{\percent} & +\SI{19.7}{\percent} & +\SI{22.5}{\percent}\\
+    \bottomrule
+    \end{tabular}
+  \end{scriptsize}
 \end{table}
 
 % ------------------------------------------------------------------------------

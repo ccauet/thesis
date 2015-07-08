@@ -291,6 +291,8 @@ tracking in the low occupancy region around the \IT.
 \subsection{Track reconstruction technique and performance}
 \label{sec:lhcb_experiment:tracking:techniques_and_performance}
 
+The reconstructed of trajectories employs all available tracking information from \VELO, \TT, \OT and \OT, and the muon system.
+
 \missing{Track reconstruction technique}
 \info{Results are from Bd2JpsiKS!}
 \begin{itemize}
@@ -420,7 +422,7 @@ particle reconstructed in the detector.
   charged clusters. The cluster shape is then used to separate photon and \piz
   candidates. \ECAL clusters without associated track are treated as photon
   candidate. Potential Bremsstrahlung photons are recombined with electron
-  tracks downstream of the magnet. Also converted photons---\leplem pairs from
+  tracks downstream of the magnet. Also converted photons---\elel pairs from
   photon interactions with the detector material---are taken into account.
   \item[\RICH \PID] The hadron identification is mainly accomplished by the
   \RICH system. The general principles of the \RICH \PID of charged particles
@@ -440,18 +442,24 @@ particle reconstructed in the detector.
   chamber.
 \end{description}
 %
-particle ID likelihood:
-RICH + CALO + Muon
-L = LRICH(hadron) * LCALO(no electron) * LMuon(no muon)
-always difference against the pion hypothesis
+The global \PID likelihood then incorporates the likelihoods of the calorimeter,
+the \RICH, and the muon systems under a certain particle hypothesis. Finally,
+the likelihood values are calculated relative to the pion hypothesis such that
+the separation can always expressed as a decision between two particle type, as
+\eg the kaon \vs pion probability is given by the likelihood difference $\DLLKpi
+\equiv \LL_{\Kaon} - \LL_{\pion}$ or for proton-kaon separation $\DLLpK \equiv
+\DLLppi - \DLLKpi$.
 
-electron ID efficiency: \cite{Aaij:2014jba}
-~ 90 \% for ~ 5 \% e→h mis-id probability
-kaon ID efficiency: \cite{Aaij:2014jba}
-~ 95 \% for ~ 5 \% π→K mis-id probability
-muon ID efficiency: \cite{Aaij:2014jba,Archilli:2013npa}
-~ 97 \% for 1-3 \% π→μ mis-id probability
-
+The \PID is crucial ingredient to all major analyses based on \LHCb data. Thus,
+the performance of the \PID algorithms was optimised while at the same time
+keeping track of the probability of mis-identification. The electron \PID
+efficiency is $\sim\SI{90}{\percent}$ with an $\electron-\text{hadron}$ mis-id
+probability of $\sim\SI{5}{\percent}$, kaon \PID efficiency is
+$\sim\SI{95}{\percent}$ with a $\pion-\kaon$ mis-id probability of
+$\sim\SI{5}{\percent}$, and finally the muon \PID efficiency is
+$\sim\SI{97}{\percent}$ with a $\pion-\muon$ mis-id probability of
+$\sim\SIrange[range-phrase = -,list-units = single]{1}{3}{\percent}$
+\cite{Aaij:2014jba,Archilli:2013npa}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Trigger}
@@ -561,8 +569,8 @@ recorded integrated luminosity is depicted in
 \end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{\RunTwo and the \acs*{LHCb} upgrade}
-\label{sec:lhcb_experiment:future}
+% \section{\RunTwo and the \acs*{LHCb} upgrade}
+% \label{sec:lhcb_experiment:future}
 
-\missing{\RunTwo and the \acs*{LHCb} upgrade}
-Short description of Run II and Upgrade physics goals, the changes wrt now and what will be possible; a more detailed analysis of the Run II prospects for sin2beta will be given in the conclusions.
+% \missing{\RunTwo and the \acs*{LHCb} upgrade}
+% Short description of Run II and Upgrade physics goals, the changes wrt now and what will be possible; a more detailed analysis of the Run II prospects for sin2beta will be given in the conclusions.

@@ -126,12 +126,10 @@ at the $\YFourS$ $\bbbar$ resonance as it is the case at the \BFactories. The
 following section gives a résumé of the flavour tagging methods employed by the
 \Babar and \Belle collaborations outlined in \Ref~\cite[][Ch. 8]{Bevan:2014iga}.
 %
-\begin{figure}
+\begin{figure}[h]
 \centering
-\includegraphics[width=\textwidth]{private/content/flavour-tagging/figs/b_factory_basic_principles}
-\caption{Illustration of the measurement of \sintwobeta as conducted by the
-\BFactories. \cite{Bevan:2014iga}
-\todo{Redo Tikz illustration for B factory measurement schematics?}
+\includegraphics[width=\textwidth]{private/content/flavour-tagging/figs/bfactory_tagging}
+\caption{Illustration of the measurement of \sintwobeta as conducted by the \BFactories.
 }
 \label{fig:flavour_tagging:lhcb:b_factory_basic_principles}
 \end{figure}
@@ -212,8 +210,8 @@ taggers are briefly described.
 
 The kaon tagger exploits the charge of kaons stemming from $\bquark \to
 \cquark \to \squark$ decays of the opposite side \bhadron. As the charge of the
-kaon is the opposite of the ancestor's charge, the kaon always carries the same
-charge as the signal \Bmeson. \redo{Check charges!}
+kaon is the same of the ancestor's charge, the kaon always carries the opposite
+charge as the signal \Bmeson.
 
 To reduce background contributions of prompt kaons and kaons from primary
 $\bquarkbar \to \Wm (\to \cquark \squarkbar) \cquarkbar$ transitions, in which
@@ -307,26 +305,27 @@ seed properties, and the features of the reconstructed vertex.
 The initial vertex seed is found by sampling track pairs from all particle
 candidates surviving the following criteria: At least one of the tracks must be
 a long track with a track fit quality of $\chisqndf<\num{2.5}$. To exclude poor
-track reconstruction only tracks with an \IP uncertainty of
+track reconstruction only tracks with an \IP (\wrt the \PV) uncertainty of
 $\sigma_\text{\IP}<\num{1}$ are taken into account. Tracks from prompt particles
-are rejected by a cut on the $2.5<\text{\IP}/\sigma_\text{\PV}<100$ \wrt the
-\PV. Additionally the track has to have a $\pT>\SI{0.15}{\GeVc}$ and an
-\IP$<\SI{3}{\milli\metre}$ \wrt to the \PV.\todo{Understand why the two IP criteria are conflicting} 
-The two seed tracks must be separated by an angle of $\phi>\SI{1}{\mrad}$ and
-one of the tracks has to have a $\pT>\SI{0.3}{\GeVc}$.
+are rejected if the \IP significance $\text{\IP}/\sigma_\text{\PV}$ \wrt the \PV
+is below $\num{2.5}$ or above $\num{100}$. Additionally the track has to have a
+$\pT>\SI{0.15}{\GeVc}$ and an \IP$<\SI{3}{\milli\metre}$ \wrt to the \PV. The
+two seed tracks must be separated by an angle of $\phi>\SI{1}{\mrad}$ and one of
+the tracks has to have a $\pT>\SI{0.3}{\GeVc}$.
 
 For tracks pairs passing all selection criteria a vertex fit is performed. If
 the fit succeeds and a fit quality of at least $\chisqndf<10$ is met, the fitted
 vertex is considered as a seed. The seed is required to lie inside the detector
-acceptance and in the forward direction of the \PV ($z>0$). \missing{Define $r$-distance} 
+acceptance and in the forward direction of the \PV ($z>0$). 
+
 The invariant mass of the seed is calculated and has to be greater than
 $\SI{0.2}{\GeVcc}$ and not be compatible with the known $\KS$ or $\Lambdaz$
 masses. % 0.490 < m_KS < 0.505 and 1.11 < m_Lambda < 1.12
 A likelihood is computed for all seeds considering the vertex fit $\chisqndf$,
 the minimum \pT, the maximum \PV \IP, the minimum \PV \IP$/\sigma_\text{\IP}$,
-the angle between the seed tracks, the $r$-distance, and the angle between the
-seed direction \wrt to the \PV. The seed with the maximum likelihood is
-selected. The seed algorithm successfully finds a seed in nearly
+the angle between the seed tracks, the $z$-distance to \PV, and the angle
+between the seed direction \wrt to the \PV. The seed with the maximum likelihood
+is selected. The seed algorithm successfully finds a seed in nearly
 $\SI{50}{\percent}$ of all events and has a rate of $\SI{60}{\percent}$ to find
 a seed that is formed by \bhadron decay products.
 
@@ -568,7 +567,6 @@ particle charge.
   \end{cases}
 \end{equation}
 %
-\info{Try to understand better, how the calibration using per-event information works on charged channels.}
 
 %...............................................................................
 \subsubsection{Flavour tagging calibration using decays of neutral \Bmesons}
@@ -641,7 +639,7 @@ using \cref{eq:flavour_tagging:calibration:method:calibration} yields
 \end{equation}
 %
 where $\rho_{\pzero,\pone}$ is the correlation between $\p{0}{\text{\acs{OS}}}$ and
-$\p{0}{\text{\acs{OS}}}$. \Cref{fig:flavour_tagging:calibration:os:mass_and_calibration}\addref{BuToJpsiK calibration, how?} 
+$\p{0}{\text{\acs{OS}}}$. \Cref{fig:flavour_tagging:calibration:os:mass_and_calibration}
 shows the mass distribution and the \PDF projection as well as the calibration
 plot.
 %

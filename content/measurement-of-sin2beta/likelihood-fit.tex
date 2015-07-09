@@ -375,13 +375,13 @@ can be summarised as\info{Check again!}
 %
 \begin{multline}
   \ProbArg{}{}{\obsTime, \obsTagOS, \obsTagSS \given \obsEtaOS, \obsEtaSS} = \\
-  \sum_{d^\prime} \Biggl[ \prod_{j} \zeta \left( d_j, \eta_j \right) \Biggr] \left( 1 - d^\prime A_P \right) \exponential{-\sfrac{\obsTime}{\tau}} \left\{ 1 - d^\prime \SJpsiKS \sin (\DMd \obsTime) + d^\prime \cos (\DMd \obsTime) \right\} \eqcm
+  \sum_{d^\prime} \Biggl[ \prod_{j} \zeta \left( d_j, \eta_j, d^{\prime} \right) \Biggr] \left( 1 - d^\prime A_P \right) \exponential{-\sfrac{\obsTime}{\tau}} \left\{ 1 - d^\prime \SJpsiKS \sin (\DMd \obsTime) + d^\prime \cos (\DMd \obsTime) \right\} \eqcm
 \end{multline}
 %
 with
 %
 \begin{equation}
-  \zeta \left( d_j, \eta_j \right) = 1 + d_j \left( 1 - 2 \left[ \mistag(\mistagestimate_j) + \frac{\Delta\mistag(\mistagestimate_j)}{2} \right] \right) \eqcm
+  \zeta \left( d_j, \eta_j, d^{\prime} \right) = 1 + d_j \left( 1 - 2 \left[ \mistag(\mistagestimate_j) + d^{\prime} \frac{\Delta\mistag(\mistagestimate_j)}{2} \right] \right) \eqcm
 \end{equation}
 %
 where the calibration of the mistag estimates is implied by

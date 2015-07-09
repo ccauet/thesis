@@ -257,7 +257,7 @@ the (left) biased (\catAU and \catEB) and the (right) unbiased sample.}
 %
 \Cref{fig:measurement_of_sin2beta:resolution_and_acceptance:acceptance:lower:splines} 
 shows the acceptance histograms for the \catAU and the \catEB sample. In the
-nominal fit we use cubic splines\addref{Cubic splines} instead of the histograms
+nominal fit we use cubic splines \cite{Karbach:2014qba} instead of the histograms
 themselves. Each bin centre is used as a knot for the splines. The bin contents
 determine the shape of the splines. However, the bin contents aren't fixed but
 constrained with a Gaussian function where the width is given by the uncertainty
@@ -280,11 +280,10 @@ acceptance using cubic splines.}
 \subsubsection{Upper decay time acceptance}
 \label{sec:measurement_of_sin2beta:resolution_and_acceptance:acceptance:upper}
 
-Due to the \VELO reconstruction inefficiency\todo{Be more precise, FastVelo
-algorithm} and other reconstruction and selection effects, a second decay time
-acceptance is observed for events with larger decay times. To account for
-this a correction factor $\beta_\tau$ is included into the fit model
-by implementing the modified lifetime
+Due to a decrease in the \VELO reconstruction efficiency for tracks with a large
+impact parameter with respect to the beam line, a second decay time acceptance
+effect has to be modelled. To account for this a correction factor $\beta_\tau$
+is included into the fit model by implementing the modified lifetime
 %
 \begin{equation}
   \widetilde{\tau} = \frac{\tau}{1 + \beta_\tau \tau} ,

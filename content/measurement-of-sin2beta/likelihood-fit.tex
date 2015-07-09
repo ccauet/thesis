@@ -238,8 +238,8 @@ The conditional \textbf{signal} decay time \PDF is given by
 %
 where the acceptance function $\varepsilon_{\Sig}^{\text{\catAU,\catEB}}$ (\cf
 \cref{sec:measurement_of_sin2beta:resolution_and_acceptance:acceptance:lower})
-is implemented using cubic splines\addref{Cubic splines} and the resolution model
-$\Resolution{\Sig}{}\left(\obsTime-\obsTime^\prime\right)$ (\cf
+is implemented using cubic splines \cite{Karbach:2014qba} and the resolution
+model $\Resolution{\Sig}{}\left(\obsTime-\obsTime^\prime\right)$ (\cf
 \cref{sec:measurement_of_sin2beta:resolution_and_acceptance:resolution}) is
 convolved with the \B physics \PDF.
 
@@ -427,11 +427,11 @@ in the nominal fit to reduce fit times.
 
 The complicated shapes of the mistag estimate distributions have to be modelled
 empirically. Popular approaches to model non-parametric distributions are \eg
-Gaussian kernel estimations and splines\addref{Cubic splines}. The later one is used here. Splines are
-piece-wise defined polynomials parametrised by interval boundaries
-(\emph{knots}), values at these knots, and boundary conditions to ensure a
-continues and smooth function. To model the mistag estimate distributions cubic
-splines are used as base splines.
+Gaussian kernel estimations and splines \cite{Karbach:2014qba}. The later one is
+used here. Splines are piece-wise defined polynomials parametrised by interval
+boundaries (\emph{knots}), values at these knots, and boundary conditions to
+ensure a continues and smooth function. To model the mistag estimate
+distributions cubic splines are used as base splines.
 
 For $n$ knots, there are $n+2$ base splines, and accordingly $n+2$ fit
 parameters modelling the shape of the resulting \PDF. The knot positions are

@@ -41,8 +41,7 @@ candidates $\mistag$ is given by
 \end{equation}
 %
 The statistically relevant \acl{FoM} for time-dependent measurements of $\CP$
-violation\addref{for $\efftageff$ for CPV measurements}, the \enquote{effective
-tagging efficiency}
+violation, the \enquote{effective tagging efficiency}
 %
 \begin{equation}\label{eq:flavour_tagging:efftageff}
   \efftageff = \tageff(1 - 2 \mistag)^2 = \tageff \tagdilution^2 \eqcm
@@ -52,12 +51,12 @@ represents the fraction of candidates necessary to reach the same statistical
 power if the tagging would be perfect, and hence should be maximized to achieve
 the best performance. The quantity $\tagdilution$ is called \enquote{dilution},
 taking a value of $1$ in case of perfect tagging, and $0$ in case of random
-tagging. As described in \addref{Effect of dilution on CPV asymmetry} the dilution can be directly translated
-to the amplitude of the measured $\CP$ asymmetry.
+tagging. As described \eg in \Ref~\cite[][Ch. 10.3]{Bevan:2014iga} the dilution
+can be directly translated to the amplitude of the measured $\CP$ asymmetry.
 
 In the following sections more details on flavour tagging are provided. A short
 introduction of the utilized algorithms and a comparison to the flavour tagging
-used at lepton colliders is given in \cref{sec:flavour_tagging:lhcb}.
+used at lepton colliders is given in \cref{sec:flavour_tagging:lhcb:b_factories}.
 \Cref{sec:flavour_tagging:os,sec:flavour_tagging:ss} describe the two different
 classes of flavour tagging algorithms used at \LHCb, while the calibration of
 the tagging algorithm outputs is described in
@@ -115,7 +114,7 @@ algorithms. \cite{wishahi:2013jt}}
 \end{figure}
 
 % ------------------------------------------------------------------------------
-\subsection*{Flavour tagging at \Babar and \Belle}
+\subsection{Flavour tagging at \Babar and \Belle}
 \label{sec:flavour_tagging:lhcb:b_factories}
 
 Caused by the different nature of the experimental setup the tagging method used
@@ -191,7 +190,8 @@ decays into a $\Kp X$ final state trough $\bquarkbar \to \cquarkbar \to
 \squarkbar$ transition, it can unambiguously stated by looking at the kaon
 charge that the \bhadron produced along with the $\Bu$ contained a $\bquark$
 quark. The tag identification for events with this signature fall into the scope
-of the \OSK tagger.
+of the \OSK tagger. Other than the \SS taggers all \OS algorithms are sensitive
+to an intrinsic mistag due to flavour oscillations of neutral \Bmesons.
 
 In total four distinct \OS taggers, each developed for a special \OS decay
 signature, provide tagging information. Besides the \OSK tagger, the \OSe and
@@ -201,8 +201,6 @@ Finally, the \OSvtx tagger performs an inclusive reconstruction of the \OS \SV
 to then compute a weighted sum of all particle track charges that originate from
 the \SV. In the following the selection criteria and algorithms of the \OS
 taggers are briefly described.
-
-\missing{Intrinsic mistag due to neutral B meson oscillation}
  
 %...............................................................................
 \subsubsection{The \acl{OSK} tagger}
@@ -681,14 +679,13 @@ calibration channel $\BuToJpsiK$ and the signal channel $\BdToJpsiKS$ are
 inspected. Distributions of parameters that are known to influence the tagging
 algorithms as the \acf{pT}, the \pseudorapidity, the azimuthal angle ($\phi$) of
 the \Bmeson candidate, and the number of tracks (nTracks) and \aclp{PV}
-(n\acsp{PV}) in the event are compared in
-\cref{fig:flavour_tagging:calibration:os:parameter_distributions} using signal
-\sweights. Following, the five distributions in the calibration channel are
-reweighted to match the distribution found in $\BdToJpsiKS$. The calibration
-procedure is repeated for each combination of track type and correlated
-variable. For each correlated variable the largest deviation with respect to the
-two track types is assigned and the sum in quadrature is assigned as systematic
-uncertainty of type II. The results are summarised in
+(n\acsp{PV}) in the event are compared using signal \sweights. Following, the
+five distributions in the calibration channel are reweighted to match the
+distribution found in $\BdToJpsiKS$. The calibration procedure is repeated for
+each combination of track type and correlated variable. For each correlated
+variable the largest deviation with respect to the two track types is assigned
+and the sum in quadrature is assigned as systematic uncertainty of type II. The
+results are summarised in
 \cref{tab:flavour_tagging:calibration:os:systematics}.
 %
 \begin{table}
@@ -718,22 +715,22 @@ uncertainty of type II. The results are summarised in
   \end{tabular}
 \end{table}
 %
-\begin{figure}
-  \centering
-  \includegraphics[width=0.31\textwidth]{private/content/flavour-tagging/figs/lhcb_ft_calibration_bu2jpsik_pT}
-  \includegraphics[width=0.31\textwidth]{private/content/flavour-tagging/figs/lhcb_ft_calibration_bu2jpsik_eta}
-  \includegraphics[width=0.31\textwidth]{private/content/flavour-tagging/figs/lhcb_ft_calibration_bu2jpsik_phi}
-  \includegraphics[width=0.31\textwidth]{private/content/flavour-tagging/figs/lhcb_ft_calibration_bu2jpsik_nTracks}
-  \includegraphics[width=0.31\textwidth]{private/content/flavour-tagging/figs/lhcb_ft_calibration_bu2jpsik_nPV}
-  \caption{Weighted distributions of the \Bmeson \acf{pT}, \acf{pseudorapidity},
-  and azimuthal angle ($\phi$), as well as the number of tracks (nTracks) and
-  \aclp{PV} (n\acsp{PV}) in the event. In black the $\BuToJpsiK$ distributions
-  are shown. $\BdToJpsiKS$ signal candidates belonging to the long track
-  (downstream track) sub-sample contribute to the red (blue) histograms.
-  \cite{FT:RunI} \todo{Decide if to remove plots}
-  }
-  \label{fig:flavour_tagging:calibration:os:parameter_distributions}
-\end{figure}
+% \begin{figure}
+%   \centering
+%   \includegraphics[width=0.31\textwidth]{private/content/flavour-tagging/figs/lhcb_ft_calibration_bu2jpsik_pT}
+%   \includegraphics[width=0.31\textwidth]{private/content/flavour-tagging/figs/lhcb_ft_calibration_bu2jpsik_eta}
+%   \includegraphics[width=0.31\textwidth]{private/content/flavour-tagging/figs/lhcb_ft_calibration_bu2jpsik_phi}
+%   \includegraphics[width=0.31\textwidth]{private/content/flavour-tagging/figs/lhcb_ft_calibration_bu2jpsik_nTracks}
+%   \includegraphics[width=0.31\textwidth]{private/content/flavour-tagging/figs/lhcb_ft_calibration_bu2jpsik_nPV}
+%   \caption{Weighted distributions of the \Bmeson \acf{pT}, \acf{pseudorapidity},
+%   and azimuthal angle ($\phi$), as well as the number of tracks (nTracks) and
+%   \aclp{PV} (n\acsp{PV}) in the event. In black the $\BuToJpsiK$ distributions
+%   are shown. $\BdToJpsiKS$ signal candidates belonging to the long track
+%   (downstream track) sub-sample contribute to the red (blue) histograms.
+%   \cite{FT:RunI} \todo{Decide if to remove plots}
+%   }
+%   \label{fig:flavour_tagging:calibration:os:parameter_distributions}
+% \end{figure}
 %
 \missing{Comparison of $\BuToJpsiK$ and $\BdToJpsiKstar$ on MC}
 
@@ -883,10 +880,11 @@ The type I systematic uncertainties cover influences of the decay time
 acceptance and resolution, the production and detection asymmetries, as well as
 possible deviations of the results when performing a fit using a signal
 \sweighted dataset. The study of the type II systematic uncertainties follows
-closely the approach outlined in \cref{sec:flavour_tagging:os}. A comparison of
-the parameter distributions between the calibration and the signal channel is
-given in \cref{fig:flavour_tagging:calibration:ss:parameter_distributions}, the
-results of the reweighting procedure are presented in
+closely the approach outlined in \cref{sec:flavour_tagging:os}. 
+% A comparison of the parameter distributions between the calibration and the
+% signal channel is given in
+% \cref{fig:flavour_tagging:calibration:ss:parameter_distributions}, 
+The results of the reweighting procedure are presented in
 \cref{tab:flavour_tagging:calibration:ss:systematics}.
 %
 \begin{table}
@@ -917,21 +915,21 @@ results of the reweighting procedure are presented in
   \end{tabular}
 \end{table}
 %
-\begin{figure}
-  \centering
-  \includegraphics[width=0.31\textwidth]{private/content/flavour-tagging/figs/lhcb_ft_calibration_bd2jpsikstar_pT}
-  \includegraphics[width=0.31\textwidth]{private/content/flavour-tagging/figs/lhcb_ft_calibration_bd2jpsikstar_eta}
-  \includegraphics[width=0.31\textwidth]{private/content/flavour-tagging/figs/lhcb_ft_calibration_bd2jpsikstar_phi}
-  \includegraphics[width=0.31\textwidth]{private/content/flavour-tagging/figs/lhcb_ft_calibration_bd2jpsikstar_nTracks}
-  \includegraphics[width=0.31\textwidth]{private/content/flavour-tagging/figs/lhcb_ft_calibration_bd2jpsikstar_nPV}
-  \caption{Weighted distributions of the \Bmeson \ac{pT}, \ac{pseudorapidity},
-  and azimuthal angle, as well as the number of tracks and \aclp{PV} in the
-  event. The comparisons show the distributions for (red) $\BdToJpsiKS$ and
-  (black) $\BdToJpsiKstar$ candidates.
-  \cite{FT:RunI}\todo{Decide if to remove plots}
-  }
-  \label{fig:flavour_tagging:calibration:ss:parameter_distributions}
-\end{figure}
+% \begin{figure}
+%   \centering
+%   \includegraphics[width=0.31\textwidth]{private/content/flavour-tagging/figs/lhcb_ft_calibration_bd2jpsikstar_pT}
+%   \includegraphics[width=0.31\textwidth]{private/content/flavour-tagging/figs/lhcb_ft_calibration_bd2jpsikstar_eta}
+%   \includegraphics[width=0.31\textwidth]{private/content/flavour-tagging/figs/lhcb_ft_calibration_bd2jpsikstar_phi}
+%   \includegraphics[width=0.31\textwidth]{private/content/flavour-tagging/figs/lhcb_ft_calibration_bd2jpsikstar_nTracks}
+%   \includegraphics[width=0.31\textwidth]{private/content/flavour-tagging/figs/lhcb_ft_calibration_bd2jpsikstar_nPV}
+%   \caption{Weighted distributions of the \Bmeson \ac{pT}, \ac{pseudorapidity},
+%   and azimuthal angle, as well as the number of tracks and \aclp{PV} in the
+%   event. The comparisons show the distributions for (red) $\BdToJpsiKS$ and
+%   (black) $\BdToJpsiKstar$ candidates.
+%   \cite{FT:RunI}\todo{Decide if to remove plots}
+%   }
+%   \label{fig:flavour_tagging:calibration:ss:parameter_distributions}
+% \end{figure}
 
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Combination of single tagger outputs}

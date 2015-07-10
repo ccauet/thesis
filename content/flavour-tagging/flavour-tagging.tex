@@ -215,10 +215,10 @@ To reduce background contributions of prompt kaons and kaons from primary
 $\bquarkbar \to \Wm (\to \cquark \squarkbar) \cquarkbar$ transitions, in which
 case the kaon carries the \enquote{wrong} charge, several selection criteria are
 applied. Cuts on the \pT, the \IP, the \IP/$\sigma_\text{\IP}$, and the track
-fit \chisqndf are performed. \PID requirements on the \DLLKpi, the \DLLppi, and
-\DLLmupi suppress mis-identified particles. Clone tracks are removed and kaon
-candidates with originate from other \acp{PV} are rejected using a cut on the
-\IP/$\sigma_\text{\IP}$ with respect to any \PV.
+fit \chisqndf are performed. \Ac{PID} requirements on the \DLLKpi, the \DLLppi,
+and \DLLmupi suppress mis-identified particles. Clone tracks are removed and
+kaon candidates with originate from other \acp{PV} are rejected using a cut on
+the \IP/$\sigma_\text{\IP}$ with respect to any \PV.
 \cref{tab:flavour_tagging:os:kaon:cuts} lists all applied cuts. If more than one
 tagging candidate is found, the decision obtained from the candidate with the
 highest \pT is chosen. To further increase the effective tagging efficiency only
@@ -240,7 +240,7 @@ $\mathcal{P}=0.46$.
     \DLLKpi                                   & $>\num{6}$                          \\
     $(\DLLKpi - \DLLppi)$                     & $>\num{-4}$                         \\
     \IP$/\sigma_\text{\IP}$ \wrt any \PV      & $>\num{4.5}$                        \\
-    reject clone tracks & \\
+    \multicolumn{2}{l}{reject clone tracks} \\
     \bottomrule
   \end{tabular}
 \end{table}
@@ -567,7 +567,7 @@ particle charge.
 %
 
 %...............................................................................
-\subsubsection{Flavour tagging calibration using decays of neutral \Bmesons}
+\subsubsection[Flavour tagging calibration using decays of neutral \Bmesons]{Flavour tagging calibration using decays of neutral \Bbfsf mesons}
 \label{sec:flavour_tagging:calibration:method:neutral}
 
 In the decay of neutral \Bmesons the oscillation of the propagating $\B$ state
@@ -974,10 +974,10 @@ necessary after combining the \OS and \SSpi tagging decisions.
 \section{Performance}
 \label{sec:flavour_tagging:performance}
 
-The effective tagging efficiency (\cf \cref{eq:flavour_tagging:efftageff})
-inherent in the used data sample given the choice of utilised taggers is
-calculated as the sum of the effective tagging efficiencies carried by each
-(including untagged) signal candidate
+The effective tagging efficiency
+(\cref{eq:flavour_tagging:efftageff})---inherent in the used data sample given
+the choice of utilised taggers---is calculated as the sum of the effective
+tagging efficiencies carried by each (including untagged) signal candidate
 %
 \begin{equation}
   \efftageff = \frac{\sum_{i=0}^{N} \mistag_i \tagdilution_i^2\big(\tagOS, \tagSS, \mistagOS, \mistagSS \big)}{\sum_{i=0}^{N} \mistag_i}\eqcm
@@ -1052,7 +1052,7 @@ future.
 % OS and SS K NNet
 % https://twiki.cern.ch/twiki/pub/LHCbPhysics/NNetKaonTaggers/LHCb-ANA-2014-003-v1.0.pdf
 For both the \OSK and the \SSK tagging algorithms \ANN based versions are
-implemented (\acs{NNOSK} and \acs{NNSSK}) \cite{FT:ANAKaonNNet,FT:KaonNNet}. 
+implemented (\acs{NNOSK} and \acs{NNSSK}) \cite{FT:KaonNNet}. 
 
 The performance of the \NNSSK tagger shows a significant enhancement compared to
 the cut-based \SSK implementation. In the $\BsToDspi$ channel an effective

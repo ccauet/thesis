@@ -23,13 +23,13 @@ stripping line. The nominal selection is applied, except the decay time cut at
 $\obsTime < \SI{0.3}{\pico\second}$, all remaining candidates are considered
 irrespective of their tagging information. Without cuts restricting the
 reconstructed decay time of the \Bd candidates, the sample consist mainly of
-combinatorial background candidates promptly produced at the \PV. Studies on
-simulated data have shown\addref{Reso study on MC}, that the decay time
-resolution of prompt candidates is compatible to the resolution of signal
-candidates. Thus, the resolution found for the prompt candidates can be used. A
-fit to the $\Jpsi$ candidate's reconstructed mass is applied to get signal
-\sweights that are subsequently used in a weighted likelihood fit to the
-reconstructed \Bd candidates decay time distribution.
+combinatorial background candidates promptly produced at the \PV. As these
+candidates decay instantaneously at $t = 0$ their decay time distribution should
+give a proper handle on the decay time resolution. Thus, the resolution found
+for the prompt candidates can be used. A fit to the $\Jpsi$ candidate's
+reconstructed mass is applied to get signal \sweights that are subsequently used
+in a weighted likelihood fit to the reconstructed \Bd candidates decay time
+distribution.
 
 The $\Jpsi$ mass distribution is described by an Ipatia \PDF (\cf
 \cref{sec:measurement_of_sin2beta:likelihood_fit:pdfs:ipatia}) for the signal
@@ -114,7 +114,7 @@ How the choice of the calibration model influences the measurement is tested
 using a \ToyMC study described in
 \cref{sec:measurement_of_sin2beta:systematics:systematics:resolution}
 %
-\begin{table}[!htb]
+\begin{table}[h]
 \centering
 \caption{Results of the fit of the parameters described in the decay time
 resolution model.}

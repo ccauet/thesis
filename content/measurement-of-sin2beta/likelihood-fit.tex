@@ -19,19 +19,23 @@ well as the corresponding mistag estimates
   \vect{x} = (\obsAllList)\eqpd  
 \end{equation}
 %
-The extended likelihood for a total of $N$ observed events in $j$ subsamples of
-data, where $n=\sum_j n_j$, is then defined as
+The extended likelihood for a total of $N = \sum_s N^s$ observed events in $s$
+subsamples of data, where $n^s = \sum_j n_j^s$ are the expected candidate
+numbers per subsample for the two categories $j = \{\Sig,\Bkg\}$, is then
+defined as
 %
 \begin{equation}\label{eq:measurement_of_sin2beta:likelihood_fit:uEML}
-  \Likelihood{}{}\left(\vect{\theta},\vect{n};\vect{x}\right) = \frac{\exponential{-N} N^n}{n!} \prod_j \prod_{i=1}^{n_j} n_j \Prob{j}{}\left(\vect{x}_i;\vect{\theta}\right)\eqcm
+  \Likelihood{}{}\left(\vect{\theta},\vect{n};\vect{x}\right) = \prod_{s}^{}\frac{\exponential{-n^s}}{N^s!} \prod_{i=1}^{N^s} \sum_{j}^{\{\Sig,\Bkg\}} n_{j}^{s} \Prob{j}{s} \left( \vect{x}_{i}^{s} ; \vect{\theta}_j \right )\eqcm
 \end{equation}
 %
-where $\vect{n}$ is the numbers of events, and $\vect{\theta}$ the parameters with
-unknown values to be estimated by the \uEML fit. \redo{Rewrite likelihood intro}
+where $\vect{n}$ is the vector of estimated candidate numbers, and
+$\vect{\theta}$ the parameters with unknown values to be estimated by the \uEML
+fit.
 
-The software library \RooFit---part of the \ROOT software framework---and its
-implementation of the \Minuit algorithm is used to minimize the negative
-log-likelihood expression $-\ln\Likelihood{}{}$.
+The software library \RooFit \cite{Verkerke:2003ir}---part of the \ROOT
+\cite{Antcheva:2011zz} software framework---and its implementation of the
+\Minuit algorithm is used to minimize the negative log-likelihood expression
+$-\ln\Likelihood{}{}$.
 
 In \cref{sec:measurement_of_sin2beta:likelihood_fit:pdfs} the \acp{PDF} used to
 build the likelihood function are introduced shortly, before

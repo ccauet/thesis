@@ -540,7 +540,7 @@ for the \catDD (\catLL) sample.
 \Cref{tab:measurement_of_sin2beta:data_preparation:offline_selection:total}
 quotes the overall offline selection performance.
 %
-\begin{table}
+\begin{table}[h]
 \centering
 \caption{Overall offline selection performance.}
 \label{tab:measurement_of_sin2beta:data_preparation:offline_selection:total}
@@ -760,14 +760,9 @@ The \acf{MC} samples are produced using \PythiaSix and \PythiaEight in the
 generation step. An equal amount of events is generated using each generator
 version and also for both possible magnet polarities called \emph{up} and
 \emph{down}. Also different samples are produced for \catOO and \catOT running
-conditions. Heavy particles from generated \protonproton collisions are decayed
-using \EvtGen and the particle interactions with the \LHCb detector material is
-handled by \GeantFour. The \EvtGen physics model is set to \Verb=SSD_CP= with
+conditions. The \EvtGen physics model is set to \Verb=SSD_CP= with
 parameters as summarised in
-\cref{tab:measurement_of_sin2beta:data_preparation:datasamples:mc:decfile}. The
-detector response is simulated using \Boole. The \LHCb trigger software \Moore,
-the reconstruction based on \Brunel and the stripping selection using \DaVinci
-treat simulated and recorded data in the same manner.
+\cref{tab:measurement_of_sin2beta:data_preparation:datasamples:mc:decfile}.
 %
 \begin{table}
 \centering

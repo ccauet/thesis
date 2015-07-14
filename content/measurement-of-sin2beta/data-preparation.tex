@@ -146,9 +146,8 @@ a fast \acf{LZero} and the software based \acf{HLT}.
 
 The trigger requirements are collected in so called \enquote{trigger lines}
 consisting of a set of selections criteria to map certain event types. In the
-following the trigger requirements applied in this measurement are described.
-
-If not stated otherwise all candidates passing the requirements specified by the
+following the trigger requirements applied in this measurement are described. If
+not stated otherwise all candidates passing the requirements specified by the
 trigger line configuration \TriggerReq are used in this analysis.
 
 Both the \HLTOneTrackMuon as well as the \HLTTwoDiMuonDetachedJpsi line require
@@ -270,9 +269,10 @@ compares the calculated trigger efficiencies in detail.
     trigger requirements & signal MC & signal in data & overall data \\
     \midrule
     \HLTOneDiMuonHighMass\VerbAnd\HLTTwoDiMuonDetachedJpsi 
-        & \SI{70.3}{\percent} & \SI{72.3}{\percent} & \SI{60.9}{\percent}\\
-    \TriggerReq 
-        & \SI{84.7}{\percent} & \SI{86.6}{\percent} & \SI{74.6}{\percent}\\
+        & \SI{70.3}{\percent} & \SI{72.3}{\percent} & \SI{60.9}{\percent} \\
+    \texttt{(}\HLTOneDiMuonHighMass \texttt{||} \HLTOneTrackMuon \texttt{)} 
+        & \multirow{2}[2]{*}{\SI{84.7}{\percent}} & \multirow{2}[2]{*}{\SI{86.6}{\percent}} & \multirow{2}[2]{*}{\SI{74.6}{\percent}}\\
+    \VerbAnd \HLTTwoDiMuonDetachedJpsi & & & \\
     \midrule
     \text{Difference between trigger requirements}        & \SI{14.4}{pp} & \SI{14.3}{pp} & \SI{13.7}{pp}\\
     \text{Relative gain from adding \HLTOneTrackMuon} & +\SI{20.4}{\percent} & +\SI{19.7}{\percent} & +\SI{22.5}{\percent}\\

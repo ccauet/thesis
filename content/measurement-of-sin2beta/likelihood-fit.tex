@@ -549,8 +549,8 @@ a uniform distribution using a random number generator. The random seed is
 generated using a \enquote{blinding string}. To ensure a sufficient ambiguity
 the range of the uniform distribution is chosen to be ${[-2,2]}$. The blinding
 string applied to conceal the estimated value of $\SJpsiKS$ is
-\enquote{SJpsiKS2011und2012} and for $\CJpsiKS$ it is chosen to be
-\enquote{CJpsiKS2011und2012}.
+\texttt{SJpsiKS2011und2012} and for $\CJpsiKS$ it is chosen to be
+\texttt{CJpsiKS2011und2012}.
 
 % ------------------------------------------------------------------------------
 \subsection{Fitter validation}
@@ -563,13 +563,14 @@ using \ToyMC simulated and regular \MC simulated data.
 \subsubsection{\Acl{ToyMC}}
 \label{sec:measurement_of_sin2beta:likelihood_fit:validation:toy_mc}
 
-An external \ToyMC generator\addref{How to cite ToyMC gen?} is employed to scrutinise the \PDF used in the fit.
-It generates distributions for the dimensions mass, decay time, decay time error
-estimate, and mistag estimate, correctly describes the per-event tag and mistag
-for two tagging algorithms, comprises tagging and production asymmetries, as
-well as tagged background events. Making use of the signal to background ratios
-found on data a simulated data set is generated and fitted afterwards. No
-significant deviations from the generated values are found.
+An external \ToyMC generator \cite{wishahi:2015bhf} is employed to scrutinise
+the \PDF used in the fit. It generates distributions for the dimensions mass,
+decay time, decay time error estimate, and mistag estimate, correctly describes
+the per-event tag and mistag for two tagging algorithms, comprises tagging and
+production asymmetries, as well as tagged background events. Making use of the
+signal to background ratios found on data a simulated data set is generated and
+fitted afterwards. No significant deviations from the generated values are
+found.
 
 In addition the nominal \PDF is used to sample distributions. The subsequent fit
 to the simulated data allows to check if the fit's parameter values and

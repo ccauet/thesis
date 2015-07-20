@@ -3,10 +3,10 @@
 \chapter{The \acs*{LHCb} experiment}
 \label{ch:lhcb_experiment}
 
-The \acs*{LHCb} collaboration operates a particle detector at the \acs*{LHC}
-located at \acs*{CERN} in the Geneva area. The \LHCb experiment aims to study heavy
+The \ac{LHCb} collaboration operates a particle detector at the \ac{LHC}
+located at \ac{CERN} in the Geneva area. The \LHCb experiment aims to study heavy
 flavour physics by exploiting direct and indirect experimental techniques to its
-full extent. It's physics program includes \CP violation measurements in $\B$ and
+full extent. Its physics program includes \CP violation measurements in $\B$ and
 $\D$ meson decays
 \cite{Aaij:2015tza,Aaij:2015yda,Aaij:2014uva,Aaij:2014fba,Aaij:2014dka,Aaij:2014zsa,Aaij:2014kxa}, 
 the search for (very) rare decays \cite{CMS:2014xfa}, tests of
@@ -25,7 +25,7 @@ particle accelerator. Using a \enquote{two-in-one} super-conducting magnet
 design, two counter-rotating beams of protons (or ions) are intersected and
 brought to collision at four interaction points, home of the large \LHC
 experiments \acs*{ALICE}, \acs*{ATLAS}, \acs*{CMS}, and \acs*{LHCb}. The
-colliders centre-of-mass energy of $\sqrt{s}=\SI{14}{\TeV}$ and a peak
+collider's centre-of-mass energy of $\sqrt{s}=\SI{14}{\TeV}$ and a peak
 luminosity of $L=\SI{e34}{\lumi}$ provide \LHC's experiments with high event
 rates that are necessary in their searches for physics beyond the \SM.
 
@@ -40,19 +40,19 @@ superconducting \RF cavity system captures, accelerates, and stores the two
 proton beams.
 
 At design luminosity, $\num{2808}$ bunches with a bunch spacing of
-$\SI{25}{\nano\metre}$ are stored in each proton beam. The \LHC relies on a
+$\SI{25}{\nano\second}$ are stored in each proton beam. The \LHC relies on a
 supply chain of smaller accelerators providing the initial proton bunches.
 \Cref{fig:lhcb_experiment:lhc:cern_accelerator_complex} depicts the \acs{CERN}
 accelerator complex. A bottle of hydrogen gas is the source of the protons, that
 are then subsequently accelerated to higher energies by the \LINACTwo, the
 \BOOSTER, the \PSyn, and the \SPS, before being injected into the \LHC at an
 energy of $\SI{450}{\GeV}$. The transfer lines Tl2 and Tl8 are used to inject
-the protons bunches in both beam directions. As soon as the nominal number of
+the proton bunches in both beam directions. As soon as the nominal number of
 proton bunches is reached, the beam energies are increased up to $\SI{7}{\TeV}$
 for each beam. The average \LHC turnaround time, \ie the time it takes to run
 through the whole accelerator chain until a stable beam is achieved, adds up to
 seven hours. Mainly due to beam loss from \pp collisions the beam intensities
-and the instantaneous luminosity decays. Starting from a peak luminosity of
+and the instantaneous luminosity decay. Starting from a peak luminosity of
 $L=\SI{e34}{\lumi}$ a luminosity lifetime of 15 hours is estimated. To prevent
 uncontrolled beam losses and to protect the \LHC infrastructure and the \LHC
 experiments a beam dump system is installed. The fully automated system monitors
@@ -80,7 +80,7 @@ leading to a large helium leak and serious damage to several of \LHC's magnets
 and infrastructure. After the incident, the management decided to reduce the
 beam energy and intensity. Thus, in the years 2010 and 2011 the \LHC
 centre-of-mass energy was $\sqrt{s}=\SI{7}{\TeV}$ with a bunch spacing of
-$\SI{50}{\nano\metre}$ delivering a peak instantaneous luminosity of
+$\SI{50}{\nano\second}$ delivering a peak instantaneous luminosity of
 $\SI{2.4e33}{\lumi}$. An increase of the beam energy to $\sqrt{s}=\SI{8}{\TeV}$
 lead to a peak instantaneous luminosity of $\SI{7.7e33}{\lumi}$ in 2012
 \cite{Lamont:2013cma}.
@@ -118,11 +118,28 @@ detail in the next section.
 \label{sec:lhcb_experiment:detector}
 
 The \LHCb detector is a unique precision instrument solely designed to study \CP
-violation and rare decays of beauty and charm hadrons. It is constructed as a
+violation and rare decays of beauty and charm hadrons
+(\cref{fig:lhcb_experiment:detector:overview}). It is constructed as a
 single-arm spectrometer covering an angular range from approximately
-$\SI{10}{\mrad}$ to $\SI{300}{\mrad}$ ($\SI{250}{\mrad}$) in the
-horizontal (vertical) plane.
-
+$\SI{10}{\mrad}$ to $\SI{300}{\mrad}$ ($\SI{250}{\mrad}$) in the horizontal
+(vertical) plane.
+%
+\begin{figure}[t]
+  \centering
+    \includegraphics[width=\textwidth]{private/content/the-lhcb-experiment/figs/lhcb_detector_overview.pdf}
+  \caption{
+    Schematic cross section of the \acs{LHCb} detector in the $(y,z)$ plane at
+  $x=0$. The \protonproton interaction region is located at the coordinates
+  $(0,0,0)$ on the left side of the figure. The beam pipe crosses the detector at
+  $(0,0,z)$. The main interaction region is surrounded by the \acs*{VELO},
+  following the \acs*{RICH}1 and the \acs*{TT}. On the right side of the magnet
+  the three tracking stations (T1-3) consisting of the \acs*{IT} and the
+  \acs*{OT} are installed. Further on, the \acs*{RICH}2, the calorimeter system
+  (\acs*{SPD}, \acs*{PS}, \acs*{ECAL}, and \acs*{HCAL}), and the muon system
+  (M1-5) is located. }
+  \label{fig:lhcb_experiment:detector:overview}
+\end{figure}
+%
 The detector layout exploits the characteristics of the heavy flavour production
 in \protonproton collisions at the \LHC. The production of heavy quarks in an
 hadronic environment is dominated by quark pair production in gluon-gluon fusion
@@ -179,31 +196,15 @@ After production each $\bquark$ quark hadronises independently forming a
 (\SI{40}{\percent} each), to heavier quarks as in $\Bs$ (\SI{11}{\percent}) or
 even $\bquark$ baryons as $\Lambdab$ (\SI{9}{\percent}). The numbers in
 parenthesis denote the fraction of the total production in percent
-\cite{Agashe:2014kda}.
+\cite{Agashe:2014kda}. 
 
-At his point, flavour conjugate states are implied as the production is in
-principle symmetric in quark flavour. However, as the \protonproton collision
-defines an initial state with positive charge and in absence of any valence
-anti-quarks, different production rates are expected
+At this point, flavour conjugate states are implied as the production is in
+principle symmetric in quark flavour. However, as the
+\protonproton collision defines an initial state with positive charge and in
+absence of any valence anti-quarks, different production rates are expected
 \cite{Chaichian:1993rh,Norrbin:2000zc,Norrbin:2000jy}. As this influences the
 flavour-sensitive \CP violation measurement, precautions are taken as described
 in \cref{sec:measurement_of_sin2beta:likelihood_fit:model:decay_time}.
-%
-\begin{figure}[t]
-  \centering
-    \includegraphics[width=\textwidth]{private/content/the-lhcb-experiment/figs/lhcb_detector_overview.pdf}
-  \caption{
-    Schematic cross section of the \acs{LHCb} detector in the $(y,z)$ plane at
-  $x=0$. The \protonproton interaction region is located at the coordinates
-  $(0,0,0)$ on the left side of the figure. The beam pipe crosses the detector at
-  $(0,0,z)$. The main interaction region is surrounded by the \acs*{VELO},
-  following the \acs*{RICH}1 and the \acs*{TT}. On the right side of the magnet
-  the three tracking stations (T1-3) consisting of the \acs*{IT} and the
-  \acs*{OT} are installed. Further on, the \acs*{RICH}2, the calorimeter system
-  (\acs*{SPD}, \acs*{PS}, \acs*{ECAL}, and \acs*{HCAL}), and the muon system
-  (M1-5) is located. }
-  \label{fig:lhcb_experiment:detector:overview}
-\end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Track reconstruction}
@@ -211,7 +212,7 @@ in \cref{sec:measurement_of_sin2beta:likelihood_fit:model:decay_time}.
 
 The \LHCb track reconstruction is based on information from a set of tracking
 detectors located around a spectrometer magnet with an integrated field of
-$\SI{4}{\tesla\metre}$. The tracking systems consists of the \VELO, the \TT, the
+$\SI{4}{\tesla\metre}$. The tracking system consists of the \VELO, the \TT, the
 \IT and the \OT. Silicon microstrips are used in the first three, while the
 latter is constructed as a drift-time detector. The \VELO is described in
 \cref{sec:lhcb_experiment:tracking:velo}, the \TT and the \IT in
@@ -291,10 +292,9 @@ tracking in the low occupancy region around the \IT.
 \subsection{Track reconstruction technique and performance}
 \label{sec:lhcb_experiment:tracking:techniques_and_performance}
 
-The reconstructed of trajectories employs all available tracking information
-from \VELO, \TT, \IT and \OT, and the muon system \cite{Aaij:2014pwa}. Each
-track is classified by the position of associated hits in the different
-subsystems
+The reconstruction of trajectories employs all available tracking information
+from \VELO, \TT, \IT, and \OT \cite{Aaij:2014pwa}. Each track is classified by
+the position of associated hits in the different subsystems
 (\cref{fig:lhcb_experiment:tracking:techniques_and_performance:tracktypes}).
 \emph{T tracks} only have hits in the \IT and \OT, \emph{\VELO tracks} only have
 hits in the
@@ -320,7 +320,7 @@ types are reconstructed in similar ways.
 
 Obviously long tracks carry the most information and are preferred.
 Nevertheless, other types of reconstructed tracks are useful too. \VELO tracks
-are employed to improve the identification of the \PV positions, T and upstream
+are employed to improve the identification of \PV positions, T and upstream
 tracks can be utilised to enhance the \RICH performance, and downstream tracks
 increase the number of reconstructed \KS and other long lived particles that may
 decay outside the \VELO acceptance.
@@ -335,7 +335,7 @@ p/p = \SIrange[range-phrase = -,range-units = single]{0.4}{0.6}{\percent}$), the
 invariant mass resolution ($\SIrange[range-phrase = -,range-units =single]{12}{25}{\MeVcc}$ 
 for $\BdToJpsiX$ decays), the impact parameter resolution (\sim$\SI{20}{\micro\metre}$), 
 and finally provides an excellent decay time resolution of around
-$\SI{45}{\ps}$.
+$\SI{45}{\ps}$ \addref{detector performance from speakers bureau page}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Particle identification}
@@ -362,12 +362,12 @@ radiators are used to get a particle hypothesis for low- and high-momentum
 particles. The detectors make use of a system of flat and spherical mirrors to
 reflect the emitted light to \acp{HPD}.
 
-\RICH1 is located upstream of the magnet in between the \VELO and the \TT,
+\RICH{}1 is located upstream of the magnet in between the \VELO and the \TT, it
 contains aerogel and \fluorocarbonfour gas radiators, and provides \PID for
 particles with low momenta from $\SIrange[range-phrase = \text{ to },range-units
-= single]{1}{60}{\GeVc}$. \RICH2 is located after the last tracking station,
-uses \fluorocarbon gas as a radiator and allows \PID for particles in the range
-from $\SIrange[range-phrase = \text{ to },range-units =
+= single]{1}{60}{\GeVc}$. \RICH{}2 is located after the last tracking station,
+it uses \fluorocarbon gas as a radiator and allows \PID for particles in the
+range from $\SIrange[range-phrase = \text{ to },range-units =
 single]{15}{\geq100}{\GeVc}$.
 %
 \begin{figure}[t]
@@ -383,8 +383,9 @@ single]{15}{\geq100}{\GeVc}$.
 \subsection{The calorimeter system}
 \label{sec:lhcb_experiment:pid:calo}
 
-The \LHCb calorimeter system is used for both trigger and \PID. It consists of
-an \ECAL---including the \SPD and the \PS---followed by a \HCAL. All the
+The \LHCb calorimeter system is used for both trigger
+(\cref{sec:lhcb_experiment:trigger}) and \PID. It consists of an
+\ECAL---including the \SPD and the \PS---followed by a \HCAL. All the
 calorimeter sub-systems make use of the scintillation light originating from
 traversing charged particles that is collected and transmitted by fibres to
 \acp{PMT}.
@@ -400,10 +401,10 @@ providing energy measurements of hadronic showers.
 \subsection{The muon system}
 \label{sec:lhcb_experiment:pid:muon}
 
-The muon system consists of five stations of \MWPC, provides muon \PID and
+The muon system consists of five stations of \acp{MWPC}, provides muon \PID and
 serves as a high \pT trigger. The system is located in front of (M1) and behind
 (M2-M5) the calorimeter system. It is especially important for charmonium final
-states, as $\BdToJpsiKS$ considered in the analysis described in this thesis.
+states, as in the analysis of $\BdToJpsiKS$ decays described in this thesis.
 
 %%------------------------------------------------------------------------------
 \subsection{Particle identification technique and performance}
@@ -418,11 +419,11 @@ particle reconstructed in the detector.
   tracks are extrapolated to the calorimeter system to be associated with
   charged clusters. The cluster shape is then used to separate photon and \piz
   candidates. \ECAL clusters without associated track are treated as photon
-  candidate. Potential Bremsstrahlung photons are recombined with electron
+  candidates. Potential Bremsstrahlung photons are recombined with electron
   tracks downstream of the magnet. Also converted photons---\elel pairs from
   photon interactions with the detector material---are taken into account.
   \item[\RICH \PID] The hadron identification is mainly accomplished by the
-  \RICH system. The general principles of the \RICH \PID of charged particles
+  \RICH system. The general principle of the \RICH \PID of charged particles
   incorporates the track momentum provided by the tracking system and the
   opening angle of the cherenkov radiation observed in the \RICH as a measure
   for the particle velocity. As shown in
@@ -442,14 +443,14 @@ particle reconstructed in the detector.
 The global \PID likelihood then incorporates the likelihoods of the calorimeter,
 the \RICH, and the muon systems under a certain particle hypothesis. Finally,
 the likelihood values are calculated relative to the pion hypothesis such that
-the separation can always expressed as a decision between two particle type, as
+the separation can always be expressed as a decision between two particle types, as
 \eg the kaon \vs pion probability is given by the likelihood difference $\DLLKpi
 \equiv \LL_{\Kaon} - \LL_{\pion}$ or for proton-kaon separation $\DLLpK \equiv
 \DLLppi - \DLLKpi$.
 
-The \PID is crucial ingredient to all major analyses based on \LHCb data. Thus,
-the performance of the \PID algorithms was optimised while at the same time
-keeping track of the probability of mis-identification. The electron \PID
+The \PID is a crucial ingredient to all major analyses based on \LHCb data.
+Thus, the performance of the \PID algorithms is optimised for a high
+identification efficiency and small mis-identification rates. The electron \PID
 efficiency is $\sim\SI{90}{\percent}$ with an $\electron-\text{hadron}$ mis-id
 probability of $\sim\SI{5}{\percent}$, kaon \PID efficiency is
 $\sim\SI{95}{\percent}$ with a $\pion-\kaon$ mis-id probability of
@@ -496,10 +497,11 @@ calorimeters, and the muon system to provide a decision in under
 $\SI{4}{\micro\second}$ after the bunch crossing. This reduces the read-out rate
 from the \LHC bunch crossing rate of up to $\SI{40}{\mega\hertz}$ to
 $\SI{1}{\mega\hertz}$ at which the full detector can be read out. The \LZero
-triggers on the highest \ET calorimeter clusters and the two highest \pT muons
-in the muon system. Additionally global event properties as the number of
-primary \protonproton interactions estimated by the \VELO pile-up system and the
-number of \SPD hits are used to reject events with large combinatorics.
+triggers on the highest \ET calorimeter clusters and the two muons with the
+highest \pT in the muon system. Additionally global event properties as the
+number of primary \protonproton interactions estimated by the \VELO pile-up
+system and the number of \SPD hits are used to reject events with large
+combinatorics.
 
 %%------------------------------------------------------------------------------
 \subsection{The \acl*{HLT}}
@@ -515,7 +517,7 @@ stage then performs a full event reconstruction on the events passed by the
 $\SIrange[range-units = single, range-phrase = -]{3}{5}{\kilo\hertz}$ before the
 data is written to permanent storage.
 
-The \HLT excels in is flexibility and performance, especially regarding the
+The \HLT excels in its flexibility and performance, especially regarding the
 selection of (di-)muon events. As the \LHC delivers stable physics beams in
 about $\SI{30}{\percent}$ of the time, local storage on the computing nodes is
 used to \enquote{defer} around $\SI{20}{\percent}$ of the \LZero-passed events
@@ -529,8 +531,8 @@ The \LHCb core software framework \Gaudi \cite{set:soft:gaudi} is used for data
 processing and supports interfaces to all other software packages. The track
 reconstruction is performed by \Brunel \cite{soft:brunel} while \Moore
 \cite{soft:moore} runs the \HLTOne and \HLTTwo trigger algorithms. Both packages
-do differentiate between data and simulation. The generation of simulated events
-is managed by the \Gauss \cite{set:soft:gauss} project in consecutive steps: at
+differentiate between data and simulation. The generation of simulated events is
+managed by the \Gauss \cite{set:soft:gauss} project in consecutive steps: at
 first \Pythia \cite{set:soft:pythia} is used as event generator, then the decay
 of particles is simulated with \EvtGen \cite{Lange:2001uf} where radiative
 corrections are handled by \Photos \cite{set:soft:photos}. The transit of
@@ -554,7 +556,7 @@ main sources of efficiency loss can be found in detector dead time, the data
 acquisition system, \VELO safety measures, and control of the high voltage
 systems. A detailed overview of the data taking history including delivered and
 recorded integrated luminosity is depicted in
-\cref{fig:lhcb_experiment:data:integrated_lumi}.
+\cref{fig:lhcb_experiment:data:integrated_lumi}.\addref{recorded luminosity and lumi plot from LHCb page}
 %
 \begin{figure}[t]
   \centering

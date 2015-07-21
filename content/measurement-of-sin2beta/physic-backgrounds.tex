@@ -44,13 +44,13 @@ of $\BdToJpsiKstar$ and $\LbToJpsiLambda$.
 In the $\BdToJpsiKstar$ signal \MC $\SI{0.3}{\percent}$ of $\num{4e6}$ generated
 background candidates get reconstructed and survive the applied stripping cuts.
 This number already reduces to $\SI{0.004}{\percent}$ after applying cuts on the
-nominal mass and time ranges. After the full offline selection, considering a
-$\SI{38}{\percent}$ tagging efficiency, and scaling the numbers to match a data
-sample corresponding to $\SI[separate-uncertainty=true]{3}{\per\femto\barn}$
-integrated luminosity, $\num{20}$ $\BdToJpsiKstar$ candidates with a positive
-\MC information match remain. This corresponds to a fraction of roughly
-$\SI{0.04}{\percent}$ of the background in the nominal data sample. The source
-of the remaining contributions are \eg decays like
+nominal mass and time ranges. After full offline selection, considering a
+tagging efficiency of $\SI{38}{\percent}$, and scaling the numbers to match a
+data sample corresponding to
+$\SI[separate-uncertainty=true]{3}{\per\femto\barn}$ integrated luminosity,
+$\num{20}$ $\BdToJpsiKstar$ candidates remain. This corresponds to a fraction of
+roughly $\SI{0.04}{\percent}$ of the background in the nominal data sample. The
+source of the remaining contributions are \eg decays like
 $\decay{\Bdstar}{\Bd(\to\jpsi\Kstarz)\,\Xparticle}$.
 
 \subsubsection{Physics backgrounds from $\mathbfsfit{\proton}$-$\mathbfsfit{\pion}$ mis-ID}
@@ -64,10 +64,10 @@ The veto cut applied in the offline selection (see
 decreases the number of candidates inside this mass and decay time window by
 more than $\SI{50}{\percent}$ to $\SI{0.15}{\percent}$. After applying the full
 offline selection, including the tagging efficiency, and scaling the sample to
-correspond to the collected integrated luminosity in data, $\num{120}$ MC
-truth-matched $\LbToJpsiLambda$ candidates remain. Therefore, we expect a
-$\SI{0.2}{\percent}$ contribution of $\LbToJpsiLambda$ background candidates in
-our nominal data sample.
+correspond to the collected integrated luminosity in data, $\num{120}$
+$\LbToJpsiLambda$ candidates remain. Therefore, we expect a $\SI{0.2}{\percent}$
+contribution of $\LbToJpsiLambda$ background candidates in our nominal data
+sample.
 
 % ------------------------------------------------------------------------------
 \subsection{Background tagging asymmetries}
@@ -79,7 +79,7 @@ be purely of combinatorial origin. Following this, one can conclude that all
 flavour tagging decisions provided for background candidates are randomly
 distributed. This assumption can be tested in two ways: counting the
 time-integrated numbers of \Bd and \Bdbar tagged background candidates or
-checking for an non-vanishing time-dependent tag asymmetry in the background. 
+checking for a non-vanishing time-dependent tag asymmetry in the background. 
 
 The tests are performed independently for the \catDD and \catLL sub sample as
 well as for both employed tagging algorithms (\OS and \SSpi). In order to study
@@ -137,10 +137,11 @@ The decay time dependent background tagging asymmetry is defined similar to
 %
 At first histograms are consulted to check for the null-hypothesis using a
 $\chisq$-test. The test is performed on the background \sweighted dataset as
-well as on a cocktail \MC sample built from signal \MC and background candidates
-from a \ToyMC sample generated with randomly distributed tag decisions. Finally,
-a likelihood fit to the weighted background sample is performed using a \ac{PDF}
-$\ProbArg{\text{TagAsym}}{}{\obsTime, \tagdecision}$ modelling a potential tag asymmetry.
+well as on a background \sweighted cocktail \MC sample built from signal \MC and
+background candidates from a \ToyMC sample generated with randomly distributed
+tag decisions. Finally, a likelihood fit to the weighted background sample is
+performed using a \ac{PDF} $\ProbArg{\text{TagAsym}}{}{\obsTime, \tagdecision}$
+modelling a potential tag asymmetry.
 %
 \begin{equation}\label{eq:measurement_of_sin2beta:physic_backgrounds:tagging_asymmetries:time_dependent:pdf}
   \ProbArg{\text{TagAsym}}{}{\obsTime, \tagdecision} \propto \exponential{- \frac{t}{\tau}} \left( 1 + \tagdecision \Asym{}{} \right)
@@ -160,24 +161,22 @@ summarised in \cref{tab:measurement_of_sin2beta:physic_backgrounds:tagging_asymm
   asymmetry. The values were computed on \sweighted background distributions for
   \catDD and \catLL \OS and \SSpi tagged events.}
   \label{tab:measurement_of_sin2beta:physic_backgrounds:tagging_asymmetries:time_dependent:chisq}
-  \begin{tabular}{llll}
+  \begin{tabular}{llSS}
     \toprule
-           &              & \multicolumn{2}{c}{$p$-value} \\
-    \multicolumn{2}{c}{category} & data & \acs*{ToyMC} \\
+                                 &        & \multicolumn{2}{c}{$p$-value} \\
+    \multicolumn{2}{c}{category} & {data} & {cocktail \acs*{MC}} \\
     \midrule
-    \catDD & \acs*{OS}    & $0.100$   & $0.525$ \\
-    \catDD & \acs*{SSpi}  & $0.437$   & $0.386$ \\
-    \catLL & \acs*{OS}    & $0.617$   & $0.110$ \\
-    \catLL & \acs*{SSpi}  & $0.969$   & $0.989$ \\
+    \multirow{2}[2]{*}{\catDD} & \acs*{OS}    &  0.100  &  0.525 \\
+                               & \acs*{SSpi}  &  0.437  &  0.386 \\
+    \multirow{2}[2]{*}{\catLL} & \acs*{OS}    &  0.617  &  0.110 \\
+                               & \acs*{SSpi}  &  0.969  &  0.989 \\
     \bottomrule
   \end{tabular}
 \end{table}
 %
-All $p$-values do not contradict the tested null-hypothesis. Furthermore, the
-procedure seems valid as the results found on the \ToyMC sample are comparable
-to the values found on data, \eg the increased $p$-values for \catDD \OS are
-found both on data and \ToyMC and might be explained by the low statistics in
-this particular subsample.
+All $p$-values do not contradict the tested null-hypothesis. Increased
+$p$-values for \catLL \SSpi are found both on data and cocktail \MC and might be
+explained by the low statistics in this particular subsample.
 %
 \begin{figure}[h]
 \includegraphics[width=0.49\textwidth]{private/content/measurement-of-sin2beta/figs/tagged_bkg_data_dd_os.pdf}
@@ -208,7 +207,7 @@ candidates are depicted in the left (right) side.}
 conducted in order to exploit the per-event tag information. To do so the
 distributions are fitted using a \ac{PDF} as presented in
 \cref{eq:measurement_of_sin2beta:physic_backgrounds:tagging_asymmetries:time_dependent:pdf} 
-where a potential asymmetry in data can be modelled. The parametrisation uses
+where a potential asymmetry in data has been modelled. The parametrisation uses
 the sum of three (two in case of the \catDD \SSpi subsample) exponential
 \acp{PDF} with independent pseudo-lifetimes $\tau_i$ and individual asymmetry
 parameters $\Asym{i}{}$.

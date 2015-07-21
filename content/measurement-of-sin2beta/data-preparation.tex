@@ -4,19 +4,19 @@
 \label{sec:measurement_of_sin2beta:data_preparation}
 
 This section describes the data employed in this analysis, summarises the
-different signal candidate selection steps: trigger, stripping, and offline
-selection, as well as the handling of multiple \acp{PV} and \Bmeson candidates.
-Finally the different data samples used in the analysis are stated.
+different signal candidate selection steps, as well as the handling of multiple
+\acp{PV} and \Bmeson candidates. Finally the different data samples used in the
+analysis are stated.
 
 The presented analysis is performed on a dataset collected by the \LHCb
 experiment during two run periods in 2011 and 2012, dubbed
 \enquote{\RunOne{}}\footnote{In contrast to the second \enquote{\RunTwo{}} period
-scheduled to start in 2015 and last until mid 2018.}. The 2011 subsample has an
-integrated luminosity of
-$\SI[separate-uncertainty=true]{1.00\pm0.04}{\per\femto\barn}$ at a
-centre-of-mass energy of $\sqrt{s}=\SI{7}{\TeV}$, while the 2012 subsample has
-an integrated luminosity of
-$\SI[separate-uncertainty=true]{1.990\pm0.024}{\per\femto\barn}$ at
+scheduled to start in 2015 and last until mid 2018.}. The 2011 subsample
+corresponds to an integrated luminosity of
+$\SI[separate-uncertainty=true]{1.00\pm0.04}{\per\femto\barn}$ collected at a
+centre-of-mass energy of $\sqrt{s}=\SI{7}{\TeV}$, while the 2012 subsample
+corresponds to an integrated luminosity of
+$\SI[separate-uncertainty=true]{1.990\pm0.024}{\per\femto\barn}$ collected at
 $\sqrt{s}=\SI{8}{\TeV}$.
 
 The $\BdToJpsiKS$ decay candidates are reconstructed in the $\JpsiToMuMu$ and
@@ -25,16 +25,15 @@ candidates, several selection steps are performed. At first a two-layer
 trigger system selects events from the \protonproton collisions (\cf
 \cref{sec:measurement_of_sin2beta:data_preparation:trigger}). Then a loose and very general
 selection, the so called \enquote{stripping} is applied to the triggered data
-written to tape (\cf
-\cref{sec:measurement_of_sin2beta:data_preparation:stripping}). The final step
-is an offline selection of the remaining candidates that is further adjusted to
-the specific decay and the reconstructed final state (\cf
+(\cf \cref{sec:measurement_of_sin2beta:data_preparation:stripping}). The final
+step is an offline selection of the remaining candidates that is further
+adjusted to the specific decay and the reconstructed final state (\cf
 \cref{sec:measurement_of_sin2beta:data_preparation:offline_selection}).
 
 Besides reducing the background level and enhancing the fraction of signal in
 the data set, the selection tries to minimise a possible bias of the measured
 \Bd lifetime caused by selection steps that preferably remove candidates with
-small decay times. If it is inevitable, then at least the biasing effects should
+small decay times. As it is inevitable, then at least the biasing effects should
 be understood and accounted for (\cf
 \cref{sec:measurement_of_sin2beta:resolution_and_acceptance:acceptance}).
 
@@ -46,15 +45,14 @@ In order to correctly comprise correlations and uncertainties on vertex
 positions, particle momenta, flight distances, decay times, and invariant
 masses, a \acf{DTF} \cite{Hulsbergen:2005pu} is performed. Instead of fitting
 \enquote{leaf-by-leaf} starting from the final state particles to determine the
-parameters of their composite mother particle, then repeating this step until
-the initial \bhadron is reached, the \DTF fit extracts all parameters in the
-decay chain simultaneously.
+parameters of all composite mother particles one after another, the \DTF fit
+extracts all parameters in the decay chain simultaneously.
 
 Entities decorated with the expression \dtfpv stem from a \DTF fit where the
-knowledge about the \PV has been used to constrain the production
-vertex of the \Bd meson, while the expression \dtf means that additionally to
-the \PV constraint the \jpsi and \KS invariant masses are constrained to their
-masses listed by the \PDG ($m_{\KS}^{\text{\acs{PDG}}}=\SI{497.614}{\MeVcc}$,
+knowledge about the \PV has been used to constrain the production vertex of the
+\Bd meson, while the expression \dtf means that, additionally to this \PV, the
+\jpsi and \KS invariant masses are constrained to their masses listed by the
+\PDG ($m_{\KS}^{\text{\acs{PDG}}}=\SI{497.614}{\MeVcc}$,
 $m_{\jpsi}^{\text{\acs{PDG}}} = \SI[per-mode=symbol]{3096.916}{\MeVcc}$, see
 \cite{Agashe:2014kda}) inside the \DTF fit. In the stripping and if not stated
 otherwise the much simpler leaf-by-leaf fitting was used.
@@ -97,9 +95,9 @@ $\obsEtaSS$       & $\SIrange[range-phrase = -]{0.0}{0.5}{}$ & - & - & - \\
 \label{sec:measurement_of_sin2beta:data_preparation:subsamples}
 
 \begin{description}
-  \item[Year] The data consists of subsamples from data-taking in both the 2011
-and 2012 run periods. To differentiate between these samples, they are indicated
-by the terms \textbf{\catOO} and \textbf{\catOT}.
+  \item[Year] The data consists of subsamples from data-taking in both, 2011
+and 2012, run periods. To differentiate between these samples, they are
+indicated by the terms \textbf{\catOO} and \textbf{\catOT}.
 
   \item[Track type] Due to the long lifetime of the \KS, its daughter pions may
 or may not leave hits in the \VELO (\cf
@@ -126,7 +124,7 @@ methods.
 trigger lines induce decay time acceptance effects. To describe these effects
 independently the data is split into a sample where almost no decay time
 acceptance effects are visible, called \emph{almost unbiased} subsample
-(\textbf{\catAU}), and a sample that includes the major fraction of events
+(\textbf{\catAU}), and a sample that includes the major fraction of events,
 affected by a decay time acceptance, called \emph{exclusively biased} subsample
 (\textbf{\catEB}).
 \end{description}
@@ -142,9 +140,9 @@ total of $\num{24}$ disjoint subsamples.
 The \LHCb trigger system reduces the amount of data to be stored using loose
 criteria to filter events with interesting physical signatures. As described in
 \cref{sec:lhcb_experiment:trigger} a two-stage system is utilised build up from
-a fast \acf{LZero} and the software based \acf{HLT}.
+the fast \acf{LZero} and the software based \acf{HLT}.
 
-The trigger requirements are collected in so called \enquote{trigger lines}
+The trigger requirements are collected in so called \enquote{trigger lines},
 consisting of a set of selections criteria to map certain event types. In the
 following the trigger requirements applied in this measurement are described. If
 not stated otherwise all candidates passing the requirements specified by the
@@ -152,21 +150,21 @@ trigger line configuration \TriggerReq are used in this analysis.
 
 Both the \HLTOneTrackMuon as well as the \HLTTwoDiMuonDetachedJpsi line require
 cuts on parameters depending on the candidates' measured decay time, preferably
-removing candidates with small decay times. This leads to a bias on the measured
-lifetime. Candidates are split into two disjoint subsamples: candidates passing
-the requirements given by the trigger line configuration \TriggerReqAU are
-classified as \emph{almost unbiased} (\textbf{\catAU}) where else candidates
-passing the requirements given by the combination \TriggerReqEB correspond to
-the \emph{exclusively biased} subsample (\textbf{\catEB}). The strategy to cope
-with this acceptance effects is described in detail in
-\cref{sec:measurement_of_sin2beta:resolution_and_acceptance:acceptance}.
+removing candidates with small decay times. This leads to a bias on the
+experimentally accessible lifetime. Candidates are split into two disjoint
+subsamples: candidates passing the requirements given by the trigger line
+configuration \TriggerReqAU are classified as \emph{almost unbiased}
+(\textbf{\catAU}) where else candidates passing the requirements given by the
+combination \TriggerReqEB correspond to the \emph{exclusively biased} subsample
+(\textbf{\catEB}). The strategy to cope with acceptance effects is described in
+detail in \cref{sec:measurement_of_sin2beta:resolution_and_acceptance:acceptance}.
 
 %...............................................................................
 \subsubsection{\LZero trigger requirements}
 \label{sec:measurement_of_sin2beta:data_preparation:trigger:lzero}
 
-The \HLT lines in use require all candidates pass either the \LZeroMuon or the
-\LZeroDiMuon trigger lines. No further \LZero criteria are required.
+The \HLT lines in use require all candidates to either pass the \LZeroMuon or
+the \LZeroDiMuon trigger lines. No further \LZero criteria are required.
 
 %...............................................................................
 \subsubsection{\HLTOne trigger requirements}
@@ -219,7 +217,7 @@ of $\num{0.2}$, only $\SI{20}{\percent}$ of all events passing \LZero and
 \begin{table}
   \centering
   \begin{threeparttable}
-    \caption{\HLTTwo $\jpsi$ dimuon lines and their requirements\tnote{\S}}
+    \caption{\HLTTwo $\jpsi$ dimuon lines and their requirements\tnote{\S}. \cite{Aaij:2012me}}
     \label{tab:measurement_of_sin2beta:data_preparation:trigger:hlt2:cuts}
     \begin{tabular}{lll}
       \toprule
@@ -243,10 +241,11 @@ of $\num{0.2}$, only $\SI{20}{\percent}$ of all events passing \LZero and
 \subsubsection{Trigger efficiencies}
 \label{sec:measurement_of_sin2beta:data_preparation:trigger:efficiencies}
 
-The ratio of events passing a trigger requirement compared to all present events
-is called trigger efficiency. Compared to the efficiency of the
-$\SI{1}{\per\fb}$ \LHCb analysis \cite{Aaij:1497268}, where events had to fulfil
-the trigger requirements of the \HLTOneDiMuonHighMass and the
+The ratio of events passing a trigger requirement compared to all events within
+the geometrical detector acceptance is called trigger efficiency. Compared to
+the efficiency of the $\SI{1}{\per\fb}$ \LHCb analysis \cite{Aaij:1497268},
+where events had to fulfil the trigger requirements of the \HLTOneDiMuonHighMass
+and the
 \HLTTwoDiMuonDetachedJpsi lines, a gain of $\SI{19.7}{\percent}$ in signal
 efficiency is measured by requiring the
 (\HLTOneDiMuonHighMass\VerbOr\HLTOneTrackMuon) decision.
@@ -288,7 +287,7 @@ compares the calculated trigger efficiencies in detail.
 To further reduce the amount of data a loose selection is applied in a common
 effort, called the \enquote{stripping} of data. Criteria on the properties of
 the reconstructed final state particles as well as on the reconstructed $\Jpsi$,
-$\KS$, and $\Bd$ candidates are required as described in detail in 
+$\KS$, and $\Bd$ candidates are applied as described in detail in 
 \cref{tab:measurement_of_sin2beta:data_preparation:stripping}. Two different
 stripping configurations, the \StrippingDetached and \StrippingPrescaled lines
 are employed. In the \CP violation measurement the \StrippingDetached line is
@@ -297,26 +296,26 @@ $\SI{0.2}{\pico\second}$. For studies requiring the full decay time range, the
 \StrippingPrescaled line with a pre-scale of $\num{0.3}$ is used.
 
 Besides the decay time cut in the detached line and the pre-scale in the
-correspondent line, all other selection criteria are shared among both lines.
+corresponding line, all other selection criteria are shared among both lines.
 %
 \begin{table}
   \centering
   \begin{threeparttable}
-    \caption{Stripping cuts applied in the reconstruction and selection of the $\Jpsi$, the $\KS$, and the $\Bd$ candidates\tnote{\S}.}
+    \caption{Stripping cuts applied in the reconstruction and selection of the $\Jpsi$, the $\KS$, and the $\Bd$ candidates\tnote{\S}.\todo{Ref to stripping cuts}}
     \label{tab:measurement_of_sin2beta:data_preparation:stripping}
     \begin{tabular}{ll}
       \toprule
       \multicolumn{2}{c}{\Jpsi candidate\tnote{\dag}} \\
       \midrule
       $\mu$ $\DLLmupi$                                    & $>0$ \\
-      $\mu\ p$                                            & $>\SI[per-mode=symbol]{0.5}{\GeVc}$ \\
+      $\mu$ momentum                                      & $>\SI[per-mode=symbol]{0.5}{\GeVc}$ \\
       $\mu\mu$ $\chi_{\text{\acs*{DOCA}}}^2$              & $<20$ \\
       $m_{\mu\mu}$                                        & $M_{\jpsi}^{\text{\acs*{PDG}}}\pm\SI[per-mode=symbol]{80}{\MeVcc}$ \\
       \jpsi $\chi_{\text{vtx}}^2/\ndf$                    & $<16$ \\
       \midrule
       \multicolumn{2}{c}{\KS candidate\tnote{\ddag}} \\
       \midrule
-      $\pi\ p$                                            & $>\SI[per-mode=symbol]{2}{\GeVc}$ \\
+      $\pi$ momentum                                      & $>\SI[per-mode=symbol]{2}{\GeVc}$ \\
       \multirow{2}[2]{*}{$\pi$ min $\chi^2_{\text{\acs*{IP}}}$ \wrt any PV} & $>\num{4}$ for \catDD \\
                                                                             & $>\num{9}$ for \catLL \\
       $\pip \pim$ $\chi_{\text{\acs*{DOCA}}}^2$           & $<25$ \\
@@ -382,30 +381,32 @@ simulations is used to describe the $\BdToJpsiKstar$ component. For a more
 detailed description of the used mass model, see
 \cref{sec:measurement_of_sin2beta:likelihood_fit:pdfs:ipatia}.
 
-\Cref{fig:measurement_of_sin2beta:data_preparation:offline_selection:before} shows the mass
-distribution of the 2011 and 2012 data set and the fit projection. The data set
-includes  all candidates that pass the nominal trigger and stripping. Only the
-\PV with the smallest \IP \chisqndf \wrt the $\Bd$ track is included and---in
-case of multiple $\Bd$ candidates---a random $\Bd$ candidate is chosen. Please
-note that all efficiencies are calculated individually for each cut or cut
-ensemble. The total efficiency is then provided in
+\Cref{fig:measurement_of_sin2beta:data_preparation:offline_selection:before}
+shows the mass distribution of the 2011 and 2012 data set and the fit
+projection. The data set includes  all candidates that pass the nominal trigger
+and stripping. Only the \PV with the smallest \IP \chisqndf \wrt the $\Bd$
+trajectory is included and---in case of multiple $\Bd$ candidates---a random
+$\Bd$ candidate is chosen. Please note that all offline selection efficiencies
+are calculated individually for each cut or cut ensemble with respect to the
+candidate numbers passing the stripping selection. The total efficiency is then
+provided in
 \cref{sec:measurement_of_sin2beta:data_preparation:offline_selection:total}.
 %
 \begin{figure}
 \includegraphics[width=0.49\textwidth]{private/content/measurement-of-sin2beta/figs/offline_splot_downstream.pdf}
 \includegraphics[width=0.49\textwidth]{private/content/measurement-of-sin2beta/figs/offline_splot_longtrack.pdf}
-\label{fig:measurement_of_sin2beta:data_preparation:offline_selection:before}
-\caption{Mass distribution of the combined 2011 and 2012 data set after
-stripping (in logarithmic scale). Only the \PV with the smallest \IP \chisqndf
-\wrt the $\Bd$ track is included and--- in case of multiple $\Bd$ candidates---a
-random $\Bd$ candidate is chosen. The left plot shows the \catDD, the right one
-the \catLL candidates. The solid black line is the projection of the fit \PDF,
-the blue dashed line shows the signal, and the green dashed line shows the
-background component. For the description of the \catLL candidates, the
-additional $\BdToJpsiKstar$ component is depicted as dash-dotted turquoise line.
-Below the mass distribution the pull distribution shows the difference of the
-bin content and the \PDF value at the bin centre normalized by the error
-estimate on the bin content.}
+  \caption{Mass distribution of the combined 2011 and 2012 data set after
+  stripping (in logarithmic scale). Only the \PV with the smallest \IP \chisqndf
+  \wrt the $\Bd$ trajectory is included and--- in case of multiple $\Bd$
+  candidates---a random $\Bd$ candidate is chosen. The left plot shows the
+  \catDD, the right one the \catLL candidates. The solid black line is the
+  projection of the fit \PDF, the blue dashed line shows the signal, and the
+  green dashed line shows the background component. For the description of the
+  \catLL candidates, the additional $\BdToJpsiKstar$ component is depicted as
+  dash-dotted turquoise line. Below the mass distribution the pull distribution
+  shows the difference of the bin content and the \PDF value at the bin centre
+  normalized by the error estimate on the bin content.}
+  \label{fig:measurement_of_sin2beta:data_preparation:offline_selection:before}
 \end{figure}
 
 %...............................................................................
@@ -468,26 +469,28 @@ $\pi$ ghost track probability & \multicolumn{2}{c}{$<0.3$}\\
 \end{table}
 
 %...............................................................................
-\subsubsection{Cuts on daughter masses and \Lambda mass veto}
+\subsubsection{Cuts on daughter masses and $\mathbfsfit{\Lambda}$ mass veto}
 \label{sec:measurement_of_sin2beta:data_preparation:offline_selection:daughters}
 
 Background contributions due to particle mis-ID (\cf
 \cref{sec:measurement_of_sin2beta:physic_backgrounds}) are reduced by employing
-cuts on the invariant daughter masses are used as given in
+cuts on the invariant daughter masses as given in
 \cref{tab:measurement_of_sin2beta:data_preparation:offline_selection:daughters}.
 As long track candidates show a better mass resolution, different cuts are
 applied depending on the candidates' track type. These cuts yield a signal
 efficiency of $\SI{98.70}{\percent}$ ($\SI{98.92}{\percent}$) and a background
 rejection of $\SI{27.53}{\percent}$ ($\SI{39.78}{\percent}$) in the \catDD
-(\catLL) sample. The cuts correspond to roughly $8\sigma$ ($4\sigma$) for \catDD
-(\catLL) $\KS$ candidates and around $5\sigma$ for the $\jpsi$ candidates.
+(\catLL) sample. The cuts correspond to roughly eight times (four times) the
+measured $\KS$ width for \catDD (\catLL) $\KS$ candidates and around five times
+the measured $\Jpsi$ width for the $\jpsi$ candidates.
 
-To reduce pion-proton mis-ID all pion candidate pairs are combined, assigning
-the proton mass hypothesis to either one of the pions and recalculating their
-invariant mass. An additional requirement on the \proton-\pion \PID of
-$\DLLppi<7$ ($<10$) is then applied to all candidates lying inside a
-$\pm\SI{7}{\MeVcc}$ ($\pm\SI{5}{\MeVcc}$) region around the \Lambda mass
-$M_\Lambda^{\text{\acs*{PDG}}} = \SI[per-mode=symbol]{1115.683}{\MeVcc}$ in the
+To reduce proton-pion mis-ID from background $\LbToJpsiLambda$ decays all pion
+candidate pairs are combined, assigning the proton mass hypothesis to either one
+of the pions and recalculating their invariant mass. An additional requirement
+on the \proton-\pion \PID of $\DLLppi<7$ ($<10$) is then applied to all
+candidates lying inside a $\pm\SI{7}{\MeVcc}$ ($\pm\SI{5}{\MeVcc}$) region
+around the \Lambda mass $M_\Lambda^{\text{\acs*{PDG}}} =
+\SI[per-mode=symbol]{1115.683}{\MeVcc}$ in the
 \catDD (\catLL) sample. This \Lambda veto has a signal efficiency of
 $\SI{99.32}{\percent}$ ($\SI{99.9}{\percent}$) and a background rejection of
 $\SI{10.50}{\percent}$ ($\SI{2.53}{\percent}$) in the \catDD (\catLL) sample.
@@ -537,8 +540,11 @@ for the \catDD (\catLL) sample.
 \subsubsection{Overall offline selection performance}
 \label{sec:measurement_of_sin2beta:data_preparation:offline_selection:total}
 
-\Cref{tab:measurement_of_sin2beta:data_preparation:offline_selection:total}
-quotes the overall offline selection performance.
+The total offline selection performance shows a signal efficiency of $\SigEff
+\sim \SI{90}{\percent}$ paired with a background rejection of $\BkgRej \sim
+\SI{70}{\percent}$. The exact numbers quoted separately for \catDD and \catLL
+are given in
+\cref{tab:measurement_of_sin2beta:data_preparation:offline_selection:total}.
 %
 \begin{table}[h]
 \centering
@@ -560,17 +566,17 @@ quotes the overall offline selection performance.
 
 As in a typical \LHCb bunch crossing around $\num{2.5}$ visible
 \acl{protonproton} collisions occur, the chances are high to find more than one
-\PV per recorded event. Choosing the \PV with the smallest \DTF track \IP
+\PV per recorded event. Choosing the \PV with the smallest \DTF trajectory \IP
 \chisqndf \wrt the \Bd candidate is called \emph{best PV selection} in contrast
-to a \emph{random PV selection}. Given the small \BdToJpsiKS branching ratio not
-more than one signal event can be expected per event. Still, it is possible that
-more than one candidate gets reconstructed. From those candidates either one can
-be chosen by his \DTF track \IP \chisqndf \wrt a given \PV (\emph{best
-\Bd candidate selection}) or as well randomly (\emph{random \Bd candidate
-selection}). Instead of consecutively selecting a \PV and \Bmeson candidate a
-joint decision can be made. Each $(\text{\acs{PV}}, \Bd)$ pair can again be
-chosen either based on the best fit quality or by random. The number of multiple
-\acp{PV} and candidates is studied following Ref.~\cite{Koppenburg:1340942}.
+to a \emph{random PV selection}. Given the small \BdToJpsiKS branching ratio,
+not more than one signal event can be expected per event. Still, it is possible
+that more than one candidate gets reconstructed. From those candidates either
+one can be chosen by its \DTF trajectory \IP \chisqndf \wrt a given \PV
+(\emph{best \Bd candidate selection}) or as well randomly (\emph{random \Bd
+candidate selection}). Instead of consecutively selecting a \PV and \Bmeson
+candidate a joint decision can be made. Each $(\text{\acs{PV}}, \Bd)$ pair can
+again be chosen either based on the best fit quality or by random. The number of
+multiple \acp{PV} and candidates is studied following \Ref~\cite{Koppenburg:1340942}.
 
 After stripping selection around $\SI{2}{\percent}$ of the events contain more
 than one \Bd candidate and $\SIrange[range-phrase = -, range-units = single]
@@ -684,11 +690,13 @@ pairs to discard & & & & \\
 All candidates in the nominal dataset finally used for the fit to estimate the
 \CP observables \SJpsiKS and \CJpsiKS pass the given trigger configuration, the
 detached stripping selection, and the described offline selection leaving
-$\num{114000}$ signal candidates. The analysis only makes use of $\num{42000}$
-tagged signal candidates.
+$\num{114000}$ signal candidates. The analysis only uses $\num{42000}$ tagged
+signal candidates.
 \Cref{tab:measurement_of_sin2beta:data_preparation:datasamples:numbers} lists
 the numbers of tagged signal candidates split into subsamples of tagger,
-trigger, track type, and year of data-taking.
+trigger, track type, and year of data-taking. The mass distribution of the
+nominal dataset, split into year of data-taking and track type is depicted in
+\cref{fig:measurement_of_sin2beta:data_preparation:datasamples:split}.
 %
 \begin{table}
 \centering
@@ -732,25 +740,25 @@ trigger, track type, and year of data-taking. All numbers rounded.}
 \includegraphics[width=0.49\textwidth]{private/content/measurement-of-sin2beta/figs/mass_12.pdf}
 \includegraphics[width=0.49\textwidth]{private/content/measurement-of-sin2beta/figs/mass_DD.pdf}
 \includegraphics[width=0.49\textwidth]{private/content/measurement-of-sin2beta/figs/mass_LL.pdf}
-\label{fig:measurement_of_sin2beta:data_preparation:datasamples:split}
-\caption{Mass distribution of the nominal data set, split into year of
+\caption{Mass distribution of the nominal dataset, split into year of
 data-taking and into $\KS$ track type. Top row: on the left \catOO, on the right
 \catOT. Bottom row: on the left \catDD, on the right \catLL. The solid black
 line shows the fit projection of the nominal mass \ac{PDF} (\cf
 \cref{sec:measurement_of_sin2beta:likelihood_fit:model:mass}). The blue dashed
 line shows the signal, the green dashed line the background component.}
+\label{fig:measurement_of_sin2beta:data_preparation:datasamples:split}
 \end{figure}
 %
-\begin{figure}
-\centering
-\includegraphics[width=0.8\textwidth]{private/content/measurement-of-sin2beta/figs/mass.pdf}
-\label{fig:measurement_of_sin2beta:data_preparation:datasamples:combined}
-\caption{Combined mass distribution of the nominal data set for all different
-categories. The solid black line shows the fit projection of the nominal mass
-\ac{PDF} (\cf \cref{sec:measurement_of_sin2beta:likelihood_fit:model:mass}). The
-blue dashed line shows the signal, the green dashed line the background
-component.}
-\end{figure}
+% \begin{figure}
+% \centering
+% \includegraphics[width=0.8\textwidth]{private/content/measurement-of-sin2beta/figs/mass.pdf}
+% \caption{Combined mass distribution of the nominal data set for all different
+% categories. The solid black line shows the fit projection of the nominal mass
+% \ac{PDF} (\cf \cref{sec:measurement_of_sin2beta:likelihood_fit:model:mass}). The
+% blue dashed line shows the signal, the green dashed line the background
+% component.}
+% \label{fig:measurement_of_sin2beta:data_preparation:datasamples:combined}
+% \end{figure}
 
 %...............................................................................
 \subsubsection{\MC datasets}
@@ -758,10 +766,9 @@ component.}
 
 The \acf{MC} samples are produced using \PythiaSix and \PythiaEight in the
 generation step. An equal amount of events is generated using each generator
-version and also for both possible magnet polarities called \emph{up} and
-\emph{down}. Also different samples are produced for \catOO and \catOT running
-conditions. The \EvtGen physics model is set to \Verb=SSD_CP= with
-parameters as summarised in
+version and also for both possible magnet polarities. Also different samples are
+produced for \catOO and \catOT running conditions. The \EvtGen physics model is
+set to \texttt{SSD\textunderscore{CP}} with parameters as summarised in
 \cref{tab:measurement_of_sin2beta:data_preparation:datasamples:mc:decfile}.
 %
 \begin{table}
@@ -788,8 +795,8 @@ $\tau$                               & \SI{1.519068}{\pico\second}\\
 Studies to check for possible background contributions from partly reconstructed
 decays or decays with mis-identified particles (outlined in
 \cref{sec:measurement_of_sin2beta:physic_backgrounds}) require several inclusive
-and signal \MC samples using the same generator toolchain as in the generation
-of the nominal signal \MC sample.
+and exclusive \MC samples using the same generator toolchain as in the
+generation of the nominal signal \MC sample.
 \Cref{tab:measurement_of_sin2beta:data_preparation:datasamples:mc:samples} shows
 the used \MC data sets and gives the number of generated events.
 %

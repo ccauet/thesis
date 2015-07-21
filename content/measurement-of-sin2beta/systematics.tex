@@ -48,7 +48,7 @@ lies in the same order of magnitude as the difference of the central values.
 %
 To provide a cross-check of the fitter implementation, two different,
 independent fitter implementations were developed by the author and another
-member of the working group. Besides built up on the \RooFit library they do not
+member of the working group. Being built up on the \RooFit library they do not
 share any common code base. For simplification they will be denoted as
 \emph{Fitter A} and \emph{Fitter B}. Both fitters are tested against each other
 in the nominal fitter setup (\cref{sec:measurement_of_sin2beta:likelihood_fit}).
@@ -75,26 +75,26 @@ plot itself is produced using the full precision values.} }
 \subsubsection{\sPlot fit}
 \label{sec:measurement_of_sin2beta:systematics:cross_checks:splot_fit}
 %
-As the background model might influence the measurement, an \sPlot fit is
-performed using the nominal signal \PDF. As the standard \Minuit/\Hesse error
+As the background decay time model might influence the measurement, an \sPlot fit is
+performed using the nominal signal mass \PDF. As the standard \Minuit/\Hesse error
 estimations in \sPlot fits can lead to uncertainties with an incorrect coverage,
 an additional bootstrapping (\cf \eg \cite{Behnke:2013pga}) study is performed
 to arrive at more correct estimates of uncertainties. The procedure followed is:
 %
 \begin{enumerate}
-  \item taking the \sweighted data sample consisting of $N$ events,
-  \item sampling $N$ randomly selected events with replacement into a new data sample,
-  \item performing a fit on the resulting sample to measure \SJpsiKS and \CJpsiKS,
-  \item and repeating the steps to obtain a distribution of the measured \CP parameters.
+  \item take the \sweighted data sample consisting of $N$ events,
+  \item sample $N$ randomly selected events with replacement into a new data sample,
+  \item perform a fit to the resulting sample to measure \SJpsiKS and \CJpsiKS,
+  \item repeat the steps to obtain a distribution of the measured \CP parameters.
 \end{enumerate}
 %
 \Cref{fig:measurement_of_sin2beta:systematics:cross_checks:splot_fit:s_and_c}
 shows the fit result of the \sPlot fit with the corresponding \Hesse uncertainty
 estimates, as well as the nominal fit result. Additionally, the uncertainty
-estimates from the bootstrapping study are included. For the latter result, the
+estimates from the bootstrapping study are included. For the latter, the
 medians of the measured \SJpsiKS and \CJpsiKS distributions are chosen as
 central values, while the quoted uncertainties are the quantile-based estimates
-for two-sided $\SI{68.27}{\percent}$ \acp{CL} of the same distribution. The
+for two-sided $\SI{68.27}{\percent}$ quantiles of the same distribution. The
 resulting distributions based on $\num{1000}$ bootstrapping iterations are
 presented in
 \cref{fig:measurement_of_sin2beta:systematics:cross_checks:splot_fit:bootstrapping}.
@@ -112,10 +112,10 @@ the results of the \sPlot fits and the nominal fit are well compatible.
 \input{private/content/measurement-of-sin2beta/tikz/crosscheck_splotfit_s}
 \input{private/content/measurement-of-sin2beta/tikz/crosscheck_splotfit_c}
 \caption{
-Fit results for \SJpsiKS and \CJpsiKS from the \sPlot fit as well as from the
-nominal fit as a reference. In blue (red) the result and the statistical error
-for the \sPlot fit (nominal fit) using a per-event resolution. The grey solid
-line shows the average of both lower fit results, while the filled grey area
+Fit results for \SJpsiKS and \CJpsiKS from the \sPlot fit and the nominal fit as
+a reference. In blue (red) the result and the statistical error for the \sPlot
+fit (nominal fit) using a per-event decay time resolution. The grey solid line
+shows the average of the two below fit results, while the filled grey area
 describes the uncertainty on the difference $\sigma_\Delta$ of the two lower
 results (darker grey $1\sigma_\Delta$, light grey $2\sigma_\Delta$).
 \textit{Please note: The shown numbers are rounded following the PDG rules. The
@@ -129,8 +129,8 @@ plot itself is produced using the full precision values.}}
 \hfill
 \includegraphics[width=0.48\textwidth]{private/content/measurement-of-sin2beta/figs/bootstrapping_parSigTimeCjpsiKS_blind.pdf}
 \caption{
-Parameter distributions for \SJpsiKS and \CJpsiKS from $\num{1000}$
-bootstrapping iterations of the \sPlot fit.}
+Parameter distributions for \SJpsiKS and \CJpsiKS from \sPlot fits to
+$\num{1000}$ bootstrapped data samples.}
 \label{fig:measurement_of_sin2beta:systematics:cross_checks:splot_fit:bootstrapping}
 \end{figure}
 
@@ -260,19 +260,21 @@ $\CJpsiKS = \num{0.03}$ in the \acf{ToyMC} sample generation.
 \label{sec:measurement_of_sin2beta:systematics:systematics:fit_model}
 
 \paragraph{A background tagging asymmetry} \ie a non-vanishing tagging
-asymmetries in the background candidates sample is found and described in
+asymmetry in the background candidates sample is found and described in
 \cref{sec:measurement_of_sin2beta:physic_backgrounds:tagging_asymmetries}. A
 \ToyMC study with $\num{1000}$ iterations is performed to estimate the potential
-influence on the measurement of $\SJpsiKS$ and $\CJpsiKS$. For each repetition a
-sample is generated using the time-dependent asymmetries from the histograms
-given in
-\cref{fig:measurement_of_sin2beta:physic_backgrounds:tagging_asymmetries:data}
-and sampling a central value from the bin contents and errors. As the decay time
-resolution model is assumed to not affect the outcome, an average decay time
-resolution model is incorporated. A significant bias is observed in both \CP
-parameters (see \cref{fig:app:measurement_of_sin2beta:systematics:systematics:fit_model:bkg_tagging_asymmetry}),
-thus the central value of the residual distributions is used as an estimate of
-the systematic uncertainties
+influence on the measurement of $\SJpsiKS$ and $\CJpsiKS$. 
+
+For each repetition a dataset is generated using the time-dependent asymmetries
+provided by the histograms shown in
+\cref{fig:measurement_of_sin2beta:physic_backgrounds:tagging_asymmetries:data}.
+The asymmetry is sampled by incorporating the bin contents and errors. As the
+decay time resolution model is assumed to not affect the outcome, an average
+decay time resolution model is incorporated. A significant bias is observed in
+both \CP parameters (see \cref{fig:app:measurement_of_sin2beta:syste
+matics:systematics:fit_model:bkg_tagging_asymmetry}), thus the central value of
+the residual distributions is used as an estimate of the systematic
+uncertainties
 %
 \begin{equation}
   \delta_{\SJpsiKS} = \num{0.0179}\eqthinspace\text{and}\eqthinspace\delta_{\CJpsiKS} = \num{0.0015}\eqpd
@@ -353,7 +355,7 @@ are used as an estimate of the systematic uncertainties.
 used. In a \ToyMC study the influence of a different parametrisation of the
 calibration model is investigated. Based on the results given in
 \cref{sec:measurement_of_sin2beta:resolution_and_acceptance:resolution} a
-parabolic function with non-zero (fixed to zero) offset is used in the \catDD
+parabolic function with non-zero (zero) offset is used in the \catDD
 (\catLL) sub sample to generate data, that is then fitted using the nominal
 calibration model. The parameter values used in the generation are given in
 \cref{tab:measurement_of_sin2beta:systematics:systematics:resolution:parabolic_parameters}.
@@ -364,7 +366,8 @@ seen in the pull and residual distributions provided in
 \begin{table}[h]
 \centering
 \caption{Fit parameters of the parabolic decay time resolution calibration
-function for \catDD and \catLL candidates.}
+function for \catDD and \catLL candidates. No offset parameter is used in case
+of the \catLL model, thus the correspondent entries are marked with a dash.}
 \label{tab:measurement_of_sin2beta:systematics:systematics:resolution:parabolic_parameters}
   \begin{tabular}{llr@{$\,\pm\,$}lr@{$\,\pm\,$}l}
     \toprule
@@ -387,7 +390,7 @@ technical limitations in the implementation of the cubic spline \acp{PDF} the
 value of this offset $\mu_{\obsTime}$ has to be set to zero in the nominal fit
 although non-zero values are found in the determination of the resolution model.
 The influence of ignoring the non-zero values is tested in a \ToyMC study with
-$\num{250}$ iterations, where the data are generated using the offset's value
+$\num{250}$ iterations, where the data is generated using the offset's value
 originally determined, while fitting with the nominal fit model. No significant
 bias is observed. Plots of the pull and residual distributions are shown in
 \cref{fig:app:measurement_of_sin2beta:systematics:systematics:resolution:offset}.
@@ -459,7 +462,7 @@ up to a relative uncertainty of $\sigma_\text{$z$-scale} =
 parameters, data are generated using an offset of $\mu_{t} =
 \sigma_\text{$z$-scale} t$ in the decay time resolution model. In the fit the
 offset is set to zero as in the nominal fit model. In a \ToyMC study with
-$\num{1000}$ iterations a small bias is observed for \SJpsiKS and well as for
+$\num{1000}$ iterations a small bias is observed for \SJpsiKS as well as for
 \CJpsiKS and systematic uncertainties of
 %
 \begin{equation}
@@ -471,7 +474,7 @@ are assigned. Pull and residual distributions can be found in
 
 \paragraph{The influence of the production asymmetry} on the measurement of
 \SJpsiKS and \CJpsiKS is investigated in a \ToyMC study. In $\num{1000}$
-iterations samples are produced with an enlarged production asymmetry and
+iterations, samples are produced with an enlarged production asymmetry and
 subsequently fitted with the nominal fit model. The production asymmetry is
 varied by one statistical uncertainty: $A_P^{\catOO} = \num{-0.0122}$ while
 $\Delta A_P$ is not shifted, as any systematic effects are already covered. No
@@ -479,12 +482,12 @@ systematic shift is observed. The pull and residual distributions are depicted
 in \cref{fig:app:measurement_of_sin2beta:systematics:systematics:further_studies:production_asymmetry}.
 
 \paragraph{The \Bdbfsf decay width difference's} impact on the \CP measurement
-is examined in a \ToyMC study with $\num{1000}$ iterations. The data are
+is examined in a \ToyMC study with $\num{1000}$ iterations. The data is
 generated using $\DGd = \SI{0.007}{\per\pico\second}$ as an upper approximation
 based on the current world average of the ratio between the decay width
 difference and the absolute decay width $\DGd/\Gd = \num{0.001 +- 0.010}$
 \cite{Amhis:2014hma}. The fit then neglects the non-zero $\DGd$ value as in the
-nominal model. A significant bias in observed in the pull distribution of
+nominal model. A significant bias is observed in the pull distribution of
 $\SJpsiKS$, thus a systematic uncertainty of
 %
 \begin{equation}
@@ -492,16 +495,17 @@ $\SJpsiKS$, thus a systematic uncertainty of
 \end{equation}
 %
 is assigned as an estimate to cover for this effect. The pull and residual
-distributions for $\SJpsiKS$ and $\CJpsiKS$ are depicted in 
+distributions for $\SJpsiKS$ and $\CJpsiKS$ are depicted in
 \cref{fig:app:measurement_of_sin2beta:systematics:systematics:further_studies:decay_width_difference}.
 
-\paragraph{The \Bdbfsf mass difference $\mathbfsfit{\DMd}$} is taken as an constraint
-external input to the fit model. The influence of the systematic uncertainty on
-$\DMd$ is treated in a \ToyMC study with $\num{1000}$ iterations of generation
-an fit. In the generation the value of the mass difference is enlarged by one
-systematic uncertainty, \ie $\DMd = \SI{0.512}{\planckbar\per\pico\second}$, the
-nominal model is used in the fit. The pull distribution of $\CJpsiKS$ shows a
-significant deviation, therefore a the offset of the residual distribution
+\paragraph{The \Bdbfsf mass difference $\mathbfsfit{\DMd}$} is taken as a
+constrained external input to the fit model. The influence of the systematic
+uncertainty on $\DMd$ is treated in a \ToyMC study with $\num{1000}$ iterations
+of generation and fit. In the generation the value of the mass difference is
+enlarged by the systematic uncertainty, \ie $\DMd =
+\SI{0.512}{\planckbar\per\pico\second}$, the nominal model is used in the fit.
+The pull distribution of $\CJpsiKS$ shows a significant deviation, therefore the
+offset of the residual distribution
 %
 \begin{equation}
   \delta_{\CJpsiKS} = \num{0.0034}

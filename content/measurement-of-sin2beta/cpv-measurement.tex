@@ -4,7 +4,7 @@
 \label{sec:measurement_of_sin2beta:cpv_measurement}
 
 Utilising the likelihood model presented in
-\cref{sec:measurement_of_sin2beta:likelihood_fit} an \acf{uEML} fit is performed
+\cref{sec:measurement_of_sin2beta:likelihood_fit} an \ac{uEML} fit is performed
 to the nominal data set (\cf
 \cref{sec:measurement_of_sin2beta:data_preparation:datasamples}).  The
 \MinuitTwo algorithm implemented in the \RooFit (v3.60) framework from \ROOT
@@ -17,8 +17,9 @@ estimation of the (asymmetric) parameter uncertainties.
 \label{sec:measurement_of_sin2beta:cpv_measurement:constrained_parameters}
 
 Several parameters are incorporated as external inputs. These parameters are
-constrained using Gaussian \acp{PDF} with the mean value fixed to the parameter's
-value and the Gaussian's width to the uncertainty.
+constrained using Gaussian \acp{PDF} with the mean value fixed to the
+parameter's value and the Gaussian's width to the uncertainty. The constraint is
+implemented by multiplying the Gaussian \acp{PDF} to the total likelihood.
 \Cref{tab:measurement_of_sin2beta:cpv_measurement:constrained_parameters} lists
 the constrained parameters as well as a reference to the source of the value and
 its uncertainty employed in the fit.
@@ -44,9 +45,9 @@ This yields
   \end{split}
 \end{equation}
 %
-As the measurement has been performed on $\SI{7}{\TeV}$ data only, the numbers for
-$A_P^{11}$ and $A_P^{12}$ are highly correlated. We therefore
-constraint $A_P^{11}$ in the fit and model $A_P^{12} = A_P^{11} +
+As the measurement has been performed on $\SI{7}{\TeV}$ data only, the numbers
+for $A_P^{11}$ and $A_P^{12}$ are highly correlated. We therefore constraint
+$A_P^{11}$ and $\Delta A_P$ in the fit and model $A_P^{12} = A_P^{11} +
 \Delta A_P$ with $\Delta A_P = 0.0004 \pm 0.0018 \systp$, where
 the systematic uncertainty accounts for the production asymmetry differences
 observed for the two data-taking conditions in \LHCb{'s} recent measurement of
@@ -130,7 +131,7 @@ Eventually, the decay time dependent signal-yield asymmetry
   \mathcal{A} = \frac{(N_{\Bdbar} - N_{\Bd})}{(N_{\Bdbar} + N_{\Bd})}
 \end{equation}
 %
-where $N_{\Bd}$ ($N_{\Bdbar}$) are the number of \BdToJpsiKS signal candidates
+where $N_{\Bd}$ ($N_{\Bdbar}$) is the number of \BdToJpsiKS signal candidates
 tagged as $\Bd$ ($\Bdbar$) is presented in
 \cref{fig:measurement_of_sin2beta:cpv_measurement:results:plots:asymmetry}.
 

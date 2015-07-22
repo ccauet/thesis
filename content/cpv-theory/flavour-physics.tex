@@ -15,8 +15,8 @@ the quark sector. This introduction follows the textbooks
 \label{sec:cpv_theory:flavour_physics:ckm_matrix}
 
 To ensure local $\group{SU}{2}\otimes\group{U}{1}$ gauge invariance of the
-electroweak Lagrangian while at the same time preserve renormalisability of the
-theory, the mechanism of spontaneous symmetry breaking is exploited
+electroweak Lagrangian while at the same time preserving renormalisability of
+the theory, the mechanism of spontaneous symmetry breaking is used
 \cite{set:higgs}. While the mechanism also implies new massive vector boson
 fields as well as the appearance of a massive scalar particle---the Higgs
 boson---the focus will be on the quark sector.
@@ -27,15 +27,15 @@ $\group{SU}{2}\otimes\group{U}{1}$ invariant Yukawa Lagrangian
 $\Lagrangian{Y}{}$ for the quark sector can be written down,
 %
 \begin{equation}\label{sec:cpv_theory:flavour_physics:ckm_matrix:yukawa_lagrangian}
-  \Lagrangian{Y}{\quark} = -Y_{ij}^{\dquark\prime} \ovE{Q_{Li}} \phi \dquark_{Rj}^{\prime} - Y_{ij}^{\uquark} \ovE{Q_{Li}} \phi^{\ast} \uquark_{Rj} + \hc \eqcm
+  \Lagrangian{Y}{\quark} = -Y_{ij}^{\dquark\prime} \ovE{Q_{\text{L}i}} \phi \dquark_{\text{R}j}^{\prime} - Y_{ij}^{\uquark} \ovE{Q_{\text{L}i}} \phi^{\ast} \uquark_{\text{R}j} + \hc \eqcm
 \end{equation}
 %
-with $Y_{ij}^{\quark}$ denoting the Yukawa couplings, $Q_{Li}$ being the
-left-handed quark doublets, and $\quark_{Rj}$ the right-handed singlets. 
+with $Y_{ij}^{\quark}$ denoting the Yukawa couplings, $Q_{\text{L}i}$ being the
+left-handed quark doublets, and $\quark_{\text{R}j}$ the right-handed singlets. 
 
 Being massless prior to this, the charged leptons, quarks, and the $\Wpm$ and
-$\Zboson$ bosons obtain masses after spontaneously breaking the symmetry and
-substituting the Higgs field by its \VEV
+$\Zboson$ bosons obtain masses after the spontaneous breaking of the symmetry
+and substituting the Higgs field by its \VEV
 %
 \begin{equation}\label{sec:cpv_theory:flavour_physics:ckm_matrix:higgs_vev}
   \langle\phi\rangle = \frac{1}{\sqrt{2}} \begin{pmatrix}
@@ -44,29 +44,29 @@ substituting the Higgs field by its \VEV
   \end{pmatrix}\eqpd
 \end{equation}
 %
-The Yukawa couplings $Y_{ij}$ are not constraint by the theory thus are
+The Yukawa couplings $Y_{ij}$ are not constraint by the theory and thus are
 completely arbitrary, leading to most of the free \SM parameters. The coupling
-matrices are a priori non-diagonal in the weak interaction basis, but in general
+matrices are a priori non-diagonal in the weak interaction base, but in general
 can be diagonalised by bi-unitary transformations. As a consequence of the
 diagonalisation the quark fields are transformed as well into the mass
 eigenstates basis allowing for flavour-changing currents through $\Wpm$ boson
 exchange
 %
 \begin{equation}
-  \frac{-g}{\sqrt{2}} \left( \uquarkbar, \cquarkbar, \tquarkbar \right)_L \gamma^\mu \Wp_\mu \VCKM 
+  \frac{-g}{\sqrt{2}} \left( \uquarkbar, \cquarkbar, \tquarkbar \right)_{\text{L}} \gamma^\mu \Wp_\mu \VCKM 
   \begin{pmatrix}
     \dquark \\
     \squark \\
     \bquark \\
-  \end{pmatrix}_L \eqcm
+  \end{pmatrix}_{\text{L}} \eqcm
 \end{equation}
 %
 with the weak charge $g$ and the transformation matrix denoted $\VCKM$
 \cite{Cabibbo:1963yz,Kobayashi:1973fv}. The \CKM matrix elements $\VCKM^{ij}$
 connect an up-type quark $i$ to a down-type quark $j$ with a probability
 proportional to $\vert\VCKM^{ij}\vert^2$. By definition, the $3 \times 3$ \CKM
-matrix is unitary, $\VCKM\VCKM^\dagger=1$, and complex, with $\num{18}$ free
-parameters. Following the unitarity conditions
+matrix is unitary, $\VCKM\VCKM^\dagger=\unity$, and complex, with $\num{18}$
+free parameters. Following the unitarity conditions
 %
 \begin{equation}\label{sec:cpv_theory:flavour_physics:ckm_matrix:unitarity_relations}
   \sum_i V_{ij}^{\phantom{\ast}} V_{ik}^{\ast} = \delta_{jk} \eqand
@@ -74,14 +74,14 @@ parameters. Following the unitarity conditions
 \end{equation}
 %
 and a redefinition of arbitrary quark phases, reduces the number of parameters
-to three angles and one complex phase. The matrix elements are denoted
+to three angles and one complex phase. The matrix elements are denoted as
 %
 \begin{equation}
   \begin{pmatrix}
     \dquark^\prime \\
     \squark^\prime \\
     \bquark^\prime \\
-  \end{pmatrix}_L
+  \end{pmatrix}_{\text{L}}
   = 
   \begin{pmatrix}
     \Vud & \Vus & \Vub \\
@@ -92,27 +92,27 @@ to three angles and one complex phase. The matrix elements are denoted
     \dquark \\
     \squark \\
     \bquark \\
-  \end{pmatrix}_L
+  \end{pmatrix}_{\text{L}}
   = \VCKM
   \begin{pmatrix}
     \dquark \\
     \squark \\
     \bquark \\
-  \end{pmatrix}_L
+  \end{pmatrix}_{\text{L}}
 \end{equation}
 %
 and can be expressed as a complex rotation matrix with the three angles
 $\theta_{12}$, $\theta_{13}$, $\theta_{23}$ $\in {[0, \pi/2]}$ and a phase
-$\delta \in {]-\pi, \pi]}$. With the definition of $s_{ij} \equiv \sin
+$\delta \in {]}-\pi, \pi{]}$. With the definition of $s_{ij} \equiv \sin
 \theta_{ij}$ and $c_{ij} \equiv \cos \theta_{ij}$, an exact representation
 \cite{Chau:1984fp} of the \CKM matrix can be written as
 %
 \begin{multline}
   \VCKM = \\
   \begin{pmatrix}
-    c_{12} c_{13}                                                   & s_{12} c_{13}                                                 & s_{13} \exponential{-i\delta} \\
-    -s_{12} c_{23} - c_{12} s_{23} s_{13} \exponential{i\delta}     & c_{12} c_{23} - s_{12} s_{23} s_{13} \exponential{i\delta}    & s_{23} c_{13}                 \\
-    s_{12} s_{23} - c_{12} c_{23} s_{13} \exponential{i\delta}      & -c_{12} s_{23} - s_{12} c_{23} s_{13} \exponential{i\delta}   & c_{23} c_{13}                 \\
+    c_{12} c_{13}                                                   & s_{12} c_{13}                                                 & s_{13} \exponential{-\ii\delta} \\
+    -s_{12} c_{23} - c_{12} s_{23} s_{13} \exponential{\ii\delta}   & c_{12} c_{23} - s_{12} s_{23} s_{13} \exponential{\ii\delta}  & s_{23} c_{13}                   \\
+    s_{12} s_{23} - c_{12} c_{23} s_{13} \exponential{\ii\delta}    & -c_{12} s_{23} - s_{12} c_{23} s_{13} \exponential{\ii\delta} & c_{23} c_{13}                   \\
   \end{pmatrix}\eqpd
 \end{multline}
 %
@@ -122,13 +122,13 @@ of the measured hierarchy of the matrix elements, where the diagonal elements
 are of $\order{1}$, while the off-diagonal elements follow $\vert\Vub\vert^2 \ll
 \vert\Vcb\vert^2 \ll \vert\Vus\vert^2 \ll 1$ or in terms of the rotation angles
 $s_{12} \ll s_{23} \ll s_{12} \ll 1$. Exploiting this hierarchy in terms of an
-expansion with leads to the Wolfenstein parametrisation
+expansion leads to the Wolfenstein parametrisation
 %
 \begin{equation}  
   \VCKM = \begin{pmatrix}
-    1 - \sfrac{\lambda^2}{2}        & \lambda                     & A \lambda^3 (\rho - i\eta)  \\
-    -\lambda                        & 1 - \sfrac{\lambda^2}{2}    & A \lambda^2                 \\
-    A \lambda^3 (1 - \rho - i\eta)  & - A \lambda^2               & 1                           \\
+    1 - \sfrac{\lambda^2}{2}         & \lambda                  & A \lambda^3 (\rho - \ii\eta) \\
+    -\lambda                         & 1 - \sfrac{\lambda^2}{2} & A \lambda^2                  \\
+    A \lambda^3 (1 - \rho - \ii\eta) & - A \lambda^2            & 1                            \\
   \end{pmatrix}
   + \order{\lambda^4}
 \end{equation}
@@ -136,7 +136,7 @@ expansion with leads to the Wolfenstein parametrisation
 written in terms of
 %
 \begin{equation}
-  s_{12} = \lambda, \eqspace s_{23} = A \lambda^2, \eqand s_{13}\exponential{i\delta} = A \lambda^3 (\rho + i \eta) \eqpd
+  s_{12} = \lambda, \eqspace s_{23} = A \lambda^2, \eqand s_{13}\exponential{\ii\delta} = A \lambda^3 (\rho + \ii\eta) \eqpd
 \end{equation}
 %
 The parameters are measured in the \SM to $\lambda \approx 0.23$, $A \approx
@@ -162,23 +162,23 @@ The angles and the sides of the triangle can be expressed in terms of the matrix
 elements as
 %
 \begin{equation}
-  \alpha = \arg\left(-\frac{\Vtd^{\phantom{\ast}}\Vtb^{\ast}}{\Vud^{\phantom{\ast}}\Vub^{\ast}}\right),\eqthinspace 
-  \beta =  \arg\left(-\frac{\Vcd^{\phantom{\ast}}\Vcb^{\ast}}{\Vtd^{\phantom{\ast}}\Vtb^{\ast}}\right),\eqthinspace 
-  \gamma = \arg\left(-\frac{\Vud^{\phantom{\ast}}\Vub^{\ast}}{\Vcd^{\phantom{\ast}}\Vcb^{\ast}}\right)
+  \alpha = \arg\left(-\frac{\Vtd^{\phantom{\ast}}\Vtb^{\ast}}{\Vud^{\phantom{\ast}}\Vub^{\ast}}\right)\eqcm\eqthinspace 
+  \beta =  \arg\left(-\frac{\Vcd^{\phantom{\ast}}\Vcb^{\ast}}{\Vtd^{\phantom{\ast}}\Vtb^{\ast}}\right)\eqcm\eqthinspace 
+  \gamma = \arg\left(-\frac{\Vud^{\phantom{\ast}}\Vub^{\ast}}{\Vcd^{\phantom{\ast}}\Vcb^{\ast}}\right)\eqcm
 \end{equation}
 %
 and
 %
 \begin{equation}
-  R_t = \left| \frac{\Vtd^{\phantom{\ast}}\Vtb^{\ast}}{\Vcd^{\phantom{\ast}}\Vcb^{\ast}} \right|,\eqspace
-  R_u = \left| \frac{\Vud^{\phantom{\ast}}\Vub^{\ast}}{\Vcd^{\phantom{\ast}}\Vcb^{\ast}} \right|,\eqspace
-  R_c = \left| \frac{\Vcd^{\phantom{\ast}}\Vcb^{\ast}}{\Vcd^{\phantom{\ast}}\Vcb^{\ast}} \right|
+  R_t = \left| \frac{\Vtd^{\phantom{\ast}}\Vtb^{\ast}}{\Vcd^{\phantom{\ast}}\Vcb^{\ast}} \right|\eqcm\eqspace
+  R_u = \left| \frac{\Vud^{\phantom{\ast}}\Vub^{\ast}}{\Vcd^{\phantom{\ast}}\Vcb^{\ast}} \right|\eqcm\eqspace
+  R_c = \left| \frac{\Vcd^{\phantom{\ast}}\Vcb^{\ast}}{\Vcd^{\phantom{\ast}}\Vcb^{\ast}} \right|\eqcm
 \end{equation}
 %
 which simplifies to
 %
 \begin{equation}
-  R_t \exponential{-i\beta} + R_u \exponential{-i\gamma} = 1 \eqpd
+  R_t \exponential{-\ii\beta} + R_u \exponential{-\ii\gamma} = \unity \eqpd
 \end{equation}
 %
 Considering various measurements of parameters of the ${(\uquark,\dquark)}$
@@ -214,18 +214,18 @@ expressed by the decay amplitudes
 %
 where \Hamiltonian{}{} is the Hamiltonian governing the weak interaction.
 
-Under the premise of $(\CP)^2 = 1$ the initial and final states transform under
+Under the premise of $(\CP)^2 = \unity$ the initial and final states transform under
 the \CP operation as
 %
 \begin{equation}
   \begin{alignedat}{2}
-    & \CP\ket{\Meson}    = \exponential{+i\zeta_{M}} \ket{\Mesonbar}, && \CP \ket{f}        = \exponential{+i\zeta_{f}} \ket{\ovE{f}}, \\
-    & \CP\ket{\Mesonbar} = \exponential{-i\zeta_{M}} \ket{\Meson}   , &\eqand& \CP \ket{\ovE{f}}  = \exponential{-i\zeta_{f}} \ket{f},
+    & \CP\ket{\Meson}    = \exponential{+\ii\zeta_{M}} \ket{\Mesonbar}, && \CP \ket{f}        = \exponential{+\ii\zeta_{f}} \ket{\ovE{f}}, \\
+    & \CP\ket{\Mesonbar} = \exponential{-\ii\zeta_{M}} \ket{\Meson}   , &\eqand& \CP \ket{\ovE{f}}  = \exponential{-\ii\zeta_{f}} \ket{f},
   \end{alignedat}
 \end{equation}
 %
 introducing phases $\zeta_M$ and $\zeta_f$. If the \CP symmetry is conserved
-$\ovE{A}_{\ovE{f}} = \exponential{i(\zeta_f - \zeta_M)} A_f$.
+$\ovE{A}_{\ovE{f}} = \exponential{\ii(\zeta_f - \zeta_M)} A_f$.
 
 % ------------------------------------------------------------------------------
 \subsection{Oscillations of neutral B mesons}
@@ -237,7 +237,7 @@ states has to be studied. Given a pure \Mesonz or \Mesonzbar initial state at
 $t=0$, it will evolve in time following
 %
 \begin{equation}
-  \ket{\Psi(t)} = \psi_1(t) \ket{\Mesonz} + \psi_2(t) \ket{\Mesonzbar}
+  \ket{\Psi(t)} = \psi_1(t) \ket{\Mesonz} + \psi_2(t) \ket{\Mesonzbar} \eqcm
 \end{equation}
 %
 before decaying into final states. This time evolution can be described by a
@@ -250,15 +250,15 @@ Schrödinger-like equation,
     \psi_2
   \end{pmatrix}
   =
-  \mathbf{H}
+  \Hamiltonian{}{}
   \begin{pmatrix}
     \psi_1 \\
     \psi_2
   \end{pmatrix}
   =
   \begin{pmatrix}
-    m_{11} - \frac{i}{2} \Gamma_{11}    & m_{12} - \frac{i}{2} \Gamma_{12} \\
-    m_{21} - \frac{i}{2} \Gamma_{21}    & m_{22} - \frac{i}{2} \Gamma_{22} \\
+    m_{11} - \frac{\ii}{2} \Gamma_{11}    & m_{12} - \frac{\ii}{2} \Gamma_{12} \\
+    m_{21} - \frac{\ii}{2} \Gamma_{21}    & m_{22} - \frac{\ii}{2} \Gamma_{22} \\
   \end{pmatrix}
   \begin{pmatrix}
     \psi_1 \\
@@ -268,10 +268,10 @@ Schrödinger-like equation,
 %
 following the Weisskopf-Wigner approximation
 \cite{Weisskopf:1930au,Weisskopf:1930ps} with two Hermitian $2\times2$ matrices
-$\mathbf{M}$ and $\mathbf{\Gamma}$, where the Hamiltonian
+$M$ and $\Gamma$, where the Hamiltonian
 %
 \begin{equation}
-  \mathbf{H} = \mathbf{M} - \frac{i}{2} \mathbf{\Gamma}
+  \Hamiltonian{}{} = M - \frac{\ii}{2} \Gamma
 \end{equation}
 %
 is not Hermitian, as otherwise the meson states would just oscillate without
@@ -283,7 +283,7 @@ Diagonalising the Hamiltonian yields eigenstates with well-defined masses
 %
 \begin{equation}\label{eq:cpv_theory:flavour_physics:bmixing:mass_eigenstates}
   \begin{split}
-    \ket{\Mesonz_L} &= p \ket{\Mesonz} + q \ket{\Mesonzbar}\eqand \\
+    \ket{\Mesonz_L} &= p \ket{\Mesonz} + q \ket{\Mesonzbar}\eqcm\eqand \\
     \ket{\Mesonz_H} &= p \ket{\Mesonz} - q \ket{\Mesonzbar}\eqcm
   \end{split}
 \end{equation}
@@ -293,28 +293,28 @@ $\Meson_H$ the heavy eigenstate. The correspondent eigenvalues are
 %
 \begin{equation}
   \begin{split}
-    \mu_H &= m_H - \frac{i}{2} \Gamma_H\eqcm\eqand \\
-    \mu_L &= m_L - \frac{i}{2} \Gamma_L\eqpd
+    \mu_H &= m_H - \frac{\ii}{2} \Gamma_H\eqcm\eqand \\
+    \mu_L &= m_L - \frac{\ii}{2} \Gamma_L\eqpd
   \end{split}
 \end{equation}
 %
 with the definitions of the average mass and decay width
 %
 \begin{equation}
-  m = \frac{m_H + m_L}{2} \eqand \Gamma = \frac{\Gamma_H + \Gamma_L}{2}\eqcm
+  m = \frac{m_H + m_L}{2} \eqcm \eqand \Gamma = \frac{\Gamma_H + \Gamma_L}{2}\eqcm
 \end{equation}
 %
 and the mass and decay width differences
 %
 \begin{equation}
-  \DM = m_H - m_L \eqand \DG = \Gamma_H - \Gamma_L\eqpd
+  \DM = m_H - m_L \eqcm \eqand \DG = \Gamma_H - \Gamma_L\eqpd
 \end{equation}
 %
 The mass difference $\DM$ of the two mass eigenstates is by definition positive
 while the sign of $\DG$ has to be determined experimentally.
 %
 % \begin{equation}
-%   \left(\frac{q}{p}\right)^2 = \frac{m_{12}^{\ast} - \frac{i}{2} \Gamma_{12}^{\ast}}{m_{12} - \frac{i}{2} \Gamma_{12}}
+%   \left(\frac{q}{p}\right)^2 = \frac{m_{12}^{\ast} - \frac{\ii}{2} \Gamma_{12}^{\ast}}{m_{12} - \frac{\ii}{2} \Gamma_{12}}
 % \end{equation}
 %
 
@@ -330,8 +330,8 @@ either as a pure $\ket{\Mesonz}$ or $\ket{\Mesonzbar}$ state is now described by
 %
 \begin{equation}
   \begin{split}
-    \ket{\Mesonz_{\text{phys}} (t)}    &= g_{+}(t) \ket{\Mesonz}    - \frac{q}{p} g_{-}(t) \ket{\Mesonzbar} \\
-    \ket{\Mesonzbar_{\text{phys}} (t)} &= g_{+}(t) \ket{\Mesonzbar} - \frac{p}{q} g_{-}(t) \ket{\Mesonz}
+    \ket{\Mesonz_{\text{phys}} (t)}    &= g_{+}(t) \ket{\Mesonz}    - \frac{q}{p} g_{-}(t) \ket{\Mesonzbar} \eqcm \eqand\\
+    \ket{\Mesonzbar_{\text{phys}} (t)} &= g_{+}(t) \ket{\Mesonzbar} - \frac{p}{q} g_{-}(t) \ket{\Mesonz}    \eqcm
   \end{split}
 \end{equation}
 %
@@ -340,11 +340,11 @@ where the coefficients $g_{\pm}$ are defined as
 \begin{equation}
   g_{\pm}(t) \equiv 
   \frac{1}{2} \left[
-    \exponential{-i \mu_H t} \pm \exponential{-i \mu_L t}
+    \exponential{-\ii \mu_H t} \pm \exponential{-\ii \mu_L t}
   \right]
   =
   \frac{1}{2} \left[
-    \exponential{-i m_H t} \exponential{-\frac{1}{2} \Gamma_H t} \pm \exponential{-i m_L t} \exponential{-\frac{1}{2} \Gamma_L t}
+    \exponential{-\ii m_H t} \exponential{-\frac{1}{2} \Gamma_H t} \pm \exponential{-\ii m_L t} \exponential{-\frac{1}{2} \Gamma_L t}
   \right]\eqpd
 \end{equation}
 %
@@ -352,7 +352,7 @@ The decay rate of a meson produced at $t=0$ to a final state $f$ at time $t$
 is given by the matrix element
 %
 \begin{equation}
-  \Gamma \left(\Meson(t)\to f\right)= \bigl\vert \matrixelement{f}{T}{\Meson} \bigr\vert^2
+  \Gamma \left(\Meson(t)\to f\right)= \bigl\vert \matrixelement{f}{T}{\Meson} \bigr\vert^2 \eqcm
 \end{equation}
 %
 which yields the four differential decay rates  
@@ -377,23 +377,23 @@ which yields the four differential decay rates
 where the definitions
 %
 \begin{equation}\label{eq:cpv_theory:flavour_physics:time_evolution:lambdaf}
-  \lambda_f               \equiv \frac{1}{\ovE{\lambda}_f}   = \frac{q}{p} \frac{\ovE{A}_f}{A_f} \eqand 
+  \lambda_f               \equiv \frac{1}{\ovE{\lambda}_f}   = \frac{q}{p} \frac{\ovE{A}_f}{A_f}                 \eqcm \eqand 
   \ovE{\lambda}_{\ovE{f}} \equiv \frac{1}{\lambda_{\ovE{f}}} = \frac{p}{q} \frac{A_{\ovE{f}}}{\ovE{A}_{\ovE{f}}}
 \end{equation}
 %
-are utilised.
+are used.
 
 The \CP coefficients $D_i$, $C_i$, and $S_i$ have to satisfy $D_i^2 + C_i^2 +
 S_i^2 = 1$ and are defined as
 %
 \begin{equation}\label{eq:cpv_theory:flavour_physics:time_evolution:cp_coefficients}
   \begin{alignedat}{2}
-    &D_f = \frac{2 \Re \lambda_f}{1+\abs{\lambda_f}^2}, \eqspace 
+    &D_f = \frac{2 \Re \lambda_f}      {1+\abs{\lambda_f}^2},   \eqspace 
     &C_f = \frac{1 - \abs{\lambda_f}^2}{1 + \abs{\lambda_f}^2}, \eqspace 
-    &S_f = \frac{2 \Im \lambda_f}{1+\abs{\lambda_f}^2} \\
-    &D_{\ovE{f}} = \frac{2 \Re \ovE{\lambda}_{\ovE{f}}}{1+\abs{\ovE{\lambda}_{\ovE{f}}}^2}, \eqspace 
+    &S_f = \frac{2 \Im \lambda_f}      {1+\abs{\lambda_f}^2}    \eqcm \eqand \\
+    &D_{\ovE{f}} = \frac{2 \Re \ovE{\lambda}_{\ovE{f}}}      {1+\abs{\ovE{\lambda}_{\ovE{f}}}^2},   \eqspace 
     &C_{\ovE{f}} = \frac{1 - \abs{\ovE{\lambda}_{\ovE{f}}}^2}{1 + \abs{\ovE{\lambda}_{\ovE{f}}}^2}, \eqspace 
-    &S_{\ovE{f}} = \frac{2 \Im \ovE{\lambda}_{\ovE{f}}}{1+\abs{\ovE{\lambda}_{\ovE{f}}}^2}\eqpd \\
+    &S_{\ovE{f}} = \frac{2 \Im \ovE{\lambda}_{\ovE{f}}}      {1+\abs{\ovE{\lambda}_{\ovE{f}}}^2}    \eqpd \\
   \end{alignedat}
 \end{equation}
 %
@@ -425,7 +425,7 @@ the order of $\lambda^2$ and no direct \CP violation is expected.
 \subsubsection[\CP violation in mixing]{\CPbfsf violation in mixing}
 \label{sec:cpv_theory:flavour_physics:cpv_classification:mixing}
 
-The second class of \CP violation is denoted \CP violation in the mixing and
+The second class of \CP violation is denoted \CP violation in the mixing. It
 occurs if
 %
 \begin{equation}
@@ -433,13 +433,13 @@ occurs if
 \end{equation}
 %
 A potential \CP violation in the mixing of $\BdBdbar$ mesons was studied at the
-\BFactories by measuring $\abs{\sfrac{q}{p}} - 1$. The final \BFactory average
-shows no significant deviation from zero $\abs{\sfrac{q}{p}} - 1 =
-\num{0.3 +- 2.8 e-3}$ \cite{Bevan:2014iga}. The recent measurement of the
+\BFactories by measuring $\absinline{\sfrac{q}{p}} - 1$. The final \BFactory
+average shows no significant deviation from zero: $\absinline{\sfrac{q}{p}} - 1
+= \num{0.3 +- 2.8 e-3}$ \cite{Bevan:2014iga}. The recent measurement of the
 semileptonic \CP asymmetry $a_{\text{sl}}^{\dquark}$ by the \acs*{LHCb}
 collaboration confirms the quoted result. The measurement yields
-$a_{\text{sl}}^{\dquark} = \bigl(-0.02 \pm 0.19 \statp \pm 0.30 \systp \bigr)\si{\percent}$
-\cite{Aaij:2014nxa} that can be expressed as
+$a_{\text{sl}}^{\dquark} = \bigl(-0.02 \pm 0.19 \statp \pm 0.30 \systp
+\bigr)\si{\percent}$ \cite{Aaij:2014nxa} that can be expressed as
 %
 \begin{equation}
   \abs{\frac{q}{p}} - 1 = \bigl(0.1 \pm 0.9 \statp \pm 1.4 \systp \bigr) \times 10^{-3} \eqcm
@@ -459,7 +459,7 @@ The third kind of \CP violation only occurs in decays where both \CP conjugate
 initial states \Mesonz and \Mesonzbar decay into a common final state $f$. Then
 an interference between a decay without mixing, $\decay{\Mesonz}{f}$, and a
 decay with mixing, $\decay{\Mesonz}{\decay{\Mesonzbar}{f}}$, leads to \CP
-violation in the interference between both amplitudes.
+violation in the interference between both amplitudes:
 %
 \begin{equation}
   \Im \lambda_f \neq 0   

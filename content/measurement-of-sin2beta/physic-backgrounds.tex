@@ -17,26 +17,29 @@ examined in
 \subsection{Physics backgrounds}
 \label{sec:measurement_of_sin2beta:physic_backgrounds:physic_backgrounds}
 
-To ensure that the background consists of combinatorial backgrounds, and that
-exclusive backgrounds are negligible, possible physics backgrounds are studied
-with simulated data (see \cref{sec:measurement_of_sin2beta:data_preparation:datasamples:mc}). 
+To ensure that the background consists only of combinatorial backgrounds, and
+that exclusive backgrounds are negligible, possible physics backgrounds are
+studied with simulated data (see
+\cref{sec:measurement_of_sin2beta:data_preparation:datasamples:mc}).
 
 Using the true particle identities from \MC reveals the existence of remnants
-from physic backgrounds in the $\inclJPsi$ and the $\BdToJpsiX$ \MC samples. In
-the $\BdToJpsiX$, around $\SI{0.04}{\percent}$ $\BdToJpsiKstar$ candidates
-survive the applied selection criteria compared to $\SI{0.5}{\percent}$ signal
-events. In the $\inclJPsi$ sample $\SI{0.0005}{\percent}$ $\BdToJpsiKstar$,
+from physics backgrounds in the $\inclJPsi$ and the $\BdToJpsiX$ \MC samples.
+
+Compared to the number of all reconstructed events, around $\SI{0.04}{\percent}$
+$\BdToJpsiKstar$ candidates survive the applied selection criteria compared to
+$\SI{0.5}{\percent}$ signal events in the sample of $\BdToJpsiX$ decays. In the
+$\inclJPsi$ sample $\SI{0.0005}{\percent}$ $\BdToJpsiKstar$,
 $\SI{0.0002}{\percent}$ $\BsToJpsiKS$, and $\SI{0.0002}{\percent}$
 $\LbToJpsiLambda$ background events contribute, compared to
 $\SI{0.01}{\percent}$ $\BdToJpsiKS$ candidates.
 
-Since the production of $\Bs$ is a factor $\num{100}$ less frequent than the
-$\Bd$ and reconstructed $\BsToJpsiKS$ candidates lie outside the nominal mass
-range, we neglect possible contributions. While $\BdToJpsiKstar$ background
-results from kaon-pion mis-identification, $\LbToJpsiLambda$ candidates are
-found in the sample due to a proton-pion mis-identification. Their expected
-contribution in the data sample is further studied by using signal \MC samples
-of $\BdToJpsiKstar$ and $\LbToJpsiLambda$.
+Since the production of $\Bs$ mesons is a factor $\num{100}$ less frequent than
+that of the lighter $\Bd$ mesons and reconstructed $\BsToJpsiKS$ candidates lie
+outside the nominal mass range, no contributions are expected. While
+$\BdToJpsiKstar$ background results from kaon-pion mis-identification,
+$\LbToJpsiLambda$ candidates are found in the sample due to a proton-pion
+mis-identification. Their expected contribution in the data sample is further
+studied by using signal \MC samples of $\BdToJpsiKstar$ and $\LbToJpsiLambda$.
 
 \subsubsection{Physics backgrounds from $\mathbfsfit{\kaon}$-$\mathbfsfit{\pion}$ mis-ID}
 \label{sec:measurement_of_sin2beta:physic_backgrounds:physic_backgrounds:kstar}
@@ -66,7 +69,7 @@ more than $\SI{50}{\percent}$ to $\SI{0.15}{\percent}$. After applying the full
 offline selection, including the tagging efficiency, and scaling the sample to
 correspond to the collected integrated luminosity in data, $\num{120}$
 $\LbToJpsiLambda$ candidates remain. Therefore, we expect a $\SI{0.2}{\percent}$
-contribution of $\LbToJpsiLambda$ background candidates in our nominal data
+contribution of $\LbToJpsiLambda$ background candidates in the nominal data
 sample.
 
 % ------------------------------------------------------------------------------
@@ -75,18 +78,19 @@ sample.
 
 As shown in the previous section any physics induced background in the data
 sample can be neglected and the remaining background candidates are assumed to
-be purely of combinatorial origin. Following this, one can conclude that all
-flavour tagging decisions provided for background candidates are randomly
-distributed. This assumption can be tested in two ways: counting the
-time-integrated numbers of \Bd and \Bdbar tagged background candidates or
-checking for a non-vanishing time-dependent tag asymmetry in the background. 
+be purely of combinatorial origin. Following this, all flavour tagging decisions
+provided for background candidates should be randomly distributed. This
+assumption can be tested in two ways: counting the time-integrated numbers of
+\Bd and \Bdbar tagged background candidates or checking for a non-vanishing
+time-dependent tag asymmetry in the background.
 
 The tests are performed independently for the \catDD and \catLL sub sample as
 well as for both employed tagging algorithms (\OS and \SSpi). In order to study
 the background sample an unbinned maximum likelihood fit is performed on the \Bd
-mass distribution and background \sWeights are computed. The signal component is
-modelled using an Ipatia \PDF while the background component is described by an
-exponential \PDF (\cf \cref{sec:measurement_of_sin2beta:likelihood_fit:model:mass}).
+mass distribution and background \sWeights \cite{Pivk:2004ty} are computed. The
+signal component is modelled using an Ipatia \PDF while the background component
+is described by an exponential \PDF (\cf
+\cref{sec:measurement_of_sin2beta:likelihood_fit:model:mass}).
 
 % ..............................................................................
 \subsubsection{Time integrated background asymmetry}
@@ -99,27 +103,36 @@ The time-integrated asymmetry
 \end{equation}
 %
 is computed for all four sub samples using the \sweighted dataset and the
-results are collected in 
+results are collected in
 \cref{tab:measurement_of_sin2beta:physic_backgrounds:tagging_asymmetries:time_integrated}. 
-It can be concluded that except for the \catDD \OS subsample no significant
-asymmetry is present, while the result for this single category might be
-explained by a statistical fluctuation. A vanishing time-integrated asymmetry
-does not eliminate the possibility of a time-dependent asymmetry, thus further
-studies are necessary.
+Compared to the time-integrated \CP asymmetry (\cf 
+\cref{eq:measurement_of_sin2beta:systematics:cross_checks:time_integrated:cp_asym}) 
+in the signal component in the order of $\order{\num{0.1}}$ the time-integrated
+background tagging asymmetry is small and except for the \catDD \OS subsample
+the results are not significant. A vanishing time-integrated asymmetry does not
+eliminate the possibility of a time-dependent asymmetry, thus further studies
+are necessary.
 %
 \begin{table}[h]
   \centering
   \caption{Time-integrated asymmetry of \sweighted background distributions for
   \catDD and \catLL \OS and \SSpi tagged events.}
   \label{tab:measurement_of_sin2beta:physic_backgrounds:tagging_asymmetries:time_integrated}
-  \begin{tabular}{llr@{$\,\pm\,$}l}
+  \sisetup{
+    table-number-alignment    = center,
+    table-figures-integer     = 1,
+    table-figures-decimal     = 3,
+    table-figures-uncertainty = 3,
+    table-sign-mantissa,
+  }
+  \begin{tabular}{llS}
     \toprule
-    \multicolumn{2}{c}{category} & \multicolumn{2}{c}{$\Asym{\Bkg}{\text{int}}$}\\
+    \multicolumn{2}{c}{category}           & {$\Asym{\Bkg}{\text{int}}$}\\
     \midrule
-    \multirow{2}{*}{\catDD} & \acs*{OS}    & $0.017$     & $0.005$ \\
-                            & \acs*{SSpi}  & $-0.016$    & $0.011$ \\
-    \multirow{2}{*}{\catLL} & \acs*{OS}    & $-0.005$    & $0.012$ \\
-                            & \acs*{SSpi}  & $0.044$     & $0.034$ \\
+    \multirow{2}{*}{\catDD} & \acs*{OS}    &  0.017 +- 0.005 \\
+                            & \acs*{SSpi}  & -0.016 +- 0.011 \\
+    \multirow{2}{*}{\catLL} & \acs*{OS}    & -0.005 +- 0.012 \\
+                            & \acs*{SSpi}  &  0.044 +- 0.034 \\
     \bottomrule
   \end{tabular}
 \end{table}
@@ -135,13 +148,15 @@ The decay time dependent background tagging asymmetry is defined similar to
   \Asym{\Bkg}{}(\obsTime) = \frac{N_{\Bkg}^{\Bdbar}(\obsTime) - N_{\Bkg}^{\Bd}(\obsTime)}{N_{\Bkg}^{\Bdbar}(\obsTime) + N_{\Bkg}^{\Bd}(\obsTime)}\eqpd
 \end{equation}
 %
-At first histograms are consulted to check for the null-hypothesis using a
-$\chisq$-test. The test is performed on the background \sweighted dataset as
-well as on a background \sweighted cocktail \MC sample built from signal \MC and
-background candidates from a \ToyMC sample generated with randomly distributed
-tag decisions. Finally, a likelihood fit to the weighted background sample is
-performed using a \ac{PDF} $\ProbArg{\text{TagAsym}}{}{\obsTime, \tagdecision}$
-modelling a potential tag asymmetry.
+At first, histograms of $\Asym{\Bkg}{}$ in bins of the decay time are consulted
+to check for the null-hypothesis of a vanishing asymmetry using a $\chisq$-test.
+The test is performed on the background \sweighted dataset as well as on a
+background \sweighted cocktail \MC sample. The latter is built from signal \MC
+and background candidates from a \ToyMC sample generated with randomly
+distributed tag decisions. Finally, a likelihood fit to the decay time
+distribution of the background \sweighted dataset is performed using a \ac{PDF}
+$\ProbArg{\text{TagAsym}}{}{\obsTime, \tagdecision}$ modelling a potential tag
+asymmetry.
 %
 \begin{equation}\label{eq:measurement_of_sin2beta:physic_backgrounds:tagging_asymmetries:time_dependent:pdf}
   \ProbArg{\text{TagAsym}}{}{\obsTime, \tagdecision} \propto \exponential{- \frac{t}{\tau}} \left( 1 + \tagdecision \Asym{}{} \right)
@@ -149,10 +164,11 @@ modelling a potential tag asymmetry.
 
 \paragraph{Histograms of the background candidates} binned in the reconstructed
 decay time are created for \catDD/\catLL candidates with \OS and \SSpi tag
-decisions. This is done for the \sweighted data sample and for a cocktail \MC
-sample, where the \sWeights are extracted using the same model as used before.
+decisions. This is done for the background \sweighted data sample and for a
+cocktail \MC sample, where the \sWeights are extracted using the same model as
+used before.
 \Cref{fig:measurement_of_sin2beta:physic_backgrounds:tagging_asymmetries:data,fig:measurement_of_sin2beta:physic_backgrounds:tagging_asymmetries:toymc} 
-show the histograms. The corresponding $p$-values from a $\chisq$-test are
+show the histograms. The corresponding $p$-values from the $\chisq$-test are
 summarised in \cref{tab:measurement_of_sin2beta:physic_backgrounds:tagging_asymmetries:time_dependent:chisq}.
 %
 \begin{table}[h]
@@ -161,9 +177,14 @@ summarised in \cref{tab:measurement_of_sin2beta:physic_backgrounds:tagging_asymm
   asymmetry. The values were computed on \sweighted background distributions for
   \catDD and \catLL \OS and \SSpi tagged events.}
   \label{tab:measurement_of_sin2beta:physic_backgrounds:tagging_asymmetries:time_dependent:chisq}
+  \sisetup{
+    table-number-alignment    = center,
+    table-figures-integer     = 1,
+    table-figures-decimal     = 3,
+  }
   \begin{tabular}{llSS}
     \toprule
-                                 &        & \multicolumn{2}{c}{$p$-value} \\
+                        &        & \multicolumn{2}{c}{$p$-value} \\
     \multicolumn{2}{c}{category} & {data} & {cocktail \acs*{MC}} \\
     \midrule
     \multirow{2}[2]{*}{\catDD} & \acs*{OS}    &  0.100  &  0.525 \\
@@ -195,7 +216,7 @@ the left (right) side.}
 \includegraphics[width=0.49\textwidth]{private/content/measurement-of-sin2beta/figs/tagged_bkg_toymc_dd_ss.pdf}
 \includegraphics[width=0.49\textwidth]{private/content/measurement-of-sin2beta/figs/tagged_bkg_toymc_ll_os.pdf}
 \includegraphics[width=0.49\textwidth]{private/content/measurement-of-sin2beta/figs/tagged_bkg_toymc_ll_ss.pdf}
-\caption{Tagging asymmetry $\Asym{}{}(\obsTime)$ in cocktail \MC with a signal
+\caption{Tagging asymmetry $\Asym{}{}(\obsTime)$ in cocktail \MC with signal
 candidates taken from \BdToJpsiKS signal \MC and background candidates from a
 \ToyMC sample. The binning of the $x$-axis is chosen logarithmic. The top
 (bottom) plots show \catDD (\catLL) candidates, while \OS (\SSpi) tagged
@@ -207,7 +228,7 @@ candidates are depicted in the left (right) side.}
 conducted in order to exploit the per-event tag information. To do so the
 distributions are fitted using a \ac{PDF} as presented in
 \cref{eq:measurement_of_sin2beta:physic_backgrounds:tagging_asymmetries:time_dependent:pdf} 
-where a potential asymmetry in data has been modelled. The parametrisation uses
+where a potential asymmetry has been modelled. The parametrisation uses
 the sum of three (two in case of the \catDD \SSpi subsample) exponential
 \acp{PDF} with independent pseudo-lifetimes $\tau_i$ and individual asymmetry
 parameters $\Asym{i}{}$.
@@ -217,14 +238,26 @@ parameters $\Asym{i}{}$.
 \caption{Fit results of the asymmetries $\Asym{i}{}$ of a fit to the \sweighted
 background distributions of \catDD and \catLL \OS and \SSpi tagged events.}
 \label{sec:measurement_of_sin2beta:physic_backgrounds:tagging_asymmetries:time_dependent:likelihood:results}
-\begin{tabular}{llr@{$\,\pm\,$}lr@{$\,\pm\,$}lr@{$\,\pm\,$}l}
+\sisetup{
+  table-number-alignment    = center,
+  table-figures-integer     = 1,
+  table-figures-decimal     = 3,
+  table-figures-uncertainty = 3,
+  table-sign-mantissa,
+}
+\begin{tabular}{
+  llSS
+  S[
+    table-figures-decimal     = 2,
+    table-figures-uncertainty = 2,
+  ]}
 \toprule
-\multicolumn{2}{c}{category}  &   \multicolumn{2}{c}{$\Asym{1}{}$}  & \multicolumn{2}{c}{$\Asym{2}{}$}  & \multicolumn{2}{c}{$\Asym{3}{}$} \\
+\multicolumn{2}{c}{category}  &   {$\Asym{1}{}$}  & {$\Asym{2}{}$}  & {$\Asym{3}{}$} \\
 \midrule
-\catDD & \acs*{OS}    &   $0.001$     &   $0.028$                 &   $-0.039$    &   $0.030$                 &   $-0.01$    &   $0.07$  \\
-\catDD & \acs*{SSpi}  &   $-0.01$     &   $0.04$                  &   $0.14$      &   $0.14$                  &   \multicolumn{2}{c}{-}       \\
-\catLL & \acs*{OS}    &   $0.05$      &   $0.05$                  &   $-0.03$     &   $0.13$                  &   $-0.11$     &   $0.12$  \\
-\catLL & \acs*{SSpi}  &   $-0.01$     &   $0.20$                  &   $-0.18$     &   $0.18$                  &   $0.4$       &   $0.4$    \\
+\catDD & \acs*{OS}            &    0.001 +- 0.028 & -0.039 +- 0.030 & -0.01 +- 0.07 \\
+\catDD & \acs*{SSpi}          &   -0.01  +- 0.04  &  0.14  +- 0.14  & {---}         \\
+\catLL & \acs*{OS}            &    0.05  +- 0.05  & -0.03  +- 0.13  & -0.11 +- 0.12 \\
+\catLL & \acs*{SSpi}          &   -0.01  +- 0.20  & -0.18  +- 0.18  &  0.4  +- 0.4  \\
 \bottomrule
 \end{tabular}
 \end{table}

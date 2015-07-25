@@ -14,7 +14,7 @@ violation.
 In \cref{sec:measurement_of_sin2beta:systematics:cross_checks} cross-checks are
 outlined to test the reproducibility and stability of the fit model. Studies to
 estimate the effect of various fit model properties are listed in
-\cref{sec:measurement_of_sin2beta:systematics:systematics} and
+\cref{sec:measurement_of_sin2beta:systematics:systematics} while
 \cref{sec:measurement_of_sin2beta:systematics:summary} gives a summary of all
 found systematic effects.
 
@@ -23,7 +23,7 @@ found systematic effects.
 \label{sec:measurement_of_sin2beta:systematics:cross_checks}
 
 When performing cross-checks, either results obtained on different subsamples or
-results obtained from different methods on the same sample are applied. In both
+results obtained from different methods on the same sample are compared. In both
 cases, the deviation of the difference in fit results in terms of its
 uncertainty is used as a measure of agreement.
 
@@ -79,7 +79,7 @@ As the background decay time model might influence the measurement, an \sPlot fi
 performed using the nominal signal mass \PDF. As the standard \Minuit/\Hesse error
 estimations in \sPlot fits can lead to uncertainties with an incorrect coverage,
 an additional bootstrapping (\cf \eg \cite{Behnke:2013pga}) study is performed
-to arrive at more correct estimates of uncertainties. The procedure followed is:
+to arrive at correct estimates of uncertainties. The procedure followed is:
 %
 \begin{enumerate}
   \item take the \sweighted data sample consisting of $N$ events,
@@ -104,8 +104,10 @@ compatible with the naive \sPlot fit. Compared to the nominal fit this holds
 true for \CJpsiKS while \SJpsiKS is slightly lower. The uncertainty estimates of
 the bootstrapping study are slightly larger than the corresponding uncertainties
 from the nominal fit, but still in the same order of magnitude. In contrast, the
-uncertainty estimate of the naive \sPlot fit for \SJpsiKS is too small. Overall,
-the results of the \sPlot fits and the nominal fit are well compatible.
+uncertainty estimate of the naive \sPlot fit for \SJpsiKS, should be larger or
+at the best equal of size compared to the nominal fit, but are found to be too
+small. Overall, the results of the \sPlot fits and the nominal fit are well
+compatible.
 %
 \begin{figure}
 \centering
@@ -114,10 +116,10 @@ the results of the \sPlot fits and the nominal fit are well compatible.
 \caption{
 Fit results for \SJpsiKS and \CJpsiKS from the \sPlot fit and the nominal fit as
 a reference. In blue (red) the result and the statistical error for the \sPlot
-fit (nominal fit) using a per-event decay time resolution. The grey solid line
-shows the average of the two below fit results, while the filled grey area
-describes the uncertainty on the difference $\sigma_\Delta$ of the two lower
-results (darker grey $1\sigma_\Delta$, light grey $2\sigma_\Delta$).
+fit (nominal fit)s. The grey solid line shows the average of the two below fit
+results, while the filled grey area describes the uncertainty on the difference
+$\sigma_\Delta$ of the two lower results (darker grey $1\sigma_\Delta$, light
+grey $2\sigma_\Delta$).
 \textit{Please note: The shown numbers are rounded following the PDG rules. The
 plot itself is produced using the full precision values.}}
 \label{fig:measurement_of_sin2beta:systematics:cross_checks:splot_fit:s_and_c}
@@ -129,8 +131,10 @@ plot itself is produced using the full precision values.}}
 \hfill
 \includegraphics[width=0.48\textwidth]{private/content/measurement-of-sin2beta/figs/bootstrapping_parSigTimeCjpsiKS_blind.pdf}
 \caption{
-Parameter distributions for \SJpsiKS and \CJpsiKS from \sPlot fits to
-$\num{1000}$ bootstrapped data samples.}
+Parameter distributions for $\SJpsiKS^{\text{blind}}$ and
+$\CJpsiKS^{\text{blind}}$ from \sPlot fits to $\num{1000}$ bootstrapped data
+samples. The study was performed with still blinded parameter values (\cf
+\cref{sec:measurement_of_sin2beta:likelihood_fit:blinding}).}
 \label{fig:measurement_of_sin2beta:systematics:cross_checks:splot_fit:bootstrapping}
 \end{figure}
 
@@ -165,14 +169,14 @@ The fit is tested furthermore by disentangling the time-integrated and the
 time-dependent parts of it. To ensure a purely time-dependent extraction of the
 \CP violating parameters a binned $\chisq$-fit to the signal \CP asymmetry (\cf
 \cref{fig:measurement_of_sin2beta:cpv_measurement:results:plots:asymmetry}) is
-performed. The theoretical distribution $\CPAsymmetry$ given in
-\cref{eq:cpv_theory:bd2jpsiks:cp_asymmetry}, modified to cover for tagging
-and production asymmetries results in
+performed. The theoretical distribution $\CPAsymmetry(\obsTime)$ given in
+\cref{eq:cpv_theory:bd2jpsiks:cp_asymmetry:simplified}, modified to cover for
+tagging and production asymmetries results in
 %
 \begin{multline}
   \Asym{\CP}{\text{exp}} = \\
-    \frac{\mistag^{\Bd} - \mistag^{\Bdbar} + A_{\text{P}}^{\catOO} \Bigl(1 - \mistag^{\Bd} - \mistag^{\Bdbar}\Bigr) + \CPAsymmetry \Bigl(1 - \mistag^{\Bd} - \mistag^{\Bdbar} + A_{\text{P}}^{\catOO} \bigl(\mistag^{\Bd} - \mistag^{\Bdbar}\bigr) \Bigr)}
-    {1 + A_{\text{P}}^{\catOO} \Bigl(\SJpsiKS \sin (\DMd t) - \CJpsiKS \cos (\DMd t)\Bigr) } \eqpd
+    \frac{\mistag^{\Bd} - \mistag^{\Bdbar} + A_{\text{P}}^{\catOO} \Bigl(1 - \mistag^{\Bd} - \mistag^{\Bdbar}\Bigr) + \CPAsymmetry(\obsTime) \Bigl(1 - \mistag^{\Bd} - \mistag^{\Bdbar} + A_{\text{P}}^{\catOO} \bigl(\mistag^{\Bd} - \mistag^{\Bdbar}\bigr) \Bigr)}
+    {1 + A_{\text{P}}^{\catOO} \CPAsymmetry(\obsTime) } \eqpd
 \end{multline}
 %
 At this point the \OS and \SSpi mistag probabilities are combined on a per-event
@@ -190,7 +194,8 @@ the nominal fit
   \end{split}
 \end{equation*}
 %
-Leaving the mass difference \DMd floating in the fit, the fit yields
+Leaving the mass difference \DMd floating in the fit has a large influence on
+the uncertainty on \CJpsiKS, resulting in
 %
 \begin{equation*}
   \begin{split}
@@ -228,7 +233,7 @@ leads to
 where the lower integration limit $t_{\text{min}}$ is employed and the values
 for the other parameters are handled as in the time-dependent case described
 before. Taking into account the correlation between the \CP parameters \SJpsiKS
-and \CJpsiKS and using the value for \CJpsiKS found in the nominal fit, the
+and \CJpsiKS by using the value for \CJpsiKS found in the nominal fit, the
 previous equation extends by another summand,
 %
 \begin{equation}
@@ -260,7 +265,7 @@ $\CJpsiKS = \num{0.03}$ in the \acf{ToyMC} sample generation.
 \label{sec:measurement_of_sin2beta:systematics:systematics:fit_model}
 
 \paragraph{A background tagging asymmetry} \ie a non-vanishing tagging
-asymmetry in the background candidates sample is found and described in
+asymmetry in the background candidates' sample is found and described in
 \cref{sec:measurement_of_sin2beta:physic_backgrounds:tagging_asymmetries}. A
 \ToyMC study with $\num{1000}$ iterations is performed to estimate the potential
 influence on the measurement of $\SJpsiKS$ and $\CJpsiKS$. 
@@ -321,15 +326,15 @@ Gaussian constraints (\cf
 \cref{sec:measurement_of_sin2beta:cpv_measurement:constrained_parameters}). The
 influence of the systematic uncertainties are investigated by a \ToyMC study.
 
-First the eight parameters are varied up and down by one systematic uncertainty
+First, the eight parameters are varied up and down by one systematic uncertainty
 and the effect on the effective dilution is studied. This reduces to $16$
-combinations if only varying $\p{i}{j}$ and $\deltap{i}{j}$ in the same direction.
-For each combination $\num{750}$ generation/fit iterations are performed. The
-largest deviation is found when all $\p{0}{j}$ parameters are varied up and all
-$\p{1}{j}$ parameters are varied down. The smallest deviations are observed if
-the parameters are moved vice versa. As the dilution and the \CP parameters are
-part of a product in the \PDF the relative change in dilution of
-$\SI{1.5}{\percent}$ is already an estimate of the systematic uncertainty.
+combinations if varying $\p{i}{j}$ and $\deltap{i}{j}$ only in the same
+direction. For each combination $\num{750}$ iterations are performed and the
+dilution is calculated. The largest deviation is found when all $\p{0}{j}$
+parameters are varied up and all $\p{1}{j}$ parameters are varied down. As the
+dilution and the \CP parameters are part of a product in the \PDF the relative
+change in dilution of $\SI{1.5}{\percent}$ is already an estimate of the
+systematic uncertainty.
 
 A \ToyMC study with $\num{1000}$ iterations is performed using values for the
 \CP parameters drawn from a Gaussian distribution where the central value is
@@ -359,7 +364,7 @@ parabolic function with non-zero (zero) offset is used in the \catDD
 (\catLL) sub sample to generate data, that is then fitted using the nominal
 calibration model. The parameter values used in the generation are given in
 \cref{tab:measurement_of_sin2beta:systematics:systematics:resolution:parabolic_parameters}.
-In a study with $\num{250}$ iterations no significant bias is found as can been
+In a study with $\num{1000}$ iterations no significant bias is found as can been
 seen in the pull and residual distributions provided in
 \cref{fig:app:measurement_of_sin2beta:systematics:systematics:resolution:calibration}.
 %
@@ -369,16 +374,32 @@ seen in the pull and residual distributions provided in
 function for \catDD and \catLL candidates. No offset parameter is used in case
 of the \catLL model, thus the correspondent entries are marked with a dash.}
 \label{tab:measurement_of_sin2beta:systematics:systematics:resolution:parabolic_parameters}
-  \begin{tabular}{llr@{$\,\pm\,$}lr@{$\,\pm\,$}l}
+\sisetup{
+  table-number-alignment    = center,
+  table-sign-mantissa,
+}
+  \begin{tabular}{
+    ll
+    S[
+      table-figures-integer     = 1,
+      table-figures-decimal     = 4,
+      table-figures-uncertainty = 4,
+    ]
+    S[
+      table-figures-integer     = 1,
+      table-figures-decimal     = 2,
+      table-figures-uncertainty = 2,
+    ]
+  }
     \toprule
-    \multicolumn{2}{c}{Parameter}               &   \multicolumn{2}{c}{\catDD}      &   \multicolumn{2}{c}{\catLL}\\
+    \multicolumn{2}{c}{Parameter}               & {\catDD}          & {\catLL}      \\
     \midrule
-    $a_{1}$         &   (\si{\per\pico\second}) &   $-1.7$        &   $1.3$         &   $-4.3$        &   $0.7$         \\
-    $b_{1}$         &                           &   $1.04$        &   $0.014$       &   $1.33$        &   $0.07$        \\
-    $c_{1}$         &   (\si{\pico\second})     &   $0.0044$      &   $0.0027$      &   \multicolumn{2}{c}{---} \\
-    $a_{2}$         &   (\si{\per\pico\second}) &   $-1.5$        &   $3.4$         &   $-2.5$        &   $1.0$         \\
-    $b_{2}$         &                           &   $1.5$         &   $0.4$         &   $2.15$        &   $0.27$        \\
-    $c_{2}$         &   (\si{\pico\second})     &   $0.016$       &   $0.008$       &   \multicolumn{2}{c}{---} \\
+    $a_{1}$         &   (\si{\per\pico\second}) & -1.7    +- 1.3    & -4.3  +- 0.7  \\
+    $b_{1}$         &                           &  1.04   +- 0.014  &  1.33 +- 0.07 \\
+    $c_{1}$         &   (\si{\pico\second})     &  0.0044 +- 0.0027 & {---}         \\
+    $a_{2}$         &   (\si{\per\pico\second}) & -1.5    +- 3.4    & -2.5  +- 1.0  \\
+    $b_{2}$         &                           &  1.5    +- 0.4    &  2.15 +- 0.27 \\
+    $c_{2}$         &   (\si{\pico\second})     &  0.016  +- 0.008  & {---}         \\
     \bottomrule
   \end{tabular}
 \end{table}
@@ -416,16 +437,16 @@ are assigned.
 \subsubsection{Decay time acceptance}
 \label{sec:measurement_of_sin2beta:systematics:systematics:acceptance}
 
-\paragraph{The low decay time acceptance} influence on the \CP parameters is
+\paragraph{The low decay time acceptance's} influence on the \CP parameters is
 studied using a modified acceptance shape. In the generation histograms of the
 time-dependent ratios $\varepsilon_{\catAU}$ and $\varepsilon_{\catEB}$ (\cf
 \cref{sec:measurement_of_sin2beta:resolution_and_acceptance:acceptance:lower})
-are used that are determined on the signal \MC sample using the same methodology
-as used for the nominal model. In $\num{250}$ iterations the generated data are
-fitted using the nominal (\catOT and \catOS) fit model, as no influence from the
-tagging decision and the year of data taking is expected. The \ToyMC study shows
-no significant bias. Pull and residual distributions can be found
-in
+are employed that are determined on the signal \MC sample using the same
+methodology as used for the nominal model. In $\num{250}$ iterations the
+generated data are fitted using the nominal (\catOT and \catOS) fit model, as no
+influence from the tagging decision and the year of data taking is expected. The
+\ToyMC study shows no significant bias. Pull and residual distributions can be
+found in
 \cref{fig:app:measurement_of_sin2beta:systematics:systematics:acceptance:lower}.
 
 \paragraph{The upper decay time acceptance} is parametrised in the nominal fit
@@ -476,10 +497,11 @@ are assigned. Pull and residual distributions can be found in
 \SJpsiKS and \CJpsiKS is investigated in a \ToyMC study. In $\num{1000}$
 iterations, samples are produced with an enlarged production asymmetry and
 subsequently fitted with the nominal fit model. The production asymmetry is
-varied by one statistical uncertainty: $A_P^{\catOO} = \num{-0.0122}$ while
-$\Delta A_P$ is not shifted, as any systematic effects are already covered. No
-systematic shift is observed. The pull and residual distributions are depicted
-in \cref{fig:app:measurement_of_sin2beta:systematics:systematics:further_studies:production_asymmetry}.
+varied by one systematic uncertainty: $A_P^{\catOO} = \num{-0.0122}$ while
+$\Delta A_P$ is not shifted, as any systematic effect from the difference of the
+production asymmetry between \catOO and \catOT is already covered. No systematic
+shift is observed. The pull and residual distributions are depicted in 
+\cref{fig:app:measurement_of_sin2beta:systematics:systematics:further_studies:production_asymmetry}.
 
 \paragraph{The \Bdbfsf decay width difference's} impact on the \CP measurement
 is examined in a \ToyMC study with $\num{1000}$ iterations. The data is
@@ -537,10 +559,10 @@ $\CJpsiKS = \num{-0.033}$ are set as reference values.
     \midrule
     {Background tagging asymmetry}           &  $\tablenum[table-format = 1.4]{0.0179}$ & ($\tablenum[table-format = 1.1]{2.5}\si{\percent}$) &  $\tablenum[table-format = 1.4]{0.0015}$ & ($\tablenum[table-format = 2.1]{4.5}\si{\percent}$) \\
     {Tagging calibration}                    &  $\tablenum[table-format = 1.4]{0.0062}$ & ($\tablenum[table-format = 1.1]{0.9}\si{\percent}$) &  $\tablenum[table-format = 1.4]{0.0024}$ & ($\tablenum[table-format = 2.1]{7.2}\si{\percent}$) \\
-    {$\Delta \Gamma$}                                  &  $\tablenum[table-format = 1.4]{0.0047}$ & ($\tablenum[table-format = 1.1]{0.6}\si{\percent}$) &  \multicolumn{2}{c}{---}               \\
+    {$\DGd$}                                 &  $\tablenum[table-format = 1.4]{0.0047}$ & ($\tablenum[table-format = 1.1]{0.6}\si{\percent}$) &  \multicolumn{2}{c}{---}               \\
     {Fraction of wrong PV component}         &  $\tablenum[table-format = 1.4]{0.0021}$ & ($\tablenum[table-format = 1.1]{0.3}\si{\percent}$) &  $\tablenum[table-format = 1.4]{0.0011}$ & ($\tablenum[table-format = 2.1]{3.3}\si{\percent}$) \\
     {$z$-scale}                              &  $\tablenum[table-format = 1.4]{0.0012}$ & ($\tablenum[table-format = 1.1]{0.2}\si{\percent}$) &  $\tablenum[table-format = 1.4]{0.0023}$ & ($\tablenum[table-format = 2.1]{7.0}\si{\percent}$) \\
-    {$\mathrm{\Delta} m$}                    &  \multicolumn{2}{c}{---}               &  $\tablenum[table-format = 1.4]{0.0034}$ & ($\tablenum[table-format = 2.1]{10.3}\si{\percent}$)\\
+    {$\DMd$}                                 &  \multicolumn{2}{c}{---}               &  $\tablenum[table-format = 1.4]{0.0034}$ & ($\tablenum[table-format = 2.1]{10.3}\si{\percent}$)\\
     {Upper decay time acceptance}            &  \multicolumn{2}{c}{---}               &  $\tablenum[table-format = 1.4]{0.0012}$ & ($\tablenum[table-format = 2.1]{3.6}\si{\percent}$) \\
     {Correlation between mass and decay time}&  \multicolumn{2}{c}{---}               &  \multicolumn{2}{c}{---}               \\
     {Decay time resolution calibration}      &  \multicolumn{2}{c}{---}               &  \multicolumn{2}{c}{---}               \\

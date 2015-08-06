@@ -546,11 +546,11 @@ function fitted to the data. \cite{Aaij:2012mu}}
 \end{figure}
 
 As an alternative, the calibration function can be implemented into an unbinned
-maximum likelihood fit to the dimensions: tagging decision, true state, and
-mistag probability estimate. Using a conditional \PDF
+maximum likelihood fit to tagging decision, true state, and mistag probability
+estimate, using a conditional \PDF
 $\Prob{}{\Sig}(\tagdecision,\tagdecision^\prime,\mistagestimate)$, where
 $\tagdecision^\prime$ describes the true $\Bu$ tag derived from the final-state
-particle charge.
+particle charge,
 %
 \begin{equation}\label{eq:flavour_tagging:calibration:method:charged:tagdefinition}
   \Prob{}{\Sig}(\tagdecision,\tagdecision^\prime,\mistagestimate) = 
@@ -558,7 +558,7 @@ particle charge.
         \tageff \bigl(1-\omofeta\bigr) \Prob{}{\Sig}(\mistagestimate)    & \text{if $\tagdecision =    \tagdecision^\prime$} \\
         \tageff              \omofeta  \Prob{}{\Sig}(\mistagestimate)    & \text{if $\tagdecision \neq \tagdecision^\prime$} \\
     1 - \tageff                                                          & \text{if $\tagdecision = 0$} \\
-  \end{cases}
+  \end{cases} \eqpd
 \end{equation}
 %
 

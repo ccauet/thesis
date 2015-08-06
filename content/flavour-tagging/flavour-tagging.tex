@@ -3,11 +3,11 @@
 \chapter{Flavour tagging}
 \label{ch:flavour_tagging}
 
-The time-dependent measurement of the $\CP$ asymmetry $\CPAsymmetry$ 
-%in the decay of $\Bd$ and $\Bdbar$ mesons into the $\CP$ eigenstate $\Jpsi\KS$ 
-requires the knowledge of the \Bmeson flavour at production, \ie whether it
-contained a $\bquark$ or a $\bquarkbar$. The method and algorithms used to infer
-this information from all available event properties are named flavour tagging.
+The time-dependent measurement of the $\CP$ asymmetry $\CPAsymmetry(\obsTime)$
+requires the knowledge of the reconstructed \Bmeson's flavour at production, \ie
+whether it contained a $\bquark$ or a $\bquarkbar$ quark. The method and
+algorithms used to infer this information from all available event properties
+are named flavour tagging.
 
 Each tagging algorithm provides a tag $\tagdecision$ and a probability estimate
 $\mistagestimate$ that the assigned tag is wrong, also called mistag estimate.
@@ -24,7 +24,7 @@ samples of \Bmesons whose final state determines the $\B$ flavour at decay time
 (\ie are flavour-specific), \eg $\BuToJpsiK$ where the charge of the kaon allows
 to infer the charge of the initial $\B$.
 
-Given the numbers of all right tagged $\B$ candidates $\NRtagged$, all wrong
+Given the numbers of all rightly tagged $\B$ candidates $\NRtagged$, all wrongly
 tagged candidates $\NWtagged$, and all untagged candidates $\NUtagged$, the
 tagging efficiency $\tageff$ can be assigned
 %
@@ -32,8 +32,8 @@ tagging efficiency $\tageff$ can be assigned
   \tageff = \frac{\NRtagged + \NWtagged}{\NRtagged + \NWtagged + \NUtagged}\eqpd
 \end{equation}
 %
-In addition to the mistag estimate, the true underlying fraction of wrong tagged
-candidates $\mistag$ is given by
+In addition to the mistag estimate, the true underlying fraction of wrongly
+tagged candidates $\mistag$ is given by
 %
 \begin{equation}\label{eq:flavour_tagging:mistag}
   \mistag = \frac{\NWtagged}{\NRtagged + \NWtagged}\eqpd
@@ -60,21 +60,21 @@ used at lepton colliders is given in \cref{sec:flavour_tagging:b_factories}. In
 algorithms used at \LHCb are presented, while the calibration of the tagging
 algorithm outputs is described in
 \cref{sec:flavour_tagging:calibration}. The combination of the different
-algorithm's responses into a single decision is outlined in
+algorithms' responses into a single decision is outlined in
 \cref{sec:flavour_tagging:combination}. Performance numbers are provided in
 \cref{sec:flavour_tagging:performance} and recent developments are discussed in
 \cref{sec:flavour_tagging:developments}.
 
-More details on the flavour tagging employed by \LHCb can be found in
-\cite{Aaij:2012mu,FT:RunI}.
+More details on the flavour tagging employed by the \LHCb collaboration can be
+found in \cite{Aaij:2012mu,FT:RunI}.
 
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Flavour tagging at \Babar and \Belle}
 \label{sec:flavour_tagging:b_factories}
 
-Caused by the different nature of the experimental setup the tagging method used
+Due to the different nature of the experimental setup, the tagging method used
 at \LHCb differs from methods used at the \BFactories. As described in
-\cref{sec:lhcb_experiment:detector} the \bhadron production is dominated
+\cref{sec:lhcb_experiment:detector}, the \bhadron production is dominated
 by gluon-gluon fusion over a large range of $q^2$ in contrast to the production
 at the $\YFourS$ $\bbbar$ resonance as it was the case at the \BFactories. The
 following section gives a résumé of the flavour tagging methods employed by the
@@ -91,13 +91,13 @@ following section gives a résumé of the flavour tagging methods employed by th
 \Cref{fig:flavour_tagging:lhcb:b_factory_basic_principles} illustrates the basic
 principles of a \CP violation measurement at the \BFactories. The produced
 $\Bd\Bdbar$ pair's wave function is in a $P$-wave entangled state, until one of
-the mesons decays. From this point in space time ($t_1$) the second $\B$ meson
+the mesons decays. From this point in time ($t_1$) the second $\B$ meson
 propagates further through the detector, oscillates to its antimatter state, and
-finally decays at $t_2$. The \CP asymmetry $\CPAsymmetry$ will therefore be a
-function of the decay time difference $\Delta t$. This has two implications:
-First, the decay time difference will always be computed relative to the
-\emph{tagging} \Bmeson decay and thus might be negative if the signal $\B$
-meson decays first. Secondly, if the tagging \Bmeson decays into a
+finally decays at $t_2$. The \CP asymmetry $\CPAsymmetry(\obsTime)$ will
+therefore be a function of the decay time difference $\Delta t$. This has two
+implications: First, the decay time difference will always be computed relative
+to the \emph{tagging} \Bmeson decay and thus might be negative if the signal
+$\B$ meson decays first. Secondly, if the tagging \Bmeson decays into a
 flavour-specific final state, this specifies the signal \Bmeson's flavour at
 $\Delta t=0$.
 
@@ -121,7 +121,7 @@ correlation of the particles can be utilised to improve the tag decision.
 Selecting high momentum particles, \eg fast pions from $\Bdbar \to \Dstarp
 \pim$, is on its own another source of tagging information and might
 additionally be correlated with slow particles to enhance the tagging result.
-Finally the flavour of $\Lambda$ baryons from decays of the tagging $\B$ meson
+Finally the flavour of $\Lambdap$ baryons from decays of the tagging $\B$ meson
 can be exploited.
 
 The \Babar experiment uses \acp{ANN} for each single tagger to provide several
@@ -131,7 +131,7 @@ to gain a joined tagging decision. The effective tagging efficiency of the final
 0.3}{\percent}$. In \Belle analyses the flavour tagging approach is similar.
 Instead of \acp{ANN} multi-dimensional look-up tables are used. At first,
 information from charged tracks are looked-up to sort them into the signature
-categories. Next, the received results are used on an event-level to provide the
+categories. Next, the results are used on an per-event level to provide the
 final tagging decision. Using this approach an effective tagging efficiency of
 $\efftageff = \SI{30.1 +- 0.4}{\percent}$ is achieved.
 
@@ -141,65 +141,70 @@ $\efftageff = \SI{30.1 +- 0.4}{\percent}$ is achieved.
 
 At \LHCb several tagging algorithms, each specialized on different
 characteristics of the underlying event, are used in order to determine the
-\Bmeson flavour at production. The algorithms can be classified into two types:
-the \SS tagging and \OS tagging algorithms, also called \SS/\OS taggers. The \SS
-taggers infer the production flavour of the signal \Bmeson by identifying
-charged candidates that have a high chance of being remnants of its
-hadronisation process. On the other hand, the \OS taggers exploit the dominant
-production of \Bmesons through $\bbbar$ quark pair production, allowing to
-partially reconstruct the \bhadron produced together with each reconstructed
-signal \Bmeson and thereby infer its initial flavour.
+\Bmeson flavour at production. Alongside a tag decision $\tagdecision$, each
+algorithm provides an estimated mistag probability $\mistagestimate$ based on an
+\acp{ANN} response. The algorithms can be classified into two types: the
+\acf{SS} tagging and \acf{OS} tagging algorithms, also called \ac{SS}/\ac{OS}
+taggers. The \ac{SS} taggers infer the production flavour of the signal \Bmeson
+by identifying charged candidates that have a high chance of being remnants of
+its hadronisation process. The \ac{OS} taggers exploit the dominant production
+of \Bmesons through $\bbbar$ quark pair production, allowing to partially
+reconstruct the \bhadron produced together with each reconstructed signal
+\Bmeson and thereby infer its initial flavour.
 \Cref{fig:flavour_tagging:lhcb:schematics} gives an overview of the tagging
 algorithms used on the \acl{OS} and \acl{SS}.
 
-The tagging algorithms are developed and trained using simulated $\BuToJpsiK$
-and $\BdToDstarmunu$ decays. In an iterative procedure the selection criteria
-were optimized in order to maximise the effective tagging efficiency
-$\efftageff$. The algorithms only consider charged tracks with a good quality of
-the track fit and momenta above $\SI{2}{\GeVc}$. Tracks with a polar angle of
-less than $\SI{12}{\mrad}$ with respect to the beamline are declined. Further
-on, particles originating from the signal candidate are suppressed by rejecting
-all tracks that lie inside a cone of $\SI{5}{\mrad}$ around any signal $\B$
-meson daughter. Tracks from other \acp{PV} are eliminated using \IP
-requirements.
+The tagging algorithms are developed using simulated $\BuToJpsiK$ and
+$\BdToDstarmunu$ decays. In an iterative procedure the selection criteria were
+optimized in order to maximise the effective tagging efficiency $\efftageff$.
+The algorithms only consider charged tracks with a good quality of the track fit
+and momenta above $\SI{2}{\GeVc}$. Tracks with a polar angle of less than
+$\SI{12}{\mrad}$ with respect to the beamline are declined. Further on,
+particles originating from the signal candidate are suppressed by rejecting all
+tracks that lie inside a cone of $\SI{5}{\mrad}$ around any signal $\B$ meson
+daughter. Tracks from other \acp{PV} are eliminated using \IP requirements.
 
 \Cref{sec:flavour_tagging:os,sec:flavour_tagging:ss} contain detailed
-descriptions of the \OS and \SS tagging algorithms. Recent developments that
-exceed the scope of the analysis presented in this thesis but will be relevant
-in the future are briefly discussed in \cref{sec:flavour_tagging:developments}.
+the \ac{SS} tagging and \ac{OS} tagging algorithms, also called \ac{SS}/\ac{OS}
+taggers. The \ac{SS} taggers infer the production flavour of the signal \Bmeson
+by identifying charged candidates that have a high chance of being remnants of
+its hadronisation process. On the other hand, the \ac{OS} taggers exploit the
+dominant production of \Bmesons through $\bbbar$ quark pair production, allowing
+to partially reconstruct the \bhadron produced together with each reconstructed
+signal \Bmeson and thereby infer its initial flavour.
 %
 \begin{figure}
 \centering
 \input{private/content/flavour-tagging/tikz/lhcb_flavour_tagging_schematics}
-\caption{Schematic overview of the used \acs*{OS} and \acs*{SS} tagging
+\caption{Schematic overview of the used \ac{OS} and \ac{SS} tagging
 algorithms. \cite{wishahi:2013jt}}
 \label{fig:flavour_tagging:lhcb:schematics}
 \end{figure}
 
 % ------------------------------------------------------------------------------
-\subsection{\Acl{OS} algorithms}
+\subsection{\Acl*{OS} algorithms}
 \label{sec:flavour_tagging:os}
 
 The \OS algorithms all infer the tagging decision from the quark flavour of the
 \bhadron produced in association with the signal \Bmeson. If for example a $\Bu$
-decays into a $\Kp X$ final state trough $\bquarkbar \to \cquarkbar \to
-\squarkbar$ transition, it can unambiguously stated by looking at the kaon
+decays into a $\Kp X$ final state through $\bquarkbar \to \cquarkbar \to
+\squarkbar$ transition, it can unambiguously be stated by looking at the kaon
 charge that the \bhadron produced along with the $\Bu$ contained a $\bquark$
 quark. The tag identification for events with this signature fall into the scope
-of the \OSK tagger. Other than the \SS taggers all \OS algorithms are sensitive
-to an intrinsic mistag due to flavour oscillations of neutral \Bmesons.
+of the \OSK tagger. In contrast to the \SS taggers all \OS algorithms are
+sensitive to an intrinsic mistag due to flavour oscillations of neutral \Bmesons.
 
-In total four distinct \OS taggers, each developed for a special \OS decay
+In total, four distinct \OS taggers, each developed for a special \OS decay
 signature, provide tagging information. Besides the \OSK tagger, the \OSe and
-the \OSm taggers select leptons coming from the primary $\bquark \to X \lepm$
-decay to use their charge as an information carrier of the $\B$ flavour.
-Finally, the \OSvtx tagger performs an inclusive reconstruction of the \OS \SV
-to then compute a weighted sum of all particle track charges that originate from
-the \SV. In the following the selection criteria and algorithms of the \OS
-taggers are briefly described.
+the \OSm taggers select leptons coming from the primary $\bquark \to \cquark
+\lepm \neutrinobar$ decay to use their charge as an information carrier of the
+$\B$ flavour. Finally, the \OSvtx tagger performs an inclusive reconstruction of
+the \OS \SV to then compute a weighted sum of all particle track charges that
+originate from the \SV. In the following, the selection criteria and algorithms
+of the \OS taggers are briefly described.
  
 %...............................................................................
-\subsubsection{The \acl{OSK} tagger}
+\subsubsection{The \acl*{OSK} tagger}
 \label{sec:flavour_tagging:os:kaon}
 
 The kaon tagger exploits the charge of kaons stemming from $\bquark \to
@@ -211,19 +216,19 @@ To reduce background contributions of prompt kaons and kaons from primary
 $\bquarkbar \to \Wp (\to \cquark \squarkbar) \cquarkbar$ transitions, in which
 case the kaon carries the \enquote{wrong} charge, several selection criteria are
 applied. Cuts on the \pT, the \IP, the \IP/$\sigma_\text{\IP}$, and the track
-fit \chisqndf are performed. \Ac{PID} requirements on the \DLLKpi, the \DLLppi,
-and \DLLmupi suppress mis-identified particles. Clone tracks are removed and
-kaon candidates which originate from other \acp{PV} are rejected using a cut on
-the \IP/$\sigma_\text{\IP}$ with respect to any \PV.
-\cref{tab:flavour_tagging:os:kaon:cuts} lists all applied cuts. If more than one
-tagging candidate is found, the decision obtained from the candidate with the
-highest \pT is chosen. To further increase the effective tagging efficiency only
-tag decisions are considered if the estimated probability of the tagger to be
-correct is larger than $P > \num{0.54}$.
+fit \chisqndf are performed. \Ac{PID} requirements on the \DLLKpi and the \DLLKp
+suppress mis-identified particles. Clone tracks are removed using the
+Kullback-Liebler criterion \cite{Needham:2008zza} and kaon candidates which
+originate from other \acp{PV} are rejected using \IP/$\sigma_\text{\IP}$
+requirements with respect to any \PV. \cref{tab:flavour_tagging:os:kaon:cuts}
+lists all applied cuts. If more than one tagging candidate is found, the
+decision obtained from the candidate with the highest \pT is chosen. To further
+increase the effective tagging efficiency only tag decisions are considered if
+the estimated probability of the tagger to be correct is larger than $\num{0.54}$.
 %
 \begin{table}
   \centering
-  \caption{Selection cuts for the \OSK tagger \cite{Grabalosa:2012qra}.}
+  \caption{Selection requirements for the \OSK tagger \cite{Grabalosa:2012qra}.}
   \label{tab:flavour_tagging:os:kaon:cuts}
   \begin{tabular}{ll}
     \toprule
@@ -234,7 +239,7 @@ correct is larger than $P > \num{0.54}$.
     \IP$/\sigma_\text{\IP}$                   & $>\num{3.35}$                       \\
     track fit \chisqndf                       & $<\num{2.75}$                       \\
     \DLLKpi                                   & $>\num{6}$                          \\
-    $(\DLLKpi - \DLLppi)$                     & $>\num{-4}$                         \\
+    \DLLKp                                    & $>\num{-4}$                         \\
     \IP$/\sigma_\text{\IP}$ \wrt any \PV      & $>\num{4.5}$                        \\
     \multicolumn{2}{l}{reject clone tracks} \\
     \bottomrule
@@ -242,7 +247,7 @@ correct is larger than $P > \num{0.54}$.
 \end{table}
 
 %...............................................................................
-\subsubsection{The \acl{OSe} and the \acl{OSm} taggers}
+\subsubsection{The \acl*{OSe} and the \acl*{OSm} taggers}
 \label{sec:flavour_tagging:os:lepton}
 
 Leptons from $\bquark \to \cquark \Wm (\to \lepm \neutrinobar)$ transitions are
@@ -255,15 +260,15 @@ candidate purity is further enhanced by reducing fake muons, clone tracks, and
 requiring a sufficient track fit quality. Electron candidate tracks must lie
 inside the \HCAL acceptance and leave a substantial energy deposition in the
 \ECAL compared to their momentum. To reduce backgrounds from photon conversions
-close to the \protonproton interaction region, a upper limit on the maximal
+close to the \protonproton interaction region, an upper limit on the maximal
 ionisation charge $Q_\text{\VELO}$ deposited in the \VELO is set. If more than
 one lepton candidate passes the requirements, the one with the highest \pT is
-chosen. The selection cuts for the lepton taggers are listed in
+chosen. The selection requirements for the lepton taggers are listed in
 \cref{tab:flavour_tagging:os:lepton:cuts}.
 %
 \begin{table}
   \centering
-  \caption{Selection cuts for the \OSe and \OSm taggers
+  \caption{Selection requirements for the \OSe and \OSm taggers
   \cite{Grabalosa:2012qra}, where $E$ is the particle energy measured in the
   \ac{ECAL} and $p$ the measured particle momentum. $Q_\text{\VELO}$ describes
   the ionisation charge deposit in the \VELO.}
@@ -286,7 +291,7 @@ chosen. The selection cuts for the lepton taggers are listed in
 \end{table}
 
 %...............................................................................
-\subsubsection{The \acl{OSvtx} tagger}
+\subsubsection{The \acl*{OSvtx} tagger}
 \label{sec:flavour_tagging:os:vertex}
 
 Besides the single particle taggers for kaons, muons, and electrons, the
@@ -303,7 +308,7 @@ track reconstruction only tracks with an \IP (\wrt the \PV) uncertainty of
 $\sigma_\text{\IP}<\num{1}$ are taken into account. Tracks from prompt particles
 are rejected if the \IP significance $\text{\IP}/\sigma_\text{\PV}$ \wrt the \PV
 is below $\num{2.5}$ or above $\num{100}$. Additionally the track has to have a
-$\pT>\SI{0.15}{\GeVc}$ and an \IP$<\SI{3}{\milli\metre}$ \wrt to the \PV. The
+$\pT>\SI{0.15}{\GeVc}$ and an \IP$<\SI{3}{\milli\metre}$ \wrt the \PV. The
 two seed tracks must be separated by an angle of $\phi>\SI{1}{\mrad}$ and one of
 the tracks has to have a $\pT>\SI{0.3}{\GeVc}$.
 
@@ -318,7 +323,7 @@ masses. % 0.490 < m_KS < 0.505 and 1.11 < m_Lambda < 1.12
 A likelihood is computed for all seeds considering the vertex fit $\chisqndf$,
 the minimum \pT, the maximum \PV \IP, the minimum \PV \IP$/\sigma_\text{\IP}$,
 the angle between the seed tracks, the $z$-distance to \PV, and the angle
-between the seed direction \wrt to the \PV. The seed with the maximum likelihood
+between the seed direction \wrt the \PV. The seed with the maximum likelihood
 is selected. The seed algorithm successfully finds a seed in nearly
 $\SI{50}{\percent}$ of all events and has a rate of $\SI{60}{\percent}$ to find
 a seed that is formed by \bhadron decay products.
@@ -327,11 +332,11 @@ Subsequently more tracks are added to the seed. Additional tracks are required
 to be compatible with the reconstructed seed vertex
 (\IP$<\SI{0.9}{\milli\metre}$), have a \DOCA to any track in the seed smaller
 than $\SI{0.2}{\milli\metre}$, the track fit quality is at least
-$\chisqndf<\num{3}$, and are ruled out to be a clone track. Additionally the \IP
+$\chisqndf<\num{3}$, and are unlikely to be a clone track. Additionally, the \IP
 with respect to the \PV has to be larger than $\SI{0.1}{\milli\metre}$ and
 $\text{\IP}/\sigma_\text{\IP}>\num{3.5}$.
 
-After all tracks are added to the vertex another set of selection requirements
+After all tracks are added to the vertex, another set of selection requirements
 has to be fulfilled to optimize the effective tagging efficiency. The sum of all
 track momenta has to be $\sum_i p_i > \SI{10}{\GeVc}$ and $\sum_i \pT(i) >
 \SI{10}{\GeVc}$, the invariant vertex mass must be greater than $m_\text{vtx} >
@@ -346,40 +351,41 @@ calculating the weighted charge for all tracks $i$ forming the vertex
 \begin{equation}\label{eq:flavour_tagging:os:vertex:charge}
   Q_\text{vtx} = \frac{\sum_i \pT^k(i)Q_i}{\sum_i\pT^k(i)}\eqcm
 \end{equation}
-where the track \acfp{pT} are used as weights and the $k$ parameter is optimised
+%
+where the track \acp{pT} are used as weights and the $k$ parameter is optimised
 using simulated data to be $k=\num{0.4}$. In a final step, only charges of
 $\vert Q_\text{vtx} \vert > 0.25$ are considered and the mistag probability has
-to be smaller than $\mathcal{P}=0.46$.
+to be smaller than $\num{0.46}$.
 
 % ------------------------------------------------------------------------------
-\subsection{\Acl{SS} algorithms}
+\subsection{\Acl*{SS} algorithms}
 \label{sec:flavour_tagging:ss}
 
 The \acl{SS} taggers exploit charge information from pions or kaons produced in
 the hadronisation process of the signal \Bmeson. As illustrated in
 \cref{fig:flavour_tagging:lhcb:schematics} the $\qqbar$ quark pair produced
-alongside the signal meson, splits up to form the $\B$ meson and in the case of
+alongside the signal meson, hadronises to form the $\B$ meson and in the case of
 a $\Bd$ ($\Bs$) an accompanying pion (kaon). Another potential production
 mechanism of pions or kaons associated with the signal \Bmeson is in the decay
 of excited $\B$ meson states (\cf \cite{FT:KaonNNet}).
 
 %...............................................................................
-\subsubsection{The \acl{SSpi} tagger}
+\subsubsection{The \acl*{SSpi} tagger}
 \label{sec:flavour_tagging:ss:pion}
 
 The pions from either the \Bmeson hadronisation or the decay of excited states
-carry the same charge as the signal \Bmeson and are therefore suitable to
-extract tagging information. The selection criteria pion candidates are required
-to fulfil are listed in \cref{tab:flavour_tagging:ss:pion:cuts}. If more than
-one pion candidate passes the requirements, the one with the highest \pT is
-chosen. The tag decision has to have a probability to be correct of at least $P
-> \num{0.54}$ otherwise it will be refused.
+carry the same charge sign as the signal \Bmeson's $\bquark$ quark and are
+therefore suitable to extract tagging information. The selection criteria for
+pion candidates are listed in \cref{tab:flavour_tagging:ss:pion:cuts}. If more
+than one pion candidate passes the requirements, the one with the highest
+\pT is chosen. The tag decision has to have a probability to be correct of at
+least $\num{0.54}$ otherwise it will be refused.
 %
 \begin{table}
   \centering
-  \caption{Selection cuts for the \SSpi tagger \cite{Grabalosa:2012qra}, where
-  $\Delta Q$ describes the mass difference of the $\Bd\pion$ mass and the $\Bd$
-  mass.}
+  \caption{Selection requirements for the \SSpi tagging candidates
+  \cite{Grabalosa:2012qra}, where $\Delta Q$ describes the difference between
+  the $\Bd\pion$ and the $\Bd$ invariant mass.}
   \label{tab:flavour_tagging:ss:pion:cuts}
   \begin{tabular}{ll}
     \toprule
@@ -397,65 +403,38 @@ chosen. The tag decision has to have a probability to be correct of at least $P
 \end{table}
 
 %...............................................................................
-\subsubsection{The \acl{SSK} tagger}
+\subsubsection{The \acl*{SSK} tagger}
 \label{sec:flavour_tagging:ss:kaon}
 
 The charge of kaons produced together with a signal $\Bs$ meson can be exploited
-in order to get a tag decision. The selection requirements for kaon candidates
-are similar to those for the \SSpi tagger. Besides \PID variables, momenta, the
-quality of the \IP fit and the track fit, differences between the $\Bs\kaon$
-mass and the $\Bs$ mass, the difference in the $\phi$ angle between the signal
-\Bmeson and the kaon, and the pseudo-rapidity between the signal \Bmeson and the
-kaon are taken into account. If more than one candidate passes the criteria, the
-one with the highest \pT is used. The \SSK tagger is not used in this analysis
-as only $\Bd$ and $\Bdbar$ meson initial states are considered.
-%
-% \begin{table}
-%   \centering
-%   \caption{Selection cuts for the \SSK tagger \cite{Grabalosa:2012qra}, where
-%   $\Delta Q$ describes the mass difference of the $\Bs\kaon$ mass and the $\Bs$
-%   mass, $\vert \Delta\phi \vert$ the difference in the $\phi$ angle between the
-%   signal \Bmeson and the kaon, $\vert \Delta\eta \vert$ the pseudo-rapidity
-%   between the signal \Bmeson and the kaon, and $\vert \Delta R \vert =
-%   \sqrt{\Delta\eta^2 + \Delta\phi^2}$.}
-%   \label{tab:flavour_tagging:ss:kaon:cuts}
-%   \begin{tabular}{ll}
-%     \toprule
-%     Property                                  & Value                               \\
-%     \midrule
-%     \DLLKpi                                   & $>\num{4.5}$                        \\
-%     (\DLLKpi - \DLLppi)                       & $>\num{-8.5}$                       \\
-%     \pT                                       & $>\SI{0.75}{\GeVc}$                 \\
-%     $p$                                       & $>\SI{5.25}{\GeVc}$                 \\
-%     \PV $\text{\IP}/\sigma_\text{\IP}$        & $<\num{4.125}$                      \\
-%     track $\chisqndf$                         & $<\num{3.75}$                       \\
-%     $\Delta Q$                                & $<\SI{1.5}{\GeVcc}$                 \\
-%     $\vert \Delta\phi \vert$                  & $<\num{0.7}$                        \\
-%     $\vert \Delta\eta \vert$                  & $<\num{0.525}$                      \\
-%     $\vert \Delta R \vert$                    & $<\num{1.2}$                        \\
-%     \bottomrule
-%   \end{tabular}
-% \end{table}
+in order to deduce a tag decision. The selection requirements for kaon
+candidates are similar to those for the \SSpi tagger. Besides \PID variables,
+momenta, the quality of the \IP fit and the track fit, differences between the
+$\Bs\kaon$ mass and the $\Bs$ mass, the difference in the $\phi$ angle between
+the signal \Bmeson and the kaon, and the pseudo-rapidity between the signal
+\Bmeson and the kaon are taken into account. If more than one candidate passes
+the criteria, the one with the highest \pT is used. The \SSK tagger is not used
+in this analysis as only $\Bd$ and $\Bdbar$ meson initial states are considered.
 
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Calibration of the flavour tagging output}
 \label{sec:flavour_tagging:calibration}
 
-The tagging decisions each tagger estimates are based on selection criteria
+The tagging decisions each tagger makes are based on selection criteria
 developed using simulations and flavour-specific decays. While the tag decision
 $d$ depends on a measured particle or vertex charge, the mistag estimate
 $\mistagestimate$ is computed using \acp{ANN} trained on \sweighted $\BuToJpsiK$
 data incorporating kinematic and geometric event properties.
 
-In order to adjust for differences between the training and physics data, the
-\ANN output is calibrated using flavour-specific decays. For the \OS taggers and
-the \SSpi tagger, $\BuToJpsiK$ decays are used to develop a calibration function
-$\omofeta$ (while the data sample that was used to train the \ANN before is
-omitted). Decays of charged \Bmesons are not subject to quark mixing, thus, the
-true mistag probability $\omega$ can be determined directly by counting and
-comparing the final state charges. In case of neutral $\B$ decays into
-flavour-specific final states a full time-dependent mixing analysis is
-necessary.
+In order to adjust for differences between the training on simulated data and
+the application on data, the \ANN output is calibrated using flavour-specific
+decays. For the \OS taggers and the \SSpi tagger, $\BuToJpsiK$ decays are used
+to develop a calibration function $\omofeta$ (while the portion of the data
+sample that was used to train the \ANN before is omitted). Decays of charged
+\Bmesons are not subject to quark mixing, thus, the true mistag probability
+$\omega$ can be determined directly by counting and comparing the final state
+charges. In case of neutral $\B$ decays into flavour-specific final states a
+full time-dependent mixing analysis is necessary.
 
 In \cref{sec:flavour_tagging:calibration:method} general concepts and the choice
 of the calibration function are presented, then the methodologies of a
@@ -475,30 +454,30 @@ procedure. All single taggers and the combination of all \OS tagging decisions
 (see \cref{sec:flavour_tagging:combination}) is calibrated using the high yield
 decay channel $\BuToJpsiK$. The correction determined in this step is then
 applied to the tagging algorithms during the common data processing stage
-(\enquote{Stripping}). Afterwards, the calibration is checked on several control
+(\emph{Stripping}). Afterwards, the calibration is checked on several control
 channels, \ie $\BuToJpsiK$, $\BuToDpi$, $\BdToJpsiKstar$, $\BdToDpi$,
 $\BdToDstarmunu$ and $\BsToDspi$ and possible small corrections can be applied
 for individual analyses. Assuming no correlations amongst the single taggers, it
 can be assumed, that the calibration is still valid for the combined tagging
 estimates. This assumption is checked as well.
 
-The calibration function $\omofeta$ is chosen linear with two parameters
-$\pzero$ and $\pone$,
+A linear calibration function $\omofeta$ is chosen with two parameters $\pzero$
+and $\pone$,
 %
 \begin{equation}\label{eq:flavour_tagging:calibration:method:calibration}
   \omofeta = \pzero + \pone (\mistagestimate - \avgmistagestimate)\eqcm
 \end{equation}
 %
-with $\avgmistagestimate$ being the average mistag estimate used to decorrelate
-$\pzero$ and $\pone$. Hence, a perfect calibrated tagging output would result in
-$\pzero = \avgmistagestimate$ and $\pone = 1$. The performance of the tagging
-algorithms may depend on the flavour of the initial \Bmeson. Different
-interaction of particles, \eg kaons used by the \OSK tagger, induce deviating
-reconstruction efficiencies, resulting in different tagging efficiencies
-$\tageff$ and mistag probabilities $\mistag$ for initial $\Bd$ and $\Bdbar$
-states. To correct for asymmetries of the tagging calibration $\deltamistag =
-\mistag^{\Bd} - \mistag^{\Bdbar}$ two independent calibration functions are
-defined
+with $\avgmistagestimate$ being the average mistag estimate introduced to
+decorrelate $\pzero$ and $\pone$. Hence, a perfectly calibrated tagging output
+would result in $\pzero = \avgmistagestimate$ and $\pone = 1$. The performance
+of the tagging algorithms may depend on the flavour of the initial \Bmeson.
+Different interaction of particles, \eg kaons used by the \OSK tagger, induce
+deviating reconstruction efficiencies, resulting in different tagging
+efficiencies $\tageff$ and mistag probabilities $\mistag$ for initial $\Bd$ and
+$\Bdbar$ states. To correct for asymmetries of the tagging calibration,
+$\deltamistag = \mistag^{\Bd} - \mistag^{\Bdbar}$, two independent calibration
+functions are defined
 %
 \begin{equation}\label{eq:flavour_tagging:calibration:method:asymmetric_calibration:omega}
   \begin{split}
@@ -519,12 +498,11 @@ where the calibration parameters $\p{i}{}$ (with $i=0,1$) can be parametrised as
 
 Using decays of charged \Bmesons into flavour-specific final states like
 $\BuToJpsiK$ and $\BuToDpi$ is the straightforward way to calibrate the flavour
-tagging. The decisions given by the tagging algorithms can be easily compared to
-the final state charges without ambiguities due to oscillations in the \Bmeson
-system.
+tagging, as the decisions given by the tagging algorithms can be easily compared
+to the final state charges.
 
-Using a fit to the $\Bu$ mass distribution the background contributions can be
-subtracted using the \sPlot technique \cite{Pivk:2004ty}. The mistag estimate
+Using a fit to the $\Bu$ mass distribution, signal weights (\sweights) can be
+computed using the \sPlot technique \cite{Pivk:2004ty}. The mistag estimate
 distribution can then be split into $n$ bins to compare the average estimated
 mistag of each bin $\mistagestimate_i$ to the counted mistag ratio $\mistag_i$.
 \Cref{fig:flavour_tagging:calibration:method:charged:calibration_plot} shows an
@@ -538,16 +516,16 @@ $\pone$.
 \centering
 \includegraphics[width=0.5\textwidth]{private/content/flavour-tagging/figs/lhcb_ft_calibration_bu2jpsik_037fb}
 \caption{Measured mistag fraction $\mistag$ plotted against the mistag estimate
-$\mistagestimate$ provided by the tagging algorithms. Described in black are
+$\mistagestimate$ provided by the \OS tagging algorithms. Described in black are
 data of $\BuToJpsiK$ decays corresponding to an integrated luminosity of
 $\SI{0.37}{\per\femtobarn}$. The red line illustrates the linear calibration
-function fitted to the data. \cite{Aaij:2012mu}}
+function fit to the data. \cite{Aaij:2012mu}}
 \label{fig:flavour_tagging:calibration:method:charged:calibration_plot}
 \end{figure}
 
-As an alternative, the calibration function can be implemented into an unbinned
-maximum likelihood fit to tagging decision, true state, and mistag probability
-estimate, using a conditional \PDF
+As an alternative, the calibration function parameters can be estimated through
+an unbinned maximum likelihood fit to tagging decision, true state, and mistag
+probability estimate, using a \PDF
 $\Prob{}{\Sig}(\tagdecision,\tagdecision^\prime,\mistagestimate)$, where
 $\tagdecision^\prime$ describes the true $\Bu$ tag derived from the final-state
 particle charge,
@@ -566,14 +544,14 @@ particle charge,
 \subsubsection[Flavour tagging calibration using decays of neutral \Bmesons]{Flavour tagging calibration using decays of neutral \Bbfsf mesons}
 \label{sec:flavour_tagging:calibration:method:neutral}
 
-In the decay of neutral \Bmesons the oscillation of the propagating $\B$ state
+In the decay of neutral \Bmesons, the oscillation of the propagating $\B$ state
 prevents the determination of the initial flavour just by measuring the final
-state charge. Instead a full decay time dependent mixing analysis has to be
-performed. As described \eg in \cite{Aaij:2012nt} the signal mixing asymmetry is
+state charge. Instead, a full decay time dependent mixing analysis has to be
+performed. As described \eg in \cite{Aaij:2012nt}, the signal mixing asymmetry is
 given by
 %
 \begin{equation}
-  \MixingAsymmetry = (1 - 2\mistag)\cos(\DMd t)\eqpd
+  \MixingAsymmetry(\obsTime) = (1 - 2\mistag)\cos(\DMd \obsTime)\eqpd
 \end{equation}
 %
 This can be either utilised in a simultaneous fit in different bins of
@@ -590,50 +568,57 @@ are considered: \enquote{type I} uncertainties are related to systematic
 uncertainties from the methodology of the calibration itself, while
 \enquote{type II} uncertainties account for systematic uncertainties resulting
 from using the calibration parameters determined in a control channel in the
-signal channel.
+signal channel. The standard type II uncertainties cover for differences between
+all commonly used control channels, whereas the procedure followed in this
+analysis differs, as described later on.
 
 % ------------------------------------------------------------------------------
 \subsection[
-  head={\ac{OS} tagger calibration using \BuToJpsiK decays},
-  tocentry={\ac{OS} tagger calibration using \BuToJpsiKHyperref decays}
-]{\ac{OS} tagger calibration using \BuToJpsiKbfsf decays}
+  head={\ac*{OS} tagger calibration using \BuToJpsiK decays},
+  tocentry={\ac*{OS} tagger calibration using \BuToJpsiKHyperref decays}
+]{\ac*{OS} tagger calibration using \BuToJpsiKbfsf decays}
 \label{sec:flavour_tagging:calibration:os}
 
 Deviating from the standard procedure to calibrate the \OS taggers and their
 combination using a set of physics channels, only $\BuToJpsiK$ is used. A
-previous study \cite{Aaij:1497268} made apparent that the uncertainties arising
-from the flavour tagging calibration provide the largest contribution to the
-overall systematic uncertainties on the measured quantities $\SJpsiKS$ and
-$\CJpsiKS$. Therefore, going without semileptonic and fully hadronic decay modes
-with different kinematic properties and only using $\BuToJpsiK$ decays with a
-nearly similar final state, can reduce the uncertainties. An additional
+previous study \cite{Aaij:1497268} made apparent that the type II uncertainties
+arising from the flavour tagging calibration provide the largest contribution to
+the overall systematic uncertainties on the measured \CP parameters $\SJpsiKS$
+and $\CJpsiKS$. Therefore, giving up on semileptonic and fully hadronic decay
+modes with different kinematic properties and only using $\BuToJpsiK$ decays
+with a nearly similar final state, can reduce these uncertainties. An additional
 cross-check of the calibration is performed on $\BdToJpsiKstar$ decays to
 confirm the portability of the calibration on a $\Bu$ to a $\Bd$ initial state.
-% \missing{\OS calibration: $\BuToJpsiK$ data sample and signal selection}
 
 The calibration then follows the already outlined approach: extracting \sweights
-by a fit to the \Bu mass distribution, then comparing the true fraction of wrong
-tagged candidates to the average mistag estimate in $\num{60}$ $\mistagestimate$
-bins. The mass model used in the fit is a sum of three Gaussian \acp{PDF} with a
-shared mean to describe the signal shape and an exponential \PDF for the
-background contributions. The fit to the $(\mistagestimate_i,\mistag_i)$ pairs
-using \cref{eq:flavour_tagging:calibration:method:calibration} yields
+by a fit to the \Bu mass distribution, then comparing the true fraction of
+wrongly tagged candidates to the average mistag estimate in $\num{60}$ bins of
+$\mistagestimate$. The mass model used in the fit is a sum of three Gaussian
+\acp{PDF} with a shared mean to describe the signal shape and an exponential
+\PDF for the background contributions. The fit to the
+$(\mistagestimate_i,\mistag_i)$ pairs using
+\cref{eq:flavour_tagging:calibration:method:calibration} yields
 %
+% \begingroup
+%   \thinmuskip=1mu
+%   \medmuskip=2mu plus 2mu minus 2mu
+%   \thickmuskip=3mu
 \begin{equation}\label{eq:flavour_tagging:calibration:os:parameters}
   \begin{split}
     \p{0}{\text{\acs{OS}}} &= 0.3815 \pm 0.0011 \text{\,(\stat)} 
-                               \pm 0.0015 \text{\,(\syst type I)}  
-                               \pm 0.0005 \text{\,(\syst type II)} \eqcm\\ % total syst 0.0016 
+                               \pm 0.0015 \text{\,(\syst.\,type I)}  
+                               \pm 0.0005 \text{\,(\syst.\,type II)} \eqcm\\ % total syst 0.0016 
     \p{1}{\text{\acs{OS}}} &= 0.978\phantom{0} \pm 0.012\phantom{0} \text{\,(\stat)} 
-                                         \pm 0.006\phantom{0}  \text{\,(\syst type I)} 
-                                         \pm 0.007\phantom{0}  \text{\,(\syst type II)} \eqcm\\ % total syst 0.009
+                                         \pm 0.006\phantom{0}  \text{\,(\syst.\,type I)} 
+                                         \pm 0.007\phantom{0}  \text{\,(\syst.\,type II)} \eqcm\\ % total syst 0.009
     \langle\mistagestimate^{\text{\acs{OS}}}\rangle &= 0.3786 \eqcm \\
     \rho_{\pzero,\pone} &= 0.14 \eqcm
   \end{split}
 \end{equation}
+% \endgroup
 %
-where $\rho_{\pzero,\pone}$ is the correlation between $\p{0}{\text{\acs{OS}}}$
-and $\p{0}{\text{\acs{OS}}}$ \cite{Aaij:2015vza}.
+where $\rho_{\pzero,\pone}$ is the statistical correlation between
+$\p{0}{\text{\acs{OS}}}$ and $\p{1}{\text{\acs{OS}}}$ \cite{Aaij:2015vza}.
 \Cref{fig:flavour_tagging:calibration:os:mass_and_calibration} shows the mass
 distribution and the \PDF projection as well as the calibration plot.
 %
@@ -656,8 +641,8 @@ are
 %
 \begin{equation}\label{eq:flavour_tagging:calibration:os:asymmetries}
   \begin{split}
-    \deltap{0}{\text{\acs{OS}}} &= 0.0148 \pm 0.0016 \text{\,(\stat)} \pm  0.0007 \text{\,(\syst type I)} \pm  0.0004 \text{\,(\syst type II)} \eqcm \\ % total syst. 0.0008
-    \deltap{1}{\text{\acs{OS}}} &= 0.070\phantom{0} \pm 0.018\phantom{0} \text{\,(\stat)} \pm 0.003\phantom{0} \text{\,(\syst type I)} \pm 0.002\phantom{0} \text{\,(\syst type II)} \eqcm \\ % total syst. 0.004
+    \deltap{0}{\text{\acs{OS}}} &= 0.0148 \pm 0.0016 \text{\,(\stat)} \pm  0.0007 \text{\,(\syst. type I)} \pm  0.0004 \text{\,(\syst. type II)} \eqcm \\ % total syst. 0.0008
+    \deltap{1}{\text{\acs{OS}}} &= 0.070\phantom{0} \pm 0.018\phantom{0} \text{\,(\stat)} \pm 0.003\phantom{0} \text{\,(\syst. type I)} \pm 0.002\phantom{0} \text{\,(\syst. type II)} \eqcm \\ % total syst. 0.004
     \Delta \tageff^{\text{\acs{OS}}} &= \tageff^{\text{\acs{OS},\Bd}} - \tageff^{\text{\acs{OS},\Bdbar}} = (-0.09  \pm 0.09 \text{\,(\stat)} \pm   0.09 \text{\,(\syst)})\% \eqpd
   \end{split}
 \end{equation}
@@ -665,29 +650,30 @@ are
 As the difference in the tagging efficiencies $\Delta \tageff^{\text{\acs{OS}}}$
 is compatible with zero, it is neglected in the following.
 
-The type I systematic uncertainties stem mainly from the applied method of
-background subtraction. To study this effect the model to determine the
+The type I systematic uncertainties stem mainly from the method of background
+subtraction. To study the size of the uncertainties, the model to determine the
 \sweights is changed, the calibration procedure is repeated, and differences in
-the results to the nominal determination are considered as systematic
-uncertainties.
+the results to the nominal determination are considered as a measure of the
+systematic uncertainties.
 
-To study the type II systematic uncertainties possible differences between the
+To study the type II systematic uncertainties, possible differences between the
 calibration channel $\BuToJpsiK$ and the signal channel $\BdToJpsiKS$ are
 inspected. Distributions of parameters that are known to influence the tagging
 algorithms as the \acf{pT}, the \pseudorapidity, the azimuthal angle ($\phi$) of
 the \Bmeson candidate, and the number of tracks (nTracks) and \aclp{PV}
-(n\acsp{PV}) in the event are compared using signal \sweights. Following, the
-five distributions in the calibration channel are reweighted to match the
-distribution found in $\BdToJpsiKS$. The calibration procedure is repeated for
-each combination of the two track types and the correlated variable. For each
-correlated variable the largest deviation with respect to the two track types is
-assigned and the sum in quadrature is assigned as systematic uncertainty of type
+(n\acsp{PV}) in the event are compared using signal \sweights. The five
+distributions in the calibration channel are reweighted to match the
+distribution found in $\BdToJpsiKS$. For each correlated variable the deviation
+is assigned and the sum in quadrature is taken as systematic uncertainty of type
 II. The results are summarised in
 \cref{tab:flavour_tagging:calibration:os:systematics}.
 %
 \begin{table}
   \centering
-  \caption{Summary of type II systematic uncertainties for \OS calibration parameters. \cite{Aaij:2015vza}}
+  \caption{Summary of type II systematic uncertainties for the \OS calibration
+  parameters from reweighting the distributions of \ac{pT}, \pseudorapidity,
+  $\phi$, and the number of tracks and \acp{PV} using signal \sweights.
+  \cite{Aaij:2015vza}}
   \label{tab:flavour_tagging:calibration:os:systematics}
   \begin{tabular}{ccccc}
     \toprule
@@ -711,30 +697,13 @@ II. The results are summarised in
   \end{tabular}
 \end{table}
 %
-% \begin{figure}
-%   \centering
-%   \includegraphics[width=0.31\textwidth]{private/content/flavour-tagging/figs/lhcb_ft_calibration_bu2jpsik_pT}
-%   \includegraphics[width=0.31\textwidth]{private/content/flavour-tagging/figs/lhcb_ft_calibration_bu2jpsik_eta}
-%   \includegraphics[width=0.31\textwidth]{private/content/flavour-tagging/figs/lhcb_ft_calibration_bu2jpsik_phi}
-%   \includegraphics[width=0.31\textwidth]{private/content/flavour-tagging/figs/lhcb_ft_calibration_bu2jpsik_nTracks}
-%   \includegraphics[width=0.31\textwidth]{private/content/flavour-tagging/figs/lhcb_ft_calibration_bu2jpsik_nPV}
-%   \caption{Weighted distributions of the \Bmeson \acf{pT}, \acf{pseudorapidity},
-%   and azimuthal angle ($\phi$), as well as the number of tracks (nTracks) and
-%   \aclp{PV} (n\acsp{PV}) in the event. In black the $\BuToJpsiK$ distributions
-%   are shown. $\BdToJpsiKS$ signal candidates belonging to the long track
-%   (downstream track) sub-sample contribute to the red (blue) histograms.
-%   \cite{FT:RunI} \todo{Decide if to remove plots}
-%   }
-%   \label{fig:flavour_tagging:calibration:os:parameter_distributions}
-% \end{figure}
-%
 % \missing{Comparison of $\BuToJpsiK$ and $\BdToJpsiKstar$ on MC}
 
 % ------------------------------------------------------------------------------
 \subsection[
-  head={\ac{SS} tagger calibration using \BdToJpsiKstar decays},
-  tocentry={\ac{SS} tagger calibration using \BdToJpsiKstarHyperref decays}
-]{\ac{SS} tagger calibration using \BdToJpsiKstarbfsf decays}
+  head={\ac*{SS} tagger calibration using \BdToJpsiKstar decays},
+  tocentry={\ac*{SS} tagger calibration using \BdToJpsiKstarHyperref decays}
+]{\ac*{SS} tagger calibration using \BdToJpsiKstarbfsf decays}
 \label{sec:flavour_tagging:calibration:ss}
 
 The \SSpi mistag estimate is pre-calibrated using the calibration parameters
@@ -746,7 +715,7 @@ The \SSpi mistag estimate is pre-calibrated using the calibration parameters
     \langle\eta\rangle = \num{0.379}.
 \end{equation}
 %
-Following, the \SSpi tagger is calibrated using a dataset of $\BdToJpsiKstar$
+Afterwards, the \SSpi tagger is calibrated using a dataset of $\BdToJpsiKstar$
 decays corresponding to an integrated luminosity of $\SI{3.0}{\per\fb}$
 collected by the \LHCb experiment in \RunOne. As the \SSpi tagging algorithm
 depends on the fragmentation process of the initial \Bmeson, a $\Bd$ decay mode
@@ -754,7 +723,7 @@ is preferred over a decay of $\Bu$ mesons. Only candidates carrying a tagging
 response from the \SSpi tagger are considered in the following.
 % \missing{\SS calibration: $\BdToJpsiKstar$ signal selection?}
 
-To describe the mixing asymmetry $\MixingAsymmetry$ a two-dimensional fit to the
+To determine the mixing asymmetry $\MixingAsymmetry(\obsTime)$, a fit to the
 reconstructed decay time and mass distribution is performed. The signal mass
 component is described by an Ipatia \PDF (\cf
 \cref{sec:measurement_of_sin2beta:likelihood_fit:pdfs:ipatia}) with all tail
@@ -769,13 +738,13 @@ candidates with low decay times and a convolution of a $\B$ mixing \PDF and a
 resolution model
 %
 \begin{equation}
-  \Prob{\Sig}{} = \eps(t) \cdot \left[ \Prob{\text{Mix}}{}(t, \tagdecision, \tagdecision^\prime, \mistagestimate) \otimes \mathcal{R}(t - t_\text{true}) \right] \eqcm
+  \Prob{\Sig}{} = \eps(t) \cdot \left[ \Prob{\text{Mix}}{}(t, \tagdecision, \tagdecision^\prime) \otimes \mathcal{R}(t - t_\text{true}) \right] \eqcm
 \end{equation}
 %
 with
 %
 \begin{equation}
-  \Prob{\text{Mix}}{}(t, \tagdecision, \tagdecision^\prime, \mistagestimate) 
+  \Prob{\text{Mix}}{}(t, \tagdecision, \tagdecision^\prime) 
   \propto 
   \exponential{-\sfrac{t}{\tau}} \left( 1 - \tagdecision \average{\deltamistag} + \tagdecision \tagdecision^\prime (1 - 2 \average{\mistag}) \cos(\DMd t) \right)\eqcm
 \end{equation}
@@ -798,7 +767,7 @@ parametrisation includes the average mistag difference $\average{\deltamistag}$
 and the average of the mistag $\average{\mistag}$ for the given dataset and
 therefore no per-event mistag information enter the fit model. To strike a
 balance between the per-event technique outlined in
-\cref{sec:flavour_tagging:calibration:method} and complexity of the fit model,
+\cref{sec:flavour_tagging:calibration:method} and the complexity of the fit model,
 an intermediate approach is chosen. The calibration is performed by a
 simultaneous fit in $\num{5}$ equally filled bins of the mistag estimate
 $\mistagestimate$. The per-bin average $\langle\mistagestimate\rangle_i$ of all
@@ -807,8 +776,8 @@ the calibration can be parametrised inside the \PDF
 %
 \begin{equation}
   \begin{split}
-    \average{\deltamistag}  &= \deltapzero + \deltapone ( \langle\mistagestimate\rangle_i - \langle\mistagestimate\rangle )\eqcm \\
-    \average{\mistag}       &= \pzero + \pone ( \langle\mistagestimate\rangle_i - \langle\mistagestimate\rangle )\eqcm
+    \average{\deltamistag}_i  &= \deltapzero + \deltapone ( \langle\mistagestimate\rangle_i - \langle\mistagestimate\rangle )\eqcm \\
+    \average{\mistag}_i       &= \pzero + \pone ( \langle\mistagestimate\rangle_i - \langle\mistagestimate\rangle )\eqcm
   \end{split}
 \end{equation}
 %
@@ -825,41 +794,37 @@ determined to be
   \begin{split}
     \p{0}{\text{\acs{SSpi}}}        &= \phantom{+}0.4232 \pm\, 
                                        0.0029 \text{\,(\stat)} \pm\, 
-                                       0.0020 \text{\,(\syst type I)} \pm\, 
-                                       0.0019 \text{\,(\syst type II)} \eqcm\\ % 0.0040 syst
+                                       0.0020 \text{\,(\syst. type I)} \pm\, 
+                                       0.0019 \text{\,(\syst. type II)} \eqcm\\ % 0.0040 syst
     \p{1}{\text{\acs{SSpi}}}        &= \phantom{+}1.011\phantom{0} \pm\, 
                                        0.064\phantom{0} \text{\,(\stat)} \pm\, 
-                                       0.009\phantom{0} \text{\,(\syst type I)} \pm\, 
-                                       0.030\phantom{0} \text{\,(\syst type II)} \eqcm\\ % 0.034 syst
+                                       0.009\phantom{0} \text{\,(\syst. type I)} \pm\, 
+                                       0.030\phantom{0} \text{\,(\syst. type II)} \eqcm\\ % 0.034 syst
     \deltap{0}{\text{\acs{SSpi}}} &= -0.0026 \pm\, 
                                       0.0043 \text{\,(\stat)} \pm\, 
-                                      0.0024 \text{\,(\syst type I)} \pm\, 
-                                      0.0013 \text{\,(\syst type II)} \eqcm \\
+                                      0.0024 \text{\,(\syst. type I)} \pm\, 
+                                      0.0013 \text{\,(\syst. type II)} \eqcm \\
     \deltap{1}{\text{\acs{SSpi}}} &= -0.171\phantom{0} \pm\, 
                                       0.096\phantom{0} \text{\,(\stat)} \pm\, 
-                                      0.029\phantom{0} \text{\,(\syst type I)} \pm\, 
-                                      0.027\phantom{0} \text{\,(\syst type II)} \eqcm\text{ and} \\
+                                      0.029\phantom{0} \text{\,(\syst. type I)} \pm\, 
+                                      0.027\phantom{0} \text{\,(\syst. type II)} \eqcm\text{ and} \\
     \langle\mistagestimate^{\text{\acs{SSpi}}}\rangle &= \phantom{+}0.425 \eqcm
   \end{split}
 \end{equation}
 %
-and the inter-parameter correlations are given in
+and the parameter correlations are given in
 \cref{tab:flavour_tagging:calibration:ss:correlations} \cite{Aaij:2015vza}. The
 type I systematic uncertainties cover influences of the decay time acceptance
 and resolution, the production and detection asymmetries, as well as possible
 deviations of the results when performing a fit using a signal \sweighted
 dataset. The study of the type II systematic uncertainties follows closely the
-approach outlined in
-\cref{sec:flavour_tagging:os}.
-% A comparison of the parameter distributions between the calibration and the
-% signal channel is given in
-% \cref{fig:flavour_tagging:calibration:ss:parameter_distributions}, 
-The results of the reweighting procedure are presented in
+approach outlined in \cref{sec:flavour_tagging:os}. The results of the
+reweighting procedure are presented in
 \cref{tab:flavour_tagging:calibration:ss:systematics}.
 %
 \begin{table}
   \centering
-  \caption{Correlations between the \SSpi tagging calibration parameters. \cite{Aaij:2015vza}}
+  \caption{Statistical correlations between the \SSpi tagging calibration parameters. \cite{Aaij:2015vza}}
   \label{tab:flavour_tagging:calibration:ss:correlations}
   \begin{tabular}{ccccc}
     \toprule
@@ -885,8 +850,10 @@ The results of the reweighting procedure are presented in
 %
 \begin{table}
   \centering
-  \caption{Summary of type II systematic uncertainties for \SSpi calibration
-  parameters. \cite{Aaij:2015vza}}
+  \caption{Summary of type II systematic uncertainties for the \SSpi calibration
+  parameters from reweighting the distributions of \ac{pT}, \pseudorapidity,
+  $\phi$, and the number of tracks and \acp{PV} using signal \sweights.
+  \cite{Aaij:2015vza}}
   \label{tab:flavour_tagging:calibration:ss:systematics}
   \begin{tabular}{ccccc}
     \toprule
@@ -909,22 +876,6 @@ The results of the reweighting procedure are presented in
     \bottomrule
   \end{tabular}
 \end{table}
-%
-% \begin{figure}
-%   \centering
-%   \includegraphics[width=0.31\textwidth]{private/content/flavour-tagging/figs/lhcb_ft_calibration_bd2jpsikstar_pT}
-%   \includegraphics[width=0.31\textwidth]{private/content/flavour-tagging/figs/lhcb_ft_calibration_bd2jpsikstar_eta}
-%   \includegraphics[width=0.31\textwidth]{private/content/flavour-tagging/figs/lhcb_ft_calibration_bd2jpsikstar_phi}
-%   \includegraphics[width=0.31\textwidth]{private/content/flavour-tagging/figs/lhcb_ft_calibration_bd2jpsikstar_nTracks}
-%   \includegraphics[width=0.31\textwidth]{private/content/flavour-tagging/figs/lhcb_ft_calibration_bd2jpsikstar_nPV}
-%   \caption{Weighted distributions of the \Bmeson \ac{pT}, \ac{pseudorapidity},
-%   and azimuthal angle, as well as the number of tracks and \aclp{PV} in the
-%   event. The comparisons show the distributions for (red) $\BdToJpsiKS$ and
-%   (black) $\BdToJpsiKstar$ candidates.
-%   \cite{FT:RunI}\todo{Decide if to remove plots}
-%   }
-%   \label{fig:flavour_tagging:calibration:ss:parameter_distributions}
-% \end{figure}
 
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Combination of single tagger outputs}
@@ -933,7 +884,7 @@ The results of the reweighting procedure are presented in
 In order to fully exploit the information of all tagging algorithms it is
 desirable to combine their tag decisions $\tagdecision_i$ and mistag estimates
 $\mistagestimate_i$ into one mutual decision. Given the probabilities
-$p(\bquark)$ and $p(\bquarkbar)$ that a meson contains either a $\bquark$ or a
+$p(\bquark)$ and $p(\bquarkbar)$ that a meson contains a $\bquark$ or a
 $\bquarkbar$ quark
 %
 \begin{equation}\label{eq:flavour_tagging:combination:product}
@@ -954,16 +905,18 @@ Then, the combined tag decision and mistag estimate are $\tagdecision = +1$ and
 $\mistagestimate = 1 - P(\bquarkbar)$ if $P(\bquarkbar) > P(\bquark)$, otherwise
 $\tagdecision = -1$ and $\mistagestimate = 1 - P(\bquark)$. As
 \cref{eq:flavour_tagging:combination:product} ignores possible correlation among
-the involved taggers, the joint mistag estimate might distort the outcome. To
-correct for this bias the mistag estimates as well have to be calibrated after
-the single tagger combination using a flavour-specific control channel.
+the involved taggers, the joint mistag estimate might over- or underestimate the
+true mistag. To correct for this the mistag estimates as well have to be
+calibrated after the single tagger combination using a flavour-specific control
+channel.
 
 The analysis presented in this thesis utilises the combination of the calibrated
 \OS tagging algorithms (see \cref{sec:flavour_tagging:calibration:os}) as well
 as of the \SSpi tagger (see \cref{sec:flavour_tagging:calibration:ss}). As the
 \OS and \SS taggers find their decisions using independent particle information
-their output is assumed to be uncorrelated and not further calibration is
-necessary after combining the \OS and \SSpi tagging decisions.
+their output is assumed to be uncorrelated and no further calibration is
+necessary after combining the \OS and \SSpi tagging decisions (\cf
+\cref{sec:measurement_of_sin2beta:likelihood_fit:model:mistag}).
 
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Performance}
@@ -990,7 +943,7 @@ separate for the tagging categories \catOS, \catSS, and \catBS, as well as for
 the case where all \SSpi decisions are ignored and only the \OS tagging
 information are exploited (\enquote{all \OS}) and vice versa (\enquote{all
 \SSpi}). This allows the performance obtained on the given dataset to be
-compared with the results from a previous \LHCb measurement \cite{Aaij:1497268},
+compared with the results of the previous \LHCb measurement \cite{Aaij:1497268},
 where only the tagging information provided by the \OS algorithm were used.
 Here, relative improvements of $\SI{10}{\percent}$ from $\SI{2.38}{\percent}$ to
 $\SI{2.63}{\percent}$ can be observed. Finally, supplementing the measurement
@@ -1035,8 +988,8 @@ effective tagging efficiency of almost $\SI{27}{\percent}$.
 \label{sec:flavour_tagging:developments}
 
 The algorithms utilised in the flavour tagging are always subject of active
-development with the aim to improve their performance and gain new insights.
-Several taggers are being revisited using particle selections based on
+development with the aim to improve their performance and extend the tagging
+strategy. Several taggers are being revisited using particle selections based on
 \acp{ANN} or \acp{BDT}.
 
 % SSpi BDT
@@ -1080,10 +1033,11 @@ tagging efficiency of $\efftageff = (0.30 \pm 0.03\,\statp \pm 0.01\,\systp)\%$.
 Fully-hadronic final states show a better performance: effective tagging
 efficiencies of $\efftageff = (0.40 \pm 0.02\,\statp \pm 0.01\,\systp)\%$ and
 $\efftageff = (0.39 \pm 0.03\,\statp \pm 0.01\,\systp)\%$ are found for
-$\BdToDpi$ and $\BsToDspi$ candidates.
-As the \OSc decisions are highly correlated with the \OSK output, only an
-additional $\SI{0.113}{\percent}$ absolute gain in effective tagging efficiency
-can be observed once the full \OS combination is computed.
+$\BdToDpi$ and $\BsToDspi$ candidates. As the \OSc decisions are highly
+correlated with the \OSK output, only an additional $\SI{0.113}{\percent}$
+absolute gain in effective tagging efficiency can be observed once the full \OS
+combination is computed, still that compares to a month worth of \RunOne data
+taking.
 
 % SS proton
 Similar to the \SSpi or \SSK algorithms a newly developed \SSp tagger infers
@@ -1093,22 +1047,24 @@ its tagging decision from protons produced in the fragmentation of the signal
 % Run II performance
 Alongside new developments and optimisation of existing tagging algorithms the
 performance of the flavour tagging will be affected by altered experimental
-conditions in \RunTwo of the \LHC. On the one side the higher centre-of-mass
-energy of $\sqrt{s}=\SI{13}{\TeV}$ leads to higher particle momenta, resulting
-in a better selection of the particles involved in the tagging, thus leading to
-a higher performance of the flavour tagging. On the other side, this will also
-result in higher track multiplicities, impeding the selection, thus reducing the
-efficiency of the involved algorithms. However, the higher peak luminosity due
-to the increased centre-of-mass energy, allows for an extensive luminosity
-levelling which itself will result in an effect the opposite of what was
-described before, in a reduction of track multiplicities.
+conditions in \RunTwo of the \LHC. The higher centre-of-mass energy of
+$\sqrt{s}=\SI{13}{\TeV}$ leads to higher particle momenta, resulting in a better
+selection of the particles involved in the tagging, thus leading to a higher
+performance of the flavour tagging. Though, this will also result in higher
+track multiplicities, impeding the selection, thus reducing the efficiency of
+the involved algorithms. However, the higher peak luminosity due to the
+increased centre-of-mass energy, allows for an extensive luminosity levelling
+which itself will result in an effect the opposite of what was described before,
+in a reduction of track multiplicities.
 
 It can be summarised that the change in run conditions will force a
 reoptimisation and recalibration of the flavour tagging algorithms. Studies on
 \MC simulated data with \RunTwo conditions just started and data taken in the
 first months of \RunTwo will be employed to study the performance and retune the
 algorithms to be ready as soon as the \CP violation and \B oscillation
-measurements are started.
+measurements are started. It is clear that with higher statistics available in
+all physics and control channels, systematic effects will need to be even better
+understood, thus making a universal calibration not feasible any more.
 
 
 

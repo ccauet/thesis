@@ -7,8 +7,8 @@ The field of flavour physics includes the description of the weak interaction of
 quarks and leptons, mixing of neutral meson systems, and in general the time
 evolution of those states. Inferred by the nature of the Yukawa interactions \CP
 violation is possible and present in nature. In this thesis the focus is laid on
-the quark sector. This introduction follows the textbooks
-\cite{Branco:1999fs,Bigi:2000yz} and \Ref~\cite{Agashe:2014kda}.
+the quark sector. This introduction follows the
+\Refs~\cite{Branco:1999fs,Bigi:2000yz,Agashe:2014kda}.
 
 % ------------------------------------------------------------------------------
 \subsection{The \acs{CKM} quark mixing matrix}
@@ -19,12 +19,12 @@ electroweak Lagrangian while at the same time preserving renormalisability of
 the theory, the mechanism of spontaneous symmetry breaking is used
 \cite{set:higgs}. While the mechanism also implies new massive vector boson
 fields as well as the appearance of a massive scalar particle---the Higgs
-boson---the focus will be on the quark sector.
+boson---the focus here will lie on the quark sector.
 
 By introducing a complex scalar Higgs field $\phi \equiv
-\left(\begin{smallmatrix} \phi ^{+} \\ \phi^{0}\end{smallmatrix}\right)$ a
+\left(\begin{smallmatrix} \phi ^{+} \\ \phi^{0}\end{smallmatrix}\right)$ an
 $\group{SU}{2}\otimes\group{U}{1}$ invariant Yukawa Lagrangian
-$\Lagrangian{Y}{}$ for the quark sector can be written down,
+$\Lagrangian{Y}{}$ for the quark sector can be written as,
 %
 \begin{equation}\label{sec:cpv_theory:flavour_physics:ckm_matrix:yukawa_lagrangian}
   \Lagrangian{Y}{\quark} = -Y_{ij}^{\dquark\prime} \ovE{Q_{\text{L}i}} \phi \dquark_{\text{R}j}^{\prime} - Y_{ij}^{\uquark} \ovE{Q_{\text{L}i}} \phi^{\ast} \uquark_{\text{R}j} + \hc \eqcm
@@ -33,9 +33,9 @@ $\Lagrangian{Y}{}$ for the quark sector can be written down,
 with $Y_{ij}^{\quark}$ denoting the Yukawa couplings, $Q_{\text{L}i}$ being the
 left-handed quark doublets, and $\quark_{\text{R}j}$ the right-handed singlets. 
 
-Being massless prior to this, the charged leptons, quarks, and the $\Wpm$ and
-$\Zboson$ bosons obtain masses after the spontaneous breaking of the symmetry
-and substituting the Higgs field by its \VEV
+By construction still being massless, the charged leptons, quarks, and the
+$\Wpm$ and $\Zboson$ bosons obtain masses after the spontaneous breaking of the
+symmetry and substituting the Higgs field by its \VEV
 %
 \begin{equation}\label{sec:cpv_theory:flavour_physics:ckm_matrix:higgs_vev}
   \langle\phi\rangle = \frac{1}{\sqrt{2}} \begin{pmatrix}
@@ -44,11 +44,11 @@ and substituting the Higgs field by its \VEV
   \end{pmatrix}\eqpd
 \end{equation}
 %
-The Yukawa couplings $Y_{ij}$ are not constraint by the theory and thus are
-completely arbitrary, leading to most of the free \SM parameters. The coupling
-matrices are a priori non-diagonal in the weak interaction base, but in general
-can be diagonalised by bi-unitary transformations. As a consequence of the
-diagonalisation the quark fields are transformed as well into the mass
+The Yukawa couplings $Y_{ij}$ are not constrained by the theory and thus are
+completely arbitrary and constitute the majority of the free \SM parameters. The
+coupling matrices are a priori non-diagonal in the weak interaction base, but in
+general can be diagonalised by bi-unitary transformations. As a consequence of
+the diagonalisation the quark fields are transformed as well into the mass
 eigenstates basis allowing for flavour-changing currents through $\Wpm$ boson
 exchange
 %
@@ -139,7 +139,7 @@ written in terms of
   s_{12} = \lambda, \eqspace s_{23} = A \lambda^2, \eqand s_{13}\exponential{\ii\delta} = A \lambda^3 (\rho + \ii\eta) \eqpd
 \end{equation}
 %
-The parameters are measured in the \SM to $\lambda \approx 0.23$, $A \approx
+The parameters are measured in the \SM as $\lambda \approx 0.23$, $A \approx
 0.81$, $\rho \approx 0.13$, and $\eta \approx 0.26$. Given the unitarity
 relations in
 \cref{sec:cpv_theory:flavour_physics:ckm_matrix:unitarity_relations} the six
@@ -198,7 +198,10 @@ corresponds to $\SI{68}{\percent}$ \acp{CL}.}
 \end{figure}
 
 % ------------------------------------------------------------------------------
-\subsection{B meson decay}
+\subsection[
+  head={\B meson decay},
+  tocentry={\BHyperref meson decay}
+]{\Bbfsf meson decay}
 \label{sec:cpv_theory:flavour_physics:bdecays}
 
 The decay of a meson state \Meson or its \CP conjugate state \Mesonbar into a
@@ -228,20 +231,23 @@ introducing phases $\zeta_M$ and $\zeta_f$. If the \CP symmetry is conserved
 $\ovE{A}_{\ovE{f}} = \exponential{\ii(\zeta_f - \zeta_M)} A_f$.
 
 % ------------------------------------------------------------------------------
-\subsection{Oscillations of neutral B mesons}
+\subsection[
+  head={Oscillations of neutral \B mesons},
+  tocentry={Oscillations of neutral \BHyperref mesons}
+]{Oscillations of neutral \Bbfsf mesons}
 \label{sec:cpv_theory:flavour_physics:bmixing}
 
 To understand the oscillation of a neutral meson state $\Mesonz$ into its
 $\Mesonzbar$ \CP conjugate state and vice versa, the time evolution of the meson
 states has to be studied. Given a pure \Mesonz or \Mesonzbar initial state at
-$t=0$, it will evolve in time following
+$t=0$, it will evolve in time acquiring components that describe all possible final states $f_1, f_2, \dots$,
 %
 \begin{equation}
-  \ket{\Psi(t)} = \psi_1(t) \ket{\Mesonz} + \psi_2(t) \ket{\Mesonzbar} \eqcm
+  \ket{\Psi(t)} = \psi_1(t) \ket{\Mesonz} + \psi_2(t) \ket{\Mesonzbar} + c_1(t) \ket{f_1} + c_2(t) \ket{f_2} + \dots \eqpd
 \end{equation}
 %
-before decaying into final states. This time evolution can be described by a
-Schrödinger-like equation,
+As only the parameters $\psi_1(t)$ and $\psi_2(t)$ are of interest, this time
+evolution can be described by a Schrödinger-like equation,
 %
 \begin{equation}
   i \frac{\dif}{\dif t} 
@@ -257,8 +263,8 @@ Schrödinger-like equation,
   \end{pmatrix}
   =
   \begin{pmatrix}
-    m_{11} - \frac{\ii}{2} \Gamma_{11}    & m_{12} - \frac{\ii}{2} \Gamma_{12} \\
-    m_{21} - \frac{\ii}{2} \Gamma_{21}    & m_{22} - \frac{\ii}{2} \Gamma_{22} \\
+    m_{11} - \frac{\ii}{2} \mathit{\Gamma}_{11}    & m_{12} - \frac{\ii}{2} \mathit{\Gamma}_{12} \\
+    m_{21} - \frac{\ii}{2} \mathit{\Gamma}_{21}    & m_{22} - \frac{\ii}{2} \mathit{\Gamma}_{22} \\
   \end{pmatrix}
   \begin{pmatrix}
     \psi_1 \\
@@ -268,18 +274,19 @@ Schrödinger-like equation,
 %
 following the Weisskopf-Wigner approximation
 \cite{Weisskopf:1930au,Weisskopf:1930ps} with two Hermitian $2\times2$ matrices
-$M$ and $\Gamma$, where the Hamiltonian
+$M$ and $\mathit{\Gamma}$, where the Hamiltonian
 %
 \begin{equation}
-  \Hamiltonian{}{} = M - \frac{\ii}{2} \Gamma
+  \Hamiltonian{}{} = M - \frac{\ii}{2} \mathit{\Gamma}
 \end{equation}
 %
 is not Hermitian, as otherwise the meson states would just oscillate without
-decay.
+decaying.
 
 Assuming \CPT invariance, $m_{11} = m_{22} = m$, $m_{21} = m_{12}^{\ast}$,
-$\Gamma_{11} = \Gamma_{22} = \Gamma$, and $\Gamma_{21} = \Gamma_{12}^{\ast}$.
-Diagonalising the Hamiltonian yields eigenstates with well-defined masses
+$\mathit{\Gamma}_{11} = \mathit{\Gamma}_{22} = \mathit{\Gamma}$, and
+$\mathit{\Gamma}_{21} = \mathit{\Gamma}_{12}^{\ast}$. Diagonalising the
+Hamiltonian yields eigenstates with well-defined masses
 %
 \begin{equation}\label{eq:cpv_theory:flavour_physics:bmixing:mass_eigenstates}
   \begin{split}
@@ -293,31 +300,25 @@ $\Meson_H$ the heavy eigenstate. The correspondent eigenvalues are
 %
 \begin{equation}
   \begin{split}
-    \mu_H &= m_H - \frac{\ii}{2} \Gamma_H\eqcm\eqand \\
-    \mu_L &= m_L - \frac{\ii}{2} \Gamma_L\eqpd
+    \mu_H &= m_H - \frac{\ii}{2} \mathit{\Gamma}_H\eqcm\eqand \\
+    \mu_L &= m_L - \frac{\ii}{2} \mathit{\Gamma}_L\eqpd
   \end{split}
 \end{equation}
 %
 with the definitions of the average mass and decay width
 %
 \begin{equation}
-  m = \frac{m_H + m_L}{2} \eqcm \eqand \Gamma = \frac{\Gamma_H + \Gamma_L}{2}\eqcm
+  m = \frac{m_H + m_L}{2} \eqcm \eqand \mathit{\Gamma} = \frac{\mathit{\Gamma}_H + \mathit{\Gamma}_L}{2}\eqcm
 \end{equation}
 %
 and the mass and decay width differences
 %
 \begin{equation}
-  \DM = m_H - m_L \eqcm \eqand \DG = \Gamma_H - \Gamma_L\eqpd
+  \DM = m_H - m_L \eqcm \eqand \DG = \mathit{\Gamma}_H - \mathit{\Gamma}_L\eqpd
 \end{equation}
 %
 The mass difference $\DM$ of the two mass eigenstates is by definition positive
 while the sign of $\DG$ has to be determined experimentally.
-%
-% \begin{equation}
-%   \left(\frac{q}{p}\right)^2 = \frac{m_{12}^{\ast} - \frac{\ii}{2} \Gamma_{12}^{\ast}}{m_{12} - \frac{\ii}{2} \Gamma_{12}}
-% \end{equation}
-%
-
 
 % ------------------------------------------------------------------------------
 \subsection{Time evolution of meson states}
@@ -344,7 +345,7 @@ where the coefficients $g_{\pm}$ are defined as
   \right]
   =
   \frac{1}{2} \left[
-    \exponential{-\ii m_H t} \exponential{-\frac{1}{2} \Gamma_H t} \pm \exponential{-\ii m_L t} \exponential{-\frac{1}{2} \Gamma_L t}
+    \exponential{-\ii m_H t} \exponential{-\frac{1}{2} \mathit{\Gamma}_H t} \pm \exponential{-\ii m_L t} \exponential{-\frac{1}{2} \mathit{\Gamma}_L t}
   \right]\eqpd
 \end{equation}
 %
@@ -367,10 +368,10 @@ which yields the four differential decay rates
         \Biggl[ \cosh\Bigl(\frac{\DG t}{2}&\Bigr) + D_{\ovE{f}} \sinh\left(\frac{\DG t}{2}\right) + C_{\ovE{f}} \cos(\DM t) - S_{\ovE{f}} \sin(\DM t) \Biggr]\eqcm \\
     \frac{\Gamma \bigl(\Mesonbar(t) \to       f \bigr)}{\exponential{-\Gamma t}} &= 
       \frac{1}{2} \abs{A_f}^2 \left( 1 + \abs{\lambda_f}^2 \right) \abs{\frac{p}{q}}^2 \\
-        \Biggl[ \cosh\Bigl(\frac{\DG t}{2}&\Bigr) + D_f \sinh\left(\frac{\DG t}{2}\right) + C_f \cos(\DM t) - S_f \sin(\DM t) \Biggr]\eqcm\eqand \\
+        \Biggl[ \cosh\Bigl(\frac{\DG t}{2}&\Bigr) + D_f \sinh\left(\frac{\DG t}{2}\right) - C_f \cos(\DM t) + S_f \sin(\DM t) \Biggr]\eqcm \\
     \frac{\Gamma \bigl(\Mesonbar(t) \to \ovE{f} \bigr)}{\exponential{-\Gamma t}} &= 
       \frac{1}{2} \abs{\ovE{A}_{\ovE{f}}}^2 \left( 1 + \abs{\ovE{\lambda}_{\ovE{f}}}^2 \right) \\
-        \Biggl[ \cosh\Bigl(\frac{\DG t}{2}&\Bigr) + D_{\ovE{f}} \sinh\left(\frac{\DG t}{2}\right) + C_{\ovE{f}} \cos(\DM t) - S_{\ovE{f}} \sin(\DM t) \Biggr]\eqcm \\
+        \Biggl[ \cosh\Bigl(\frac{\DG t}{2}&\Bigr) + D_{\ovE{f}} \sinh\left(\frac{\DG t}{2}\right) - C_{\ovE{f}} \cos(\DM t) + S_{\ovE{f}} \sin(\DM t) \Biggr]\eqcm \\
   \end{split}
 \end{equation}
 %
@@ -412,13 +413,13 @@ decay amplitudes of a meson into a final state differ from the \CP conjugate
 decay
 %
 \begin{equation}
-  \frac{\ovE{A}_{\ovE{f}}}{A_f} \neq 1 \eqpd
+  \frac{\abs{\ovE{A}_{\ovE{f}}}}{\abs{A_f}} \neq 1 \eqpd
 \end{equation}
 %
 This is the only possible source of \CP violation in charged mesons and all
-baryons. As the \CP violation in the decay is expressed by the decay amplitudes,
-the strength can be estimated by studying the involved \CKM matrix elements. In
-the decay of \BdToJpsiKS the matrix elements $\Vcs \approx 1$ and $\Vcb
+baryons. As \CP violation in the decay is expressed by the decay amplitudes, the
+strength can be estimated by studying the involved \CKM matrix elements. In the
+decay of \BdToJpsiKS the matrix elements $\Vcs \approx 1$ and $\Vcb
 \approx A\lambda^2$ are most relevant, thus no complex phase is present up to
 the order of $\lambda^2$ and no direct \CP violation is expected.
 
@@ -458,11 +459,11 @@ by employing the identity relation
 The third kind of \CP violation only occurs in decays where both \CP conjugate
 initial states \Mesonz and \Mesonzbar decay into a common final state $f$. Then
 an interference between a decay without mixing, $\decay{\Mesonz}{f}$, and a
-decay with mixing, $\decay{\Mesonz}{\decay{\Mesonzbar}{f}}$, leads to \CP
-violation in the interference between both amplitudes:
+decay with mixing, $\decay{\Mesonz}{\decay{\Mesonzbar}{f}}$, can lead to \CP
+violation in the interference between both amplitudes of:
 %
 \begin{equation}
-  \Im \lambda_f \neq 0   
+  \Im \lambda_f \neq 0 \eqpd
 \end{equation}
 %
 As can be seen in the definition of $\lambda_f$ given in

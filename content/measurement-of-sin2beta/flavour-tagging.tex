@@ -13,3 +13,68 @@ the \CP parameters Gaussian constraints based on the calibration parameters'
 central values and theirs statistical uncertainties are applied. The influence
 of the systematic uncertainties on the calibration parameters is described in
 \cref{sec:measurement_of_sin2beta:systematics:systematics}.
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Performance}
+\label{sec:measurement_of_sin2beta:flavour_tagging:performance}
+
+The effective tagging efficiency
+(\cref{eq:flavour_tagging:efftageff})---inherent in the used data sample given
+the choice of utilised taggers---is calculated as the sum of the effective
+tagging efficiencies carried by each (including untagged) signal candidate
+%
+\begin{equation}
+  \efftageff = \frac{\sum_{i=0}^{N} \mistag_i \tagdilution_i^2\big(\tagOS, \tagSS, \mistagOS, \mistagSS \big)}{\sum_{i=0}^{N} \mistag_i}\eqcm
+\end{equation}
+%
+where $\mistagOS$ and $\mistagSS$ refer to the calibrated mistag estimates. This
+adds up to an effective tagging efficiency of $\efftageff = \SI{3.02 +-
+0.05}{\percent}$, which splits into a tagging efficiency of $\tageff = \SI{36.54
++- 0.14}{\percent}$ and an effective dilution of $\tagdilution = \SI{28.75 +-
+0.24}{\percent}$ corresponding to an average mistag probability of $\mistag =
+\SI{35.62 +- 0.12}{\percent}$.
+
+\Cref{tab:flavour_tagging:performance:numbers} lists the tagging efficiency
+separate for the \catOS, \catSS, and \catBS parts of the dataset, as well as for
+the case where all \SSpi decisions are ignored and only the \OS tagging
+information are exploited (\enquote{all \OS}) and vice versa (\enquote{all
+\SSpi}). This allows the performance obtained on the given dataset to be
+compared with the results of the previous \LHCb measurement \cite{Aaij:1497268},
+where only the tagging information provided by the \OS algorithms were used.
+Here, relative improvements of $\SI{10}{\percent}$ from $\SI{2.38}{\percent}$ to
+$\SI{2.63}{\percent}$ can be observed. Finally, supplementing the measurement
+with information from the \SSpi tagger allows for an overall improvement in
+effective tagging efficiency of almost $\SI{27}{\percent}$.
+%
+\begin{table}
+  \centering
+  \caption{Effective tagging efficiency given for all three tagging categories.
+  Additionally listed are the results just exploiting the information of the \OS
+  or \SSpi tagging algorithms, as well as the total effective tagging efficiency
+  of the dataset.}
+  \label{tab:flavour_tagging:performance:numbers}
+  \begin{tabular}{
+      S[table-text-alignment = left]
+      S
+      [
+        table-number-alignment = center,
+        table-align-uncertainty = true,
+        table-figures-decimal = 3,
+        table-figures-uncertainty = 1,
+      ]
+    }
+    \toprule
+    {Tagger}        & {\efftageff [$\%$]}\\
+    \midrule
+    {\catOS}        & 2.259 +- 0.034 \\
+    {\catSS}        & 0.262 +- 0.017 \\
+    {\catBS}        & 0.503 +- 0.010 \\
+    \midrule
+    {all \OS}       & 2.63  +- 0.04  \\
+    {all \SSpi}     & 0.376 +- 0.024 \\
+    \midrule
+    {Total}         & 3.02  +- 0.05  \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+% 

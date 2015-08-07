@@ -599,11 +599,7 @@ $\mistagestimate$. The mass model used in the fit is a sum of three Gaussian
 $(\mistagestimate_i,\mistag_i)$ pairs using
 \cref{eq:flavour_tagging:calibration:method:calibration} yields
 %
-% \begingroup
-%   \thinmuskip=1mu
-%   \medmuskip=2mu plus 2mu minus 2mu
-%   \thickmuskip=3mu
-\begin{equation}\label{eq:flavour_tagging:calibration:os:parameters}
+\begin{equation*}\label{eq:flavour_tagging:calibration:os:parameters}
   \begin{split}
     \p{0}{\text{\acs{OS}}} &= 0.3815 \pm 0.0011 \text{\,(\stat)} 
                                \pm 0.0015 \text{\,(\syst.\,type I)}  
@@ -614,8 +610,7 @@ $(\mistagestimate_i,\mistag_i)$ pairs using
     \langle\mistagestimate^{\text{\acs{OS}}}\rangle &= 0.3786 \eqcm \\
     \rho_{\pzero,\pone} &= 0.14 \eqcm
   \end{split}
-\end{equation}
-% \endgroup
+\end{equation*}
 %
 where $\rho_{\pzero,\pone}$ is the statistical correlation between
 $\p{0}{\text{\acs{OS}}}$ and $\p{1}{\text{\acs{OS}}}$ \cite{Aaij:2015vza}.
@@ -639,13 +634,13 @@ measurement when splitting the data sample into the initial $\Bd$ flavours and
 comparing the values for $\pzero$ and $\pone$. The results \cite{Aaij:2015vza}
 are
 %
-\begin{equation}\label{eq:flavour_tagging:calibration:os:asymmetries}
+\begin{equation*}\label{eq:flavour_tagging:calibration:os:asymmetries}
   \begin{split}
     \deltap{0}{\text{\acs{OS}}} &= 0.0148 \pm 0.0016 \text{\,(\stat)} \pm  0.0007 \text{\,(\syst. type I)} \pm  0.0004 \text{\,(\syst. type II)} \eqcm \\ % total syst. 0.0008
     \deltap{1}{\text{\acs{OS}}} &= 0.070\phantom{0} \pm 0.018\phantom{0} \text{\,(\stat)} \pm 0.003\phantom{0} \text{\,(\syst. type I)} \pm 0.002\phantom{0} \text{\,(\syst. type II)} \eqcm \\ % total syst. 0.004
     \Delta \tageff^{\text{\acs{OS}}} &= \tageff^{\text{\acs{OS},\Bd}} - \tageff^{\text{\acs{OS},\Bdbar}} = (-0.09  \pm 0.09 \text{\,(\stat)} \pm   0.09 \text{\,(\syst)})\% \eqpd
   \end{split}
-\end{equation}
+\end{equation*}
 %
 As the difference in the tagging efficiencies $\Delta \tageff^{\text{\acs{OS}}}$
 is compatible with zero, it is neglected in the following.
@@ -790,27 +785,32 @@ decay time distributions of the $\BdToJpsiKstar$ candidates, as well as
 projections of the fitted \PDF components. The calibration parameters are
 determined to be
 %
-\begin{equation}\label{eq:flavour_tagging:calibration:ss:parameters}
+\begingroup
+  \thinmuskip=1mu
+  \medmuskip=2mu plus 2mu minus 2mu
+  \thickmuskip=3mu
+\begin{equation*}\label{eq:flavour_tagging:calibration:ss:parameters}
   \begin{split}
     \p{0}{\text{\acs{SSpi}}}        &= \phantom{+}0.4232 \pm\, 
                                        0.0029 \text{\,(\stat)} \pm\, 
-                                       0.0020 \text{\,(\syst. type I)} \pm\, 
-                                       0.0019 \text{\,(\syst. type II)} \eqcm\\ % 0.0040 syst
+                                       0.0020 \text{\,(\syst.\,type I)} \pm\, 
+                                       0.0019 \text{\,(\syst.\,type II)} \eqcm\\ % 0.0040 syst
     \p{1}{\text{\acs{SSpi}}}        &= \phantom{+}1.011\phantom{0} \pm\, 
                                        0.064\phantom{0} \text{\,(\stat)} \pm\, 
-                                       0.009\phantom{0} \text{\,(\syst. type I)} \pm\, 
-                                       0.030\phantom{0} \text{\,(\syst. type II)} \eqcm\\ % 0.034 syst
+                                       0.009\phantom{0} \text{\,(\syst.\,type I)} \pm\, 
+                                       0.030\phantom{0} \text{\,(\syst.\,type II)} \eqcm\\ % 0.034 syst
     \deltap{0}{\text{\acs{SSpi}}} &= -0.0026 \pm\, 
                                       0.0043 \text{\,(\stat)} \pm\, 
-                                      0.0024 \text{\,(\syst. type I)} \pm\, 
-                                      0.0013 \text{\,(\syst. type II)} \eqcm \\
+                                      0.0024 \text{\,(\syst.\,type I)} \pm\, 
+                                      0.0013 \text{\,(\syst.\,type II)} \eqcm \\
     \deltap{1}{\text{\acs{SSpi}}} &= -0.171\phantom{0} \pm\, 
                                       0.096\phantom{0} \text{\,(\stat)} \pm\, 
-                                      0.029\phantom{0} \text{\,(\syst. type I)} \pm\, 
-                                      0.027\phantom{0} \text{\,(\syst. type II)} \eqcm\text{ and} \\
+                                      0.029\phantom{0} \text{\,(\syst.\,type I)} \pm\, 
+                                      0.027\phantom{0} \text{\,(\syst.\,type II)} \eqcm \\
     \langle\mistagestimate^{\text{\acs{SSpi}}}\rangle &= \phantom{+}0.425 \eqcm
   \end{split}
-\end{equation}
+\end{equation*}
+\endgroup
 %
 and the parameter correlations are given in
 \cref{tab:flavour_tagging:calibration:ss:correlations} \cite{Aaij:2015vza}. The

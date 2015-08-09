@@ -322,6 +322,10 @@ $\mistag\left(\mistagestimate_{i}\right)$ the \PDF is then given as
 %
 with
 %
+\begingroup
+  \thinmuskip=1mu
+  \medmuskip=2mu plus 2mu minus 2mu
+  \thickmuskip=3mu
 \begin{equation}
   \begin{split}
     \Prob{}{}(\obsTimeTrue \mid +1, +1,\,& \mistagOS, \mistagSS ) = \\ 
@@ -334,6 +338,7 @@ with
       \mistagOS^{\Bd}& \mistagSS^{\Bdbar} \ProbArg{\text{true}}{}{\obsTimeTrue \given \Bd} \Bigl(1 - \mistagOS^{\Bd}\Bigr) \Bigl(1 - \mistagSS^{\Bdbar}\Bigr) \ProbArg{\text{true}}{}{\obsTimeTrue \given \Bdbar} \eqpd \\ 
   \end{split}
 \end{equation}
+\endgroup
 %
 \Cref{eq:measurement_of_sin2beta:likelihood_fit:model:decay_time:measured_pdf_tagged_only} 
 only contains the \PDF to model decay time distributions of \B candidates where
@@ -351,36 +356,23 @@ simplifies when explicitly implementing the \OS and \SSpi tag decisions
   \end{split}
 \end{equation}
 %
-% \begin{multline}
-%     \ProbArg{}{}{\obsTimeTrue, \obsTagOS, \obsTagSS \given \mistagOS, \mistagSS} = \\ 
-%     \shoveleft{\frac{1}{\Norm{\obsTimeTrue}{}} \exponential{-\sfrac{t}{\tau}}
-%     \Biggl\{
-%       1 - \obsTagOS \left( A_P \left( 1 - \mistagOS^{\Bd} - \mistagOS^{\Bdbar} \right) + \left( \mistagOS^{\Bd} - \mistagOS^{\Bdbar} \right) \right)} \\
-%         - \obsTagSS \left( A_P \left( 1 - \mistagSS^{\Bd} - \mistagSS^{\Bdbar} \right) + \left( \mistagSS^{\Bd} - \mistagSS^{\Bdbar} \right) \right) \\
-%         + \obsTagOS \obsTagSS \left( 1 + 2 \left( \mistagOS^{\Bd} \mistagSS^{\Bd} + \mistagOS^{\Bdbar} \mistagSS^{\Bdbar} \right) - \mistagOS^{\Bd} - \mistagOS^{\Bdbar} - \mistagSS^{\Bd} - \mistagSS^{\Bdbar}  \right) \\
-%         \shoveright{+ \obsTagOS \obsTagSS A_P \left( \mistagOS^{\Bd} - \mistagOS^{\Bdbar} + \mistagSS^{\Bd} - \mistagSS^{\Bdbar} - 2 \left( \mistagOS^{\Bd} \mistagSS^{\Bd} + \mistagOS^{\Bdbar} \mistagSS^{\Bdbar} \right) \right)} \\
-%         + \left( \SJpsiKS \sin (\DMd \obsTimeTrue) - \CJpsiKS \cos (\DMd \obsTimeTrue) \right) \times \\
-%         \shoveleft{\Biggl[
-%             A_P \left( \frac{1}{2} - \obsTagOS \left( \mistagOS^{\Bd} - \mistagOS^{\Bdbar} \right) \right) - \obsTagOS \left( 1 - \mistagOS^{\Bd} - \mistagOS^{\Bdbar} \right)} \\
-%           + A_P \left( \frac{1}{2} - \obsTagSS \left( \mistagSS^{\Bd} - \mistagSS^{\Bdbar} \right) \right) - \obsTagSS \left( 1 - \mistagSS^{\Bd} - \mistagSS^{\Bdbar} \right) \\
-%           + \obsTagOS \obsTagSS \left( 1 + 2 \left( \mistagOS^{\Bd} \mistagSS^{\Bd} + \mistagOS^{\Bdbar} \mistagSS^{\Bdbar} \right) - \mistagOS^{\Bd} - \mistagOS^{\Bdbar} - \mistagSS^{\Bd} - \mistagSS^{\Bdbar}  \right) \\
-%           \shoveright{+ \obsTagOS \obsTagSS A_P \left( \mistagOS^{\Bd} - \mistagOS^{\Bdbar} + \mistagSS^{\Bd} - \mistagSS^{\Bdbar} - 2 \left( \mistagOS^{\Bd} \mistagSS^{\Bd} + \mistagOS^{\Bdbar} \mistagSS^{\Bdbar} \right) \right)
-%         \Biggr]
-%     \Biggr\}}
-% \end{multline}
-%
 Substituting $\ProbArg{\text{true}}{}{\obsTimeTrue \given \Bd}$ and
 $\ProbArg{\text{true}}{}{\obsTimeTrue \given \Bdbar}$ making use of
 \cref{eq:measurement_of_sin2beta:likelihood_fit:model:decay_time:true_pdf} and
 making use of the definition of the tagging asymmetry $\deltamistag =
 \mistag^{\Bd} - \mistag^{\Bdbar}$, 
 \cref{eq:measurement_of_sin2beta:likelihood_fit:model:decay_time:measured_pdf_tagged_only:simplified} 
-can be summarised as\info{Check again!}
+can be summarised as
 %
-\begin{multline}
+\begingroup
+  \thinmuskip=1mu
+  \medmuskip=2mu plus 2mu minus 2mu
+  \thickmuskip=3mu
+\begin{multline}\raisetag{50pt}
   \ProbArg{}{}{\obsTimeTrue, \obsTagOS, \obsTagSS \given \obsEtaOS, \obsEtaSS} = \\
-  \sum_{d^\prime} \Biggl[ \prod_{j} \zeta \left( d_j, \eta_j, d^{\prime} \right) \Biggr] \left( 1 - d^\prime A_P \right) \exponential{-\sfrac{\obsTimeTrue}{\tau}} \left\{ 1 - d^\prime \SJpsiKS \sin (\DMd \obsTimeTrue) + d^\prime \cos (\DMd \obsTimeTrue) \right\} \eqcm
+  \sum_{d^\prime} \Biggl[ \prod_{j} \zeta \left( d_j, \eta_j, d^{\prime} \right) \Biggr] \left( 1 - d^\prime A_P \right) \exponential{-\sfrac{\obsTimeTrue}{\tau}} \left\{ 1 - d^\prime \SJpsiKS \sin (\DMd \obsTimeTrue) + d^\prime \cos (\DMd \obsTimeTrue) \right\} \eqcm 
 \end{multline}
+\endgroup
 %
 with
 %
@@ -469,7 +461,7 @@ categories. Only in the signal \OS distributions the differences depending on
 the track type are negligible so the parameters are shared in the \catDD and
 \catLL categories.
 
-\paragraph{Correlation between \OS and \SSpi mistag estimates}
+\paragraph{Correlation between \OS and SS\pionbfsf mistag estimates}
 
 To check if the two dimensions of $\obsEtaOS$ and $\obsEtaSS$ factorise, the
 linear Pearson correlation coefficient $\rho$ is calculated on the \sweighted
@@ -506,7 +498,7 @@ combined    & 0.077             & ($0.041$  & $0.112$)   &  0.0507           & (
 \end{tabular}
 \end{table}
 
-\paragraph{Correlation between decay time and \OS/\SSpi mistag estimates}
+\paragraph{Correlation between decay time and \OS/SS\pionbfsf mistag estimates}
 
 The same ansatz as before is chosen to test the correlation between the decay
 time distributions and the mistag estimates.

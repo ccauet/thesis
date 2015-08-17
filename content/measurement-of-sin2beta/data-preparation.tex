@@ -137,10 +137,6 @@ total of $\num{24}$ disjoint subsamples.
 \subsection{Trigger}
 \label{sec:measurement_of_sin2beta:data_preparation:trigger}
 
-% BS
-% replace mono space font
-% find another naming for trigger lines
-% that is less technical
 The \LHCb trigger system reduces the amount of data to be stored using loose
 criteria to filter events with interesting physical signatures. As described in
 \cref{sec:lhcb_experiment:trigger} a two-stage system is utilised build up from
@@ -152,7 +148,7 @@ following the trigger requirements applied in this measurement are described. If
 not stated otherwise all candidates passing the requirements specified by the
 trigger line configuration \TriggerReq are used in this analysis.
 
-Both the \HLTOneTrackMuon as well as the \HLTTwoDiMuonDetachedJpsi line require
+Both the \HLTOne \TrackMuon as well as the \HLTTwo \DiMuonDetachedJpsi line require
 cuts on parameters depending on the candidates' measured decay time, preferably
 removing candidates with small decay times. This leads to a bias on the
 experimentally accessible lifetime. Candidates are split into two disjoint
@@ -168,7 +164,8 @@ detail in \cref{sec:measurement_of_sin2beta:resolution_and_acceptance:acceptance
 \label{sec:measurement_of_sin2beta:data_preparation:trigger:lzero}
 
 The \HLT lines in use require all candidates to either pass the \LZeroMuon or
-the \LZeroDiMuon trigger lines. No further \LZero criteria are required.
+the \LZeroDiMuon trigger lines, \ie show high transverse momentum tracks in the
+five muon stations. No further \LZero criteria are required.
 
 %...............................................................................
 \subsubsection{\HLTOne trigger requirements}
@@ -178,10 +175,10 @@ All candidates accepted by the two \HLTOne trigger lines are required to carry a
 \Jpsi \TOS decision, where \TOS refers to events where the signal particle
 tracks alone fulfil the trigger line requirements. Both lines are designed to
 trigger on muons, in this case originating from the secondary decay of the \Jpsi
-into \mumu. The \HLTOneTrackMuon introduces a bias on the lifetime through a cut
+into \mumu. The \HLTOne \TrackMuon introduces a bias on the lifetime through a cut
 on the minimal muon track \IP with respect to any \PV and is therefore called a
-\enquote{biased} line. The \HLTOneDiMuonHighMass does not affect the decay time
-distribution, hence is called an \enquote{unbiased} line. All trigger
+\enquote{biased} line. The \HLTOne \DiMuonHighMass does not affect the decay
+time distribution, hence is called an \enquote{unbiased} line. All trigger
 requirements are summarised in
 \cref{tab:measurement_of_sin2beta:data_preparation:trigger:hlt1:cuts}.
 %
@@ -191,7 +188,7 @@ requirements are summarised in
 \label{tab:measurement_of_sin2beta:data_preparation:trigger:hlt1:cuts}
 \begin{tabular}{lll}
 \toprule
-& \HLTOneDiMuonHighMass & \HLTOneTrackMuon \\
+                                  & \DiMuonHighMass                       & \TrackMuon \\
 \midrule
 Track \acs*{IP}                   & -                                     & $>\SI{0.1}{mm}$ \\
 Track $\chi_{\text{\acs*{IP}}}^2$ & -                                     & $>\num{16}$ \\
@@ -213,8 +210,8 @@ The \HLTTwo trigger line requirements are summarised in
 \cref{tab:measurement_of_sin2beta:data_preparation:trigger:hlt2:cuts}. Again a
 \TOS decision is required for events passing the trigger selection. Induced by a
 cut on the flight distance significance of the \Jpsi candidate the
-\HLTTwoDiMuonDetachedJpsi line causes a lifetime bias. Hence, the
-\HLTTwoDiMuonJpsi line is used as an unbiased reference line. With a pre-scale
+\HLTTwo \DiMuonDetachedJpsi line causes a lifetime bias. Hence, the
+\HLTTwo \DiMuonJpsi line is used as an unbiased reference line. With a pre-scale
 of $\num{0.2}$, only $\SI{20}{\percent}$ of all events passing \LZero and
 \HLTOne are chosen randomly as input to this line.
 %
@@ -225,7 +222,7 @@ of $\num{0.2}$, only $\SI{20}{\percent}$ of all events passing \LZero and
     \label{tab:measurement_of_sin2beta:data_preparation:trigger:hlt2:cuts}
     \begin{tabular}{lll}
       \toprule
-                                & \HLTTwoDiMuonJpsi & \HLTTwoDiMuonDetachedJpsi \\
+                                & \DiMuonJpsi                                      & \DiMuonDetachedJpsi \\
       \midrule
       Track \chisqndf           & $<\num{5}$                                       & $<\num{5}$ \\
       Mass                      & $M_{\jpsi}\pm\SI[per-mode=symbol]{0.12}{\GeVcc}$ & $M_{\jpsi}\pm\SI[per-mode=symbol]{0.12}{\GeVcc}$ \\ 
@@ -248,11 +245,10 @@ of $\num{0.2}$, only $\SI{20}{\percent}$ of all events passing \LZero and
 The ratio of events passing a trigger requirement compared to all events within
 the geometrical detector acceptance is called trigger efficiency. Compared to
 the efficiency of the $\SI{1}{\per\fb}$ \LHCb analysis \cite{Aaij:1497268},
-where events had to fulfil the trigger requirements of the \HLTOneDiMuonHighMass
-and the
-\HLTTwoDiMuonDetachedJpsi lines, a gain of $\SI{19.7}{\percent}$ in signal
-efficiency is measured by requiring the
-(\HLTOneDiMuonHighMass\VerbOr\HLTOneTrackMuon) decision.
+where events had to fulfil the trigger requirements of the unbiased \HLTOne
+di-muon line and the biased \HLTTwo di-muon line, a gain of
+$\SI{19.7}{\percent}$ in signal efficiency is measured by additionally allowing
+events to pass the requirements defined by the \HLTOne \TrackMuon line.
 \cref{tab:measurement_of_sin2beta:data_preparation:trigger:efficiencies}
 compares the calculated trigger efficiencies in detail.
 %

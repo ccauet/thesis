@@ -122,18 +122,16 @@ are of $\order{1}$, while the off-diagonal elements follow $\vert\Vub\vert^2 \ll
 \vert\Vcb\vert^2 \ll \vert\Vus\vert^2 \ll 1$ or in terms of the rotation angles
 $s_{12} \ll s_{23} \ll s_{12} \ll 1$. Exploiting this hierarchy in terms of an
 expansion leads to the Wolfenstein parametrisation
-% BS
-% wolfenstein up to order 6 in lambda
-% phi_s is accessible to LHCb
 %
-\begin{equation}  
-  \VCKM = \begin{pmatrix}
-    1 - \sfrac{\lambda^2}{2}         & \lambda                  & A \lambda^3 (\rho - \ii\eta) \\
-    -\lambda                         & 1 - \sfrac{\lambda^2}{2} & A \lambda^2                  \\
-    A \lambda^3 (1 - \rho - \ii\eta) & - A \lambda^2            & 1                            \\
-  \end{pmatrix}
-  + \order{\lambda^4}
-\end{equation}
+\begin{multline}  
+  \VCKM = \\
+  \begin{pmatrix}
+    1 - \frac{1}{2} \lambda^2 - \frac{1}{8} \lambda^4                           & \lambda                                                         & A \lambda^3 (\rho - \ii\eta)  \\
+    -\lambda + A^2 \lambda^5 (\frac{1}{2} - \rho - \ii\eta)                     & 1 - \frac{1}{2} \lambda^2 - \frac{1}{8} \lambda^4 ( 1 + 4 A^2 ) & A \lambda^2                   \\
+    A \lambda^3 (1 - \rho - \ii\eta) + \frac{1}{2} A \lambda^5 (\rho + \ii\eta) & - A \lambda^2 + A \lambda^4 (\frac{1}{2} - \rho - \ii\eta)      & 1 - \frac{1}{2} A^2 \lambda^4 \\
+  \end{pmatrix}\\
+  + \order{\lambda^6} \eqcm
+\end{multline}
 %
 written in terms of
 %

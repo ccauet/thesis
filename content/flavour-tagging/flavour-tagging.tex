@@ -693,8 +693,6 @@ II. The results are summarised in
     \bottomrule
   \end{tabular}
 \end{table}
-%
-% \missing{Comparison of $\BuToJpsiK$ and $\BdToJpsiKstarz$ on MC}
 
 % ------------------------------------------------------------------------------
 \subsection[
@@ -718,21 +716,23 @@ collected by the \LHCb experiment in \RunOne. As the \SSpi tagging algorithm
 depends on the fragmentation process of the initial \Bmeson, a $\Bd$ decay mode
 is preferred over a decay of $\Bu$ mesons. Only candidates carrying a tagging
 response from the \SSpi tagger are considered in the following.
-% \missing{\SS calibration: $\BdToJpsiKstarz$ signal selection?}
 
 To determine the mixing asymmetry $\MixingAsymmetry(\obsTime)$, a fit to the
 reconstructed decay time and mass distribution is performed. The signal mass
-component is described by an Ipatia \PDF (\cf
-\cref{sec:measurement_of_sin2beta:likelihood_fit:pdfs:ipatia}) with all tail
-parameters fixed to values determined on simulations. The description of the
-combinatorial background component consists of a sum of two exponential
-\acp{PDF} with shared parameters in the mass dimension to reflect two
-background components with different lifetimes seen in the decay time dimension.
-Hence, the background decay time distribution is modelled by two exponential
-functions as well. The decay time signal \PDF contains an acceptance function
-$\eps(t)$ describing reconstruction and selection inefficiencies for signal
-candidates with low decay times and a convolution of a $\B$ mixing \PDF and a
-resolution model
+distribution is modelled utilising a \Ipatia \PDF \cite{Santos:2013gra},
+composed of a generalised hyperbolic core and two-sided tails as introduced by
+the Crystal ball \PDF \cite{set:crystalball}. A more detailed description of the
+\Ipatia \PDF is provided in
+\cref{sec:measurement_of_sin2beta:likelihood_fit:pdfs:ipatia}. In the present
+case the tail parameters are fixed to values determined on simulations. The
+description of the combinatorial background component consists of a sum of two
+exponential \acp{PDF} with shared parameters in the mass dimension to reflect
+two background components with different lifetimes seen in the decay time
+dimension. Hence, the background decay time distribution is modelled by two
+exponential functions as well. The decay time signal \PDF contains an acceptance
+function $\eps(t)$ describing reconstruction and selection inefficiencies for
+signal candidates with low decay times and a convolution of a $\B$ mixing \PDF
+and a resolution model
 %
 \begin{equation}
   \Prob{\Sig}{} = \eps(t) \cdot \left[ \Prob{\text{Mix}}{}(t, \tagdecision, \tagdecision^\prime) \otimes \mathcal{R}(t - t_\text{true}) \right] \eqcm

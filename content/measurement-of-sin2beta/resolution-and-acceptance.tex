@@ -197,16 +197,16 @@ a set of unbiased trigger requirements is needed:
   \item[Unbiased] \TriggerReqUB
 \end{description}
 %
-The acceptance of the \catAU subsample can be computed using the overlap of events
-which pass both the \HLTTwoDiMuonDetachedJpsi and the
-\HLTTwoDiMuonJpsi line. Both lines are using the same trigger cuts except for
-an additional cut on the flight distance significance (see
+The acceptance of the \catAU subsample can be computed using the overlap of
+events which pass the biased and the unbiased \HLTTwo di-muon lines. Both
+lines are using the same trigger cuts except for an additional cut on the flight
+distance significance (see
 \cref{tab:measurement_of_sin2beta:data_preparation:trigger:hlt2:cuts}) in the
-case of the biased lines. The acceptance can then be written as a time-dependent
+case of the biased line. The acceptance can then be written as a time-dependent
 efficiency $\varepsilon_\text{\catAU}$, with
 %
 \begin{align}
-    \varepsilon_\text{\catAU} &= \frac{\text{\VerbAU \VerbAnd \HLTTwoDiMuonJpsi}}{\text{\VerbUB}}\\
+    \varepsilon_\text{\catAU} &= \frac{\text{\VerbAU\VerbAnd \HLTTwoDiMuonJpsi}}{\text{\VerbUB}}\\
                               &= \frac{\text{\TriggerReqAUEnumerator}}{\text{\TriggerReqUB}}\eqpd \nonumber
 \end{align} 
 %
@@ -221,9 +221,10 @@ $\varepsilon_\text{\catEB}$.
 \end{align}
 %
 In other words $\varepsilon_\text{\catAU}$ quantifies the efficiency due to the
-\HLTTwoDiMuonDetachedJpsi requirement, whereas $\varepsilon_\text{\catEB}$
-effectively quantifies the relative efficiency due to the \HLTOneTrackMuon and
-\HLTTwoDiMuonDetachedJpsi requirements.
+requirements by the biased \HLTTwo line for events that pass the unbiased
+\HLTOne line, whereas $\varepsilon_\text{\catEB}$ effectively quantifies the
+relative efficiency introduced by both, the \HLTOne and \HLTTwo, biased trigger
+lines.
 
 \subsubsection{Methodology}
 \label{sec:measurement_of_sin2beta:resolution_and_acceptance:acceptance:lower:methodology}
@@ -233,9 +234,7 @@ that are selected by the \StrippingDetached stripping line and pass the
 offline selection. As the tagged and untagged candidates are expected to behave
 equally concerning the studied effect all available candidates are used.
 On the remaining multiple candidates, a random candidate selection is applied.
-All candidates are selected by one of the following trigger lines:
-\HLTOneDiMuonHighMass, \HLTOneTrackMuon, \HLTTwoDiMuonJpsi, or
-\HLTTwoDiMuonDetachedJpsi.
+All candidates are selected by either one of the four considered trigger lines.
 
 The efficiencies are time-dependent and, since the focus lies on the acceptance
 of the signal component's decay time distribution, have to be determined through
@@ -306,7 +305,7 @@ while fixing the lifetime $\tau$ to its generation value. Based on the
 \HLTOneDiMuonHighMass and \HLTTwoDiMuonJpsi are chosen to avoid any
 additional lifetime bias for events with short decay times. Only candidates
 being matched on \MC as true signal events are considered. The nominal offline
-selection is applied and from the remaining multiple (\acs{PV},\Bd) candidate
+selection is applied and from the remaining multiple (\acs{PV},\,\Bd) candidate
 pairs, one is chosen randomly. To avoid wrong-\acs{PV} associations of the
 reconstructed \BdToJpsiKS candidate the true \MC decay time is used in the fit.
 To reduce the statistical uncertainties, and as no deviations of the decay time

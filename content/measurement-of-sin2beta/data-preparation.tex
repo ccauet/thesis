@@ -24,7 +24,7 @@ $\KSToPiPi$ final state. In order to enhance the purity of the signal
 candidates, several selection steps are performed. At first a two-layer
 trigger system selects events from the \protonproton collisions (\cf
 \cref{sec:measurement_of_sin2beta:data_preparation:trigger}). Then a loose and very general
-selection, the so called \enquote{stripping} is applied to the triggered data
+selection, the so called \emph{stripping} is applied to the triggered data
 (\cf \cref{sec:measurement_of_sin2beta:data_preparation:stripping}). The final
 step is an offline selection of the remaining candidates that is further
 adjusted to the specific decay and the reconstructed final state (\cf
@@ -142,7 +142,7 @@ criteria to filter events with interesting physical signatures. As described in
 \cref{sec:lhcb_experiment:trigger} a two-stage system is utilised build up from
 the fast \acf{LZero} and the software based \acf{HLT}.
 
-The trigger requirements are collected in so called \enquote{trigger lines},
+The trigger requirements are collected in so called \emph{trigger lines},
 consisting of a set of selections criteria to map certain event types. In the
 following the trigger requirements applied in this measurement are described. If
 not stated otherwise all candidates passing the requirements specified by the
@@ -164,8 +164,8 @@ detail in \cref{sec:measurement_of_sin2beta:resolution_and_acceptance:acceptance
 \label{sec:measurement_of_sin2beta:data_preparation:trigger:lzero}
 
 The \HLT lines in use require all candidates to either pass the \LZeroMuon or
-the \LZeroDiMuon trigger lines, \ie show high transverse momentum tracks in the
-five muon stations. No further \LZero criteria are required.
+the \LZeroDiMuon trigger lines, \ie show one or two high transverse momentum
+tracks in the five muon stations. No further \LZero criteria are required.
 
 %...............................................................................
 \subsubsection{\HLTOne trigger requirements}
@@ -177,8 +177,8 @@ tracks alone fulfil the trigger line requirements. Both lines are designed to
 trigger on muons, in this case originating from the secondary decay of the \Jpsi
 into \mumu. The \HLTOne \TrackMuon introduces a bias on the lifetime through a cut
 on the minimal muon track \IP with respect to any \PV and is therefore called a
-\enquote{biased} line. The \HLTOne \DiMuonHighMass does not affect the decay
-time distribution, hence is called an \enquote{unbiased} line. All trigger
+\emph{biased} line. The \HLTOne \DiMuonHighMass does not affect the decay
+time distribution, hence is called an \emph{unbiased} line. All trigger
 requirements are summarised in
 \cref{tab:measurement_of_sin2beta:data_preparation:trigger:hlt1:cuts}.
 %
@@ -245,20 +245,20 @@ of $\num{0.2}$, only $\SI{20}{\percent}$ of all events passing \LZero and
 The ratio of events passing a trigger requirement compared to all events within
 the geometrical detector acceptance is called trigger efficiency. Compared to
 the efficiency of the $\SI{1}{\per\fb}$ \LHCb analysis \cite{Aaij:1497268},
-where events had to fulfil the trigger requirements of the unbiased \HLTOne
-di-muon line and the biased \HLTTwo di-muon line, a gain of
-$\SI{19.7}{\percent}$ in signal efficiency is measured by additionally allowing
-events to pass the requirements defined by the \HLTOne \TrackMuon line.
+where events had to fulfil the trigger requirements of the introduced unbiased
+\HLTOne line and the biased \HLTTwo line, a gain of $\SI{19.7}{\percent}$ in
+signal efficiency is measured by additionally accepting events that pass the
+requirements defined by the biased \HLTOne muon line.
 \cref{tab:measurement_of_sin2beta:data_preparation:trigger:efficiencies}
 compares the calculated trigger efficiencies in detail.
 %
 \begin{table}
   \centering
   \caption{Trigger selection efficiencies as determined on (simulated) data. The
-  first column gives the numbers obtained on $\BdToJpsiKS$ signal MC, where the 
-  normalisation is performed \wrt events with positive \texttt{L0Physics},
-  \texttt{Hlt1Phys}, and \texttt{Hlt2Phys} decisions. The second column shows
-  \enquote{signal in data} numbers obtained using an \sweighted data sample. The
+  first column gives the numbers obtained on $\BdToJpsiKS$ signal MC, where the
+  normalisation is performed \wrt events that pass at least one physics trigger
+  line in the \LZero, the \HLTOne, and the \HLTTwo. The second column shows
+  \emph{signal in data} numbers obtained using an \sweighted data sample. The
   last column contains numbers extracted from data without distinction between
   signal and background.}
   \label{tab:measurement_of_sin2beta:data_preparation:trigger:efficiencies}
@@ -285,7 +285,7 @@ compares the calculated trigger efficiencies in detail.
 \label{sec:measurement_of_sin2beta:data_preparation:stripping}
 
 To further reduce the amount of data a loose selection is applied in a common
-effort, called the \enquote{stripping} of data. Criteria on the properties of
+effort, called the \emph{stripping} of data. Criteria on the properties of
 the reconstructed final state particles as well as on the reconstructed $\Jpsi$,
 $\KS$, and $\Bd$ candidates are applied as described in detail in 
 \cref{tab:measurement_of_sin2beta:data_preparation:stripping}. Two different
@@ -360,7 +360,7 @@ of the vertex fit, $\chi_{\text{vtx}}^2/\ndf$.
 \label{sec:measurement_of_sin2beta:data_preparation:offline_selection}
 
 The final step in the selection of signal candidates follows the trigger and
-stripping selection. The \enquote{offline} selection attempts to enhance the
+stripping selection. The \emph{offline} selection attempts to enhance the
 signal purity of the data sample without introducing additional biases on the
 \Bd candidates' decay time distribution. The major objective of the selection is
 to preserve a large number of signal candidates while the reduction of
@@ -577,7 +577,7 @@ that more than one candidate gets reconstructed. From those candidates either
 one can be chosen by its \DTF trajectory \IP \chisqndf \wrt a given \PV
 (\emph{best \Bd candidate selection}) or as well randomly (\emph{random \Bd
 candidate selection}). Instead of consecutively selecting a \PV and \Bmeson
-candidate a joint decision can be made. Each $(\text{\acs{PV}}, \Bd)$ pair can
+candidate a joint decision can be made. Each (\acs{PV},\,\Bd) pair can
 again be chosen either based on the best fit quality or by random. The number of
 multiple \acp{PV} and candidates is studied following \Ref~\cite{Koppenburg:1340942}.
 
@@ -629,23 +629,23 @@ events contain multiple \Bd candidates while in $\SI{6}{\percent}$ of the events
 more than one \PV is found. 
 \Cref{tab:measurement_of_sin2beta:data_preparation:multiple_candidates:after_selection} 
 presents the detailed numbers for multiple \PV and \Bd candidates after
-stripping and offline selection. Of the remaining (\acs{PV},\Bd) pairs one is
+stripping and offline selection. Of the remaining (\acs{PV},\,\Bd) pairs one is
 chosen randomly.
 %
 \begin{table}
 \centering
 \caption{ 
 Number of multiple candidates after stripping and selection. The numbers in the
-first row represent the fraction of (\PV,\Bd) candidate pairs that are not
+first row represent the fraction of (\PV,\,\Bd) candidate pairs that are not
 unique in an event. The numbers in the second row show the fraction of events
-with multiple (\PV,\Bd) candidate pairs.  The third row includes the numbers of
-event with multiple \Bd candidates. Additionally, a listing of the occurrence of
-events with different numbers of multiple \Bd candidates is given. After that,
-the number of \Bd candidates to discard is given. In the fourth row the number
-of events containing multiple \acp{PV} is listed together with the detailed
-description of the frequency of multiple \acp{PV} per event. The last row shows
-the fraction of (\PV,\Bd) candidate pairs that need to be discarded in order to
-only keep one (\PV,\Bd) candidate per event. }
+with multiple (\PV,\,\Bd) candidate pairs.  The third row includes the numbers
+of event with multiple \Bd candidates. Additionally, a listing of the occurrence
+of events with different numbers of multiple \Bd candidates is given. After
+that, the number of \Bd candidates to discard is given. In the fourth row the
+number of events containing multiple \acp{PV} is listed together with the
+detailed description of the frequency of multiple \acp{PV} per event. The last
+row shows the fraction of (\PV,\,\Bd) candidate pairs that need to be discarded
+in order to only keep one (\PV,\,\Bd) candidate per event. }
 \label{tab:measurement_of_sin2beta:data_preparation:multiple_candidates:after_selection}
 \begin{tabular}{lcccc}
 \toprule
@@ -655,7 +655,7 @@ fraction of multiple & \multicolumn{2}{c}{\multirow{2}[2]{*}{\SI{12.5}{\percent}
 candidates & & & & \\
 \midrule
 fraction of events with& \multicolumn{2}{c}{\multirow{2}[2]{*}{\SI{6.0}{\percent}}} & \multicolumn{2}{c}{\multirow{2}[2]{*}{\SI{6.1}{\percent}}}\\
-multiple (\acs{PV},\Bd) candidates & & & & \\  
+multiple (\acs{PV},\,\Bd) candidates & & & & \\  
 \midrule
 fraction of events with & \multicolumn{2}{c}{\multirow{2}[2]{*}{\SI{0.3}{\percent}}} & \multicolumn{2}{c}{\multirow{2}[2]{*}{\SI{0.4}{\percent}}}\\
 multiple \Bd candidates & & & & \\  
@@ -680,7 +680,7 @@ with multiple \acp{PV} & & & & \\
  & 4 & 19    & 4 & 58\\
  & 5 & 0     & 5 & 9\\
 \midrule
-fraction of (\acs{PV},\Bd) candidate & \multicolumn{2}{c}{\multirow{2}[2]{*}{\SI{6.5}{\percent}}} & \multicolumn{2}{c}{\multirow{2}[2]{*}{\SI{6.6}{\percent}}}\\
+fraction of (\acs{PV},\,\Bd) candidate & \multicolumn{2}{c}{\multirow{2}[2]{*}{\SI{6.5}{\percent}}} & \multicolumn{2}{c}{\multirow{2}[2]{*}{\SI{6.6}{\percent}}}\\
 pairs to discard & & & & \\
 \bottomrule
 \end{tabular}

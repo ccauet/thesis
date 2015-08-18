@@ -24,12 +24,15 @@ the choice of utilised taggers---is calculated as the sum of the effective
 tagging efficiencies carried by each (including untagged) signal candidate
 %
 \begin{equation}
-  \efftageff = \frac{\sum_{i=0}^{N} \mistag_i \tagdilution_i^2\big(\tagOS, \tagSS, \mistagOS, \mistagSS \big)}{\sum_{i=0}^{N} \mistag_i}\eqcm
+  \efftageff = \frac{\sum_{i=0}^{N} w_i \tagdilution_i^2\big(\tagOS, \tagSS, \mistagOS, \mistagSS \big)}{\sum_{i=0}^{N} w_i}\eqcm
 \end{equation}
 %
-where $\mistagOS$ and $\mistagSS$ refer to the calibrated mistag estimates. This
-adds up to an effective tagging efficiency of $\efftageff = \SI{3.02 +-
-0.05}{\percent}$, which splits into a tagging efficiency of $\tageff = \SI{36.54
+where $\mistagOS$ and $\mistagSS$ refer to the calibrated mistag estimates. The
+signal \sWeights $w_i$ for each candidate are computed from an \sPlot fit to the
+$\Bd$ mass distribution using the nominal mass \PDF described in
+\cref{sec:measurement_of_sin2beta:likelihood_fit}. This adds up to an effective
+tagging efficiency of $\efftageff = \SI{3.02 +- 0.05}{\percent}$, which splits
+into a tagging efficiency of $\tageff = \SI{36.54
 +- 0.14}{\percent}$ and an effective dilution of $\tagdilution = \SI{28.75 +-
 0.24}{\percent}$ corresponding to an average mistag probability of $\mistag =
 \SI{35.62 +- 0.12}{\percent}$.

@@ -208,7 +208,7 @@ The decay of a meson state \Meson or its \CP conjugate state \Mesonbar into a
 multi-particle final state $f$ or its \CP conjugate state $\ovE{f}$ can be
 expressed by the decay amplitudes
 %
-\begin{equation}
+\begin{equation}\label{eq:cpv_theory:flavour_physics:bdecays:amplitudes}
   \begin{alignedat}{2}
     & A_f         = \matrixelement{f}{\Hamiltonian{}{}}{\Meson},       && \ovE{A}_f         = \matrixelement{f}{\Hamiltonian{}{}}{\Mesonbar}, \\
     & A_{\ovE{f}} = \matrixelement{\ovE{f}}{\Hamiltonian{}{}}{\Meson}, &\eqand& \ovE{A}_{\ovE{f}} = \matrixelement{\ovE{f}}{\Hamiltonian{}{}}{\Mesonbar},
@@ -415,20 +415,34 @@ violation in the \SM, \CP violation appears in different manifestations.
 decay amplitudes of a meson into a final state differ from the \CP conjugate
 decay
 %
-\begin{equation}
+\begin{equation}\label{eq:cpv_theory:flavour_physics:cpv_classification:direct}
   \frac{\abs{\ovE{A}_{\ovE{f}}}}{\abs{A_f}} \neq 1 \eqpd
 \end{equation}
 %
-This is the only possible source of \CP violation in charged mesons and all
-baryons. As \CP violation in the decay is expressed by the decay amplitudes, the
-strength can be estimated by studying the involved \CKM matrix elements. In the
-decay of \BdToJpsiKS the matrix elements $\Vcs \approx 1$ and $\Vcb
-\approx A\lambda^2$ are most relevant, thus no complex phase is present up to
-the order of $\lambda^2$ and no direct \CP violation is expected.
-% BS
-% direct CPV
-% 2 diff. weak phases
-% 2 diff strong phases
+This is possible if two different \emph{weak} phases $\varphi_i$ and
+\emph{strong} phases $\delta_i$ contribute to the decay amplitude, as only
+relative phase differences are physically meaningful and are phase-convention
+independent. The \CP-odd weak phases under consideration arise from complex
+couplings in the Lagrangian, here the phases of the \CKM matrix elements,
+whereas strong phases result from strong or electromagnetic final-state
+interactions. Strong phases are \CP-even and thus equal for \CP conjugate
+states.
+
+Assuming a meson decay with two contributing amplitudes $A_1$ and $A_2$, with
+only the weak phases changing sign under \CP transformation, the difference in
+the amplitudes under \CP transformation
+%
+\begin{equation}
+  \begin{split}
+                A_{f} &= A_1 \exponential{i(\delta_1 + \varphi_1)} + A_2 \exponential{i(\delta_2 + \varphi_2)} \eqcm\eqand \\
+    \ovE{A}_{\ovE{f}} &= A_1 \exponential{i(\delta_1 - \varphi_1)} + A_2 \exponential{i(\delta_2 - \varphi_2)} \eqcm
+  \end{split}
+\end{equation}
+%
+reveals a \CP non-conservation as defined in
+\cref{eq:cpv_theory:flavour_physics:cpv_classification:direct}. This is the only
+possible source of \CP violation in charged meson systems and all baryon
+systems.
 
 \subsubsection[\CP violation in mixing]{\CPbfsf violation in mixing}
 \label{sec:cpv_theory:flavour_physics:cpv_classification:mixing}

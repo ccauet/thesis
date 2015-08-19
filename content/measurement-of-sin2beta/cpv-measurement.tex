@@ -57,21 +57,32 @@ the semi-leptonic $\CP$ asymmetry~\cite{Aaij:2014nxa}.
 \caption{Listing of parameters that are constrained in the fit.}
 \label{tab:measurement_of_sin2beta:cpv_measurement:constrained_parameters}
 \centering
-\begin{tabular}{lr@{$\,\pm\,$}ll}
+\begin{tabular}{
+  l
+  S
+  [
+    table-number-alignment = center,
+    table-align-uncertainty = true,
+    table-figures-decimal = 4,
+    table-figures-uncertainty = 4,
+    table-sign-mantissa,
+  ]
+  l
+}
   \toprule
-  Parameter                        & \multicolumn{2}{l}{Value and uncertainty} & Source \\
+  Parameter                        & {Value and uncertainty} & Source \\
   \midrule
-  $A_P^{\catOO}$                   & $-0.0108$ & $0.0052$  & \cite{Aaij:2014bba} \\
-  $\Delta A_P$                     & $0.0004$  & $0.0018$  & \cite{Aaij:2014bba,Aaij:2014nxa} \\
-  $\DMd$ (\si{\planckbar\per\ps})  & $0.510$   & $0.003$   & \cite{Agashe:2014kda} \\
-  $\p{0}{\text{\acs*{OS}}}$        & $0.3815$  & $0.0011$  & \multirow{4}{*}{\cref{sec:flavour_tagging:calibration:os}} \\
-  $\p{1}{\text{\acs*{OS}}}$        & $0.978$   & $0.012$   &                                                            \\
-  $\deltap{0}{\text{\acs*{OS}}}$   & $0.0148$  & $0.0016$  &                                                            \\
-  $\deltap{1}{\text{\acs*{OS}}}$   & $0.070$   & $0.018$   &                                                            \\
-  $\p{0}{\text{\acs*{SS}}}$        & $0.4232$  & $0.0029$  & \multirow{4}{*}{\cref{sec:flavour_tagging:calibration:ss}} \\
-  $\p{1}{\text{\acs*{SS}}}$        & $1.011$   & $0.064$   &                                                            \\
-  $\deltap{0}{\text{\acs*{SS}}}$   & $-0.0026$ & $0.0043$  &                                                            \\
-  $\deltap{1}{\text{\acs*{SS}}}$   & $-0.17$   & $0.10$    &                                                            \\
+  $A_P^{\catOO}$                   & -0.0108 +- 0.0052       & \cite{Aaij:2014bba} \\
+  $\Delta A_P$                     & 0.0004  +- 0.0018       & \cite{Aaij:2014bba,Aaij:2014nxa} \\
+  $\DMd$ (\si{\planckbar\per\ps})  & 0.510   +- 0.003        & \cite{Agashe:2014kda} \\
+  $\p{0}{\text{\acs*{OS}}}$        & 0.3815  +- 0.0011       & \multirow{4}{*}{\cref{sec:flavour_tagging:calibration:os}} \\
+  $\p{1}{\text{\acs*{OS}}}$        & 0.978   +- 0.012        &                                                            \\
+  $\deltap{0}{\text{\acs*{OS}}}$   & 0.0148  +- 0.0016       &                                                            \\
+  $\deltap{1}{\text{\acs*{OS}}}$   & 0.070   +- 0.018        &                                                            \\
+  $\p{0}{\text{\acs*{SS}}}$        & 0.4232  +- 0.0029       & \multirow{4}{*}{\cref{sec:flavour_tagging:calibration:ss}} \\
+  $\p{1}{\text{\acs*{SS}}}$        & 1.011   +- 0.064        &                                                            \\
+  $\deltap{0}{\text{\acs*{SS}}}$   & -0.0026 +- 0.0043       &                                                            \\
+  $\deltap{1}{\text{\acs*{SS}}}$   & -0.17   +- 0.10         &                                                            \\
   \bottomrule
 \end{tabular}
 \end{table}
@@ -158,21 +169,30 @@ description. Repeating the fit under these condition yields
   \cref{sec:measurement_of_sin2beta:cpv_measurement:constrained_parameters}.}
   \label{tab:measurement_of_sin2beta:cpv_measurement:results:tagging}
   \centering
-  \begin{tabular}{llr@{$\,\pm\,$}l}
+  \begin{tabular}{
+    l
+    S
+    [
+      table-number-alignment = center,
+      table-align-uncertainty = true,
+      table-figures-decimal = 4,
+      table-figures-uncertainty = 4,
+      table-sign-mantissa,
+    ]
+  }
       \toprule
-      \multicolumn{2}{c}{Parameter}         & \multicolumn{2}{c}{Value}                 \\
+      Parameter                        & {Value}          \\
       \midrule
-      $\p{0}{\text{\acs*{OS}}}$        &                          & $0.3815$  & $0.0011$  \\
-      $\p{1}{\text{\acs*{OS}}}$        &                          & $0.977$   & $0.012$   \\
-      $\deltap{0}{\text{\acs*{OS}}}$   &                          & $0.0148$  & $0.0016$  \\
-      $\deltap{1}{\text{\acs*{OS}}}$   &                          & $0.073$   & $0.018$   \\
-      $\p{0}{\text{\acs*{SSpi}}}$      &                          & $0.4228$  & $0.0028$  \\
-      $\p{1}{\text{\acs*{SSpi}}}$      &                          & $1.01$    & $0.06$    \\
-      $\deltap{0}{\text{\acs*{SSpi}}}$ &                          & $-0.002$  & $0.004$   \\
-      $\deltap{1}{\text{\acs*{SSpi}}}$ &                          & $-0.16$   & $0.09$    \\
-      % $\DMd$                    & (\si{\planckbar\per\pico\second})    & $0.5100$  & $0.0030$  \\
-      $A_P^{11}$                &                          & $-0.014$  & $0.005$   \\
-      $\Delta A_P$              &                          & $0.000$   & $0.002$   \\
+      $\p{0}{\text{\acs*{OS}}}$        & 0.3815 +- 0.0011 \\
+      $\p{1}{\text{\acs*{OS}}}$        & 0.977  +- 0.012  \\
+      $\deltap{0}{\text{\acs*{OS}}}$   & 0.0148 +- 0.0016 \\
+      $\deltap{1}{\text{\acs*{OS}}}$   & 0.073  +- 0.018  \\
+      $\p{0}{\text{\acs*{SSpi}}}$      & 0.4228 +- 0.0028 \\
+      $\p{1}{\text{\acs*{SSpi}}}$      & 1.01   +- 0.06   \\
+      $\deltap{0}{\text{\acs*{SSpi}}}$ & -0.002 +- 0.004  \\
+      $\deltap{1}{\text{\acs*{SSpi}}}$ & -0.16  +- 0.09   \\
+      $A_P^{11}$                       & -0.014 +- 0.005  \\
+      $\Delta A_P$                     & 0.000  +- 0.002  \\
       \bottomrule
     \end{tabular}
 \end{table}
@@ -231,19 +251,39 @@ description. Repeating the fit under these condition yields
 \end{figure}
 
 \FloatBarrier
+\clearpage
 % ------------------------------------------------------------------------------
 \subsection{Kaon regeneration}
 \label{sec:measurement_of_sin2beta:cpv_measurement:kaon_regeneration}
 
-% BS
-% more explanations
 The \CP violation in the neutral kaon system as well as differences in the
 nuclear interactions with the detector material of $\Kz$ and $\Kzbar$ states
 with considerable decay time are not considered in the fit model
-\cite{set:kaonregeneration}. Following the procedure described in
-\cite{Aaij:2014gsa} corrections are computed for \SJpsiKS and \CJpsiKS and are
-added to the results from the likelihood fit. The corrections are
+\cite{set:kaonregeneration}.
 
+The influence of both effects can be broken down into the accidentally
+reconstruction of \KL mesons decaying into two pion final states, thus
+leading to wrong-sign contributions to the decay rates (\cf
+\cref{eq:cpv_theory:flavour_physics:time_evolution:differential_decay_rates}),
+%
+\begin{equation}
+    \frac{\Gamma \bigl(\BdToJpsiKL\bigr)}{\exponential{-\Gamma \obsTime}} \propto \Bigl( 1 + \sintwobeta \sin(\DMd \obsTime) \Bigr) \eqpd
+\end{equation}
+%
+\CP violation in the kaon system allows the suppressed decay of $\KL\to\pipi$.
+The same applies when \KL mesons effectively decay into a two pion final state
+after transforming into a \KS state due to regeneration effects taking place in
+the interaction with the detector material. 
+
+With the \CP violation in the kaon system being very small, as well as a small
+regeneration rate, even more reduced by the large lifetime difference in the
+neutral kaon system, both effects are expected to contribute in the same order
+at a sub-percent level.
+
+Following the procedure described in \cite{Aaij:2014gsa} corrections are
+computed for \SJpsiKS and \CJpsiKS and are added to the results from the
+likelihood fit. The corrections are
+%
 \begin{equation}
   \begin{split}
     \delta_{\SJpsiKS} &= \num[retain-explicit-plus]{+0.002} \eqand\\

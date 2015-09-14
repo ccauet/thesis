@@ -1,9 +1,9 @@
 # My doctoral thesis repository
 
-> **Title**  Precision measurement of the CKM parameter sin(2β) with the LHCb experiment
-> **Author** Christophe Cauet
-> **Home institute** TU Dortmund, Fakultät Physik
-> **Date** August 2015
+> **Title**  Precision measurement of the CKM parameter sin(2β) with the LHCb experiment   
+> **Author** Christophe Cauet   
+> **Home institute** TU Dortmund, Fakultät Physik   
+> **Date** August 2015   
 > **Contact** christophe.cauet@tu-dortmund.de
 
 ## Remarks

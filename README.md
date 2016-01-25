@@ -8,6 +8,9 @@
 > **DOI** http://dx.doi.org/10.17877/DE290R-16462   
 > **PDF** [phd_thesis_ccauet.pdf](https://s3-eu-west-1.amazonaws.com/ccauet-website-storage/pdf/phd_thesis_ccauet.pdf)
 
+## Wordcount history
+![wordcount history](/wordcount.png)
+
 ## Remarks
 _This is only the private part of the thesis repository. The template can be found here:
 https://github.com/ccauet/thesis-template_

@@ -17,3 +17,5 @@ _This is only the private part of the thesis repository. The template can be fou
 https://github.com/ccauet/thesis-template_
 
 To make use of ```%!TEX root = ..``` in your editor, create a symlink called ```common``` pointing to the root directory of the template repository.
+
+[![ccauet/thesis](https://repolabels.net/ccauet/thesis/large.svg)](https://github.com/ccauet/thesis/)
